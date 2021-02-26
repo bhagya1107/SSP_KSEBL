@@ -1,0 +1,1564 @@
+INFO - 2020-09-21 15:17:36 --> Config Class Initialized
+INFO - 2020-09-21 15:17:36 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:17:37 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:17:37 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:17:37 --> URI Class Initialized
+DEBUG - 2020-09-21 15:17:37 --> No URI present. Default controller set.
+INFO - 2020-09-21 15:17:37 --> Router Class Initialized
+INFO - 2020-09-21 15:17:37 --> Output Class Initialized
+INFO - 2020-09-21 15:17:37 --> Security Class Initialized
+DEBUG - 2020-09-21 15:17:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:17:37 --> Input Class Initialized
+INFO - 2020-09-21 15:17:37 --> Language Class Initialized
+INFO - 2020-09-21 15:17:38 --> Language Class Initialized
+INFO - 2020-09-21 15:17:38 --> Config Class Initialized
+INFO - 2020-09-21 15:17:38 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:17:38 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:17:38 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:17:38 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:17:38 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:17:39 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:17:39 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:17:39 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:17:39 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:17:39 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:17:40 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:17:40 --> Email Class Initialized
+INFO - 2020-09-21 15:17:42 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:17:42 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:17:42 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:17:42 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:17:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:17:42 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:17:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:17:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/home.php
+DEBUG - 2020-09-21 15:17:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:17:43 --> Final output sent to browser
+DEBUG - 2020-09-21 15:17:43 --> Total execution time: 6.9912
+INFO - 2020-09-21 15:23:06 --> Config Class Initialized
+INFO - 2020-09-21 15:23:06 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:23:06 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:23:06 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:23:06 --> URI Class Initialized
+INFO - 2020-09-21 15:23:06 --> Router Class Initialized
+INFO - 2020-09-21 15:23:06 --> Output Class Initialized
+INFO - 2020-09-21 15:23:06 --> Security Class Initialized
+DEBUG - 2020-09-21 15:23:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:23:06 --> Input Class Initialized
+INFO - 2020-09-21 15:23:06 --> Language Class Initialized
+INFO - 2020-09-21 15:23:06 --> Language Class Initialized
+INFO - 2020-09-21 15:23:06 --> Config Class Initialized
+INFO - 2020-09-21 15:23:06 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:23:06 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:23:06 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:23:06 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:23:06 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:23:06 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:23:07 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:23:07 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:23:07 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:23:07 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:07 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:07 --> Email Class Initialized
+INFO - 2020-09-21 15:23:07 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:23:07 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:23:07 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:23:07 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:23:07 --> Template MX_Controller Initialized
+INFO - 2020-09-21 15:23:07 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2020-09-21 15:23:07 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_home/models/Login.php
+ERROR - 2020-09-21 15:23:08 --> Severity: Notice --> Undefined index: uid C:\Apache24\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 36
+ERROR - 2020-09-21 15:23:08 --> Severity: Notice --> Undefined index: district_id C:\Apache24\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 41
+ERROR - 2020-09-21 15:23:08 --> Severity: Notice --> Undefined index: basin_id C:\Apache24\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 42
+INFO - 2020-09-21 15:23:08 --> Config Class Initialized
+INFO - 2020-09-21 15:23:08 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:23:08 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:23:08 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:23:09 --> URI Class Initialized
+INFO - 2020-09-21 15:23:09 --> Router Class Initialized
+INFO - 2020-09-21 15:23:09 --> Output Class Initialized
+INFO - 2020-09-21 15:23:09 --> Security Class Initialized
+DEBUG - 2020-09-21 15:23:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:23:09 --> Input Class Initialized
+INFO - 2020-09-21 15:23:09 --> Language Class Initialized
+INFO - 2020-09-21 15:23:09 --> Language Class Initialized
+INFO - 2020-09-21 15:23:09 --> Config Class Initialized
+INFO - 2020-09-21 15:23:09 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:23:09 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:23:09 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:23:09 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:23:09 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:23:09 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:23:09 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:23:09 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:23:09 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:23:10 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:10 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:10 --> Email Class Initialized
+INFO - 2020-09-21 15:23:10 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:23:10 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:23:10 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:23:10 --> Supplier_registration MX_Controller Initialized
+DEBUG - 2020-09-21 15:23:10 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:23:10 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:23:10 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+DEBUG - 2020-09-21 15:23:10 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:23:10 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_registration/views/step_4.php
+DEBUG - 2020-09-21 15:23:10 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:23:10 --> Final output sent to browser
+DEBUG - 2020-09-21 15:23:11 --> Total execution time: 2.1640
+INFO - 2020-09-21 15:23:21 --> Config Class Initialized
+INFO - 2020-09-21 15:23:21 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:23:21 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:23:21 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:23:21 --> URI Class Initialized
+INFO - 2020-09-21 15:23:21 --> Router Class Initialized
+INFO - 2020-09-21 15:23:21 --> Output Class Initialized
+INFO - 2020-09-21 15:23:22 --> Security Class Initialized
+DEBUG - 2020-09-21 15:23:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:23:22 --> Input Class Initialized
+INFO - 2020-09-21 15:23:22 --> Language Class Initialized
+INFO - 2020-09-21 15:23:22 --> Language Class Initialized
+INFO - 2020-09-21 15:23:22 --> Config Class Initialized
+INFO - 2020-09-21 15:23:22 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:23:22 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:23:22 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:23:22 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:23:22 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:23:22 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:23:22 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:23:22 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:23:22 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:23:22 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:22 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:23 --> Email Class Initialized
+INFO - 2020-09-21 15:23:23 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:23:23 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:23:23 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:23:23 --> Logout MX_Controller Initialized
+INFO - 2020-09-21 15:23:23 --> Config Class Initialized
+INFO - 2020-09-21 15:23:23 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:23:23 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:23:23 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:23:23 --> URI Class Initialized
+DEBUG - 2020-09-21 15:23:23 --> No URI present. Default controller set.
+INFO - 2020-09-21 15:23:23 --> Router Class Initialized
+INFO - 2020-09-21 15:23:24 --> Output Class Initialized
+INFO - 2020-09-21 15:23:24 --> Security Class Initialized
+DEBUG - 2020-09-21 15:23:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:23:24 --> Input Class Initialized
+INFO - 2020-09-21 15:23:24 --> Language Class Initialized
+INFO - 2020-09-21 15:23:24 --> Language Class Initialized
+INFO - 2020-09-21 15:23:24 --> Config Class Initialized
+INFO - 2020-09-21 15:23:24 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:23:24 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:23:24 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:23:24 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:23:24 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:23:24 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:23:24 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:23:24 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:23:24 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:23:25 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:25 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:25 --> Email Class Initialized
+INFO - 2020-09-21 15:23:25 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:23:25 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:23:25 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:23:25 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:23:25 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:23:25 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:23:25 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:23:25 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/home.php
+DEBUG - 2020-09-21 15:23:25 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:23:25 --> Final output sent to browser
+DEBUG - 2020-09-21 15:23:25 --> Total execution time: 2.3400
+INFO - 2020-09-21 15:23:35 --> Config Class Initialized
+INFO - 2020-09-21 15:23:36 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:23:36 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:23:36 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:23:36 --> URI Class Initialized
+INFO - 2020-09-21 15:23:36 --> Router Class Initialized
+INFO - 2020-09-21 15:23:36 --> Output Class Initialized
+INFO - 2020-09-21 15:23:36 --> Security Class Initialized
+DEBUG - 2020-09-21 15:23:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:23:36 --> Input Class Initialized
+INFO - 2020-09-21 15:23:36 --> Language Class Initialized
+INFO - 2020-09-21 15:23:36 --> Language Class Initialized
+INFO - 2020-09-21 15:23:36 --> Config Class Initialized
+INFO - 2020-09-21 15:23:36 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:23:36 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:23:36 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:23:36 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:23:36 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:23:36 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:23:36 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:23:36 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:23:37 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:23:37 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:37 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:37 --> Email Class Initialized
+INFO - 2020-09-21 15:23:37 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:23:37 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:23:37 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:23:37 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:23:37 --> Template MX_Controller Initialized
+INFO - 2020-09-21 15:23:37 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2020-09-21 15:23:37 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_home/models/Login.php
+ERROR - 2020-09-21 15:23:37 --> Severity: Notice --> Undefined index: uid C:\Apache24\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 36
+ERROR - 2020-09-21 15:23:37 --> Severity: Notice --> Undefined index: district_id C:\Apache24\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 41
+ERROR - 2020-09-21 15:23:37 --> Severity: Notice --> Undefined index: basin_id C:\Apache24\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 42
+INFO - 2020-09-21 15:23:37 --> Config Class Initialized
+INFO - 2020-09-21 15:23:38 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:23:38 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:23:38 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:23:38 --> URI Class Initialized
+INFO - 2020-09-21 15:23:38 --> Router Class Initialized
+INFO - 2020-09-21 15:23:38 --> Output Class Initialized
+INFO - 2020-09-21 15:23:38 --> Security Class Initialized
+DEBUG - 2020-09-21 15:23:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:23:38 --> Input Class Initialized
+INFO - 2020-09-21 15:23:38 --> Language Class Initialized
+INFO - 2020-09-21 15:23:38 --> Language Class Initialized
+INFO - 2020-09-21 15:23:38 --> Config Class Initialized
+INFO - 2020-09-21 15:23:38 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:23:38 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:23:38 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:23:38 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:23:39 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:23:39 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:23:39 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:23:39 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:23:39 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:23:39 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:39 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:39 --> Email Class Initialized
+INFO - 2020-09-21 15:23:39 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:23:39 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:23:39 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:23:39 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2020-09-21 15:23:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:23:40 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:23:40 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2020-09-21 15:23:40 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:23:40 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/home.php
+DEBUG - 2020-09-21 15:23:40 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:23:40 --> Final output sent to browser
+DEBUG - 2020-09-21 15:23:40 --> Total execution time: 2.7224
+INFO - 2020-09-21 15:23:41 --> Config Class Initialized
+INFO - 2020-09-21 15:23:41 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:23:41 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:23:41 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:23:42 --> URI Class Initialized
+INFO - 2020-09-21 15:23:42 --> Router Class Initialized
+INFO - 2020-09-21 15:23:42 --> Output Class Initialized
+INFO - 2020-09-21 15:23:42 --> Security Class Initialized
+DEBUG - 2020-09-21 15:23:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:23:42 --> Input Class Initialized
+INFO - 2020-09-21 15:23:42 --> Language Class Initialized
+INFO - 2020-09-21 15:23:42 --> Config Class Initialized
+INFO - 2020-09-21 15:23:42 --> Language Class Initialized
+INFO - 2020-09-21 15:23:42 --> Hooks Class Initialized
+INFO - 2020-09-21 15:23:42 --> Config Class Initialized
+DEBUG - 2020-09-21 15:23:42 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:23:42 --> Loader Class Initialized
+INFO - 2020-09-21 15:23:42 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:23:42 --> URI Class Initialized
+DEBUG - 2020-09-21 15:23:42 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:23:42 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:23:42 --> Router Class Initialized
+INFO - 2020-09-21 15:23:42 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:23:42 --> Output Class Initialized
+INFO - 2020-09-21 15:23:42 --> Security Class Initialized
+INFO - 2020-09-21 15:23:42 --> Helper loaded: adminurl_helper
+DEBUG - 2020-09-21 15:23:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:23:42 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:23:42 --> Input Class Initialized
+INFO - 2020-09-21 15:23:42 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:23:42 --> Language Class Initialized
+INFO - 2020-09-21 15:23:42 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:23:42 --> Language Class Initialized
+INFO - 2020-09-21 15:23:42 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:23:43 --> Config Class Initialized
+INFO - 2020-09-21 15:23:43 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:23:43 --> Loader Class Initialized
+INFO - 2020-09-21 15:23:43 --> Database Driver Class Initialized
+DEBUG - 2020-09-21 15:23:43 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:23:43 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:23:43 --> Email Class Initialized
+INFO - 2020-09-21 15:23:43 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:23:43 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:23:43 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:23:43 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:23:43 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:23:43 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:23:43 --> Controller Class Initialized
+INFO - 2020-09-21 15:23:43 --> Helper loaded: mail_helper
+DEBUG - 2020-09-21 15:23:43 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:23:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+INFO - 2020-09-21 15:23:43 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:23:43 --> Database Driver Class Initialized
+DEBUG - 2020-09-21 15:23:43 --> Template MX_Controller Initialized
+INFO - 2020-09-21 15:23:43 --> Database Driver Class Initialized
+DEBUG - 2020-09-21 15:23:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:23:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+INFO - 2020-09-21 15:23:43 --> Email Class Initialized
+DEBUG - 2020-09-21 15:23:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:23:43 --> Final output sent to browser
+DEBUG - 2020-09-21 15:23:43 --> Total execution time: 2.1843
+INFO - 2020-09-21 15:23:43 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:23:43 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:23:44 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:23:44 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:23:44 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:23:44 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:23:44 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:23:44 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:23:44 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:23:44 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:23:44 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:23:44 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:23:44 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:23:44 --> Final output sent to browser
+DEBUG - 2020-09-21 15:23:45 --> Total execution time: 2.6108
+INFO - 2020-09-21 15:24:48 --> Config Class Initialized
+INFO - 2020-09-21 15:24:48 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:24:48 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:24:48 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:24:48 --> URI Class Initialized
+INFO - 2020-09-21 15:24:48 --> Router Class Initialized
+INFO - 2020-09-21 15:24:48 --> Output Class Initialized
+INFO - 2020-09-21 15:24:48 --> Security Class Initialized
+DEBUG - 2020-09-21 15:24:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:24:49 --> Input Class Initialized
+INFO - 2020-09-21 15:24:49 --> Language Class Initialized
+INFO - 2020-09-21 15:24:49 --> Language Class Initialized
+INFO - 2020-09-21 15:24:49 --> Config Class Initialized
+INFO - 2020-09-21 15:24:49 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:24:49 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:24:49 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:24:49 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:24:49 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:24:49 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:24:49 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:24:49 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:24:49 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:24:49 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:24:49 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:24:49 --> Email Class Initialized
+INFO - 2020-09-21 15:24:49 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:24:49 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:24:49 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:24:50 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2020-09-21 15:24:50 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:24:50 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:24:50 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2020-09-21 15:24:50 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:24:50 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/home.php
+DEBUG - 2020-09-21 15:24:50 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:24:50 --> Final output sent to browser
+DEBUG - 2020-09-21 15:24:50 --> Total execution time: 1.7428
+INFO - 2020-09-21 15:24:51 --> Config Class Initialized
+INFO - 2020-09-21 15:24:51 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:24:51 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:24:51 --> Config Class Initialized
+INFO - 2020-09-21 15:24:51 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:24:51 --> Hooks Class Initialized
+INFO - 2020-09-21 15:24:51 --> URI Class Initialized
+DEBUG - 2020-09-21 15:24:51 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:24:51 --> Router Class Initialized
+INFO - 2020-09-21 15:24:51 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:24:51 --> Output Class Initialized
+INFO - 2020-09-21 15:24:51 --> URI Class Initialized
+INFO - 2020-09-21 15:24:51 --> Security Class Initialized
+INFO - 2020-09-21 15:24:51 --> Router Class Initialized
+DEBUG - 2020-09-21 15:24:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:24:51 --> Output Class Initialized
+INFO - 2020-09-21 15:24:51 --> Security Class Initialized
+INFO - 2020-09-21 15:24:51 --> Input Class Initialized
+INFO - 2020-09-21 15:24:51 --> Language Class Initialized
+DEBUG - 2020-09-21 15:24:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:24:51 --> Language Class Initialized
+INFO - 2020-09-21 15:24:51 --> Input Class Initialized
+INFO - 2020-09-21 15:24:51 --> Config Class Initialized
+INFO - 2020-09-21 15:24:51 --> Language Class Initialized
+INFO - 2020-09-21 15:24:51 --> Loader Class Initialized
+INFO - 2020-09-21 15:24:51 --> Language Class Initialized
+DEBUG - 2020-09-21 15:24:51 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:24:51 --> Config Class Initialized
+INFO - 2020-09-21 15:24:51 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:24:51 --> Loader Class Initialized
+INFO - 2020-09-21 15:24:51 --> Helper loaded: form_helper
+DEBUG - 2020-09-21 15:24:51 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:24:51 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:24:51 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:24:51 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:24:51 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:24:52 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:24:52 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:24:52 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:24:52 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:24:52 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:24:52 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:24:52 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:24:52 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:24:52 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:24:52 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:24:52 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:24:52 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:24:52 --> Email Class Initialized
+INFO - 2020-09-21 15:24:52 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:24:52 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:24:52 --> Email Class Initialized
+INFO - 2020-09-21 15:24:52 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:24:52 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:24:52 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:24:52 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:24:52 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:24:52 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:24:52 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:24:52 --> Final output sent to browser
+DEBUG - 2020-09-21 15:24:52 --> Total execution time: 1.7153
+INFO - 2020-09-21 15:24:52 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:24:52 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:24:52 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:24:53 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:24:53 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:24:53 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:24:53 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:24:53 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:24:53 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:24:53 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:24:53 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:24:53 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:24:53 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:24:53 --> Final output sent to browser
+DEBUG - 2020-09-21 15:24:53 --> Total execution time: 2.3190
+INFO - 2020-09-21 15:32:57 --> Config Class Initialized
+INFO - 2020-09-21 15:32:58 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:32:58 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:32:58 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:32:58 --> URI Class Initialized
+INFO - 2020-09-21 15:32:58 --> Router Class Initialized
+INFO - 2020-09-21 15:32:58 --> Output Class Initialized
+INFO - 2020-09-21 15:32:58 --> Security Class Initialized
+DEBUG - 2020-09-21 15:32:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:32:58 --> Input Class Initialized
+INFO - 2020-09-21 15:32:58 --> Language Class Initialized
+INFO - 2020-09-21 15:32:58 --> Language Class Initialized
+INFO - 2020-09-21 15:32:58 --> Config Class Initialized
+INFO - 2020-09-21 15:32:58 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:32:58 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:32:58 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:32:58 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:32:58 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:32:58 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:32:58 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:32:58 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:32:58 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:32:59 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:32:59 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:32:59 --> Email Class Initialized
+INFO - 2020-09-21 15:32:59 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:32:59 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:32:59 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:32:59 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2020-09-21 15:32:59 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:32:59 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:32:59 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2020-09-21 15:32:59 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:32:59 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/home.php
+DEBUG - 2020-09-21 15:32:59 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:32:59 --> Final output sent to browser
+DEBUG - 2020-09-21 15:32:59 --> Total execution time: 1.7859
+INFO - 2020-09-21 15:33:00 --> Config Class Initialized
+INFO - 2020-09-21 15:33:00 --> Config Class Initialized
+INFO - 2020-09-21 15:33:00 --> Hooks Class Initialized
+INFO - 2020-09-21 15:33:00 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:33:00 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 15:33:00 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:33:00 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:33:00 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:33:00 --> URI Class Initialized
+INFO - 2020-09-21 15:33:00 --> URI Class Initialized
+INFO - 2020-09-21 15:33:00 --> Router Class Initialized
+INFO - 2020-09-21 15:33:00 --> Output Class Initialized
+INFO - 2020-09-21 15:33:00 --> Router Class Initialized
+INFO - 2020-09-21 15:33:00 --> Security Class Initialized
+INFO - 2020-09-21 15:33:00 --> Output Class Initialized
+DEBUG - 2020-09-21 15:33:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:33:00 --> Security Class Initialized
+INFO - 2020-09-21 15:33:00 --> Input Class Initialized
+DEBUG - 2020-09-21 15:33:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:33:00 --> Language Class Initialized
+INFO - 2020-09-21 15:33:00 --> Input Class Initialized
+INFO - 2020-09-21 15:33:00 --> Language Class Initialized
+INFO - 2020-09-21 15:33:00 --> Language Class Initialized
+INFO - 2020-09-21 15:33:00 --> Config Class Initialized
+INFO - 2020-09-21 15:33:00 --> Language Class Initialized
+INFO - 2020-09-21 15:33:00 --> Config Class Initialized
+INFO - 2020-09-21 15:33:00 --> Loader Class Initialized
+INFO - 2020-09-21 15:33:00 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:33:00 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2020-09-21 15:33:00 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:33:00 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:33:00 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:33:00 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:33:01 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:33:01 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:33:01 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:33:01 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:33:01 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:33:01 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:33:01 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:33:01 --> Email Class Initialized
+INFO - 2020-09-21 15:33:01 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:33:01 --> Email Class Initialized
+INFO - 2020-09-21 15:33:01 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:33:01 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:33:01 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:33:01 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:33:01 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:33:01 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:33:01 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:33:01 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:33:01 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:33:01 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:33:01 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:33:02 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:33:02 --> Final output sent to browser
+DEBUG - 2020-09-21 15:33:02 --> Total execution time: 1.9120
+INFO - 2020-09-21 15:33:02 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:33:02 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:33:02 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:33:02 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:33:02 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:33:02 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:33:02 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:33:02 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:33:02 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:33:02 --> Final output sent to browser
+DEBUG - 2020-09-21 15:33:02 --> Total execution time: 2.3892
+INFO - 2020-09-21 15:42:34 --> Config Class Initialized
+INFO - 2020-09-21 15:42:34 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:42:34 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:42:34 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:42:34 --> URI Class Initialized
+INFO - 2020-09-21 15:42:34 --> Router Class Initialized
+INFO - 2020-09-21 15:42:34 --> Output Class Initialized
+INFO - 2020-09-21 15:42:34 --> Security Class Initialized
+DEBUG - 2020-09-21 15:42:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:42:34 --> Input Class Initialized
+INFO - 2020-09-21 15:42:34 --> Language Class Initialized
+INFO - 2020-09-21 15:42:34 --> Language Class Initialized
+INFO - 2020-09-21 15:42:34 --> Config Class Initialized
+INFO - 2020-09-21 15:42:34 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:42:34 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:42:34 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:42:34 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:42:34 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:42:34 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:42:34 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:42:35 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:42:35 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:42:35 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:42:35 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:42:35 --> Email Class Initialized
+INFO - 2020-09-21 15:42:35 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:42:35 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:42:35 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:42:35 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2020-09-21 15:42:35 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:42:35 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:42:35 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2020-09-21 15:42:35 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:42:35 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/home.php
+DEBUG - 2020-09-21 15:42:35 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:42:35 --> Final output sent to browser
+DEBUG - 2020-09-21 15:42:35 --> Total execution time: 1.8488
+INFO - 2020-09-21 15:42:36 --> Config Class Initialized
+INFO - 2020-09-21 15:42:36 --> Config Class Initialized
+INFO - 2020-09-21 15:42:36 --> Hooks Class Initialized
+INFO - 2020-09-21 15:42:36 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:42:36 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 15:42:36 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:42:36 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:42:36 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:42:36 --> URI Class Initialized
+INFO - 2020-09-21 15:42:36 --> URI Class Initialized
+INFO - 2020-09-21 15:42:36 --> Router Class Initialized
+INFO - 2020-09-21 15:42:36 --> Router Class Initialized
+INFO - 2020-09-21 15:42:36 --> Output Class Initialized
+INFO - 2020-09-21 15:42:36 --> Output Class Initialized
+INFO - 2020-09-21 15:42:36 --> Security Class Initialized
+INFO - 2020-09-21 15:42:36 --> Security Class Initialized
+DEBUG - 2020-09-21 15:42:36 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-09-21 15:42:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:42:36 --> Input Class Initialized
+INFO - 2020-09-21 15:42:36 --> Input Class Initialized
+INFO - 2020-09-21 15:42:36 --> Language Class Initialized
+INFO - 2020-09-21 15:42:36 --> Language Class Initialized
+INFO - 2020-09-21 15:42:36 --> Language Class Initialized
+INFO - 2020-09-21 15:42:36 --> Language Class Initialized
+INFO - 2020-09-21 15:42:36 --> Config Class Initialized
+INFO - 2020-09-21 15:42:36 --> Config Class Initialized
+INFO - 2020-09-21 15:42:36 --> Loader Class Initialized
+INFO - 2020-09-21 15:42:36 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:42:36 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2020-09-21 15:42:36 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:42:36 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:42:36 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:42:37 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:42:37 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:42:37 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:42:37 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:42:37 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:42:37 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:42:37 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:42:37 --> Email Class Initialized
+INFO - 2020-09-21 15:42:37 --> Email Class Initialized
+INFO - 2020-09-21 15:42:37 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:42:37 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:42:37 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:42:37 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:42:37 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:42:37 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:42:37 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:42:37 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:42:37 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:42:37 --> Final output sent to browser
+DEBUG - 2020-09-21 15:42:37 --> Total execution time: 1.7005
+INFO - 2020-09-21 15:42:38 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:42:38 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:42:38 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:42:38 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:42:38 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:42:38 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:42:38 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:42:38 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:42:38 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:42:38 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:42:38 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:42:38 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:42:38 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:42:38 --> Final output sent to browser
+DEBUG - 2020-09-21 15:42:38 --> Total execution time: 2.4179
+INFO - 2020-09-21 15:57:17 --> Config Class Initialized
+INFO - 2020-09-21 15:57:17 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:57:17 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:57:17 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:57:17 --> URI Class Initialized
+INFO - 2020-09-21 15:57:17 --> Router Class Initialized
+INFO - 2020-09-21 15:57:17 --> Output Class Initialized
+INFO - 2020-09-21 15:57:17 --> Security Class Initialized
+DEBUG - 2020-09-21 15:57:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:57:17 --> Input Class Initialized
+INFO - 2020-09-21 15:57:17 --> Language Class Initialized
+INFO - 2020-09-21 15:57:17 --> Language Class Initialized
+INFO - 2020-09-21 15:57:17 --> Config Class Initialized
+INFO - 2020-09-21 15:57:18 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:57:18 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:57:18 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:57:18 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:57:18 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:57:18 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:57:18 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:57:18 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:57:18 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:57:18 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:18 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:18 --> Email Class Initialized
+INFO - 2020-09-21 15:57:18 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:57:18 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:57:18 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:57:18 --> Supplier_delivery MX_Controller Initialized
+DEBUG - 2020-09-21 15:57:18 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:57:18 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:57:18 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:57:19 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_delivery/views/home.php
+DEBUG - 2020-09-21 15:57:19 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:57:19 --> Final output sent to browser
+DEBUG - 2020-09-21 15:57:19 --> Total execution time: 1.7738
+INFO - 2020-09-21 15:57:22 --> Config Class Initialized
+INFO - 2020-09-21 15:57:22 --> Config Class Initialized
+INFO - 2020-09-21 15:57:22 --> Hooks Class Initialized
+INFO - 2020-09-21 15:57:22 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:57:22 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 15:57:22 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:57:22 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:57:22 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:57:22 --> URI Class Initialized
+INFO - 2020-09-21 15:57:22 --> URI Class Initialized
+INFO - 2020-09-21 15:57:22 --> Router Class Initialized
+INFO - 2020-09-21 15:57:22 --> Router Class Initialized
+INFO - 2020-09-21 15:57:22 --> Output Class Initialized
+INFO - 2020-09-21 15:57:22 --> Output Class Initialized
+INFO - 2020-09-21 15:57:22 --> Security Class Initialized
+INFO - 2020-09-21 15:57:22 --> Security Class Initialized
+DEBUG - 2020-09-21 15:57:23 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-09-21 15:57:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:57:23 --> Input Class Initialized
+INFO - 2020-09-21 15:57:23 --> Input Class Initialized
+INFO - 2020-09-21 15:57:23 --> Language Class Initialized
+INFO - 2020-09-21 15:57:23 --> Language Class Initialized
+INFO - 2020-09-21 15:57:23 --> Language Class Initialized
+INFO - 2020-09-21 15:57:23 --> Language Class Initialized
+INFO - 2020-09-21 15:57:23 --> Config Class Initialized
+INFO - 2020-09-21 15:57:23 --> Config Class Initialized
+INFO - 2020-09-21 15:57:23 --> Loader Class Initialized
+INFO - 2020-09-21 15:57:23 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:57:23 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2020-09-21 15:57:23 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:57:23 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:57:23 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:57:23 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:57:23 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:57:23 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:23 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:23 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:23 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:23 --> Email Class Initialized
+INFO - 2020-09-21 15:57:23 --> Email Class Initialized
+INFO - 2020-09-21 15:57:23 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:57:23 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:57:23 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:57:24 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:57:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:57:24 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:57:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:57:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:57:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:57:24 --> Final output sent to browser
+DEBUG - 2020-09-21 15:57:24 --> Total execution time: 1.6849
+INFO - 2020-09-21 15:57:24 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:57:24 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:57:24 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:57:24 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:57:24 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:57:24 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:57:24 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:57:24 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:57:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:57:24 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:57:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:57:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:57:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:57:25 --> Final output sent to browser
+DEBUG - 2020-09-21 15:57:25 --> Total execution time: 2.4058
+INFO - 2020-09-21 15:57:40 --> Config Class Initialized
+INFO - 2020-09-21 15:57:40 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:57:40 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:57:40 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:57:40 --> URI Class Initialized
+INFO - 2020-09-21 15:57:41 --> Router Class Initialized
+INFO - 2020-09-21 15:57:41 --> Output Class Initialized
+INFO - 2020-09-21 15:57:41 --> Security Class Initialized
+DEBUG - 2020-09-21 15:57:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:57:41 --> Input Class Initialized
+INFO - 2020-09-21 15:57:41 --> Language Class Initialized
+INFO - 2020-09-21 15:57:41 --> Language Class Initialized
+INFO - 2020-09-21 15:57:41 --> Config Class Initialized
+INFO - 2020-09-21 15:57:41 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:57:41 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:57:41 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:57:41 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:57:41 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:57:41 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:57:41 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:57:41 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:57:41 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:57:41 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:41 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:42 --> Email Class Initialized
+INFO - 2020-09-21 15:57:42 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:57:42 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:57:42 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:57:42 --> Supplier_purchase_order MX_Controller Initialized
+DEBUG - 2020-09-21 15:57:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:57:42 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:57:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:57:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_purchase_order/views/home.php
+DEBUG - 2020-09-21 15:57:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:57:42 --> Final output sent to browser
+DEBUG - 2020-09-21 15:57:42 --> Total execution time: 1.8059
+INFO - 2020-09-21 15:57:42 --> Config Class Initialized
+INFO - 2020-09-21 15:57:42 --> Config Class Initialized
+INFO - 2020-09-21 15:57:43 --> Hooks Class Initialized
+INFO - 2020-09-21 15:57:43 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:57:43 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 15:57:43 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:57:43 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:57:43 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:57:43 --> URI Class Initialized
+INFO - 2020-09-21 15:57:43 --> URI Class Initialized
+INFO - 2020-09-21 15:57:43 --> Router Class Initialized
+INFO - 2020-09-21 15:57:43 --> Router Class Initialized
+INFO - 2020-09-21 15:57:43 --> Output Class Initialized
+INFO - 2020-09-21 15:57:43 --> Output Class Initialized
+INFO - 2020-09-21 15:57:43 --> Security Class Initialized
+INFO - 2020-09-21 15:57:43 --> Security Class Initialized
+DEBUG - 2020-09-21 15:57:43 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-09-21 15:57:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:57:43 --> Input Class Initialized
+INFO - 2020-09-21 15:57:43 --> Input Class Initialized
+INFO - 2020-09-21 15:57:43 --> Language Class Initialized
+INFO - 2020-09-21 15:57:43 --> Language Class Initialized
+INFO - 2020-09-21 15:57:43 --> Language Class Initialized
+INFO - 2020-09-21 15:57:43 --> Language Class Initialized
+INFO - 2020-09-21 15:57:43 --> Config Class Initialized
+INFO - 2020-09-21 15:57:43 --> Config Class Initialized
+INFO - 2020-09-21 15:57:43 --> Loader Class Initialized
+INFO - 2020-09-21 15:57:43 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:57:43 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2020-09-21 15:57:43 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:57:43 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:57:43 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:57:43 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:57:43 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:57:44 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:44 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:44 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:44 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:57:44 --> Email Class Initialized
+INFO - 2020-09-21 15:57:44 --> Email Class Initialized
+INFO - 2020-09-21 15:57:44 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:57:44 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:57:44 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:57:44 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:57:44 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:57:44 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:57:44 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:57:44 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:57:44 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:57:44 --> Final output sent to browser
+DEBUG - 2020-09-21 15:57:44 --> Total execution time: 1.7017
+INFO - 2020-09-21 15:57:44 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:57:44 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:57:44 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:57:44 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:57:44 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:57:45 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:57:45 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:57:45 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:57:45 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:57:45 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:57:45 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:57:45 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:57:45 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:57:45 --> Final output sent to browser
+DEBUG - 2020-09-21 15:57:45 --> Total execution time: 2.4394
+INFO - 2020-09-21 15:58:15 --> Config Class Initialized
+INFO - 2020-09-21 15:58:15 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:58:15 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:58:16 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:16 --> URI Class Initialized
+INFO - 2020-09-21 15:58:16 --> Router Class Initialized
+INFO - 2020-09-21 15:58:16 --> Output Class Initialized
+INFO - 2020-09-21 15:58:16 --> Security Class Initialized
+DEBUG - 2020-09-21 15:58:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:58:16 --> Input Class Initialized
+INFO - 2020-09-21 15:58:16 --> Language Class Initialized
+INFO - 2020-09-21 15:58:16 --> Language Class Initialized
+INFO - 2020-09-21 15:58:16 --> Config Class Initialized
+INFO - 2020-09-21 15:58:16 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:58:16 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:58:16 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:58:16 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:16 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:16 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:16 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:16 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:16 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:16 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:16 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:17 --> Email Class Initialized
+INFO - 2020-09-21 15:58:17 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:17 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:17 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:58:17 --> Supplier_accounts MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:17 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:58:17 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:17 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:58:17 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_accounts/views/home.php
+DEBUG - 2020-09-21 15:58:17 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:58:17 --> Final output sent to browser
+DEBUG - 2020-09-21 15:58:17 --> Total execution time: 1.8526
+INFO - 2020-09-21 15:58:18 --> Config Class Initialized
+INFO - 2020-09-21 15:58:18 --> Config Class Initialized
+INFO - 2020-09-21 15:58:18 --> Hooks Class Initialized
+INFO - 2020-09-21 15:58:18 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:58:18 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 15:58:18 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:58:18 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:18 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:18 --> URI Class Initialized
+INFO - 2020-09-21 15:58:18 --> URI Class Initialized
+INFO - 2020-09-21 15:58:18 --> Router Class Initialized
+INFO - 2020-09-21 15:58:18 --> Router Class Initialized
+INFO - 2020-09-21 15:58:18 --> Output Class Initialized
+INFO - 2020-09-21 15:58:18 --> Output Class Initialized
+INFO - 2020-09-21 15:58:18 --> Security Class Initialized
+INFO - 2020-09-21 15:58:18 --> Security Class Initialized
+DEBUG - 2020-09-21 15:58:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:58:18 --> Input Class Initialized
+DEBUG - 2020-09-21 15:58:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:58:18 --> Language Class Initialized
+INFO - 2020-09-21 15:58:18 --> Input Class Initialized
+INFO - 2020-09-21 15:58:18 --> Language Class Initialized
+INFO - 2020-09-21 15:58:18 --> Language Class Initialized
+INFO - 2020-09-21 15:58:18 --> Language Class Initialized
+INFO - 2020-09-21 15:58:18 --> Config Class Initialized
+INFO - 2020-09-21 15:58:18 --> Config Class Initialized
+INFO - 2020-09-21 15:58:18 --> Loader Class Initialized
+INFO - 2020-09-21 15:58:18 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:58:18 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:58:18 --> Helper loaded: url_helper
+DEBUG - 2020-09-21 15:58:18 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:58:18 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:58:18 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:18 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:18 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:18 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:18 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:18 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:18 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:19 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:19 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:19 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:19 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:19 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:19 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:19 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:19 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:19 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:19 --> Email Class Initialized
+INFO - 2020-09-21 15:58:19 --> Email Class Initialized
+INFO - 2020-09-21 15:58:19 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:19 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:19 --> Controller Class Initialized
+ERROR - 2020-09-21 15:58:19 --> 404 Page Not Found: ../modules/supplier/supplier_accounts/controllers/Supplier_accounts/images
+INFO - 2020-09-21 15:58:19 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:19 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:19 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:58:19 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:19 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:58:19 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:19 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:58:19 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:58:19 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:58:19 --> Final output sent to browser
+DEBUG - 2020-09-21 15:58:20 --> Total execution time: 1.9293
+INFO - 2020-09-21 15:58:28 --> Config Class Initialized
+INFO - 2020-09-21 15:58:28 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:58:28 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:58:28 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:28 --> URI Class Initialized
+INFO - 2020-09-21 15:58:28 --> Router Class Initialized
+INFO - 2020-09-21 15:58:28 --> Output Class Initialized
+INFO - 2020-09-21 15:58:28 --> Security Class Initialized
+DEBUG - 2020-09-21 15:58:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:58:29 --> Input Class Initialized
+INFO - 2020-09-21 15:58:29 --> Language Class Initialized
+INFO - 2020-09-21 15:58:29 --> Language Class Initialized
+INFO - 2020-09-21 15:58:29 --> Config Class Initialized
+INFO - 2020-09-21 15:58:29 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:58:29 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:58:29 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:58:29 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:29 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:29 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:29 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:29 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:29 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:29 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:29 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:29 --> Email Class Initialized
+INFO - 2020-09-21 15:58:29 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:29 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:29 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:58:29 --> Supplier_purchase_order MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:30 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:58:30 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:30 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:58:30 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_purchase_order/views/home.php
+DEBUG - 2020-09-21 15:58:30 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:58:30 --> Final output sent to browser
+DEBUG - 2020-09-21 15:58:30 --> Total execution time: 1.7212
+INFO - 2020-09-21 15:58:30 --> Config Class Initialized
+INFO - 2020-09-21 15:58:30 --> Config Class Initialized
+INFO - 2020-09-21 15:58:30 --> Hooks Class Initialized
+INFO - 2020-09-21 15:58:30 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:58:30 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 15:58:30 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:58:30 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:30 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:30 --> URI Class Initialized
+INFO - 2020-09-21 15:58:30 --> URI Class Initialized
+INFO - 2020-09-21 15:58:30 --> Router Class Initialized
+INFO - 2020-09-21 15:58:30 --> Router Class Initialized
+INFO - 2020-09-21 15:58:30 --> Output Class Initialized
+INFO - 2020-09-21 15:58:30 --> Output Class Initialized
+INFO - 2020-09-21 15:58:30 --> Security Class Initialized
+INFO - 2020-09-21 15:58:31 --> Security Class Initialized
+DEBUG - 2020-09-21 15:58:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-09-21 15:58:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:58:31 --> Input Class Initialized
+INFO - 2020-09-21 15:58:31 --> Input Class Initialized
+INFO - 2020-09-21 15:58:31 --> Language Class Initialized
+INFO - 2020-09-21 15:58:31 --> Language Class Initialized
+INFO - 2020-09-21 15:58:31 --> Language Class Initialized
+INFO - 2020-09-21 15:58:31 --> Language Class Initialized
+INFO - 2020-09-21 15:58:31 --> Config Class Initialized
+INFO - 2020-09-21 15:58:31 --> Config Class Initialized
+INFO - 2020-09-21 15:58:31 --> Loader Class Initialized
+INFO - 2020-09-21 15:58:31 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:58:31 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2020-09-21 15:58:31 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:58:31 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:31 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:31 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:31 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:31 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:31 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:31 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:31 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:31 --> Email Class Initialized
+INFO - 2020-09-21 15:58:31 --> Email Class Initialized
+INFO - 2020-09-21 15:58:31 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:31 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:32 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:58:32 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:58:32 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:58:32 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:58:32 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:58:32 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:58:32 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:58:32 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:58:32 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:58:32 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:58:32 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:58:32 --> Final output sent to browser
+DEBUG - 2020-09-21 15:58:32 --> Total execution time: 1.8962
+INFO - 2020-09-21 15:58:32 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:32 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:32 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:58:32 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:32 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:58:32 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:32 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:58:32 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:58:33 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:58:33 --> Final output sent to browser
+DEBUG - 2020-09-21 15:58:33 --> Total execution time: 2.4086
+INFO - 2020-09-21 15:58:37 --> Config Class Initialized
+INFO - 2020-09-21 15:58:37 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:58:37 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:58:37 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:37 --> URI Class Initialized
+INFO - 2020-09-21 15:58:37 --> Router Class Initialized
+INFO - 2020-09-21 15:58:38 --> Output Class Initialized
+INFO - 2020-09-21 15:58:38 --> Security Class Initialized
+DEBUG - 2020-09-21 15:58:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:58:38 --> Input Class Initialized
+INFO - 2020-09-21 15:58:38 --> Language Class Initialized
+INFO - 2020-09-21 15:58:38 --> Language Class Initialized
+INFO - 2020-09-21 15:58:38 --> Config Class Initialized
+INFO - 2020-09-21 15:58:38 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:58:38 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:58:38 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:58:38 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:38 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:38 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:38 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:38 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:38 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:38 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:38 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:38 --> Email Class Initialized
+INFO - 2020-09-21 15:58:39 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:39 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:39 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:58:39 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:58:39 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2020-09-21 15:58:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:58:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/home.php
+DEBUG - 2020-09-21 15:58:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:58:39 --> Final output sent to browser
+DEBUG - 2020-09-21 15:58:39 --> Total execution time: 1.7569
+INFO - 2020-09-21 15:58:39 --> Config Class Initialized
+INFO - 2020-09-21 15:58:39 --> Config Class Initialized
+INFO - 2020-09-21 15:58:39 --> Hooks Class Initialized
+INFO - 2020-09-21 15:58:39 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:58:39 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 15:58:39 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:58:40 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:40 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:58:40 --> URI Class Initialized
+INFO - 2020-09-21 15:58:40 --> URI Class Initialized
+INFO - 2020-09-21 15:58:40 --> Router Class Initialized
+INFO - 2020-09-21 15:58:40 --> Router Class Initialized
+INFO - 2020-09-21 15:58:40 --> Output Class Initialized
+INFO - 2020-09-21 15:58:40 --> Output Class Initialized
+INFO - 2020-09-21 15:58:40 --> Security Class Initialized
+INFO - 2020-09-21 15:58:40 --> Security Class Initialized
+DEBUG - 2020-09-21 15:58:40 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-09-21 15:58:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:58:40 --> Input Class Initialized
+INFO - 2020-09-21 15:58:40 --> Input Class Initialized
+INFO - 2020-09-21 15:58:40 --> Language Class Initialized
+INFO - 2020-09-21 15:58:40 --> Language Class Initialized
+INFO - 2020-09-21 15:58:40 --> Language Class Initialized
+INFO - 2020-09-21 15:58:40 --> Language Class Initialized
+INFO - 2020-09-21 15:58:40 --> Config Class Initialized
+INFO - 2020-09-21 15:58:40 --> Config Class Initialized
+INFO - 2020-09-21 15:58:40 --> Loader Class Initialized
+INFO - 2020-09-21 15:58:40 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:58:40 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2020-09-21 15:58:40 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:58:40 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:40 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:58:40 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:40 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:58:40 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:40 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:40 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:40 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:58:41 --> Email Class Initialized
+INFO - 2020-09-21 15:58:41 --> Email Class Initialized
+INFO - 2020-09-21 15:58:41 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:41 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:41 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:58:41 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:58:41 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:58:41 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:58:41 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:58:41 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:58:41 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:58:41 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:58:41 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:58:41 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:58:41 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:58:41 --> Final output sent to browser
+DEBUG - 2020-09-21 15:58:41 --> Total execution time: 2.0374
+INFO - 2020-09-21 15:58:41 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:58:42 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:58:42 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:58:42 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:58:42 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:58:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:58:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:58:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:58:42 --> Final output sent to browser
+DEBUG - 2020-09-21 15:58:42 --> Total execution time: 2.5594
+INFO - 2020-09-21 15:59:37 --> Config Class Initialized
+INFO - 2020-09-21 15:59:37 --> Hooks Class Initialized
+DEBUG - 2020-09-21 15:59:37 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:59:37 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:59:37 --> URI Class Initialized
+INFO - 2020-09-21 15:59:37 --> Router Class Initialized
+INFO - 2020-09-21 15:59:37 --> Output Class Initialized
+INFO - 2020-09-21 15:59:38 --> Security Class Initialized
+DEBUG - 2020-09-21 15:59:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:59:38 --> Input Class Initialized
+INFO - 2020-09-21 15:59:38 --> Language Class Initialized
+INFO - 2020-09-21 15:59:38 --> Language Class Initialized
+INFO - 2020-09-21 15:59:38 --> Config Class Initialized
+INFO - 2020-09-21 15:59:38 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:59:38 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:59:38 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:59:38 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:59:38 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:59:38 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:59:38 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:59:38 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:59:38 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:59:38 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:59:38 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:59:38 --> Email Class Initialized
+INFO - 2020-09-21 15:59:38 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:59:39 --> Config Class Initialized
+INFO - 2020-09-21 15:59:39 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:59:39 --> Hooks Class Initialized
+INFO - 2020-09-21 15:59:39 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:59:39 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 15:59:39 --> Supplier_delivery MX_Controller Initialized
+INFO - 2020-09-21 15:59:39 --> Utf8 Class Initialized
+DEBUG - 2020-09-21 15:59:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+INFO - 2020-09-21 15:59:39 --> URI Class Initialized
+DEBUG - 2020-09-21 15:59:39 --> Template MX_Controller Initialized
+INFO - 2020-09-21 15:59:39 --> Router Class Initialized
+DEBUG - 2020-09-21 15:59:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+INFO - 2020-09-21 15:59:39 --> Output Class Initialized
+DEBUG - 2020-09-21 15:59:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_delivery/views/home.php
+INFO - 2020-09-21 15:59:39 --> Security Class Initialized
+DEBUG - 2020-09-21 15:59:39 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+DEBUG - 2020-09-21 15:59:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:59:39 --> Final output sent to browser
+INFO - 2020-09-21 15:59:39 --> Input Class Initialized
+DEBUG - 2020-09-21 15:59:39 --> Total execution time: 1.8003
+INFO - 2020-09-21 15:59:39 --> Language Class Initialized
+INFO - 2020-09-21 15:59:39 --> Language Class Initialized
+INFO - 2020-09-21 15:59:39 --> Config Class Initialized
+INFO - 2020-09-21 15:59:39 --> Loader Class Initialized
+DEBUG - 2020-09-21 15:59:39 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:59:39 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:59:39 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:59:39 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:59:39 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:59:39 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:59:39 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:59:40 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:59:40 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:59:40 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:59:40 --> Email Class Initialized
+INFO - 2020-09-21 15:59:40 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:59:40 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:59:40 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:59:40 --> Supplier_delivery MX_Controller Initialized
+DEBUG - 2020-09-21 15:59:40 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:59:40 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:59:40 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 15:59:40 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_delivery/views/home.php
+DEBUG - 2020-09-21 15:59:40 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 15:59:40 --> Final output sent to browser
+DEBUG - 2020-09-21 15:59:40 --> Total execution time: 1.7371
+INFO - 2020-09-21 15:59:41 --> Config Class Initialized
+INFO - 2020-09-21 15:59:41 --> Hooks Class Initialized
+INFO - 2020-09-21 15:59:41 --> Config Class Initialized
+DEBUG - 2020-09-21 15:59:41 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:59:41 --> Hooks Class Initialized
+INFO - 2020-09-21 15:59:41 --> Utf8 Class Initialized
+DEBUG - 2020-09-21 15:59:41 --> UTF-8 Support Enabled
+INFO - 2020-09-21 15:59:41 --> URI Class Initialized
+INFO - 2020-09-21 15:59:41 --> Utf8 Class Initialized
+INFO - 2020-09-21 15:59:41 --> Router Class Initialized
+INFO - 2020-09-21 15:59:41 --> URI Class Initialized
+INFO - 2020-09-21 15:59:41 --> Output Class Initialized
+INFO - 2020-09-21 15:59:41 --> Router Class Initialized
+INFO - 2020-09-21 15:59:41 --> Security Class Initialized
+INFO - 2020-09-21 15:59:41 --> Output Class Initialized
+DEBUG - 2020-09-21 15:59:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:59:41 --> Security Class Initialized
+INFO - 2020-09-21 15:59:41 --> Input Class Initialized
+DEBUG - 2020-09-21 15:59:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 15:59:41 --> Language Class Initialized
+INFO - 2020-09-21 15:59:41 --> Input Class Initialized
+INFO - 2020-09-21 15:59:41 --> Language Class Initialized
+INFO - 2020-09-21 15:59:41 --> Language Class Initialized
+INFO - 2020-09-21 15:59:41 --> Config Class Initialized
+INFO - 2020-09-21 15:59:41 --> Language Class Initialized
+INFO - 2020-09-21 15:59:41 --> Loader Class Initialized
+INFO - 2020-09-21 15:59:41 --> Config Class Initialized
+DEBUG - 2020-09-21 15:59:41 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:59:41 --> Loader Class Initialized
+INFO - 2020-09-21 15:59:41 --> Helper loaded: url_helper
+DEBUG - 2020-09-21 15:59:41 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 15:59:41 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:59:41 --> Helper loaded: url_helper
+INFO - 2020-09-21 15:59:41 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:59:41 --> Helper loaded: form_helper
+INFO - 2020-09-21 15:59:41 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:59:41 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 15:59:41 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:59:42 --> Helper loaded: site_helper
+INFO - 2020-09-21 15:59:42 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:59:42 --> Helper loaded: directory_helper
+INFO - 2020-09-21 15:59:42 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:59:42 --> Helper loaded: mail_helper
+INFO - 2020-09-21 15:59:42 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:59:42 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 15:59:42 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:59:42 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:59:42 --> Database Driver Class Initialized
+INFO - 2020-09-21 15:59:42 --> Email Class Initialized
+INFO - 2020-09-21 15:59:42 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:59:42 --> Email Class Initialized
+INFO - 2020-09-21 15:59:42 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:59:42 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:59:42 --> Template MX_Controller Initialized
+ERROR - 2020-09-21 15:59:42 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2020-09-21 15:59:42 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2020-09-21 15:59:42 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2020-09-21 15:59:42 --> Severity: Notice --> Undefined variable: page C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2020-09-21 15:59:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2020-09-21 15:59:42 --> Severity: Notice --> Undefined variable: showdashbaord C:\Apache24\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2020-09-21 15:59:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2020-09-21 15:59:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2020-09-21 15:59:42 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2020-09-21 15:59:42 --> Final output sent to browser
+DEBUG - 2020-09-21 15:59:43 --> Total execution time: 1.8556
+INFO - 2020-09-21 15:59:43 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 15:59:43 --> Form Validation Class Initialized
+INFO - 2020-09-21 15:59:43 --> Controller Class Initialized
+DEBUG - 2020-09-21 15:59:43 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 15:59:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 15:59:43 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 15:59:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 15:59:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 15:59:43 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 15:59:43 --> Final output sent to browser
+DEBUG - 2020-09-21 15:59:43 --> Total execution time: 2.3470
+INFO - 2020-09-21 16:00:23 --> Config Class Initialized
+INFO - 2020-09-21 16:00:23 --> Hooks Class Initialized
+DEBUG - 2020-09-21 16:00:23 --> UTF-8 Support Enabled
+INFO - 2020-09-21 16:00:23 --> Utf8 Class Initialized
+INFO - 2020-09-21 16:00:23 --> URI Class Initialized
+INFO - 2020-09-21 16:00:23 --> Router Class Initialized
+INFO - 2020-09-21 16:00:23 --> Output Class Initialized
+INFO - 2020-09-21 16:00:23 --> Security Class Initialized
+DEBUG - 2020-09-21 16:00:23 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 16:00:23 --> Input Class Initialized
+INFO - 2020-09-21 16:00:23 --> Language Class Initialized
+INFO - 2020-09-21 16:00:23 --> Language Class Initialized
+INFO - 2020-09-21 16:00:23 --> Config Class Initialized
+INFO - 2020-09-21 16:00:24 --> Loader Class Initialized
+DEBUG - 2020-09-21 16:00:24 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 16:00:24 --> Helper loaded: url_helper
+INFO - 2020-09-21 16:00:24 --> Helper loaded: form_helper
+INFO - 2020-09-21 16:00:24 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 16:00:24 --> Helper loaded: site_helper
+INFO - 2020-09-21 16:00:24 --> Helper loaded: directory_helper
+INFO - 2020-09-21 16:00:24 --> Helper loaded: mail_helper
+INFO - 2020-09-21 16:00:24 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 16:00:24 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:00:24 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:00:24 --> Email Class Initialized
+INFO - 2020-09-21 16:00:24 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 16:00:24 --> Form Validation Class Initialized
+INFO - 2020-09-21 16:00:24 --> Controller Class Initialized
+DEBUG - 2020-09-21 16:00:24 --> Supplier_accounts MX_Controller Initialized
+DEBUG - 2020-09-21 16:00:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 16:00:24 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 16:00:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 16:00:24 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_accounts/views/home.php
+DEBUG - 2020-09-21 16:00:25 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 16:00:25 --> Final output sent to browser
+DEBUG - 2020-09-21 16:00:25 --> Total execution time: 1.7554
+INFO - 2020-09-21 16:00:25 --> Config Class Initialized
+INFO - 2020-09-21 16:00:25 --> Config Class Initialized
+INFO - 2020-09-21 16:00:25 --> Hooks Class Initialized
+INFO - 2020-09-21 16:00:25 --> Hooks Class Initialized
+DEBUG - 2020-09-21 16:00:25 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 16:00:25 --> UTF-8 Support Enabled
+INFO - 2020-09-21 16:00:25 --> Utf8 Class Initialized
+INFO - 2020-09-21 16:00:25 --> Utf8 Class Initialized
+INFO - 2020-09-21 16:00:25 --> URI Class Initialized
+INFO - 2020-09-21 16:00:25 --> URI Class Initialized
+INFO - 2020-09-21 16:00:25 --> Router Class Initialized
+INFO - 2020-09-21 16:00:25 --> Router Class Initialized
+INFO - 2020-09-21 16:00:25 --> Output Class Initialized
+INFO - 2020-09-21 16:00:25 --> Output Class Initialized
+INFO - 2020-09-21 16:00:25 --> Security Class Initialized
+INFO - 2020-09-21 16:00:25 --> Security Class Initialized
+DEBUG - 2020-09-21 16:00:25 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-09-21 16:00:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 16:00:25 --> Input Class Initialized
+INFO - 2020-09-21 16:00:25 --> Input Class Initialized
+INFO - 2020-09-21 16:00:25 --> Language Class Initialized
+INFO - 2020-09-21 16:00:25 --> Language Class Initialized
+INFO - 2020-09-21 16:00:25 --> Language Class Initialized
+INFO - 2020-09-21 16:00:25 --> Language Class Initialized
+INFO - 2020-09-21 16:00:25 --> Config Class Initialized
+INFO - 2020-09-21 16:00:26 --> Config Class Initialized
+INFO - 2020-09-21 16:00:26 --> Loader Class Initialized
+INFO - 2020-09-21 16:00:26 --> Loader Class Initialized
+DEBUG - 2020-09-21 16:00:26 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2020-09-21 16:00:26 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 16:00:26 --> Helper loaded: url_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: url_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: form_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: form_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: site_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: site_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: directory_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: directory_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: mail_helper
+INFO - 2020-09-21 16:00:26 --> Helper loaded: mail_helper
+INFO - 2020-09-21 16:00:26 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 16:00:26 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 16:00:26 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:00:26 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:00:26 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:00:26 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:00:26 --> Email Class Initialized
+INFO - 2020-09-21 16:00:26 --> Email Class Initialized
+INFO - 2020-09-21 16:00:26 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 16:00:26 --> Form Validation Class Initialized
+INFO - 2020-09-21 16:00:26 --> Controller Class Initialized
+ERROR - 2020-09-21 16:00:26 --> 404 Page Not Found: ../modules/supplier/supplier_accounts/controllers/Supplier_accounts/images
+INFO - 2020-09-21 16:00:26 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 16:00:26 --> Form Validation Class Initialized
+INFO - 2020-09-21 16:00:26 --> Controller Class Initialized
+DEBUG - 2020-09-21 16:00:27 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 16:00:27 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 16:00:27 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 16:00:27 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 16:00:27 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 16:00:27 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 16:00:27 --> Final output sent to browser
+DEBUG - 2020-09-21 16:00:27 --> Total execution time: 1.8381
+INFO - 2020-09-21 16:01:03 --> Config Class Initialized
+INFO - 2020-09-21 16:01:03 --> Hooks Class Initialized
+DEBUG - 2020-09-21 16:01:03 --> UTF-8 Support Enabled
+INFO - 2020-09-21 16:01:03 --> Utf8 Class Initialized
+INFO - 2020-09-21 16:01:03 --> URI Class Initialized
+INFO - 2020-09-21 16:01:03 --> Router Class Initialized
+INFO - 2020-09-21 16:01:03 --> Output Class Initialized
+INFO - 2020-09-21 16:01:03 --> Security Class Initialized
+DEBUG - 2020-09-21 16:01:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 16:01:03 --> Input Class Initialized
+INFO - 2020-09-21 16:01:03 --> Language Class Initialized
+INFO - 2020-09-21 16:01:03 --> Language Class Initialized
+INFO - 2020-09-21 16:01:03 --> Config Class Initialized
+INFO - 2020-09-21 16:01:03 --> Loader Class Initialized
+DEBUG - 2020-09-21 16:01:03 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 16:01:03 --> Helper loaded: url_helper
+INFO - 2020-09-21 16:01:03 --> Helper loaded: form_helper
+INFO - 2020-09-21 16:01:03 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 16:01:04 --> Helper loaded: site_helper
+INFO - 2020-09-21 16:01:04 --> Helper loaded: directory_helper
+INFO - 2020-09-21 16:01:04 --> Helper loaded: mail_helper
+INFO - 2020-09-21 16:01:04 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 16:01:04 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:01:04 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:01:04 --> Email Class Initialized
+INFO - 2020-09-21 16:01:04 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 16:01:04 --> Form Validation Class Initialized
+INFO - 2020-09-21 16:01:04 --> Controller Class Initialized
+DEBUG - 2020-09-21 16:01:04 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2020-09-21 16:01:04 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 16:01:04 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 16:01:04 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2020-09-21 16:01:04 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2020-09-21 16:01:04 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/profile_sidebar.php
+DEBUG - 2020-09-21 16:01:04 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/company_profile.php
+DEBUG - 2020-09-21 16:01:04 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2020-09-21 16:01:05 --> Final output sent to browser
+DEBUG - 2020-09-21 16:01:05 --> Total execution time: 1.9266
+INFO - 2020-09-21 16:01:05 --> Config Class Initialized
+INFO - 2020-09-21 16:01:05 --> Config Class Initialized
+INFO - 2020-09-21 16:01:05 --> Hooks Class Initialized
+INFO - 2020-09-21 16:01:05 --> Hooks Class Initialized
+DEBUG - 2020-09-21 16:01:05 --> UTF-8 Support Enabled
+DEBUG - 2020-09-21 16:01:05 --> UTF-8 Support Enabled
+INFO - 2020-09-21 16:01:05 --> Utf8 Class Initialized
+INFO - 2020-09-21 16:01:05 --> Utf8 Class Initialized
+INFO - 2020-09-21 16:01:05 --> URI Class Initialized
+INFO - 2020-09-21 16:01:05 --> URI Class Initialized
+INFO - 2020-09-21 16:01:05 --> Router Class Initialized
+INFO - 2020-09-21 16:01:05 --> Router Class Initialized
+INFO - 2020-09-21 16:01:05 --> Output Class Initialized
+INFO - 2020-09-21 16:01:05 --> Output Class Initialized
+INFO - 2020-09-21 16:01:05 --> Security Class Initialized
+INFO - 2020-09-21 16:01:05 --> Security Class Initialized
+DEBUG - 2020-09-21 16:01:05 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2020-09-21 16:01:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-09-21 16:01:05 --> Input Class Initialized
+INFO - 2020-09-21 16:01:05 --> Input Class Initialized
+INFO - 2020-09-21 16:01:05 --> Language Class Initialized
+INFO - 2020-09-21 16:01:06 --> Language Class Initialized
+INFO - 2020-09-21 16:01:06 --> Language Class Initialized
+INFO - 2020-09-21 16:01:06 --> Language Class Initialized
+INFO - 2020-09-21 16:01:06 --> Config Class Initialized
+INFO - 2020-09-21 16:01:06 --> Config Class Initialized
+INFO - 2020-09-21 16:01:06 --> Loader Class Initialized
+INFO - 2020-09-21 16:01:06 --> Loader Class Initialized
+DEBUG - 2020-09-21 16:01:06 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2020-09-21 16:01:06 --> Config file loaded: C:\Apache24\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2020-09-21 16:01:06 --> Helper loaded: url_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: url_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: form_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: form_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: adminurl_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: site_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: site_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: directory_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: directory_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: mail_helper
+INFO - 2020-09-21 16:01:06 --> Helper loaded: mail_helper
+INFO - 2020-09-21 16:01:06 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 16:01:06 --> Language file loaded: language/english/api_lang.php
+INFO - 2020-09-21 16:01:06 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:01:06 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:01:06 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:01:06 --> Database Driver Class Initialized
+INFO - 2020-09-21 16:01:06 --> Email Class Initialized
+INFO - 2020-09-21 16:01:06 --> Email Class Initialized
+INFO - 2020-09-21 16:01:06 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 16:01:06 --> Form Validation Class Initialized
+INFO - 2020-09-21 16:01:06 --> Controller Class Initialized
+ERROR - 2020-09-21 16:01:06 --> 404 Page Not Found: ../modules/supplier/supplier_dashboard/controllers/Supplier_dashboard/images
+INFO - 2020-09-21 16:01:07 --> Session: Class initialized using 'database' driver.
+INFO - 2020-09-21 16:01:07 --> Form Validation Class Initialized
+INFO - 2020-09-21 16:01:07 --> Controller Class Initialized
+DEBUG - 2020-09-21 16:01:07 --> Web MX_Controller Initialized
+DEBUG - 2020-09-21 16:01:07 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2020-09-21 16:01:07 --> Template MX_Controller Initialized
+DEBUG - 2020-09-21 16:01:07 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2020-09-21 16:01:07 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2020-09-21 16:01:07 --> File loaded: C:\Apache24\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2020-09-21 16:01:07 --> Final output sent to browser
+DEBUG - 2020-09-21 16:01:07 --> Total execution time: 1.9435

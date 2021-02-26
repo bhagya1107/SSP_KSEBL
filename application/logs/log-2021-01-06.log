@@ -1,0 +1,1778 @@
+INFO - 2021-01-06 05:38:29 --> Config Class Initialized
+INFO - 2021-01-06 05:38:29 --> Hooks Class Initialized
+DEBUG - 2021-01-06 05:38:29 --> UTF-8 Support Enabled
+INFO - 2021-01-06 05:38:30 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:38:30 --> Config Class Initialized
+INFO - 2021-01-06 05:38:30 --> Hooks Class Initialized
+DEBUG - 2021-01-06 05:38:30 --> UTF-8 Support Enabled
+INFO - 2021-01-06 05:38:30 --> URI Class Initialized
+INFO - 2021-01-06 05:38:30 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:38:30 --> URI Class Initialized
+INFO - 2021-01-06 05:38:30 --> Router Class Initialized
+INFO - 2021-01-06 05:38:30 --> Router Class Initialized
+INFO - 2021-01-06 05:38:31 --> Output Class Initialized
+INFO - 2021-01-06 05:38:31 --> Output Class Initialized
+INFO - 2021-01-06 05:38:31 --> Security Class Initialized
+INFO - 2021-01-06 05:38:31 --> Security Class Initialized
+DEBUG - 2021-01-06 05:38:31 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-06 05:38:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 05:38:31 --> Input Class Initialized
+INFO - 2021-01-06 05:38:31 --> Input Class Initialized
+INFO - 2021-01-06 05:38:31 --> Language Class Initialized
+INFO - 2021-01-06 05:38:31 --> Language Class Initialized
+INFO - 2021-01-06 05:38:32 --> Language Class Initialized
+INFO - 2021-01-06 05:38:32 --> Language Class Initialized
+INFO - 2021-01-06 05:38:32 --> Config Class Initialized
+INFO - 2021-01-06 05:38:32 --> Config Class Initialized
+INFO - 2021-01-06 05:38:32 --> Loader Class Initialized
+INFO - 2021-01-06 05:38:32 --> Loader Class Initialized
+DEBUG - 2021-01-06 05:38:32 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2021-01-06 05:38:32 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 05:38:33 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:38:33 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:38:34 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:38:34 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:38:34 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:38:34 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:38:34 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:38:34 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:38:34 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:38:34 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:38:35 --> Email Class Initialized
+INFO - 2021-01-06 05:38:35 --> Email Class Initialized
+INFO - 2021-01-06 05:38:36 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:38:36 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:38:36 --> Controller Class Initialized
+DEBUG - 2021-01-06 05:38:36 --> Supplier_dashboard MX_Controller Initialized
+INFO - 2021-01-06 05:38:37 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:38:37 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:38:37 --> Controller Class Initialized
+INFO - 2021-01-06 05:38:37 --> Config Class Initialized
+DEBUG - 2021-01-06 05:38:37 --> Supplier_dashboard MX_Controller Initialized
+INFO - 2021-01-06 05:38:38 --> Hooks Class Initialized
+DEBUG - 2021-01-06 05:38:38 --> UTF-8 Support Enabled
+INFO - 2021-01-06 05:38:38 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:38:38 --> URI Class Initialized
+INFO - 2021-01-06 05:38:38 --> Router Class Initialized
+INFO - 2021-01-06 05:38:38 --> Output Class Initialized
+INFO - 2021-01-06 05:38:38 --> Security Class Initialized
+DEBUG - 2021-01-06 05:38:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 05:38:38 --> Input Class Initialized
+INFO - 2021-01-06 05:38:39 --> Language Class Initialized
+INFO - 2021-01-06 05:38:39 --> Language Class Initialized
+INFO - 2021-01-06 05:38:39 --> Config Class Initialized
+INFO - 2021-01-06 05:38:39 --> Loader Class Initialized
+DEBUG - 2021-01-06 05:38:39 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 05:38:39 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:38:39 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:38:39 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:38:39 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:38:40 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:38:40 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:38:40 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:38:40 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:38:40 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:38:40 --> Email Class Initialized
+INFO - 2021-01-06 05:38:41 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:38:41 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:38:41 --> Controller Class Initialized
+DEBUG - 2021-01-06 05:38:41 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 05:38:41 --> Template MX_Controller Initialized
+INFO - 2021-01-06 05:38:42 --> Config Class Initialized
+INFO - 2021-01-06 05:38:42 --> Hooks Class Initialized
+DEBUG - 2021-01-06 05:38:43 --> UTF-8 Support Enabled
+INFO - 2021-01-06 05:38:43 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:38:43 --> URI Class Initialized
+DEBUG - 2021-01-06 05:38:43 --> No URI present. Default controller set.
+INFO - 2021-01-06 05:38:43 --> Router Class Initialized
+INFO - 2021-01-06 05:38:43 --> Output Class Initialized
+INFO - 2021-01-06 05:38:43 --> Security Class Initialized
+DEBUG - 2021-01-06 05:38:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 05:38:44 --> Input Class Initialized
+INFO - 2021-01-06 05:38:44 --> Language Class Initialized
+INFO - 2021-01-06 05:38:44 --> Language Class Initialized
+INFO - 2021-01-06 05:38:44 --> Config Class Initialized
+INFO - 2021-01-06 05:38:44 --> Loader Class Initialized
+DEBUG - 2021-01-06 05:38:44 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 05:38:44 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:38:44 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:38:44 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:38:45 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:38:45 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:38:45 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:38:45 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:38:45 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:38:45 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:38:46 --> Email Class Initialized
+INFO - 2021-01-06 05:38:46 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:38:46 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:38:46 --> Controller Class Initialized
+DEBUG - 2021-01-06 05:38:46 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 05:38:47 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 05:38:47 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 05:38:47 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 05:38:47 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/home.php
+DEBUG - 2021-01-06 05:38:47 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 05:38:47 --> Final output sent to browser
+DEBUG - 2021-01-06 05:38:47 --> Total execution time: 4.8556
+INFO - 2021-01-06 05:45:10 --> Config Class Initialized
+INFO - 2021-01-06 05:45:10 --> Hooks Class Initialized
+DEBUG - 2021-01-06 05:45:10 --> UTF-8 Support Enabled
+INFO - 2021-01-06 05:45:10 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:45:10 --> URI Class Initialized
+INFO - 2021-01-06 05:45:11 --> Router Class Initialized
+INFO - 2021-01-06 05:45:11 --> Output Class Initialized
+INFO - 2021-01-06 05:45:11 --> Security Class Initialized
+DEBUG - 2021-01-06 05:45:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 05:45:11 --> Input Class Initialized
+INFO - 2021-01-06 05:45:11 --> Language Class Initialized
+INFO - 2021-01-06 05:45:11 --> Language Class Initialized
+INFO - 2021-01-06 05:45:11 --> Config Class Initialized
+INFO - 2021-01-06 05:45:11 --> Loader Class Initialized
+DEBUG - 2021-01-06 05:45:11 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 05:45:12 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:45:12 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:45:12 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:45:12 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:45:12 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:45:12 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:45:12 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:45:12 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:45:12 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:45:13 --> Email Class Initialized
+INFO - 2021-01-06 05:45:14 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:45:14 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:45:14 --> Controller Class Initialized
+DEBUG - 2021-01-06 05:45:14 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 05:45:15 --> Template MX_Controller Initialized
+INFO - 2021-01-06 05:45:15 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2021-01-06 05:45:15 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_home/models/Login.php
+ERROR - 2021-01-06 05:45:15 --> Severity: Notice --> Undefined index: uid C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 36
+ERROR - 2021-01-06 05:45:16 --> Severity: Notice --> Undefined index: district_id C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 41
+ERROR - 2021-01-06 05:45:16 --> Severity: Notice --> Undefined index: basin_id C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 42
+INFO - 2021-01-06 05:45:50 --> Config Class Initialized
+INFO - 2021-01-06 05:45:50 --> Hooks Class Initialized
+DEBUG - 2021-01-06 05:45:50 --> UTF-8 Support Enabled
+INFO - 2021-01-06 05:45:50 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:45:51 --> URI Class Initialized
+INFO - 2021-01-06 05:45:51 --> Router Class Initialized
+INFO - 2021-01-06 05:45:51 --> Output Class Initialized
+INFO - 2021-01-06 05:45:51 --> Security Class Initialized
+DEBUG - 2021-01-06 05:45:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 05:45:51 --> Input Class Initialized
+INFO - 2021-01-06 05:45:51 --> Language Class Initialized
+INFO - 2021-01-06 05:45:51 --> Language Class Initialized
+INFO - 2021-01-06 05:45:51 --> Config Class Initialized
+INFO - 2021-01-06 05:45:51 --> Loader Class Initialized
+DEBUG - 2021-01-06 05:45:51 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 05:45:52 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:45:52 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:45:52 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:45:52 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:45:52 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:45:52 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:45:52 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:45:52 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:45:52 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:45:53 --> Email Class Initialized
+INFO - 2021-01-06 05:45:53 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:45:53 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:45:53 --> Controller Class Initialized
+DEBUG - 2021-01-06 05:45:54 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 05:45:54 --> Template MX_Controller Initialized
+INFO - 2021-01-06 05:45:54 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2021-01-06 05:45:54 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_home/models/Login.php
+ERROR - 2021-01-06 05:45:54 --> Severity: Notice --> Undefined index: uid C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 36
+ERROR - 2021-01-06 05:45:54 --> Severity: Notice --> Undefined index: district_id C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 41
+ERROR - 2021-01-06 05:45:54 --> Severity: Notice --> Undefined index: basin_id C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 42
+INFO - 2021-01-06 05:45:55 --> Config Class Initialized
+INFO - 2021-01-06 05:45:55 --> Hooks Class Initialized
+DEBUG - 2021-01-06 05:45:56 --> UTF-8 Support Enabled
+INFO - 2021-01-06 05:45:56 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:45:56 --> URI Class Initialized
+INFO - 2021-01-06 05:45:56 --> Router Class Initialized
+INFO - 2021-01-06 05:45:56 --> Output Class Initialized
+INFO - 2021-01-06 05:45:56 --> Security Class Initialized
+DEBUG - 2021-01-06 05:45:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 05:45:56 --> Input Class Initialized
+INFO - 2021-01-06 05:45:56 --> Language Class Initialized
+INFO - 2021-01-06 05:45:57 --> Language Class Initialized
+INFO - 2021-01-06 05:45:57 --> Config Class Initialized
+INFO - 2021-01-06 05:45:57 --> Loader Class Initialized
+DEBUG - 2021-01-06 05:45:57 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 05:45:57 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:45:57 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:45:57 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:45:57 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:45:57 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:45:57 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:45:57 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:45:58 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:45:58 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:45:58 --> Email Class Initialized
+INFO - 2021-01-06 05:45:59 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:45:59 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:45:59 --> Controller Class Initialized
+DEBUG - 2021-01-06 05:45:59 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 05:45:59 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 05:45:59 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 05:45:59 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2021-01-06 05:46:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 05:46:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 05:46:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 05:46:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/dashboard.php
+DEBUG - 2021-01-06 05:46:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 05:46:00 --> Final output sent to browser
+DEBUG - 2021-01-06 05:46:01 --> Total execution time: 5.0706
+INFO - 2021-01-06 05:46:01 --> Config Class Initialized
+INFO - 2021-01-06 05:46:01 --> Config Class Initialized
+INFO - 2021-01-06 05:46:02 --> Hooks Class Initialized
+INFO - 2021-01-06 05:46:02 --> Hooks Class Initialized
+DEBUG - 2021-01-06 05:46:02 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 05:46:02 --> UTF-8 Support Enabled
+INFO - 2021-01-06 05:46:02 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:46:02 --> Utf8 Class Initialized
+INFO - 2021-01-06 05:46:02 --> URI Class Initialized
+INFO - 2021-01-06 05:46:02 --> URI Class Initialized
+INFO - 2021-01-06 05:46:02 --> Router Class Initialized
+INFO - 2021-01-06 05:46:02 --> Router Class Initialized
+INFO - 2021-01-06 05:46:02 --> Output Class Initialized
+INFO - 2021-01-06 05:46:02 --> Output Class Initialized
+INFO - 2021-01-06 05:46:02 --> Security Class Initialized
+INFO - 2021-01-06 05:46:02 --> Security Class Initialized
+DEBUG - 2021-01-06 05:46:03 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-06 05:46:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 05:46:03 --> Input Class Initialized
+INFO - 2021-01-06 05:46:03 --> Input Class Initialized
+INFO - 2021-01-06 05:46:03 --> Language Class Initialized
+INFO - 2021-01-06 05:46:03 --> Language Class Initialized
+INFO - 2021-01-06 05:46:03 --> Language Class Initialized
+INFO - 2021-01-06 05:46:03 --> Language Class Initialized
+INFO - 2021-01-06 05:46:03 --> Config Class Initialized
+INFO - 2021-01-06 05:46:03 --> Config Class Initialized
+INFO - 2021-01-06 05:46:03 --> Loader Class Initialized
+INFO - 2021-01-06 05:46:03 --> Loader Class Initialized
+DEBUG - 2021-01-06 05:46:03 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2021-01-06 05:46:03 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 05:46:03 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:46:03 --> Helper loaded: url_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: form_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: site_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: directory_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:46:04 --> Helper loaded: mail_helper
+INFO - 2021-01-06 05:46:04 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:46:04 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 05:46:04 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:46:04 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:46:05 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:46:05 --> Database Driver Class Initialized
+INFO - 2021-01-06 05:46:05 --> Email Class Initialized
+INFO - 2021-01-06 05:46:05 --> Email Class Initialized
+INFO - 2021-01-06 05:46:06 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:46:06 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:46:06 --> Controller Class Initialized
+DEBUG - 2021-01-06 05:46:06 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 05:46:06 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 05:46:06 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 05:46:06 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 05:46:06 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 05:46:06 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 05:46:06 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 05:46:07 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 05:46:07 --> Final output sent to browser
+DEBUG - 2021-01-06 05:46:07 --> Total execution time: 5.3125
+INFO - 2021-01-06 05:46:08 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 05:46:08 --> Form Validation Class Initialized
+INFO - 2021-01-06 05:46:08 --> Controller Class Initialized
+DEBUG - 2021-01-06 05:46:08 --> Template MX_Controller Initialized
+ERROR - 2021-01-06 05:46:08 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2021-01-06 05:46:08 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2021-01-06 05:46:08 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2021-01-06 05:46:09 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2021-01-06 05:46:09 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2021-01-06 05:46:09 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2021-01-06 05:46:09 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2021-01-06 05:46:09 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2021-01-06 05:46:09 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 05:46:09 --> Final output sent to browser
+DEBUG - 2021-01-06 05:46:10 --> Total execution time: 7.9835
+INFO - 2021-01-06 06:14:06 --> Config Class Initialized
+INFO - 2021-01-06 06:14:06 --> Hooks Class Initialized
+DEBUG - 2021-01-06 06:14:06 --> UTF-8 Support Enabled
+INFO - 2021-01-06 06:14:06 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:14:07 --> URI Class Initialized
+INFO - 2021-01-06 06:14:07 --> Router Class Initialized
+INFO - 2021-01-06 06:14:07 --> Output Class Initialized
+INFO - 2021-01-06 06:14:07 --> Security Class Initialized
+DEBUG - 2021-01-06 06:14:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 06:14:07 --> Input Class Initialized
+INFO - 2021-01-06 06:14:07 --> Language Class Initialized
+INFO - 2021-01-06 06:14:07 --> Language Class Initialized
+INFO - 2021-01-06 06:14:08 --> Config Class Initialized
+INFO - 2021-01-06 06:14:08 --> Loader Class Initialized
+DEBUG - 2021-01-06 06:14:08 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:14:08 --> Helper loaded: url_helper
+INFO - 2021-01-06 06:14:08 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:14:08 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:14:08 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:14:08 --> Helper loaded: directory_helper
+INFO - 2021-01-06 06:14:09 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:14:09 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:14:09 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:09 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:10 --> Email Class Initialized
+INFO - 2021-01-06 06:14:11 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:14:11 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:14:11 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:14:12 --> Supplier_purchase_order MX_Controller Initialized
+DEBUG - 2021-01-06 06:14:12 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 06:14:12 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 06:14:13 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 06:14:13 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 06:14:14 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 06:14:15 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_purchase_order/views/home.php
+DEBUG - 2021-01-06 06:14:15 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 06:14:15 --> Final output sent to browser
+DEBUG - 2021-01-06 06:14:15 --> Total execution time: 9.4442
+INFO - 2021-01-06 06:14:17 --> Config Class Initialized
+INFO - 2021-01-06 06:14:17 --> Config Class Initialized
+INFO - 2021-01-06 06:14:17 --> Hooks Class Initialized
+INFO - 2021-01-06 06:14:18 --> Hooks Class Initialized
+DEBUG - 2021-01-06 06:14:18 --> UTF-8 Support Enabled
+INFO - 2021-01-06 06:14:18 --> Utf8 Class Initialized
+DEBUG - 2021-01-06 06:14:18 --> UTF-8 Support Enabled
+INFO - 2021-01-06 06:14:18 --> URI Class Initialized
+INFO - 2021-01-06 06:14:18 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:14:18 --> URI Class Initialized
+INFO - 2021-01-06 06:14:18 --> Router Class Initialized
+INFO - 2021-01-06 06:14:18 --> Router Class Initialized
+INFO - 2021-01-06 06:14:18 --> Output Class Initialized
+INFO - 2021-01-06 06:14:18 --> Security Class Initialized
+INFO - 2021-01-06 06:14:18 --> Output Class Initialized
+DEBUG - 2021-01-06 06:14:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 06:14:18 --> Security Class Initialized
+INFO - 2021-01-06 06:14:18 --> Input Class Initialized
+DEBUG - 2021-01-06 06:14:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 06:14:19 --> Language Class Initialized
+INFO - 2021-01-06 06:14:19 --> Input Class Initialized
+INFO - 2021-01-06 06:14:19 --> Language Class Initialized
+INFO - 2021-01-06 06:14:19 --> Language Class Initialized
+INFO - 2021-01-06 06:14:19 --> Language Class Initialized
+INFO - 2021-01-06 06:14:19 --> Config Class Initialized
+INFO - 2021-01-06 06:14:19 --> Loader Class Initialized
+INFO - 2021-01-06 06:14:19 --> Config Class Initialized
+DEBUG - 2021-01-06 06:14:19 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:14:19 --> Loader Class Initialized
+INFO - 2021-01-06 06:14:19 --> Helper loaded: url_helper
+DEBUG - 2021-01-06 06:14:19 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:14:19 --> Helper loaded: url_helper
+INFO - 2021-01-06 06:14:19 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:14:20 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:14:20 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:14:20 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:14:20 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:14:20 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:14:20 --> Helper loaded: directory_helper
+INFO - 2021-01-06 06:14:20 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:14:20 --> Helper loaded: directory_helper
+INFO - 2021-01-06 06:14:20 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:14:20 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:14:20 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:20 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:14:20 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:20 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:20 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:21 --> Email Class Initialized
+INFO - 2021-01-06 06:14:21 --> Email Class Initialized
+INFO - 2021-01-06 06:14:21 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:14:21 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:14:22 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:14:22 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 06:14:22 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 06:14:22 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 06:14:22 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 06:14:22 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 06:14:22 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 06:14:22 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 06:14:23 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 06:14:23 --> Final output sent to browser
+DEBUG - 2021-01-06 06:14:23 --> Total execution time: 5.4111
+INFO - 2021-01-06 06:14:24 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:14:24 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:14:24 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:14:24 --> Template MX_Controller Initialized
+ERROR - 2021-01-06 06:14:24 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+INFO - 2021-01-06 06:14:24 --> Config Class Initialized
+INFO - 2021-01-06 06:14:25 --> Hooks Class Initialized
+ERROR - 2021-01-06 06:14:25 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+DEBUG - 2021-01-06 06:14:25 --> UTF-8 Support Enabled
+ERROR - 2021-01-06 06:14:25 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2021-01-06 06:14:25 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+INFO - 2021-01-06 06:14:25 --> Utf8 Class Initialized
+DEBUG - 2021-01-06 06:14:25 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+INFO - 2021-01-06 06:14:25 --> URI Class Initialized
+INFO - 2021-01-06 06:14:25 --> Router Class Initialized
+ERROR - 2021-01-06 06:14:25 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2021-01-06 06:14:25 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+INFO - 2021-01-06 06:14:25 --> Output Class Initialized
+INFO - 2021-01-06 06:14:26 --> Security Class Initialized
+DEBUG - 2021-01-06 06:14:26 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2021-01-06 06:14:26 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 06:14:26 --> Final output sent to browser
+DEBUG - 2021-01-06 06:14:26 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-06 06:14:26 --> Total execution time: 8.4621
+INFO - 2021-01-06 06:14:26 --> Input Class Initialized
+INFO - 2021-01-06 06:14:26 --> Language Class Initialized
+INFO - 2021-01-06 06:14:26 --> Language Class Initialized
+INFO - 2021-01-06 06:14:26 --> Config Class Initialized
+INFO - 2021-01-06 06:14:27 --> Loader Class Initialized
+DEBUG - 2021-01-06 06:14:27 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:14:27 --> Helper loaded: url_helper
+INFO - 2021-01-06 06:14:27 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:14:27 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:14:27 --> Config Class Initialized
+INFO - 2021-01-06 06:14:27 --> Config Class Initialized
+INFO - 2021-01-06 06:14:27 --> Config Class Initialized
+INFO - 2021-01-06 06:14:28 --> Hooks Class Initialized
+INFO - 2021-01-06 06:14:28 --> Hooks Class Initialized
+INFO - 2021-01-06 06:14:28 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:14:28 --> Hooks Class Initialized
+DEBUG - 2021-01-06 06:14:28 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 06:14:28 --> UTF-8 Support Enabled
+INFO - 2021-01-06 06:14:28 --> Helper loaded: directory_helper
+DEBUG - 2021-01-06 06:14:28 --> UTF-8 Support Enabled
+INFO - 2021-01-06 06:14:28 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:14:28 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:14:28 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:14:28 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:14:28 --> URI Class Initialized
+INFO - 2021-01-06 06:14:28 --> URI Class Initialized
+INFO - 2021-01-06 06:14:28 --> URI Class Initialized
+INFO - 2021-01-06 06:14:28 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:14:29 --> Router Class Initialized
+INFO - 2021-01-06 06:14:29 --> Router Class Initialized
+INFO - 2021-01-06 06:14:29 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:29 --> Router Class Initialized
+INFO - 2021-01-06 06:14:29 --> Output Class Initialized
+INFO - 2021-01-06 06:14:29 --> Output Class Initialized
+INFO - 2021-01-06 06:14:29 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:29 --> Output Class Initialized
+INFO - 2021-01-06 06:14:29 --> Security Class Initialized
+INFO - 2021-01-06 06:14:29 --> Security Class Initialized
+INFO - 2021-01-06 06:14:29 --> Security Class Initialized
+DEBUG - 2021-01-06 06:14:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-06 06:14:29 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-06 06:14:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 06:14:29 --> Email Class Initialized
+INFO - 2021-01-06 06:14:30 --> Input Class Initialized
+INFO - 2021-01-06 06:14:30 --> Input Class Initialized
+INFO - 2021-01-06 06:14:30 --> Input Class Initialized
+INFO - 2021-01-06 06:14:30 --> Language Class Initialized
+INFO - 2021-01-06 06:14:30 --> Language Class Initialized
+INFO - 2021-01-06 06:14:30 --> Language Class Initialized
+INFO - 2021-01-06 06:14:30 --> Language Class Initialized
+INFO - 2021-01-06 06:14:30 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:14:30 --> Language Class Initialized
+INFO - 2021-01-06 06:14:30 --> Config Class Initialized
+INFO - 2021-01-06 06:14:30 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:14:30 --> Language Class Initialized
+INFO - 2021-01-06 06:14:30 --> Config Class Initialized
+INFO - 2021-01-06 06:14:30 --> Loader Class Initialized
+INFO - 2021-01-06 06:14:31 --> Controller Class Initialized
+INFO - 2021-01-06 06:14:31 --> Loader Class Initialized
+DEBUG - 2021-01-06 06:14:31 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:14:31 --> Config Class Initialized
+INFO - 2021-01-06 06:14:31 --> Helper loaded: url_helper
+DEBUG - 2021-01-06 06:14:31 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 06:14:31 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:14:31 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:14:31 --> Loader Class Initialized
+ERROR - 2021-01-06 06:14:31 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+INFO - 2021-01-06 06:14:31 --> Helper loaded: adminurl_helper
+DEBUG - 2021-01-06 06:14:31 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:14:31 --> Helper loaded: url_helper
+INFO - 2021-01-06 06:14:32 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:14:32 --> Helper loaded: url_helper
+INFO - 2021-01-06 06:14:32 --> Helper loaded: form_helper
+ERROR - 2021-01-06 06:14:32 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+INFO - 2021-01-06 06:14:32 --> Helper loaded: adminurl_helper
+ERROR - 2021-01-06 06:14:32 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+INFO - 2021-01-06 06:14:32 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:14:32 --> Helper loaded: directory_helper
+ERROR - 2021-01-06 06:14:32 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+INFO - 2021-01-06 06:14:32 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:14:32 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:14:32 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:14:32 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:14:32 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:14:32 --> Helper loaded: directory_helper
+DEBUG - 2021-01-06 06:14:32 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+INFO - 2021-01-06 06:14:33 --> Helper loaded: directory_helper
+INFO - 2021-01-06 06:14:33 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:14:33 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:33 --> Helper loaded: mail_helper
+ERROR - 2021-01-06 06:14:33 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+INFO - 2021-01-06 06:14:33 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:33 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:14:33 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:14:33 --> Database Driver Class Initialized
+DEBUG - 2021-01-06 06:14:33 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+INFO - 2021-01-06 06:14:33 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:33 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:33 --> Database Driver Class Initialized
+DEBUG - 2021-01-06 06:14:34 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2021-01-06 06:14:34 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 06:14:34 --> Email Class Initialized
+INFO - 2021-01-06 06:14:34 --> Final output sent to browser
+DEBUG - 2021-01-06 06:14:34 --> Total execution time: 9.4171
+INFO - 2021-01-06 06:14:34 --> Email Class Initialized
+INFO - 2021-01-06 06:14:35 --> Email Class Initialized
+INFO - 2021-01-06 06:14:35 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:14:35 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:14:35 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:14:36 --> Template MX_Controller Initialized
+ERROR - 2021-01-06 06:14:36 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2021-01-06 06:14:36 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2021-01-06 06:14:36 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2021-01-06 06:14:36 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2021-01-06 06:14:36 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2021-01-06 06:14:36 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2021-01-06 06:14:36 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2021-01-06 06:14:37 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2021-01-06 06:14:37 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 06:14:37 --> Final output sent to browser
+DEBUG - 2021-01-06 06:14:37 --> Total execution time: 9.7478
+INFO - 2021-01-06 06:14:38 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:14:38 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:14:38 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:14:38 --> Template MX_Controller Initialized
+ERROR - 2021-01-06 06:14:38 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2021-01-06 06:14:39 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2021-01-06 06:14:39 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2021-01-06 06:14:39 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2021-01-06 06:14:39 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2021-01-06 06:14:39 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2021-01-06 06:14:39 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2021-01-06 06:14:39 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2021-01-06 06:14:39 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 06:14:40 --> Final output sent to browser
+DEBUG - 2021-01-06 06:14:40 --> Total execution time: 12.5573
+INFO - 2021-01-06 06:14:41 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:14:41 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:14:41 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:14:41 --> Template MX_Controller Initialized
+ERROR - 2021-01-06 06:14:41 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2021-01-06 06:14:41 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2021-01-06 06:14:41 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2021-01-06 06:14:42 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2021-01-06 06:14:42 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2021-01-06 06:14:42 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2021-01-06 06:14:42 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2021-01-06 06:14:42 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2021-01-06 06:14:42 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 06:14:42 --> Final output sent to browser
+DEBUG - 2021-01-06 06:14:42 --> Total execution time: 15.2989
+INFO - 2021-01-06 06:14:55 --> Config Class Initialized
+INFO - 2021-01-06 06:14:55 --> Hooks Class Initialized
+DEBUG - 2021-01-06 06:14:55 --> UTF-8 Support Enabled
+INFO - 2021-01-06 06:14:55 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:14:55 --> URI Class Initialized
+INFO - 2021-01-06 06:14:55 --> Router Class Initialized
+INFO - 2021-01-06 06:14:56 --> Output Class Initialized
+INFO - 2021-01-06 06:14:56 --> Security Class Initialized
+DEBUG - 2021-01-06 06:14:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 06:14:56 --> Input Class Initialized
+INFO - 2021-01-06 06:14:56 --> Language Class Initialized
+INFO - 2021-01-06 06:14:56 --> Language Class Initialized
+INFO - 2021-01-06 06:14:56 --> Config Class Initialized
+INFO - 2021-01-06 06:14:57 --> Loader Class Initialized
+DEBUG - 2021-01-06 06:14:57 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:14:57 --> Helper loaded: url_helper
+INFO - 2021-01-06 06:14:57 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:14:57 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:14:57 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:14:57 --> Helper loaded: directory_helper
+INFO - 2021-01-06 06:14:57 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:14:57 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:14:58 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:58 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:14:58 --> Email Class Initialized
+INFO - 2021-01-06 06:14:59 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:14:59 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:14:59 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:14:59 --> Supplier_tenders MX_Controller Initialized
+DEBUG - 2021-01-06 06:14:59 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 06:14:59 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 06:15:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/admin/procurement/models/Procurement_model.php
+DEBUG - 2021-01-06 06:15:01 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 06:15:01 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 06:15:01 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 06:15:02 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_tenders/views/home.php
+DEBUG - 2021-01-06 06:15:02 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 06:15:02 --> Final output sent to browser
+DEBUG - 2021-01-06 06:15:02 --> Total execution time: 7.4543
+INFO - 2021-01-06 06:15:03 --> Config Class Initialized
+INFO - 2021-01-06 06:15:03 --> Config Class Initialized
+INFO - 2021-01-06 06:15:03 --> Hooks Class Initialized
+INFO - 2021-01-06 06:15:03 --> Hooks Class Initialized
+DEBUG - 2021-01-06 06:15:03 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 06:15:03 --> UTF-8 Support Enabled
+INFO - 2021-01-06 06:15:03 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:15:03 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:15:03 --> URI Class Initialized
+INFO - 2021-01-06 06:15:04 --> URI Class Initialized
+INFO - 2021-01-06 06:15:04 --> Router Class Initialized
+INFO - 2021-01-06 06:15:04 --> Router Class Initialized
+INFO - 2021-01-06 06:15:04 --> Output Class Initialized
+INFO - 2021-01-06 06:15:04 --> Security Class Initialized
+INFO - 2021-01-06 06:15:04 --> Output Class Initialized
+INFO - 2021-01-06 06:15:04 --> Security Class Initialized
+DEBUG - 2021-01-06 06:15:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 06:15:04 --> Input Class Initialized
+DEBUG - 2021-01-06 06:15:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 06:15:04 --> Input Class Initialized
+INFO - 2021-01-06 06:15:04 --> Language Class Initialized
+INFO - 2021-01-06 06:15:04 --> Language Class Initialized
+INFO - 2021-01-06 06:15:04 --> Language Class Initialized
+INFO - 2021-01-06 06:15:05 --> Config Class Initialized
+INFO - 2021-01-06 06:15:05 --> Language Class Initialized
+INFO - 2021-01-06 06:15:05 --> Config Class Initialized
+INFO - 2021-01-06 06:15:05 --> Loader Class Initialized
+INFO - 2021-01-06 06:15:05 --> Loader Class Initialized
+DEBUG - 2021-01-06 06:15:05 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:15:05 --> Helper loaded: url_helper
+DEBUG - 2021-01-06 06:15:05 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:15:05 --> Helper loaded: url_helper
+INFO - 2021-01-06 06:15:05 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:15:05 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:15:05 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:15:05 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:15:05 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:15:06 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:15:06 --> Helper loaded: directory_helper
+INFO - 2021-01-06 06:15:06 --> Helper loaded: directory_helper
+INFO - 2021-01-06 06:15:06 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:15:06 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:15:06 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:15:06 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:15:06 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:15:06 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:15:06 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:15:06 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:15:07 --> Email Class Initialized
+INFO - 2021-01-06 06:15:07 --> Email Class Initialized
+INFO - 2021-01-06 06:15:07 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:15:07 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:15:07 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:15:07 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 06:15:08 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 06:15:08 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 06:15:08 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 06:15:08 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 06:15:08 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 06:15:08 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 06:15:08 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 06:15:08 --> Final output sent to browser
+DEBUG - 2021-01-06 06:15:08 --> Total execution time: 5.2886
+INFO - 2021-01-06 06:15:09 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:15:09 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:15:09 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:15:10 --> Template MX_Controller Initialized
+ERROR - 2021-01-06 06:15:10 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2021-01-06 06:15:10 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2021-01-06 06:15:10 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2021-01-06 06:15:10 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2021-01-06 06:15:10 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+INFO - 2021-01-06 06:15:10 --> Config Class Initialized
+ERROR - 2021-01-06 06:15:11 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+INFO - 2021-01-06 06:15:11 --> Hooks Class Initialized
+DEBUG - 2021-01-06 06:15:11 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2021-01-06 06:15:11 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 06:15:11 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+INFO - 2021-01-06 06:15:11 --> Utf8 Class Initialized
+INFO - 2021-01-06 06:15:11 --> URI Class Initialized
+DEBUG - 2021-01-06 06:15:11 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 06:15:11 --> Final output sent to browser
+INFO - 2021-01-06 06:15:11 --> Router Class Initialized
+DEBUG - 2021-01-06 06:15:11 --> Total execution time: 8.1972
+INFO - 2021-01-06 06:15:11 --> Output Class Initialized
+INFO - 2021-01-06 06:15:12 --> Security Class Initialized
+DEBUG - 2021-01-06 06:15:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 06:15:12 --> Input Class Initialized
+INFO - 2021-01-06 06:15:12 --> Language Class Initialized
+INFO - 2021-01-06 06:15:12 --> Language Class Initialized
+INFO - 2021-01-06 06:15:12 --> Config Class Initialized
+INFO - 2021-01-06 06:15:12 --> Loader Class Initialized
+DEBUG - 2021-01-06 06:15:12 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 06:15:13 --> Helper loaded: url_helper
+INFO - 2021-01-06 06:15:13 --> Helper loaded: form_helper
+INFO - 2021-01-06 06:15:13 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 06:15:13 --> Helper loaded: site_helper
+INFO - 2021-01-06 06:15:13 --> Helper loaded: directory_helper
+INFO - 2021-01-06 06:15:13 --> Helper loaded: mail_helper
+INFO - 2021-01-06 06:15:13 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 06:15:13 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:15:14 --> Database Driver Class Initialized
+INFO - 2021-01-06 06:15:15 --> Email Class Initialized
+INFO - 2021-01-06 06:15:16 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 06:15:16 --> Form Validation Class Initialized
+INFO - 2021-01-06 06:15:16 --> Controller Class Initialized
+DEBUG - 2021-01-06 06:15:16 --> Template MX_Controller Initialized
+ERROR - 2021-01-06 06:15:16 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2021-01-06 06:15:16 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2021-01-06 06:15:16 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2021-01-06 06:15:16 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2021-01-06 06:15:17 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2021-01-06 06:15:17 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2021-01-06 06:15:17 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2021-01-06 06:15:17 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2021-01-06 06:15:17 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 06:15:17 --> Final output sent to browser
+DEBUG - 2021-01-06 06:15:17 --> Total execution time: 6.8990
+INFO - 2021-01-06 10:20:19 --> Config Class Initialized
+INFO - 2021-01-06 10:20:19 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:20:19 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:20:20 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:20:20 --> URI Class Initialized
+INFO - 2021-01-06 10:20:20 --> Router Class Initialized
+INFO - 2021-01-06 10:20:20 --> Output Class Initialized
+INFO - 2021-01-06 10:20:20 --> Security Class Initialized
+DEBUG - 2021-01-06 10:20:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:20:21 --> Input Class Initialized
+INFO - 2021-01-06 10:20:21 --> Language Class Initialized
+INFO - 2021-01-06 10:20:21 --> Language Class Initialized
+INFO - 2021-01-06 10:20:21 --> Config Class Initialized
+INFO - 2021-01-06 10:20:21 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:20:22 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:20:22 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:20:22 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:20:22 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:20:22 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:20:22 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:20:22 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:20:22 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:20:23 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:20:23 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:20:23 --> Email Class Initialized
+INFO - 2021-01-06 10:20:24 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:20:25 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:20:25 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:20:25 --> Supplier_dashboard MX_Controller Initialized
+INFO - 2021-01-06 10:20:26 --> Config Class Initialized
+INFO - 2021-01-06 10:20:26 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:20:26 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:20:26 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:20:26 --> URI Class Initialized
+INFO - 2021-01-06 10:20:26 --> Router Class Initialized
+INFO - 2021-01-06 10:20:26 --> Output Class Initialized
+INFO - 2021-01-06 10:20:27 --> Security Class Initialized
+DEBUG - 2021-01-06 10:20:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:20:27 --> Input Class Initialized
+INFO - 2021-01-06 10:20:27 --> Language Class Initialized
+INFO - 2021-01-06 10:20:27 --> Language Class Initialized
+INFO - 2021-01-06 10:20:27 --> Config Class Initialized
+INFO - 2021-01-06 10:20:27 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:20:28 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:20:28 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:20:28 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:20:28 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:20:28 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:20:29 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:20:29 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:20:29 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:20:29 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:20:29 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:20:30 --> Email Class Initialized
+INFO - 2021-01-06 10:20:30 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:20:31 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:20:31 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:20:31 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:20:31 --> Template MX_Controller Initialized
+INFO - 2021-01-06 10:20:32 --> Config Class Initialized
+INFO - 2021-01-06 10:20:32 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:20:32 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:20:32 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:20:32 --> URI Class Initialized
+DEBUG - 2021-01-06 10:20:33 --> No URI present. Default controller set.
+INFO - 2021-01-06 10:20:33 --> Router Class Initialized
+INFO - 2021-01-06 10:20:33 --> Output Class Initialized
+INFO - 2021-01-06 10:20:33 --> Security Class Initialized
+DEBUG - 2021-01-06 10:20:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:20:33 --> Input Class Initialized
+INFO - 2021-01-06 10:20:34 --> Language Class Initialized
+INFO - 2021-01-06 10:20:34 --> Language Class Initialized
+INFO - 2021-01-06 10:20:34 --> Config Class Initialized
+INFO - 2021-01-06 10:20:34 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:20:34 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:20:34 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:20:34 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:20:34 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:20:35 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:20:35 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:20:35 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:20:35 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:20:35 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:20:35 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:20:36 --> Email Class Initialized
+INFO - 2021-01-06 10:20:37 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:20:37 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:20:37 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:20:37 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:20:38 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:20:38 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:20:38 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:20:38 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/home.php
+DEBUG - 2021-01-06 10:20:38 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:20:39 --> Final output sent to browser
+DEBUG - 2021-01-06 10:20:39 --> Total execution time: 6.6601
+INFO - 2021-01-06 10:20:49 --> Config Class Initialized
+INFO - 2021-01-06 10:20:50 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:20:51 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:20:52 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:20:52 --> URI Class Initialized
+INFO - 2021-01-06 10:20:53 --> Router Class Initialized
+INFO - 2021-01-06 10:20:53 --> Output Class Initialized
+INFO - 2021-01-06 10:20:53 --> Security Class Initialized
+DEBUG - 2021-01-06 10:20:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:20:54 --> Input Class Initialized
+INFO - 2021-01-06 10:20:54 --> Language Class Initialized
+INFO - 2021-01-06 10:20:54 --> Language Class Initialized
+INFO - 2021-01-06 10:20:54 --> Config Class Initialized
+INFO - 2021-01-06 10:20:54 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:20:54 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:20:54 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:20:55 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:20:55 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:20:55 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:20:55 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:20:55 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:20:55 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:20:56 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:20:56 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:20:56 --> Email Class Initialized
+INFO - 2021-01-06 10:20:57 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:20:57 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:20:57 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:20:57 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:20:57 --> Template MX_Controller Initialized
+INFO - 2021-01-06 10:20:58 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2021-01-06 10:20:58 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_home/models/Login.php
+ERROR - 2021-01-06 10:20:58 --> Severity: Notice --> Undefined index: uid C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 36
+ERROR - 2021-01-06 10:20:59 --> Severity: Notice --> Undefined index: district_id C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 41
+ERROR - 2021-01-06 10:20:59 --> Severity: Notice --> Undefined index: basin_id C:\xampp\htdocs\KSEBL_SSP\application\modules\supplier\supplier_home\controllers\Supplier_home.php 42
+INFO - 2021-01-06 10:21:00 --> Config Class Initialized
+INFO - 2021-01-06 10:21:00 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:21:00 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:21:00 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:21:00 --> URI Class Initialized
+INFO - 2021-01-06 10:21:01 --> Router Class Initialized
+INFO - 2021-01-06 10:21:01 --> Output Class Initialized
+INFO - 2021-01-06 10:21:01 --> Security Class Initialized
+DEBUG - 2021-01-06 10:21:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:21:01 --> Input Class Initialized
+INFO - 2021-01-06 10:21:01 --> Language Class Initialized
+INFO - 2021-01-06 10:21:01 --> Language Class Initialized
+INFO - 2021-01-06 10:21:01 --> Config Class Initialized
+INFO - 2021-01-06 10:21:02 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:21:02 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:21:02 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:21:02 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:21:02 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:21:02 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:21:02 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:21:03 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:21:03 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:21:03 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:03 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:03 --> Email Class Initialized
+INFO - 2021-01-06 10:21:04 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:21:04 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:21:04 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:21:05 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:05 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:21:05 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:05 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2021-01-06 10:21:05 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 10:21:05 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 10:21:05 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 10:21:05 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/dashboard.php
+DEBUG - 2021-01-06 10:21:05 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 10:21:06 --> Final output sent to browser
+DEBUG - 2021-01-06 10:21:06 --> Total execution time: 5.6073
+INFO - 2021-01-06 10:21:07 --> Config Class Initialized
+INFO - 2021-01-06 10:21:07 --> Hooks Class Initialized
+INFO - 2021-01-06 10:21:07 --> Config Class Initialized
+DEBUG - 2021-01-06 10:21:07 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:21:07 --> Hooks Class Initialized
+INFO - 2021-01-06 10:21:07 --> Utf8 Class Initialized
+DEBUG - 2021-01-06 10:21:07 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:21:07 --> URI Class Initialized
+INFO - 2021-01-06 10:21:07 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:21:07 --> Router Class Initialized
+INFO - 2021-01-06 10:21:07 --> URI Class Initialized
+INFO - 2021-01-06 10:21:07 --> Output Class Initialized
+INFO - 2021-01-06 10:21:07 --> Router Class Initialized
+INFO - 2021-01-06 10:21:08 --> Security Class Initialized
+INFO - 2021-01-06 10:21:08 --> Output Class Initialized
+DEBUG - 2021-01-06 10:21:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:21:08 --> Security Class Initialized
+INFO - 2021-01-06 10:21:08 --> Input Class Initialized
+DEBUG - 2021-01-06 10:21:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:21:08 --> Language Class Initialized
+INFO - 2021-01-06 10:21:08 --> Input Class Initialized
+INFO - 2021-01-06 10:21:08 --> Language Class Initialized
+INFO - 2021-01-06 10:21:08 --> Language Class Initialized
+INFO - 2021-01-06 10:21:08 --> Config Class Initialized
+INFO - 2021-01-06 10:21:08 --> Language Class Initialized
+INFO - 2021-01-06 10:21:08 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:21:08 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:21:08 --> Config Class Initialized
+INFO - 2021-01-06 10:21:09 --> Loader Class Initialized
+INFO - 2021-01-06 10:21:09 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: form_helper
+DEBUG - 2021-01-06 10:21:09 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:21:09 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:21:09 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:21:09 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:21:09 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:21:10 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:10 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:21:10 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:10 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:10 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:10 --> Email Class Initialized
+INFO - 2021-01-06 10:21:11 --> Email Class Initialized
+INFO - 2021-01-06 10:21:11 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:21:11 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:21:11 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:21:11 --> Template MX_Controller Initialized
+ERROR - 2021-01-06 10:21:11 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 26
+ERROR - 2021-01-06 10:21:11 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 30
+ERROR - 2021-01-06 10:21:12 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 36
+ERROR - 2021-01-06 10:21:12 --> Severity: Notice --> Undefined variable: page C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\sidebar.php 42
+DEBUG - 2021-01-06 10:21:12 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/sidebar.php
+ERROR - 2021-01-06 10:21:12 --> Severity: Notice --> Undefined variable: showdashbaord C:\xampp\htdocs\KSEBL_SSP\application\modules\template\views\supplier\header.php 84
+DEBUG - 2021-01-06 10:21:12 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/header.php
+DEBUG - 2021-01-06 10:21:12 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/e404.php
+DEBUG - 2021-01-06 10:21:12 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier/footer.php
+INFO - 2021-01-06 10:21:12 --> Final output sent to browser
+DEBUG - 2021-01-06 10:21:13 --> Total execution time: 5.6858
+INFO - 2021-01-06 10:21:14 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:21:14 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:21:14 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:21:14 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:14 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:21:14 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:14 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:21:15 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 10:21:15 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 10:21:15 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 10:21:15 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:21:15 --> Final output sent to browser
+DEBUG - 2021-01-06 10:21:15 --> Total execution time: 8.4904
+INFO - 2021-01-06 10:21:27 --> Config Class Initialized
+INFO - 2021-01-06 10:21:27 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:21:27 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:21:28 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:21:28 --> URI Class Initialized
+INFO - 2021-01-06 10:21:28 --> Router Class Initialized
+INFO - 2021-01-06 10:21:28 --> Output Class Initialized
+INFO - 2021-01-06 10:21:28 --> Security Class Initialized
+DEBUG - 2021-01-06 10:21:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:21:28 --> Input Class Initialized
+INFO - 2021-01-06 10:21:28 --> Language Class Initialized
+INFO - 2021-01-06 10:21:28 --> Language Class Initialized
+INFO - 2021-01-06 10:21:28 --> Config Class Initialized
+INFO - 2021-01-06 10:21:29 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:21:29 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:21:29 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:21:29 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:21:29 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:21:29 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:21:29 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:21:29 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:21:29 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:21:30 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:30 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:30 --> Email Class Initialized
+INFO - 2021-01-06 10:21:31 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:21:31 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:21:31 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:21:31 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:31 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:21:31 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:31 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2021-01-06 10:21:32 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 10:21:32 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 10:21:32 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 10:21:32 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/profile_sidebar.php
+DEBUG - 2021-01-06 10:21:32 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/company_profile.php
+DEBUG - 2021-01-06 10:21:33 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 10:21:33 --> Final output sent to browser
+DEBUG - 2021-01-06 10:21:33 --> Total execution time: 5.5058
+INFO - 2021-01-06 10:21:33 --> Config Class Initialized
+INFO - 2021-01-06 10:21:33 --> Config Class Initialized
+INFO - 2021-01-06 10:21:33 --> Hooks Class Initialized
+INFO - 2021-01-06 10:21:33 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:21:34 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 10:21:34 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:21:34 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:21:34 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:21:34 --> URI Class Initialized
+INFO - 2021-01-06 10:21:34 --> URI Class Initialized
+INFO - 2021-01-06 10:21:34 --> Router Class Initialized
+INFO - 2021-01-06 10:21:34 --> Router Class Initialized
+INFO - 2021-01-06 10:21:34 --> Output Class Initialized
+INFO - 2021-01-06 10:21:34 --> Output Class Initialized
+INFO - 2021-01-06 10:21:34 --> Security Class Initialized
+INFO - 2021-01-06 10:21:34 --> Security Class Initialized
+DEBUG - 2021-01-06 10:21:34 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-06 10:21:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:21:35 --> Input Class Initialized
+INFO - 2021-01-06 10:21:35 --> Input Class Initialized
+INFO - 2021-01-06 10:21:35 --> Language Class Initialized
+INFO - 2021-01-06 10:21:35 --> Language Class Initialized
+INFO - 2021-01-06 10:21:35 --> Language Class Initialized
+INFO - 2021-01-06 10:21:35 --> Language Class Initialized
+INFO - 2021-01-06 10:21:35 --> Config Class Initialized
+INFO - 2021-01-06 10:21:35 --> Config Class Initialized
+INFO - 2021-01-06 10:21:35 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:21:35 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:21:35 --> Loader Class Initialized
+INFO - 2021-01-06 10:21:35 --> Helper loaded: url_helper
+DEBUG - 2021-01-06 10:21:35 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:21:36 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:21:36 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:21:36 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:21:36 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:21:36 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:21:36 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:21:36 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:21:36 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:21:36 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:21:36 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:21:36 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:21:36 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:36 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:21:36 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:36 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:21:37 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:37 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:37 --> Email Class Initialized
+INFO - 2021-01-06 10:21:37 --> Email Class Initialized
+INFO - 2021-01-06 10:21:38 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:21:38 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:21:38 --> Controller Class Initialized
+ERROR - 2021-01-06 10:21:38 --> 404 Page Not Found: ../modules/supplier/supplier_dashboard/controllers/Supplier_dashboard/images
+INFO - 2021-01-06 10:21:39 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:21:39 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:21:39 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:21:39 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:39 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:21:39 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:39 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:21:40 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 10:21:40 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 10:21:40 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 10:21:40 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:21:40 --> Final output sent to browser
+DEBUG - 2021-01-06 10:21:40 --> Total execution time: 6.7782
+INFO - 2021-01-06 10:21:53 --> Config Class Initialized
+INFO - 2021-01-06 10:21:53 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:21:53 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:21:53 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:21:53 --> URI Class Initialized
+INFO - 2021-01-06 10:21:53 --> Router Class Initialized
+INFO - 2021-01-06 10:21:53 --> Output Class Initialized
+INFO - 2021-01-06 10:21:53 --> Security Class Initialized
+DEBUG - 2021-01-06 10:21:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:21:54 --> Input Class Initialized
+INFO - 2021-01-06 10:21:54 --> Language Class Initialized
+INFO - 2021-01-06 10:21:54 --> Language Class Initialized
+INFO - 2021-01-06 10:21:54 --> Config Class Initialized
+INFO - 2021-01-06 10:21:54 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:21:54 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:21:54 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:21:54 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:21:54 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:21:54 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:21:55 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:21:55 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:21:55 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:21:55 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:55 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:21:56 --> Email Class Initialized
+INFO - 2021-01-06 10:21:56 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:21:56 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:21:56 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:21:56 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:56 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:21:57 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:21:57 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2021-01-06 10:22:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 10:22:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 10:22:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 10:22:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/profile_sidebar.php
+DEBUG - 2021-01-06 10:22:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/portfolio.php
+DEBUG - 2021-01-06 10:22:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 10:22:01 --> Final output sent to browser
+DEBUG - 2021-01-06 10:22:01 --> Total execution time: 7.8041
+INFO - 2021-01-06 10:22:01 --> Config Class Initialized
+INFO - 2021-01-06 10:22:01 --> Config Class Initialized
+INFO - 2021-01-06 10:22:01 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:22:01 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:22:01 --> Hooks Class Initialized
+INFO - 2021-01-06 10:22:02 --> Utf8 Class Initialized
+DEBUG - 2021-01-06 10:22:02 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:22:02 --> URI Class Initialized
+INFO - 2021-01-06 10:22:02 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:22:02 --> URI Class Initialized
+INFO - 2021-01-06 10:22:02 --> Router Class Initialized
+INFO - 2021-01-06 10:22:02 --> Router Class Initialized
+INFO - 2021-01-06 10:22:02 --> Output Class Initialized
+INFO - 2021-01-06 10:22:02 --> Output Class Initialized
+INFO - 2021-01-06 10:22:02 --> Security Class Initialized
+DEBUG - 2021-01-06 10:22:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:22:02 --> Security Class Initialized
+DEBUG - 2021-01-06 10:22:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:22:03 --> Input Class Initialized
+INFO - 2021-01-06 10:22:03 --> Input Class Initialized
+INFO - 2021-01-06 10:22:03 --> Language Class Initialized
+INFO - 2021-01-06 10:22:03 --> Language Class Initialized
+INFO - 2021-01-06 10:22:03 --> Language Class Initialized
+INFO - 2021-01-06 10:22:03 --> Language Class Initialized
+INFO - 2021-01-06 10:22:03 --> Config Class Initialized
+INFO - 2021-01-06 10:22:03 --> Config Class Initialized
+INFO - 2021-01-06 10:22:03 --> Loader Class Initialized
+INFO - 2021-01-06 10:22:03 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:22:03 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2021-01-06 10:22:03 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:22:03 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:22:04 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:22:04 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:22:04 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:22:04 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:22:04 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:22:05 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:22:05 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:22:05 --> Email Class Initialized
+INFO - 2021-01-06 10:22:05 --> Email Class Initialized
+INFO - 2021-01-06 10:22:06 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:22:06 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:22:06 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:22:06 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:22:06 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:22:06 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:22:07 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:22:07 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 10:22:07 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 10:22:07 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 10:22:07 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:22:07 --> Final output sent to browser
+DEBUG - 2021-01-06 10:22:07 --> Total execution time: 6.0515
+INFO - 2021-01-06 10:22:08 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:22:08 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:22:08 --> Controller Class Initialized
+ERROR - 2021-01-06 10:22:09 --> 404 Page Not Found: ../modules/supplier/supplier_dashboard/controllers/Supplier_dashboard/images
+INFO - 2021-01-06 10:22:10 --> Config Class Initialized
+INFO - 2021-01-06 10:22:10 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:22:10 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:22:10 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:22:10 --> URI Class Initialized
+INFO - 2021-01-06 10:22:10 --> Router Class Initialized
+INFO - 2021-01-06 10:22:10 --> Output Class Initialized
+INFO - 2021-01-06 10:22:10 --> Security Class Initialized
+DEBUG - 2021-01-06 10:22:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:22:11 --> Input Class Initialized
+INFO - 2021-01-06 10:22:11 --> Language Class Initialized
+INFO - 2021-01-06 10:22:11 --> Language Class Initialized
+INFO - 2021-01-06 10:22:11 --> Config Class Initialized
+INFO - 2021-01-06 10:22:11 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:22:11 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:22:11 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:22:11 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:22:11 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:22:12 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:22:12 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:22:12 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:22:12 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:22:12 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:22:12 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:22:13 --> Email Class Initialized
+INFO - 2021-01-06 10:22:13 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:22:13 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:22:14 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:22:14 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:22:14 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:22:14 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:22:14 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+INFO - 2021-01-06 10:22:14 --> Final output sent to browser
+DEBUG - 2021-01-06 10:22:14 --> Total execution time: 4.5938
+INFO - 2021-01-06 10:23:48 --> Config Class Initialized
+INFO - 2021-01-06 10:23:48 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:23:48 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:23:48 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:23:48 --> URI Class Initialized
+INFO - 2021-01-06 10:23:48 --> Router Class Initialized
+INFO - 2021-01-06 10:23:48 --> Output Class Initialized
+INFO - 2021-01-06 10:23:48 --> Security Class Initialized
+DEBUG - 2021-01-06 10:23:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:23:49 --> Input Class Initialized
+INFO - 2021-01-06 10:23:49 --> Language Class Initialized
+INFO - 2021-01-06 10:23:49 --> Language Class Initialized
+INFO - 2021-01-06 10:23:49 --> Config Class Initialized
+INFO - 2021-01-06 10:23:49 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:23:49 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:23:49 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:23:49 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:23:49 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:23:50 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:23:50 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:23:50 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:23:50 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:23:50 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:23:50 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:23:51 --> Email Class Initialized
+INFO - 2021-01-06 10:23:51 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:23:51 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:23:51 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:23:51 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:23:52 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:23:52 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:23:52 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2021-01-06 10:23:54 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 10:23:54 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 10:23:55 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 10:23:55 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/profile_sidebar.php
+DEBUG - 2021-01-06 10:23:55 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/portfolio.php
+DEBUG - 2021-01-06 10:23:55 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 10:23:55 --> Final output sent to browser
+DEBUG - 2021-01-06 10:23:55 --> Total execution time: 7.1704
+INFO - 2021-01-06 10:23:56 --> Config Class Initialized
+INFO - 2021-01-06 10:23:56 --> Hooks Class Initialized
+INFO - 2021-01-06 10:23:56 --> Config Class Initialized
+INFO - 2021-01-06 10:23:56 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:23:56 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:23:56 --> Utf8 Class Initialized
+DEBUG - 2021-01-06 10:23:56 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:23:56 --> URI Class Initialized
+INFO - 2021-01-06 10:23:56 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:23:56 --> URI Class Initialized
+INFO - 2021-01-06 10:23:56 --> Router Class Initialized
+INFO - 2021-01-06 10:23:56 --> Output Class Initialized
+INFO - 2021-01-06 10:23:56 --> Router Class Initialized
+INFO - 2021-01-06 10:23:57 --> Security Class Initialized
+INFO - 2021-01-06 10:23:57 --> Output Class Initialized
+INFO - 2021-01-06 10:23:57 --> Security Class Initialized
+DEBUG - 2021-01-06 10:23:57 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-06 10:23:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:23:57 --> Input Class Initialized
+INFO - 2021-01-06 10:23:57 --> Language Class Initialized
+INFO - 2021-01-06 10:23:57 --> Input Class Initialized
+INFO - 2021-01-06 10:23:57 --> Language Class Initialized
+INFO - 2021-01-06 10:23:57 --> Language Class Initialized
+INFO - 2021-01-06 10:23:57 --> Config Class Initialized
+INFO - 2021-01-06 10:23:57 --> Language Class Initialized
+INFO - 2021-01-06 10:23:57 --> Config Class Initialized
+INFO - 2021-01-06 10:23:57 --> Loader Class Initialized
+INFO - 2021-01-06 10:23:58 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:23:58 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2021-01-06 10:23:58 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:23:58 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:23:58 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:23:59 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:23:59 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:23:59 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:23:59 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:23:59 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:23:59 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:23:59 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:24:00 --> Email Class Initialized
+INFO - 2021-01-06 10:24:00 --> Email Class Initialized
+INFO - 2021-01-06 10:24:00 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:24:00 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:24:00 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:24:00 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:24:00 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:24:01 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:24:01 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:24:01 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 10:24:01 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 10:24:01 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 10:24:01 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:24:01 --> Final output sent to browser
+DEBUG - 2021-01-06 10:24:01 --> Total execution time: 5.5304
+INFO - 2021-01-06 10:24:02 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:24:03 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:24:03 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:24:03 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:24:03 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+INFO - 2021-01-06 10:24:03 --> Config Class Initialized
+DEBUG - 2021-01-06 10:24:03 --> Template MX_Controller Initialized
+INFO - 2021-01-06 10:24:03 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:24:03 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:24:03 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 10:24:03 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 10:24:04 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+INFO - 2021-01-06 10:24:04 --> Utf8 Class Initialized
+DEBUG - 2021-01-06 10:24:04 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+INFO - 2021-01-06 10:24:04 --> URI Class Initialized
+DEBUG - 2021-01-06 10:24:04 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:24:04 --> Router Class Initialized
+INFO - 2021-01-06 10:24:04 --> Final output sent to browser
+INFO - 2021-01-06 10:24:04 --> Output Class Initialized
+DEBUG - 2021-01-06 10:24:04 --> Total execution time: 8.4377
+INFO - 2021-01-06 10:24:04 --> Security Class Initialized
+DEBUG - 2021-01-06 10:24:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:24:04 --> Input Class Initialized
+INFO - 2021-01-06 10:24:05 --> Language Class Initialized
+INFO - 2021-01-06 10:24:05 --> Language Class Initialized
+INFO - 2021-01-06 10:24:05 --> Config Class Initialized
+INFO - 2021-01-06 10:24:05 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:24:05 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:24:05 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:24:05 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:24:05 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:24:05 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:24:06 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:24:06 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:24:06 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:24:06 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:24:06 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:24:07 --> Email Class Initialized
+INFO - 2021-01-06 10:24:07 --> Config Class Initialized
+INFO - 2021-01-06 10:24:07 --> Hooks Class Initialized
+INFO - 2021-01-06 10:24:07 --> Session: Class initialized using 'database' driver.
+DEBUG - 2021-01-06 10:24:07 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:24:07 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:24:07 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:24:07 --> Controller Class Initialized
+INFO - 2021-01-06 10:24:07 --> URI Class Initialized
+ERROR - 2021-01-06 10:24:08 --> 404 Page Not Found: ../modules/supplier/supplier_dashboard/controllers/Supplier_dashboard/images
+INFO - 2021-01-06 10:24:08 --> Router Class Initialized
+INFO - 2021-01-06 10:24:08 --> Output Class Initialized
+INFO - 2021-01-06 10:24:08 --> Security Class Initialized
+DEBUG - 2021-01-06 10:24:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:24:08 --> Input Class Initialized
+INFO - 2021-01-06 10:24:08 --> Language Class Initialized
+INFO - 2021-01-06 10:24:08 --> Language Class Initialized
+INFO - 2021-01-06 10:24:08 --> Config Class Initialized
+INFO - 2021-01-06 10:24:08 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:24:09 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:24:09 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:24:09 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:24:09 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:24:09 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:24:09 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:24:09 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:24:09 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:24:09 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:24:09 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:24:10 --> Email Class Initialized
+INFO - 2021-01-06 10:24:10 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:24:10 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:24:11 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:24:11 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:24:11 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:24:11 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:24:11 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+INFO - 2021-01-06 10:24:11 --> Final output sent to browser
+DEBUG - 2021-01-06 10:24:11 --> Total execution time: 4.2837
+INFO - 2021-01-06 10:25:03 --> Config Class Initialized
+INFO - 2021-01-06 10:25:03 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:25:03 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:25:03 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:25:03 --> URI Class Initialized
+INFO - 2021-01-06 10:25:03 --> Router Class Initialized
+INFO - 2021-01-06 10:25:04 --> Output Class Initialized
+INFO - 2021-01-06 10:25:04 --> Security Class Initialized
+DEBUG - 2021-01-06 10:25:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:25:04 --> Input Class Initialized
+INFO - 2021-01-06 10:25:04 --> Language Class Initialized
+INFO - 2021-01-06 10:25:04 --> Language Class Initialized
+INFO - 2021-01-06 10:25:04 --> Config Class Initialized
+INFO - 2021-01-06 10:25:04 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:25:05 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:25:05 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:25:05 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:25:05 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:25:05 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:25:05 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:25:05 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:25:05 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:25:05 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:05 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:06 --> Email Class Initialized
+INFO - 2021-01-06 10:25:07 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:25:07 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:25:07 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:25:07 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:25:07 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:25:07 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:25:07 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2021-01-06 10:25:10 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 10:25:10 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 10:25:10 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 10:25:10 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/profile_sidebar.php
+DEBUG - 2021-01-06 10:25:10 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/portfolio.php
+DEBUG - 2021-01-06 10:25:10 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 10:25:10 --> Final output sent to browser
+DEBUG - 2021-01-06 10:25:10 --> Total execution time: 7.3804
+INFO - 2021-01-06 10:25:11 --> Config Class Initialized
+INFO - 2021-01-06 10:25:11 --> Config Class Initialized
+INFO - 2021-01-06 10:25:11 --> Hooks Class Initialized
+INFO - 2021-01-06 10:25:11 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:25:11 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 10:25:11 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:25:11 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:25:11 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:25:11 --> URI Class Initialized
+INFO - 2021-01-06 10:25:11 --> URI Class Initialized
+INFO - 2021-01-06 10:25:11 --> Router Class Initialized
+INFO - 2021-01-06 10:25:11 --> Router Class Initialized
+INFO - 2021-01-06 10:25:12 --> Output Class Initialized
+INFO - 2021-01-06 10:25:12 --> Output Class Initialized
+INFO - 2021-01-06 10:25:12 --> Security Class Initialized
+INFO - 2021-01-06 10:25:12 --> Security Class Initialized
+DEBUG - 2021-01-06 10:25:12 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2021-01-06 10:25:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:25:12 --> Input Class Initialized
+INFO - 2021-01-06 10:25:12 --> Input Class Initialized
+INFO - 2021-01-06 10:25:12 --> Language Class Initialized
+INFO - 2021-01-06 10:25:12 --> Language Class Initialized
+INFO - 2021-01-06 10:25:12 --> Language Class Initialized
+INFO - 2021-01-06 10:25:12 --> Language Class Initialized
+INFO - 2021-01-06 10:25:12 --> Config Class Initialized
+INFO - 2021-01-06 10:25:12 --> Config Class Initialized
+INFO - 2021-01-06 10:25:13 --> Loader Class Initialized
+INFO - 2021-01-06 10:25:13 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:25:13 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+DEBUG - 2021-01-06 10:25:13 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:25:13 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:25:13 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:25:14 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:25:14 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:25:14 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:25:14 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:14 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:14 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:14 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:15 --> Email Class Initialized
+INFO - 2021-01-06 10:25:15 --> Email Class Initialized
+INFO - 2021-01-06 10:25:15 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:25:15 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:25:16 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:25:16 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:25:16 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:25:16 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:25:16 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:25:16 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 10:25:16 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 10:25:16 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 10:25:17 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:25:17 --> Final output sent to browser
+DEBUG - 2021-01-06 10:25:17 --> Total execution time: 5.8531
+INFO - 2021-01-06 10:25:18 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:25:18 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:25:18 --> Controller Class Initialized
+ERROR - 2021-01-06 10:25:18 --> 404 Page Not Found: ../modules/supplier/supplier_dashboard/controllers/Supplier_dashboard/images
+INFO - 2021-01-06 10:25:18 --> Config Class Initialized
+INFO - 2021-01-06 10:25:19 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:25:19 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:25:19 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:25:19 --> URI Class Initialized
+INFO - 2021-01-06 10:25:19 --> Router Class Initialized
+INFO - 2021-01-06 10:25:19 --> Output Class Initialized
+INFO - 2021-01-06 10:25:19 --> Security Class Initialized
+DEBUG - 2021-01-06 10:25:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:25:19 --> Input Class Initialized
+INFO - 2021-01-06 10:25:20 --> Language Class Initialized
+INFO - 2021-01-06 10:25:20 --> Language Class Initialized
+INFO - 2021-01-06 10:25:20 --> Config Class Initialized
+INFO - 2021-01-06 10:25:20 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:25:20 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:25:20 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:25:20 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:25:20 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:25:21 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:25:21 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:25:21 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:25:21 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:25:21 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:21 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:22 --> Email Class Initialized
+INFO - 2021-01-06 10:25:22 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:25:22 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:25:22 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:25:23 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:25:23 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:25:23 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:25:23 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:25:23 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 10:25:23 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 10:25:23 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 10:25:23 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:25:23 --> Final output sent to browser
+DEBUG - 2021-01-06 10:25:23 --> Total execution time: 4.9610
+INFO - 2021-01-06 10:25:26 --> Config Class Initialized
+INFO - 2021-01-06 10:25:26 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:25:26 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:25:26 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:25:26 --> URI Class Initialized
+INFO - 2021-01-06 10:25:26 --> Router Class Initialized
+INFO - 2021-01-06 10:25:26 --> Output Class Initialized
+INFO - 2021-01-06 10:25:26 --> Security Class Initialized
+DEBUG - 2021-01-06 10:25:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:25:26 --> Input Class Initialized
+INFO - 2021-01-06 10:25:27 --> Language Class Initialized
+INFO - 2021-01-06 10:25:27 --> Language Class Initialized
+INFO - 2021-01-06 10:25:27 --> Config Class Initialized
+INFO - 2021-01-06 10:25:27 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:25:27 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:25:27 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:25:27 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:25:27 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:25:27 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:25:27 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:25:28 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:25:28 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:25:28 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:28 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:25:28 --> Email Class Initialized
+INFO - 2021-01-06 10:25:29 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:25:29 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:25:29 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:25:29 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:25:29 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:25:29 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:25:30 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+INFO - 2021-01-06 10:25:30 --> Final output sent to browser
+DEBUG - 2021-01-06 10:25:30 --> Total execution time: 4.2373
+INFO - 2021-01-06 10:30:40 --> Config Class Initialized
+INFO - 2021-01-06 10:30:40 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:30:41 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:30:41 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:30:41 --> URI Class Initialized
+INFO - 2021-01-06 10:30:41 --> Router Class Initialized
+INFO - 2021-01-06 10:30:41 --> Output Class Initialized
+INFO - 2021-01-06 10:30:41 --> Security Class Initialized
+DEBUG - 2021-01-06 10:30:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:30:41 --> Input Class Initialized
+INFO - 2021-01-06 10:30:41 --> Language Class Initialized
+INFO - 2021-01-06 10:30:42 --> Language Class Initialized
+INFO - 2021-01-06 10:30:42 --> Config Class Initialized
+INFO - 2021-01-06 10:30:42 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:30:42 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:30:42 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:30:42 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:30:42 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:30:42 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:30:42 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:30:43 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:30:43 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:30:43 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:30:43 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:30:44 --> Email Class Initialized
+INFO - 2021-01-06 10:30:45 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:30:45 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:30:45 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:30:45 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:30:45 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:30:45 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:30:45 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+DEBUG - 2021-01-06 10:30:48 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/header.php
+DEBUG - 2021-01-06 10:30:48 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/banner.php
+DEBUG - 2021-01-06 10:30:48 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/widget.php
+DEBUG - 2021-01-06 10:30:49 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/profile_sidebar.php
+DEBUG - 2021-01-06 10:30:49 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/views/portfolio.php
+DEBUG - 2021-01-06 10:30:49 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/supplier_portal/footer.php
+INFO - 2021-01-06 10:30:49 --> Final output sent to browser
+DEBUG - 2021-01-06 10:30:49 --> Total execution time: 9.2910
+INFO - 2021-01-06 10:30:49 --> Config Class Initialized
+INFO - 2021-01-06 10:30:50 --> Config Class Initialized
+INFO - 2021-01-06 10:30:50 --> Hooks Class Initialized
+INFO - 2021-01-06 10:30:50 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:30:50 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 10:30:50 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:30:50 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:30:50 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:30:50 --> URI Class Initialized
+INFO - 2021-01-06 10:30:50 --> URI Class Initialized
+INFO - 2021-01-06 10:30:50 --> Router Class Initialized
+INFO - 2021-01-06 10:30:50 --> Router Class Initialized
+INFO - 2021-01-06 10:30:50 --> Output Class Initialized
+INFO - 2021-01-06 10:30:50 --> Output Class Initialized
+INFO - 2021-01-06 10:30:50 --> Security Class Initialized
+DEBUG - 2021-01-06 10:30:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:30:51 --> Security Class Initialized
+DEBUG - 2021-01-06 10:30:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:30:51 --> Input Class Initialized
+INFO - 2021-01-06 10:30:51 --> Language Class Initialized
+INFO - 2021-01-06 10:30:51 --> Input Class Initialized
+INFO - 2021-01-06 10:30:51 --> Language Class Initialized
+INFO - 2021-01-06 10:30:51 --> Language Class Initialized
+INFO - 2021-01-06 10:30:51 --> Language Class Initialized
+INFO - 2021-01-06 10:30:51 --> Config Class Initialized
+INFO - 2021-01-06 10:30:51 --> Loader Class Initialized
+INFO - 2021-01-06 10:30:51 --> Config Class Initialized
+DEBUG - 2021-01-06 10:30:51 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:30:51 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:30:51 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:30:51 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:30:52 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:30:52 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:30:52 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:30:52 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:30:53 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:30:53 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:30:53 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:30:55 --> Email Class Initialized
+INFO - 2021-01-06 10:30:55 --> Email Class Initialized
+INFO - 2021-01-06 10:30:55 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:30:56 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:30:56 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:30:56 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:30:56 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:30:56 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:30:56 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:30:56 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+DEBUG - 2021-01-06 10:30:56 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 10:30:56 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+DEBUG - 2021-01-06 10:30:57 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:30:57 --> Final output sent to browser
+DEBUG - 2021-01-06 10:30:57 --> Total execution time: 7.2547
+INFO - 2021-01-06 10:30:58 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:30:58 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:30:58 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:30:58 --> Web MX_Controller Initialized
+DEBUG - 2021-01-06 10:30:58 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:30:58 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:30:58 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/header.php
+DEBUG - 2021-01-06 10:30:59 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/banner.php
+INFO - 2021-01-06 10:30:59 --> Config Class Initialized
+DEBUG - 2021-01-06 10:30:59 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/widget.php
+DEBUG - 2021-01-06 10:30:59 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/website/web/views/404.php
+INFO - 2021-01-06 10:30:59 --> Hooks Class Initialized
+DEBUG - 2021-01-06 10:30:59 --> UTF-8 Support Enabled
+DEBUG - 2021-01-06 10:30:59 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/template/views/public/footer.php
+INFO - 2021-01-06 10:30:59 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:30:59 --> Final output sent to browser
+INFO - 2021-01-06 10:30:59 --> URI Class Initialized
+DEBUG - 2021-01-06 10:30:59 --> Total execution time: 9.7094
+INFO - 2021-01-06 10:30:59 --> Router Class Initialized
+INFO - 2021-01-06 10:30:59 --> Output Class Initialized
+INFO - 2021-01-06 10:31:00 --> Security Class Initialized
+DEBUG - 2021-01-06 10:31:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:31:00 --> Input Class Initialized
+INFO - 2021-01-06 10:31:00 --> Language Class Initialized
+INFO - 2021-01-06 10:31:00 --> Language Class Initialized
+INFO - 2021-01-06 10:31:00 --> Config Class Initialized
+INFO - 2021-01-06 10:31:00 --> Loader Class Initialized
+DEBUG - 2021-01-06 10:31:00 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:31:01 --> Helper loaded: url_helper
+INFO - 2021-01-06 10:31:01 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:31:01 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:31:01 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:31:01 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:31:01 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:31:01 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:31:01 --> Config Class Initialized
+INFO - 2021-01-06 10:31:02 --> Hooks Class Initialized
+INFO - 2021-01-06 10:31:02 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:31:02 --> Database Driver Class Initialized
+DEBUG - 2021-01-06 10:31:02 --> UTF-8 Support Enabled
+INFO - 2021-01-06 10:31:02 --> Utf8 Class Initialized
+INFO - 2021-01-06 10:31:02 --> URI Class Initialized
+INFO - 2021-01-06 10:31:02 --> Router Class Initialized
+INFO - 2021-01-06 10:31:02 --> Output Class Initialized
+INFO - 2021-01-06 10:31:02 --> Email Class Initialized
+INFO - 2021-01-06 10:31:02 --> Security Class Initialized
+DEBUG - 2021-01-06 10:31:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-01-06 10:31:02 --> Input Class Initialized
+INFO - 2021-01-06 10:31:03 --> Language Class Initialized
+INFO - 2021-01-06 10:31:03 --> Language Class Initialized
+INFO - 2021-01-06 10:31:03 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:31:03 --> Config Class Initialized
+INFO - 2021-01-06 10:31:03 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:31:03 --> Loader Class Initialized
+INFO - 2021-01-06 10:31:03 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:31:03 --> Config file loaded: C:\xampp\htdocs\KSEBL_SSP\application\config/rest.php
+INFO - 2021-01-06 10:31:03 --> Helper loaded: url_helper
+ERROR - 2021-01-06 10:31:03 --> 404 Page Not Found: ../modules/supplier/supplier_dashboard/controllers/Supplier_dashboard/images
+INFO - 2021-01-06 10:31:03 --> Helper loaded: form_helper
+INFO - 2021-01-06 10:31:04 --> Helper loaded: adminurl_helper
+INFO - 2021-01-06 10:31:04 --> Helper loaded: site_helper
+INFO - 2021-01-06 10:31:04 --> Helper loaded: directory_helper
+INFO - 2021-01-06 10:31:04 --> Helper loaded: mail_helper
+INFO - 2021-01-06 10:31:04 --> Language file loaded: language/english/api_lang.php
+INFO - 2021-01-06 10:31:04 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:31:04 --> Database Driver Class Initialized
+INFO - 2021-01-06 10:31:08 --> Email Class Initialized
+INFO - 2021-01-06 10:31:08 --> Session: Class initialized using 'database' driver.
+INFO - 2021-01-06 10:31:08 --> Form Validation Class Initialized
+INFO - 2021-01-06 10:31:09 --> Controller Class Initialized
+DEBUG - 2021-01-06 10:31:09 --> Supplier_dashboard MX_Controller Initialized
+DEBUG - 2021-01-06 10:31:09 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\controllers/../modules/template/controllers/Template.php
+DEBUG - 2021-01-06 10:31:09 --> Template MX_Controller Initialized
+DEBUG - 2021-01-06 10:31:09 --> File loaded: C:\xampp\htdocs\KSEBL_SSP\application\modules/supplier/supplier_dashboard/models/Dashboard_model.php
+INFO - 2021-01-06 10:31:09 --> Final output sent to browser
+DEBUG - 2021-01-06 10:31:09 --> Total execution time: 7.7660

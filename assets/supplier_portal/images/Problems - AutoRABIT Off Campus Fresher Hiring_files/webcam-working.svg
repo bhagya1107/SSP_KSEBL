@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Group 2 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2-Copy-2" transform="translate(1.000000, 0.000000)">
+            <g id="webcam-3" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+                <g id="webcam-2">
+                    <g id="webcam">
+                        <path d="M14.830264,7.83930996 C14.830264,10.6280198 13.2080228,13.106873 10.8905354,14.2688354 C9.88629087,14.7336204 8.80479675,15.043477 7.64605305,15.043477 C6.3328102,15.043477 5.09681692,14.6561562 4.0153228,14.0364429 C1.85233457,12.7970163 0.461842131,10.4730915 0.461842131,7.83930996 C0.461842131,3.81117353 3.70632448,0.635142892 7.64605305,0.635142892 C11.5857816,0.635142892 14.830264,3.88863769 14.830264,7.83930996 Z" id="Path"></path>
+                        <ellipse id="Oval" cx="7.64605305" cy="8.12453616" rx="3.3355265" ry="3.44035733"></ellipse>
+                        <path d="M14.2026323,18.2990359 L1.57894737,18.2990359 L4.27302646,14.25 C5.3506581,14.8851429 6.58223712,15.2821072 7.89078982,15.2821072 C9.04539515,15.2821072 10.2000005,14.9645358 11.1236847,14.4881786 L14.2026323,18.2990359 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+            <circle id="Oval-Copy-3" fill="#FFFFFF" opacity="0" cx="16" cy="5" r="5"></circle>
+            <circle id="Oval" fill="#56BA58" cx="16" cy="5" r="3"></circle>
+        </g>
+    </g>
+</svg>
