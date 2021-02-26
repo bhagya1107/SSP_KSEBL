@@ -78,18 +78,41 @@
               </div>
             </div>
           </div>
+          <script> 
+        setTimeout(function() {
+            $('#mydivss').hide('fast');
+        }, 10000);
+    </script>
           <?php 
           $msg=$this->session->flashdata('msg'); 
           if($msg)
           {
             ?>
 
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="mydivss">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
               <?php
               echo $msg;
+              ?>
+            </div>
+
+            <?php 
+          }
+          ?>
+           <?php 
+          $dmsg=$this->session->flashdata('dmsg'); 
+          if($dmsg)
+          {
+            ?>
+
+            <div class="alert  alert-danger" id="mydivss">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <?php
+              echo $dmsg;
               ?>
             </div>
 
@@ -150,7 +173,7 @@
                         {
                          echo "Supplier"; 
                        } ?></td>
-                       <td><a href="<?php echo base_url('webuser/User_management/activate_account/'.$value->uid)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Activate"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a></td>
+                       <td><a >Not Active</a></td>
                        <td>
                         <a href="<?= admin_url('user_management/supplier_profile/'.$value->uid) ?>"><input type="button" class="btn  btn-sm btn-out-dashed btn-success btn-square" style="background-color: #0e214c"value="VIEW PROFILE"></a>
                       </td>
@@ -230,7 +253,7 @@ $( document ).ajaxStop(function() {
             
             <table style="margin-top: 40px;" >
               <th></th>
-              <th><input type="file"  name="file" id="file" accept=".xls, .xlsx" /></th>
+              <th><input type="file" class="form-control" name="file" id="file" accept=".xls, .xlsx" /></th>
 
               <td></td>
               <td> <button type="Submit" name="import" value="Import" class="btn btn-primary" >Submit</button></td>
@@ -330,7 +353,7 @@ $( document ).ajaxStop(function() {
           var activateString='';
           if(data.active_status==0){
             var url='<?php echo base_url()?>'+"webuser/User_management/activate_account/"+data.uid;
-            activateString='<a  class="btn  btn-sm btn-out-dashed btn-success btn-square deleteText" href="'+url+'" >Activate</a>';
+            activateString='<a >Not Active</a>';
           } else {
             activateString='<a >Active</a>';
           }

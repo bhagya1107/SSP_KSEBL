@@ -110,10 +110,29 @@
                                                                                               
                                               </style>
 
-                                                <h5 class="card-header-text">About Supplier</h5>
-                                                <button id="editprofilefn"   type="button" class="btn btn-sm btn-primary waves-effect waves-light f-right editbutton editprofilefn style5" onclick="getElementById('editprofilefn').style.display = 'block'; this.style.display = 'none'">
+                                                <h5 class="card-header-text">Basic Info</h5>
+                                                 <?php if($getuserdetails->active_status==0) 
+                          { ?>
+                                                        
+                                                          <p  class="  f-right   " >
+                                                <a href="<?php echo base_url('webuser/User_management/activate_account/'.$getuserdetails->uid)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Activate"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
+                                                 </p> 
+                                             <?php }
+                                             else
+                                             {
+                                                ?>
+                                                    <p  class="  f-right   " >
+                                                <a href="<?php echo base_url('webuser/User_management/deactivate_account/'.$getuserdetails->uid)?>" ><input type="button" style="background-color: red;" value="Deactivate"  class="btn  btn-sm btn-out-dashed btn-success btn-square" value=""  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
+                                                 </p> 
+
+                                                <?php
+                                             }
+                                              ?>
+
+                                             <!--    <a href="<?php echo base_url('webuser/User_management/activate_account/'.$getuserdetails->uid)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Activate"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a> -->
+                                 <!--                <button id="editprofilefn"   type="button" class="btn btn-sm btn-primary waves-effect waves-light f-right editbutton editprofilefn style5" onclick="getElementById('editprofilefn').style.display = 'block'; this.style.display = 'none'">
                                                <i class="icofont icofont-edit"></i>
-                        </button>
+                        </button> -->
                         <script type="text/javascript">
  
 
@@ -239,8 +258,8 @@
                 </tr>
                 <tr>
                     <th></th>
-                    <td > <div class="form-group"><button type="submit" class="btn btn-primary formdisplay form1"  onclick="save_profiledetails();" id="saveprofilefn"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"  ><span>Save</span></button>
-                      <a href="<?php echo base_url('webuser/User_management/supplier_profile/'.$getuserdetails->uid)?>">  <button type="submit" class="btn btn-primary formdisplay form1 "   data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Cancel</span></button></a></div></td>
+                    <td > <div class="form-group">
+                      <a href="<?php echo base_url('webuser/User_management/resend_password/'.$getuserdetails->uid)?>" onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" >  <button type="submit" class="btn btn-primary   "  style="margin-left: 150px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Resend Password</span></button></a></div></td>
 
                      
 

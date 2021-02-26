@@ -9,10 +9,23 @@ class User_management_model extends CI_Model
    $this->db->order_by('uid','DESC');
    return $this->db->get("suppliers")->result();
  }
+ public function resend_password($id,$pass)
+ {
+   $this->db->where('uid',$id); 
+   $this->db->set('password',$pass);
+   $this->db->update('suppliers');
+ }
  public function activate_account($table,$id)
  {
    $this->db->where('uid',$id); 
    $this->db->set('active_status',1);
+   $this->db->update('suppliers');
+ }
+  public function deactivate_account($table,$id)
+ {
+   $this->db->where('uid',$id); 
+   $this->db->set('active_status',0);
+   $this->db->set('isdeleted',1);
    $this->db->update('suppliers');
  }
  public function ajaxselect($statusType,$userType)

@@ -43,6 +43,13 @@ class User_management extends AD_Controller {
     $this->session->set_flashdata('msg','Approved successfully');
     redirect(base_url('webuser/user_management/suppliers'));
   }
+  public function deactivate_account()
+  {
+    $id=$this->uri->segment(4);
+    $this->userM->deactivate_account('suppliers',$id);
+    $this->session->set_flashdata('dmsg','Deactivated successfully');
+    redirect(base_url('webuser/user_management/suppliers'));
+  }
   public function getdetails()
   {
     $statusType=$this->input->post("status_type");
@@ -210,8 +217,9 @@ $isError=false;
        $this->userM->insert('access_permission',$data6);
        $this->userM->insert('access_permission',$data7);
   }
-  function random_password() 
+  function resend_password() 
   {
+    $id=$this->uri->segment(4);
 
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
     $password = array(); 
@@ -223,7 +231,12 @@ $isError=false;
     }
 
     $pass=implode($password); 
-    echo $pass; 
+    //  echo $pass; 
+    //  echo $id;
+    // exit();
+    $this->userM->resend_password($id,$pass);
+    $this->session->set_flashdata('msg','Resend Password successfully');
+    redirect(base_url('webuser/user_management/suppliers'));
 
   }
     public function update_supplierprofile(){
