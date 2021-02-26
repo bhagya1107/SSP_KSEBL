@@ -43,9 +43,9 @@
            <h5 class="bd-wizard-step-title">Step 1</h5>
            <h3 class="section-heading">Agree terms and conditions </h3>
            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-						<label for="">
-							<input type="checkbox" name="" id=""> I agree to the terms and conditon
-						</label>
+            <label for="">
+              <input type="checkbox" name="" id=""> I agree to the terms and conditon
+            </label>
           </section>
           <h3>Step 2</h3>
           <section>
@@ -92,8 +92,8 @@
           <h1>SUPPLIER REGISTRATION</h1>
             <p>
               <h4 class=""> 
-                <input type="radio" id="is_company" name="comp_type" required > &nbsp;Supplier    &nbsp; &nbsp; &nbsp;
-                <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor
+                 <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor  &nbsp; &nbsp; &nbsp;
+                <input type="radio" id="is_company" name="comp_type" required > &nbsp;Supplier  
               </h4>
             </p>
        <div class="companyStatus">
@@ -113,10 +113,10 @@
             <h4 class="section-heading ">Registration Type </h4>
             <p>
               <select class="form-control" name="registrationtype">
-                <option selected disabled >Select</option>
+                <option selected disabled >Select</option>  
                 <option value="3">Supplier</option>
                 <!-- <option value="2">Contractor</option> -->
-                <option value="1">Both</option>
+                <option value="1">Both (Supplier,Contractor )</option>
               </select>           
             </p>
           </div>
@@ -199,10 +199,10 @@
     $('#is_individual').click(function(){
       $('.companyStatus').addClass('hidedata');
     });
-	 $('#is_individual').click(function(){
+   $('#is_individual').click(function(){
       $('.individualStatus').removeClass('hidedata');
     });
-	 $('#is_company').click(function(){
+   $('#is_company').click(function(){
       $('.individualStatus').addClass('hidedata');
     });
     $('#agree_terms').click(function(){
