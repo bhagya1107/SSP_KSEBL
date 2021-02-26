@@ -116,7 +116,7 @@
                 <option selected disabled >Select</option>
                 <option value="3">Supplier</option>
                 <!-- <option value="2">Contractor</option> -->
-                <option value="1">Both</option>
+                <option value="1">Both(Supplier,Contractor)</option>
               </select>           
             </p>
           </div>
