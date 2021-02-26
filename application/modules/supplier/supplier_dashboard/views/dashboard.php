@@ -3,7 +3,7 @@
 
 <style>
 .fa-2x{
-	font-size: 4em!important;;
+	font-size: 8em!important;;
 }
 #loader{
   margin:auto;
