@@ -2,7 +2,7 @@
 class User_management_model extends CI_Model
 { 
 
-  public function getUserProfile() 
+  public function getUserProfile()  
   {
    $this->db->select('*');
    $this->db->where('active_status',0);
