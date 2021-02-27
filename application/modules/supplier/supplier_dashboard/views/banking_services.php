@@ -114,6 +114,7 @@
                                     <th>IFSC</th>
                                     <th>Account No</th> 
                                     <th>Document</th> 
+                                    <th>Status</th>
                                     <th>Delete</th>
                                 
                                 </tr>
@@ -143,6 +144,16 @@
 
                 
                                     </td>
+                                     <td><?php if($value->is_approved==1)
+                                    { ?>
+                                        <p>Approved</p>
+                                  <?php   }
+                                  else
+                                  { ?>
+                                    <p>Waiting for Approval</p>
+                                 <?php  }
+                                    ?>
+</td>
 
                                     <td><a href="<?php echo base_url('supplier/dashboard/delete/'.$value->id)?>" onclick="return confirm('Are you sure, you want to delete it?')"><span style="color:red"><i class="fa fa-trash" aria-hidden="true"></i></span></a></td>
 
