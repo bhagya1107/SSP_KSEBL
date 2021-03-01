@@ -59,7 +59,7 @@
                 <div class="form-group row form_filter"  >
                  <!-- <label class="col-sm-5 col-lg-3">Status</label> -->
                  <div class="col-sm-7 col-lg-9" style="margin-left: 150px;">
-                   <a data-toggle="modal" data-target="#importfile"><input type="button" style="background-color: #0e214c"  class="btn  btn-sm btn-out-dashed btn-success btn-square" value="IMPORT FILE" /></a>
+                   <a data-toggle="modal" data-target="#importfile"><input type="button" style="background-color: #0e214c"  class="btn  btn-sm btn-out-dashed btn-success btn-square" value="IMPORT " /></a>
                  </div>
                </div>
 
@@ -135,10 +135,10 @@
                         <th >Name</th>
                         <th>Registered Date</th>
                         <th>Pan No</th>
-
                         <th>Mobile</th>
                         <th>Email</th>
                         <th>User Type</th>
+                        <th>Source</th>
                         <th>Status</th>
                         <th>View Profile</th>
                       </tr>
@@ -173,6 +173,7 @@
                         {
                          echo "Supplier"; 
                        } ?></td>
+                       <td><?php echo $value->source;?></td>
                        <td><a >Not Active</a></td>
                        <td>
                         <a href="<?= admin_url('user_management/supplier_profile/'.$value->uid) ?>"><input type="button" class="btn  btn-sm btn-out-dashed btn-success btn-square" style="background-color: #0e214c"value="VIEW PROFILE"></a>
@@ -365,7 +366,7 @@ $( document ).ajaxStop(function() {
           }else if(data.user_type==3){
             data1="Supplier";
           }
-          tab=tab+'<tr> <td>'+j+'</td> <td class="tbllength">'+data.name+'</td> <td>'+data.created_date+'</td> <td>'+data.pannumber+'</td> <td>'+data.mobile+'</td> <td>'+data.email+'</td> <td>'+data1+'</td> <td>';
+          tab=tab+'<tr> <td>'+j+'</td> <td class="tbllength">'+data.name+'</td> <td>'+data.created_date+'</td> <td>'+data.pannumber+'</td> <td>'+data.mobile+'</td>  <td>'+data.email+'</td> <td>'+data1+'</td> <td>'+data.source+'</td> <td>';
           tab=tab+activateString;
 
           var url1='<?php echo base_url()?>'+"webuser/User_management/supplier_profile/"+data.uid;
