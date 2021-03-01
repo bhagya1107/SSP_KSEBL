@@ -9,7 +9,7 @@ class User_management_model extends CI_Model
    $this->db->order_by('uid','DESC');
    return $this->db->get("suppliers")->result();
  }
- public function resend_password($id,$pass)
+ public function resend_password($id,$pass) 
  {
    $this->db->where('uid',$id); 
    $this->db->set('password',$pass);
@@ -21,6 +21,13 @@ class User_management_model extends CI_Model
    $this->db->set('active_status',1);
    $this->db->update('suppliers');
  }
+ public function approve_bank_account($table,$id)
+ {
+   $this->db->where('id',$id); 
+   $this->db->set('is_approved',1);
+   $this->db->update($table);
+ }
+ 
   public function deactivate_account($table,$id)
  {
    $this->db->where('uid',$id); 
@@ -79,6 +86,14 @@ function getpan($pannumber) {
    // $this->db->where('islocked','');
    return $this->db->get("employees")->result();
  }
+  public function getstaffdetails1($id) 
+  {
+   $this->db->select('*');
+   $this->db->where('supplierid',$id);
+   $this->db->where('isdeleted',false);
+   // $this->db->where('islocked','');
+   return $this->db->get("employees")->row();
+ }
  
  public function update_staffdetails($data,$id)
  {
@@ -93,12 +108,23 @@ function getpan($pannumber) {
    $this->db->where('supplierid',$id);
    return $this->db->get($table)->result();
  }
+  public function bank_details1($table,$id) 
+  {
+   $this->db->select('*');
+   $this->db->where('supplierid',$id);
+   return $this->db->get($table)->row();
+ }
   public function supplierinfo($table,$id) 
   {
    $this->db->select('*');
    $this->db->where('supplierId',$id);
    return $this->db->get($table)->result();
  }
- 
+ public function supplierinfo1($table,$id) 
+  {
+   $this->db->select('*');
+   $this->db->where('supplierId',$id);
+   return $this->db->get($table)->row();
+ }
 
 }
