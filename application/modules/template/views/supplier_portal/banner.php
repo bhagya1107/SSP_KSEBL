@@ -49,10 +49,20 @@
   <?php if($this->uri->segment(2) == 'tenders')  { ?>
  <div class="searchbar">
 
- 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 135px">
+ 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 113px">
 
  					<div class="form-group row form_filter">
+<div class="col-sm-2 col-xs-12 ">
+ 							
+ 							<select class="select2 form-control"  placeholder="Select a location/purchaser">
+							 <option>Select Tender Type</option>
+                            	<option value="0">Products</option> 
+								<option value="0">Services</option> 
+							   	<option value="0">All</option>
+							</select>	
 
+ 								
+ 						</div>
  						<div class="col-sm-2 col-xs-12" >
 						<!--<label>Tender ID:</label>-->
  							<select class="select2 form-control" id="tenderid" name="group_flat__id" data-placeholder="Select a TenderId" >

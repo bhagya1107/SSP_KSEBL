@@ -101,11 +101,11 @@ small{
 			<div class="tg-section-name">
 				<h2>Tenders</h2>
 			</div>
-			<div class="col-sm-11 col-xs-11 pull-right">
+			<!--<div class="col-sm-11 col-xs-11 pull-right">
 			<input type="checkbox" name="chk" id="Both" value="Both">&nbsp; Both &nbsp;&nbsp;
 			<input type="checkbox" name="chk" id="Product" value="Product">&nbsp; Product &nbsp;
 			<input type="checkbox" name="chk" id="Services" value="Services">&nbsp; Services
-			</div><br><br>
+			</div><br><br>-->
 			
 			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:400px;">
 				<ul class="nav nav-tabs">
