@@ -421,7 +421,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Purchase order details</h4>
       </div>
-      <div class="modal-body" id="modalpurchase">
+      <div class="modal-body" id="modalpurchase" style="margin-left:15px;">
 	  <!--<table style="width:100%" class="maintable">
 	  	<tr>
 			<td>Vendor:</td>  
@@ -479,15 +479,16 @@
 			</table>-->
 	 <!-- </table>-->
 	  </div>
-		<div>
+		
+     
+      <div class="modal-footer" style="text-align: center;">
+	  <div>
 			<button type="button" class="btn btn-warning changereq-view" >Change Request</button>
 			
 			<button type="button" class="btn btn-primary" >View & Download Pdf</button>
-	  	</div>
-     
-      <div class="modal-footer">
+	  
         <button type="button" class="btn btn-success loa-view" >Letter of Acceptance</button>
-      </div>
+      
     </div>
 
   </div>
