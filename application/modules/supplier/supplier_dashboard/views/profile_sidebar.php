@@ -20,7 +20,7 @@
       <li style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><a href="<?=supplier_url('dashboard/profile')?>" class='<?php if($this->uri->segment(3) == 'profile') echo "liActive";?>' style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" > <em>Company Profile</em></a></li>
 
       
-      <li style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><a href="<?=supplier_url('dashboard/portfolio')?>" class='<?php if($this->uri->segment(3) == 'portfolio') echo "liActive";?>' style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><em>Company Portfolio</em></a></li>
+      <li style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><a href="<?=supplier_url('dashboard/portfolio')?>" class='<?php if($this->uri->segment(3) == 'portfolio') echo "liActive";?>' style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><em> Portfolio</em></a></li>
 
       <li style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"><a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"  href="<?=supplier_url('dashboard/banking')?>" class='<?php if($this->uri->segment(3) == 'banking') echo "liActive";?>'><em>Banking Details</em></a></li>
 
