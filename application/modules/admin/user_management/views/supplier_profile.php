@@ -5,7 +5,7 @@
             <div class="page-wrapper">
                 <!-- Page-header start --> 
                 <div class="page-header">
-                    <div class="row align-items-end"> 
+                    <div class="row align-items-end">
                         <div class="col-lg-8">
                             <div class="page-header-title">
                                 <div class="d-inline">
@@ -13,7 +13,7 @@
                                     <!-- <span>Supplier details</span> -->
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                         <div class="col-lg-4">
                             <div class="page-header-breadcrumb">
                                 <ul class="breadcrumb-title">
@@ -326,6 +326,15 @@
                                                                   </tr>
                                                                    <?php } ?>
                                                               </tbody>
+                                                                  <?php if($supplierinfo1=='')
+                                                                   {?>
+                                                                    <td></td>
+                                                                  
+                                                                   <td>No data available in table</td>
+                                                                   <td></td>
+                                                                   <td></td>
+                                                                   <td></td>
+                                                                 <?php } ?>
                                                           </table>
                                                   
 
@@ -369,6 +378,7 @@
                                                                    <th scope="row">IFSC</th>
                                                                    <th scope="row">Branch </th>
                                                                    <th scope="row">Document </th>
+                                                                   <th scope="row">Action </th>
                                                                 </tr>
                                                                 <?php foreach ($getbankdetails as $key => $value) {
 
@@ -392,8 +402,29 @@
 
 
              </td>
+             <td>        
+             <?php if($value->is_approved==1)
+                                    { ?>
+                                        <p>Approved</p>
+                                  <?php   }
+                                  else
+                                  { ?>  
+                                                <a href="<?php echo base_url('webuser/User_management/approve_bank_account/'.$value->id)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Approve"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
+                                                   <?php  }
+                                    ?>
+                                             </td>
                                                                   </tr>
                                                                    <?php } ?>
+
+                                                                   <?php if($getbankdetails1=='')
+                                                                   {?>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                   <td>No data available in table</td>
+                                                                   <td></td>
+                                                                   <td></td>
+                                                                   <td></td>
+                                                                 <?php } ?>
                                                                 <!--   <tr>
                                                                     <th scope="row">Manager Name</th>
                                                                     <td>Siva sankar</td>
@@ -501,6 +532,15 @@
                                                                           <?php } ?>
                                                                             
                                                                         </tbody>
+                                                                        <?php if($getstaffdetails1=='')
+                                                                   {?>
+                                                                    <td></td>
+                                                                  
+                                                                   <td>No data available in table</td>
+                                                                   
+                                                                   <td></td>
+                                                                   <td></td>
+                                                                 <?php } ?>
                                                                        <!--  <tfoot>
                                                                           <tr>
                                                                               <th>Staff Name</th>

@@ -278,6 +278,8 @@ public function updatePassword()
 	$getcategorydata=json_decode($this->getSbuData_get());
 	$data['getcategory']=$getcategorydata->result_data->list;
 	//$getmatrdata=json_decode($this->getMaterialData(1,3));
+	//$getmatrdata=json_decode($this->getMaterialById());
+	//$data['getmaterial']=$getcategorydata->result_data->list;echo"<pre>";print_r($data['getmaterial']);exit;
 	$data['getsuppliermaterials']=$this->dashM->getSupplierMaterials($supplierid);//echo"<pre>";print_r($data['getsuppliermaterials']);exit;
 	$this->template->make('supplier_dashboard/portfolio',$data,'supplier_portal');
 	 }

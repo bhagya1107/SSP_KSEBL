@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_management extends AD_Controller { 
   public function __construct()
-  { 
+  {
   	parent::__construct(); 
     $this->load->model('User_management_model','userM');
     // $this->load->library('excel');
@@ -12,7 +12,7 @@ class User_management extends AD_Controller {
   }
   public function suppliers()
   {
-    $data['page'] = 'Supplier';
+    $data['page'] = 'Supplier'; 
     $data['title'] = 'Supplier';
     $data['getuserdetails']=$this->userM->getUserProfile();
     $this->template->make('user_management/supplier',$data); 
@@ -30,11 +30,21 @@ class User_management extends AD_Controller {
     $data['title'] = 'Supplier Profile';
     $id=$this->uri->segment(4);
     $data['supplierinfo']=$this->userM->supplierinfo('suppliermaterials',$id);
+    $data['supplierinfo1']=$this->userM->supplierinfo1('suppliermaterials',$id);
     $data['getbankdetails']=$this->userM->bank_details('bank_details',$id);
+     $data['getbankdetails1']=$this->userM->bank_details1('bank_details',$id);
     $data['getcompanydetails']=$this->userM->company_profile($id);
     $data['getuserdetails']=$this->userM->supplier_profile($id);
     $data['getstaffdetails']=$this->userM->getstaffdetails($id);
+    $data['getstaffdetails1']=$this->userM->getstaffdetails1($id);
     $this->template->make('user_management/supplier_profile',$data);
+  }
+  public function approve_bank_account()
+  {
+    $id=$this->uri->segment(4);
+    $this->userM->approve_bank_account('bank_details',$id);
+    $this->session->set_flashdata('msg','Approved successfully');
+    redirect(base_url('webuser/user_management/suppliers'));
   }
   public function activate_account()
   {
