@@ -145,7 +145,7 @@
 			<div class="col-md-1">
 				<ul class="tg-socialicons">
 					
-					<small style="color:#FFF;font-size:90%;margin-left:80%;margin-top:16%">𝐰𝐞𝐥𝐜𝐨𝐦𝐞</small><li style="color:#FFF;;margin-left:85%"><?php echo substr(strtoupper($this->session->userdata('username')),0,15); ?></li>
+					<small style="color:#FFF;margin-left:80%;margin-top:16%">Welcome</small><li style="color:#FFF;;margin-left:85%"><?php echo substr(strtoupper($this->session->userdata('username')),0,15); ?></li>
 					
 					
 					

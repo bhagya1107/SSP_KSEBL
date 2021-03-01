@@ -299,5 +299,14 @@ class Supplier_home extends MX_Controller {
 			}
 		}
 	}
+	
+	public function changeFontsize(){
+		$fontsize= $this->input->post('fontsize');
+
+		$this->session->set_userdata('fontsize',$fontsize);
+		echo 1;
+
+	}
+	
 	  
 }

@@ -49,7 +49,7 @@
   <?php if($this->uri->segment(2) == 'tenders')  { ?>
  <div class="searchbar">
 
- 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 193px">
+ 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 135px">
 
  					<div class="form-group row form_filter">
 
