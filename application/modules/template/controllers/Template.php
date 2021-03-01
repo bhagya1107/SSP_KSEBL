@@ -3,6 +3,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Template extends MX_Controller {
 
+	public function __construct() 
+	{
+		parent::__construct();
+
+		foreach ($_POST as $key => $value) {
+			$_POST[$key]=$this->security->xss_clean($value);
+		}
+		foreach ($_GET as $key => $value) {
+			$_GET[$key]=$this->security->xss_clean($value);
+		}
+	}
+
+
+	
+
 
 	function _remap()
 	{
@@ -11,17 +26,14 @@ class Template extends MX_Controller {
 
 	public function make($page,$data=array(),$theme='')
 	{
-			// $data['roleid']=$_SESSION['roleid'];
-			// $data['userid'] = $_SESSION['userid'];
-			// $data['getcompanypermissiondetails']='';
+
 			if(!isset($data['showdashbaord'] )){
 
 				@$data['showdashbaord'] = false;
 			}
 			if(!$theme){
 				if(isset($_SESSION['theme'])){
-					// $this->load->model('Dashboard_model','dashM');
-					// $data['getcompanypermissiondetails']=$this->dashM->getCompanyPermission1(4);
+				
 					$theme = $_SESSION['theme'].'/';
 					$data['sidebar']=$this->load->view($theme .'sidebar',$data,true);
 				}
@@ -36,7 +48,6 @@ class Template extends MX_Controller {
 			//neethu
 			 $user_type=$this->session->userdata('user_type');
 			  $uid=$this->session->userdata('supplierid');
-			 // $this->load->model('Dashboard_model','dashM');
 			$this->load->model('Getmenus','GETM');
 			 $data['getcompanypermissiondetails']=$this->GETM->getCompanyPermission2($uid,$user_type); 
 			 //neethu end
@@ -49,6 +60,7 @@ class Template extends MX_Controller {
 			}
 			$this->load->view($page,$data);
 			$this->load->view($theme .'footer');
+			$this->load->view($theme .'javafns');
 
 	}
 

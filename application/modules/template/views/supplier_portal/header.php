@@ -260,9 +260,16 @@
                                     <li style="<?php if($getcompanypermissiondetails->tenders=='0') echo "display: none;" ?>">
                                       <a  href="<?=supplier_url('tenders')?>">Tenders</a>
                                     </li> 
-                                    <li style="<?php if($getcompanypermissiondetails->purchase_order=='0') echo "display: none;" ?>" >
-                                      <a  href="<?=supplier_url('purchase_order')?>">PurchaseOrder</a>
-                                    </li> 
+                                 <!--     <li style="<?php if($getcompanypermissiondetails->purchase_order=='0') echo "display: none;" ?>" >
+                                      <a  href="<?=supplier_url('purchase_order')?>">Purchase Order</a>
+                                    </li> -->
+                                    <li style="<?php if( $user_type=='2' or $getcompanypermissiondetails->purchase_order=='0') echo "display: none;" ?>" >
+                                      <a  href="<?=supplier_url('purchase_order')?>">Purchase Order</a>
+                                    </li>
+                                     <li style="<?php if($getcompanypermissiondetails->purchase_order=='0' or $user_type=='3' or $user_type=='1'
+                                     or $user_type=='4' or $user_type=='5' or $user_type=='6') echo "display: none;" ?>" >
+                                      <a  href="<?=supplier_url('purchase_order')?>">Work Order</a>
+                                    </li>  
 
                 								<!-- 	</ul>
                 								</div>

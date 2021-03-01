@@ -265,7 +265,7 @@ public function updatePassword()
 	
 
 	public function portfolio(){
-		if($this->session->userdata('user_type')=='1' OR $this->session->userdata('user_type')=='3')
+		if($this->session->userdata('user_type')=='1' OR $this->session->userdata('user_type')=='3' OR $this->session->userdata('user_type')=='2')
 		{
 		$data['page'] = 'Portfolio';
 		$data['mainpage'] = '';
@@ -918,7 +918,8 @@ public function updatePassword()
 			'created_date'  =>$date,
 			'user_type'=>$registrationtype,
 			'active_status'=>0,
-			'primary_contact_name'=>$primary_contact_name
+			'primary_contact_name'=>$primary_contact_name,
+			'source'=>'External'
 
 			 );
 		 
@@ -1006,7 +1007,8 @@ public function updatePassword()
 			'created_date'  =>$date,
 			'user_type'=>2,
 			'active_status'=>0,
-			'primary_contact_name'=>$primary_contact_name
+			'primary_contact_name'=>$primary_contact_name,
+			'source'=>'External'
 
 			 );
 		 

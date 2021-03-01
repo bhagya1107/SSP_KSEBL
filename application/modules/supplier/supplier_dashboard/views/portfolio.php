@@ -65,9 +65,12 @@
         }
         ?>
                         <div class="col-md-9 col-sm-8 col-xs-12 pull-right">
-                            <ul class="nav nav-tabs">
-                                <li class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Products</a></li>
-                                <li class="<?php echo $tab ==2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Services</a></li>
+                           <ul class="nav nav-tabs">
+                                <?php   
+                                 $user_type=$this->session->userdata('user_type'); 
+                                 ?>
+                                <li style="<?php if($user_type=='2' ) echo "display: none;" ?>" class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Products</a></li>
+                                <li style="<?php if($user_type=='3' ) echo "display: none;" ?>" class="<?php echo  $user_type ==2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Services</a></li>
                             </ul>
  <ul class="breadcrumb-title" style="margin-left:85%;">
                 

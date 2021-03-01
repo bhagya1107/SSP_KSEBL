@@ -429,27 +429,27 @@
 												<span class="pcoded-mtext">Procurement</span>
 										</a>
 								</li>
-								
+						<!-- 		
 								<li class="">
 										<a href="<?=admin_url('purchase_order')?>">
 												<span class="pcoded-micon"><i class="feather icon-layers" style="color:orange"></i></span>
 												<span class="pcoded-mtext">Purchase Order</span>
 										</a>
-								</li>
-
+								</li> -->
+<!-- 
 								<li class="">
 										<a href="<?=admin_url('delivery')?>">
 												<span class="pcoded-micon"><i class="feather icon-layers" style="color:green"></i></span>
 												<span class="pcoded-mtext">Delivery Management</span>
 										</a>
-								</li>
+								</li> -->
 								
-								<li class="">
+							<!-- 	<li class="">
 										<a href="<?=admin_url('accounts')?>">
 												<span class="pcoded-micon"><i class="feather icon-layers" style="color:yellow"></i></span>
 												<span class="pcoded-mtext">Accounts</span>
 										</a>
-								</li>
+								</li> -->
 								
 								
 
