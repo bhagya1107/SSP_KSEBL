@@ -53,6 +53,19 @@
 
  					<div class="form-group row form_filter">
 
+
+						<div class="col-sm-2 col-xs-12" >
+						
+ 							<select class="select2 form-control" id="tenderid" name="group_flat__id" data-placeholder="Select Tender Type" >
+												 <option>Select Tender ID</option>
+ 								<option value="0">TDR001860</option> 
+								<option value="0">TDR001862</option> 
+							   	<option value="0">TDR001889</option>
+							</select>
+ 									
+
+ 						</div>
+
  						<div class="col-sm-2 col-xs-12" >
 						<!--<label>Tender ID:</label>-->
  							<select class="select2 form-control" id="tenderid" name="group_flat__id" data-placeholder="Select a TenderId" >
