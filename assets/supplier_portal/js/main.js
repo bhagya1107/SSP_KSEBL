@@ -139,18 +139,18 @@ $(document).ready(function() {
 	/*------------------------------------------
 			PRICE RANGE
 	------------------------------------------*/
-	$(function() {
-		$("#tg-slider-range").slider({
-			range: true,
-			min: 0,
-			max: 500,
-			values: [ 75, 300 ],
-			slide: function( event, ui ) {
-				$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-			}
-		});
-		$( "#amount" ).val( "$" + $( "#tg-slider-range" ).slider( "values", 0 ) + " - $" + $( "#tg-slider-range" ).slider( "values", 1 ));
-	});
+	// $(function() {
+	// 	$("#tg-slider-range").slider({
+	// 		range: true,
+	// 		min: 0,
+	// 		max: 500,
+	// 		values: [ 75, 300 ],
+	// 		slide: function( event, ui ) {
+	// 			$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+	// 		}
+	// 	});
+	// 	$( "#amount" ).val( "$" + $( "#tg-slider-range" ).slider( "values", 0 ) + " - $" + $( "#tg-slider-range" ).slider( "values", 1 ));
+	// });
 	/*------------------------------------------
 			ALL MATCHS SLIDER
 	------------------------------------------*/
@@ -234,22 +234,22 @@ $(document).ready(function() {
 	/*------------------------------------------
 			ALL MATCHS SCROLLBAR
 	------------------------------------------*/
-	$("#tg-playerscrollbar, #tg-matchscrollbar").mCustomScrollbar({
-		axis:"y",
-	});
+	// $("#tg-playerscrollbar, #tg-matchscrollbar").mCustomScrollbar({
+	// 	axis:"y",
+	// });
 	/* ---------------------------------------
 			PRETTY PHOTO GALLERY
 	 -------------------------------------- */
-	$("a[data-rel]").each(function () {
-		$(this).attr("rel", $(this).data("rel"));
-	});
-	$("a[data-rel^='prettyPhoto']").prettyPhoto({
-		animation_speed: 'normal',
-		theme: 'dark_square',
-		slideshow: 3000,
-		autoplay_slideshow: false,
-		social_tools: false
-	});
+	// $("a[data-rel]").each(function () {
+	// 	$(this).attr("rel", $(this).data("rel"));
+	// });
+	// $("a[data-rel^='prettyPhoto']").prettyPhoto({
+	// 	animation_speed: 'normal',
+	// 	theme: 'dark_square',
+	// 	slideshow: 3000,
+	// 	autoplay_slideshow: false,
+	// 	social_tools: false
+	// });
 	/*------------------------------------------
 			POINTS TABLE SLIDER
 	------------------------------------------*/

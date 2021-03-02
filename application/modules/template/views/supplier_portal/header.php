@@ -145,7 +145,13 @@
 			<div class="col-md-1">
 				<ul class="tg-socialicons">
 					
-					<small style="color:#FFF;font-size:90%;margin-left:80%;margin-top:16%">𝐰𝐞𝐥𝐜𝐨𝐦𝐞</small><li style="color:#FFF;;margin-left:85%"><?php echo substr(strtoupper($this->session->userdata('username')),0,15); ?></li>
+					<small style="color:#FFF;margin-left:35%;margin-top:16%;line-height: 25px;">Welcome</small>
+					<li style="color:#FFF;;margin-left:45%;line-height: 16px;">
+						<a href="<?=supplier_url('dashboard/personal_profile')?>" >
+							<?php echo substr(strtoupper($this->session->userdata('username')),0,15); ?>
+						</a>
+						
+					</li>
 					
 					
 					
@@ -249,6 +255,10 @@
 														  justify-content: center;
 														  background-color: #272360;
 														} 
+
+														.tg-addnav{
+															font-family: Verdana;
+														}
                 									</style>
                 									                									
                 									<ul class="containerx"  >
@@ -298,7 +308,12 @@
 		<style>
 		
 		body{
-				font-size:<?php echo $_SESSION['fontsize'] ?  $_SESSION['fontsize'] : '14px' ?>;
+				font-size:<?php echo (isset($_SESSION['fontsize']) && $_SESSION['fontsize']) ?  $_SESSION['fontsize'] : '14px' ?>!important;
+
+				 
+			}
+			HTML {
+				font-size:<?php echo (isset($_SESSION['fontsize']) && $_SESSION['fontsize']) ?  $_SESSION['fontsize'] : '14px' ?>!important;
 			}
 		</style>
 		

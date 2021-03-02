@@ -102,9 +102,9 @@ small{
 				<h2>Tenders</h2>
 			</div>
 			
-			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:400px;">
+			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:1000px;">
 				<ul class="nav nav-tabs">
-					<li class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Get All Tenders</a></li>
+					<li class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">All Tenders</a></li>
 					<li class="<?php echo $tab ==4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li>
 					<li class="<?php echo $tab ==2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
                     <li class="<?php echo $tab ==3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
@@ -115,69 +115,10 @@ small{
 					<div id="home" class="tab-pane fade  <?php echo $tab ==1 ? "in active" : "" ?>">
 						<div class="row" style="margin-top: 15px;">
 							<div class="tg-tickets">
-							<?php foreach($tender as $tenders){ ?>
-								<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03"><small>Last date</small><br><?php 
-										$time=strtotime($tenders->tender_date);
-											echo date('j  ', $time);?>
-                                   <span><?php $time=strtotime($tenders->tender_date);
-										echo date('M ', $time);?></span></time>
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag"><?php echo $tenders->tender_num ?></span>
-										<h4>TENDER<?php echo $tenders->id ?></h4></h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Tender Autority:<?php echo $tenders->tendering_authority ?></address></li>
-										</ul>
-									</div>
-									<div class="tg-btnsbox" style="margin-top:11px;">
-										<a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="mytenderdetails(<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8')?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8');?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-								<?php if($tenders->sorting==0){?>
-											<a class="btn btn-primary btn-sm" id="save_tenders" onclick="save_tenders(<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8')?>);">Add to Favourites </a>
-								<?php }else{?>
-									<a class="btn btn-success btn-sm" >Added to Favourites </a>
+							
 
-								<?php } ?>
-										<!--<a class="btn btn-primary btn-sm" href="#">Tender Status </a>-->
-										<!--<a class="btn btn-primary btn-sm" href="#">Payment Status </a>-->
-										<!--<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" >Clarifications </a>-->
-										<!-- // tender id -->
-									</div>
-								</div>
-						<?php	}?>
-								<!--<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03"><small>Last date</small><br>27<span>Dec</span></time>
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag">Tender No : TDR001862</span>
-										<h4>Tender Name 2</h4></h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Tender Short DIscription</address></li>
-										</ul>
-									</div>
-									<div class="tg-btnsbox" style="margin-top:11px;" >
-										<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tendermore">Read More</a>
-										<a class="btn btn-primary btn-sm" href="#">Apply </a>
-										<!--<a class="btn btn-primary btn-sm" href="#">Tender Status </a>
-										<a class="btn btn-primary btn-sm" href="#">Payment Status </a>-->
-										<!--<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" >Clarifications </a>-->
-									<!--</div>
-								</div>
-								<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03"><small>Last date</small><br>28<span>Dec</span></time>
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag">Tender No : TDR001889</span>
-										<h4>Tender Name 3</h4></h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Tender Short DIscription</address></li>
-										</ul>
-									</div>-->
-									<!--<div class="tg-btnsbox" style="margin-top:11px;" >
-										<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tendermore">Read More</a>
-										<a class="btn btn-primary btn-sm" href="#">Apply </a>
-										<!--<a class="btn btn-primary btn-sm" href="#">Tender Status </a>
-										<a class="btn btn-primary btn-sm" href="#">Payment Status </a>-->
-										<!--<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" >Clarifications </a>-->
-									<!--</div>
-								</div>-->
+                            <div id="alltenderdetails"></div>
+								
 
 
 							</div>
@@ -217,41 +158,7 @@ small{
 									</div>
 								</div>
 						<?php	}?>
-								<!--<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03"><small>Last date</small><br>27<span>Dec</span></time>
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag">Tender No : TDR001862</span>
-										<h4>Tender Name 2</h4></h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Tender Short DIscription</address></li>
-										</ul>
-									</div>
-									<div class="tg-btnsbox" style="margin-top:11px;" >
-										<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tendermore">Read More</a>
-										<a class="btn btn-primary btn-sm" href="#">Apply </a>
-										<!--<a class="btn btn-primary btn-sm" href="#">Tender Status </a>
-										<a class="btn btn-primary btn-sm" href="#">Payment Status </a>-->
-										<!--<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" >Clarifications </a>-->
-									<!--</div>
-								</div>
-								<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03"><small>Last date</small><br>28<span>Dec</span></time>
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag">Tender No : TDR001889</span>
-										<h4>Tender Name 3</h4></h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Tender Short DIscription</address></li>
-										</ul>
-									</div>-->
-									<!--<div class="tg-btnsbox" style="margin-top:11px;" >
-										<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tendermore">Read More</a>
-										<a class="btn btn-primary btn-sm" href="#">Apply </a>
-										<!--<a class="btn btn-primary btn-sm" href="#">Tender Status </a>
-										<a class="btn btn-primary btn-sm" href="#">Payment Status </a>-->
-										<!--<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" >Clarifications </a>-->
-									<!--</div>
-								</div>-->
-
+							
 
 							</div>
 						</div>
@@ -280,9 +187,7 @@ small{
 									<div class="tg-btnsbox">
 										<a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8')?>,<?php echo $favten->tenderid?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8');?>" data-toggle="modal" data-target="#tendermore">Read More</a>
 									<a class="btn btn-primary btn-sm"  href="<?php echo base_url("supplier/tenders/apply/".$gettenderdetails->id) ?>">Apply </a>
-<!--
-										<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus" > </a>-->
-										
+			
 									</div>
 								</div>
 								
@@ -819,55 +724,9 @@ small{
             <!-- Modal body -->
 			
             <div class="modal-body" id="tenderdetails">
-			<!--<div id="basicopeningdetails">
-			<h5 style="color:orange;">TENDER OPENING DETAILS</h5><b>
-			</div>
-			 <div id="basicopeningdetails">
-			<h5 style="color:orange;">prc_procurement_process_dtls</h5><b>
-			</div>
 			
-			<div id="basicopeningdetails">
-			<h5 style="color:orange;">prc_requestions</h5><b>
 			</div>
-			
-			<div id="basicopeningdetails">
-			<h5 style="color:orange;">prc_tender_closing</h5><b>
-			</div>
-			
-			<div id="basicopeningdetails">
-			<h5 style="color:orange;">prc_tender_technical_evaluations</h5><b>
-			</div>
-			
-			<div id="basicopeningdetails">
-			<h5 style="color:orange;">prc_tender_price_bid_openings</h5><b>
-			</div> -->
-			</div>
-              <!-- <label>vender Name:bb</label>
-			   <label>Vender Address:D-370, Vibhuti Khand, Gomti Nagar, Lucknow-226010</label>
-			   <label>prc_tender_opening_id:1</label>
-			   <label>prc_vendor_id: 1</label>
-			   <!--<label>Tender Category:Works</label>
-			   <label>Payment Mode:Online</label>
-			   <label>Form Of Contract:Item Rate</label>-->
             
-			
-<!--<h5 style="color:orange;">Tender Fee Details</h5>
-&nbsp;&nbsp;<label>Tender Fee in ₹:2,950</label>
-	<label>Fee Payable To:Nil</label>
-	<label>Tender Fee Exemption Allowed:No</label>
-	<label>	Fee Payable At:Nil</label>
-
-	
-		<h5 style="color:orange;"> Work Details</h5>
-	<label>Title:Construction of KSEB TMR Divison in MS Unit</label>
-	<label>Work Description:Construction of KSEB TMR Divison in MS Unit</label>
-	<label>Independent External Monitor/Remarks:NA</label>	
-	<label>	Period Of Work(Days):180</label>
-
-		<h5 style="color:orange;"> Tender Inviting Authority</h5>
-	<label>Name:ABCDXYZ</label>
-	<label>Address:Executive Engineer Thirumala,TMR Divison,Thirumala</label>
-	</div>-->
 
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -1057,6 +916,101 @@ function mytenderdetails(tenderdetail){
 				}
 				} */
 
+</style>
+<script>
+
+$(document).ready(function(){
+
+    LoadAllTenders();
+
+});
+
+
+function LoadAllTenders(){
+
+    $.ajax({
+                type: "POST",
+                url: '<?php echo base_url() ?>supplier/tenders/getAAlltendersApi',
+                data: {"tenderid" : 8,},
+                type: 'POST',
+                // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+                // processData: false, // NEEDED, DON'T OMIT THIS
+                success: function(result) {
+                   
+                    datas=JSON.parse(result);
+                  
+                   html="";
+                    $.each( datas, function (i, data) {
+                       console.log(data.sorting);
+                      
+                        html+="<div class='tg-ticket'><time class='tg-matchdate' datetime='2016-05-03'><small>Last date</small><br>";
+                        var date1 = new Date(data.tender_date); 
+                        // console.log(date1);
+                        // console.log(date1.getDate());
+                        html+= date1.getDate()+"<span>"+myFunction(date1.getMonth())+"</span></span></time>";
+                        html+="<div class='tg-matchdetail'><span class='tg-theme-tag'>"+data.tender_num+"</span><h4>TENDER "+data.id+"</h4></h4>";
+
+                        html+="<ul class='tg-matchmetadata'><li><address>Tender Autority:"+data.tendering_authority+" </address></li></ul></div>";
+
+                        html+="<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails("+JSON.stringify(data)+")' data-tender='"+JSON.stringify(data)+"' data-toggle='modal' data-target='#tendermore'>Read More</a>";
+
+                        if(data.sorting == 0){
+                            html+="<a class='btn btn-primary btn-sm' id='save_tenders' onclick='save_tenders("+JSON.stringify(data)+")'>Add to Favourites</a>";
+                        }else{
+                            html+="<a class='btn btn-success btn-sm' >Added to Favourites </a>";
+                        }
+										
+                        html+="</div></div>";
+
+                       // console.log(html);
+
+
+                      
+							
+					});
+                    $('#alltenderdetails').empty().append(html);
+                }
+            });
+    
+    
+}
+
+
+
+
+        setInterval(() => {
+            LoadAllTenders();
+        }, 50000);
+
+
+        function myFunction($month_dat) {
+            var month = new Array();
+            month[0] = "JAN";
+            month[1] = "FEB";
+            month[2] = "MAR";
+            month[3] = "APR";
+            month[4] = "MAY";
+            month[5] = "JUN";
+            month[6] = "JUL";
+            month[7] = "AUG";
+            month[8] = "SEP";
+            month[9] = "OCT";
+            month[10] = "NOV";
+            month[11] = "DEC";
+
+            var d = new Date();
+            return month[$month_dat];
+            //document.getElementById("demo").innerHTML = n;
+        }
+       
+
+
+</script>
+
+<style>
+.tg-wrapper{
+    overflow-y:hidden;
+}
 </style>
     
 

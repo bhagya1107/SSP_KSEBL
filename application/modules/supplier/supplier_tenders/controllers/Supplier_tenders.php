@@ -579,5 +579,31 @@ public function __construct()
 	
 
 	}
+
+
+	// km updates
+
+	public function getAAlltendersApi(){
+		$tender=json_decode($this->getTenderData());
+		$data['tender'] =$tender->result_data->list;
+		$data['getfavtender']=$this->procM->getfavtender();//print_r($data['getfavtender']);exit;
+		$data['favid']=array_column($data['getfavtender'],'tendername');
+		if(!empty($data['favid'])){
+			 foreach($data['tender'] as $key => $tender1){
+				if(in_array($tender1->id,$data['favid'])){
+					$data['tender'][$key]->sorting = 1;
+				}else{
+					$data['tender'][$key]->sorting  = 0;
+				}
+				} 
+			$col = array_column( $data['tender'], "sorting" );
+			array_multisort( $col, SORT_ASC, $data['tender'] );	
+		}
+        
+
+
+		echo json_encode($data['tender']);
+		
+	}
 	  
 }
