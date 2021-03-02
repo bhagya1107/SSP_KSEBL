@@ -301,19 +301,78 @@
                                             </div>
                                             <div class="card-block">
                                                 <div class="row">
-                                                        <div class="col-xl-6 col-md-6">
+
+                                                  <div class="col-xl-12 col-md-12">
                                                 <div class="card table-card">
 
                                                     <div class="card-block">
                                                       <div class="table-responsive">
 
-                  
-                                                        <table class="table m-0" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /////////////////////////////////////////////////////////@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+  <!-- tab header start -->
+                              <!--   <div class="tab-header card">
+                                    <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist1" id="mytab1">  
+                                   
+                                     
+                                        <li class="nav-item" style="width: 200px;">
+                                            <a class="nav-link" data-toggle="tab" href="#product" role="tab1">Product </a>
+                                            <div class="slide" style="width: 200px;"></div>
+                                        </li>
+
+                                        <li class="nav-item" style="width: 200px;">
+                                            <a class="nav-link" data-toggle="tab" href="#service" role="tab1">Service</a>
+                                            <div class="slide" style="width: 200px;"></div>
+                                        </li>
+                                       
+                                    </ul>
+                                </div> -->
+
+
+                                  
+<!-- /////////////////////////////////////////////////////////@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                             
+                                                        <table class="table m-0">
                                                               <tbody>
                                                                 <tr>
                                                                   <th scope="row">Category Name  </th>
                                                                    <th scope="row">Product Name</th>
-                                                                   <!-- <th scope="row">Material id</th> -->
+                                                                   <th scope="row">Material id</th>
                                                                   
                                                                 </tr>
                                                                  <?php foreach ($supplierinfo as $key => $value) {
@@ -322,7 +381,7 @@
                                                                   <tr>
                                                                      <td><?php echo $value->categoryname;?></td>
                                                                       <td><?php echo $value->materialname;?></td>
-                                                                  <!--    <td><?php echo $value->materialId;?></td> -->
+                                                                     <td><?php echo $value->materialId;?></td>
                                                                   </tr>
                                                                    <?php } ?>
                                                               </tbody>
@@ -335,52 +394,6 @@
                                                                    <td></td>
                                                                    <td></td>
                                                                  <?php } ?>
-                                                          </table>
-                                                  
-
-
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                                  <div class="col-xl-6 col-md-6">
-                                                <div class="card table-card">
-
-                                                    <div class="card-block">
-                                                      <div class="table-responsive">
-
-                  
-                                                        <table class="table m-0">
-                                                              <tbody>
-                                                                <tr>
-                                                                  <th scope="row">Service Name  </th>
-                                                                   <th scope="row">Service</th>
-                                                               
-                                                                  
-                                                                </tr>
-                                                                <tr>
-                                                                  <td>No data available</td>
-                                                                  <td></td>
-                                                                </tr>
-                                                              <!--    <?php foreach ($supplierinfo as $key => $value) {
-
-                       ?>
-                                                                  <tr>
-                                                                     <td><?php echo $value->categoryname;?></td>
-                                                                      <td><?php echo $value->materialname;?></td>
-                                                                                                                                   </tr>
-                                                                   <?php } ?>
-                                                              </tbody>
-                                                                  <?php if($supplierinfo1=='')
-                                                                   {?>
-                                                                    <td></td>
-                                                                  
-                                                                   <td>No data available in table</td>
-                                                                   <td></td>
-                                                                   <td></td>
-                                                                   <td></td>
-                                                                 <?php } ?> -->
                                                           </table>
                                                   
 

@@ -301,3 +301,65 @@ LOG:  Anonymus Deleted entery from  "sessions"
 TIMESTAMP-01-03-21 01:24:pm  EXETIME-0.2398579120636
 LOG: user1 added new entry to  "login_history"  with values  (1, '::1', '2021-03-01 13:24:09')
 
+TIMESTAMP-01-03-21 01:43:pm  EXETIME-0.23086500167847
+LOG:  Anonymus Updated  "sessions"  to  "timestamp" = 1614602591, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0njayntkxo3vzzxjuyw1lfhm6ntoidxnlcjeio3jvbgvpzhxoo3vzzxjpzhxpoje7c3vwcgxpzxjpzhxpoje7dxnlcl90exblfhm6mtoimsi7ywn0axzlx3n0yxr1c3xpoje7dxnlcl9kaxn0cmljdhxoo3n1chbsawvyfgi6mtt1awr8atoxo3rozw1lfhm6odoic3vwcgxpzxiio2tlexxzoja6iii7' where "id" = 'vskt3em24lgiefa6mmoukkfcbucocgn7'
+
+TIMESTAMP-01-03-21 01:43:pm  EXETIME-0.31488418579102
+LOG:  Anonymus Deleted entery from  "sessions"
+  where "id" = 'lqtbld81ebpu9i2j3sen59oc54cuvjj5'
+
+TIMESTAMP-01-03-21 01:43:pm  EXETIME-0.24986791610718
+LOG: Contractor added new entry to  "login_history"  with values  (2, '::1', '2021-03-01 13:43:35')
+
+TIMESTAMP-01-03-21 01:51:pm  EXETIME-0.2381739616394
+LOG:  Anonymus Updated  "sessions"  to  "timestamp" = 1614603114, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0njazmte0o3vzzxjuyw1lfhm6mta6iknvbnryywn0b3iio3jvbgvpzhxoo3vzzxjpzhxpoji7c3vwcgxpzxjpzhxpoji7dxnlcl90exblfhm6mtoimii7ywn0axzlx3n0yxr1c3xpoje7dxnlcl9kaxn0cmljdhxoo3n1chbsawvyfgi6mtt1awr8atoyo3rozw1lfhm6odoic3vwcgxpzxiio2tlexxzoja6iii7' where "id" = 'jm6f0kvnbortb8fc6j7jh1vu1ddfd9pf'
+
+TIMESTAMP-01-03-21 01:51:pm  EXETIME-0.27728986740112
+LOG:  Anonymus Deleted entery from  "sessions"
+  where "id" = 'ml4mnln7ljtm068u6jfqv5rhe97p42tr'
+
+TIMESTAMP-01-03-21 01:52:pm  EXETIME-0.55351305007935
+LOG: user1 added new entry to  "login_history"  with values  (1, '::1', '2021-03-01 13:52:15')
+
+TIMESTAMP-01-03-21 01:57:pm  EXETIME-0.23891496658325
+LOG:  user1 Updated  "sessions"  to  "timestamp" = 1614603436, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0njazndm2o3vzzxjuyw1lfhm6ntoidxnlcjeio3jvbgvpzhxoo3vzzxjpzhxpoje7c3vwcgxpzxjpzhxpoje7dxnlcl90exblfhm6mtoimsi7ywn0axzlx3n0yxr1c3xpoje7dxnlcl9kaxn0cmljdhxoo3n1chbsawvyfgi6mtt1awr8atoxo3rozw1lfhm6odoic3vwcgxpzxiio2tlexxzoja6iii7' where "id" = '46robuj4tc1ug7c2nev7ptuvms0sjbd4'
+
+TIMESTAMP-01-03-21 02:03:pm  EXETIME-0.23938512802124
+LOG:  user1 Updated  "sessions"  to  "timestamp" = 1614603822, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0njazodiyo3vzzxjuyw1lfhm6ntoidxnlcjeio3jvbgvpzhxoo3vzzxjpzhxpoje7c3vwcgxpzxjpzhxpoje7dxnlcl90exblfhm6mtoimsi7ywn0axzlx3n0yxr1c3xpoje7dxnlcl9kaxn0cmljdhxoo3n1chbsawvyfgi6mtt1awr8atoxo3rozw1lfhm6odoic3vwcgxpzxiio2tlexxzoja6iii7' where "id" = 'sv722akk8h0210g67qs0347nddl2rt0h'
+
+TIMESTAMP-01-03-21 02:10:pm  EXETIME-0.24284887313843
+LOG:  user1 Updated  "sessions"  to  "timestamp" = 1614604218, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0nja0mje4o3vzzxjuyw1lfhm6ntoidxnlcjeio3jvbgvpzhxoo3vzzxjpzhxpoje7c3vwcgxpzxjpzhxpoje7dxnlcl90exblfhm6mtoimsi7ywn0axzlx3n0yxr1c3xpoje7dxnlcl9kaxn0cmljdhxoo3n1chbsawvyfgi6mtt1awr8atoxo3rozw1lfhm6odoic3vwcgxpzxiio2tlexxzoja6iii7' where "id" = '2n53cojtt80lhe796s2pvcj66817jkml'
+
+TIMESTAMP-01-03-21 02:16:pm  EXETIME-0.24241900444031
+LOG:  Anonymus Updated  "sessions"  to  "timestamp" = 1614604575, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0nja0ntc1o3vzzxjuyw1lfhm6ntoidxnlcjeio3jvbgvpzhxoo3vzzxjpzhxpoje7c3vwcgxpzxjpzhxpoje7dxnlcl90exblfhm6mtoimsi7ywn0axzlx3n0yxr1c3xpoje7dxnlcl9kaxn0cmljdhxoo3n1chbsawvyfgi6mtt1awr8atoxo3rozw1lfhm6odoic3vwcgxpzxiio2tlexxzoja6iii7' where "id" = '292v52kq14thc9nuqd5la15nb5hk5sr6'
+
+TIMESTAMP-01-03-21 02:16:pm  EXETIME-0.56087517738342
+LOG:  Anonymus Deleted entery from  "sessions"
+  where "id" = '89ibl523vcj8lha3lip3atf58vj1eihl'
+
+TIMESTAMP-01-03-21 02:22:pm  EXETIME-0.27971506118774
+LOG:  user1 Updated  "sessions"  to  "timestamp" = 1614604967, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0nja0oty3ow==' where "id" = 'cvn1cfr7011ch4p6totgjm3pgl54to62'
+
+TIMESTAMP-01-03-21 02:22:pm  EXETIME-0.23324394226074
+LOG: user1 added new entry to  "login_history"  with values  (1, '::1', '2021-03-01 14:22:48')
+
+TIMESTAMP-01-03-21 02:29:pm  EXETIME-0.32183599472046
+LOG:  Anonymus Updated  "sessions"  to  "timestamp" = 1614605371, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0nja1mzcxo3vzzxjuyw1lfhm6ntoidxnlcjeio3jvbgvpzhxoo3vzzxjpzhxpoje7c3vwcgxpzxjpzhxpoje7dxnlcl90exblfhm6mtoimsi7ywn0axzlx3n0yxr1c3xpoje7dxnlcl9kaxn0cmljdhxoo3n1chbsawvyfgi6mtt1awr8atoxo3rozw1lfhm6odoic3vwcgxpzxiio2tlexxzoja6iii7' where "id" = 'icvur8r2rv82s3bqo4170suu449lrrn7'
+
+TIMESTAMP-01-03-21 02:29:pm  EXETIME-0.25083088874817
+LOG:  Anonymus Deleted entery from  "sessions"
+  where "id" = 'vkkl7utaor2ot5ga0rm51hvs4auo18lo'
+
+TIMESTAMP-01-03-21 02:29:pm  EXETIME-0.31270599365234
+LOG: admin added new entry to  "login_history"  with values  (null, '::1', '2021-03-01 14:29:54')
+
+TIMESTAMP-01-03-21 02:35:pm  EXETIME-0.28146505355835
+LOG:  admin Updated  "sessions"  to  "timestamp" = 1614605710, "data" = 'x19jav9syxn0x3jlz2vuzxjhdgv8atoxnje0nja1nzewo3vzzxjuyw1lfhm6ntoiywrtaw4io3jvbgvpzhxoo3vzzxjpzhxoo3vzzxjfdhlwzxxoo3vzzxjfzglzdhjpy3r8tjthzg1pbnxioje7dghlbwv8czo1oijhzg1pbii7a2v5fhm6nzoid2vidxnlcii7' where "id" = 'igs916rjth9l3i7qtomu2d5q7g9uuoc7'
+
+TIMESTAMP-01-03-21 02:38:pm  EXETIME-0.26181602478027
+LOG:  Anonymus Deleted entery from  "sessions"
+  where "id" = '91onm2o4vcpm4u2spjb9mvtpr6927j9p'
+
+TIMESTAMP-01-03-21 02:38:pm  EXETIME-0.246337890625
+LOG: admin added new entry to  "login_history"  with values  (null, '::1', '2021-03-01 14:38:20')
+

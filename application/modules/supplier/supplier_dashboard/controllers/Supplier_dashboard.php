@@ -565,9 +565,10 @@ public function updatePassword()
 	}
 	
 	public function update_companyprofile(){
+		 // echo "string"; exit;
 
          $res='';
-       $suppplierid=$this->input->post('suppplierid');
+       $suppplierid=$this->input->post('supplierid');
         
             $data['companyname']=$this->input->post('profile');
             $data['incorporationNo']=$this->input->post('incorporation');
@@ -582,7 +583,7 @@ public function updatePassword()
 			
             if($suppplierid){
 
-                $where=array('id'=>$suppplierid);
+                $where=array('supplierid'=>$suppplierid);
 				$res =$this->dashM->update('companyprofile',$data, $where);
                 
             }
@@ -1151,6 +1152,10 @@ public function updatePassword()
 		redirect(base_url('supplier/dashboard/banking'));
 	}
 	//neethu end
+	public function save_companydetails()
+	{
+		echo 1;
+	}
 
 
 

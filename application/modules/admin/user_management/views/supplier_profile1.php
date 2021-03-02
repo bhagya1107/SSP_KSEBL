@@ -301,19 +301,205 @@
                                             </div>
                                             <div class="card-block">
                                                 <div class="row">
-                                                        <div class="col-xl-6 col-md-6">
+
+                                                  <div class="col-xl-12 col-md-12">
                                                 <div class="card table-card">
 
                                                     <div class="card-block">
                                                       <div class="table-responsive">
 
-                  
-                                                        <table class="table m-0" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /////////////////////////////////////////////////////////@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+                               <!-- tab header start -->
+                                <div class="tab-header card">
+                                    <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist" id="mytab1">  
+                                   
+                                     
+                                        <li class="nav-item" style="width: 200px;">
+                                            <a class="nav-link" data-toggle="tab" href="#product" role="tab">Product </a>
+                                            <div class="slide" style="width: 200px;"></div>
+                                        </li>
+
+                                        <li class="nav-item" style="width: 200px;">
+                                            <a class="nav-link" data-toggle="tab" href="#service" role="tab">Service</a>
+                                            <div class="slide" style="width: 200px;"></div>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                                <!-- tab header end -->
+
+
+
+   <!-- tab content start -->
+                                <div class="tab-content">
+                                    <!-- tab panel personal start -->
+                                    <div class="tab-pane active" id="product" role="tabpanel">
+                                        <!-- personal card start -->
+                                        <div class="card">
+                                            <div class="card-header">
+                                            
+                                                <h5 class="card-header-text">Product Portfolio</h5>
+                                                
+                      
+                                            </div>
+                                            <div class="card-block">
+                                                <div class="view-info">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="general-info">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-xl-6">
+                                                                        <div class="table-responsive">
+      <table class="table table-hover  table-borderless">
+                                                      <thead>
+                                                        <tr>
+
+                                                        <th>Product Name</th>
+                                                
+
+
+                                                        </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                              <td>
+
+                                                                  <div class="d-inline-block align-middle">
+                                                                      <h6><?php echo $getuserdetails->document?></h6>
+                                                                      <p class="text-muted m-b-0"></p>
+                                                                  </div> 
+                                                              </td>
+                                                   
+
+
+                                                          </tr>
+
+
+
+                                                      </tbody>
+                                                  </table>
+                                              
+                                      
+     </div>
+    </div>
+                                                                    <!-- end of table col-lg-6 -->
+
+
+                                                                    <!-- end of table col-lg-6 -->
+                                                                </div>
+                                                                <!-- end of row -->
+                                                            </div>
+                                                            <!-- end of general info -->
+                                                        </div>
+                                                        <!-- end of col-lg-12 -->
+                                                    </div>
+                                                    <!-- end of row -->
+                                                </div>
+                                                <!-- end of view-info -->
+
+                                                <!-- end of edit-info -->
+                                            </div>
+                                            <!-- end of card-block -->
+                                        </div>
+
+                                        <!-- personal card end-->
+                                    </div>
+                                    <!-- tab pane personal end -->
+                                    <!-- tab pane info start -->
+
+
+
+
+
+                                    <!-- tab pane info end -->
+                                   <div class="tab-pane" id="service" role="tabpanel">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="card-header-text">Service Portfolio</h5>
+                                            </div>
+                                          <div class="card-block">
+                                              <div class="table-responsive">
+                                                  <table class="table table-hover  table-borderless">
+                                                      <thead>
+                                                        <tr>
+
+                                                        <th>Service Name</th>
+                                                
+
+
+                                                        </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr>
+                                                              <td>
+
+                                                                  <div class="d-inline-block align-middle">
+                                                                      <h6><?php echo $getuserdetails->document?></h6>
+                                                                      <p class="text-muted m-b-0"></p>
+                                                                  </div> 
+                                                              </td>
+                                                   
+
+
+                                                          </tr>
+
+
+
+                                                      </tbody>
+                                                  </table>
+                                              
+                                              </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- tab content end -->
+
+                                <!-- ////////////////////////////////////////////////// @@@@@@@@@-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                      <!--        
+                                                        <table class="table m-0">
                                                               <tbody>
                                                                 <tr>
                                                                   <th scope="row">Category Name  </th>
                                                                    <th scope="row">Product Name</th>
-                                                                   <!-- <th scope="row">Material id</th> -->
+                                                                   <th scope="row">Material id</th>
                                                                   
                                                                 </tr>
                                                                  <?php foreach ($supplierinfo as $key => $value) {
@@ -322,7 +508,7 @@
                                                                   <tr>
                                                                      <td><?php echo $value->categoryname;?></td>
                                                                       <td><?php echo $value->materialname;?></td>
-                                                                  <!--    <td><?php echo $value->materialId;?></td> -->
+                                                                     <td><?php echo $value->materialId;?></td>
                                                                   </tr>
                                                                    <?php } ?>
                                                               </tbody>
@@ -335,53 +521,7 @@
                                                                    <td></td>
                                                                    <td></td>
                                                                  <?php } ?>
-                                                          </table>
-                                                  
-
-
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                                  <div class="col-xl-6 col-md-6">
-                                                <div class="card table-card">
-
-                                                    <div class="card-block">
-                                                      <div class="table-responsive">
-
-                  
-                                                        <table class="table m-0">
-                                                              <tbody>
-                                                                <tr>
-                                                                  <th scope="row">Service Name  </th>
-                                                                   <th scope="row">Service</th>
-                                                               
-                                                                  
-                                                                </tr>
-                                                                <tr>
-                                                                  <td>No data available</td>
-                                                                  <td></td>
-                                                                </tr>
-                                                              <!--    <?php foreach ($supplierinfo as $key => $value) {
-
-                       ?>
-                                                                  <tr>
-                                                                     <td><?php echo $value->categoryname;?></td>
-                                                                      <td><?php echo $value->materialname;?></td>
-                                                                                                                                   </tr>
-                                                                   <?php } ?>
-                                                              </tbody>
-                                                                  <?php if($supplierinfo1=='')
-                                                                   {?>
-                                                                    <td></td>
-                                                                  
-                                                                   <td>No data available in table</td>
-                                                                   <td></td>
-                                                                   <td></td>
-                                                                   <td></td>
-                                                                 <?php } ?> -->
-                                                          </table>
+                                                          </table> -->
                                                   
 
 
