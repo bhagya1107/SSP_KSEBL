@@ -61,10 +61,12 @@
 			<div class="tg-section-name">
 				<h2>PurchaseOrders</h2>
 			</div>
+			<?php $user_type=$this->session->userdata('user_type');?>
 			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:400px;">
 				<ul class="nav nav-tabs">
-					<li class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
-					<li class="<?php echo $tab ==2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">My Purchase Orders</a></li>
+					<li style="<?php if($user_type=='2' ) echo "display: none;" ?>" class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
+					<li style="<?php if($user_type=='2' ) echo "display: none;" ?>"  class="<?php echo $tab ==2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">My Purchase Orders</a></li>
+				 <li style="<?php if($user_type=='3' ) echo "display: none;" ?>"  class="<?php echo $user_type ==2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li> 
 				</ul>
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade  <?php echo $tab ==1 ? "in active" : "" ?>">
@@ -82,6 +84,50 @@
 										<h4>TENDER ID<?php echo $purchaseorders->prc_tender_id ?> </h4></h4>
 										<ul class="tg-matchmetadata">
 											<li><address>PURCHASE CATEGORY:<?php echo $purchaseorders->purchase_order_category?></address></li>
+										</ul>
+									</div>
+									<div class="tg-btnsbox">
+										<a class="tg-btn modal-view" onclick="mypurchasedetails(<?php echo htmlentities(json_encode($purchaseorders), ENT_QUOTES, 'UTF-8')?>);" data-toggle="modal" data-target="#myModalpurchase">View</a>
+									</div>
+								</div>
+							<?php } ?>
+								<!--<div class="tg-ticket">
+									<time class="tg-matchdate" datetime="2016-05-03">20<span>JAN</span></time>
+									<div class="tg-matchdetail">
+										<span class="tg-theme-tag">Order No : PCO8895544</span>
+										<h4>Tender Name 2</h4></h4>
+										<ul class="tg-matchmetadata">
+											<li><address>Tender Short DIscription</address></li>
+										</ul>
+									</div>
+									<div class="tg-btnsbox">
+										<a class="tg-btn modal-view" href="#">View</a>
+									</div>
+								</div>-->
+
+
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<div id="workhome" class="tab-pane fade  <?php echo $user_type ==2 ? "in active" : "" ?>">
+						<div class="row">
+							<div class="tg-tickets">
+							<?php foreach($purchaseorder as $purchaseorders){ ?>
+								<div class="tg-ticket">
+									<time class="tg-matchdate" datetime="2016-05-03"><?php 
+										$time=strtotime($purchaseorders->purchase_order_date);
+											echo date('j  ', $time);?><span><?php 
+										$time=strtotime($purchaseorders->purchase_order_date);
+											echo date('M  ', $time);?></span></time>
+									<div class="tg-matchdetail">
+										<span class="tg-theme-tag"><?php echo $purchaseorders->puchase_order_number ?></span>
+										<h4>WORK ID<?php echo $purchaseorders->prc_tender_id ?> </h4></h4>
+										<ul class="tg-matchmetadata">
+											<li><address>WORK CATEGORY:<?php echo $purchaseorders->purchase_order_category?></address></li>
 										</ul>
 									</div>
 									<div class="tg-btnsbox">

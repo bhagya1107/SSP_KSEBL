@@ -58,14 +58,14 @@
 		<div class="row">
 			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">  
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
-					 <?=form_open_multipart('supplier/dashboard/update_companyprofile');  ?>
+						<?=form_open('supplier/dashboard/update_companyprofile');?>
 						<div class="table-responsive">
 							
 							<table class="table table-bordered table-hover editcompany">
 								<tr>
 									<input type="hidden" name="supplierid" value="<?php echo $getcompanydetails->supplierid;?>">
 									<td style="text-align:right;width:35%;">Company Name	</td>
-									<td style="width:35%;"><input type="text" name="profile" id="profile" readonly class="form-control "  value="<?php echo $getcompanydetails->companyname;?>"/>	</td>
+									<td style="width:35%;"><input type="text" id="profile" readonly class="form-control "  value="<?php echo $getcompanydetails->companyname;?>"/>	</td>
 									
 									<td></td>
 								</tr>
@@ -79,59 +79,59 @@
 								</tr>-->
 								<tr>
 									<td style="text-align:right">Incorporation No </td>
-									<td><input type="text"  class="form-control "  id="incorporation" name="incorporation" readonly value="<?php echo $getcompanydetails->incorporationno;?>"/>	</td>
+									<td><input type="text"  class="form-control "  id="incorporation" readonly value="<?php echo $getcompanydetails->incorporationno;?>"/>	</td>
 									<td><input type="file"  class="form-control choose-file hide " value=""/><img id="myImg" class="form-control previewbutton" data-toggle="modal" data-target="#gst" src="<?=base_url()?>assets/experience-certificate-kseb-1-638.jpg " style="width:35%" alt="Incorporation Certificates"></td>
 										
 								</tr>
 								<tr>
 									<td style="text-align:right">Incorporation Date </td>
-									<td><input type="text"  class="form-control " name="date" id="date" readonly value="<?php echo $getcompanydetails->incorporationdate;?>"/>	</td>
+									<td><input type="text"  class="form-control " id="date" readonly value="<?php echo $getcompanydetails->incorporationdate;?>"/>	</td>
 									<td></td> 
 								</tr>
 								
 								<tr>
 									<td style="text-align:right">PAN CARD NO </td>
-									<td><input type="text" name="pancard" id="pancard" class="form-control " readonly value="<?php echo $getcompanydetails->pancardno;?>"/>	</td>
+									<td><input type="text" id="pancard" class="form-control " readonly value="<?php echo $getcompanydetails->pancardno;?>"/>	</td>
 									<td></td> 
 								</tr>
 								<tr>
 									<td style="text-align:right">GST/TIN	</td>
-									<td><input type="text" id="gstin" name="gstin" class="form-control " readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
+									<td><input type="text" id="gstin" class="form-control " readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
 									<td><input type="file"  class="form-control showprofile choose-file hide"  value="doc.img"/><img id="myImg" class="form-control previewbutton" data-toggle="modal" data-target="#myModalpurchase" src="<?=base_url()?>assets/kseb2.jpg" style="width:35%" alt="GST/IN Certificates"></td>
 								</tr>
 								<tr>
 									<td style="text-align:right">Company Address	</td>
-									<td><input type="text" name="address" id="address" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->companyaddress;?>"/>	</td>
+									<td><input type="text"  id="address" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->companyaddress;?>"/>	</td>
 									<td></td>
 								</tr>
 								<tr>
 									<td style="text-align:right">Mobile	</td>
-									<td><input type="text" name="mobile" id="mobile" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->mobile;?>"/>	</td>
+									<td><input type="text" id="mobile" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->mobile;?>"/>	</td>
 									<td></td>
 								</tr>
 								<tr>
 									<td style="text-align:right">Email	</td>
-									<td><input type="text" name="email" id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td>
+									<td><input type="text" id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td>
 									<td></td>
 								</tr>
 								
 								<tr>
 									<td style="text-align:right">Website	</td>
-									<td><input type="text" name="website" id="website" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->website;?>"/>	</td>
+									<td><input type="text" id="website" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->website;?>"/>	</td>
 									<td></td>
 								</tr>
 								
 								<tr>
 								<td style="text-align:right">Autorized Person	</td>
-									<td><input type="text" name="authorizedperson" id="authorizedperson" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->authorizedperson;?>"/>	</td>
+									<td><input type="text" id="authorizedperson" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->authorizedperson;?>"/>	</td>
 									<td><input type="file"  class="form-control showprofile choose-file hide"  value="doc.img"/><img id="myImg" class="form-control previewbutton" data-toggle="modal" data-target="#myModalpurchase" src="<?=base_url()?>assets/kseb1.jpg" style="width:35%" alt="Certificates"></td>									
 								</tr>
 									
 							</table>
 							<div class="form-group" >
-                            <a class="tg-btn pull-center editbutton" id="editprofilefn" style="margin-left:690px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>
-                               <button type="submit" class="tg-btn pull-center savebutton hide"   id="saveprofilefn"  style="margin-left:443px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
-                               <a href="<?php echo base_url('supplier/dashboard/profile');?>"> <button  class="tg-btn pull-center savebutton hide"   id="saveprofilefn" style="margin-left:43px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button></a>
+                            <button type="submit" class="tg-btn pull-center editbutton" id="editprofilefn" style="margin-left:690px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></button>
+                               <button type="submit" class="tg-btn pull-center savebutton hide"   id="saveprofilefn" style="margin-left:443px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
+                               <a href="<?php echo base_url('supplier/dashboard/profile');?>"> <button type="submit" class="tg-btn pull-center savebutton hide"   id="saveprofilefn" style="margin-left:43px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button></a>
 							  </div>
  
                        
@@ -224,7 +224,6 @@ span.onclick = function() {
 }
 
  function save_companydetails() {
- 	alert();
 
     var profile = $("#profile").val();
 	var incorporation = $('#incorporation').val();
