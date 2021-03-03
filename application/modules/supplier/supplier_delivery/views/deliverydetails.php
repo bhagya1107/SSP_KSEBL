@@ -30,26 +30,7 @@
   background: #555; 
 }
 
-.scroltop {
-    background: #504c7e;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ffcc33;
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    padding: 0;
-    color: #ffcc33;
-    font-size: 15px;
-    margin: 0;
-    cursor: pointer;
-    display: none;
-    height: 35px;
-    width: 35px;
-    line-height: 26px;
-    text-align: center;
-    z-index: 999;
-}
+
 
 </style>
 
@@ -381,7 +362,7 @@
 	</section>
 </main>
 
-<button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button>
+<!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
 
 
 <div id="myModal" class="modal fade" role="dialog">

@@ -110,5 +110,6 @@ function viewdata() {
   } else {
     x.type = "password";
   }
+}
  
 </script>
