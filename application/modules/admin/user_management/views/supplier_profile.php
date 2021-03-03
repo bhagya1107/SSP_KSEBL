@@ -172,7 +172,7 @@
         <tr>
             <th scope="row">Address</th>
             <td><input type="text" class="form-control showprofile" id="address" name="address" readonly 
-                  value="<?php echo "$getuserdetails->address"?>"></td>
+                  value="<?php echo "$getcompanydetails->companyaddress"?>"></td>
         </tr>
         <tr>
             <th scope="row">Type</th>
@@ -232,7 +232,7 @@
                 <tr>
                     <th scope="row">Website</th>
                     <td><input type="text" class="form-control showprofile" id="website" name="website" readonly 
-                  value="<?php echo "$getuserdetails->website"?>"></td>
+                  value="<?php echo "$getcompanydetails->website"?>"></td>
                    
                 </tr>
                <!--  <tr>
@@ -615,28 +615,62 @@
                                           <div class="card-block">
                                               <div class="table-responsive">
                                                   <table class="table table-hover  table-borderless">
-                                                      <thead>
+                                                      <thead> 
                                                         <tr>
 
-                                                        <th>Doc</th>
-                                                        <th>Submitted Date</th>
-                                                        <th>Document View</th>
+                                                        <th>Incorporation Certificates</th>
+                                                        <th>GST/TIN Certificates</th>
+                                                        <th>Autorized Person Certificates</th>
 
 
                                                         </tr>
                                                       </thead>
                                                       <tbody>
                                                           <tr>
-                                                              <td>
+                                                            <!--   <td>
 
                                                                   <div class="d-inline-block align-middle">
                                                                       <h6><?php echo $getuserdetails->document?></h6>
                                                                       <p class="text-muted m-b-0"></p>
                                                                   </div> 
-                                                              </td>
-                                                              <td><?php echo $getuserdetails->document_submited_date?></td>
-                                                              <td>  <a  href="<?php echo admin_url('uploads/Doc1.pdf')?>"  target="_blank"><i class="icofont icofont-eye-alt"></i> </a></td>
+                                                              </td> -->
+                                                             <!--  <td><?php echo $getuserdetails->document_submited_date?></td> -->
+                                                              <td> 
+                                                                <?php if($getcompanydetails->incorporationcertificate=='')
+                                                                 {?>
+                                                                 <p>No data</p>
+                                                               <?php }
+                                                               else {?>
+                                                               <a  href="<?php echo site_url('uploads/company_profile/'.$getcompanydetails->incorporationcertificate)?>"  target="_blank"><i class="icofont icofont-eye-alt"></i>&nbsp;&nbsp; View</a>
+                                                             <?php } ?>
 
+                                                             </td>
+
+
+                                                             <td> 
+                                                                <?php if($getcompanydetails->gst_tinfile=='')
+                                                                 {?>
+                                                                 <p>No data</p>
+                                                               <?php }
+                                                               else {?>
+                                                               <a  href="<?php echo site_url('uploads/company_profile/'.$getcompanydetails->gst_tinfile)?>"  target="_blank"><i class="icofont icofont-eye-alt"></i>&nbsp;&nbsp;View </a>
+                                                             <?php } ?>
+
+                                                             </td>
+
+                                                               <td> 
+                                                                <?php if($getcompanydetails->authorisedpersonfile=='')
+                                                                 {?>
+                                                                 <p>No data</p>
+                                                               <?php }
+                                                               else {?>
+                                                               <a  href="<?php echo site_url('uploads/company_profile/'.$getcompanydetails->authorisedpersonfile)?>"  target="_blank"><i class="icofont icofont-eye-alt"></i>&nbsp;&nbsp;View </a>
+                                                             <?php } ?>
+
+                                                             </td>
+
+
+                                                                
 
                                                           </tr>
                                                          <!--  <tr>
@@ -658,9 +692,9 @@
 
                                                       </tbody>
                                                   </table>
-                                                  <div class="text-center">
+                                                  <!-- <div class="text-center">
                                                       <a href="#!" class=" btn btn-primary">VERIFY</a>
-                                                  </div>
+                                                  </div> -->
                                               </div>
                                           </div>
                                         </div>

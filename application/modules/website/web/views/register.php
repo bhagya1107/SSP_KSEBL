@@ -83,7 +83,7 @@
         </div> -->
      <?php $s=$this->session->set_userdata('supplier',8); ?>  
        <form method="POST" action="<?php echo base_url().'supplier/dashboard/regcompany'?>" > 
-        
+            <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
       <!-- 'supplier/dashboard/regcompany' -->
       <!-- <?=form_open('');?> -->
       <div class="col-md-3"></div>
