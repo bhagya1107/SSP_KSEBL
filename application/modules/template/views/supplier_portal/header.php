@@ -306,15 +306,19 @@
 			}
 		</style> -->
 		<style>
-		
+		/* body h1, body h2, body h3, body h4, body h5, body h6 */
 		body{
-				font-size:<?php echo (isset($_SESSION['fontsize']) && $_SESSION['fontsize']) ?  $_SESSION['fontsize'] : '14px' ?>!important;
+				font-size:<?php echo (isset($_SESSION['fontsize']) && $_SESSION['fontsize']) ?  $_SESSION['fontsize'] : '' ?>!important;
 
 				 
 			}
 			HTML {
-				font-size:<?php echo (isset($_SESSION['fontsize']) && $_SESSION['fontsize']) ?  $_SESSION['fontsize'] : '14px' ?>!important;
+				font-size:<?php echo (isset($_SESSION['fontsize']) && $_SESSION['fontsize']) ?  $_SESSION['fontsize'] : '' ?>!important;
 			}
+
+			 {
+
+
 		</style>
 		
 <script>
@@ -324,5 +328,8 @@
         }, 10000);
    
 </script>
+
+
+
 		
 		

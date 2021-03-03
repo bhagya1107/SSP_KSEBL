@@ -44,26 +44,6 @@ small{
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
-.scroltop {
-    background: #504c7e;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ffcc33;
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    padding: 0;
-    color: #ffcc33;
-    font-size: 15px;
-    margin: 0;
-    cursor: pointer;
-    display: none;
-    height: 35px;
-    width: 35px;
-    line-height: 26px;
-    text-align: center;
-    z-index: 999;
-}
 
 </style>
 <head>
@@ -102,7 +82,7 @@ small{
 				<h2>Tenders</h2>
 			</div>
 			
-			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:1000px;">
+			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:100vh" id="innerscroll">
 				<ul class="nav nav-tabs">
 					<li class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">All Tenders</a></li>
 					<li class="<?php echo $tab ==4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li>
@@ -251,7 +231,7 @@ small{
 		</div>
 	</section>
 </main>
-<button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button>
+<!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
 <!-- Modal -->
 <div class="modal fade" id="myModal" style="padding-left: 0px !important;">
     <div class="modal-dialog">
@@ -1009,7 +989,7 @@ function LoadAllTenders(){
 
 <style>
 .tg-wrapper{
-    overflow-y:hidden;
+    /* overflow-y:hidden; */
 }
 </style>
     
