@@ -47,9 +47,9 @@
         }
         ?>
 
-                    <div class="row"><!-- 
-                        <form method="post" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/insert_bank_details')?>" > -->
-                                <?=form_open_multipart('supplier/dashboard/insert_bank_details');  ?>
+                    <div class="row">
+                        <form method="post" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/insert_bank_details')?>" >
+                                <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                         <div class="col-md-5" style="border: 1px solid #CCC;">
                         <br />
                         <div class="form-group">

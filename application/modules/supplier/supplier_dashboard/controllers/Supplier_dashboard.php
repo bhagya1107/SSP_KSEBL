@@ -567,37 +567,278 @@ public function updatePassword()
 	public function update_companyprofile(){
 		 // echo "string"; exit;
 
-         $res='';
-       $suppplierid=$this->input->post('supplierid');
+         // $res='';
+       $supplierid=$this->input->post('supplierid');
         
-            $data['companyname']=$this->input->post('profile');
-            $data['incorporationNo']=$this->input->post('incorporation');
-			$data['incorporationdate']=$this->input->post('date');
-            $data['pancardno']=$this->input->post('pancard');
-            $data['gst']=$this->input->post('gstin');
-            $data['companyaddress']=$this->input->post('address');
-            $data['mobile']=$this->input->post('mobile');
-			$data['email']=$this->input->post('email');
-			$data['website']=$this->input->post('website');
-			$data['authorizedperson']=$this->input->post('authorizedperson');
-			
-            if($suppplierid){
+            $companyname=$this->input->post('profile');
+            $incorporationNo=$this->input->post('incorporation');
+			$incorporationdate=$this->input->post('date');
+            $pancardno=$this->input->post('pancard');
+            $gst=$this->input->post('gstin');
+            $companyaddress=$this->input->post('address');
+            $mobile=$this->input->post('mobile');
+			$email=$this->input->post('email');
+			$website=$this->input->post('website');
+			$authorizedperson=$this->input->post('authorizedperson');
 
-                $where=array('supplierid'=>$suppplierid);
-				$res =$this->dashM->update('companyprofile',$data, $where);
+			$config['upload_path'] = './uploads/company_profile';
+            $config['allowed_types'] = '*';
+            $config['max_size'] = '5000';
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('file1'))
+             {
+          
+                print_r($this->upload->display_errors());
+              } 
+              else 
+              {
+	            $data = $this->upload->data();
+	            $file1=$data['file_name'];
+	            
+        	  }
+        	  if (!$this->upload->do_upload('file2'))
+             {
+          
+                print_r($this->upload->display_errors());
+              } 
+              else 
+              {
+	            $data = $this->upload->data();
+	            $file2=$data['file_name'];
+	            
+        	  }
+        	  if (!$this->upload->do_upload('file3'))
+             {
+          
+                print_r($this->upload->display_errors());
+              } 
+              else 
+              {
+	            $data = $this->upload->data();
+	            $file3=$data['file_name'];
+	            
+        	  }
+        	   // echo $file1;
+        	   //  echo $file2;
+        	   // echo $file3; exit;
+		
+
+if ($file1!="" and $file2!="" and $file3!="" )
+      	{
+			
+			 $data=array(
+			'companyaddress'=>$companyaddress,
+			'mobile'=>$mobile,
+			'email'=>$email,
+			'website'=>$website,
+			'authorizedperson'=>$authorizedperson,
+			'incorporationcertificate'=>$file1,
+			'gst_tinfile'=>$file2,
+			'authorisedpersonfile'=>$file3
+		    );
+			  $data1=array(
+			
+			'mobile'=>$mobile,
+			'email'=>$email
+		    );
+	
+		
+				$this->dashM->update_company('companyprofile',$supplierid,$data);
+				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','added successfully');
+				redirect(base_url('supplier/dashboard/profile'));
+	
+		 
+		 
+	}
+	if ($file1!="" and $file2!="" )
+      	{
+			
+			 $data=array(
+			'companyaddress'=>$companyaddress,
+			'mobile'=>$mobile,
+			'email'=>$email,
+			'website'=>$website,
+			'authorizedperson'=>$authorizedperson,
+			'incorporationcertificate'=>$file1,
+			'gst_tinfile'=>$file2
+			
+		    );
+			 $data1=array(
+			
+			'mobile'=>$mobile,
+			'email'=>$email
+		    );
+	
+		
+				$this->dashM->update_company('companyprofile',$supplierid,$data);
+				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','added successfully');
+				redirect(base_url('supplier/dashboard/profile'));
+	
+		 
+		 
+	}
+	if ($file1!="" and $file3!="" )
+      	{
+			
+			 $data=array(
+			'companyaddress'=>$companyaddress,
+			'mobile'=>$mobile,
+			'email'=>$email,
+			'website'=>$website,
+			'authorizedperson'=>$authorizedperson,
+			'incorporationcertificate'=>$file1,
+			'authorisedpersonfile'=>$file3
+		    );
+			 $data1=array(
+			
+			'mobile'=>$mobile,
+			'email'=>$email
+		    );
+	
+		
+				$this->dashM->update_company('companyprofile',$supplierid,$data);
+				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','added successfully');
+				redirect(base_url('supplier/dashboard/profile'));
+	
+		 
+		 
+	}
+	if ($file2!="" and $file3!="" )
+      	{
+			
+			 $data=array(
+			'companyaddress'=>$companyaddress,
+			'mobile'=>$mobile,
+			'email'=>$email,
+			'website'=>$website,
+			'authorizedperson'=>$authorizedperson,
+			'gst_tinfile'=>$file2,
+			'authorisedpersonfile'=>$file3
+		    );
+			 $data1=array(
+			
+			'mobile'=>$mobile,
+			'email'=>$email
+		    );
+	
+		
+				$this->dashM->update_company('companyprofile',$supplierid,$data);
+				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Added successfully');
+				redirect(base_url('supplier/dashboard/profile'));
+	
+		 
+		 
+	}
+	
+        if ($file1!="")
+      	{
+			
+			 $data=array(
+			'companyaddress'=>$companyaddress,
+			'mobile'=>$mobile,
+			'email'=>$email,
+			'website'=>$website,
+			'authorizedperson'=>$authorizedperson,
+			'incorporationcertificate'=>$file1
+		    );
+	
+		$data1=array(
+			
+			'mobile'=>$mobile,
+			'email'=>$email
+		    );
+	
+		
+				$this->dashM->update_company('companyprofile',$supplierid,$data);
+				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','added successfully');
+				redirect(base_url('supplier/dashboard/profile'));
+	
+		 
+		 
+	}
+		if ($file2!="")
+      	{
+			
+			 $data=array(
+			'companyaddress'=>$companyaddress,
+			'mobile'=>$mobile,
+			'email'=>$email,
+			'website'=>$website,
+			'authorizedperson'=>$authorizedperson,
+			'gst_tinfile'=>$file2
+		    );
+			 $data1=array(
+			
+			'mobile'=>$mobile,
+			'email'=>$email
+		    );
+	
+		
+				$this->dashM->update_company('companyprofile',$supplierid,$data);
+				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','added successfully');
+				redirect(base_url('supplier/dashboard/profile'));
+	
+		 
+		 
+	}
+		if ($file3!="")
+      	{
+			
+			 $data=array(
+			'companyaddress'=>$companyaddress,
+			'mobile'=>$mobile,
+			'email'=>$email,
+			'website'=>$website,
+			'authorizedperson'=>$authorizedperson,
+			'authorisedpersonfile'=>$file3
+		    );
+			 $data1=array(
+			
+			'mobile'=>$mobile,
+			'email'=>$email
+		    );
+	
+		
+				$this->dashM->update_company('companyprofile',$supplierid,$data);
+				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','added successfully');
+				redirect(base_url('supplier/dashboard/profile'));
+	
+		 
+		 
+	}
+	
+	else
+	{
+		 $data=array(
+			'companyaddress'=>$companyaddress,
+			'mobile'=>$mobile,
+			'email'=>$email,
+			'website'=>$website,
+			'authorizedperson'=>$authorizedperson
+		    );
+		 $data1=array(
+			
+			'mobile'=>$mobile,
+			'email'=>$email
+		    );
+	
+		
+				$this->dashM->update_company('companyprofile',$supplierid,$data);
+				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','added successfully');
+				redirect(base_url('supplier/dashboard/profile'));
+		}
                 
             }
 			
-			 if($res>0)
-        {
-            
-            echo "Updated Successfully";
-        }
-        else
-        {
-            echo "Error while Updating";
-        }  
-    }
+		
 	
 	public function insert_companyprofile(){ 
  

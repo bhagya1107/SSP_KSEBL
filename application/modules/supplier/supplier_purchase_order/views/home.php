@@ -40,7 +40,7 @@
 	<section class="tg-main-section tg-haslayout">
 		<div class="container">
 			<div class="tg-section-name">
-				<h2>PurchaseOrders</h2>
+				<h2 >PurchaseOrders</h2>
 			</div>
 			<?php $user_type=$this->session->userdata('user_type');?>
 			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">

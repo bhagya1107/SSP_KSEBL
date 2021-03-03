@@ -86,6 +86,19 @@ class Dashboard_model extends CI_Model
        $this->db->update($table,$data);
        return;
     }
+    public function update_company($table,$supplierid,$data)
+    { 
+       $this->db->where('supplierid',$supplierid);
+       $this->db->update($table,$data);
+       return;
+    }
+    public function update_company_supplier($table,$supplierid,$data1)
+    { 
+       $this->db->where('uid',$supplierid);
+       $this->db->update($table,$data);
+       return;
+    }
+    
      public function updatedata($table,$data,$id)
     { 
        $this->db->where('id',$id);

@@ -80,6 +80,7 @@
 
             <div class="row">
               <form method="post" action="<?php echo base_url('supplier/dashboard/insert_companyprofile')?>">
+                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                 <div class="col-md-5" style="border: 1px solid #CCC;">
                   <br />
                    <div class="form-group">
