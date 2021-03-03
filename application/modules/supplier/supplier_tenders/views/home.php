@@ -104,14 +104,14 @@ small{
 			
 			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:1000px;">
 				<ul class="nav nav-tabs">
-					<li class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">All Tenders</a></li>
-					<li class="<?php echo $tab ==4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li>
+					<li class="<?php echo $tab ==1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
+					<!-- <li class="<?php echo $tab ==4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
 					<li class="<?php echo $tab ==2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
                     <li class="<?php echo $tab ==3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
 				</ul>
 
 				<div class="tab-content">
-				 
+                  <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8')?>" />
 					<div id="home" class="tab-pane fade  <?php echo $tab ==1 ? "in active" : "" ?>">
 						<div class="row" style="margin-top: 15px;">
 							<div class="tg-tickets">
@@ -124,45 +124,17 @@ small{
 							</div>
 						</div>
 					</div>
-					
-					
-					<div id="menu3" class="tab-pane fade  <?php echo $tab ==4 ? "in active" : "" ?>">
+
+
+					<!-- <div id="menu3" class="tab-pane fade  <?php echo $tab ==4 ? "in active" : "" ?>">
 						<div class="row" style="margin-top: 15px;">
 							<div class="tg-tickets">
-							<?php foreach($mytenderproducts as $tenderproducts){ ?>
-								<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03"><small>Last date</small><br><?php 
-										$time=strtotime($tenderproducts->tender_date);
-											echo date('j  ', $time);?>
-                                   <span><?php $time=strtotime($tenderproducts->tender_date);
-										echo date('M ', $time);?></span></time>
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag"><?php echo $tenderproducts->tender_num ?></span>
-										<h4>TENDER<?php echo $tenderproducts->id ?></h4></h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Tender Autority:<?php echo $tenderproducts->tendering_authority ?></address></li>
-										</ul>
-									</div>
-									<div class="tg-btnsbox" style="margin-top:11px;">
-										<a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="mytenderdetails(<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8')?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8');?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-								<?php if($tenderproducts->sorting==0){?>
-											<a class="btn btn-primary btn-sm" id="save_tenders" onclick="save_tenders(<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8')?>);">Add to Favourites </a>
-								<?php }else{?>
-									<a class="btn btn-success btn-sm" >Added to Favourites </a>
-
-								<?php } ?>
-										<!--<a class="btn btn-primary btn-sm" href="#">Tender Status </a>-->
-										<!--<a class="btn btn-primary btn-sm" href="#">Payment Status </a>-->
-										<!--<a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" >Clarifications </a>-->
-										<!-- // tender id -->
-									</div>
-								</div>
-						<?php	}?>
+							
 							
 
 							</div>
 						</div>
-					</div>
+					</div> -->
 					
 					
 					
@@ -921,11 +893,26 @@ function mytenderdetails(tenderdetail){
 
 $(document).ready(function(){
 
-    LoadAllTenders();
-
+    // LoadAllTenders();
+    getMytenders();
+    changeTenderTye();
 });
 
-
+function changeTenderTye(){
+    
+    $('#tenderType').on('change',function(){
+       var type =$('#tenderType').val();
+        if(type == 'all'){
+           $('#tender_tab').text('All Tenders');
+            LoadAllTenders();
+        }else if(type == 'products'){
+            $('#tender_tab').text('Tenders');
+            getMytenders();
+        }
+        // getMytenders
+    });
+    
+}
 function LoadAllTenders(){
 
     $.ajax({
@@ -975,12 +962,38 @@ function LoadAllTenders(){
     
 }
 
+function getMytenders(){
+    html="";
+   
+    var mytenderproducts = JSON.parse($('#mytenderproducts').val());
+    $.each( mytenderproducts, function (i, data) {
+        console.log(data);
+        html+="<div class='tg-ticket'><time class='tg-matchdate' datetime='2016-05-03'><small>Last date</small><br>";
+                        var date1 = new Date(data.tender_date); 
+                        // console.log(date1);
+                        // console.log(date1.getDate());
+                        html+= date1.getDate()+"<span>"+myFunction(date1.getMonth())+"</span></span></time>";
+                        html+="<div class='tg-matchdetail'><span class='tg-theme-tag'>"+data.tender_num+"</span><h4>TENDER "+data.id+"</h4></h4>";
+
+                        html+="<ul class='tg-matchmetadata'><li><address>Tender Autority:"+data.tendering_authority+" </address></li></ul></div>";
+
+                        html+="<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails("+JSON.stringify(data)+")' data-tender='"+JSON.stringify(data)+"' data-toggle='modal' data-target='#tendermore'>Read More</a>";
+
+                        if(data.sorting == 0){
+                            html+="<a class='btn btn-primary btn-sm' id='save_tenders' onclick='save_tenders("+JSON.stringify(data)+")'>Add to Favourites</a>";
+                        }else{
+                            html+="<a class='btn btn-success btn-sm' >Added to Favourites </a>";
+                        }
+										
+                        html+="</div></div>"; 
+    });		
+    $('#alltenderdetails').empty().append(html);										
+}
 
 
-
-        setInterval(() => {
-            LoadAllTenders();
-        }, 50000);
+        // setInterval(() => {
+        //     LoadAllTenders();
+        // }, 50000);
 
 
         function myFunction($month_dat) {
