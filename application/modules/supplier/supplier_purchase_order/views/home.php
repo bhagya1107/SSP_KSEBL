@@ -32,26 +32,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
-.scroltop {
-    background: #504c7e;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ffcc33;
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    padding: 0;
-    color: #ffcc33;
-    font-size: 15px;
-    margin: 0;
-    cursor: pointer;
-    display: none;
-    height: 35px;
-    width: 35px;
-    line-height: 26px;
-    text-align: center;
-    z-index: 999;
-}
+
 
 </style>
 
@@ -59,10 +40,10 @@
 	<section class="tg-main-section tg-haslayout">
 		<div class="container">
 			<div class="tg-section-name">
-				<h2>PurchaseOrders</h2>
+				<h2 >PurchaseOrders</h2>
 			</div>
 			<?php $user_type=$this->session->userdata('user_type');?>
-			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:400px;">
+			<div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">
 				<ul class="nav nav-tabs">
 					<li style="<?php if($user_type=='2' ) echo "display: none;" ?>" class="<?php echo $tab ==1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
 					<li style="<?php if($user_type=='2' ) echo "display: none;" ?>"  class="<?php echo $tab ==2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">My Purchase Orders</a></li>
@@ -165,23 +146,11 @@
 											<li><address>Tender Short DIscription</address></li>
 										</ul>
 									</div>
-									<!--<div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li class="dropdown-header">Dropdown header 1</li>
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-      <li class="divider"></li>
-      <li class="dropdown-header">Dropdown header 2</li>
-      <li><a href="#">About Us</a></li>
-    </ul>
-  </div>-->
-  <div class="tg-btnsbox">
+									
+                                    <div class="tg-btnsbox">
 										
 									
- <!-- <div class="dropdown">
+                                        <!-- <div class="dropdown">
 										<button onclick="myFunction()" style="margin-bottom: -39px;" class="pull-right dropbtn">Action</button>
 										<div id="myDropdown" class=" pull-right dropdown-content">
 										<a data-toggle="modal" data-target="#myModal_vmi">VMI</a>
@@ -192,121 +161,100 @@
 											
 										</div>
 										</div>-->
-		<div style="margin-left:20px;" >
-		<a class="fa  fa-print"   title="print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus" > </a>&nbsp;
-				<a class="fa  fa-download"  title="download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus" > </a>&nbsp;
-			<a class="fa fa-file-o" title="document" style="font-size:24px" data-toggle="modal" data-target="#documents" > </a>&nbsp;
-				<a class="fa  fa-file"  title="terms and conditions" style="font-size:24px" data-toggle="modal" data-target="#termsconditions" > </a>&nbsp;
+                                        <div style="margin-left:20px;" >
+                                            <a class="fa  fa-print"   title="print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus" > </a>&nbsp;
+                                            <a class="fa  fa-download"  title="download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus" > </a>&nbsp;
+                                            <a class="fa fa-file-o" title="document" style="font-size:24px" data-toggle="modal" data-target="#documents" > </a>&nbsp;
+                                            <a class="fa  fa-file"  title="terms and conditions" style="font-size:24px" data-toggle="modal" data-target="#termsconditions" > </a>&nbsp;
 
-		<!--<a class="fa  fa-eye"  title="view Details" style="font-size:24px" data-toggle="modal" data-target="#purchasdetails"> </a>&nbsp;-->
-
-</div>
-										</div>
-										
-										
-	<div class="tg-btnsbox">
-										
-<button type="button" class="collapsible btn btn-primary">View Purchase Details</button>
-<div class="content" >
-  <div class="table-responsive">
-<div class="tg-ticket" style="color:black;background-color:white;">
-									<!--<time class="tg-matchdate" datetime="2016-05-03">02<span>Dec</span></time>-->
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag">Purchase Date:27-05-2020</span>
-										<h4>OrderNo:PCO88944556</h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Description:Text</address></li>
-										</ul>
+                                        </div>
 									</div>
-									<div class="tg-btnsbox">
-										<div class="dropdown">
-										<!--<button onclick="myFunction()" style="margin-bottom: -39px;" class="pull-right dropbtn">Return</button>-->
-										<div id="myDropdown" class=" pull-right dropdown-content">
-										<a data-toggle="modal" data-target="#myModal_vmi">VMI</a>
-										<!--<a data-toggle="modal" data-target="#dispatch">PreDispatch Inspection</a>-->
-										<a data-toggle="modal" data-target="#mdcc">MDCC</a>
-											<a data-toggle="modal" data-target="#shipment">Shipments</a>
-											<!--<a data-toggle="modal" data-target="#shipment">Delivery Schedule</a>
-											
-										</div>-->
-										</div>
-									</div>
-								</div>
+										
+										
+	                                <div class="tg-btnsbox">
+										
+                                        <button type="button" class="collapsible btn btn-primary">View Purchase Details</button>
+                                        <div class="content" >
+                                            <div class="table-responsive">
+                                                <div class="tg-ticket" style="color:black;background-color:white;">
+                                                    <div class="tg-matchdetail">
+                                                        <span class="tg-theme-tag">Purchase Date:27-05-2020</span>
+                                                        <h4>OrderNo:PCO88944556</h4>
+                                                        <ul class="tg-matchmetadata">
+                                                            <li><address>Description:Text</address></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="tg-btnsbox">
+                                                        <div class="dropdown">
+                                                            <div id="myDropdown" class=" pull-right dropdown-content">
+                                                                <a data-toggle="modal" data-target="#myModal_vmi">VMI</a>
+                                                                <a data-toggle="modal" data-target="#mdcc">MDCC</a>
+                                                                <a data-toggle="modal" data-target="#shipment">Shipments</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                    <table id="siteins" cellpadding="0" cellspacing="0"  border= "0" class="table table-striped table-bordered table-hover"
-                        class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th scope="col">sl no</th>
-                                <th scope="col">Order No</th>
-                                <th scope="col">Product Name</th>
-                                <th scope="col">Purchase Date</th>
-								 <th scope="col">Action</th>
-                               
-                            </tr>
-                        </thead>
-									<tr>
-                                    <td>1</td>
-                                    <td>PCO009877655</td>
-                                    <td>BULB</td>
-									<td>27-05-2020</td>
-									
-                                   
-                                    <td style="width:370px;">
- <!--<button  data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">PDI</button> --><button  data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button  data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>
- <button  data-toggle="modal" data-target="#myModal_vmi" style="width:80px; height:29px; color: #fff;background-color: green; border-color: green;">VMI</button></td>
+                                                    <table id="siteins" cellpadding="0" cellspacing="0"  border= "0" class="table table-striped table-bordered table-hover"
+                                                        class="display" style="width:100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">sl no</th>
+                                                                <th scope="col">Order No</th>
+                                                                <th scope="col">Product Name</th>
+                                                                <th scope="col">Purchase Date</th>
+                                                                <th scope="col">Action</th>
+                                                            
+                                                            </tr>
+                                                        </thead>
+                                                            <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>PCO009877655</td>
+                                                                        <td>BULB</td>
+                                                                        <td>27-05-2020</td>
+                                                                        
+                                                                    
+                                                                        <td style="width:370px;">
+                                                                            <button  data-toggle="modal" data-target="#myModal_vmi" style="width:80px; height:29px; color: #fff;background-color: green; border-color: green;">VMI</button></td>
 
-</td>
-									
-									<!--<div class="col-md-2 col-sm-3"><button  data-toggle="modal" data-target="#myModal_vmi" style="width:122px; height:33px;color: #fff;background-color: #1e315d; border-color: #ffcc33;">VMI</button>
-                                  <button  data-toggle="modal" data-target="#dispatch" style="width:122px; height:38px; color: #fff;background-color: green; border-color: green;">Predispatch Inspection</button>
-                                  <button  data-toggle="modal" data-target="#mdcc" style="width:122px; height:33px; color: #fff;background-color: orange; border-color: orange;">MDCC</button>
-                                  <button  data-toggle="modal" data-target="#delivery_schedule" style="width:122px; color: #fff;background-color: red; border-color: Red;">Delivery Schedule</button></td>
+                                                                        </td>
+                                                                    
+                                                                
+                                                                    </tr>
+                                                                
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>PCO009877655</td>
+                                                                        <td>LED</td>
+                                                                        <td>27-05-2020</td>
+                                                                
+                                                                        <td style="width:370px;">
+                                                                            <button  data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">PDI</button> <button  data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button  data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>
 
-									</div>-->
-                                </tr>
-								
-								<tr>
-                                    <td>2</td>
-                                    <td>PCO009877655</td>
-                                    <td>LED</td>
-									<td>27-05-2020</td>
-                             
-                                    <td style="width:370px;">
- <button  data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">PDI</button> <button  data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button  data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>
- <!--<button  data-toggle="modal" data-target="#myModal_vmi" style="width:80px; height:29px; color: #fff;background-color: green; border-color: green;">VMI</button>--></td>
+                                                                        </td>
+                                                                        
+                                                                    
+                                                                    </tr>
+                                                                
+                                                                
+                                                                </tbody>
+                                                    
 
-</td>
-									
-									<!--<div class="col-md-2 col-sm-3"><button  data-toggle="modal" data-target="#myModal_vmi" style="width:122px; height:33px;color: #fff;background-color: #1e315d; border-color: #ffcc33;">VMI</button>
-                                  <button  data-toggle="modal" data-target="#dispatch" style="width:122px; height:38px; color: #fff;background-color: green; border-color: green;">Predispatch Inspection</button>
-                                  <button  data-toggle="modal" data-target="#mdcc" style="width:122px; height:33px; color: #fff;background-color: orange; border-color: orange;">MDCC</button>
-                                  <button  data-toggle="modal" data-target="#delivery_schedule" style="width:122px; color: #fff;background-color: red; border-color: Red;">Delivery Schedule</button></td>
+                                                    </table>
 
-									</div>-->
-                                </tr>
-								
-								
-                                </tbody>
-                      
+                                                </div>
+                                            </div>
+                                        </div>
 
-                    </table>
-
-                </div>
-            </div>
-</div>
-
-		<!--<a class="fa  fa-eye"   title="view Details" style="font-size:24px" data-toggle="modal" data-target="#"> </a>&nbsp;-->
-
-</div>									
+                                    </div>									
 										
 										
 										
-</div>
-								</div>
+                                </div>
+							</div>
 
-								<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03">20<span>JAN</span></time>
+							<div class="tg-ticket">
+								<time class="tg-matchdate" datetime="2016-05-03">20<span>JAN</span></time>
 									<div class="tg-matchdetail">
 										<span class="tg-theme-tag">Order No : PCO8895544</span>
 										<h4>Tender Name 2</h4></h4>
@@ -314,148 +262,104 @@
 											<li><address>Tender Short DIscription</address></li>
 										</ul>
 									</div>
-									<!-- <div class="dropdown">
-										<button onclick="myFunction()" class="dropbtn">Action</button>
-										<div id="myDropdown" class="dropdown-content">
-											<a href="#home">Home</a>
-											<a href="#about">About</a>
-											<a href="#contact">Contact</a>
-										</div>
-										</div> -->
-										 <div class="tg-btnsbox">
-										 <!-- <div class="dropdown">
-										<button onclick="myFunction()" style="margin-bottom: -39px;"class="pull-right dropbtn">Action</button>
-										<div id="myDropdown" class=" pull-right dropdown-content">
-											<a data-toggle="modal" data-target="#myModal_VMI">VMI</a>
-										<a data-toggle="modal" data-target="#modal_rew">PreDispatch Inspection</a>
-										<a data-toggle="modal" data-target="#mdcc">MDCC</a>
-											<!--<a data-toggle="modal" data-target="#shipment">Shipments</a>-->
-											<!--<a data-toggle="modal" data-target="#shipment">Delivery Schedule</a>
-											
-										</div>
-										</div>-->
-										
-										
-											<div style="margin-left:20px;">
-		<a class="fa  fa-print"   title="print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus" > </a>&nbsp;
-				
-			<a class="fa  fa-download"  title="download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus" > </a>&nbsp;
-				<a class="fa fa-file-o" title="document" style="font-size:24px" data-toggle="modal" data-target="#documents" > </a>&nbsp;
-				<a class="fa  fa-file"  title="terms and conditions" style="font-size:24px" data-toggle="modal" data-target="#termsconditions" > </a>&nbsp;
-		<!--<a class="fa  fa-eye"  title="view Details" style="font-size:24px" data-toggle="modal" data-target="#purchasdetails" > </a>&nbsp;-->
-
-</div>
-</div>
-
-<div class="tg-btnsbox">
-										
-<button type="button" class="collapsible btn btn-primary" >View Purchase Details</button>
-<div class="content">
-  <div class="table-responsive">
-<div class="tg-ticket" style="color:black;background-color:white;">
-									<!--<time class="tg-matchdate" datetime="2016-05-03">02<span>Dec</span></time>-->
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag">Purchase Date:02-12-2020</span>
-										<h4>OrderNo:#45666666</h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Description</address></li>
-										</ul>
-									</div>
+									
 									<div class="tg-btnsbox">
-										<div class="dropdown">
-										<!--<button onclick="myFunction()" style="margin-bottom: -39px;" class="pull-right dropbtn">Return</button>-->
-										<div id="myDropdown" class=" pull-right dropdown-content">
-										<!--<a data-toggle="modal" data-target="#myModal_vmi">VMI</a>-->
-										<a data-toggle="modal" data-target="#dispatch">PreDispatch Inspection</a>
-										<a data-toggle="modal" data-target="#mdcc">MDCC</a>
-											<a data-toggle="modal" data-target="#shipment">Shipments</a>
-											<!--<a data-toggle="modal" data-target="#shipment">Delivery Schedule</a>
-											
-										</div>-->
-										</div>
-									</div>
-								</div>
+										 
+										<div style="margin-left:20px;">
+                                            <a class="fa  fa-print"   title="print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus" > </a>&nbsp;
+                                            <a class="fa  fa-download"  title="download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus" > </a>&nbsp;
+                                            <a class="fa fa-file-o" title="document" style="font-size:24px" data-toggle="modal" data-target="#documents" > </a>&nbsp;
+                                            <a class="fa  fa-file"  title="terms and conditions" style="font-size:24px" data-toggle="modal" data-target="#termsconditions" > </a>&nbsp;
 
-                    <table id="siteins" cellpadding="0" cellspacing="0"  border= "0" class="table table-striped table-bordered table-hover"
-                        class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th scope="col">sl no</th>
-                                <th scope="col">Order No</th>
-                                <th scope="col">Tender Name</th>
-                                <th scope="col">Purchase Date</th>
-								 <th scope="col">Action</th>
-                               
-                            </tr>
-                        </thead>
-									<tr>
-                                    <td>1</td>
-									<td>PCO87654433</td>
-                                    <td>TENDER NAME2</td>
-                                    <td>08-12-2020</td>
-                                    
-                                    <td style="width:370px;">
- <!--<button  data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">PDI</button>--> <button  data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button  data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>
- <button  data-toggle="modal" data-target="#myModal_vmi" style="width:80px; height:29px; color: #fff;background-color: green; border-color: green;">VMI</button></td>
+                                        </div>
+                                    </div>
 
-</td>
-									
-									<!--<div class="col-md-2 col-sm-3"><button  data-toggle="modal" data-target="#myModal_vmi" style="width:122px; height:33px;color: #fff;background-color: #1e315d; border-color: #ffcc33;">VMI</button>
-                                  <button  data-toggle="modal" data-target="#dispatch" style="width:122px; height:38px; color: #fff;background-color: green; border-color: green;">Predispatch Inspection</button>
-                                  <button  data-toggle="modal" data-target="#mdcc" style="width:122px; height:33px; color: #fff;background-color: orange; border-color: orange;">MDCC</button>
-                                  <button  data-toggle="modal" data-target="#delivery_schedule" style="width:122px; color: #fff;background-color: red; border-color: Red;">Delivery Schedule</button></td>
+                                    <div class="tg-btnsbox">
+										
+                                        <button type="button" class="collapsible btn btn-primary" >View Purchase Details</button>
+                                        <div class="content">
+                                            <div class="table-responsive">
+                                                <div class="tg-ticket" style="color:black;background-color:white;">
+                                                    <div class="tg-matchdetail">
+                                                        <span class="tg-theme-tag">Purchase Date:02-12-2020</span>
+                                                        <h4>OrderNo:#45666666</h4>
+                                                        <ul class="tg-matchmetadata">
+                                                            <li><address>Description</address></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="tg-btnsbox">
+                                                        <div class="dropdown">
+                                                            <div id="myDropdown" class=" pull-right dropdown-content">
+                                                                <a data-toggle="modal" data-target="#dispatch">PreDispatch Inspection</a>
+                                                                <a data-toggle="modal" data-target="#mdcc">MDCC</a>
+                                                                <a data-toggle="modal" data-target="#shipment">Shipments</a>
 
-									</div>-->
-                                </tr>
-								
-								<tr>
-                                    <td>1</td>
-									<td>PCO87654433</td>
-                                    <td>TENDER NAME2</td>
-                                    <td>09-12-2020</td>
-                                   
-                                    <td style="width:370px;">
- <button  data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">PDI</button> <button  data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button  data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>
- <!--<button  data-toggle="modal" data-target="#myModal_vmi" style="width:80px; height:29px; color: #fff;background-color: green; border-color: green;">VMI</button>--></td>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-</td>
-									
-									<!--<div class="col-md-2 col-sm-3"><button  data-toggle="modal" data-target="#myModal_vmi" style="width:122px; height:33px;color: #fff;background-color: #1e315d; border-color: #ffcc33;">VMI</button>
-                                  <button  data-toggle="modal" data-target="#dispatch" style="width:122px; height:38px; color: #fff;background-color: green; border-color: green;">Predispatch Inspection</button>
-                                  <button  data-toggle="modal" data-target="#mdcc" style="width:122px; height:33px; color: #fff;background-color: orange; border-color: orange;">MDCC</button>
-                                  <button  data-toggle="modal" data-target="#delivery_schedule" style="width:122px; color: #fff;background-color: red; border-color: Red;">Delivery Schedule</button></td>
+                                                    <table id="siteins" cellpadding="0" cellspacing="0"  border= "0" class="table table-striped table-bordered table-hover"
+                                                        class="display" style="width:100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">sl no</th>
+                                                                <th scope="col">Order No</th>
+                                                                <th scope="col">Tender Name</th>
+                                                                <th scope="col">Purchase Date</th>
+                                                                <th scope="col">Action</th>
+                                                            
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>PCO87654433</td>
+                                                                        <td>TENDER NAME2</td>
+                                                                        <td>08-12-2020</td>
+                                                                        
+                                                                        <td style="width:370px;">
+                                                                            <button  data-toggle="modal" data-target="#myModal_vmi" style="width:80px; height:29px; color: #fff;background-color: green; border-color: green;">VMI</button></td>
 
-									</div>-->
-                                </tr>
-								
-								
-                                </tbody>
-                      
+                                                                        </td>
+                                                                
+                                                                    </tr>
+                                                                
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>PCO87654433</td>
+                                                                        <td>TENDER NAME2</td>
+                                                                        <td>09-12-2020</td>
+                                                                    
+                                                                        <td style="width:370px;">
+                                                                            <button  data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">PDI</button> <button  data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button  data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>
 
-                    </table>
+                                                                        </td>
+                                                                    
+                                                                    
+                                                                    </tr>
+                                                                
+                                                                
+                                                        </tbody>
+                                                    
 
-                </div>
-            </div>
-</div>
+                                                    </table>
 
-		<!--<a class="fa  fa-eye"   title="view Details" style="font-size:24px" data-toggle="modal" data-target="#"> </a>&nbsp;-->
-
-</div>
-
-
-								</div>
-
-
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
+		</div>
 		
 	</section>
 </main>
 
-<button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button>
+<!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
 
 
 <div id="myModalpurchase" class="modal fade" role="dialog">

@@ -41,10 +41,11 @@ class Supplier_home extends MX_Controller {
 				$username=$chk['name'];
 				$user_type=$chk['user_type'];
 				$lock_user=$chk['active_status'];
+				$is_deleted=$chk['isdeleted'];
 				// $district_id=$chk['district_id'];
 				// $basin_id=$chk['basin_id'];
 			
-				if($lock_user==1 or $lock_user==0)
+				if($is_deleted!=1)
 				{
 					$ip=$this->input->ip_address();
 					$lgtime=date('Y-m-d H:i:s');

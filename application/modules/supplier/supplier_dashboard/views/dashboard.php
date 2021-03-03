@@ -110,26 +110,6 @@
   background:#ffbb3b!important;
 }
 
-.scroltop {
-    background: #504c7e;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ffcc33;
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    padding: 0;
-    color: #ffcc33;
-    font-size: 15px;
-    margin: 0;
-    cursor: pointer;
-    display: none;
-    height: 35px;
-    width: 35px;
-    line-height: 26px;
-    text-align: center;
-    z-index: 999;
-}
 
 </style>
 <link href="<?=base_url()?>assets/supplier_portal/css/dashboard.css" rel="stylesheet" id="bootstrap-css">
@@ -180,11 +160,17 @@
         <div class=" col-md-6 ">
           <div class="card dash-content">
               <div class="content">
-              <!-- style="font-size: 150%" -->
-              <span class="content-text mt-40" style="font-size: 110%">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-id-card fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                
-         Active Tenders</span>
-              <span class="count blue mt-40">103</span>
+             <div class="row">
+             <div class="col-md-4">
+              <span class="content-text mt-40" > <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
+              </div>
+              <div class="col-md-8" style="display:inline-flex;    margin-top: 23%;padding-left:0px">
+                <div class="col-md-11" >
+                <h3 style="text-transform:unset">Active Tenders</h3></div>
+                <div class="col-md-1" >
+                <span class="count blue">103</span></div>
+                </div>
+            </div>
                 <div class="clearfix"> </div>
                   <div class="bar col-md-9  mt-3" style="margin-left: 150px;">
                     <div class="border">
@@ -195,28 +181,21 @@
               </div>
           </div>
         </div>
-        <!-- <div class=" col-md-6 "> -->
-         <!--  <div class="card dash-content">
-              <div class="content">
-              <span class="content-text mt-40">Total Purchase Orders</span>
-              <span class="count lav mt-40">169</span>
-              <div class="clearfix"> </div>
-                  <div class="bar col-md-12  mt-4">
-                    <div class="border">
-                      <div class="color lav-background"></div>
-                    </div>
-                
-                  </div>
-            
-              </div>
-          </div> -->
-        <!-- </div> -->
+        
         <div class=" col-md-6" > 
-          <div class="card dash-content" >
+          <div class="card dash-content">
               <div class="content">
-                <span class="content-text mt-40" style="font-size: 110%">&nbsp;&nbsp;&nbsp;&nbsp;
-               <i class="fa fa-id-card fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Active Purchase Orders</span>
-                <span class="count green mt-40">268</span>
+             <div class="row">
+             <div class="col-md-4">
+              <span class="content-text mt-40" > <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
+              </div>
+              <div class="col-md-8" style="display:inline-flex;margin-top: 23%;padding-left:0px">
+                <div class="col-md-11" >
+                <h3 style="text-transform:unset">Active Purchase Orders</h3></div>
+                <div class="col-md-1" >
+                <span class="count green">268</span></div>
+                </div>
+            </div>
                 <div class="clearfix"> </div>
                   <div class="bar col-md-9  mt-3" style="margin-left: 150px;">
                     <div class="border">
@@ -225,7 +204,7 @@
                 
                   </div>
               </div>
-              </div> 
+          </div>
         </div>
     </div>
    
@@ -340,7 +319,7 @@
 	</section>
 </main>
 
-<button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button>
+<!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
 
 <style>
 *, *:before, *:after {
@@ -437,5 +416,6 @@ $('.vertical .progress-fill span').each(function(){
 });
 
 </script>
+
 
 
