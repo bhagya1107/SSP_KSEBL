@@ -116,7 +116,10 @@ function scrollFunction() {
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   tg_wrapper.scrollTop = 0;
-  innerscroll.scrollTop = 0;
+  if(innerscroll){
+    innerscroll.scrollTop = 0;
+  }
+ 
   document.documentElement.scrollTop = 0;
 }
 

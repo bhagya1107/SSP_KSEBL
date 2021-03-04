@@ -402,7 +402,7 @@
 									<i class="fas fa-sign-in-alt"></i>
 									SUPPLIER SIGNUP</span>
 							</div>
-							<div class="newreg triggerbtn emp-btn">
+							<div class="newreg  triggerbtn  emp-btn">
 								<span>
 
 									<i class="fas fa-sign-in-alt"></i>
@@ -413,7 +413,8 @@
 							<div class="bottom-left2 content">
 								<!-- <div class="close" onclick="closex()">x</div> -->
 								<!-- ------------------USER LOGIN------------------------ -->
-											<?=form_open('supplier/home/user_login');?>								
+											<?php  $attributes = array('id' => 'frm_modal');  ?>
+											<?=form_open('supplier/home/user_login',$attributes);?>								
 										<!-- <div class="card-body" style="margin-top:2rem" > -->
 											<img class="auth-form__logo d-table mx-auto mb-3" src="<?=base_url('assets/logo.png')?>" 
 												alt="Shards Dashboards - Register Template"
@@ -422,13 +423,13 @@
 											
 											<div class="form-group dflex" style="color: white;">
 												<label for="exampleInputEmail1" style=" min-width: 70px; color:black">Username</label>
-												<input type="text" class="form-control w-300" name="username" id="susername"
-													aria-describedby="emailHelp" placeholder="Username">
+												<input type="text" class="form-control w-300 susername" name="username" id="susername"
+													aria-describedby="emailHelp" placeholder="Username" value="">
 											</div>
 											<div class="form-group dflex" style="color: white;">
 												<label for="exampleInputPassword1" style=" min-width: 70px;color:black">Password</label>
-												<input type="password" class="form-control w-300" id="password" placeholder="password"
-													name="password">
+												<input type="password" class="form-control w-300 password" id="password" placeholder="password"
+													name="password" value="">
 											</div>
 											<div class="form-group mb-3 d-table mx-auto dflex">
 												<div class="custom-control custom-checkbox mb-1">
@@ -493,7 +494,8 @@
 
 			
 				
-					<?=form_open('supplier/home/admin_login');?>
+					<?php  $attributes = array('id' => 'frm');  ?>
+					<?=form_open('supplier/home/admin_login',$attributes);?>
 						
 						<div class="main-content-container container-fluid px-4 my-auto h-100">
 							<div class="row no-gutters h-100">
@@ -505,16 +507,16 @@
 												alt="Shards Dashboards - Register Template"
 												style=" border-radius: 5px; background: white; width: 100px; padding: 17px; ">
 											<h5 class="auth-form__title text-center mb-4" style=" color: black; ">Access Your Account</h5>
-											<?=form_open('supplier/home/admin_login');?>
+											<!-- <?//form_open('supplier/home/admin_login');?> -->
 											<div class="form-group dflex" style="color: white;">
 												<label for="exampleInputEmail1" style=" min-width: 70px; color:black">Username</label>
 												<input type="text" class="form-control w-300" name="username" 
-													aria-describedby="emailHelp" placeholder="Username">
+													aria-describedby="emailHelp" placeholder="Username" id="usnm">
 											</div>
 											<div class="form-group dflex" style="color: white;">
 												<label for="exampleInputPassword1" style=" min-width: 70px;color:black">Password</label>
 												<input type="password" class="form-control w-300" placeholder="password"
-													name="password">
+													name="password" id="pwd">
 											</div>
 											<div class="form-group mb-3 d-table mx-auto dflex">
 												<div class="custom-control custom-checkbox mb-1">
@@ -530,11 +532,8 @@
 
 												<span style="color:red"> <br />   <?php
 													$er= $this->session->flashdata("error");
-												echo $this->session->flashdata("error");
-													if($er)
-													{
-													//  print '<script>alert("error")</script>';
-													}
+													echo $this->session->flashdata("error");
+												
 													?>
 												</span>
 
@@ -545,19 +544,9 @@
 											
 											</form>
 										</div>
-										<!-- <div class="card-footer border-top">
-											<ul class="auth-form__social-icons d-table mx-auto">
-												<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-												<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fab fa-github"></i></a></li>
-												<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-											</ul>
-										</div> -->
+										
 									</div>
-									<!-- <div class="auth-form__meta d-flex mt-4">
-										<a href="forgot-password.html">Forgot your password?</a>
-										<a class="ml-auto" href="register.html">Create new account?</a>
-									</div> -->
+								
 								</div>
 							</div>
 						</div>
@@ -711,6 +700,12 @@
 
 
 
+
+		
+
+
+
+
 		return;
 
 		var x1 = $(document).find('.expand'); 
@@ -730,8 +725,10 @@
 
 		
 	});
+
+
 	var isShow= '<?php echo $data ;?>';
-		console.log(isShow);
+		//console.log(isShow);
 			if(isShow=='true'){
 				// alert('show');
 				setTimeout(function(){$('.emp-btn').trigger('click'); }, 1000); 
@@ -842,3 +839,42 @@ $(document).on('click', '#user_login', function() {
 
 </body>
 </html>
+
+<script>
+$(document).ready(function(){
+  $("input").attr("autocomplete", "off");
+
+	
+
+	$('#frm').submit(function(e){
+		
+		e.preventDefault();
+		var p = window.btoa($('#pwd').val());
+		$('#pwd').val(p);
+		var p2 = window.btoa($('#usnm').val());
+		$('#usnm').val(p2);
+
+		this.submit();
+	
+	});
+
+
+	
+});
+
+		$('body').on('submit', '#frm_modal',function (e) {
+			
+			e.preventDefault();
+			var p = window.btoa($('#password').val());
+			$('.password').val(p).trigger('change');		
+
+			var p2 = window.btoa($('#susername').val());
+			$('.susername').val(p2).trigger('change');
+	
+			this.submit();
+		});
+
+
+
+
+</script>
