@@ -135,8 +135,8 @@
               </div>-->
               <div class="form-group">
                 <label for="phoneNumber" class="sr-only">Mobile Number</label>
-                <input type="text" name="phonenumber" required id="phoneNumber" class="form-control" placeholder="Mobile Number">
-              </div>
+                <input type="text" name="phonenumber" required id="phoneNumber" class="form-control" placeholder="Mobile Number" pattern="[6789][0-9]{9}">
+              </div> 
               <div class="form-group">
                 <label for="emailAddress" class="sr-only">Email Address</label>
                 <input type="email" name="emailaddress" autocomplete="off" required id="emailAddress" class="form-control" placeholder="Email Address">

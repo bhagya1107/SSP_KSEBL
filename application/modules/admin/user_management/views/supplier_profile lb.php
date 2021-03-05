@@ -72,8 +72,8 @@
                                             <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Basic Info</a>
                                             <div class="slide" style="width: 200px;"></div>
                                         </li>
-                                         <li class="nav-item"  style="width: 200px;" >
-                                            <a class="nav-link" data-toggle="tab" href="#portfolio" role="tab" > Portfolio</a>
+                                         <li class="nav-item"  style="width: 200px;<?php if($getuserdetails->user_type=="2") echo "display: none;" ?>" >
+                                            <a class="nav-link" data-toggle="tab" href="#portfolio" role="tab" style="<?php if($getuserdetails->user_type=="2") echo "display: none;" ?>"> Portfolio</a>
                                             <div class="slide" style="width: 200px;"></div>
                                         </li> 
                                         <li class="nav-item" style="width: 200px;">
@@ -291,17 +291,17 @@
                                     <!-- tab pane info start -->
                                     <?php
 
-                                   
-                                    $user_type=$getuserdetails->user_type;
-                                    if($user_type==2){
+                                    $classname;
+                                    $usertpe=$_session['usertype'];
+                                    if($usertpe==1){
 
                                       $classname_service="style='display:none'";
-                                      $div_width_s="col-xl-6 col-md-12";
+                                      $div_width_s="col-md-12";
 
-                                    }else if($user_type ==3){
+                                    }else if($usertpe ==2){
 
                                       $classname_products="style='display:none'";
-                                       $div_width_s="col-xl-6 col-md-12";
+                                       $div_width_c="col-md-12";
 
                                     }else{
                                       $classname_service="style='display:block'";
@@ -321,10 +321,9 @@
                                             <div class="card-header">
                                                 <h5 class="card-header-text"> Portfolio</h5>
                                             </div>
-                                            <div class="card-block" >
-                                                <div class="row" >
-                                            <!--    <div class="<?=$div_width_s?>" <?= $classname_products?> > -->
-                                               <div class="col-xl-12 col-md-12" style="<?php if($getuserdetails->user_type==3 or $getuserdetails->user_type==1) echo "display: none;" ?>">
+                                            <div class="card-block">
+                                                <div class="row">
+                                               <div class="<?=$div_width_s?>" <?= $classname_products?> >
                                                 <div class="card table-card">
 
                                                     <div class="card-block">
@@ -367,8 +366,7 @@
                                                 </div>
                                             </div>
 
-                                                 <!--  <div class="<?=$div_width_s?>" <?= $classname_products?> > -->
-                                                   <div class="col-xl-12 col-md-12" style="<?php if($getuserdetails->user_type==2 or $getuserdetails->user_type==1) echo "display: none;" ?>">
+                                                  <div class="<?=$div_width_s?>" <?= $classname_products?> >
                                                 <div class="card table-card">
 
                                                     <div class="card-block">
@@ -387,52 +385,13 @@
                                                                   <td>No data available</td>
                                                                   <td></td>
                                                                 </tr>
-                                                           
-                                                          </table>
-                                                  
-
-
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                                </div>
-
-
-
-
-
-
-
-<!-- ////////////////////////////////////both///////////////////////////////////////////// -->
-
-
-                                                 <div class="row"  style="<?php if($getuserdetails->user_type==3 or $getuserdetails->user_type==2) echo "display: none;" ?>">
-                                            <!--    <div class="<?=$div_width_s?>" <?= $classname_products?> > -->
-                                               <div class="col-xl-6 col-md-12" style="<?php if($getuserdetails->user_type==3) echo "display: none;" ?>">
-                                                <div class="card table-card">
-
-                                                    <div class="card-block">
-                                                      <div class="table-responsive">
-
-                  
-                                                        <table class="table m-0" >
-                                                              <tbody>
-                                                                <tr>
-                                                                  <th scope="row">Category Name  </th>
-                                                                   <th scope="row">Product Name</th>
-                                                                   <!-- <th scope="row">Material id</th> -->
-                                                                  
-                                                                </tr>
-                                                                 <?php foreach ($supplierinfo as $key => $value) {
+                                                              <!--    <?php foreach ($supplierinfo as $key => $value) {
 
                        ?>
                                                                   <tr>
                                                                      <td><?php echo $value->categoryname;?></td>
                                                                       <td><?php echo $value->materialname;?></td>
-                                                                  <!--    <td><?php echo $value->materialId;?></td> -->
-                                                                  </tr>
+                                                                                                                                   </tr>
                                                                    <?php } ?>
                                                               </tbody>
                                                                   <?php if($supplierinfo1=='')
@@ -443,37 +402,7 @@
                                                                    <td></td>
                                                                    <td></td>
                                                                    <td></td>
-                                                                 <?php } ?>
-                                                          </table>
-                                                  
-
-
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                                 <!--  <div class="<?=$div_width_s?>" <?= $classname_products?> > -->
-                                                   <div class="col-xl-6 col-md-12" style="<?php if($getuserdetails->user_type==2) echo "display: none;" ?>">
-                                                <div class="card table-card">
-
-                                                    <div class="card-block">
-                                                      <div class="table-responsive">
-
-                  
-                                                        <table class="table m-0">
-                                                              <tbody>
-                                                                <tr>
-                                                                  <th scope="row">Service Name  </th>
-                                                                   <th scope="row">Service</th>
-                                                               
-                                                                  
-                                                                </tr>
-                                                                <tr>
-                                                                  <td>No data available</td>
-                                                                  <td></td>
-                                                                </tr>
-                                                           
+                                                                 <?php } ?> -->
                                                           </table>
                                                   
 
@@ -484,13 +413,6 @@
                                             </div>
 
                                                 </div>
-
-<!-- /////////////////both end//////////////////////////////////////////////////////////// -->
-
-
-
-
-
                                             </div>
                                         </div>
 

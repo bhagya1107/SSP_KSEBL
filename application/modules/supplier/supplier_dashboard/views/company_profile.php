@@ -161,13 +161,13 @@
 								</tr>
 								
 								<tr>
-								<td style="text-align:right">Autorized Person	</td>
+								<td style="text-align:right">Authorized Person	</td>
 									<td><input type="text" name="authorizedperson" id="authorizedperson" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->authorizedperson;?>"/>	</td>
 									<td><input type="file" name="file3" class="form-control showprofile choose-file hide"  value="doc.img"/>
 
       	                                <?php if($getcompanydetails->authorisedpersonfile=='')
                                                                  {?>
-                                                                 <p>No Autorized Person Certificate</p>
+                                                                 <p>No Authorized Person Certificate</p>
                                                                <?php }
                                                                else {?>
 										<img id="myImg" class="form-control previewbutton" data-toggle="modal" data-target="#Autorized" src="<?=base_url()?>assets/kseb1.jpg" style="width:35%" alt="Certificates">
@@ -260,7 +260,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Autorized Person Certificates</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Authorized Person Certificates</h5>
         
           
         </button>

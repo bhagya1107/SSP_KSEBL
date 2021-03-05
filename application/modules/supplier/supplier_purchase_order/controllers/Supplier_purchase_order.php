@@ -19,7 +19,15 @@ public function __construct()
     $data['tab'] =$tab;
     $data['showdashbaord'] =true;
     $data['page'] = 'supplier_dashboard';
-    $data['title'] = 'Purchase Order';
+    if($user_type==2)
+    {
+    	$data['title'] = 'Work Order';
+    }
+    else
+    {
+    	$data['title'] = 'Purchase Order';
+    }
+    
     $data['indexurl'] = base_url()."supplier/dashboard";
 	$purchaseOrder=json_decode($this->getPOData());
 	$data['purchaseorder']=$purchaseOrder->result_data->list;
