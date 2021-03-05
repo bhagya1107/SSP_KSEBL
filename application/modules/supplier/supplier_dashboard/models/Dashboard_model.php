@@ -143,7 +143,14 @@ class Dashboard_model extends CI_Model
         $this->db->where('uid',$uid);
         return $this->db->get('suppliers')->row();
     }
-  
- 
+
+  public function getServices($supplierid)
+  {
+
+    $this->db->select('*');
+    $this->db->where('supplierid', $supplierid);
+    $this->db->where('isdeleted', false);
+    return $this->db->get("services")->result();
+  }
     
 }
