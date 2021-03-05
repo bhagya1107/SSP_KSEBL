@@ -8,7 +8,7 @@
 		Banner Start
 *************************************-->
 <style>
-/* width */
+/* width */ 
 ::-webkit-scrollbar {  
   width: 10px;
 }
@@ -150,9 +150,10 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Mobile</th>
+                              <th>Status</th>
                             <th>Actions</th>
                            <!-- <th>Delete</th>  -->
-                            <th>Status</th>
+                          
                           </tr>
                         </thead>
                         <?php foreach($getemployeesdetails as $employees){?>
@@ -287,9 +288,7 @@ $(document).ready(function() {
                 "data": "mobile"
             },
 				
-			 {
-                "data": "edit"
-            },
+			
 			/* {
                 "data": "delete"
              },*/
@@ -298,6 +297,9 @@ $(document).ready(function() {
 
 
             }, 
+             {
+                "data": "edit"
+            },
           	
 			{
                 "data": "id",

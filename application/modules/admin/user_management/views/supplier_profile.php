@@ -50,7 +50,8 @@
                                                     <div class="col-lg-12">
                                                         <div class="user-title">
                                                             <h2><?php echo "$getuserdetails->name"?></h2>
-                                                            <span class="text-white">PAN Number : <?php echo "$getuserdetails->pannumber"?></span>
+                                                            <span class="text-white">PAN Number : <?php echo "$getuserdetails->pannumber"?></span><br>
+                                                             <span class="text-white">Registered on <?php echo "$getuserdetails->created_date"?></span>
                                                         </div>
                                                     </div>
 
@@ -164,10 +165,15 @@
              <td><input type="text" class="form-control showprofile" id="primary_contact_name" name="primary_contact_name" readonly 
                   value="<?php echo "$getuserdetails->primary_contact_name"?>"></td>
         </tr>
-        <tr>
+       <!--  <tr>
             <th scope="row">Registered Date</th>
              <td><input type="text" class="form-control showprofile" id="created_date" name="created_date" readonly 
                   value="<?php echo "$getuserdetails->created_date"?>"></td>
+        </tr> -->
+         <tr>
+            <th scope="row">Company Email</th>
+            <td><input type="text" class="form-control showprofile" id="address" name="address" readonly 
+                  value="<?php echo "$getcompanydetails->email"?>"></td>
         </tr>
         <tr>
             <th scope="row">Address</th>

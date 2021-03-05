@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>KSEB LOGIN</title>
+    <title>KSEB LOGIN</title> 
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -111,7 +111,7 @@
         <!-- Container-fluid starts -->
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12"><br><br>
                     <!-- Authentication card start -->
                    
                             <div class="auth-box card">
@@ -121,20 +121,20 @@
                                             <h3 class="text-center">Forgot Password?</h3>
                                         </div>
                                     </div><br><br>
-                                    <div class="form-group form-primary" id="email_block">
+                                    <div class="form-group form-primary" id="email_block" style="margin-left: 25%;">
                                       <label>Enter your Registered Mobile No</label>
-                                        <input type="tel" name="mobile" id="mobile" class="form-control" required="" placeholder="Enter your registered Mobile No" autocomplete="off">
+                                        <input type="tel" name="mobile" id="mobile" class="form-control" required="" placeholder=" registered Mobile No" autocomplete="off" style="width: 60%;">
                                         <span class="form-bar"></span>
                                     </div>
 
                                    
-                                    <div class="row m-t-30" style="margin-top:10%">
-                                        <div class="col-md-12" id="gtop">
+                                    <div class="row m-t-10" style="margin-top:10%;">
+                                   <div class="col-md-4" id="gtop" style="margin-left: 32%;">
 										
-                                            <button type="button" id="generateotp" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">GET OTP</button><span style= "color:green;" id="paswordmess" class="hide">Password sent to your registered mobile number</span>
-                                        </div>
-                                       
+                                            <button type="button" id="generateotp" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">GET OTP</button><span style= "color:green;" id="paswordmess" class="hide">Password sent to your registered mobile number</span>
                                     </div>
+                              
+                                    </div><br><br>
                                     <span style="color:red" id="error">
                                          <?php
                                       $er= $this->session->flashdata("error");
@@ -155,6 +155,7 @@
                                        
                                     
                                 </div>
+                                <br><br>
                             </div>
                         </form>
                         <!-- end of form -->
