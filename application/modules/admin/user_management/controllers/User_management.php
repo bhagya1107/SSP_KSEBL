@@ -92,11 +92,14 @@ class User_management extends AD_Controller {
   {
     $this->load->library('excel');
     $status='error';
+
    // $msg='Some user already exist for ';
 $data=[];
 $isError=false;
+$errorCount=0;
     if(isset($_FILES["file"]["name"]))
     {
+      
       $path = $_FILES["file"]["tmp_name"];
       $object = PHPExcel_IOFactory::load($path);
       foreach($object->getWorksheetIterator() as $worksheet)
@@ -128,16 +131,12 @@ $isError=false;
           $date=date('Y-m-d H:i:s');
           
           
-        
-         if($getpannum) 
-           { $msg=1;
-            $ms=" ";
-            $m=" Users already exist";
+        //intialise $errorCount=0; outside for loop
+          // $errorCount=0;
+if($getpannum) 
+           {
             $isError=true;
-            if($row>2){
-               $msg= $msg+1;
-            }
-            $msg= $msg.$ms.$m; 
+            $errorCount++;
            }else{
           $data[] = array(
             'name'        =>  $name,
@@ -156,7 +155,8 @@ $isError=false;
 
       }
       if($data){
-        $msg=$isError?"Some data inserted sucessfully but ".$msg:"Data inserted sucessfully";
+
+        $msg=$isError?"Some data inserted successfully but ".$errorCount." are already exists" :"Data inserted sucessfully";
         $status='sucess';
         foreach ($data as $key => $sData) {
            $this->userM->insert('suppliers',$sData);

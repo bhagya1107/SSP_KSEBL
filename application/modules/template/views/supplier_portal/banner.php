@@ -124,7 +124,8 @@
  						<div class="col-sm-3 col-xs-12" >
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
  												data-placeholder="Select a TenderId" >
-												 <option>Select purchase Order</option>
+												 <option  >Select  Orders</option>
+												 <!-- <option>Select Work Order</option> -->
  								<option value="0">PCO6555590</option> 
 								<option value="0">PCO1223590</option> 
 							   	<option value="0">PCO68855590</option>
