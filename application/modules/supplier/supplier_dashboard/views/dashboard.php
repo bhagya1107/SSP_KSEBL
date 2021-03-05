@@ -162,7 +162,7 @@
               <div class="content">
              <div class="row">
              <div class="col-md-4">
-              <span class="content-text mt-40" > <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
+              <span class="content-text mt-40" style="margin-top:39%" > <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
               </div>
               <div class="col-md-8" style="display:inline-flex;    margin-top: 23%;padding-left:0px">
                 <div class="col-md-11" >
@@ -187,7 +187,7 @@
               <div class="content">
              <div class="row">
              <div class="col-md-4">
-              <span class="content-text mt-40" > <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
+              <span class="content-text mt-40" style="margin-top:39%"> <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
               </div>
               <div class="col-md-8" style="display:inline-flex;margin-top: 23%;padding-left:0px">
                 <div class="col-md-11" >
