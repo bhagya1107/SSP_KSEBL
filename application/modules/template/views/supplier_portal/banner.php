@@ -7,6 +7,11 @@
      position:fixed;
      top: 0px;
 }
+
+.select2-results .select2-highlighted {
+    background: #f00;
+    color: #fff;
+}
 </style>
 <div id="tg-banner" class="tg-banner tg-haslayout" >
 	<div class="tg-imglayer">
@@ -43,22 +48,26 @@
   .p-10{
 	  padding-top:10px;
   }
+		.highlight {
+    background-color:#333;
+    cursor:pointer;
+}
   </style>
              
 
   <?php if($this->uri->segment(2) == 'tenders')  { ?>
  <div class="searchbar">
 
- 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 113px">
+ 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 135px">
 
  					<div class="form-group row form_filter">
 
 
-						<div class="col-sm-2 col-xs-12" >
+						<div class="col-sm-3 col-xs-12" >
 						
- 							<select class="select2 form-control" id="tenderType" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px" >
+ 							<select class="select2 form-control" id="tenderType" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px;" >
 									<option>Select Tender Type</option>
- 								<option selected value="products">Products</option> 
+ 								<option  selected value="products">Products</option> 
 								 <option value="services">Services</option> 
 							   	<option value="all">All</option>
 							</select>
@@ -66,25 +75,25 @@
 
  						</div>
 
- 						<div class="col-sm-2 col-xs-12" >
+ 					<!--	<div class="col-sm-2 col-xs-12" >-->
 						<!--<label>Tender ID:</label>-->
- 							<select class="select2 form-control" id="tenderid" name="group_flat__id" data-placeholder="Select a TenderId" >
+ 							<!--<select class="select2 form-control" id="tenderid" name="group_flat__id" data-placeholder="Select a TenderId" >
 												 <option>Select Tender ID</option>
  								<option value="0">TDR001860</option> 
 								<option value="0">TDR001862</option> 
 							   	<option value="0">TDR001889</option>
-							</select>
+							</select>-->
  									
 
- 						</div>
+ 						
 
-						 <div class="col-sm-2 col-xs-12 ">
+						 <div class="col-sm-3 col-xs-12 ">
  							
  							<input type="date" class="select2 form-control"  id="district" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
-						<div class="col-sm-2 col-xs-12 ">
+						<!-- <div class="col-sm-2 col-xs-12 ">
  							
  							<select class="select2 form-control"  placeholder="Select a location/purchaser">
 							 <option>Select Location</option>
@@ -94,22 +103,22 @@
 							</select>	
 
  								
- 						</div>
- 						<div class="col-sm-2 col-xs-12 ">
+ 						</div> -->
+ 						<div class="col-sm-3 col-xs-12 ">
  							
  							<input type="text" class=" form-control"  id="keyword" name="keyword" placeholder="Key Word" >
 							
  								
  						</div>
 
-						<div class="col-sm-2 col-xs-12 " style="margin-top:10px;">
+						<div class="col-sm-3 col-xs-12 " style="margin-top:10px;">
  							
  							<input type="button" value="search" class="btn btn-primary">
- 						
+								</div>
  						</div>
  					</div>
 				</div>
-			</div>
+		
 				
   <?php } ?>
   
