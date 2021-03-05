@@ -1,7 +1,7 @@
 <!--************************************
 		Banner Start
 *************************************-->
-<style>
+<style> 
 
 </style>
 <!-- <div class="tg-banner tg-haslayout">

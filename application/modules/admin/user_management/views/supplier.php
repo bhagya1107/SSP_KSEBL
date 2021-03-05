@@ -6,7 +6,7 @@
     overflow: hidden;
     white-space: nowrap;
   }
-</style>
+</style> 
 <form name="frm" action="" name="frm" id="frm" enctype="multipart/form-data" method="post">
   <div class="pcoded-content">
     <div class="pcoded-inner-content">
@@ -248,13 +248,19 @@ $( document ).ajaxStop(function() {
       <div class="modal-header">
 
 
+
+
         <div class="tab-content">
           <form  method="post" id="import_form" enctype="multipart/form-data">
             <h4 >IMPORT SUPPLIERS LIST</h4><button type="button" class="btn btn-danger" data-dismiss="modal"style="margin-left: 500px;margin-top: -50px;" >X</button>
             
             <table style="margin-top: 40px;" >
               <th></th>
-              <th><input type="file" class="form-control" name="file" id="file" accept=".xls, .xlsx" /></th>
+              <th>
+                <input type="file" class="form-control" name="file" id="file" accept=".xls, .xlsx" required />
+         
+             <!-- <input class="form-control form-control-lg" id="formFileLg" type="file" /> -->
+              </th>
 
               <td></td>
               <td> <button type="Submit" name="import" value="Import" class="btn btn-primary" >Submit</button></td>

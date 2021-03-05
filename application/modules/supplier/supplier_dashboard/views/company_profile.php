@@ -92,6 +92,11 @@
 									
 									<td></td>
 								</tr>
+									<tr>
+									<td style="text-align:right">PAN CARD NO </td>
+									<td><input type="text" name="pancard" id="pancard" class="form-control " readonly value="<?php echo $getcompanydetails->pancardno;?>"/>	</td>
+									<td></td> 
+								</tr>
 								<!--<tr>
 									<td style="text-align:right">Registred Date	</td>
 									<td><input type="text" readonly class="form-control"  value="20/08/2020"/>	</td>
@@ -100,6 +105,19 @@
 									<td style="text-align:right">Renewal Date	</td>
 									<td><input type="text" readonly class="form-control"  value="19/08/2021"/>	</td>
 								</tr>-->
+								
+								<tr>
+									<td style="text-align:right">GST/TIN	</td>
+									<td><input type="text" id="gstin" name="gstin" class="form-control " readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
+									<td><input type="file"  name="file2" class="form-control showprofile choose-file hide"  value="doc.img"/>
+											 <?php if($getcompanydetails->gst_tinfile=='')
+                                                                 {?>
+                                                                 <p>No GST/TIN Certificate</p>
+                                                               <?php }
+                                                               else {?>
+										<img id="myImg" class="form-control previewbutton" data-toggle="modal" data-target="#myModalpurchase" src="<?=base_url()?>assets/kseb2.jpg" style="width:35%" alt="GST/IN Certificates">
+										<?php } ?></td>
+								</tr>
 								<tr>
 									<td style="text-align:right">Incorporation No </td>
 									<td><input type="text"  class="form-control "  id="incorporation" name="incorporation" readonly value="<?php echo $getcompanydetails->incorporationno;?>"/>	</td>
@@ -121,23 +139,7 @@
 									<td></td> 
 								</tr>
 								
-								<tr>
-									<td style="text-align:right">PAN CARD NO </td>
-									<td><input type="text" name="pancard" id="pancard" class="form-control " readonly value="<?php echo $getcompanydetails->pancardno;?>"/>	</td>
-									<td></td> 
-								</tr>
-								<tr>
-									<td style="text-align:right">GST/TIN	</td>
-									<td><input type="text" id="gstin" name="gstin" class="form-control " readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
-									<td><input type="file"  name="file2" class="form-control showprofile choose-file hide"  value="doc.img"/>
-											 <?php if($getcompanydetails->gst_tinfile=='')
-                                                                 {?>
-                                                                 <p>No GST/TIN Certificate</p>
-                                                               <?php }
-                                                               else {?>
-										<img id="myImg" class="form-control previewbutton" data-toggle="modal" data-target="#myModalpurchase" src="<?=base_url()?>assets/kseb2.jpg" style="width:35%" alt="GST/IN Certificates">
-										<?php } ?></td>
-								</tr>
+							
 								<tr>
 									<td style="text-align:right">Company Address	</td>
 									<td><input type="text" name="address" id="address" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->companyaddress;?>"/>	</td>
@@ -179,7 +181,7 @@
 							<div class="form-group" >
                             <a class="tg-btn pull-center editbutton" id="editprofilefn" style="margin-left:690px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>
                                <button type="submit" class="tg-btn pull-center savebutton hide"   id="saveprofilefn"  style="margin-left:443px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
-                               <a href="<?php echo base_url('supplier/dashboard/profile');?>"> <button  class="tg-btn pull-center savebutton hide"   id="saveprofilefn" style="margin-left:43px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button></a>
+                               <a href="<?php echo base_url('supplier/dashboard/profile');?>"> <button  class="tg-btn pull-center savebutton hide"   id="saveprofilefn" style="margin-left:43px; background-color: #5F9EA0!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button></a>
 							  </div>
  
                        

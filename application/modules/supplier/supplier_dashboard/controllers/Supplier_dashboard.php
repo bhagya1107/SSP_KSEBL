@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Supplier_dashboard extends SP_Controller { 
 	public function __construct() 
 	{
-		parent::__construct();
+		parent::__construct(); 
 		$this->load->model('Dashboard_model','dashM');
 		
 	}
@@ -380,7 +380,7 @@ public function updatePassword()
 				public function getMaterialGroupData()
 		{
 			$token=$this->Login_POST();
-			$token1=json_decode($token);
+			$token1=json_decode($token); 
 			
 		  $apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialGroupData';
 		  $curl       = curl_init();
@@ -636,16 +636,16 @@ if ($file1!="" and $file2!="" and $file3!="" )
 			'gst_tinfile'=>$file2,
 			'authorisedpersonfile'=>$file3
 		    );
-			  $data1=array(
+			//   $data1=array(
 			
-			'mobile'=>$mobile,
-			'email'=>$email
-		    );
+			// 'mobile'=>$mobile,
+			// 'email'=>$email
+		 //    );
 	
 		
 				$this->dashM->update_company('companyprofile',$supplierid,$data);
-				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
-				$this->session->set_flashdata('msg','added successfully');
+				// $this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Updated successfully');
 				redirect(base_url('supplier/dashboard/profile'));
 	
 		 
@@ -672,8 +672,8 @@ if ($file1!="" and $file2!="" and $file3!="" )
 	
 		
 				$this->dashM->update_company('companyprofile',$supplierid,$data);
-				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
-				$this->session->set_flashdata('msg','added successfully');
+				// $this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Updated successfully');
 				redirect(base_url('supplier/dashboard/profile'));
 	
 		 
@@ -699,8 +699,8 @@ if ($file1!="" and $file2!="" and $file3!="" )
 	
 		
 				$this->dashM->update_company('companyprofile',$supplierid,$data);
-				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
-				$this->session->set_flashdata('msg','added successfully');
+				// $this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Updated successfully');
 				redirect(base_url('supplier/dashboard/profile'));
 	
 		 
@@ -726,8 +726,8 @@ if ($file1!="" and $file2!="" and $file3!="" )
 	
 		
 				$this->dashM->update_company('companyprofile',$supplierid,$data);
-				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
-				$this->session->set_flashdata('msg','Added successfully');
+				// $this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Updated successfully');
 				redirect(base_url('supplier/dashboard/profile'));
 	
 		 
@@ -754,8 +754,8 @@ if ($file1!="" and $file2!="" and $file3!="" )
 	
 		
 				$this->dashM->update_company('companyprofile',$supplierid,$data);
-				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
-				$this->session->set_flashdata('msg','added successfully');
+				// $this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Updated successfully');
 				redirect(base_url('supplier/dashboard/profile'));
 	
 		 
@@ -780,8 +780,8 @@ if ($file1!="" and $file2!="" and $file3!="" )
 	
 		
 				$this->dashM->update_company('companyprofile',$supplierid,$data);
-				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
-				$this->session->set_flashdata('msg','added successfully');
+				// $this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Updated successfully');
 				redirect(base_url('supplier/dashboard/profile'));
 	
 		 
@@ -806,8 +806,8 @@ if ($file1!="" and $file2!="" and $file3!="" )
 	
 		
 				$this->dashM->update_company('companyprofile',$supplierid,$data);
-				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
-				$this->session->set_flashdata('msg','added successfully');
+				// $this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Updated successfully');
 				redirect(base_url('supplier/dashboard/profile'));
 	
 		 
@@ -831,8 +831,8 @@ if ($file1!="" and $file2!="" and $file3!="" )
 	
 		
 				$this->dashM->update_company('companyprofile',$supplierid,$data);
-				$this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
-				$this->session->set_flashdata('msg','added successfully');
+				// $this->dashM->update_company_supplier('suppliers',$supplierid,$data1);
+				$this->session->set_flashdata('msg','Updated successfully');
 				redirect(base_url('supplier/dashboard/profile'));
 		}
                 
@@ -905,14 +905,16 @@ if ($file1!="" and $file2!="" and $file3!="" )
             $i =1;
             foreach($employeedata as $r) {
 	        $edit ='<div style="display:flex"><a href="javascript:void(0);  " id="editprofilefn"> <span style="color:blue;padding-right: 24px;"><i class="fa fa-pencil" id="edit-supplier" aria-hidden="true"></i></span></a>'
-			.'<a href="javascript:void(0);"><span style="color:red"><i class="fa fa-trash" id="delete-supplier" aria-hidden="true"></i></span></a>';
+			.'<a href="javascript:void(0);"><span style="color:red;padding-right: 24px;"><i class="fa fa-trash" id="delete-supplier" aria-hidden="true"></i></span></a>'
+			.'<a href="javascript:void(0);"><span style="color:#ffcccb;padding-right: 24px;"><i class="fa fa-lock" id="unlock-supplier" aria-hidden="true"></i></span></a>'
+			.'<a href="javascript:void(0);"><span style="color:green"><i class="fa fa-unlock" id="lock-supplier" aria-hidden="true"></i></span></a></div>';
 			if($r->islocked==true)
 			{
 			$status ='<a href="javascript:void(0);"><span style="color:#ffcccb"><i class="fa fa-lock" id="unlock-supplier" aria-hidden="true"></i></span></a>';
 			}
 			else
 			{
-			$status ='<a href="javascript:void(0);"><span style="color:SlateBlue"><i class="fa fa-unlock" id="lock-supplier" aria-hidden="true"></i></span></a></div>';
+			$status ='<a href="javascript:void(0);"><span style="color:green"><i class="fa fa-unlock" id="lock-supplier" aria-hidden="true"></i></span></a></div>';
 			}
 
 			if($r->usertype==4)
