@@ -45,12 +45,25 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
+
+    #overlay{ 
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height:100%;
+  display: none;
+  background: rgba(0,0,0,0.6);
+}
+
+
+
 </style>
 
 <head>
     <link rel="stylesheet" href="path/to/material-design-iconic-font/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets\supplier\styles\supplierloader.css">
     <!-- <script src="<?= base_url() ?>assets/supplier_portal/js/vendor/jquery-library.js"></script> -->
     <script src="<?= base_url() ?>assets/supplier_portal/js/vendor/bootstrap.min.js"></script>
 
@@ -61,6 +74,7 @@
 <main id="tg-main" class="tg-main tg-haslayout">
     <section class="tg-main-section tg-haslayout">
         <div class="container">
+  
             <?php
             $msg = $this->session->flashdata('msg');
             if ($msg) {
@@ -83,6 +97,11 @@
             </div>
 
             <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:100vh" id="innerscroll">
+            <div id="overlay">
+            <div class="cv-spinner">
+    <span class="spinner"></span>
+  </div>
+</div>
                 <ul class="nav nav-tabs">
                     <li class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
                     <!-- <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
@@ -91,6 +110,8 @@
                 </ul>
 
                 <div class="tab-content">
+                
+
                     <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
                     <input type="hidden" id="mytenderservices" value="<?php echo htmlentities(json_encode($mytenderservices), ENT_QUOTES, 'UTF-8') ?>" />
                     <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
@@ -103,6 +124,7 @@
 
 
                             </div>
+                            
                         </div>
                     </div>
 
@@ -210,6 +232,10 @@
 
 
             </div>
+        </div>
+
+        <div id="totalcount" style="text-align:center;">
+       
         </div>
     </section>
 </main>
@@ -912,13 +938,24 @@
             type: 'POST',
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
+            beforeSend: function() {
+        // setting a timeout
+        $("#overlay").fadeIn();
+      },
             success: function(result) {
 
                 datas = JSON.parse(result);
-
+                var count = datas.length;
+                if(count>0){
+                    span1 ="<span>Total Tender Count:"+count + "</span>";
+                }
+                else{
+                    span1 ="<span>No Tender To Display </span>";
+                }
+                $('#totalcount').html(span1);
                 html = "";
                 $.each(datas, function(i, data) {
-                    console.log(data.sorting);
+                    //console.log(data.sorting);
 
                     html += "<div class='tg-ticket'><time class='tg-matchdate' datetime='2016-05-03'><small>Last date</small><br>";
                     var date1 = new Date(data.tender_date);
@@ -946,7 +983,10 @@
 
                 });
                 $('#alltenderdetails').empty().append(html);
-            }
+            },
+            complete: function() {
+        $("#overlay").fadeOut();
+      },
         });
 
 
@@ -961,8 +1001,20 @@
             type: 'POST',
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
+            beforeSend: function() {
+        // setting a timeout
+        $("#overlay").fadeIn();
+      },
             success: function(result) {
                 datas = JSON.parse(result);
+                var count = datas.length;
+                if(count>0){
+                    span1 ="<span>Total Tender Count:"+count + "</span>";
+                }
+                else{
+                    span1 ="<span>No Tender To Display </span>";
+                }
+                $('#totalcount').html(span1);
                 html = "";
                 $.each(datas, function(i, data) {
 
@@ -984,7 +1036,10 @@
                     html += "</div></div>";
                 });
                 $('#alltenderdetails').empty().append(html);
-            }
+            },
+            complete: function() {
+        $("#overlay").fadeOut();
+      },
         });
     }
 
@@ -996,8 +1051,20 @@
             type: 'POST',
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
+            beforeSend: function() {
+        // setting a timeout
+        $("#overlay").fadeIn();
+      },
             success: function(result) {
                 datas = JSON.parse(result);
+                var count = datas.length;
+                if(count>0){
+                    span1 ="<span>Total Tender Count:"+count + "</span>";
+                }
+                else{
+                    span1 ="<span>No Tender To Display </span>";
+                }
+                $('#totalcount').html(span1);
         
         html = "";
 
@@ -1024,7 +1091,10 @@
             html += "</div></div>";
         });
         $('#alltenderdetails').empty().append(html);
-    }
+    },
+    complete: function() {
+        $("#overlay").fadeOut();
+      },
 });
     }
 
