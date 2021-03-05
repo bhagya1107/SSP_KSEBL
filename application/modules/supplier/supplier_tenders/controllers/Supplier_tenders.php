@@ -26,10 +26,11 @@ public function __construct()
 		$tender=json_decode($this->getTenderData());
 		$data['tender']=$tender->result_data->list;//echo"<pre>";print_r($data['tender']);exit;
 		$data['getsuppliertender']=$this->procM->getSupplierMaterials($uid);//print_r($data['getsuppliertender']);exit;
+		$data['getsuppliertenderservices']=$this->procM->getSupplierServices($uid);//print_r($data['getsuppliertenderservices']);exit;
 		$data['materialid']=array_column($data['getsuppliertender'],'materialId');
 		$data['mytenderproducts'] = array();
 		
-	//	echo"<pre>";print_r($data['materialid']);exit;
+	//echo"<pre>";print_r($data['materialid']);exit;
 		if(!empty($data['materialid'])){
 			 foreach($data['tender'] as $key => $materialid){
 				 $materials ='';
@@ -41,6 +42,25 @@ public function __construct()
 				 array_shift($materialsArr);
 				if(array_intersect($materialsArr,$data['materialid'])){
 					array_push($data['mytenderproducts'],$data['tender'][$key]);
+				}
+				} 
+		}
+
+		$data['serviceid']=array_column($data['getsuppliertenderservices'],'serviceid');
+		$data['mytenderservices'] = array();
+		
+	//echo"<pre>";print_r($data['serviceid']);exit;
+		if(!empty($data['serviceid'])){
+			 foreach($data['tender'] as $key => $serviceid){
+				 $materials ='';
+				 $prc_purchase_order_items= array_column($serviceid->prc_purchase_orders,'prc_purchase_order_item_dtl');
+				 foreach($prc_purchase_order_items as $key1 => $items){
+					 $materials = $materials.','.implode(',',array_column($items,'mst_material_id'));
+				 }
+				 $materialsArr = explode(',',$materials);
+				 array_shift($materialsArr);
+				if(array_intersect($materialsArr,$data['serviceid'])){
+					array_push($data['mytenderservices'],$data['tender'][$key]);
 				}
 				} 
 		}
@@ -72,7 +92,62 @@ public function __construct()
 	    	redirect(base_url('supplier/dashboard'));
 	    } //neethu end
 		
-	  } 
+	  }
+	public function getProductTender()
+	{
+		$uid = $this->session->userdata('supplierid');
+		$tender = json_decode($this->getTenderData());
+		$data['tender'] = $tender->result_data->list; //echo"<pre>";print_r($data['tender']);exit;
+		$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid); //print_r($data['getsuppliertender']);exit;
+		$data['materialid'] = array_column($data['getsuppliertender'], 'materialId');
+		$data['mytenderproducts'] = array();
+
+		//echo"<pre>";print_r($data['materialid']);exit;
+		if (!empty($data['materialid'])) {
+			foreach ($data['tender'] as $key => $materialid) {
+				$materials = '';
+				$prc_purchase_order_items = array_column($materialid->prc_purchase_orders, 'prc_purchase_order_item_dtl');
+				foreach ($prc_purchase_order_items as $key1 => $items) {
+					$materials = $materials . ',' . implode(',', array_column($items, 'mst_material_id'));
+				}
+				$materialsArr = explode(',', $materials);
+				array_shift($materialsArr);
+				if (array_intersect($materialsArr, $data['materialid'])) {
+					array_push($data['mytenderproducts'], $data['tender'][$key]);
+				}
+			}
+		}
+		// echo"<pre>";print_r($data['mytenderproducts']);exit;
+		echo json_encode($data['mytenderproducts']);
+	}
+
+	public function getProductServices()
+	{
+		$uid = $this->session->userdata('supplierid');
+		$tender = json_decode($this->getTenderData());
+		$data['tender'] = $tender->result_data->list; //echo"<pre>";print_r($data['tender']);exit;
+		$data['getsuppliertenderservices']=$this->procM->getSupplierServices($uid);
+		$data['serviceid']=array_column($data['getsuppliertenderservices'],'serviceid');
+		$data['mytenderservices'] = array();
+		
+	//echo"<pre>";print_r($data['serviceid']);exit;
+		if(!empty($data['serviceid'])){
+			 foreach($data['tender'] as $key => $serviceid){
+				 $materials ='';
+				 $prc_purchase_order_items= array_column($serviceid->prc_purchase_orders,'prc_purchase_order_item_dtl');
+				 foreach($prc_purchase_order_items as $key1 => $items){
+					 $materials = $materials.','.implode(',',array_column($items,'mst_material_id'));
+				 }
+				 $materialsArr = explode(',',$materials);
+				 array_shift($materialsArr);
+				if(array_intersect($materialsArr,$data['serviceid'])){
+					array_push($data['mytenderservices'],$data['tender'][$key]);
+				}
+				} 
+		}
+		// echo"<pre>";print_r($data['mytenderproducts']);exit;
+		echo json_encode($data['mytenderservices']);
+	}
 	  
 	  public function my(){
 		$this->index(2);

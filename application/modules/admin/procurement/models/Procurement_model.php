@@ -216,6 +216,16 @@ class Procurement_model extends CI_Model
         return $this->db->get("suppliermaterials")->result();
         
     }
+
+    public function getSupplierServices($supplierid)
+    {
+        
+     $this->db->select('*');
+	 $this->db->where('supplierid',$supplierid);
+     $this->db->where('isdeleted',false);
+        return $this->db->get("services")->result();
+        
+    }
    
  
 }
