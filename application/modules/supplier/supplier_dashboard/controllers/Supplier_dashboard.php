@@ -273,10 +273,10 @@ public function updatePassword()
 		$data['title'] = 'Portfolio';
 		$data['tab']=1;
 		$supplierid=$this->session->userdata('uid');
-	$materialdata=json_decode($this->getMaterialGroupData());
+	$materialdata=json_decode($this->getMaterialGroupData());//echo"<pre>";print_r($materialdata);exit;
 	$data['materialdata']=$materialdata->result_data->list;//echo"<pre>";print_r($data['materialdata']);exit;
 	$getcategorydata=json_decode($this->getSbuData_get());
-	$data['getcategory']=$getcategorydata->result_data->list;
+	$data['getcategory']=$getcategorydata->result_data->list;//echo"<pre>";print_r($data['getcategory']);exit;
 	//$getmatrdata=json_decode($this->getMaterialData(1,3));
 	//$getmatrdata=json_decode($this->getMaterialById());
 	//$data['getmaterial']=$getcategorydata->result_data->list;echo"<pre>";print_r($data['getmaterial']);exit;
@@ -1398,6 +1398,89 @@ if ($file1!="" and $file2!="" and $file3!="" )
 		echo 1;
 	}
 
+	public function insert_services(){
+
+		$res='';
+$data['categoryservices']=$this->input->post('inputservicesCity');
+$data['services']=$this->input->post('inputservices');
+$data['tenderid']=1;
+$data['serviceid']=1;
+$data['isdeleted']=false;
+$data['createddate']=date("Y-m-d H:i:s"); 
+$data['supplierid']=$this->session->userdata('uid');  
+//$data['isdeleted']=false;
+						$res=  $this->dashM->insert('services',$data);
+			
+
+
+if($res>0)
+						{
+$this->session->set_flashdata('msg','Services added successfully');
+											//redirect(base_url('supplier/dashboard/portfolio'));
+						}
+						else
+						{
+										echo "Error while adding";
+						}
+
+
+}
+
+	public function getServicesListData()
+	{
+
+		$draw = intval($this->input->get("draw"));
+		$start = intval($this->input->get("start"));
+		$length = intval($this->input->get("length"));
+		$supplierid = $this->session->userdata('uid');
+
+		$servicedata = $this->dashM->getServices($supplierid);
+
+		$data = array();
+
+		$i = 1;
+		foreach ($servicedata as $r) {
+
+			$delete = '<a href="javascript:void(0);"><span style="color:red"><i class="fa fa-trash" id="delete-services" aria-hidden="true"></i></span></a>';
+
+			$data[] = array(
+				'no' => $i,
+				'services' => $r->services,
+				'servicesname' => $r->categoryservices,
+				'delete' => $delete,
+
+
+
+			);
+			$i++;
+		}
+
+		$output = array(
+			"draw" => $draw,
+
+			"data" => $data
+		);
+		
+		echo json_encode($output);
+	}
+
+	public function deleteSupplierServices() {
+      
+		$supplierid=$this->input->post('supplierid');
+		$where = array('id'=>$supplierid);
+		$data=array('isdeleted'=>true);
+		$result =$this->dashM->update('services',$data, $where);
+
+		if($result>0)
+		{
+						
+						echo "Deleted successfully";
+		}
+		else
+		{
+						echo "Error while deleting";
+		}  
+}
 
 
 }

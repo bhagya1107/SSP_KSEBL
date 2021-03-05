@@ -56,11 +56,11 @@
 
 						<div class="col-sm-2 col-xs-12" >
 						
- 							<select class="select2 form-control" id="tenderid" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px" >
-												 <option>Select Tender Type</option>
- 								<option value="1">Products</option> 
-								<option value="2">Services</option> 
-							   	<option value="3">All</option>
+ 							<select class="select2 form-control" id="tenderType" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px" >
+									<option>Select Tender Type</option>
+ 								<option selected value="products">Products</option> 
+								 <option value="services">Services</option> 
+							   	<option value="all">All</option>
 							</select>
  									
 

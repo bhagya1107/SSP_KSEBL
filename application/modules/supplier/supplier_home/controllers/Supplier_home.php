@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Supplier_home extends MX_Controller {
  	public function __construct(){
 			$this->load->module('template');
-		}
+	}
  
 	public function index()
 	{
@@ -20,6 +20,11 @@ class Supplier_home extends MX_Controller {
 	public function admin_login()   
 	{
 
+
+		decrypt();
+
+		
+
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('username','User Name','required|max_length[50]|trim');
 		$this->form_validation->set_rules('password','Password ','required|min_length[3]|max_length[30]');
@@ -33,7 +38,7 @@ class Supplier_home extends MX_Controller {
 			$this->load->model('login');
 			$chk=$this->login->validate($username,$password); 
 
-    //  print_r($chk); exit;
+    		//  print_r($chk); exit;
 			if($chk)
 			{
 				$uid=$chk['uid'];
@@ -122,7 +127,10 @@ class Supplier_home extends MX_Controller {
 	public function user_login()  
 	{
 
-			$this->load->library('form_validation');
+	
+		
+
+		$this->load->library('form_validation');
 		$this->form_validation->set_rules('username','User Name','required|max_length[50]|trim');
 		$this->form_validation->set_rules('password','Password ','required|min_length[3]|max_length[30]');
 		

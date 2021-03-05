@@ -178,5 +178,20 @@ function sendSms($mobile_number,$sms_text)
 }
 
 
+function decrypt(){
+  $p = $_POST;
+  foreach ($p as $key => $value) {
+    if($key=='kseb_token'){
+      continue;
+    }
+
+    $p[$key] = base64_decode($value);
+    
+    
+  }
+
+  return $_POST = $p;
+}
+
 /////////////////////////////////////////
  ?>
