@@ -53,8 +53,6 @@
 <!--************************************
 		Main Start
 *************************************-->
-	
-
 		<?php 
         $msg=$this->session->flashdata('msg'); 
         if($msg)
@@ -181,7 +179,7 @@
 							<div class="form-group" >
                             <a class="tg-btn pull-center editbutton" id="editprofilefn" style="margin-left:690px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>
                                <button type="submit" class="tg-btn pull-center savebutton hide"   id="saveprofilefn"  style="margin-left:443px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
-                               <a href="<?php echo base_url('supplier/dashboard/profile');?>"> <button  class="tg-btn pull-center savebutton hide"   id="saveprofilefn" style="margin-left:43px; background-color: #5F9EA0!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button></a>
+                               <a href="<?php echo base_url('supplier/dashboard/profile');?>"> <button  class="tg-btn pull-center savebutton hide"   id="" style="margin-left:43px; background-color: #5F9EA0!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button></a>
 							  </div>
  
                        

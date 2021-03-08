@@ -18,7 +18,7 @@
                             <div class="page-header-breadcrumb">
                                 <ul class="breadcrumb-title">
                                     <li class="breadcrumb-item">
-                                        <a href="<?php echo admin_url('user_management/dashboard');?>"> <i class="feather icon-home"></i> </a>
+                                        <a href="<?php echo admin_url('webuser/dashboard');?>"> <i class="feather icon-home"></i> </a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="<?= admin_url('user_management/suppliers') ?>">Supplier</a>
                                     </li>
@@ -83,7 +83,7 @@
                                         </li>
 
                                         <li class="nav-item" style="width: 200px;">
-                                            <a class="nav-link" data-toggle="tab" href="#review" role="tab">Documents</a>
+                                            <a class="nav-link" data-toggle="tab" href="#review" role="tab" style="<?php if($getuserdetails->user_type=="2") echo "display: none;" ?>">Documents</a>
                                             <div class="slide" style="width: 200px;"></div>
                                         </li>
                                         <!-- style="<?php if($getcompanypermissiondetails->purchase_order=='0') echo "display: none;" ?>" > -->
@@ -122,7 +122,7 @@
                                              else
                                              {
                                                 ?>
-                                                    <p  class="  f-right   " >
+                                                    <p  class="  f-right" >
                                                 <a href="<?php echo base_url('webuser/User_management/deactivate_account/'.$getuserdetails->uid)?>" ><input type="button" style="background-color: red;" value="Deactivate"  class="btn  btn-sm btn-out-dashed btn-success btn-square" value=""  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
                                                  </p> 
 
@@ -170,12 +170,12 @@
              <td><input type="text" class="form-control showprofile" id="created_date" name="created_date" readonly 
                   value="<?php echo "$getuserdetails->created_date"?>"></td>
         </tr> -->
-         <tr>
+         <tr style="<?php if($getuserdetails->user_type==2) echo "display: none;" ?>">
             <th scope="row">Company Email</th>
             <td><input type="text" class="form-control showprofile" id="address" name="address" readonly 
                   value="<?php echo "$getcompanydetails->email"?>"></td>
         </tr>
-        <tr>
+        <tr style="<?php if($getuserdetails->user_type==2) echo "display: none;" ?>">
             <th scope="row">Address</th>
             <td><input type="text" class="form-control showprofile" id="address" name="address" readonly 
                   value="<?php echo "$getcompanydetails->companyaddress"?>"></td>
@@ -235,7 +235,7 @@
                   value="<?php echo "$getuserdetails->mobile"?>"></td>
                 </tr>
 
-                <tr>
+                <tr style="<?php if($getuserdetails->user_type==2) echo "display: none;" ?>" >
                     <th scope="row">Website</th>
                     <td><input type="text" class="form-control showprofile" id="website" name="website" readonly 
                   value="<?php echo "$getcompanydetails->website"?>"></td>
@@ -726,7 +726,7 @@
 
                                                         <th>Incorporation Certificates</th>
                                                         <th>GST/TIN Certificates</th>
-                                                        <th>Autorized Person Certificates</th>
+                                                        <th>Authorized Person Certificates</th>
 
 
                                                         </tr>

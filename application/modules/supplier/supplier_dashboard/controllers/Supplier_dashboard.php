@@ -8,7 +8,7 @@ class Supplier_dashboard extends SP_Controller {
 		
 	}
 	public function index()  
-	{
+	{ 
 		$data['showdashbaord'] =true;
 		$data['page'] = 'supplier_dashboard';
 		$data['title'] = 'Supplier Dashboard';
@@ -904,19 +904,18 @@ if ($file1!="" and $file2!="" and $file3!="" )
          
             $i =1;
             foreach($employeedata as $r) {
-	        $edit ='<div style="display:flex"><a href="javascript:void(0);  " id="editprofilefn"> <span style="color:blue;padding-right: 24px;"><i class="fa fa-pencil" id="edit-supplier" aria-hidden="true"></i></span></a>'
-			.'<a href="javascript:void(0);"><span style="color:red;padding-right: 24px;"><i class="fa fa-trash" id="delete-supplier" aria-hidden="true"></i></span></a>'
-			.'<a href="javascript:void(0);"><span style="color:#ffcccb;padding-right: 24px;"><i class="fa fa-lock" id="unlock-supplier" aria-hidden="true"></i></span></a>'
-			.'<a href="javascript:void(0);"><span style="color:green"><i class="fa fa-unlock" id="lock-supplier" aria-hidden="true"></i></span></a></div>';
+	        $edit ='<div style="display:flex"><a href="javascript:void(0);  " > <span style="color:blue;padding-right: 24px;"><i class="fa fa-pencil" id="edit-supplier" aria-hidden="true"></i></span></a>'
+			.'<a href="javascript:void(0);"><span style="color:red;padding-right: 24px;"><i class="fa fa-trash" id="delete-supplier" aria-hidden="true"></i></span></a>';
+		
 			if($r->islocked==true)
 			{
-			$status ='<a href="javascript:void(0);"><span style="color:#ffcccb"><i class="fa fa-lock" id="unlock-supplier" aria-hidden="true"></i></span></a>';
+			$edit.='<a href="javascript:void(0);"><span style="color:#ffcccb"><i class="fa fa-lock" id="unlock-supplier" aria-hidden="true"></i></span></a>';
 			}
 			else
 			{
-			$status ='<a href="javascript:void(0);"><span style="color:green"><i class="fa fa-unlock" id="lock-supplier" aria-hidden="true"></i></span></a></div>';
+			$edit.='<a href="javascript:void(0);"><span style="color:green"><i class="fa fa-unlock" id="lock-supplier" aria-hidden="true"></i></span></a></div>';
 			}
-
+			 $status='<a href=""><button id="resend_pass" type="submit" class="btn btn-primary"  style="margin-left: 15px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Resend Password</span></button></a>';
 			if($r->usertype==4)
 			{
                   $data[] = array(
@@ -930,7 +929,7 @@ if ($file1!="" and $file2!="" and $file3!="" )
 							'usertype1'=>"Accounts Manager",
 							'edit'=>$edit,
 							/* 'delete'=>$delete,*/
-							'status'=>$status 
+							 'status'=>$status 
 
 							
 							
@@ -950,7 +949,7 @@ if ($file1!="" and $file2!="" and $file3!="" )
 							'usertype1'=>"Delivery Manager",
 							'edit'=>$edit,
 							/* 'delete'=>$delete,*/
-							'status'=>$status 
+						    'status'=>$status 
 
 							
 							
@@ -1030,6 +1029,36 @@ if ($file1!="" and $file2!="" and $file3!="" )
 
 
     //neethu
+   public function resend_pass() 
+  {
+    // $id=$this->uri->segment(4);
+    $id=$this->input->post('supplierid');
+
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $password = array(); 
+    $alpha_length = strlen($alphabet) - 1; 
+    for ($i = 0; $i < 8; $i++) 
+    {
+      $n = rand(0, $alpha_length);
+      $password[] = $alphabet[$n];
+    }
+
+    $pass=implode($password); 
+        $where = array('id'=>$id);
+        $data=array('password'=>$pass);
+        $result =$this->dashM->update('employees',$data, $where);
+     if($result>0)
+        {
+            $this->session->set_flashdata('msg','Resend Password successfully');
+       
+        }
+        else
+        {
+            echo "Error while Resend";
+        }
+   
+  }
+  
      public function lockSupplierEmployees() {
       
         $supplierid=$this->input->post('supplierid');
