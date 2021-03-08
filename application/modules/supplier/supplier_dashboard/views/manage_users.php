@@ -8,7 +8,7 @@
 		Banner Start
 *************************************-->
 <style>
-/* width */ 
+/* width */  
 ::-webkit-scrollbar {  
   width: 10px;
 }
@@ -118,11 +118,12 @@
                    <div class="form-group">
                      <label>password</label>
                      <input type="hidden" id="id" name="id" minlength="3" class="form-control" />
-                     <input type="password" id="password" name="password" minlength="3" class="form-control" required="" />
+
+                     <input type="password" id="password" name="password" minlength="3" class="form-control showprofile1 " onclick="viewpassword()" required="" />
                    </div>
                    <div class="form-group">
                      <button type="submit" class="tg-btn pull-center" id="save_companyprofile"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="save_companyprofile(event);" ><span>Save</span></button>
-                      <button type="submit" class="tg-btn pull-center formdisplay " id="e"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                      <button type="submit" class="tg-btn pull-center savebutton hide " id="e"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
                    </div>
                    <style type="text/css">
                      .formdisplay {
@@ -150,9 +151,9 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Mobile</th>
-                              <th>Status</th>
+                              <!-- <th>Status</th> -->
                             <th>Actions</th>
-                           <!-- <th>Delete</th>  -->
+                            <th>Password</th>  
                           
                           </tr>
                         </thead>
@@ -292,14 +293,15 @@ $(document).ready(function() {
 			/* {
                 "data": "delete"
              },*/
-			{
+		
+             {
+                "data": "edit"
+            },
+              {
                 "data": "status" 
 
 
             }, 
-             {
-                "data": "edit"
-            },
           	
 			{
                 "data": "id",
@@ -377,7 +379,20 @@ $(document).on('click', '#delete-supplier', function() {
 //     });
 
 
+$(document).on('click', '#resend_pass', function() {
+        var cnf = confirm("Are you sure to resend password?"); 
+        if (cnf) {
+            var data = material_table.row($(this).parents('tr')).data();
+            var supplierid = data['id'];
+            $.post("<?php echo site_url('supplier/dashboard/resend_pass')?>", {
+                supplierid: supplierid,
+                <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
+            }, function(data) {
+               window.location.reload();
 
+            });
+        }
+    });
 
 $(document).on('click', '#lock-supplier', function() {
         var cnf = confirm("Are you sure to Lock?"); 
@@ -412,4 +427,25 @@ $(document).on('click', '#unlock-supplier', function() {
         }
     });
 
+</script>
+<script type="text/javascript">
+   $('#edit-supplier').click(function(){
+      $('.showprofile').removeAttr('readonly');
+    $('.editbutton').addClass('hide');
+     $('.savebutton').removeClass('hide');
+      $('.choose-file').removeClass('hide');
+    $('.previewbutton').addClass('hide');
+    });
+      $('#password').click(function(){
+      $('.showprofile1').removeAttr('readonly');
+      
+    });
+  function viewpassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 </script>

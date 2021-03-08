@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
 	<title><?php echo $title; ?> </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -396,23 +396,39 @@
 					</div>
 				</div>
 			</nav>
+<style>
+/* Style the buttons */
+ul.nav a { cursor: pointer; }
+</style>
+<script type="text/javascript">
+$(document).ready(function () {
+        var url = window.location;
+    // Will only work if string in href matches with location
+        $('ul.nav a[href="' + url + '"]').parent().addClass('active');
 
+    // Will also work for relative and absolute hrefs
+        $('ul.nav a').filter(function () {
+            return this.href == url;
+        }).parent().addClass('active').parent().parent().addClass('active');
+    });
+
+</script> 
 
 			<div class="pcoded-main-container">
 				<div class="pcoded-wrapper">
 					<nav class="pcoded-navbar">
 						<div class="pcoded-inner-navbar main-menu mCustomScrollbar _mCS_1 mCS_no_scrollbar">
 							<!-- <div class="pcoded-navigatio-lavel">Navigation</div> -->
-							<ul class="pcoded-item pcoded-left-item">
+							<ul class="pcoded-item pcoded-left-item nav">
 								<!-- <?php if($main_menulabel==$page) ?> -->
-								<li class="active">
+								<li class="">
 									<a href="<?=admin_url('dashboard')?>">
 										<span class="pcoded-micon"><i class="feather icon-home" style="color:red"></i></span>
 										<span class="pcoded-mtext">Dashboard</span>
-									</a>
+									</a> 
 								</li>
 								<li class="">
-										<a href="<?=admin_url('user_management/suppliers')?>">
+										<a href="<?=admin_url('user_management/suppliers')?>"  >
 												<span class="pcoded-micon"><i class="feather icon-layers" style="color:blue"></i></span>
 												<span class="pcoded-mtext">Suppliers</span>
 										</a>
@@ -487,7 +503,7 @@
 								</li>
 								
 								<li class="">
-										<a href="<?=admin_url('dashboard')?>">
+										<a href="<?=admin_url('')?>">
 												<span class="pcoded-micon"><i class="feather icon-layers" style="color:red"></i></span>
 												<span class="pcoded-mtext">Reports</span>
 										</a>
