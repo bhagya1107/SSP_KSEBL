@@ -232,6 +232,11 @@ class Supplier_home extends MX_Controller {
 	{
 	$this->load->view('forgot_pasword');
 	}
+
+	public function forgotPassword()
+	{
+	$this->load->view('forgotpassword');
+	}
 	public function forgotpaswrdManage()
 	{
 		$type=$this->input->post('type');

@@ -645,7 +645,7 @@
                      <div class="modal-header">
                          <ul class="nav nav-tabs">
                              <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a href="#agreements" data-toggle="tab">Agreements</a></li>
-                             <li class="<?php echo $tab == 5 ? "active" : "" ?>"><a href="#banks" data-toggle="tab">Bank Gurantee</a></li>
+                             <li class="<?php echo $tab == 5 ? "active" : "" ?>"><a href="#banks" data-toggle="tab">Bank Guarantee</a></li>
 
                          </ul>
 

@@ -78,7 +78,7 @@
             transform: scale(1);
   }
 }
-@media (min-width: 992px)
+@media (min-width: 992px){}
 .col-md-12 {
     height: 61%;
     width: 100%;
