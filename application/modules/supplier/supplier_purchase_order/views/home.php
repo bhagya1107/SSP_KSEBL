@@ -38,7 +38,7 @@
      <section class="tg-main-section tg-haslayout">
          <div class="container">
              <div class="tg-section-name">
-                 <h2>PurchaseOrders</h2>
+                 <h2>Purchase Orders</h2>
              </div>
              <?php $user_type = $this->session->userdata('user_type'); ?>
              <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">
@@ -222,8 +222,8 @@
                                                                  <td>27-05-2020</td>
 
 
-                                                                 <td style="width:370px;">
-                                                                     <button data-toggle="modal" data-target="#myModal_vmi" style="width:80px; height:29px; color: #fff;background-color: green; border-color: green;">VMI</button>
+                                                                 <td style="width: 40%;">
+                                                                     <button class="btn" data-toggle="modal" data-target="#myModal_vmi" style=" width:20%;color: #fff;background-color: green; border-color: green;">VMI</button>
                                                                  </td>
 
                                                                  </td>
@@ -238,7 +238,8 @@
                                                                  <td>27-05-2020</td>
 
                                                                  <td style="width:370px;">
-                                                                     <button data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">PDI</button> <button data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>
+                                                                 <button  type="button" class="btn"  data-toggle="modal" data-target="#dispatch" style="width:20%;color: #fff;background-color: orange; border-color: orange;">PDI</button>
+                                                                   <button type="button" data-toggle="modal" data-target="#mdcc" class="btn" style="color: #fff;background-color: red; border-color: red;">MDCC</button> <button class="btn" data-toggle="modal" data-target="#shipment1" style=" color: #fff;background-color: blue; border-color: blue;">Delivery</button>
 
                                                                  </td>
 
@@ -331,7 +332,7 @@
                                                              <td>08-12-2020</td>
 
                                                              <td style="width:370px;">
-                                                                 <button data-toggle="modal" data-target="#myModal_vmi" style="width:80px; height:29px; color: #fff;background-color: green; border-color: green;">VMI</button>
+                                                                 <button class="btn" data-toggle="modal" data-target="#myModal_vmi" style="width:20%;color: #fff;background-color: green; border-color: green;">VMI</button>
                                                              </td>
 
                                                              </td>
@@ -345,7 +346,7 @@
                                                              <td>09-12-2020</td>
 
                                                              <td style="width:370px;">
-                                                                 <button data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">PDI</button> <button data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>
+                                                                 <button data-toggle="modal" class="btn" data-target="#dispatch" style="width:20%;color: #fff;background-color: orange; border-color: orange;">PDI</button> <button class="btn" data-toggle="modal" data-target="#mdcc" style="color: #fff;background-color: red; border-color: red;">MDCC</button> <button class="btn" data-toggle="modal" data-target="#shipment1" style="color: #fff;background-color: blue; border-color: blue;">Delivery</button>
 
                                                              </td>
 
@@ -969,7 +970,7 @@
                                  <tr>
                                      <td>1</td>
                                      <td>Approved for inspection</td>
-                                     <td><button data-toggle="modal" data-target="#Payment" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;">Pay</button></td>
+                                     <td><button class= "btn" data-toggle="modal" data-target="#Payment" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;">Pay</button></td>
 
 
 
@@ -1122,7 +1123,7 @@
                                      <td>20-01-2021</td>
 
                                      <!--<td><input type="button"  data-toggle="modal" data-target="#schedule" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" value="Schedule"></td>-->
-                                     <td><a href="" id="" value="">View Pdf</a></td>
+                                     <td><a href="#" id="" value="">View Pdf</a></td>
 
                                  </tr>
 
@@ -1220,7 +1221,7 @@
                                  <td>PCO88944556</td>
                                  <td>Bulb</td>
                                  <td>1000</td>
-                                 <td><input type="button" data-toggle="modal" data-target="#schedule" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" value="Schedule"></td>
+                                 <td><input type="button" class ="btn" data-toggle="modal" data-target="#schedule" style="width:70%;color: #fff;background-color: #1e315d; border-color: #ffcc33;" value="Schedule"></td>
                                  <!--<td ><a href="<?php echo base_url("supplier/delivery") ?>" class="button">View More</a></td>-->
                              </tr>
                              </tbody>

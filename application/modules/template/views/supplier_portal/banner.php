@@ -31,7 +31,7 @@
 						$url=$indexurl;
 					}
 					?>
-					<li><a href="<?= $url ?>">Home</a></li>
+					<!--<li><a href="<?= $url ?>">Home</a></li>-->
 					<li class="active"><?php echo $title; ?></li>
 
                 </ol>

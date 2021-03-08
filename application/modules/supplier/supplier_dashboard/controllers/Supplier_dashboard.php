@@ -560,7 +560,7 @@ public function updatePassword()
 		$data['page'] = 'ForgotPassword';
 		$data['mainpage'] = '';
 		$data['page_title'] = 'ForgotPassword';
-		$data['title'] = 'Forgot Password';
+		$data['title'] = 'Change Password';
 		$this->template->make('supplier_dashboard/forgot_pasword',$data,'supplier_portal');
 	}
 	

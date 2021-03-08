@@ -118,7 +118,7 @@
                                 <div class="card-block scale-up-center"><br><br>
                                     <div class="row m-b-20">
                                         <div class="col-md-12">
-                                            <h3 class="text-center">Forgot Password?</h3>
+                                            <h3 class="text-center">Change Password?</h3>
                                         </div>
                                     </div><br><br>
                                     <div class="form-group form-primary" id="email_block" style="margin-left: 25%;">
