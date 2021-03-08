@@ -197,7 +197,7 @@ function checkuser()
   {
     $("#btn").html("Please wait...");
     $("#btn").attr("disabled",true);
-    keyval={email:email,type:1}
+    keyval={email:email,type:1,"<?php echo $this->security->get_csrf_token_name(); ?>": "<?php echo $this->security->get_csrf_hash(); ?>"}
       $.ajax({
          type: "POST",
          url: '<?php echo base_url() ?>webuser/home/viewLog_pasword',

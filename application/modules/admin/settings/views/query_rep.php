@@ -36,6 +36,8 @@
                                                     <div class="card-block">
                                                         <div class="j-wrapper j-wrapper-640">
                                                             <form id="tg-commentform" class="tg-commentform" method="POST"  action="<?php echo admin_url("procurement/saveform_engine") ?>">
+
+                                                            <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                                                                 <fieldset>
                                                                     <!-- <input type="hidden" name="tenderId" value="<?php echo $tenderId;?>"> -->
                                                                     <div class="form-group">

@@ -82,7 +82,7 @@
           </section>
         </div> -->
      <?php $s=$this->session->set_userdata('supplier',8); ?>  
-       <form method="POST" action="<?php echo base_url().'supplier/dashboard/regcompany'?>" > 
+       <form method="POST" action="<?php echo base_url().'supplier/dashboard/regcompany'?>" id="frm"> 
             <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
       <!-- 'supplier/dashboard/regcompany' -->
       <!-- <?=form_open('');?> -->
@@ -107,7 +107,7 @@
             </div>
       
             <h4 class="section-heading">PAN CARD NO</h4>
-            <p><input type="text" class="form-control" required placeholder="Enter your PAN No" name="pannumber" id="panNumber" pattern="[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}" ></p>
+            <p><input type="text" class="form-control" required placeholder="Enter your PAN No" name="pannumber" id="panNumber"  ></p>
             <span class="error"></span>
             <div class="companyStatus hidedata">
             <h4 class="section-heading ">Registration Type </h4>
@@ -147,14 +147,18 @@
               </div>
               <div class="form-group">
                 <label for="Password" class="sr-only">Password</label>
-                <input type="password" name="password" autocomplete="off" required id="Password" class="form-control" placeholder="Password" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">      
+                <input type="password" name="password" autocomplete="off" required id="Password" class="form-control" placeholder="Password" >  
+                <span id="pwderror" style="color:red;font-size:small"></span>    
               </div>
+
+              <!-- pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" -->
+
           </section>
 
           <label for="">
               <input type="checkbox" name="" id="agree_terms"> I agree to the  <a href="#">Terms and condition</a>
           </label>
-          <input type="submit" class="form-control submit" value="Register" name="submit" disabled>
+          <input type="submit" class="form-control submit" value="Register" disabled>
 
         </div>
   
@@ -240,6 +244,35 @@
     //     })
     //    });
 
+  
+  </script>
+  <script>
+    $('#frm').submit(function(e){
+      e.preventDefault();
+      var password=$('#Password').val();
+      $('#pwderror').text("");
+
+      var validated =  true;
+        if(password.length < 8)
+            validated = false;
+        if(!/\d/.test(password))
+            validated = false;
+        if(!/[a-z]/.test(password))
+            validated = false;
+        if(!/[A-Z]/.test(password))
+            validated = false;
+        // if(/[^0-9a-zA-Z]/.test(password))
+        //     validated = false;
+
+      $('#pwderror').text(validated ? "" : "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
+
+
+      if(validated){
+        $('#frm')[0].submit();
+      }
+      
+
+    });
   
   </script>
   

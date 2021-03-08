@@ -70,6 +70,8 @@
                                                     <div class="card-block">
                                                         <div class="j-wrapper j-wrapper-640">
                                                             <form id="tg-commentform" class="tg-commentform" method="POST"  action="<?php echo admin_url("procurement/saveform_engine") ?>">
+                                                            <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
+
                                                                 <fieldset>
                                                                     <input type="hidden" name="tenderId" value="<?php echo $tenderId;?>">
                                                                     <div class="form-group">
@@ -245,10 +247,11 @@
             {
                 var order = $("#sortable").sortable("serialize");
                 var template_name = $('#template_name').val();
+              //  var template_name = 
                 // order.push(template_name);
                 // console.log(order);
                 $('#categorysavemessage').html('Saving changes..');
-                $.post(" <?php echo admin_url("procurement/update_displayorder") ?>",order+'&template_name='+template_name,function(theResponse){
+                $.post(" <?php echo admin_url("procurement/update_displayorder") ?>",order+'&template_name='+template_name+'&<?php echo $this->security->get_csrf_token_name(); ?>=<?php echo $this->security->get_csrf_hash(); ?>',function(theResponse){
                     $("#categorysavemessage").html(theResponse);
                     $('#categorysavemessage').css("color","green");
                 });
@@ -269,7 +272,7 @@
                         dangerMode: true,
                         },function(isConfirm){
                             if (isConfirm) {
-                                $.post(" <?php echo admin_url("procurement/tender_operations") ?>",{questionIds : questionIds,tenderId:tenderId, process:"add"},function(theResponse){
+                                $.post(" <?php echo admin_url("procurement/tender_operations") ?>",{questionIds : questionIds,tenderId:tenderId, process:"add",'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>'},function(theResponse){
                                     swal({
                                         title: theResponse
                                     });

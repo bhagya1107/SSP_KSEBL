@@ -31,7 +31,8 @@
                                                     <div class="card-block">
                                                         <div class="j-wrapper j-wrapper-640">
                                                             <form id="tg-commentform" class="tg-commentform" method="POST"  action="<?php echo admin_url("settings/save_feemanagement") ?>">
-                                                                <fieldset>
+                                                            <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
+                                                            <fieldset>
                                                                     <div class="form-group">
                                                                         <label>Select Type</label>
                                                                             <select class="form-control">
@@ -48,15 +49,15 @@
                                                                      </div>
 																	<div>
 																	<label>Notification</label><br>
-  <input type="radio" id="huey" name="drone" value="huey"
-         checked>
-  <label for="huey">Active</label>
-</div>
+                                                                        <input type="radio" id="huey" name="drone" value="huey"
+                                                                                checked>
+                                                                        <label for="huey">Active</label>
+                                                                        </div>
 
-<div>
-  <input type="radio" id="dewey" name="drone" value="dewey">
-  <label for="dewey">Inactive</label>
-</div>
+                                                                        <div>
+                                                                        <input type="radio" id="dewey" name="drone" value="dewey">
+                                                                        <label for="dewey">Inactive</label>
+                                                                        </div>
                                                                 </fieldset>
                                                             </form>
                                                         </div>
