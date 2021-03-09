@@ -57,6 +57,10 @@ public function readable_query()
 					if (preg_match('/update(.*?)set/is', $str, $match) == 1) {
 						$table =  $match[1];
 					}
+
+					if($table=='sessions'){
+						continue;
+					}
 					$sql = 'TIMESTAMP-'.date('d-m-y h:i:a').'  EXETIME-'.$times[$key]."\n" ;// Generating SQL file alongwith execution time
 					$sql .= "LOG:  $user Updated $table to ".$value ;// Generating SQL file alongwith execution time
 					fwrite($handle, $sql . "\n\n");

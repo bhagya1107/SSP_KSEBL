@@ -511,3 +511,15 @@ $(document).ready(function () {
 							</ul>
 						</div>
 					</nav>
+
+
+					<style>
+						/* @media screen and (min-width: 1200px) { */
+
+							.img-fluid{
+								width:84px;
+
+							}
+						/* } */
+
+					</style>

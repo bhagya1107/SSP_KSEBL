@@ -118,6 +118,9 @@
                             <label>To Date </label>
                             <input data-toggle="datepicker" class="form-control  form-control-sm" name="to_date" id="to_date" value="<?php echo $to_date; ?>">
                         </div>
+                        <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
+
+
                           <div class="col-md-2">
                             <br />
                             <input type="submit" class="btn btn-primary" value="VIEW" />
