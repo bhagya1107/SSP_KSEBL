@@ -12,12 +12,6 @@
     background: #f00;
     color: #fff;
 }
-.panel-default{
-
-	height: 15%;
-    margin-left: 1%;
-    margin-right: 1%;
-}
 </style>
 <div id="tg-banner" class="tg-banner tg-haslayout" >
 	<div class="tg-imglayer">
@@ -62,29 +56,32 @@
              
 
   <?php if($this->uri->segment(2) == 'tenders')  { ?>
-		
-	<div class="panel panel-default">
-    <div class="panel-body">
-
-<div class="form-group row form_filter">
  <div class="searchbar">
  			<div class="container">
  				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
 
+ 					<div class="form-group row form_filter">
 
-<div class="col-sm-3 col-xs-12" >
 
-		<select class="select2 form-control" id="tenderType" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px;" >
-			<option>Select Tender Type</option>
-			<option  selected value="products">Products</option> 
-			<option value="services">Services</option> 
-					<option value="all">All</option>
-	</select>
-				
+						<div class="col-sm-3 col-xs-12" >
+						
+ 							<select class="select2 form-control" id="tenderType" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px;" >
+									<option>Select Tender Type</option>
+ 								<option  selected value="products">Products</option> 
+								 <option value="services">Services</option> 
+							   	<option value="all">All</option>
+							</select>
+ 									
+
+ 						</div>
 
  				
 
-	
+						 <div class="col-sm-3 col-xs-12 ">
+ 							
+ 							<input type="date" class="select2 form-control"  id="district" name="group_flat__id" placeholder="Select a date" >
+							
+ 						</div>
 
 						
  						<div class="col-sm-3 col-xs-12 ">
@@ -102,13 +99,7 @@
  					</div>
 			</div>
 		
-		<input type="button" value="search" class="btn btn-primary">
-		</span>
-		</div>
-	</div>
-</div>
-</div>
-</div>
+				
   <?php } ?>
   
   <?php if($this->uri->segment(2) == 'purchase_order')  { ?>
@@ -348,7 +339,7 @@
   }?>
   <?php if($this->uri->segment(2) == 'workmeasurement')  { ?>
 
-	<div class="container">
+	<div class="">
 
  				<div class="col-sm-12 col-xs-12 p-10">
 
