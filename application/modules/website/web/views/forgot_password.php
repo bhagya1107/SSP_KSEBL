@@ -1,4 +1,11 @@
+<style>
+    .gx-container{
+        margin-top: 8%;
+    width: 100%;
+    }
 
+
+</style>
 <!-- loader backdrop -->
 
 <!-- Page container -->
@@ -12,16 +19,13 @@
         <!-- Main Content -->
         <div class="gx-main-content">
              <!--gx-wrapper-->
-            <div class="gx-wrapper">
-                <div class="login-container d-flex justify-content-center align-items-center animated slideInUpTiny animation-duration-3">
-                    <div class="login-content">
-                        <div class="login-header" style="text-align:center">
+            
                            
                         </div>
                         <div class="container">
                         <div class="login-form">    
-                        <div class="container-sm border"  style=" margin-top: 20%;width: 120%;  margin-left: -25%;">
-                                <fieldset   style="width: 50%;margin-left: 150px; height:50%;margin-top: 93px;">
+                        <div class="container-sm border card-body" style="width: 50%;">
+                                <fieldset >
 								<h3 style="text-align:center;">Forgot Password</h3><br>
                                 <div style="text-align:center;">
                                     <label>Enter your Registered Mobile No</label><br>
@@ -39,9 +43,7 @@
                         </div>
                         </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                      
             <!--/gx-wrapper-->
 
             <!-- Footer -->

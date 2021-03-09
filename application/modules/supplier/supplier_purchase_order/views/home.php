@@ -149,7 +149,7 @@
                                          </h4>
                                          <ul class="tg-matchmetadata">
                                              <li>
-                                                 <address>Tender Short DIscription</address>
+                                                 <address>Tender Short Description</address>
                                              </li>
                                          </ul>
                                      </div>
@@ -271,7 +271,7 @@
                                      </h4>
                                      <ul class="tg-matchmetadata">
                                          <li>
-                                             <address>Tender Short DIscription</address>
+                                             <address>Tender Short Description</address>
                                          </li>
                                      </ul>
                                  </div>

@@ -26,7 +26,7 @@
 
       <li style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><a href="<?=supplier_url('dashboard/manage_user')?>" class='<?php if($this->uri->segment(3) == 'manage_user') echo "liActive";?>' style="<?php if($user_type=='2') echo "display: none;" ?>" ><em>Employees</em><i></i></a></li>
 
-      <li><a href="<?=supplier_url('dashboard/attachments')?>" class='<?php if($this->uri->segment(3) == 'attachments') echo "liActive";?>'><em>Attachments</em></a></li>
+      <!--<li><a href="<?=supplier_url('dashboard/attachments')?>" class='<?php if($this->uri->segment(3) == 'attachments') echo "liActive";?>'><em>Attachments</em></a></li>-->
 	   <li style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"><a href="<?=supplier_url('dashboard/permission')?>" class='<?php if($this->uri->segment(3) == 'permission') echo "liActive";?>' style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"><em>Access Permission</em></a></li>
 
 

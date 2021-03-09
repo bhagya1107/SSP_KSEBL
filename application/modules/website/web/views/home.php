@@ -526,7 +526,7 @@
 												<div class="clearfix"></div>
 												<div class="form-group mb-3 d-table mx-auto dflex">
 												<div class="auth-form__meta d-flex mt-4" style="color:black">
-										<a href="<?=base_url('forgot_pasword')?>" style="color:black"><br><b>Forgot your password?</b></a>
+										<a href="<?=base_url('forgot_password')?>" style="color:black"><br><b>Forgot your password?</b></a>
 									</div></div>
 
 
