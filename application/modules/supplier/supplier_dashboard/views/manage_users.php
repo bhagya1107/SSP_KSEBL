@@ -6,7 +6,7 @@
 
 <!--************************************
 		Banner Start
-*************************************-->
+*************************************--> 
 <style>
 /* width */  
 ::-webkit-scrollbar {  
@@ -118,12 +118,16 @@
                    <div class="form-group">
                      <label>password</label>
                      <input type="hidden" id="id" name="id" minlength="3" class="form-control" />
-
-                     <input type="password" id="password" name="password" minlength="3" class="form-control showprofile1 " onclick="viewpassword()" required="" />
+                    
+                     <input type="password" id="password" class="icon" style="width: 85%;"  name="password" minlength="3" class="form-control "  onclick="viewpassword()" required="" />
+                     <a id="resend_pass" class="" title="Resend password"  style="width: 10%; float:right; display :none;" >
+                        <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
+                     </a>
+                     <!-- <input type="text" id="id" name="id"  style="width: 10%; align:left;" minlength="3" class="form-control" /> -->
                    </div>
                    <div class="form-group">
                      <button type="submit" class="tg-btn pull-center" id="save_companyprofile"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="save_companyprofile(event);" ><span>Save</span></button>
-                      <button type="submit" class="tg-btn pull-center savebutton hide " id="e"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                      <a href="<?php echo base_url('supplier/dashboard/manage_user')?>" class="tg-btn pull-center " style=" background-color: #ff6666!important; float:right;" id="e"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></a>
                    </div>
                    <style type="text/css">
                      .formdisplay {
@@ -153,7 +157,7 @@
                             <th>Mobile</th>
                               <!-- <th>Status</th> -->
                             <th>Actions</th>
-                            <th>Password</th>  
+                            <!-- <th>Password</th>   -->
                           
                           </tr>
                         </thead>
@@ -297,11 +301,11 @@ $(document).ready(function() {
              {
                 "data": "edit"
             },
-              {
-                "data": "status" 
+            //   {
+            //     "data": "status" 
 
 
-            }, 
+            // }, 
           	
 			{
                 "data": "id",
@@ -328,13 +332,15 @@ $('#employyeedetls tbody').on('click', '#edit-supplier', function() {
 // alert();
     var data = material_table.row($(this).parents('tr')).data();
     console.log(data);
-
+   
     $("#usertype").val(data['usertype']);
     $("#name").val(data['name']);
     $("#email").val(data['email']);
     $("#mobilenumber").val(data['mobile']);
     $("#password").val(data['password']);
     $("#id").val(data['id']);
+    $('#resend_pass').css('display','block');
+    $('#e').css('display','block');
 
 
     
@@ -382,12 +388,15 @@ $(document).on('click', '#delete-supplier', function() {
 $(document).on('click', '#resend_pass', function() {
         var cnf = confirm("Are you sure to resend password?"); 
         if (cnf) {
-            var data = material_table.row($(this).parents('tr')).data();
-            var supplierid = data['id'];
+            
+             var supplierid = $("#id").val();
+            // var supplierid = val(data['id']);
+            // var supplierid = data['id'];
             $.post("<?php echo site_url('supplier/dashboard/resend_pass')?>", {
                 supplierid: supplierid,
                 <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
             }, function(data) {
+              // alert(data);
                window.location.reload();
 
             });

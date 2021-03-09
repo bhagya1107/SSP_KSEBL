@@ -10,7 +10,7 @@
                             <div class="page-header-title">
                                 <div class="d-inline">
                                     <h4>Supplier Profile</h4>
-                                    <!-- <span>Supplier details</span> -->
+                                    <!-- <span>Supplier details</span> --> 
                                 </div>
                             </div>
                         </div> 
@@ -18,7 +18,7 @@
                             <div class="page-header-breadcrumb">
                                 <ul class="breadcrumb-title">
                                     <li class="breadcrumb-item">
-                                        <a href="<?php echo admin_url('webuser/dashboard');?>"> <i class="feather icon-home"></i> </a>
+                                        <a href="<?php echo admin_url('dashboard');?>"> <i class="feather icon-home"></i> </a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="<?= admin_url('user_management/suppliers') ?>">Supplier</a>
                                     </li>

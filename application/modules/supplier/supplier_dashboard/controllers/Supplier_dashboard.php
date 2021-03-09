@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');  
+defined('BASEPATH') OR exit('No direct script access allowed');   
 class Supplier_dashboard extends SP_Controller { 
 	public function __construct() 
 	{
@@ -915,7 +915,7 @@ if ($file1!="" and $file2!="" and $file3!="" )
 			{
 			$edit.='<a href="javascript:void(0);"><span style="color:green"><i class="fa fa-unlock" id="lock-supplier" aria-hidden="true"></i></span></a></div>';
 			}
-			 $status='<a href=""><button id="resend_pass" type="submit" class="btn btn-primary"  style="margin-left: 15px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Resend Password</span></button></a>';
+			 $status='<a href=""><button id="resend_pass1" type="submit" class="btn btn-primary"  style="margin-left: 15px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Resend Password</span></button></a>';
 			if($r->usertype==4)
 			{
                   $data[] = array(
@@ -1031,9 +1031,10 @@ if ($file1!="" and $file2!="" and $file3!="" )
     //neethu
    public function resend_pass() 
   {
+	//   echo "hii"; exit;
     // $id=$this->uri->segment(4);
     $id=$this->input->post('supplierid');
-
+	// echo $id; exit;
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
     $password = array(); 
     $alpha_length = strlen($alphabet) - 1; 

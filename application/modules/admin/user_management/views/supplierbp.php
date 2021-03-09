@@ -4,7 +4,7 @@
     max-width: 160px;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap; 
+    white-space: nowrap;
   }
 </style> 
 <form name="frm" action="" name="frm" id="frm" enctype="multipart/form-data" method="post">
@@ -251,78 +251,25 @@ $( document ).ajaxStop(function() {
 
 
         <div class="tab-content">
-        <script type="text/javascript">
-	$(document).ready(function(){
-  $('form input').change(function () {
-    $('form p').text(this.files.length + " file(s) selected");
-  });
-});
-	
-</script>
-<style type="text/css">
-		.body{
-  background: rgba(0,0,0,0.9);
-}
-.form{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -250px;
-  width: 500px;
-  height: 200px;
-  border: 4px dashed #fff;
-}
-.form p{
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 170px;
-  color: #ffffff;
-  font-family: Arial;
-}
-.form input{
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  opacity: 0;
-}
-.form button{
-  margin: 0;
-  color: #fff;
-  background: #0e214c;
-  border: none;
-  width: 508px;
-  height: 35px;
-  margin-top: -20px;
-  margin-left: -4px;
-  border-radius: 4px;
-  border-bottom: 4px solid #117A60;
-  transition: all .2s ease;
-  outline: none;
-}
-.form button:hover{
-  background: #0e214c;
-	color: #0C5645;
-}
-.form button:active{
-  border:0;
-}
-.grab {cursor: pointer;}
+          <form  method="post" id="import_form" enctype="multipart/form-data">
+            <h4 >IMPORT SUPPLIERS LIST</h4><button type="button" class="btn btn-danger" data-dismiss="modal"style="margin-left: 500px;margin-top: -50px;" >X</button>
+            
+            <table style="margin-top: 40px;" >
+              <th></th>
+              <th>
+      
+                <input type="file" class="form-control" name="file" id="file" accept=".xls, .xlsx" id="customFile" required />
+         
+             <!-- <input class="form-control form-control-lg" id="formFileLg" type="file" /> -->
+             
+              </th>
+
+              <td></td>
+              <td> <button type="Submit" name="import" value="Import" class="btn btn-primary" >Submit</button></td>
 
 
-
-	
-</style>
-        <form method="post" id="import_form" enctype="multipart/form-data" class="form">
-       <h5 style="margin-left: 100%;" class="grab" data-dismiss="modal">X</h5>
-  <input type="file" name="file" id="file" accept=".xls, .xlsx" required>
-  <p style="color: black;">Drag your Suppliers list(Excel) files here or click in this area.</p>
-  <button type="submit">Upload</button>
-</form>
+            </table>
+          </form>
 
  <!--  <div class="modal-footer" >
  

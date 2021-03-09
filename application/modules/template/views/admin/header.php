@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head> 
 	<title><?php echo $title; ?> </title>
 	<meta charset="utf-8">
@@ -503,7 +504,7 @@ $(document).ready(function () {
 								</li>
 								
 								<li class="">
-										<a href="<?=admin_url('')?>">
+										<a href="">
 												<span class="pcoded-micon"><i class="feather icon-layers" style="color:red"></i></span>
 												<span class="pcoded-mtext">Reports</span>
 										</a>
@@ -511,3 +512,15 @@ $(document).ready(function () {
 							</ul>
 						</div>
 					</nav>
+
+
+					<style>
+						/* @media screen and (min-width: 1200px) { */
+
+							.img-fluid{
+								width:84px;
+
+							}
+						/* } */
+
+					</style>
