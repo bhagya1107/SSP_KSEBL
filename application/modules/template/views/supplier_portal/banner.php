@@ -54,9 +54,9 @@
 }
   </style>
              
-
+	<div class="searchbar">
   <?php if($this->uri->segment(2) == 'tenders')  { ?>
- <div class="searchbar">
+ 
  			<div class="container">
  				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
 
@@ -94,9 +94,9 @@
 						<div class="col-sm-3 col-xs-12 " style="margin-top:10px;">
  							
  							<input type="button" value="search" class="btn btn-primary">
-								</div>
- 						</div>
+						</div>
  					</div>
+ 				</div>
 			</div>
 		
 				
