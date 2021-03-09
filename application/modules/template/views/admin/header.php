@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head> 
 	<title><?php echo $title; ?> </title>
 	<meta charset="utf-8">
@@ -503,7 +504,7 @@ $(document).ready(function () {
 								</li>
 								
 								<li class="">
-										<a href="<?=admin_url('')?>">
+										<a href="">
 												<span class="pcoded-micon"><i class="feather icon-layers" style="color:red"></i></span>
 												<span class="pcoded-mtext">Reports</span>
 										</a>
