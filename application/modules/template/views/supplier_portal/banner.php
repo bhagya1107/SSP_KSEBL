@@ -62,17 +62,14 @@
              
 
   <?php if($this->uri->segment(2) == 'tenders')  { ?>
-<<<<<<< HEAD
 		
 	<div class="panel panel-default">
-    <div class="panel-body"><div class="col-sm-12 col-xs-10 p-10" style="margin-left: 135px">
+    <div class="panel-body">
 
 <div class="form-group row form_filter">
-=======
  <div class="searchbar">
  			<div class="container">
  				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
->>>>>>> e24a51e1c7a4b816b1dfaf72d106141ed9468536
 
 
 <div class="col-sm-3 col-xs-12" >
@@ -85,51 +82,10 @@
 	</select>
 				
 
-<<<<<<< HEAD
-	</div>
-
-<!--	<div class="col-sm-2 col-xs-12" >-->
-<!--<label>Tender ID:</label>-->
-		<!--<select class="select2 form-control" id="tenderid" name="group_flat__id" data-placeholder="Select a TenderId" >
-							<option>Select Tender ID</option>
-			<option value="0">TDR001860</option> 
-		<option value="0">TDR001862</option> 
-					<option value="0">TDR001889</option>
-	</select>-->
-				
-=======
  				
->>>>>>> e24a51e1c7a4b816b1dfaf72d106141ed9468536
 
 	
 
-<<<<<<< HEAD
-	<div class="col-sm-3 col-xs-12 ">
-		
-		<input type="date" class="select2 form-control"  id="district" name="group_flat__id" placeholder="Select a date" >
-	
-	</div>
-
-<!-- <div class="col-sm-2 col-xs-12 ">
-		
-		<select class="select2 form-control"  placeholder="Select a location/purchaser">
-		<option>Select Location</option>
-																							<option value="0">TVM TEST</option> 
-		<option value="0">KTM 11</option> 
-					<option value="0">EKM 89</option>
-	</select>	
-
-			
-	</div> -->
-	<div class="col-sm-3 col-xs-12 ">
-		
-		<input type="text" class=" form-control"  id="keyword" name="keyword" placeholder="Key Word" >
-	
-			
-	</div>
-
-<div class="col-sm-3 col-xs-12 " style="margin-top:10px;">
-=======
 						
  						<div class="col-sm-3 col-xs-12 ">
  							
@@ -145,7 +101,6 @@
  						</div>
  					</div>
 			</div>
->>>>>>> e24a51e1c7a4b816b1dfaf72d106141ed9468536
 		
 		<input type="button" value="search" class="btn btn-primary">
 		</span>
@@ -393,7 +348,7 @@
   }?>
   <?php if($this->uri->segment(2) == 'workmeasurement')  { ?>
 
-	<div class="">
+	<div class="container">
 
  				<div class="col-sm-12 col-xs-12 p-10">
 
