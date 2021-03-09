@@ -2384,11 +2384,16 @@ address {
     padding: 20px 0;
 }
 
-.tg-main .tg-main-section:first-child {
-    margin: -20px 0 0;
-    /* padding: 100px 0 80px; */
-    /* km */
-    padding: 0px 0 80px;
+
+/* km added @media */
+
+@media screen and (min-width: 1200px) {
+    .tg-main .tg-main-section:first-child {
+        margin: -20px 0 0;
+        /* padding: 100px 0 80px; */
+        /* km */
+        padding: 0px 0 80px;
+    }
 }
 
 
@@ -6938,3 +6943,44 @@ a {
 /* .active {
     background: #FFF!important;
 } */
+
+
+/*  km custom updates */
+
+.welcome-msg {
+    left: 0px;
+    width: 50px;
+    float: left;
+}
+
+@media screen and (min-width: 767px) {
+    .custom-menu {
+        display: block!important;
+    }
+    #loader1 {
+        padding-left: 40%!important;
+        padding-top: 14%!important;
+    }
+    lottie-player {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1209px) {
+    .tg-main-section {
+        padding: 0
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .searchbar {
+        padding-top: 12%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .searchbar {
+        padding-top: 15%;
+    }
+}

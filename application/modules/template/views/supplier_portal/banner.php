@@ -57,8 +57,8 @@
 
   <?php if($this->uri->segment(2) == 'tenders')  { ?>
  <div class="searchbar">
-
- 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 135px">
+ 			<div class="container">
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
 
  					<div class="form-group row form_filter">
 
@@ -75,17 +75,7 @@
 
  						</div>
 
- 					<!--	<div class="col-sm-2 col-xs-12" >-->
-						<!--<label>Tender ID:</label>-->
- 							<!--<select class="select2 form-control" id="tenderid" name="group_flat__id" data-placeholder="Select a TenderId" >
-												 <option>Select Tender ID</option>
- 								<option value="0">TDR001860</option> 
-								<option value="0">TDR001862</option> 
-							   	<option value="0">TDR001889</option>
-							</select>-->
- 									
-
- 						
+ 				
 
 						 <div class="col-sm-3 col-xs-12 ">
  							
@@ -93,17 +83,7 @@
 							
  						</div>
 
-						<!-- <div class="col-sm-2 col-xs-12 ">
- 							
- 							<select class="select2 form-control"  placeholder="Select a location/purchaser">
-							 <option>Select Location</option>
-                            	<option value="0">TVM TEST</option> 
-								<option value="0">KTM 11</option> 
-							   	<option value="0">EKM 89</option>
-							</select>	
-
- 								
- 						</div> -->
+						
  						<div class="col-sm-3 col-xs-12 ">
  							
  							<input type="text" class=" form-control"  id="keyword" name="keyword" placeholder="Key Word" >
@@ -117,16 +97,16 @@
 								</div>
  						</div>
  					</div>
-				</div>
+			</div>
 		
 				
   <?php } ?>
   
   <?php if($this->uri->segment(2) == 'purchase_order')  { ?>
 
-			<div class="">
+			<div class="container">
 
- 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 193px;">
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" >
 
  					<div class="form-group row form_filter">
 
@@ -180,9 +160,9 @@
   
   <?php if($this->uri->segment(2) == 'procurement')  { ?>
 
-	<div class="">
+	<div class="container">
 
- 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 193px;">
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" >
 
  					<div class="form-group row form_filter">
 
@@ -237,9 +217,9 @@
   
   <?php if($this->uri->segment(2) == 'delivery')  { ?>
 
-	<div class="">
+	<div class="container">
 
- 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 193px;">
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
 
  					<div class="form-group row form_filter">
 
@@ -286,7 +266,7 @@
  						</div>
  					</div>
 				</div>
-			<div>
+  	</div>
 	  
 	  
 <?php	 
@@ -294,9 +274,9 @@
   
    <?php if($this->uri->segment(2) == 'accounts')  { ?>
 
-			<div class="">
+			<div class="container">
 
- 				<div class="col-sm-12 col-xs-10 p-10" style="margin-left: 193px;">
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
 
  					<div class="form-group row form_filter">
 
@@ -409,6 +389,7 @@
 	  
 <?php	 
   }?>
+  </div>
   
 <div class="col-md-12 row all-slides">
 <div class="col-md-2">
