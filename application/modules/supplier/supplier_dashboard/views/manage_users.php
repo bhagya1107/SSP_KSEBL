@@ -120,8 +120,8 @@
                      <input type="hidden" id="id" name="id" minlength="3" class="form-control" />
                     
                      <input type="password" id="password" class="icon" style="width: 85%;"  name="password" minlength="3" class="form-control "  onclick="viewpassword()" required="" />
-                     <a id="resend_pass" class="" title="Resend password"  style="width: 10%; float:right; display :none;" >
-                        <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
+                     <a id="resend_pass" class="" title="Resend password"  style="width: 10%; float:right;margin-top: 3px; display :none;" >
+                        <i class="fa fa-paper-plane fa-3x"   aria-hidden="true"></i>
                      </a>
                      <!-- <input type="text" id="id" name="id"  style="width: 10%; align:left;" minlength="3" class="form-control" /> -->
                    </div>
@@ -150,13 +150,14 @@
                       <table id="employyeedetls" class="table table-bordered table-hover" class="display" style="width: 100%">
                         <thead>
                           <tr style="background-color:#26265f ;color:#FFF ">
-                            <th>Sl No</th>
+                            <!-- <th>Sl No</th> -->
+                            <th>Actions</th>
                             <th>User type</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Mobile</th>
                               <!-- <th>Status</th> -->
-                            <th>Actions</th>
+                            
                             <!-- <th>Password</th>   -->
                           
                           </tr>
@@ -276,7 +277,8 @@ $(document).ready(function() {
 
         "buttons": [],
         "columns": [{
-                "data": "no"
+                // "data": "no"
+                "data": "edit"
             },
              {
                 "data": "usertype1"
@@ -298,9 +300,9 @@ $(document).ready(function() {
                 "data": "delete"
              },*/
 		
-             {
-                "data": "edit"
-            },
+            //  {
+            //     "data": "edit"
+            // },
             //   {
             //     "data": "status" 
 

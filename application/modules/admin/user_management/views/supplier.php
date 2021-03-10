@@ -240,94 +240,31 @@ $( document ).ajaxStop(function() {
 
 
 <div class="modal fade" id="importfile" style="padding-left: 0px !important;">
-
-  <div class="modal-dialog">
-    <div class="modal-content" style="width:583px;height:200px;">
-
+<div class="modal-dialog">
+    <div class="modal-content" style="width:383px;height:200px; ">
       <!-- Modal Header -->
-      <div class="modal-header">
-
-
-
-
+      <div class="modal-header ">
         <div class="tab-content">
-        <script type="text/javascript">
-	$(document).ready(function(){
-  $('form input').change(function () {
-    $('form p').text(this.files.length + " file(s) selected");
-  });
-});
-	
-</script>
-<style type="text/css">
-		.body{
-  background: rgba(0,0,0,0.9);
-}
-.form{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -250px;
-  width: 500px;
-  height: 200px;
-  border: 4px dashed #fff;
-}
-.form p{
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 170px;
-  color: #ffffff;
-  font-family: Arial;
-}
-.form input{
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  opacity: 0;
-}
-.form button{
-  margin: 0;
-  color: #fff;
-  background: #0e214c;
-  border: none;
-  width: 508px;
-  height: 35px;
-  margin-top: -20px;
-  margin-left: -4px;
-  border-radius: 4px;
-  border-bottom: 4px solid #117A60;
-  transition: all .2s ease;
-  outline: none;
-}
-.form button:hover{
-  background: #0e214c;
-	color: #0C5645;
-}
-.form button:active{
-  border:0;
-}
-.grab {cursor: pointer;}
+           <form method="post" id="import_form" enctype="multipart/form-data" class="form">
+             <div class="frame1">
+              	<div class="center1">
+		              <div class="title">
+			             <h1>Drop Supplier list to upload</h1>
+		              </div>
+                   <p style="color: black;" id="p"></p>
+		                <div class="dropzone">
+   
+			                  <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+			                   <input type="file" class="upload-input"  name="file" id="file" accept=".xls, .xlsx" required />
+      
 
+		                </div>
 
+		                    <button type="submit" id="submitb" onclick="myFunction()" class="btn1" name="uploadbutton">Upload file</button>
 
-	
-</style>
-        <form method="post" id="import_form" enctype="multipart/form-data" class="form">
-       <h5 style="margin-left: 100%;" class="grab" data-dismiss="modal">X</h5>
-  <input type="file" name="file" id="file" accept=".xls, .xlsx" required>
-  <p style="color: black;">Drag your Suppliers list(Excel) files here or click in this area.</p>
-  <button type="submit">Upload</button>
-</form>
-
- <!--  <div class="modal-footer" >
- 
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-              </div>  -->       
+                 	</div>
+               </div>
+            </form>     
             </div>
           </div>
         </div>
@@ -447,5 +384,113 @@ $( document ).ajaxStop(function() {
     });
       }
     </script>
+
+
+
+    <!-- /////////////////////import file///////////////// -->
+    <script type="text/javascript">
+	$(document).ready(function(){
+  $('form input').change(function () {
+    $('form p').text("1 file selected");
+     $('#p').css('display','block');
+  });
+});
+
+
+function myFunction() {
+  document.getElementById("p").style.display = "none";
+
+  // $('#submitb').css('display','none');
+}
+	
+</script>
+<style type="text/css">
+
+
+.frame1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 550px;
+	height: 250px;
+	margin-top: -100px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: linear-gradient(to top right, #0e214c 0%, hotpink 100%);
+	color: #333;
+	font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.center1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 450px;
+	height: 230px;
+	border-radius: 3px;
+	box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+
+.title {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #999;
+	text-align: center;
+}
+
+h1 {
+	font-size: 16px;
+	font-weight: 300;
+	color: #666;
+}
+
+.dropzone {
+	width: 100px;
+	height: 80px;
+	border: 1px dashed #999;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.upload-icon {
+	margin: 25px 2px 2px 2px;
+}
+
+.upload-input {
+	position: relative;
+	top: -62px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.btn1 {
+	display: block;
+	width: 140px;
+	height: 40px;
+	background: #0e214c;
+	color: #fff;
+	border-radius: 3px;
+	border: 0;
+	box-shadow: 0 3px 0 0 hotpink;
+	transition: all 0.3s ease-in-out;
+	font-size: 14px;
+}
+
+.btn1:hover {
+	background: rebeccapurple;
+	box-shadow: 0 3px 0 0 deeppink;
+}
+</style>
+
 
 

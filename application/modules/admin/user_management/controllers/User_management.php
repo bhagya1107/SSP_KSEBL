@@ -166,6 +166,9 @@ if($getpannum)
      
 
         }
+        else{
+          $msg="No data inserted ".$errorCount. " are already exists";
+        }
       echo json_encode(['status'=>$status,'msg'=>$msg]);
     } 
   }
