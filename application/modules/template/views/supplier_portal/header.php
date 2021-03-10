@@ -266,7 +266,7 @@
                 										<li style="<?php if($getcompanypermissiondetails->procurement_plan=='0') echo "display: none;" ?>">
                 											<a href="<?=supplier_url('procurement')?>">
                 												
-                											ProcurementPlan</a>
+                											Procurement Plan</a>
                                     </li>
                                     <li style="<?php if($getcompanypermissiondetails->tenders=='0') echo "display: none;" ?>">
                                       <a  href="<?=supplier_url('tenders')?>">Tenders</a>

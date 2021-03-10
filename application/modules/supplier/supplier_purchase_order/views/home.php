@@ -42,23 +42,23 @@
              </div>
              <?php $user_type = $this->session->userdata('user_type'); ?>
              <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">
-                 <ul class="nav nav-tabs">
-                     <li style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
-                     <li style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">My Purchase Orders</a></li>
-                     <li style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
+                 <ul class="nav nav-tabs" id="purchasetabs">
+                     <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
+                     <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">My Purchase Orders</a></li>
+                     <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
                  </ul>
                  <div class="tab-content">
                      <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
                          <div class="row">
-                             <div class="tg-tickets">
+                             <div class="tg-tickets" >
                                  <?php foreach ($purchaseorder as $purchaseorders) { ?>
-                                     <div class="tg-ticket">
+                                     <div class="tg-ticket" id="purchaseordersid">
                                          <time class="tg-matchdate" datetime="2016-05-03"><?php
                                                                                             $time = strtotime($purchaseorders->purchase_order_date);
                                                                                             echo date('j  ', $time); ?><span><?php
                                                                             $time = strtotime($purchaseorders->purchase_order_date);
                                                                             echo date('M  ', $time); ?></span></time>
-                                         <div class="tg-matchdetail">
+                                         <div class="tg-matchdetail" >
                                              <span class="tg-theme-tag"><?php echo $purchaseorders->puchase_order_number ?></span>
                                              <h4>TENDER ID<?php echo $purchaseorders->prc_tender_id ?> </h4>
                                              </h4>
@@ -97,7 +97,7 @@
 
                      <div id="workhome" class="tab-pane fade  <?php echo $user_type == 2 ? "in active" : "" ?>">
                          <div class="row">
-                             <div class="tg-tickets">
+                             <div class="tg-tickets" id="worktickets">
                                  <?php foreach ($purchaseorder as $purchaseorders) { ?>
                                      <div class="tg-ticket">
                                          <time class="tg-matchdate" datetime="2016-05-03"><?php
@@ -115,7 +115,7 @@
                                                  </li>
                                              </ul>
                                          </div>
-                                         <div class="tg-btnsbox">
+                                         <div class="tg-btnsboxview">
                                              <a class="tg-btn modal-view" onclick="mypurchasedetails(<?php echo htmlentities(json_encode($purchaseorders), ENT_QUOTES, 'UTF-8') ?>);" data-toggle="modal" data-target="#myModalpurchase">View</a>
                                          </div>
                                      </div>
@@ -140,7 +140,7 @@
                      </div>
                      <div id="menu1" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>">
                          <div class="row">
-                             <div class="tg-tickets">
+                             <div class="tg-tickets" id="acceptedtickets">
                                  <div class="tg-ticket">
                                      <time class="tg-matchdate" datetime="2016-05-03">27<span>Dec</span></time>
                                      <div class="tg-matchdetail">
@@ -1008,16 +1008,16 @@
                  <div class="modal-content" style="margin-left: 200px;width: 606px;">
                      <div class="modal-header">
                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         <h4 class="modal-title">Serial No Uploader </h4>
+                         <h4 class="modal-title">Serial N.o Uploader </h4>
                      </div><br>
                      <div class="form-group row">
-                         <label for="subject" class="col-md-3 col-sm-3 control-label">Serial No From:</label>
+                         <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o From:</label>
                          <div class="col-md-6 col-sm-6" id="ques_group">
                              <input type="text" class="form-control" id="subject" placeholder="">
                          </div>
                      </div>
                      <div class="form-group row">
-                         <label for="subject" class="col-md-3 col-sm-3 control-label">Serial No To:</label>
+                         <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o To:</label>
                          <div class="col-md-6 col-sm-6" id="ques_group">
                              <input type="text" class="form-control" id="subject" placeholder="">
                          </div>
@@ -1518,4 +1518,20 @@ toggle between hiding and showing the dropdown content */
                  console.log(html);
                  $('#modalpurchase').html(html);
              }
+
+
+
+//              $(document).ready(function() {
+   
+//    $("#keywordpurchaseorder").on("keyup", function() {
+//       // var activetab= $("#purchasetabs li.active").attr('id');
+//        //var tabcontentid = (activetab == 'allpurchaseorder') ?'purchaseordersid' : (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets'
+//      var value = $(this).val().toLowerCase();
+//  //console.log(activetab);
+//      $("#purchaseordersid div").filter(function() {
+//        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+//      });
+//    });
+ 
+//  });
          </script>

@@ -102,11 +102,11 @@
     <span class="spinner"></span>
   </div>
 </div>
-                <ul class="nav nav-tabs">
-                    <li class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
+                <ul class="nav nav-tabs" id="tendertabs">
+                    <li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
                     <!-- <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
-                    <li class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
-                    <li class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
+                    <li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
+                    <li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -143,7 +143,7 @@
 
                     <div id="menu1" class="tab-pane fade <?php echo $tab == 2 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
-                            <div class="tg-tickets">
+                            <div class="tg-tickets" id="favid">
                                 <?php foreach ($getfavtender as $favten) { ?>
                                     <div class="tg-ticket">
 
@@ -178,8 +178,8 @@
                     </div>
                     <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
-                            <div class="tg-tickets">
-                                <div class="tg-ticket">
+                            <div class="tg-tickets" id="appliedtickets" >
+                                <div class="tg-ticket" >
                                     <time class="tg-matchdate tg-matchdate_custom" datetime="2016-05-03">30<span>Dec</span></time>
                                     <div class="tg-matchdetail">
                                         <span class="tg-theme-tag">My Tender No : TDR001860</span>
@@ -191,7 +191,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="tg-btnsbox">
+                                    <div class="tg-btnsbox" >
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tendermore">Read More</a>
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus">Tender Status </a>
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
@@ -907,8 +907,31 @@
     $(document).ready(function() {
         getMytenders();
         changeTenderTye();
+        universaltendersearch();
+        
     });
+function universaltendersearch(){
+   
+  $("#keywordtender").on("keyup", function() {
+      var activetab= $("#tendertabs li.active").attr('id');
+      var tabcontentid = (activetab == 'favtender') ?'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+    var value = $(this).val().toLowerCase();
+console.log(activetab);
+    $("#"+tabcontentid +" div[class!=tg-btnsbox]").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
 
+}
+$(function() {
+    console.log("klll");
+		$('#datepicker').datepicker({
+			autoSize: true,
+			onSelect: function (dateText, inst) {
+				$(this).parent('#datepicker').submit();
+			}
+		});
+	});
     function changeTenderTye() {
 
         $('#tenderType').on('change', function() {
@@ -1134,6 +1157,10 @@
         return month[$month_dat];
         //document.getElementById("demo").innerHTML = n;
     }
+
+   
+
+
 </script>
 
 <style>
