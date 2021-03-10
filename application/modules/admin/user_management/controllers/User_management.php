@@ -154,7 +154,7 @@ if($getpannum)
         }
 
       }
-      if($data){
+      if($data){    
 
         $msg=$isError?"Some data inserted successfully but ".$errorCount." are already exists" :"Data inserted sucessfully";
         $status='sucess';

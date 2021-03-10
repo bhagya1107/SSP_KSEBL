@@ -252,13 +252,13 @@ $( document ).ajaxStop(function() {
 			             <h1>Drop Supplier list to upload</h1>
 		              </div>
                    <p style="color: black;" id="p"></p>
-		                <div class="dropzone">
+		                <div class="dropzone">  
    
 			                  <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
 			                   <input type="file" class="upload-input"  name="file" id="file" accept=".xls, .xlsx" required />
       
 
-		                </div>
+		                </div>  
 
 		                    <button type="submit" id="submitb" onclick="myFunction()" class="btn1" name="uploadbutton">Upload file</button>
 
