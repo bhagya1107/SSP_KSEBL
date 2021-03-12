@@ -90,9 +90,9 @@
 								</tr>-->
 								<tr>
 									<td style="text-align:right"> Notification </td>
-					<td><input type="radio" style="margin-left: -88px;"  class="custom-control  custom-radio custom-control-inline"  name="display_status" id="display_status" checked="" /> &nbsp ON
-					 
-					<input type="radio" style="margin-left: 108px;"  class="custom-control custom-radio custom-control-inline"  name="display_status" id="display_status" checked="" /> &nbsp OFF
+									<td style="text-align:left"><input type="radio"   class="custom-control  custom-radio custom-control-inline"  name="display_status" id="display_status" checked="" /> &nbsp ON
+									
+									<input type="radio"  class="custom-control custom-radio custom-control-inline"  name="display_status" id="display_status" checked="" /> &nbsp OFF
 							</td>
 								</tr>
 								<!--<tr>
