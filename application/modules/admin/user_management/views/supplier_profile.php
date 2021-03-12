@@ -38,7 +38,7 @@
                             <div class="col-lg-12">
                                 <div class="cover-profile">
                                     <div class="profile-bg-img">
-                                        <img class="profile-bg-img img-fluid" src="<?php echo base_url(); ?>assets/admin/files\assets\images\user-profile\bg-img1.jpg" alt="bg-img">
+                                        <img class="profile-bg-img" src="<?php echo base_url(); ?>assets/admin/files\assets\images\user-profile\bg-img1.jpg" alt="bg-img">
                                         <div class="card-block user-info">
                                             <div class="col-md-12">
                                                 <div class="media-left">
@@ -176,6 +176,11 @@
                   value="<?php echo "$getcompanydetails->email"?>"></td>
         </tr>
         <tr style="<?php if($getuserdetails->user_type==2) echo "display: none;" ?>">
+            <th scope="row">Company Number</th>
+            <td><input type="text" class="form-control showprofile" id="address" name="address" readonly 
+                  value="<?php echo "$getcompanydetails->mobile"?>"></td>
+        </tr>
+        <tr style="<?php if($getuserdetails->user_type==2) echo "display: none;" ?>">
             <th scope="row">Address</th>
             <td><input type="text" class="form-control showprofile" id="address" name="address" readonly 
                   value="<?php echo "$getcompanydetails->companyaddress"?>"></td>
@@ -208,6 +213,11 @@
     <div class="table-responsive">
             <table class="table">
                 <tbody>
+                <tr style="<?php if($getuserdetails->user_type==2) echo "display: none;" ?>">
+            <th scope="row">Authorized Person</th>
+            <td><input type="text" class="form-control showprofile" id="address" name="address" readonly 
+                  value="<?php echo "$getcompanydetails->authorizedperson"?>"></td>
+        </tr>
                 <tr>
                     <th scope="row">Email</th>
                     <td>
@@ -723,7 +733,8 @@
                                                   <table class="table table-hover  table-borderless">
                                                       <thead> 
                                                         <tr>
-
+                                                        <th>Incorporation number</th>
+                                                        <th>Incorporation Date</th>
                                                         <th>Incorporation Certificates</th>
                                                         <th>GST/TIN Certificates</th>
                                                         <th>Authorized Person Certificates</th>
@@ -741,6 +752,28 @@
                                                                   </div> 
                                                               </td> -->
                                                              <!--  <td><?php echo $getuserdetails->document_submited_date?></td> -->
+                                                             <td> 
+                                                                <?php if($getcompanydetails->incorporationno=='')
+                                                                 {?>
+                                                                 <p>No data</p>
+                                                               <?php }
+                                                               else {?>
+                                                              <p><?php echo $getcompanydetails->incorporationno;?></p>
+                                                             <?php } ?>
+
+                                                             </td>
+
+                                                             <td> 
+                                                                <?php if($getcompanydetails->incorporationdate=='')
+                                                                 {?>
+                                                                 <p>No data</p>
+                                                               <?php }
+                                                               else {?>
+                                                               <p><?php echo $getcompanydetails->incorporationdate;?></p>
+                                                                <?php } ?>
+
+                                                             </td>
+
                                                               <td> 
                                                                 <?php if($getcompanydetails->incorporationcertificate=='')
                                                                  {?>

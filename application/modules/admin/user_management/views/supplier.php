@@ -251,7 +251,7 @@ $( document ).ajaxStop(function() {
 		              <div class="title">
 			             <h1>Drop Supplier list to upload</h1>
 		              </div>
-                   <p style="color: black;" id="p"></p>
+                   <p style="color: black;" id="p">Select Excel file up to 10MB</p>
 		                <div class="dropzone">  
    
 			                  <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />

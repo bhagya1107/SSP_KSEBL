@@ -504,7 +504,7 @@ $(document).ready(function () {
 								</li>
 								
 								<li class="">
-										<a href="">
+										<a href="#">
 												<span class="pcoded-micon"><i class="feather icon-layers" style="color:red"></i></span>
 												<span class="pcoded-mtext">Reports</span>
 										</a>

@@ -28,7 +28,7 @@ class User_management extends AD_Controller {
   {
     $data['page'] = 'Supplier';
     $data['title'] = 'Supplier Profile';
-    $id=$this->uri->segment(4);
+    $id=$this->uri->segment(4);  
     $data['supplierinfo']=$this->userM->supplierinfo('suppliermaterials',$id);
     $data['supplierinfo1']=$this->userM->supplierinfo1('suppliermaterials',$id);
     $data['getbankdetails']=$this->userM->bank_details('bank_details',$id);
@@ -41,6 +41,7 @@ class User_management extends AD_Controller {
   }
   public function approve_bank_account()
   {
+
     $id=$this->uri->segment(4);
     $this->userM->approve_bank_account('bank_details',$id);
     $this->session->set_flashdata('msg','Approved successfully');
@@ -91,6 +92,7 @@ class User_management extends AD_Controller {
   public function import() 
   {
     $this->load->library('excel');
+    $config['allowed_types']        = 'xls|xlsx';
     $status='error';
 
    // $msg='Some user already exist for ';
@@ -101,6 +103,8 @@ $errorCount=0;
     {
       
       $path = $_FILES["file"]["tmp_name"];
+      // $config['allowed_types'] = 'xlsx|xls';
+      // $this->upload->initialize($config); 
       $object = PHPExcel_IOFactory::load($path);
       foreach($object->getWorksheetIterator() as $worksheet)
       {

@@ -152,13 +152,13 @@
                                       //  print '<script>alert("error")</script>';
                                       }
                                       ?>
-                                    </span>
+                                    </span> 
                                     <hr>
 
                                     <div class="row">
                                         <div class="col-sm-12 col-md-10">
                                             <!-- <p class="text-inverse text-left m-b-0">Developed By:</p> -->
-                                            <p class="text-inverse text-left"><a href="index-1.htm"><b class="f-w-600">Netroxe IT Solutions Pvt.Ltd.</b></a></p>
+                                            <p class="text-inverse text-left"><a href="http://www.netroxe.com/" target="_blank" ><b class="f-w-600">Netroxe IT Solutions Pvt.Ltd.</b></a></p>
                                         </div>
                                         <div class="col-sm-12 col-md-2">
                                             <img src="<?php echo base_url(); ?>assets/admin/files\assets\images\auth\Logo-small-bottom.png" class="img-40" alt="small-logo.png">
