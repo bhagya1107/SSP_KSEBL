@@ -8,11 +8,40 @@
  <script type="text/javascript" src="jquery.js"></script>
  <script type="text/javascript" src="collapsible.js"></script>
  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets\supplier\styles\supplierloader.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="path/to/material-design-iconic-font/css/material-design-iconic-font.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
  <style>
+
+.btn-primary {
+        color: #fff;
+        background-color: #1e315d;
+        border-color: #ffcc33;
+        ;
+    }
+
+    small {
+        font-size: 12px;
+        margin-top: 0px;
+        vertical-align: top;
+    }
+
+    .tg-matchdate {
+        padding: 17px;
+        font: 25px/25px 'Oswald', Arial, Helvetica, sans-serif;
+    }
+
+    .tg-matchdate_custom {
+        padding: 13px !important;
+        font: 36px/36px 'Oswald', Arial, Helvetica, sans-serif;
+    }
+
+    .alert {
+        margin-left: 7% !important;
+    }
+
      /* width */
      ::-webkit-scrollbar {
          width: 10px;
@@ -42,55 +71,31 @@
              </div>
              <?php $user_type = $this->session->userdata('user_type'); ?>
              <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">
+             <div id="overlay">
+            <div class="cv-spinner">
+    <span class="spinner"></span>
+  </div>
+</div>
                  <ul class="nav nav-tabs" id="purchasetabs">
                      <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
                      <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">My Purchase Orders</a></li>
                      <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
                  </ul>
                  <div class="tab-content">
-                     <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
-                         <div class="row">
-                             <div class="tg-tickets" >
-                                 <?php foreach ($purchaseorder as $purchaseorders) { ?>
-                                     <div class="tg-ticket" id="purchaseordersid">
-                                         <time class="tg-matchdate" datetime="2016-05-03"><?php
-                                                                                            $time = strtotime($purchaseorders->purchase_order_date);
-                                                                                            echo date('j  ', $time); ?><span><?php
-                                                                            $time = strtotime($purchaseorders->purchase_order_date);
-                                                                            echo date('M  ', $time); ?></span></time>
-                                         <div class="tg-matchdetail" >
-                                             <span class="tg-theme-tag"><?php echo $purchaseorders->puchase_order_number ?></span>
-                                             <h4>TENDER ID<?php echo $purchaseorders->prc_tender_id ?> </h4>
-                                             </h4>
-                                             <ul class="tg-matchmetadata">
-                                                 <li>
-                                                     <address>PURCHASE CATEGORY:<?php echo $purchaseorders->purchase_order_category ?></address>
-                                                 </li>
-                                             </ul>
-                                         </div>
-                                         <div class="tg-btnsbox">
-                                             <a class="tg-btn modal-view" onclick="mypurchasedetails(<?php echo htmlentities(json_encode($purchaseorders), ENT_QUOTES, 'UTF-8') ?>);" data-toggle="modal" data-target="#myModalpurchase">View</a>
-                                         </div>
-                                     </div>
-                                 <?php } ?>
-                                 <!--<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03">20<span>JAN</span></time>
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag">Order No : PCO8895544</span>
-										<h4>Tender Name 2</h4></h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Tender Short DIscription</address></li>
-										</ul>
-									</div>
-									<div class="tg-btnsbox">
-										<a class="tg-btn modal-view" href="#">View</a>
-									</div>
-								</div>-->
+                 <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
+                        <div class="row">
+                            <div class="tg-tickets">
 
 
-                             </div>
-                         </div>
-                     </div>
+                                <div id="allpurchasedetails"></div>
+
+
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                   
 
 
 
@@ -1318,7 +1323,7 @@
                      $('#myModal_changereq').modal();
                  });
 
-
+                
              });
          </script>
 
@@ -1521,17 +1526,119 @@ toggle between hiding and showing the dropdown content */
 
 
 
-//              $(document).ready(function() {
+             $(document).ready(function() {
    
-//    $("#keywordpurchaseorder").on("keyup", function() {
-//       // var activetab= $("#purchasetabs li.active").attr('id');
-//        //var tabcontentid = (activetab == 'allpurchaseorder') ?'purchaseordersid' : (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets'
-//      var value = $(this).val().toLowerCase();
-//  //console.log(activetab);
-//      $("#purchaseordersid div").filter(function() {
-//        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-//      });
-//    });
+   $("#keywordpurchaseorder").on("keyup", function() {
+       
+      // var activetab= $("#purchasetabs li.active").attr('id');
+       //var tabcontentid = (activetab == 'allpurchaseorder') ?'purchaseordersid' : (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets'
+     var value = $(this).val().toLowerCase();
+ //console.log(activetab);
+     $("#allpurchasedetails div").filter(function() {
+       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+     });
+     $('.hiddendate').addClass('hide');
+   });
  
-//  });
+ });
+
+setInterval(() => {
+    LoadAllPurchaseOrders();
+       // var allpurchaseorder = $('#allpurchasedetails').val();
+       
+    }, 50000);
+
+    function filterpurchasedata(tabcontentid,value){
+    
+    
+    $("#"+tabcontentid +" div[class!=tg-btnsbox]").filter(function() {
+        var datetime1=$(this).attr('datetime');
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)  
+    });
+    $('.hiddendate').addClass('hide');
+}
+
+$("#datepicker").on("change", function(){
+    
+    filterpurchasedata(tabcontentid,value);
+});
+
+
+function LoadAllPurchaseOrders() {
+
+$.ajax({
+    type: "POST",
+    url: '<?php echo base_url() ?>supplier/purchase_order/getAllpurchasesApi',
+    data: {
+        "purchaseid": 8,
+    },
+    type: 'POST',
+    // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+    // processData: false, // NEEDED, DON'T OMIT THIS
+    beforeSend: function() {
+// setting a timeout
+$("#overlay").fadeIn();
+},
+    success: function(result) {
+
+        datas = JSON.parse(result);
+        var count = datas.length;
+        if(count>0){
+            span1 ="<span>Total Purchase Count:"+count + "</span>";
+        }
+        else{
+            span1 ="<span>No Purchase To Display </span>";
+        }
+        $('#totalcount').html(span1);
+        html = "";
+        $.each(datas, function(i, data) {
+            //console.log(data.sorting);
+
+            html += "<div class='tg-ticket'><time class='tg-matchdate' >";
+            var date1 = new Date(data.purchase_order_date);
+            // console.log(date1);
+            // console.log(date1.getDate());
+            html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
+            html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4>TENDER " + data.id + "</h4></h4>";
+            html += "<div class='hiddendate' hidden >"+data.purchase_order_date+"</div>";
+            html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
+
+            html += "<div class='tg-btn modal-view pull-right' ><a  style='color:white;' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-purchase='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#myModalpurchase'>View</a>";
+           
+            html += "</div></div>";
+
+           
+        });
+        $('#allpurchasedetails').empty().append(html);
+    },
+    complete: function() {
+$("#overlay").fadeOut();
+},
+});
+
+
+}
+
+
+function myFunction($month_dat) {
+        var month = new Array();
+        month[0] = "JAN";
+        month[1] = "FEB";
+        month[2] = "MAR";
+        month[3] = "APR";
+        month[4] = "MAY";
+        month[5] = "JUN";
+        month[6] = "JUL";
+        month[7] = "AUG";
+        month[8] = "SEP";
+        month[9] = "OCT";
+        month[10] = "NOV";
+        month[11] = "DEC";
+
+        var d = new Date();
+        return month[$month_dat];
+        //document.getElementById("demo").innerHTML = n;
+    }
+
+
          </script>

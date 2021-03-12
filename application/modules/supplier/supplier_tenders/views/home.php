@@ -72,7 +72,7 @@
 </head>
 
 <main id="tg-main" class="tg-main tg-haslayout">
-    <section class="tg-main-section tg-haslayout">
+    <!--<section class="tg-main-section tg-haslayout">-->
         <div class="container">
   
             <?php
@@ -147,12 +147,13 @@
                                 <?php foreach ($getfavtender as $favten) { ?>
                                     <div class="tg-ticket">
 
-                                        <time class="tg-matchdate" datetime="2016-05-03"><small>Last date</small><br><?php
+                                        <time class="tg-matchdate"><small>Last date</small><br><?php
                                                                                                                         $time = strtotime($favten->tenderdate);
                                                                                                                         echo date('j  ', $time); ?>
                                             <span><?php $time = strtotime($favten->tenderdate);
                                                     echo date('M ', $time); ?></span></time>
                                         <div class="tg-matchdetail">
+                                       <div class='hiddendate' hidden ><?php echo $favten->tenderdate ?></div>
                                             <span class="tg-theme-tag"><?php echo $favten->tenderno ?></span>
                                             <h4>TENDER<?php echo $favten->tendername ?></h4>
                                             </h4>
@@ -237,7 +238,7 @@
         <div id="totalcount" style="text-align:center;">
        
         </div>
-    </section>
+    <!--</section>-->
 </main>
 <!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
 <!-- Modal -->
@@ -908,7 +909,7 @@
         getMytenders();
         changeTenderTye();
         universaltendersearch();
-        
+        $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
     });
 function universaltendersearch(){
    
@@ -917,12 +918,30 @@ function universaltendersearch(){
       var tabcontentid = (activetab == 'favtender') ?'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
     var value = $(this).val().toLowerCase();
 console.log(activetab);
-    $("#"+tabcontentid +" div[class!=tg-btnsbox]").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
+filtertenderdata(tabcontentid,value);
+    
   });
 
 }
+
+function filtertenderdata(tabcontentid,value){
+    
+    
+    $("#"+tabcontentid +" div[class!=tg-btnsbox]").filter(function() {
+        var datetime1=$(this).attr('datetime');
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)  
+    });
+    $('.hiddendate').addClass('hide');
+}
+
+$("#datepicker").on("change", function(){
+    var activetab= $("#tendertabs li.active").attr('id');
+      var tabcontentid = (activetab == 'favtender') ?'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+    var value = $(this).val();
+    console.log(value);
+    filtertenderdata(tabcontentid,value);
+});
+
 $(function() {
     console.log("klll");
 		$('#datepicker').datepicker({
@@ -955,9 +974,9 @@ $(function() {
         $.ajax({
             type: "POST",
             url: '<?php echo base_url() ?>supplier/tenders/getAAlltendersApi',
-            data: {
-                "tenderid": 8,
-            },
+            // data: {
+            //     "tenderid": 8,
+            // },
             type: 'POST',
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
@@ -980,13 +999,13 @@ $(function() {
                 $.each(datas, function(i, data) {
                     //console.log(data.sorting);
 
-                    html += "<div class='tg-ticket'><time class='tg-matchdate' datetime='2016-05-03'><small>Last date</small><br>";
+                    html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
                     var date1 = new Date(data.tender_date);
                     // console.log(date1);
                     // console.log(date1.getDate());
                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
                     html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
-
+                    html += "<div class='hiddendate' hidden >"+data.tender_date+"</div>";
                     html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
 
                     html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
@@ -1041,11 +1060,11 @@ $(function() {
                 html = "";
                 $.each(datas, function(i, data) {
 
-                    html += "<div class='tg-ticket'><time class='tg-matchdate' datetime='2016-05-03'><small>Last date</small><br>";
+                    html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
                     var date1 = new Date(data.tender_date);
                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
                     html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
-
+                    html += "<div class='hiddendate' hidden >"+data.tender_date+"</div>";
                     html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
 
                     html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
@@ -1094,13 +1113,13 @@ $(function() {
         var mytenderservices = JSON.parse($('#mytenderservices').val());
         $.each(mytenderservices, function(i, data) {
             console.log(data);
-            html += "<div class='tg-ticket'><time class='tg-matchdate' datetime='2016-05-03'><small>Last date</small><br>";
+            html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
             var date1 = new Date(data.tender_date);
             // console.log(date1);
             // console.log(date1.getDate());
             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
-
+            html += "<div class='hiddendate' hidden >"+data.tender_date+"</div>";
             html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
 
             html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";

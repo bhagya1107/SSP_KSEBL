@@ -70,7 +70,7 @@
 
 
 						<div class="col-sm-3 col-xs-12" >
- 					
+ 				<span>Tender Type:</span>	
 	<select class="select2 form-control" id="tenderType" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px;" >
 									<option>Select Tender Type</option>
  								<option  selected value="products">Products</option> 
@@ -84,14 +84,14 @@
  				
 
 						 <div class="col-sm-3 col-xs-12 ">
- 							
+							<span>Tender Date:</span>
  							<input  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
 						
  						<div class="col-sm-3 col-xs-12 ">
- 							
+							<span>keywords:</span>
  							<input type="text" class=" form-control"  id="keywordtender" name="keyword" placeholder="Key Word" >
 							
  								
@@ -99,7 +99,7 @@
 
 						<div class="col-sm-3 col-xs-12 " style="margin-top:10px;">
  							
- 							<input type="button" value="search" class="btn btn-primary">
+ 						<!--	<input type="button" value="search" class="btn btn-primary">-->
 						</div>
  					</div>
  				</div>
@@ -119,6 +119,7 @@
  					<div class="form-group row form_filter">
 
  						<div class="col-sm-3 col-xs-12" >
+							<span>Purchase Orders:</span>
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
  												data-placeholder="Select a TenderId" >
 												 <option  >Select  Orders</option>
@@ -132,8 +133,8 @@
  						</div>
 
 						<div class="col-sm-3 col-xs-12 ">
- 							
- 							<input type="date" class="select2 form-control"  id="district" name="group_flat__id" placeholder="Select a date" >
+						<span>Purchase Date:</span>
+ 							<input type="date" class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
@@ -149,7 +150,7 @@
  								
  						</div> -->
  						<div class="col-sm-3 col-xs-12 ">
- 							
+							<span>keywords:</span>
  							<input type="text" class=" form-control"  id="keywordpurchaseorder" name="keyword" placeholder="Key Word" >
 							
  								
@@ -157,7 +158,7 @@
 
 						<div class="col-sm-3 col-xs-12 " style="margin-top:10px;">
  							
- 							<input type="button" value="search" class="btn btn-primary">
+ 						<!--	<input type="button" value="search" class="btn btn-primary">-->
  						
  						</div>
  					</div>

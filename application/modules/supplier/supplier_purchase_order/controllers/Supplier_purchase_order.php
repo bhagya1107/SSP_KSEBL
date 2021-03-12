@@ -89,4 +89,14 @@ public function __construct()
 	   $result = curl_exec( $curl );
 	  return $result;
 		}
+
+		public function getAllpurchasesApi(){
+			$purchaseOrder=json_decode($this->getPOData());
+			$data['purchaseorder']=$purchaseOrder->result_data->list;
+			
+	
+			echo json_encode($data['purchaseorder']);
+			
+		}
+
 }

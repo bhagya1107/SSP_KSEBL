@@ -280,7 +280,7 @@
 								 <th scope="col">Order No</th>
 								  <th scope="col">Orders</th>
 								   <th scope="col">Date</th>
-								 <th scope="col">TransactionNo/Checkno</th>
+								 <th scope="col">TransactionNo/Cheque No</th>
 								 <th scope="col">Deductions</th>
 								  <th scope="col">TDS</th>
 								   <th scope="col">Penality</th>
