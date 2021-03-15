@@ -541,13 +541,19 @@ $(document).ready(function(){
 }
 	
 
-.ttm{
+	.ttm{
 		z-index:99;
 	}
 
 
+	.triggerbtn:active{
+		box-shadow: 0 5px #666;
+		transform: translateY(4px);
+	}
+
+
 	
-.triggerbtn:active , .triggerbtn:focus , .triggerbtn:hover{
+			.triggerbtn:active , .triggerbtn:focus , .triggerbtn:hover{
 				background-color:#272360;
 			}
 			.floating-right {

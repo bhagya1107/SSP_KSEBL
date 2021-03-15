@@ -1,100 +1,47 @@
-<style>
-    .gx-container{
-        margin-top: 8%;
-    width: 100%;
-    }
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-
-</style>
-<!-- loader backdrop -->
-
-<!-- Page container -->
-<div class="gx-container">
-
-  
-    <!-- Main Container -->
-    <div class="gx-main-container">
-
-     
-        <!-- Main Content -->
-        <div class="gx-main-content">
-             <!--gx-wrapper-->
-            
-                           
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ <div class="form-gap"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="text-center">
+                  <h3><i class="fa fa-lock fa-4x"></i></h3>
+                  <h2 class="text-center">Forgot Password?</h2>
+                  <p>You can reset your password here.</p>
+                  <p>Enter your Registered Mobile No</p>
+                  <div class="panel-body">
+    
+                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+    
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-earphone color-blue"></i></span>
+                          <input id="email" name="email" placeholder="Registered Mobile No" class="form-control"  type="email">
                         </div>
-                        <div class="container">
-                        <div class="login-form">    
-                        <div class="container-sm border card-body" style="width: 50%;">
-                                <fieldset >
-								<h3 style="text-align:center;">Forgot Password</h3><br>
-                                <div style="text-align:center;">
-                                    <label>Enter your Registered Mobile No</label><br>
-                                    <div class="form-group" id="email_group">
-                                        <input name="mobile" id="mobile" class="form-control form-control-lg" placeholder="Enter Your Mobile No" type="email">
-                                    </div><br>
-                                    
-                                    <div style="color: red;"><span> </span></div>
-                         
-                                    <button type="button" id="generateotp" class="btn btn-primary">Submit</button><br>
-                                    </div>
-<!--                                    <span style="float:right;"><a href="<?php echo site_url('/');?>" title="Login">Login</a></span>
-                      -->
-                                </fieldset>
-                        </div>
-                        </div>
-                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Submit" type="submit">
+                      </div>
                       
-            <!--/gx-wrapper-->
-
-            <!-- Footer -->
-            <footer class="gx-footer">
-                <div class="d-flex flex-row justify-content-between">
-                   <!---  <p style="margin-left:470px;">NETROXE IT SOLUTIONS</p>-->
+                      <input type="hidden" class="hide" name="token" id="token" value=""> 
+                    </form>
+    
+                  </div>
                 </div>
-            </footer>
-            <!-- /footer -->
-
-        </div>
-        <!-- /main content -->
-
-    </div>
-    <!-- /main container -->
-
+              </div>
+            </div>
+          </div>
+	</div>
 </div>
-<!-- /page container -->
-
-<!-- Menu Backdrop -->
-<div class="menu-backdrop fade"></div>
-<!-- /menu backdrop -->
-
-<!--Load JQuery-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/web_user/files\bower_components\bootstrap\js\bootstrap.min.js"></script> -->
-    <!-- jquery slimscroll js -->
-
-</body>
-</html>
-
-<script>
-
-$(document).ready(function(){
-
-$("#generateotp").click(function() {
-	$('#paswordmess').addClass('hide');
-	var mobile=$('#mobile').val();
-	console.log(mobile);
-	console.log($.isNumeric(mobile));console.log(mobile.length);
- if($.isNumeric(mobile)&& mobile.length ==10 ){
-	 $('#paswordmess').removeClass('hide');
- }
- else{
-	 alert ("enter a valid no");
- }
-});
-});
-</script>
-
-
+<style>
+    
+    .form-gap {
+    padding-top: 70px;
+}
+</style>

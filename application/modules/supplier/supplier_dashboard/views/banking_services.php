@@ -22,30 +22,43 @@
 ::-webkit-scrollbar-thumb:hover { 
   background: #555; 
 }
+
+@media screen and (max-width: 767px){
+        .searchbar{
+            display:none;
+        }
+
+    }
+    
 </style>
 <main id="tg-main" class="tg-main tg-haslayout">
 	<div class="container">
 		<div class="row">
 			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+
+                <div class="col-md-3 col-sm-4 col-xs-12">
+						<?php $this->view('profile_sidebar',$page); ?>
+				</div>
+
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
- <?php 
-        $msg=$this->session->flashdata('msg'); 
-        if($msg)
-        {
-          ?>
-          
-          <div class="alert alert-success" id="mydivss">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            <?php
-           echo $msg;
-            ?>
-          </div>
-        
-        <?php 
-        }
-        ?>
+                    <?php 
+                            $msg=$this->session->flashdata('msg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-success" id="mydivss">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                <?php
+                            echo $msg;
+                                ?>
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
 
                     <div class="row">
                         <form method="post" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/insert_bank_details')?>" >
@@ -153,7 +166,7 @@
                                     <p>Waiting for Approval</p>
                                  <?php  }
                                     ?>
-</td>
+                                    </td>
 
                                     <td><a href="<?php echo base_url('supplier/dashboard/delete/'.$value->id)?>" onclick="return confirm('Are you sure, you want to delete it?')"><span style="color:red"><i class="fa fa-trash" aria-hidden="true"></i></span></a></td>
 
@@ -168,9 +181,7 @@
 
 
 				</div>
-				<div class="col-md-3 col-sm-4 col-xs-12">
-						<?php $this->view('profile_sidebar',$page); ?>
-				</div>
+			
 			</div>
 		</div>
 	</div>

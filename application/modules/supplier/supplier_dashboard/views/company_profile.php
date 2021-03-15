@@ -24,35 +24,18 @@
   background: #555; 
 }
 
+@media screen and (max-width: 767px){
+  .searchbar{
+    display:none;
+  }
+
+}
+
 
 </style>
 
 
-<!-- <div class="tg-banner tg-haslayout">
-	<div class="tg-imglayer">
-		<img src="images/bg-pattran.png" alt="image desctription">
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="tg-banner-content tg-haslayout">
-				<div class="tg-pagetitle">
-					<h1>Profile</h1>
-				</div>
-				<ol class="tg-breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li class="active">Profile</li>
-				</ol>
-				<br />
-			</div>
-		</div>
-	</div>
-</div> -->
-<!--************************************
-		Banner End
-*************************************-->
-<!--************************************
-		Main Start
-*************************************-->
+
 		<?php 
         $msg=$this->session->flashdata('msg'); 
         if($msg)
@@ -76,13 +59,17 @@
 		<div class="row">
 	
 			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">  
+
+				<div class="col-md-3 col-sm-4 col-xs-12">
+						<?php $this->view('profile_sidebar',$page); ?>
+				</div>
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
 					 <!-- <?=form_open_multipart('supplier/dashboard/update_companyprofile');  ?> -->
 					   <form method="post" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/update_companyprofile')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
-						<div class="table-responsive">
+						<div class="">
 							
-							<table class="table table-bordered table-hover editcompany">
+							<table class="table editcompany">
 								<tr>
 									<input type="hidden" name="supplierid" value="<?php echo $getcompanydetails->supplierid;?>">
 									<td style="text-align:right;width:35%;">Company Name	</td>
@@ -177,10 +164,13 @@
 									
 							</table>
 							<div class="form-group" >
-                            <a class="tg-btn pull-center editbutton" id="editprofilefn" style="margin-left:690px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>
-                               <button type="submit" class="tg-btn pull-center savebutton hide"   id="saveprofilefn"  style="margin-left:443px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
-                               <a href="<?php echo base_url('supplier/dashboard/profile');?>" class="tg-btn pull-center savebutton hide"   id="" style="margin-left:43px; background-color: #ff6666!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></a>
-							  </div>
+                <div class="col-md-offset-4 pull-right col-xs-offset-4">
+                  <a class="tg-btn pull-center editbutton" id="editprofilefn" style="" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>
+                </div>
+                 
+                  <button type="submit" class="tg-btn pull-center savebutton hide"   id="saveprofilefn"  style="" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
+                  <a href="<?php echo base_url('supplier/dashboard/profile');?>" class="tg-btn pull-center savebutton hide"   id="" style="background-color: #ff6666!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></a>
+							</div>
  
                        
 
@@ -191,9 +181,7 @@
 
 				</div>
 			
-				<div class="col-md-3 col-sm-4 col-xs-12">
-						<?php $this->view('profile_sidebar',$page); ?>
-				</div>
+				
 			</div>
 		</div>
 	</div>

@@ -18,6 +18,16 @@
 ::-webkit-scrollbar-thumb:hover { 
   background: #555; 
 }
+
+@media screen and (max-width: 767px){
+  .searchbar{
+    display:none;
+  }
+
+}
+
+
+
 </style>
 
 <main id="tg-main" class="tg-main tg-haslayout"> 
@@ -25,38 +35,37 @@
 		
 		<div class="row">
 			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+
+        <div class="col-md-3 col-sm-4 col-xs-12">
+						<?php $this->view('profile_sidebar',$page); ?>
+				</div>
+
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
 
-						<div class="table-responsive">
+						<div class="">
   
-       <?php 
-        $msg=$this->session->flashdata('msg'); 
-        if($msg)
-        {
-          ?>
-          
-          <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            <?php
-           echo $msg;
-            ?> 
-          </div>
-        
-        <?php 
-        } 
-        ?>
-  <!-- 
-							<table class="table table-bordered table-hover"> 
-                            <tr>
-                            <td><h3>Access Permission</h3></td>
-                            </tr>
-								
-							</table> -->
+                <?php 
+                  $msg=$this->session->flashdata('msg'); 
+                  if($msg)
+                  {
+                    ?>
+                    
+                    <div class="alert alert-success">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                      <?php
+                    echo $msg;
+                      ?> 
+                    </div>
+                  
+                  <?php 
+                  } 
+                  ?>
+
 						</div>
 
-						<div style="margin-left: 100px; border-style: solid;  border-width: thin; width: 400px;" ><br><br>
+						<div style=" border-style: solid;  border-width: thin; width: 400px;" ><br><br>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
               <form method="post" action="<?php echo base_url('supplier/dashboard/Supplier_dashboard/insert_access_permission');?>">
               <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
@@ -77,45 +86,43 @@
                        </option>
                      </select>
                    </div>
-						<div   id="div2">
-              <h1></h1>
+                <div   id="div2">
+                  <h1></h1>
+                </div>
+                <div id="div2" style="margin-left: 100px;">
+
+                  <input type="checkbox" id="procurement_plan" name="procurement_plan" value="1" >
+                  <label for="accounts"style="margin-top:-21px;margin-left:27px;"> Procurement Plan
+                  <!--  <?php echo $getcompanypermissiondetails->procurement_plan;?> <?php echo $getcompanypermissiondetails->user_type;?> -->
+                    
+                  </label><br>
+            
+                  <input type="checkbox" id="tenders" name="tenders" value="1"  >
+                  <label for="tenders" style="margin-top:-21px;margin-left:27px;"> Tenders</label><br>
+                  
+                  <input type="checkbox" id="purchase_order" name="purchase_order" value="1"  >
+                  <label for="purchase_order" style="margin-top:-21px;margin-left:27px;" > Purchase Order</label><br>
+                  
+                  <input type="checkbox" id="delivery" name="delivery" value="1" >
+                  <label for="delivery" style="margin-top:-21px;margin-left:27px;" > Delivery</label><br>
+                  
+                  <input type="checkbox" id="accounts" name="accounts" value="1"  >
+                  <label for="accounts" style="margin-top:-21px;margin-left:27px;"> Accounts</label><br>
+
+
+                  <input type="checkbox" id="work_measurement" name="work_measurement" value="1" >
+                  <label for="work_measurement" style="margin-top:-21px;margin-left:27px;"> Work Measurement</label><br>
+              
+                  <input type="submit" class="tg-btn " value="Submit">
+						    </div><br><br>
+              </form>
             </div>
-            <div id="div2" style="margin-left: 100px;">
-
-						<input type="checkbox" id="procurement_plan" name="procurement_plan" value="1" >
-  <label for="accounts"style="margin-top:-21px;margin-left:27px;"> Procurement Plan
-   <!--  <?php echo $getcompanypermissiondetails->procurement_plan;?> <?php echo $getcompanypermissiondetails->user_type;?> -->
-     
-   </label><br>
-					<!-- 	</div>
-						<div> -->
-							<input type="checkbox" id="tenders" name="tenders" value="1"  >
-  <label for="tenders" style="margin-top:-21px;margin-left:27px;"> Tenders</label><br>
-  <!-- 
-  <input type="checkbox" id="delivery" name="delivery" value="delivery Mager">
-  <label for="delivery" style="margin-top:-21px;margin-left:27px;"> My Tenders</label><br> -->
-  
-  <input type="checkbox" id="purchase_order" name="purchase_order" value="1"  >
-  <label for="purchase_order" style="margin-top:-21px;margin-left:27px;" > Purchase Order</label><br>
-  
-  <input type="checkbox" id="delivery" name="delivery" value="1" >
-  <label for="delivery" style="margin-top:-21px;margin-left:27px;" > Delivery</label><br>
-  
-  <input type="checkbox" id="accounts" name="accounts" value="1"  >
-  <label for="accounts" style="margin-top:-21px;margin-left:27px;"> Accounts</label><br>
-
-
-  <input type="checkbox" id="work_measurement" name="work_measurement" value="1" >
-  <label for="work_measurement" style="margin-top:-21px;margin-left:27px;"> Work Measurement</label><br>
-  <!-- 
-  <input type="checkbox" id="Basic" name="Basic" value="Basic Manager">
-  <label for="Basic" style="margin-top:-21px;margin-left:27px;"> Invoices</label><br>
-  
-  <input type="checkbox" id="Basic" name="Basic" value="Basic Manager">
-  <label for="Basic" style="margin-top:-21px;margin-left:27px;"> Payments</label><br> -->
-  <input type="submit" class="tg-btn " value="Submit">
-						</div><br><br>
-  </form>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</main>
 
   <script type="text/javascript">
   $(document).ready(function(){ 
@@ -178,12 +185,4 @@
 </script>
 
   
-</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-12">
-						<?php $this->view('profile_sidebar',$page); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-</main>
+

@@ -27,56 +27,45 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+@media screen and (max-width: 767px){
+        .searchbar{
+            display:none;
+        }
+
+    }
 </style>
-<!-- <div class="tg-banner tg-haslayout">
-	<div class="tg-imglayer">
-		<img src="images/bg-pattran.png" alt="image desctription">
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="tg-banner-content tg-haslayout">
-				<div class="tg-pagetitle">
-					<h1>Manage Users</h1>
-				</div>
-				<ol class="tg-breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li class="active">Manage Users</li>
-				</ol>
-				<br />
-			</div>
-		</div>
-	</div>
-</div> -->
-<!--************************************
-		Banner End
-*************************************-->
-<!--************************************
-		Main Start
-*************************************-->
+
 
 <main id="tg-main" class="tg-main tg-haslayout">
 	<div class="container">
 		<div class="row">
 			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+
+      <div class="col-md-3 col-sm-4 col-xs-12">
+						<?php $this->view('profile_sidebar',$page); ?>
+				</div>
+
+        
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
             <?php 
-        $msg=$this->session->flashdata('msg'); 
-        if($msg)
-        {
-          ?>
-          
-          <div class="alert alert-success" id="mydivss">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            <?php
-           echo $msg;
-            ?>
-          </div>
-        
-        <?php 
-        }
-        ?>
+              $msg=$this->session->flashdata('msg'); 
+              if($msg)
+              {
+                ?>
+                
+                <div class="alert alert-success" id="mydivss">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                  <?php
+                echo $msg;
+                  ?>
+                </div>
+              
+              <?php 
+              }
+              ?>
 
             <div class="row">
               <form method="post" action="<?php echo base_url('supplier/dashboard/insert_companyprofile')?>">
@@ -135,14 +124,14 @@
                         display: none;
                       }
                    </style>
-               <!--     <script type="text/javascript">
+                    <!--     <script type="text/javascript">
                       $('#edit-supplier').click(function(){
-      $('.showprofile').removeAttr('readonly');
-      $('#editbutton').addClass('hide');
-      
-    });
+                      $('.showprofile').removeAttr('readonly');
+                      $('#editbutton').addClass('hide');
+                      
+                    });
 
-                   </script> -->
+                                  </script> -->
                 </div>
                 </form>
                   <div class="col-md-7">
@@ -172,9 +161,7 @@
 
 
 				</div>
-				<div class="col-md-3 col-sm-4 col-xs-12">
-						<?php $this->view('profile_sidebar',$page); ?>
-				</div>
+			
 			</div>
 		</div>
 	</div>

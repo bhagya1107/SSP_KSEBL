@@ -1884,7 +1884,7 @@ address {
     /* height:160px; */
     margin: 0 auto;
     display: block;
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 

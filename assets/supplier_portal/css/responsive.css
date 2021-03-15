@@ -201,6 +201,18 @@
     }
 }
 
+
+/* /km added */
+
+@media (min-width:770px) and (max-width:991px) {
+    .tg-logo {
+        margin-top: -30px;
+    }
+}
+
+
+/* km ends */
+
 @media (max-width:991px) {
     .tg-logo {
         width: 70px;
@@ -500,6 +512,8 @@
     .tg-nav {
         z-index: 2;
         position: relative;
+        /* km */
+        margin-top: -32px;
     }
     .tg-nav .navbar-header {
         position: static;
@@ -515,6 +529,8 @@
         float: left;
         z-index: 3;
         position: relative;
+        /* km */
+        margin-top: 7px;
     }
     .tg-addnavigationm-mobile {
         border: 0;

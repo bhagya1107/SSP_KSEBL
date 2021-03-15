@@ -37,6 +37,15 @@
     div.dataTables_wrapper {
         margin: 0 auto;
     }
+    
+
+    @media screen and (max-width: 767px){
+        .searchbar{
+            display:none;
+        }
+
+    }
+
 </style>
 
 
@@ -63,6 +72,14 @@
                     <?php
                     }
                     ?>
+
+
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <?php $this->view('profile_sidebar', $page); ?>
+
+                    </div>
+
+
                     <div class="col-md-9 col-sm-8 col-xs-12 pull-right">
                         <ul class="nav nav-tabs">
                             <?php
@@ -142,66 +159,7 @@
 
                                                             </tr>
                                                         </thead>
-                                                        <!-- <tbody>
-                                                                <tr>
-																<?php foreach ($getcategroy as $category) { ?>
-                                                                    <td>1</td>
-                                                                    <td>Street Light</td>
-                                                                    <td>Led </td>
-																	<td data-toggle="modal" data-target="#orders" id="edit-user" style="color:#eebd01">2 </td>
-																	<td data-toggle="modal" data-target="#overdue" id="edit-user"style="color:#eebd01">2 </td>
-																	<td data-toggle="modal" data-target="#pay" id="edit-user"style="color:#eebd01">1 </td>
-																	<td data-toggle="modal" data-target="#defects" id="edit-user" style="color:#eebd01"> 2</td>
-																	<td data-toggle="modal" data-target="#myModal_vmi1" id="edit-user"style="color:#eebd01">2 </td>
-																	<td><span class="score">
-    <div class="score-wrap">
-        <!--<span class="stars-active" style="width:88%">-->
-                                                        <!-- <i class="fa fa-star checked" aria-hidden="true"></i>
-            <i class="fa fa-star checked" aria-hidden="true"></i>
-            <i class="fa fa-star checked" aria-hidden="true"></i>
-            <i class="fa fa-star checked" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-			 
-        <!--</span>-->
-                                                        <!--</td>
-																	<td></td>
-                                                                    <td><span style="color:red"><i class="fa fa-trash" aria-hidden="true"></i></span></td>
-                                                                    <td>
-                                                                    <div class="dropdown">
-                                                                        <button class="btn btn-primary dropdown-toggle"  data-toggle="modal" data-target="#myModal_capacity" type="button" id="capacityinfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                            Capacity Info
-                                                                        </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-	<a href="javascript:void(0);" class="dropdown-item btn-outline-primary  mt-1" data-toggle="modal" data-target="#orders" id="edit-user"><i class="zmdi zmdi-edit zmdi-hc-lg"></i> Orders</a>
-	<div class="dropdown-divider"></div>
-	<a href="javascript:void(0);" class="dropdown-item btn-outline-danger  mt-1" data-toggle="modal" data-target="#overdue" id="delete-user" ><i class="zmdi zmdi-delete zmdi-hc-lg"></i> Overdue </a>
-
-	<div class="dropdown-divider"></div>
-	<a href="javascript:void(0);" class="dropdown-item btn-outline-info  mt-1 activate" data-toggle="modal" data-target="#pay" role="button" id="activate-floor">Receipt History</a>
-
-	<div class="dropdown-divider"></div>
-	<a href="javascript:void(0);" class="dropdown-item btn btn-outline-danger mt-1 activate" data-toggle="modal" data-target="#defects" role="button" id="activate-user">Defects</a>
-
-<!--	<div class="dropdown-divider"></div>
-	<a href="javascript:void(0);" class="dropdown-item btn btn-outline-danger mt-1 activate" role="button" id="activate-user">On-Time Performance</a>-->
-
-                                                        <!-- <div class="dropdown-divider"></div>
-	<a href="javascript:void(0);" class="dropdown-item btn btn-outline-danger mt-1 activate" role="button" id="activate-user" data-toggle="modal" data-target="#myModal_vmi1">Vendor Managed Inventory</a>
-
-   <!-- <div class="dropdown-divider"></div>
-	<a href="javascript:void(0);" class="dropdown-item btn btn-outline-danger mt-1 activate" role="button" id="activate-user" data-toggle="modal" data-target="#myModal_ci">Consigned Inventory</a>-->
-
-
-                                                        <!-- <div class="dropdown-divider"></div>
-	<a href="javascript:void(0);" class="dropdown-item btn btn-outline-danger mt-1 activate" role="button" id="activate-user" data-toggle="modal" data-target="#myModal_capacity">Capacity Info</a>
-
-   
-  </div>
-</div></td>
-																<?php } ?>
-                                                                </tr>
-                                                                </tbody>-->
+                                                        
                                                     </table>
                                                 </div>
                                             </div>
@@ -279,10 +237,7 @@
                     </div>
 
 
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <?php $this->view('profile_sidebar', $page); ?>
-
-                    </div>
+                    
                 </div>
             </div>
         </div>

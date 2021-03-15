@@ -25,36 +25,26 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+@media screen and (max-width: 767px){
+  .searchbar{
+    display:none;
+  }
+
+}
+
+
 </style>
-<!-- <div class="tg-banner tg-haslayout">
-	<div class="tg-imglayer">
-		<img src="images/bg-pattran.png" alt="image desctription">
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="tg-banner-content tg-haslayout">
-				<div class="tg-pagetitle">
-					<h1>Personal Profile</h1>
-				</div>
-				<ol class="tg-breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li class="active">Personal Profile</li>
-				</ol>
-				<br />
-			</div>
-		</div>
-	</div>
-</div> -->
-<!--************************************
-		Banner End
-*************************************-->
-<!--************************************
-		Main Start
-*************************************-->
+
 <main id="tg-main" class="tg-main tg-haslayout">
 	<div class="container">
 		<div class="row">
 			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+
+				<div class="col-md-3 col-sm-4 col-xs-12">
+						<?php $this->view('profile_sidebar',$page); ?>
+				</div>
+
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
 
 						<div class="table-responsive">
@@ -94,9 +84,7 @@
 						</div>
 
 				</div>
-				<div class="col-md-3 col-sm-4 col-xs-12">
-						<?php $this->view('profile_sidebar',$page); ?>
-				</div>
+				
 			</div>
 		</div>
 	</div>
