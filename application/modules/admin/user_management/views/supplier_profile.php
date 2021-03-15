@@ -9,7 +9,7 @@
                         <div class="col-lg-8">
                             <div class="page-header-title">
                                 <div class="d-inline">
-                                    <h4>Supplier Profile</h4>
+                                    <h4> Profile</h4>
                                     <!-- <span>Supplier details</span> --> 
                                 </div>
                             </div>
@@ -22,7 +22,7 @@
                                     </li>
                                     <li class="breadcrumb-item"><a href="<?= admin_url('user_management/suppliers') ?>">Supplier</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Supplier Profile</a>
+                                    <li class="breadcrumb-item"><a href="#"> Profile</a>
                                     </li>
                                 </ul>
                             </div>
@@ -340,7 +340,7 @@
                                             <div class="card-block" >
                                                 <div class="row" >
                                             <!--    <div class="<?=$div_width_s?>" <?= $classname_products?> > -->
-                                               <div class="col-xl-12 col-md-12" style="<?php if($getuserdetails->user_type==3 or $getuserdetails->user_type==1) echo "display: none;" ?>">
+                                               <div class="col-xl-12 col-md-12" style="<?php if($getuserdetails->user_type==2 or $getuserdetails->user_type==1) echo "display: none;" ?>">
                                                 <div class="card table-card">
 
                                                     <div class="card-block">
@@ -384,7 +384,7 @@
                                             </div>
 
                                                  <!--  <div class="<?=$div_width_s?>" <?= $classname_products?> > -->
-                                                   <div class="col-xl-12 col-md-12" style="<?php if($getuserdetails->user_type==2 or $getuserdetails->user_type==1) echo "display: none;" ?>">
+                                                   <div class="col-xl-12 col-md-12" style="<?php if($getuserdetails->user_type==3 or $getuserdetails->user_type==1) echo "display: none;" ?>">
                                                 <div class="card table-card">
 
                                                     <div class="card-block">

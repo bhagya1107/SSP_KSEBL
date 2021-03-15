@@ -94,7 +94,7 @@
                             <input type="number" class="form-control" name="accountno" required />
                         </div>
                        <div class="form-group">
-                            <label>Cancel Cheque Leaf/Letter From Bank</label>
+                            <label>Cancel Cheque Leaf/Letter From Bank<br>(pdf up to 10mb)</label>
                             <input type="file" class="form-control" name="file" />
                         </div>
                         

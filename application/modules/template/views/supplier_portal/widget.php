@@ -503,13 +503,13 @@ hr{
                         <!-- <a href="#">Order Tracking<i></i></a>
                         <a href="#">Delivery Confirmation<i></i></a> -->
                 <!--<a href="<?=supplier_url('accounts/workmeasure')?>" class="active">WORK MEASUREMENT</a>-->
-                <!-- <a href="<?=supplier_url('workmeasurement/workmeasure')?>">WORK MEASUREMENT</a> -->
+                 
 
     
                 <a style="<?php if($getcompanypermissiondetails->accounts=='0') echo "display: none;" ?>"  href="<?=supplier_url('accounts/payments')?>" class=""><b>ACCOUNTS</b></a><hr>
                         <a style="<?php if($getcompanypermissiondetails->accounts=='0') echo "display: none;" ?>"  href="<?=supplier_url('accounts/payments')?>">Invoices</a>
                         <a  style="<?php if($getcompanypermissiondetails->accounts=='0') echo "display: none;" ?>"  href="<?=supplier_url('accounts/payments/2')?>">Payments</a>
-
+                        <a href="#"><b>WORK MEASUREMENT</b></a>  
                 <?php   
                 $user_type=$this->session->userdata('user_type');
 
@@ -521,7 +521,7 @@ hr{
                         <a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" href="<?=supplier_url('dashboard/banking')?>">Banking Details</a>
                         <a href="<?=supplier_url('dashboard/manage_user')?>" style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>">Employees<i></i></a>
                         <!--<a style="<?php if( $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" href="<?=supplier_url('dashboard/attachments')?>">Attachments</a>-->
-                        <a href="<?=supplier_url('dashboard/portfolio')?>" style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>">Company Portfolio</a>
+                        <a href="<?=supplier_url('dashboard/portfolio')?>" style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"> Portfolio</a>
                         <a href="<?=supplier_url('dashboard/subscription')?>" style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>">Subscription Status</a>
                         <a href="<?=supplier_url('dashboard/preference_profile')?>" style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>">Preferences</a>
                         <a href="<?=supplier_url('dashboard/notifications')?>" style="<?php if($user_type=='6' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>">Notifications<i></i></a>
