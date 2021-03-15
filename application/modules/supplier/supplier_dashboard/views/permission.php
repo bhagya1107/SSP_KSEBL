@@ -59,7 +59,8 @@
 						<div style="margin-left: 100px; border-style: solid;  border-width: thin; width: 400px;" ><br><br>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
               <form method="post" action="<?php echo base_url('supplier/dashboard/Supplier_dashboard/insert_access_permission');?>">
-
+              <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
+   
               			 <div class="form-group" style="width:200px; margin-left: 100px;" id="div1">
                     <!--  <label>User Type</label> -->
                      <select class="form-control" name="user_type" id="s" >

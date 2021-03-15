@@ -255,7 +255,7 @@ $( document ).ajaxStop(function() {
 		                <div class="dropzone">  
    
 			                  <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-			                   <input type="file" class="upload-input"  name="file" id="file" accept=".xls, .xlsx" required />
+			                   <input type="file" onclick="myFunction1()" class="upload-input"  name="file" id="file" accept=".xls, .xlsx" required />
       
 
 		                </div>  
@@ -391,14 +391,22 @@ $( document ).ajaxStop(function() {
     <script type="text/javascript">
 	$(document).ready(function(){
   $('form input').change(function () {
-    $('form p').text("1 file selected");
-     $('#p').css('display','block');
+    // $('form p').text("1 file selected");
+    // $('form p').text("1 file selected");
+    //  $('#p').css('display','block');
+    
   });
 });
 
 
 function myFunction() {
   document.getElementById("p").style.display = "none";
+
+  // $('#submitb').css('display','none');
+}
+
+function myFunction1() {
+  // document.getElementById("p").style.display = "none";
 
   // $('#submitb').css('display','none');
 }
@@ -424,12 +432,13 @@ function myFunction() {
 }
 
 .center1 {
+  border: 1px dashed black;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 450px;
-	height: 230px;
+	width: 550px;
+	height: 250px;
 	border-radius: 3px;
 	box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
 	background: #fff;

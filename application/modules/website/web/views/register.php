@@ -82,7 +82,18 @@
           </section>
         </div> -->
      <?php $s=$this->session->set_userdata('supplier',8); ?>  
-       <form method="POST" action="<?php echo base_url().'supplier/dashboard/regcompany'?>" id="frm"> 
+     <script>
+        function validateAndSend() {
+            if (regform.companyname.value == '' && regform.individualname.value == '') {
+                alert('You have to enter Company name.');
+                return false;
+            }
+            // else {
+            //   regform.submit();
+            // }
+        }
+    </script>
+       <form method="POST" action="<?php echo base_url().'supplier/dashboard/regcompany'?>" id="frm" name="regform"> 
             <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
       <!-- 'supplier/dashboard/regcompany' -->
       <!-- <?=form_open('');?> -->
@@ -96,6 +107,7 @@
                 <input type="radio" id="is_company" name="comp_type" required > &nbsp;Supplier  
               </h4>
             </p>
+    <div class="checkbox-group required">
        <div class="companyStatus">
               <h4 class="section-heading">COMPANY NAME </h4> 
               <p><input type="text" class="form-control" placeholder="Enter company" name="companyname" id=""></p>
@@ -105,6 +117,7 @@
               <h4 class="section-heading"> NAME (AS PER THE PAN CARD)</h4> 
               <p><input type="text" class="form-control" placeholder="Enter Name" name="individualname" id=""></p>
             </div>
+  </div>
       
             <h4 class="section-heading">PAN CARD NO</h4>
             <p><input type="text" class="form-control" required placeholder="Enter your PAN No" name="pannumber" id="panNumber"  ></p>
@@ -158,7 +171,7 @@
           <label for="">
               <input type="checkbox" name="" id="agree_terms"> I agree to the  <a href="#">Terms and condition</a>
           </label>
-          <input type="submit" class="form-control submit" value="Register" disabled>
+          <input type="submit" class="form-control submit" onclick="validateAndSend()" value="Register" disabled>
 
         </div>
   

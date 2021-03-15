@@ -107,7 +107,7 @@
 								<tr>
 									<td style="text-align:right">GST/TIN	</td>
 									<td><input type="text" id="gstin" name="gstin" class="form-control " readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
-									<td><input type="file"  name="file2" class="form-control showprofile choose-file hide"  value="doc.img"/>
+									<td><label  class="choose-file hide ">pdf up to 10mb</label><input type="file"  name="file2" class="form-control showprofile choose-file hide"  value="doc.img"/>
 											 <?php if($getcompanydetails->gst_tinfile=='')
                                                                  {?>
                                                                  <p>No GST/TIN Certificate</p>
@@ -119,7 +119,7 @@
 								<tr>
 									<td style="text-align:right">Incorporation No </td>
 									<td><input type="text"  class="form-control "  id="incorporation" name="incorporation" readonly value="<?php echo $getcompanydetails->incorporationno;?>"/>	</td>
-									<td><input type="file" name="file1" class="form-control choose-file hide " value=""/>
+									<td><label  class="choose-file hide ">pdf up to 10mb</label><input type="file" name="file1"  class="form-control choose-file hide " value=""/>
 										<?php if($getcompanydetails->incorporationcertificate=='')
                                                                  {?>
                                                                  <p>No Incorporation Certificate</p>
@@ -150,20 +150,20 @@
 								</tr>
 								<tr>
 									<td style="text-align:right">Email	</td>
-									<td><input type="text" name="email" id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td>
+									<td><input type="email" name="email" id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td>
 									<td></td>
 								</tr>
 								
 								<tr>
 									<td style="text-align:right">Website	</td>
-									<td><input type="text" name="website" id="website" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->website;?>"/>	</td>
+									<td><input type="url" name="website" id="website" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->website;?>"/>	</td>
 									<td></td>
 								</tr>
 								
 								<tr>
 								<td style="text-align:right">Authorized Person	</td>
 									<td><input type="text" name="authorizedperson" id="authorizedperson" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->authorizedperson;?>"/>	</td>
-									<td><input type="file" name="file3" class="form-control showprofile choose-file hide"  value="doc.img"/>
+									<td><label  class="choose-file hide ">pdf up to 10mb</label><input type="file" name="file3" class="form-control showprofile choose-file hide"  value="doc.img"/>
 
       	                                <?php if($getcompanydetails->authorisedpersonfile=='')
                                                                  {?>
