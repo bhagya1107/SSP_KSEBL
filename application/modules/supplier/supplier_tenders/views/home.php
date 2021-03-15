@@ -72,7 +72,7 @@
 </head>
 
 <main id="tg-main" class="tg-main tg-haslayout">
-    <!--<section class="tg-main-section tg-haslayout">-->
+    <section class="tg-main-section tg-haslayout">
         <div class="container">
   
             <?php
@@ -238,7 +238,7 @@
         <div id="totalcount" style="text-align:center;">
        
         </div>
-    <!--</section>-->
+    </section>
 </main>
 <!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
 <!-- Modal -->
@@ -906,8 +906,8 @@
 </style>
 <script>
     $(document).ready(function() {
-        getMytenders();
-        changeTenderTye();
+        getMytenders(true);
+        changeTenderTye(true);
         universaltendersearch();
         $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
     });
@@ -957,19 +957,19 @@ $(function() {
             var type = $('#tenderType').val();
             if (type == 'all') {
                 $('#tender_tab').text('All Tenders');
-                LoadAllTenders();
+                LoadAllTenders(true);
             } else if (type == 'products') {
                 $('#tender_tab').text('Tenders');
-                getMytenders();
+                getMytenders(true);
             } else if (type == 'services') {
                 $('#tender_tab').text('Tenders');
-                getMyservices();
+                getMyservices(true);
             }
         });
 
     }
 
-    function LoadAllTenders() {
+    function LoadAllTenders(overlay) {
 
         $.ajax({
             type: "POST",
@@ -981,8 +981,10 @@ $(function() {
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
             beforeSend: function() {
+                if(overlay){
         // setting a timeout
         $("#overlay").fadeIn();
+                }
       },
             success: function(result) {
 
@@ -1027,14 +1029,16 @@ $(function() {
                 $('#alltenderdetails').empty().append(html);
             },
             complete: function() {
+                if(overlay){
         $("#overlay").fadeOut();
+                }
       },
         });
 
 
     }
 
-    function getMytenders() {
+    function getMytenders(overlay) {
 
 
         $.ajax({
@@ -1045,7 +1049,10 @@ $(function() {
             // processData: false, // NEEDED, DON'T OMIT THIS
             beforeSend: function() {
         // setting a timeout
+        if(overlay){
+            console.log(overlay);
         $("#overlay").fadeIn();
+        }
       },
             success: function(result) {
                 datas = JSON.parse(result);
@@ -1080,7 +1087,9 @@ $(function() {
                 $('#alltenderdetails').empty().append(html);
             },
             complete: function() {
+                if(overlay){
         $("#overlay").fadeOut();
+                }
       },
         });
     }
@@ -1095,7 +1104,9 @@ $(function() {
             // processData: false, // NEEDED, DON'T OMIT THIS
             beforeSend: function() {
         // setting a timeout
+        if(overlay){
         $("#overlay").fadeIn();
+        }
       },
             success: function(result) {
                 datas = JSON.parse(result);
@@ -1135,7 +1146,9 @@ $(function() {
         $('#alltenderdetails').empty().append(html);
     },
     complete: function() {
+        if(overlay){
         $("#overlay").fadeOut();
+        }
       },
 });
     }
@@ -1149,12 +1162,12 @@ $(function() {
             LoadAllTenders();
             console.log('reload api');
         } else if (type == 'products') {
-            getMytenders();
+            getMytenders(false);
             console.log('reload api');
         } else if (type == 'services') {
             getMyservices();
         }
-    }, 50000);
+    }, 10000000);
 
 
     function myFunction($month_dat) {

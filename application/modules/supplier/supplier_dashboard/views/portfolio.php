@@ -652,8 +652,6 @@
 <script>
     var materiallistdata = {};
 
-
-
     $(".materialdata").change(function() {
         var materialgroup = $('#materialinput').val();
         var productcategory = $('#productcategory').val();
@@ -833,6 +831,8 @@
 
     function validateDuplicateEntries(material) {
         console.log(material);
+         console.log(materiallistdata);
+        // return false;
         var filterednames = materiallistdata.filter(function(obj) {
             console.log(obj.materialId);
             return (obj.materialId == material);
@@ -939,8 +939,8 @@
                     // d.typeid = typeid;
                 },
                 "dataSrc": function(json) {
-                    materiallistdata = json.data;
-                    console.log(materiallistdata);
+                    materiallistdataservice = json.data;
+                    console.log(materiallistdataservice);
                     // You can also modify `json.data` if required
                     return json.data;
                 }

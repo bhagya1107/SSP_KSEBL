@@ -34,12 +34,14 @@ public function __construct()
 		if(!empty($data['materialid'])){
 			 foreach($data['tender'] as $key => $materialid){
 				 $materials ='';
-				 $prc_purchase_order_items= array_column($materialid->prc_purchase_orders,'prc_purchase_order_item_dtl');
-				 foreach($prc_purchase_order_items as $key1 => $items){
-					 $materials = $materials.','.implode(',',array_column($items,'mst_material_id'));
-				 }
-				 $materialsArr = explode(',',$materials);
-				 array_shift($materialsArr);
+				// $prc_purchase_order_items= array_column($materialid->prc_proposed_delivery_details,'mst_material_id');
+			//print_r($prc_purchase_order_items);exit;
+					// foreach($prc_purchase_order_items as $key1 => $items){
+					//  $materials = $materials.','.implode(',',array_column($items,'mst_material_id'));
+				 // }
+					$materialsArr= array_column($materialid->prc_proposed_delivery_details,'mst_material_id');
+				 //$materialsArr = explode(',',$materials);
+				// array_shift($materialsArr);
 				if(array_intersect($materialsArr,$data['materialid'])){
 					array_push($data['mytenderproducts'],$data['tender'][$key]);
 				}
@@ -103,20 +105,36 @@ public function __construct()
 		$data['mytenderproducts'] = array();
 
 		//echo"<pre>";print_r($data['materialid']);exit;
-		if (!empty($data['materialid'])) {
-			foreach ($data['tender'] as $key => $materialid) {
-				$materials = '';
-				$prc_purchase_order_items = array_column($materialid->prc_purchase_orders, 'prc_purchase_order_item_dtl');
-				foreach ($prc_purchase_order_items as $key1 => $items) {
-					$materials = $materials . ',' . implode(',', array_column($items, 'mst_material_id'));
-				}
-				$materialsArr = explode(',', $materials);
-				array_shift($materialsArr);
-				if (array_intersect($materialsArr, $data['materialid'])) {
-					array_push($data['mytenderproducts'], $data['tender'][$key]);
-				}
+		// if (!empty($data['materialid'])) {
+		// 	foreach ($data['tender'] as $key => $materialid) {
+		// 		$materials = '';
+		// 		$prc_purchase_order_items = array_column($materialid->prc_proposed_delivery_details, 'prc_proposed_delivery_details');//print_r($prc_purchase_order_items);exit;
+		// 		foreach ($prc_purchase_order_items as $key1 => $items) {
+		// 			$materials = $materials . ',' . implode(',', array_column($items, 'mst_material_id'));
+		// 		}
+		// 		$materialsArr = explode(',', $materials);
+		// 		array_shift($materialsArr);
+		// 		if (array_intersect($materialsArr, $data['materialid'])) {
+		// 			array_push($data['mytenderproducts'], $data['tender'][$key]);
+		// 		}
+		// 	}
+		// }
+		if(!empty($data['materialid'])){
+			foreach($data['tender'] as $key => $materialid){
+				$materials ='';
+			// $prc_purchase_order_items= array_column($materialid->prc_proposed_delivery_details,'mst_material_id');
+		//print_r($prc_purchase_order_items);exit;
+				// foreach($prc_purchase_order_items as $key1 => $items){
+				//  $materials = $materials.','.implode(',',array_column($items,'mst_material_id'));
+				// }
+				$materialsArr= array_column($materialid->prc_proposed_delivery_details,'mst_material_id');
+				//$materialsArr = explode(',',$materials);
+			// array_shift($materialsArr);
+			if(array_intersect($materialsArr,$data['materialid'])){
+				array_push($data['mytenderproducts'],$data['tender'][$key]);
 			}
-		}
+			} 
+	}
 		// echo"<pre>";print_r($data['mytenderproducts']);exit;
 		echo json_encode($data['mytenderproducts']);
 	}
@@ -134,7 +152,7 @@ public function __construct()
 		if(!empty($data['serviceid'])){
 			 foreach($data['tender'] as $key => $serviceid){
 				 $materials ='';
-				 $prc_purchase_order_items= array_column($serviceid->prc_purchase_orders,'prc_purchase_order_item_dtl');
+				 $prc_purchase_order_items= array_column($serviceid->prc_proposed_delivery_details,'prc_purchase_order_item_dtl');
 				 foreach($prc_purchase_order_items as $key1 => $items){
 					 $materials = $materials.','.implode(',',array_column($items,'mst_material_id'));
 				 }

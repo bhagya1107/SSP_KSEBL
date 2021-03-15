@@ -276,10 +276,11 @@ public function updatePassword()
 	$materialdata=json_decode($this->getMaterialGroupData());//echo"<pre>";print_r($materialdata);exit;
 	$data['materialdata']=$materialdata->result_data->list;//echo"<pre>";print_r($data['materialdata']);exit;
 	$getcategorydata=json_decode($this->getSbuData_get());
-	$data['getcategory']=$getcategorydata->result_data->list;//echo"<pre>";print_r($data['getcategory']);exit;
-	//$getmatrdata=json_decode($this->getMaterialData(1,3));
+	$data['getcategory']=$getcategorydata->result_data->list;
+	//echo"<pre>";print_r($data['getcategory']);exit;
+	//$getmatrdata=json_decode($this->getMaterialData(1,9));
 	//$getmatrdata=json_decode($this->getMaterialById());
-	//$data['getmaterial']=$getcategorydata->result_data->list;echo"<pre>";print_r($data['getmaterial']);exit;
+	//$data['getmaterial']=$getmatrdata->result_data->list;echo"<pre>";print_r($data['getmaterial']);exit;
 	$data['getsuppliermaterials']=$this->dashM->getSupplierMaterials($supplierid);//echo"<pre>";print_r($data['getsuppliermaterials']);exit;
 	$this->template->make('supplier_dashboard/portfolio',$data,'supplier_portal');
 	 }
@@ -355,7 +356,7 @@ public function updatePassword()
 			//$materialgroup=$this->input->post('materialgroup');
 			$token=$this->Login_POST();
 			$token1=json_decode($token);
-			$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialData/'.$materialgroup.'/'.$productcategory;
+			$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialData/'.$productcategory.'/'.$materialgroup;
 		  $curl       = curl_init();
 		  curl_setopt( $curl, CURLOPT_URL, $apiurl );
 		  curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
@@ -417,7 +418,7 @@ public function updatePassword()
 			$token=$this->Login_POST();
 			$token1=json_decode($token);
 			
-	  $apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialById/173';
+	  $apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialById/3';
 	  $curl       = curl_init();
 	  curl_setopt( $curl, CURLOPT_URL, $apiurl );
 	  curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
@@ -429,6 +430,15 @@ public function updatePassword()
 	   return $result;
 		}
 		
+		public function check_products()
+		{
+			  
+						$supplierId = $this->session->userdata('uid'); 
+						$count = $this->dashM->check_products($supplierId);
+						echo $count;
+		}
+
+
 		public function insert_materials(){
 
         $res='';
@@ -441,7 +451,6 @@ public function updatePassword()
 			$data['supplierId']=$this->session->userdata('uid');  
 			//$data['isdeleted']=false;
             $res=  $this->dashM->insert('suppliermaterials',$data);
-         
 			 
 		 
 		 if($res>0)

@@ -42,7 +42,7 @@ class Dashboard_model extends CI_Model
 
   public function getSupplierMaterials($supplierid)
     {
-        
+        //echo"$supplierid";exit;
      $this->db->select('*');
 	 $this->db->where('supplierId',$supplierid);
      $this->db->where('isdeleted',false);
@@ -151,6 +151,15 @@ class Dashboard_model extends CI_Model
     $this->db->where('supplierid', $supplierid);
     $this->db->where('isdeleted', false);
     return $this->db->get("services")->result();
+  }
+
+  public function check_products($supplierId)
+  { 
+      $this->db->select('supplierId');
+      $this->db->where('supplierId',$supplierId);
+      $this->db->where('isdeleted',false);
+      $Query = $this->db->get('suppliermaterials');
+      return $Query->num_rows(); 
   }
     
 }
