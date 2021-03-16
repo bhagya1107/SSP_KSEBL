@@ -317,7 +317,7 @@
 	$(document).mouseup(function(e) 
 	{
 
-		//alert();
+		
 		var container = $(document).find('.expand');
 
 		// if the target of the click isn't the container nor a descendant of the container
@@ -329,16 +329,26 @@
 
 	// km
 	
+	
+
+	
 	$('.triggerbtn').click(function() {
 
 		var thiss=$(this);
 		var title = $(this).next('.spanclass');
+		console.log(thiss.find('.creps'));
+		$(this).addClass('changeclr');
 		//console.log(title.prevObject.text());
 		var content = $(this).next('.content');
 	
 		$('.modal-title').empty().html(title.prevObject.text());
 		$('.modal-body').empty().html(content.html());
 		$('#exampleModal').modal();
+
+		$('#exampleModal').on('hidden.bs.modal', function () {
+			
+			$('.triggerbtn').removeClass('changeclr');
+		})
 
 
 
@@ -549,6 +559,7 @@ $(document).ready(function(){
 	.triggerbtn:active{
 		box-shadow: 0 5px #666;
 		transform: translateY(4px);
+		background-color:#272360;
 	}
 
 
@@ -711,6 +722,10 @@ $(document).ready(function(){
 					background: #343434;
 					border-radius: 10px 10px 0 0;
 					margin: 0px 5px;
+					
+				}
+				.triggerbtn{
+					min-height: 50px;
 				}
 				.pln {
 					cursor: pointer;
@@ -901,4 +916,9 @@ $(document).ready(function(){
 					justify-content: center;
 		}
 
+
+		.changeclr{
+			background:#272360;
+			color:#fff;
+		}
 </style>

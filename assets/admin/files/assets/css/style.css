@@ -11711,7 +11711,8 @@ table tbody .border-bottom-info td {
 }
 
 .pcoded .pcoded-header[header-theme="theme1"] .navbar-logo a {
-    color: #fff
+    /* color: #fff */
+    /* km */
 }
 
 .pcoded .pcoded-header[header-theme="theme1"] .navbar-wrapper .header-search .main-search .input-group .input-group-addon {
