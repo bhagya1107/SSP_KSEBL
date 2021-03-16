@@ -121,8 +121,8 @@
                                             <h3 class="text-center">Change Password?</h3>
                                         </div>
                                     </div><br><br>
-                                    <div class="form-group form-primary" id="email_block" >
-                                      <label>Enter your Registered Mobile No</label>
+                                    <div class="form-group form-primary" id="email_block"  style="margin-left :20%;" >
+                                      <label >Enter your Registered Mobile No</label>
                                         <input type="tel" name="mobile" id="mobile" class="form-control" required="" placeholder=" registered Mobile No" autocomplete="off" style="width: 60%;">
                                         <span class="form-bar"></span>
                                     </div>
@@ -131,7 +131,7 @@
                                     <div class="row m-t-10">
                                    <div class="col-md-4" id="gtop" >
 										
-                                            <button type="button" id="generateotp" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">GET OTP</button><span style= "color:green;" id="paswordmess" class="hide">Password sent to your registered mobile number</span>
+                                            <button type="button" id="generateotp" style="margin-left :80%;" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">GET OTP</button><span style= "color:green;" id="paswordmess" class="hide">Password sent to your registered mobile number</span>
                                     </div>
                               
                                     </div><br><br>
@@ -202,3 +202,4 @@ $("#generateotp").click(function() {
 });
 });
 </script>
+<?php $this->view('template/supplier_portal/footer',$page); ?>

@@ -22,7 +22,8 @@ class Supplier_home extends MX_Controller {
 
 
 		decrypt();
-
+       
+		
 		
 
 		$this->load->library('form_validation');
@@ -33,7 +34,7 @@ class Supplier_home extends MX_Controller {
 
 			$username=$this->input->post('username');
 			$password=$this->input->post('password');
-
+        //    echo "password"; exit;
 
 			$this->load->model('login');
 			$chk=$this->login->validate($username,$password); 
@@ -127,7 +128,7 @@ class Supplier_home extends MX_Controller {
 	public function user_login()  
 	{
 
-	
+		// decrypt();
 		
 
 		$this->load->library('form_validation');
@@ -140,6 +141,7 @@ class Supplier_home extends MX_Controller {
 
 			$username=$this->input->post('username');
 			$password=$this->input->post('password');
+			// echo $password;exit;
 
            
 			$this->load->model('login');

@@ -1,6 +1,6 @@
 <style>
 /* width */
-::-webkit-scrollbar {
+::-webkit-scrollbar { 
   width: 10px;
 }
 
@@ -9,7 +9,7 @@
   background: #f1f1f1; 
 }
  
-/* Handle */
+/* Handle */ 
 ::-webkit-scrollbar-thumb { 
   background: #888; 
 }

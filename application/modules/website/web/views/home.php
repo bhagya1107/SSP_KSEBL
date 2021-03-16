@@ -61,8 +61,8 @@
 							<div class="bottom-left2 content">
 								<!-- <div class="close" onclick="closex()">x</div> -->
 								<!-- ------------------USER LOGIN------------------------ -->
-											<?php  $attributes = array('id' => 'frm_modal');  ?>
-											<?=form_open('supplier/home/user_login',$attributes);?>								
+											<!-- <?php  $attributes = array('id' => 'frm_modal');  ?>  -->
+											<?=form_open('supplier/home/user_login');?>								
 										<!-- <div class="card-body" style="margin-top:2rem" > -->
 											<img class="auth-form__logo d-table mx-auto mb-3" src="<?=base_url('assets/logo.png')?>" 
 												alt="Shards Dashboards - Register Template"
@@ -70,9 +70,9 @@
 											<h5 class="auth-form__title text-center mb-4" style=" color: black; ">Access Your Account</h5>
 											
 											<div class="form-group dflex" style="color: white;">
-												<label for="exampleInputEmail1" style=" min-width: 70px; color:black">Username</label>
-												<input type="text" class="form-control w-300 susername" name="username" id="susername"
-													aria-describedby="emailHelp" placeholder="Username" value="">
+												<label for="exampleInputEmail1" style=" min-width: 70px; color:black">Mobile</label>
+												<input type="text" class="form-control w-300 susername" name="username" id="username"
+													aria-describedby="emailHelp" placeholder="Mobile Number" value="">
 											</div>
 											<div class="form-group dflex" style="color: white;">
 												<label for="exampleInputPassword1" style=" min-width: 70px;color:black">Password</label>
@@ -142,7 +142,7 @@
 
 			
 				
-					<?php  $attributes = array('id' => 'frm','style'=>'width:100%');  ?>
+					<?php  $attributes = array('id' => 'frm','style'=>'width:100%');  ?> 
 					<?=form_open('supplier/home/admin_login',$attributes);?>
 						
 						<div class="main-content-container container-fluid px-4 my-auto h-100">
@@ -504,17 +504,17 @@ $(document).ready(function(){
 	
 });
 
-		$('body').on('submit', '#frm_modal',function (e) {
+		// $('body').on('submit', '#frm_modal',function (e) {
 			
-			e.preventDefault();
-			var p = window.btoa($('#password').val());
-			$('.password').val(p).trigger('change');		
+		// 	e.preventDefault();
+		// 	var p = window.btoa($('#password').val());
+		// 	$('.password').val(p).trigger('change');		
 
-			var p2 = window.btoa($('#susername').val());
-			$('.susername').val(p2).trigger('change');
+		// 	var p2 = window.btoa($('#susername').val());
+		// 	$('.susername').val(p2).trigger('change');
 	
-			this.submit();
-		});
+		// 	this.submit();
+		// });
 
 
 

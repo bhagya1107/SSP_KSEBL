@@ -1021,7 +1021,8 @@ if ($file1!="" and $file2!="" and $file3!="" )
       
         $supplierid=$this->input->post('supplierid');
         $where = array('id'=>$supplierid);
-        $data=array('isdeleted'=>true);
+        $data=array('isdeleted'=>true,'islocked'=>true);
+		// $data=array('islocked'=>true);
         $result =$this->dashM->update('employees',$data, $where);
       
         if($result>0)

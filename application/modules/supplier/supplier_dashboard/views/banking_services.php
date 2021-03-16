@@ -112,7 +112,9 @@
                         </div>
                         
                         <div class="form-group">
-                            <button type="submit" value="submit" name="submit" class="tg-btn pull-right" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
+                            <button type="submit" value="submit" name="submit" class="tg-btn " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
+                            <button type="reset" value="cancel" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                        
                         </div>
                         </div>
                         </form>

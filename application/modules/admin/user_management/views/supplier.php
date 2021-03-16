@@ -241,9 +241,9 @@ $( document ).ajaxStop(function() {
 
 <div class="modal fade" id="importfile" style="padding-left: 0px !important;">
 <div class="modal-dialog">
-    <div class="modal-content" style="width:383px;height:200px; ">
+    <div style="height:200px; ">
       <!-- Modal Header -->
-      <div class="modal-header ">
+      <div class=" " >
         <div class="tab-content">
            <form method="post" id="import_form" enctype="multipart/form-data" class="form">
              <div class="frame1">
@@ -252,13 +252,22 @@ $( document ).ajaxStop(function() {
 			             <h1>Drop Supplier list to upload</h1>
 		              </div>
                    <p style="color: black;" id="p">Select Excel file up to 10MB</p>
-		                <div class="dropzone">  
+                   <!-- <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                   <input  type="file"   name="file" id="file" accept=".xls, .xlsx" required > -->
+		                <!-- <div class="dropzone">  
    
 			                  <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
 			                   <input type="file" onclick="myFunction1()" class="upload-input"  name="file" id="file" accept=".xls, .xlsx" required />
       
 
-		                </div>  
+		                </div>   -->
+                     <div class="dropzone">  
+   
+			                  <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+			                  <input type="file"  name="file" id="file" class="form-control" accept=".xls, .xlsx" required />
+      
+
+		                </div>   
 
 		                    <button type="submit" id="submitb" onclick="myFunction()" class="btn1" name="uploadbutton">Upload file</button>
 
@@ -389,18 +398,16 @@ $( document ).ajaxStop(function() {
 
     <!-- /////////////////////import file///////////////// -->
     <script type="text/javascript">
-	$(document).ready(function(){
-  $('form input').change(function () {
-    // $('form p').text("1 file selected");
-    // $('form p').text("1 file selected");
-    //  $('#p').css('display','block');
-    
-  });
-});
+// 	$(document).ready(function(){
+//   $('form input').change(function () {
+//     $('form p').text("1 file selected");
+//      $('#p').css('display','block');
+//   });
+// });
 
 
 function myFunction() {
-  document.getElementById("p").style.display = "none";
+  // document.getElementById("p").style.display = "none";
 
   // $('#submitb').css('display','none');
 }
@@ -432,14 +439,16 @@ function myFunction1() {
 }
 
 .center1 {
-  border: 1px dashed black;
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
+  /* border: 4px dashed #fff; */
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 550px;
 	height: 250px;
-	border-radius: 3px;
+	/* border-radius: 3px; */
 	box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
 	background: #fff;
 	display: flex;
@@ -462,8 +471,8 @@ h1 {
 }
 
 .dropzone {
-	width: 100px;
-	height: 80px;
+	width: 250px;
+	height: 90px;
 	border: 1px dashed #999;
 	border-radius: 3px;
 	text-align: center;
