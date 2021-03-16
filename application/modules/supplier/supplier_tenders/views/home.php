@@ -46,18 +46,15 @@
         background: #555;
     }
 
-    #overlay{ 
-  position: fixed;
-  top: 0;
-  z-index: 99999;
-  width: 100%;
-  height:100%;
-  display: none;
-  background: rgba(0,0,0,0.6);
-}
-
-
-
+    #overlay {
+        position: fixed;
+        top: 0;
+        z-index: 99999;
+        width: 100%;
+        height: 100%;
+        display: none;
+        background: rgba(0, 0, 0, 0.6);
+    }
 </style>
 
 <head>
@@ -74,7 +71,7 @@
 <main id="tg-main" class="tg-main tg-haslayout">
     <section class="tg-main-section tg-haslayout">
         <div class="container">
-  
+
             <?php
             $msg = $this->session->flashdata('msg');
             if ($msg) {
@@ -97,11 +94,11 @@
             </div>
 
             <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:100vh" id="innerscroll">
-            <div id="overlay">
-            <div class="cv-spinner">
-    <span class="spinner"></span>
-  </div>
-</div>
+                <div id="overlay">
+                    <div class="cv-spinner">
+                        <span class="spinner"></span>
+                    </div>
+                </div>
                 <ul class="nav nav-tabs" id="tendertabs">
                     <li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
                     <!-- <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
@@ -110,21 +107,21 @@
                 </ul>
 
                 <div class="tab-content">
-                
+
 
                     <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
                     <input type="hidden" id="mytenderservices" value="<?php echo htmlentities(json_encode($mytenderservices), ENT_QUOTES, 'UTF-8') ?>" />
                     <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
                             <div class="tg-tickets">
-
-
-                                <div id="alltenderdetails"></div>
-
-
-
+                                <div class="commonfilter" id="alltenderdetails">
+                                
+                                </div>
+                                <span class="no-tender-alltender hide">No tender available</span>
+                                <div id="totalcount" style="text-align:center;">
+        </div>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -143,19 +140,21 @@
 
                     <div id="menu1" class="tab-pane fade <?php echo $tab == 2 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
-                            <div class="tg-tickets" id="favid">
+                            <div class="tg-tickets commonfilter" id="favid">
                                 <?php foreach ($getfavtender as $favten) { ?>
                                     <div class="tg-ticket">
 
                                         <time class="tg-matchdate"><small>Last date</small><br><?php
-                                                                                                                        $time = strtotime($favten->tenderdate);
-                                                                                                                        echo date('j  ', $time); ?>
+                                                                                                $time = strtotime($favten->tenderdate);
+                                                                                                echo date('j  ', $time); ?>
                                             <span><?php $time = strtotime($favten->tenderdate);
+                                            
                                                     echo date('M ', $time); ?></span></time>
+                                                   
                                         <div class="tg-matchdetail">
-                                       <div class='hiddendate' hidden ><?php echo $favten->tenderdate ?></div>
+                                            <div class='hiddendate' hidden><?php echo $favten->tenderdate ?></div>
                                             <span class="tg-theme-tag"><?php echo $favten->tenderno ?></span>
-                                            <h4>TENDER<?php echo $favten->tendername ?></h4>
+                                            <h4>TENDER <?php echo $favten->tendername ?></h4>
                                             </h4>
                                             <ul class="tg-matchmetadata">
                                                 <li>
@@ -171,16 +170,18 @@
                                     </div>
 
                                 <?php } ?>
-
-
+                              
                             </div>
+                            
+                            <span class="no-tender-fav hide">No tender available</span>
                         </div>
+                        <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span>
 
                     </div>
                     <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
-                            <div class="tg-tickets" id="appliedtickets" >
-                                <div class="tg-ticket" >
+                            <div class="tg-tickets commonfilter" id="appliedtickets">
+                                <div class="tg-ticket">
                                     <time class="tg-matchdate tg-matchdate_custom" datetime="2016-05-03">30<span>Dec</span></time>
                                     <div class="tg-matchdetail">
                                         <span class="tg-theme-tag">My Tender No : TDR001860</span>
@@ -192,7 +193,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="tg-btnsbox" >
+                                    <div class="tg-btnsbox">
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tendermore">Read More</a>
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus">Tender Status </a>
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
@@ -219,11 +220,10 @@
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#application_modal">Application Form </a>
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#siteinspect">Factory Visit </a>
                                     </div>
-                                </div>
-
-
+                                </div> 
 
                             </div>
+                            <span class="no-tender-apply hide">No tender available</span>
                         </div>
 
                     </div>
@@ -234,10 +234,7 @@
 
             </div>
         </div>
-
-        <div id="totalcount" style="text-align:center;">
-       
-        </div>
+      
     </section>
 </main>
 <!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
@@ -909,48 +906,62 @@
         getMytenders(true);
         changeTenderTye(true);
         universaltendersearch();
-        $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+        $('#datepicker').datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
     });
-function universaltendersearch(){
-   
-  $("#keywordtender").on("keyup", function() {
-      var activetab= $("#tendertabs li.active").attr('id');
-      var tabcontentid = (activetab == 'favtender') ?'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
-    var value = $(this).val().toLowerCase();
-console.log(activetab);
-filtertenderdata(tabcontentid,value);
-    
-  });
 
-}
+    function universaltendersearch() {
 
-function filtertenderdata(tabcontentid,value){
-    
-    
-    $("#"+tabcontentid +" div[class!=tg-btnsbox]").filter(function() {
-        var datetime1=$(this).attr('datetime');
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)  
+        $("#keywordtender").on("keyup", function() {
+            var activetab = $("#tendertabs li.active").attr('id');
+              var tabcontentid = (activetab == 'favtender') ?'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+            //var tabcontentid = $("#alltenders");
+            var value = $(this).val().toLowerCase();
+            
+            filtertenderdata(tabcontentid, value);
+
+        });
+
+    }
+
+    function filtertenderdata(tabcontentid, value) {
+
+       // no-tender-alltender
+       //no-tender-apply
+       //no-tender-fav
+        // $("#alltenderdetails,#favid,#appliedtickets div[class!=tg-btnsbox]").filter(function() {
+        $(".commonfilter div[class!=tg-btnsbox]").filter(function() {
+            var datetime1 = $(this).attr('datetime');
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        $('.hiddendate').addClass('hide');
+        var spanid = (activetab == 'favtender') ?'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
+      var tenderlength = $("#"+tabcontentid+" .commonfilter .tg-ticket [style='display: block;']").length;
+      if(tenderlength==0){
+            $('.'+spanid).removeClass('hide');
+      }else{
+        $('.'+spanid).addClass('hide');
+      }
+    }
+
+    $("#datepicker").on("change", function() {
+        var activetab = $("#tendertabs li.active").attr('id');
+        var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+        var value = $(this).val();
+        filtertenderdata(tabcontentid, value);
     });
-    $('.hiddendate').addClass('hide');
-}
 
-$("#datepicker").on("change", function(){
-    var activetab= $("#tendertabs li.active").attr('id');
-      var tabcontentid = (activetab == 'favtender') ?'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
-    var value = $(this).val();
-    console.log(value);
-    filtertenderdata(tabcontentid,value);
-});
+    $(function() {
+        console.log("klll");
+        $('#datepicker').datepicker({
+            autoSize: true,
+            onSelect: function(dateText, inst) {
+                $(this).parent('#datepicker').submit();
+            }
+        });
+    });
 
-$(function() {
-    console.log("klll");
-		$('#datepicker').datepicker({
-			autoSize: true,
-			onSelect: function (dateText, inst) {
-				$(this).parent('#datepicker').submit();
-			}
-		});
-	});
     function changeTenderTye() {
 
         $('#tenderType').on('change', function() {
@@ -965,7 +976,15 @@ $(function() {
                 $('#tender_tab').text('Tenders');
                 getMyservices(true);
             }
+            setTimeout(function() {
+         var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+            var value = $('#keywordtender').val().toLowerCase();
+           // console.log("kkll");
+            filtertenderdata(tabcontentid, value);
+        }, 5000);
+
         });
+        
 
     }
 
@@ -981,20 +1000,19 @@ $(function() {
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
             beforeSend: function() {
-                if(overlay){
-        // setting a timeout
-        $("#overlay").fadeIn();
+                if (overlay) {
+                    // setting a timeout
+                    $("#overlay").fadeIn();
                 }
-      },
+            },
             success: function(result) {
 
                 datas = JSON.parse(result);
                 var count = datas.length;
-                if(count>0){
-                    span1 ="<span>Total Tender Count:"+count + "</span>";
-                }
-                else{
-                    span1 ="<span>No Tender To Display </span>";
+                if (count > 0) {
+                    span1 = "<span>Total Tender Count:" + count + "</span>";
+                } else {
+                    span1 = "<span>No Tender To Display </span>";
                 }
                 $('#totalcount').html(span1);
                 html = "";
@@ -1007,7 +1025,7 @@ $(function() {
                     // console.log(date1.getDate());
                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
                     html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
-                    html += "<div class='hiddendate' hidden >"+data.tender_date+"</div>";
+                    html += "<div class='hiddendate' hidden >" + data.tender_date + "</div>";
                     html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
 
                     html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
@@ -1029,10 +1047,10 @@ $(function() {
                 $('#alltenderdetails').empty().append(html);
             },
             complete: function() {
-                if(overlay){
-        $("#overlay").fadeOut();
+                if (overlay) {
+                    $("#overlay").fadeOut();
                 }
-      },
+            },
         });
 
 
@@ -1048,20 +1066,19 @@ $(function() {
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
             beforeSend: function() {
-        // setting a timeout
-        if(overlay){
-            console.log(overlay);
-        $("#overlay").fadeIn();
-        }
-      },
+                // setting a timeout
+                if (overlay) {
+                    console.log(overlay);
+                    $("#overlay").fadeIn();
+                }
+            },
             success: function(result) {
                 datas = JSON.parse(result);
                 var count = datas.length;
-                if(count>0){
-                    span1 ="<span>Total Tender Count:"+count + "</span>";
-                }
-                else{
-                    span1 ="<span>No Tender To Display </span>";
+                if (count > 0) {
+                    span1 = "<span>Total Tender Count:" + count + "</span>";
+                } else {
+                    span1 = "<span>No Tender To Display </span>";
                 }
                 $('#totalcount').html(span1);
                 html = "";
@@ -1071,7 +1088,7 @@ $(function() {
                     var date1 = new Date(data.tender_date);
                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
                     html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
-                    html += "<div class='hiddendate' hidden >"+data.tender_date+"</div>";
+                    html += "<div class='hiddendate' hidden >" + data.tender_date + "</div>";
                     html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
 
                     html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
@@ -1087,10 +1104,10 @@ $(function() {
                 $('#alltenderdetails').empty().append(html);
             },
             complete: function() {
-                if(overlay){
-        $("#overlay").fadeOut();
+                if (overlay) {
+                    $("#overlay").fadeOut();
                 }
-      },
+            },
         });
     }
 
@@ -1103,54 +1120,53 @@ $(function() {
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
             beforeSend: function() {
-        // setting a timeout
-        if(overlay){
-        $("#overlay").fadeIn();
-        }
-      },
+                // setting a timeout
+                if (overlay) {
+                    $("#overlay").fadeIn();
+                }
+            },
             success: function(result) {
                 datas = JSON.parse(result);
                 var count = datas.length;
-                if(count>0){
-                    span1 ="<span>Total Tender Count:"+count + "</span>";
-                }
-                else{
-                    span1 ="<span>No Tender To Display </span>";
+                if (count > 0) {
+                    span1 = "<span>Total Tender Count:" + count + "</span>";
+                } else {
+                    span1 = "<span>No Tender To Display </span>";
                 }
                 $('#totalcount').html(span1);
-        
-        html = "";
 
-        var mytenderservices = JSON.parse($('#mytenderservices').val());
-        $.each(mytenderservices, function(i, data) {
-            console.log(data);
-            html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
-            var date1 = new Date(data.tender_date);
-            // console.log(date1);
-            // console.log(date1.getDate());
-            html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-            html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
-            html += "<div class='hiddendate' hidden >"+data.tender_date+"</div>";
-            html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
+                html = "";
 
-            html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
+                var mytenderservices = JSON.parse($('#mytenderservices').val());
+                $.each(mytenderservices, function(i, data) {
+                    console.log(data);
+                    html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
+                    var date1 = new Date(data.tender_date);
+                    // console.log(date1);
+                    // console.log(date1.getDate());
+                    html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
+                    html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
+                    html += "<div class='hiddendate' hidden >" + data.tender_date + "</div>";
+                    html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
 
-            if (data.sorting == 0) {
-                html += "<a class='btn btn-primary btn-sm' id='save_tenders' onclick='save_tenders(" + JSON.stringify(data) + ")'>Add to Favourites</a>";
-            } else {
-                html += "<a class='btn btn-success btn-sm' >Added to Favourites </a>";
-            }
+                    html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
 
-            html += "</div></div>";
+                    if (data.sorting == 0) {
+                        html += "<a class='btn btn-primary btn-sm' id='save_tenders' onclick='save_tenders(" + JSON.stringify(data) + ")'>Add to Favourites</a>";
+                    } else {
+                        html += "<a class='btn btn-success btn-sm' >Added to Favourites </a>";
+                    }
+
+                    html += "</div></div>";
+                });
+                $('#alltenderdetails').empty().append(html);
+            },
+            complete: function() {
+                if (overlay) {
+                    $("#overlay").fadeOut();
+                }
+            },
         });
-        $('#alltenderdetails').empty().append(html);
-    },
-    complete: function() {
-        if(overlay){
-        $("#overlay").fadeOut();
-        }
-      },
-});
     }
 
 
@@ -1189,10 +1205,6 @@ $(function() {
         return month[$month_dat];
         //document.getElementById("demo").innerHTML = n;
     }
-
-   
-
-
 </script>
 
 <style>

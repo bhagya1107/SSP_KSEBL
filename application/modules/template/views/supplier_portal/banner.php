@@ -53,6 +53,7 @@
     cursor:pointer;
 }
 .panel-default{
+	border-top:none;
 	margin-left: 9%;
  margin-right: 4%;
 }
@@ -132,9 +133,9 @@
 
  						</div>
 
-						<div class="col-sm-3 col-xs-12 ">
-						<span>Purchase Date:</span>
- 							<input type="date" class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
+						 <div class="col-sm-3 col-xs-12 ">
+							<span>Purchase Date:</span>
+ 							<input  type ="date" class="select2 form-control "  id="datepickerpurchase" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 

@@ -61,6 +61,16 @@
      ::-webkit-scrollbar-thumb:hover {
          background: #555;
      }
+
+     #overlay{ 
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height:100%;
+  display: none;
+  background: rgba(0,0,0,0.6);
+}
  </style>
 
  <main id="tg-main" class="tg-main tg-haslayout">
@@ -89,7 +99,7 @@
 
                                 <div id="allpurchasedetails"></div>
 
-
+                                <div id="totalcount" style="text-align:center;">
 
                             </div>
                             
@@ -375,7 +385,9 @@
                  </div>
              </div>
          </div>
+        
 
+</div>
      </section>
  </main>
 
@@ -1432,6 +1444,23 @@
              }
          </style>
          <script>
+
+$(document).ready(function() {
+   
+   $("#keywordpurchaseorder").on("keyup", function() {
+       
+      // var activetab= $("#purchasetabs li.active").attr('id');
+       //var tabcontentid = (activetab == 'allpurchaseorder') ?'purchaseordersid' : (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets'
+     var value = $(this).val().toLowerCase();
+ //console.log(activetab);
+     $("#allpurchasedetails div").filter(function() {
+       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+     });
+     $('.hiddendate').addClass('hide');
+   });
+ 
+ });
+
              /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
              function myFunction() {
@@ -1526,21 +1555,7 @@ toggle between hiding and showing the dropdown content */
 
 
 
-             $(document).ready(function() {
-   
-   $("#keywordpurchaseorder").on("keyup", function() {
-       
-      // var activetab= $("#purchasetabs li.active").attr('id');
-       //var tabcontentid = (activetab == 'allpurchaseorder') ?'purchaseordersid' : (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets'
-     var value = $(this).val().toLowerCase();
- //console.log(activetab);
-     $("#allpurchasedetails div").filter(function() {
-       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-     });
-     $('.hiddendate').addClass('hide');
-   });
- 
- });
+             
 
 setInterval(() => {
     LoadAllPurchaseOrders();
@@ -1558,7 +1573,7 @@ setInterval(() => {
     $('.hiddendate').addClass('hide');
 }
 
-$("#datepicker").on("change", function(){
+$("#datepickerpurchase").on("change", function(){
     
     filterpurchasedata(tabcontentid,value);
 });
