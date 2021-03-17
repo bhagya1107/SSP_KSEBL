@@ -115,11 +115,11 @@
                         <div class="row" style="margin-top: 15px;">
                             <div class="tg-tickets">
                                 <div class="commonfilter" id="alltenderdetails">
-                                
+
                                 </div>
-                                <span class="no-tender-alltender hide">No tender available</span>
+                                <!--  <span class="no-tender-alltender hide">No tender available</span>-->
                                 <div id="totalcount" style="text-align:center;">
-        </div>
+                                </div>
                             </div>
 
                         </div>
@@ -148,9 +148,9 @@
                                                                                                 $time = strtotime($favten->tenderdate);
                                                                                                 echo date('j  ', $time); ?>
                                             <span><?php $time = strtotime($favten->tenderdate);
-                                            
+
                                                     echo date('M ', $time); ?></span></time>
-                                                   
+
                                         <div class="tg-matchdetail">
                                             <div class='hiddendate' hidden><?php echo $favten->tenderdate ?></div>
                                             <span class="tg-theme-tag"><?php echo $favten->tenderno ?></span>
@@ -170,9 +170,9 @@
                                     </div>
 
                                 <?php } ?>
-                              
+
                             </div>
-                            
+
                             <span class="no-tender-fav hide">No tender available</span>
                         </div>
                         <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span>
@@ -220,7 +220,7 @@
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#application_modal">Application Form </a>
                                         <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#siteinspect">Factory Visit </a>
                                     </div>
-                                </div> 
+                                </div>
 
                             </div>
                             <span class="no-tender-apply hide">No tender available</span>
@@ -234,7 +234,7 @@
 
             </div>
         </div>
-      
+
     </section>
 </main>
 <!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
@@ -915,10 +915,10 @@
 
         $("#keywordtender").on("keyup", function() {
             var activetab = $("#tendertabs li.active").attr('id');
-              var tabcontentid = (activetab == 'favtender') ?'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+            var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
             //var tabcontentid = $("#alltenders");
             var value = $(this).val().toLowerCase();
-            
+
             filtertenderdata(tabcontentid, value);
 
         });
@@ -927,22 +927,24 @@
 
     function filtertenderdata(tabcontentid, value) {
 
-       // no-tender-alltender
-       //no-tender-apply
-       //no-tender-fav
+        // no-tender-alltender
+        //no-tender-apply
+        //no-tender-fav
         // $("#alltenderdetails,#favid,#appliedtickets div[class!=tg-btnsbox]").filter(function() {
         $(".commonfilter div[class!=tg-btnsbox]").filter(function() {
             var datetime1 = $(this).attr('datetime');
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
+        
         $('.hiddendate').addClass('hide');
-        var spanid = (activetab == 'favtender') ?'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
-      var tenderlength = $("#"+tabcontentid+" .commonfilter .tg-ticket [style='display: block;']").length;
-      if(tenderlength==0){
-            $('.'+spanid).removeClass('hide');
-      }else{
-        $('.'+spanid).addClass('hide');
-      }
+        var spanid = (activetab == 'favtender') ? 'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
+        var tenderlength = $("#" + tabcontentid + " .commonfilter .tg-ticket [style='display: block;']").length;
+        console.log(tenderlength);
+        if (tenderlength == 0) {
+            $('.' + spanid).removeClass('hide');
+        } else {
+            $('.' + spanid).addClass('hide');
+        }
     }
 
     $("#datepicker").on("change", function() {
@@ -977,14 +979,14 @@
                 getMyservices(true);
             }
             setTimeout(function() {
-         var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
-            var value = $('#keywordtender').val().toLowerCase();
-           // console.log("kkll");
-            filtertenderdata(tabcontentid, value);
-        }, 5000);
+                var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+                var value = $('#keywordtender').val().toLowerCase();
+                // console.log("kkll");
+                filtertenderdata(tabcontentid, value);
+            }, 5000);
 
         });
-        
+
 
     }
 
@@ -1130,9 +1132,10 @@
                 var count = datas.length;
                 if (count > 0) {
                     span1 = "<span>Total Tender Count:" + count + "</span>";
-                } else {
-                    span1 = "<span>No Tender To Display </span>";
                 }
+                // } else {
+                //     span1 = "<span>No Tender To Display </span>";
+                // }
                 $('#totalcount').html(span1);
 
                 html = "";

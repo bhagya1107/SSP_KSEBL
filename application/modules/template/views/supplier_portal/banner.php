@@ -252,7 +252,7 @@
 
 						<div class="col-sm-3 col-xs-12 ">
  							
- 							<input type="date" class="select2 form-control"  id="district" name="group_flat__id" placeholder="Select a date" >
+ 							<input type="date" class="select2 form-control"  id="delivery_date" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
@@ -269,15 +269,15 @@
  						</div> -->
  						<div class="col-sm-3 col-xs-12 ">
  							
- 							<input type="text" class=" form-control"  id="keyword" name="keyword" placeholder="Key Word" >
+ 							<input type="text" class=" form-control"  id="keyworddelivery" name="keyword" placeholder="Key Word" >
 							
  								
  						</div>
 
 						<div class="col-sm-3 col-xs-12 " style="margin-top:10px;">
  							
- 							<input type="button" value="search" class="btn btn-primary">
- 						
+ 							<!-- <input type="button" value="search" class="btn btn-primary">
+ 						 -->
  						</div>
  					</div>
 				</div>
@@ -311,7 +311,7 @@
 
 						<div class="col-sm-3 col-xs-12 ">
  							
- 							<input type="date" class="select2 form-control"  id="district" name="group_flat__id" placeholder="Select a date" >
+ 							<input type="date" class="select2 form-control"  id="accountdate" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
@@ -328,7 +328,7 @@
  						</div> -->
  						<div class="col-sm-3 col-xs-12 ">
  							
- 							<input type="text" class=" form-control"  id="keyword" name="keyword" placeholder="Key Word" >
+ 							<input type="text" class=" form-control"  id="keywordaccounts" name="keyword" placeholder="Key Word" >
 							
  								
  						</div>

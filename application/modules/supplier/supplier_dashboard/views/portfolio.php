@@ -613,11 +613,14 @@
         console.log(materialgroup);
         console.log(productcategory);
         if (materialgroup != "" && productcategory != "") {
+            var load = '<option value="">Loading...</option>';
+            $('#material').html(load);
             $.post("<?php echo site_url('supplier/dashboard/getMaterialProductsDetails'); ?>", {
                     materialgroup: materialgroup,
                     productcategory: productcategory
                 },
                 function(data) {
+                    
                     var res = JSON.parse(data);
                     console.log(res);
                     var html = '<option value="">Select Material</option>';
