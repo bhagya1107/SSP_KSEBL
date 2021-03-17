@@ -214,10 +214,25 @@ class Home extends MX_Controller {
 				if(!$from_date) $from_date=date('Y-m-d');
 				$to_date=$this->input->post('to_date');
 				if(!$to_date) $to_date=date('Y-m-d');
+			
+				$type=$this->input->post('type');
+				if(!$type) $type="0";
+
+
 				$data['from_date']=$from_date;
 				$data['to_date']=$to_date;
+				$data['type']=$type;
+
+
 				$this->load->model('Loger');
-				$data['result']=$this->Loger->view_log($from_date,$to_date);
+				if($type!=3){
+					$data['result']=$this->Loger->view_log($from_date,$to_date,$type);
+				}else if($type==3){
+					$data['result']=$this->Loger->view_log_api($from_date,$to_date);
+				}
+
+				//print_r($data['result']);
+				
 
 				$this->load->view('log_view',$data);
 		}

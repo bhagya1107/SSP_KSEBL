@@ -118,6 +118,15 @@
                             <label>To Date </label>
                             <input data-toggle="datepicker" class="form-control  form-control-sm" name="to_date" id="to_date" value="<?php echo $to_date; ?>">
                         </div>
+
+                        <div class="col-md-2 date_range">
+                            <label>Type</label>
+                            <select  class="form-control  form-control-sm"  name="type" id="type" value="<?= $type;?>">
+                              <option value="0">Query Logs</option>
+                              <option value="1">Api transaction Logs</option>
+                              <option value="3">Api Transactions</option>
+                            </select>
+                        </div>
                         <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
 
 

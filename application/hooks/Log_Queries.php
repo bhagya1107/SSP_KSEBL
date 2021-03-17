@@ -47,6 +47,8 @@ public function readable_query()
 		foreach ($CI->db->queries as $key => $query)
 		{
 				$type=strtok($query, " ");
+
+				
 			
 				if(strtolower($type)=="update")
 				{
@@ -58,9 +60,19 @@ public function readable_query()
 						$table =  $match[1];
 					}
 
-					if($table=='sessions'){
+					// km updated
+					if(str_replace('"', '', trim($table)) =="sessions"){
+					
 						continue;
 					}
+
+				
+
+					if(str_replace('"', '', trim($table)) == 'api_transactions'){
+						$data['external_type'] = 1;
+					}
+					
+						// km updated
 					$sql = 'TIMESTAMP-'.date('d-m-y h:i:a').'  EXETIME-'.$times[$key]."\n" ;// Generating SQL file alongwith execution time
 					$sql .= "LOG:  $user Updated $table to ".$value ;// Generating SQL file alongwith execution time
 					fwrite($handle, $sql . "\n\n");
@@ -69,7 +81,11 @@ public function readable_query()
 					$data['type'] = 'update';
 					$data['userid'] = $userid;
 					$data['logs'] = "$user Updated $table to ".$value;
+					// $data['logs'] =str_replace('"', '', trim($table));
+
+
 					$CI->db->insert('query_logs',$data);
+					
 
 					//
 				} else if(strtolower($type)=="delete")
@@ -79,26 +95,35 @@ public function readable_query()
 					$table = '';
 					if (preg_match('/from(.*?)where/is', $str, $match) == 1) {
 						$table =  $match[1];
-				}
-				$sql = 'TIMESTAMP-'.date('d-m-y h:i:a').'  EXETIME-'.$times[$key]."\n" ;// Generating SQL file alongwith execution time
-				$sql .= "LOG:  $user Deleted entery from $table  where".$value ;// Generating SQL file alongwith execution time
-				fwrite($handle, $sql . "\n\n");
-				$data['log_datetime'] = date('Y-m-d h:i:s');
-				$data['exetime'] = $times[$key];
-				$data['type'] = 'delete';
-				$data['userid'] = $userid;
-				$data['logs'] = "$user Deleted entery from $table  where".$value;
-				$CI->db->insert('query_logs',$data);
+					}
+
+					if($table=='api_transactions'){
+						$data['external_type'] = 1;
+					}
+					$sql = 'TIMESTAMP-'.date('d-m-y h:i:a').'  EXETIME-'.$times[$key]."\n" ;// Generating SQL file alongwith execution time
+					$sql .= "LOG:  $user Deleted entry from $table  where".$value ;// Generating SQL file alongwith execution time
+					fwrite($handle, $sql . "\n\n");
+					$data['log_datetime'] = date('Y-m-d h:i:s');
+					$data['exetime'] = $times[$key];
+					$data['type'] = 'delete';
+					$data['userid'] = $userid;
+					$data['logs'] = "$user Deleted entry from $table  where".$value;
+					$CI->db->insert('query_logs',$data);
 
 					//
-					} else if(strtolower($type)=="insert")
-					{
+				} else if(strtolower($type)=="insert")
+				{
 						$str = strtolower($query);
 						$value = explode('values',$str)[1];
 						$table = '';
 						if (preg_match('/into(.*?)\(/is', $str, $match) == 1) {
 							$table =  $match[1];
-					}
+						}
+
+						if($table=='api_transactions'){
+							$data['external_type'] = 1;
+						}
+
 					$sql = 'TIMESTAMP-'.date('d-m-y h:i:a').'  EXETIME-'.$times[$key]."\n" ;// Generating SQL file alongwith execution time
 					$sql .= "LOG: $user added new entry to $table with values $value" ;// Generating SQL file alongwith execution time
 					fwrite($handle, $sql . "\n\n");
@@ -110,7 +135,7 @@ public function readable_query()
 					$CI->db->insert('query_logs',$data);
 
 						//
-					}
+				}
 		}
 
 		fclose($handle);
