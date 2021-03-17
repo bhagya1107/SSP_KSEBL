@@ -193,5 +193,10 @@ function decrypt(){
   return $_POST = $p;
 }
 
+function acl_error_message($pagename='')
+{
+  return "You are not allowed to access $pagename. Please contact Helpdesk";    
+}
+
 /////////////////////////////////////////
  ?>

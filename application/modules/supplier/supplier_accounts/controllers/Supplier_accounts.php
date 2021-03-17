@@ -27,7 +27,8 @@ public function __construct()
      }
       else
       {
-         $this->session->set_flashdata('msg','You are not allowed to access Accounts');
+         $acl_error_message=acl_error_message('Accounts');
+         $this->session->set_flashdata('msg',$acl_error_message);
         redirect(base_url('supplier/dashboard'));
       } //neethu end
   

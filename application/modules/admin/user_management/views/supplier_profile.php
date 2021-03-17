@@ -558,7 +558,7 @@
                                   { ?>
                                    <a target="_blank" style="<?php if($value->document=='') echo "display: none;" ?>" href="<?php echo site_url('uploads/bank_details/'.$value->document)?>"  ><i class="icofont icofont-eye-alt"></i>&nbsp;&nbsp;View </a>
                                  <?php  }
-                                    ?>
+                                 ?>
 
 
 
@@ -571,7 +571,7 @@
                                   <?php   }
                                   else
                                   { ?>  
-                                                <a href="<?php echo base_url('webuser/User_management/approve_bank_account/'.$value->id)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Approve"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
+                                               <a href="<?php echo base_url('webuser/User_management/approve_bank_account/'.$value->id)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Approve"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
                                                    <?php  }
                                     ?>
                                              </td>

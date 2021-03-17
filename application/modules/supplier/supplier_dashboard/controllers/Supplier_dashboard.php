@@ -72,6 +72,7 @@ class Supplier_dashboard extends SP_Controller {
 		$data['title'] = 'Profile';
 		$uid=$this->session->userdata('uid');
 		$data['getpersonalprofile']=$this->dashM->getpersonalprofile('suppliers',$uid); 
+		$data['getpersonalprofile1']=$this->dashM->getpersonalprofileemp('employees',$uid); 
 		$this->template->make('supplier_dashboard/personal_profile',$data,'supplier_portal'); 
 	}
 	

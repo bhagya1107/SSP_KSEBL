@@ -89,8 +89,8 @@ public function __construct()
 	   }
 	    else
 	    {
-	    	
-	        $this->session->set_flashdata('msg','You are not allowed to access Tenders ');
+	    	$acl_error_message=acl_error_message('Tenders');
+	        $this->session->set_flashdata('msg',$acl_error_message);
 	    	redirect(base_url('supplier/dashboard'));
 	    } //neethu end
 		
@@ -238,7 +238,7 @@ public function __construct()
 	public function apply($tenderId,$userid=''){
 	  	//neethu
 		 
-		 $this->load->model('Getmenus','GETM');
+		$this->load->model('Getmenus','GETM');
 		$user_type=$this->session->userdata('user_type');
 		$uid=$this->session->userdata('supplierid');
 		$getcompanypermissiondetails=$this->GETM->getCompanyPermission2($uid,$user_type);

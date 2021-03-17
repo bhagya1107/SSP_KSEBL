@@ -46,14 +46,16 @@
 				</div>
 
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
+				<?php
+									$session=$this->session->userdata('uid');
+									$user_type=$this->session->userdata('user_type');
+									//  echo $user_type; exit();
+									?>
 
 						<div class="table-responsive">
-							<table class="table table-bordered table-hover">
+							<table class="table table-bordered table-hover" style="<?php if( $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" >
 								<tr> 
-									<?php
-									$session=$this->session->userdata('uid');
-									// echo $session; exit();
-									?>
+									
 									<td style="text-align:right"> Name	</td>
 									<td><input type="text" readonly class="form-control"  value="<?php echo $getpersonalprofile->name;?>" />	</td> 
 								</tr>
@@ -73,6 +75,40 @@
 								<tr>
 									<td style="text-align:right">Password	</td>
 									<td><input type="password" onclick="viewdata()"  id="password" readonly class="form-control" name="password" value="<?php echo $getpersonalprofile->password;?>"  />	</td>
+								</tr>
+								<tr>
+									<td style="text-align:right">Change Password	</td>
+									<td><p>
+                                            <a style="color:#3343ff" href="<?php echo site_url('supplier/dashboard/forgotpassword');?>" title="Reset Password"> Click Here For Change password</a>
+                                        </p>	</td>
+								</tr>
+							</table>
+
+
+
+
+							<table class="table table-bordered table-hover" style="<?php if( $user_type=='1' OR $user_type=='2' OR $user_type=='3') echo "display: none;" ?>" >
+								<tr> 
+									
+									<td style="text-align:right">Name	</td>
+									<td><input type="text" readonly class="form-control"  value="<?php echo $getpersonalprofile1->name;?>" />	</td> 
+								</tr>
+ 
+								<tr>
+									<td style="text-align:right">Mobile	</td>
+									<td><input type="text" readonly class="form-control"  value="<?php echo $getpersonalprofile1->mobilenum;?>"/>	</td>
+								</tr>
+								<tr>
+									<td style="text-align:right">Email	</td>
+									<td><input type="text" readonly class="form-control"  value="<?php echo $getpersonalprofile1->email;?>"/>	</td>
+								</tr>
+								<tr>
+									<td style="text-align:right">username	</td>
+									<td><input type="text" readonly class="form-control"  value="<?php echo $getpersonalprofile1->mobilenum;?>"/>	</td>
+								</tr>
+								<tr>
+									<td style="text-align:right">Password	</td>
+									<td><input type="password" onclick="viewdata()"  id="password" readonly class="form-control" name="password" value="<?php echo $getpersonalprofile1->password;?>"  />	</td>
 								</tr>
 								<tr>
 									<td style="text-align:right">Change Password	</td>

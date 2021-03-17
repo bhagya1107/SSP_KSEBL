@@ -9,6 +9,7 @@ public function __construct()
 	public function index()
 	{
 	//neethu
+	
 		$this->load->model('Getmenus','GETM');
 		$user_type=$this->session->userdata('user_type');
 		$uid=$this->session->userdata('supplierid');
@@ -16,18 +17,19 @@ public function __construct()
 		
        if($getcompanypermissiondetails->procurement_plan=='1' and $this->session->userdata('active_status')=='1')
 	   { //neethu end
-    $data['showdashbaord'] =true;
-    $data['page'] = 'supplier_dashboard';
-    $data['title'] = 'Procurement Plan';
-    $data['indexurl'] = base_url()."supplier/dashboard";
-    $this->template->make('supplier_procurement/home',$data,'supplier_portal');
-  
+			$data['showdashbaord'] =true;
+			$data['page'] = 'supplier_dashboard';
+			$data['title'] = 'Procurement Plan';
+			$data['indexurl'] = base_url()."supplier/dashboard";
+			$this->template->make('supplier_procurement/home',$data,'supplier_portal');
+		
    //neethu
 	   }
 	    else
 	    {
+			$procurement=acl_error_message('Procurement Plan');
 	    	
-	    	$this->session->set_flashdata('msg','You are not allowed to access Procurement Plan');
+	    	$this->session->set_flashdata('msg',$procurement);
 	    	redirect(base_url('supplier/dashboard'));
 	    } //neethu end
 		

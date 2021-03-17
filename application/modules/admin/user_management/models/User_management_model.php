@@ -126,5 +126,11 @@ function getpan($pannumber) {
    $this->db->where('supplierId',$id);
    return $this->db->get($table)->row();
  }
+ public function supplierbankinfo($id) 
+ {
+  $this->db->select('*');
+  $this->db->where('id',$id);
+  return $this->db->get("bank_details")->row();
+}
 
 }

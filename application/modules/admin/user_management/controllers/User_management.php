@@ -32,7 +32,7 @@ class User_management extends AD_Controller {
     $data['supplierinfo']=$this->userM->supplierinfo('suppliermaterials',$id);
     $data['supplierinfo1']=$this->userM->supplierinfo1('suppliermaterials',$id);
     $data['getbankdetails']=$this->userM->bank_details('bank_details',$id);
-     $data['getbankdetails1']=$this->userM->bank_details1('bank_details',$id);
+    $data['getbankdetails1']=$this->userM->bank_details1('bank_details',$id);
     $data['getcompanydetails']=$this->userM->company_profile($id);
     $data['getuserdetails']=$this->userM->supplier_profile($id);
     $data['getstaffdetails']=$this->userM->getstaffdetails($id);
@@ -41,11 +41,18 @@ class User_management extends AD_Controller {
   }
   public function approve_bank_account()
   {
-
+  //  $supplierbankinfo="";
     $id=$this->uri->segment(4);
+    // echo $id; exit;
+    $data['supplierbankinfo']=$this->userM->supplierbankinfo((int)$id);
+    // $supplierid=$supplierbankinfo->supplierid;
+    //  echo print_r($supplierbankinfo);
+    //  echo $supplierbankinfo->bankname;
+    //  exit;
     $this->userM->approve_bank_account('bank_details',$id);
     $this->session->set_flashdata('msg','Approved successfully');
     redirect(base_url('webuser/user_management/suppliers'));
+    // redirect(base_url('webuser/user_management/supplier_profile/'.$supplierid));
   }
   public function activate_account()
   {

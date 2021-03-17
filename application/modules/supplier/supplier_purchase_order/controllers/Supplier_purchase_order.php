@@ -37,7 +37,8 @@ public function __construct()
 	   }
 	    else
 	    {
-	    	$this->session->set_flashdata('msg','You are not allowed to access Purchase Order');
+			$acl_error_message=acl_error_message('Purchase Order');	
+	    	$this->session->set_flashdata('msg',$acl_error_message);
 	    	redirect(base_url('supplier/dashboard'));
 	    } //neethu end
 	
