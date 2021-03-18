@@ -90,7 +90,7 @@
 									<th>Procured so far</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="myTable">
 								<tr>
 									<td>1</td>
 									<td>Bulb</td>
@@ -229,3 +229,49 @@
 
   </div>
 </div>
+
+<script>
+     $(document).ready(function() {
+
+
+						universalprocurementsearch();
+         $('#datepicker').datepicker({
+             dateFormat: 'yy-mm-dd'
+         });
+     });
+
+     function universalprocurementsearch() {
+
+       
+  $("#keywordprocurement").on("keyup", function() {
+		//	console.log("bbbb");
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+
+     }
+
+
+     $("#procurementdate").on("change", function() {
+         var activetab = $("#deliverytabs li.active").attr('id');
+         var value = $(this).val();
+         filterdeliverydata(value);
+     });
+
+					function filterdeliverydata(value) {
+
+$(".commonfilter div[class!=tg-btnsbox]").filter(function() {
+
+				var datetime1 = $(this).attr('datetime');
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+});
+
+$('.hiddendate').addClass('hide');
+var tenderlength = $(".commonfilter .tg-ticket [style='display: block;']").length;
+console.log(tenderlength);
+
+}
+
+					</script>

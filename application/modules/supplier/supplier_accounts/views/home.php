@@ -144,6 +144,8 @@
 
 		</div>
 		</div>
+		<div id="applyinvoices" class ="" style="text-align:center;"><span><b>Total N.o Of Invoices:2</b></span>
+        </div>
 	</section>
 </main>
 

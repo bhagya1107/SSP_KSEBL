@@ -58,8 +58,11 @@
  margin-right: 4%;
 }
   </style>
-             
+          
 	<div class="searchbar">
+	<?php
+                            $user_type = $this->session->userdata('user_type');
+                            ?>
   <?php if($this->uri->segment(2) == 'tenders')  { ?>
  
  			<div class="container">
@@ -71,12 +74,21 @@
 
 
 						<div class="col-sm-3 col-xs-12" >
- 				<span>Tender Type:</span>	
+ 				<span><b>Tender Type:</b></span>	 
 	<select class="select2 form-control" id="tenderType" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px;" >
-									<option>Select Tender Type</option>
- 								<option  selected value="products">Products</option> 
-								 <option value="services">Services</option> 
-							   	<option value="all">All</option>
+
+								 <option>Select Tender Type</option>
+<?php if($user_type != '2') { ?>
+ 								<option selected value="products">Products</option> 
+<?php }?> 
+<?php if($user_type == '2') { ?>
+ 								<option selected value="services">Services</option> 
+<?php }?> 
+<?php if($user_type == '1' && '3') { ?>
+ 								<option  value="services">Services</option> 
+<?php }?> 
+ 
+							   	<option value="all">All</option> 
 							</select>
  									
 
@@ -85,14 +97,14 @@
  				
 
 						 <div class="col-sm-3 col-xs-12 ">
-							<span>Tender Date:</span>
+							<span><b>Tender Date:</b></span>
  							<input  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
 						
  						<div class="col-sm-3 col-xs-12 ">
-							<span>keywords:</span>
+							<span><b>keywords:</b></span>
  							<input type="text" class=" form-control"  id="keywordtender" name="keyword" placeholder="Key Word" >
 							
  								
@@ -120,7 +132,7 @@
  					<div class="form-group row form_filter">
 
  						<div class="col-sm-3 col-xs-12" >
-							<span>Purchase Orders:</span>
+							<span><b>Purchase Orders:</b></span>
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
  												data-placeholder="Select a TenderId" >
 												 <option  >Select  Orders</option>
@@ -134,7 +146,7 @@
  						</div>
 
 						 <div class="col-sm-3 col-xs-12 ">
-							<span>Purchase Date:</span>
+							<span><b>Purchase Date:</b></span>
  							<input  type ="date" class="select2 form-control "  id="datepickerpurchase" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
@@ -151,7 +163,7 @@
  								
  						</div> -->
  						<div class="col-sm-3 col-xs-12 ">
-							<span>keywords:</span>
+							<span><b>keywords:</b></span>
  							<input type="text" class=" form-control"  id="keywordpurchaseorder" name="keyword" placeholder="Key Word" >
 							
  								
@@ -180,6 +192,7 @@
  					<div class="form-group row form_filter">
 
  						<div class="col-sm-3 col-xs-12" >
+							<span><b>Products:</b></span>
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
  												data-placeholder="Select a TenderId" >
 												 <option>Select Product</option>
@@ -192,8 +205,8 @@
  						</div>
 
 						<div class="col-sm-3 col-xs-12 ">
- 							
- 							<input type="date" class="select2 form-control"  id="district" name="group_flat__id" placeholder="Select a date" >
+						<span><b>Procurement Date:</b></span>
+ 							<input type="date" class="select2 form-control"  id="procurementdate" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
@@ -209,8 +222,8 @@
  								
  						</div> -->
  						<div class="col-sm-3 col-xs-12 ">
- 							
- 							<input type="text" class=" form-control"  id="keyword" name="keyword" placeholder="Key Word" >
+							<span><b>Keywords:</b></span>
+ 							<input type="text" class=" form-control"  id="keywordprocurement" name="keyword" placeholder="Key Word" >
 							
  								
  						</div>
@@ -239,6 +252,7 @@
  					<div class="form-group row form_filter">
 
  						<div class="col-sm-3 col-xs-12" >
+							<span><b>Delivery Orders:</b></span>
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
  												data-placeholder="Select a TenderId" >
 												 <option>Select Orders</option>
@@ -251,7 +265,7 @@
  						</div>
 
 						<div class="col-sm-3 col-xs-12 ">
- 							
+						<span><b>Delivery Date:</b></span>
  							<input type="date" class="select2 form-control"  id="delivery_date" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
@@ -268,7 +282,7 @@
  								
  						</div> -->
  						<div class="col-sm-3 col-xs-12 ">
- 							
+							<span><b>Keywords:</b></span>
  							<input type="text" class=" form-control"  id="keyworddelivery" name="keyword" placeholder="Key Word" >
 							
  								
@@ -298,8 +312,9 @@
  					<div class="form-group row form_filter">
 
  						<div class="col-sm-3 col-xs-12" >
+							<span><b>Invoice Id:</b></span>
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
- 												data-placeholder="Select a TenderId" >
+ 												data-placeholder="Select a InvoiceID" >
 												 <option>Select Invoice No</option>
  								<option value="0">INVOICE654432</option> 
 								<option value="0">INVOICE24662</option> 
@@ -310,7 +325,7 @@
  						</div>
 
 						<div class="col-sm-3 col-xs-12 ">
- 							
+						<span><b>Date:</b></span>
  							<input type="date" class="select2 form-control"  id="accountdate" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
@@ -327,7 +342,7 @@
  								
  						</div> -->
  						<div class="col-sm-3 col-xs-12 ">
- 							
+							<span><b>Keywords:</b></span>
  							<input type="text" class=" form-control"  id="keywordaccounts" name="keyword" placeholder="Key Word" >
 							
  								
@@ -335,7 +350,7 @@
 
 						<div class="col-sm-3 col-xs-12 " style="margin-top:10px;">
  							
- 							<input type="button" value="search" class="btn btn-primary">
+ 							<!-- <input type="button" value="search" class="btn btn-primary"> -->
  						
  						</div>
  					</div>
@@ -365,6 +380,7 @@
  					<div class="form-group row form_filter">
 
  						<div class="col-sm-12 col-lg-3" >
+							<span><b>Workcode:</b></span>
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
  												data-placeholder="Select a TenderId" >
 												 <option>Select Work Code</option>
@@ -377,7 +393,7 @@
  						</div>
 
 						<div class="col-sm-3 col-xs-12 ">
- 							
+						<span><b>Work date:</b></span>
  							<input type="date" class="select2 form-control"  id="district" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
@@ -396,7 +412,7 @@
 
 						<div class="col-sm-3 col-xs-12 ">
  							
- 							<input type="button" value="search" class="btn btn-primary">
+ 							<!-- <input type="button" value="search" class="btn btn-primary"> -->
  						
  						</div>
  					</div>

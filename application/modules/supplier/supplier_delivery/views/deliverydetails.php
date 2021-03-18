@@ -383,7 +383,8 @@
 
              </div>
          </div>
-
+         <div id="applydelivery" class ="" style="text-align:center;"><span><b>Total N.O of Delivery Orders:2</b></span>
+        </div>
 
      </section>
  </main>

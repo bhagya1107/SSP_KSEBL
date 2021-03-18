@@ -55,6 +55,11 @@
         display: none;
         background: rgba(0, 0, 0, 0.6);
     }
+    /* #tendertabs{
+        position:fixed;
+        top: 0;
+        z-index: 99999;
+    } */
 </style>
 
 <head>
@@ -77,6 +82,7 @@
             if ($msg) {
             ?>
 
+                            
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -107,8 +113,8 @@
                 </ul>
 
                 <div class="tab-content">
-
-
+                <input type="hidden" id="usertypeid" value="<?php echo $user_type;?>" >
+                
                     <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
                     <input type="hidden" id="mytenderservices" value="<?php echo htmlentities(json_encode($mytenderservices), ENT_QUOTES, 'UTF-8') ?>" />
                     <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
@@ -118,8 +124,7 @@
 
                                 </div>
                                 <!--  <span class="no-tender-alltender hide">No tender available</span>-->
-                                <div id="totalcount" style="text-align:center;">
-                                </div>
+
                             </div>
 
                         </div>
@@ -175,7 +180,7 @@
 
                             <span class="no-tender-fav hide">No tender available</span>
                         </div>
-                        <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span>
+                        <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
                     </div>
                     <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
@@ -234,7 +239,12 @@
 
             </div>
         </div>
-
+        <div id="alltendercount" style="text-align:center;">
+        </div>
+        <div id="favtendercount" class ="hide" style="text-align:center;"><span><b>Total Favourites Tenders:<?php echo count($getfavtender); ?></b></span>
+        </div>
+        <div id="applytedercount" class ="hide" style="text-align:center;"><span><b>Total Applied Tenders:2</b></span>
+        </div>
     </section>
 </main>
 <!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
@@ -901,15 +911,46 @@
 				}
 				} */
 </style>
-<script>
+<script> 
+var usertype= $("#usertypeid").val();
     $(document).ready(function() {
+        
+       if(usertype == '2'){ 
+           getMyservices(true);
+       }
+       else{
         getMytenders(true);
+       }
         changeTenderTye(true);
         universaltendersearch();
+        showcountnavbar();
         $('#datepicker').datepicker({
             dateFormat: 'yy-mm-dd'
         });
     });
+
+    function showcountnavbar() {
+        $(".nav-tabs a").click(function() {
+            var activetab = $(this).parent().attr('id');
+           
+            //console.log(activetab);
+ if(activetab == 'favtender'){
+    $('#favtendercount').removeClass('hide');
+    $('#alltendercount').addClass('hide');
+    $('#applytedercount').addClass('hide');
+}else if(activetab == 'applytender'){
+    $('#applytedercount').removeClass('hide');
+    $('#alltendercount').addClass('hide');
+    $('#favtendercount').addClass('hide');
+}else{
+    $('#alltendercount').removeClass('hide');
+    $('#applytedercount').addClass('hide');
+    $('#favtendercount').addClass('hide'); 
+}
+         
+
+        });
+    }
 
     function universaltendersearch() {
 
@@ -935,7 +976,7 @@
             var datetime1 = $(this).attr('datetime');
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
-        
+
         $('.hiddendate').addClass('hide');
         var spanid = (activetab == 'favtender') ? 'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
         var tenderlength = $("#" + tabcontentid + " .commonfilter .tg-ticket [style='display: block;']").length;
@@ -955,7 +996,6 @@
     });
 
     $(function() {
-        console.log("klll");
         $('#datepicker').datepicker({
             autoSize: true,
             onSelect: function(dateText, inst) {
@@ -981,7 +1021,6 @@
             setTimeout(function() {
                 var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
                 var value = $('#keywordtender').val().toLowerCase();
-                // console.log("kkll");
                 filtertenderdata(tabcontentid, value);
             }, 5000);
 
@@ -995,9 +1034,6 @@
         $.ajax({
             type: "POST",
             url: '<?php echo base_url() ?>supplier/tenders/getAAlltendersApi',
-            // data: {
-            //     "tenderid": 8,
-            // },
             type: 'POST',
             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
             // processData: false, // NEEDED, DON'T OMIT THIS
@@ -1012,19 +1048,17 @@
                 datas = JSON.parse(result);
                 var count = datas.length;
                 if (count > 0) {
-                    span1 = "<span>Total Tender Count:" + count + "</span>";
+                    span1 = "<span><b>Total Tenders:" + count + "</b></span>";
                 } else {
                     span1 = "<span>No Tender To Display </span>";
                 }
-                $('#totalcount').html(span1);
+                $('#alltendercount').html(span1);
                 html = "";
                 $.each(datas, function(i, data) {
                     //console.log(data.sorting);
 
                     html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
                     var date1 = new Date(data.tender_date);
-                    // console.log(date1);
-                    // console.log(date1.getDate());
                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
                     html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
                     html += "<div class='hiddendate' hidden >" + data.tender_date + "</div>";
@@ -1039,11 +1073,6 @@
                     }
 
                     html += "</div></div>";
-
-                    // console.log(html);
-
-
-
 
                 });
                 $('#alltenderdetails').empty().append(html);
@@ -1078,11 +1107,11 @@
                 datas = JSON.parse(result);
                 var count = datas.length;
                 if (count > 0) {
-                    span1 = "<span>Total Tender Count:" + count + "</span>";
+                    span1 = "<span><b>Total Tenders:" + count + "</b></span>";
                 } else {
                     span1 = "<span>No Tender To Display </span>";
                 }
-                $('#totalcount').html(span1);
+                $('#alltendercount').html(span1);
                 html = "";
                 $.each(datas, function(i, data) {
 
@@ -1114,7 +1143,7 @@
     }
 
 
-    function getMyservices() {
+    function getMyservices(overlay) {
         $.ajax({
             type: "POST",
             url: '<?php echo base_url() ?>supplier/tenders/getProductServices',
@@ -1131,12 +1160,12 @@
                 datas = JSON.parse(result);
                 var count = datas.length;
                 if (count > 0) {
-                    span1 = "<span>Total Tender Count:" + count + "</span>";
-                }
-                // } else {
-                //     span1 = "<span>No Tender To Display </span>";
-                // }
-                $('#totalcount').html(span1);
+                    span1 = "<span><b>Total Tenders:" + count + "</b></span>";
+                
+                 } else {
+                    span1 = "<span>No Tender To Display </span>";
+                 }
+                $('#alltendercount').html(span1);
 
                 html = "";
 
@@ -1145,8 +1174,6 @@
                     console.log(data);
                     html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
                     var date1 = new Date(data.tender_date);
-                    // console.log(date1);
-                    // console.log(date1.getDate());
                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
                     html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
                     html += "<div class='hiddendate' hidden >" + data.tender_date + "</div>";
@@ -1184,7 +1211,7 @@
             getMytenders(false);
             console.log('reload api');
         } else if (type == 'services') {
-            getMyservices();
+            getMyservices(false);
         }
     }, 10000000);
 

@@ -88,8 +88,7 @@
                          <div class="row">
                              <div class="tg-tickets">
                                  <div class="commonfilter" id="allpurchasedetails"></div>
-                                 <div id="totalcount" style="text-align:center;">
-                                 </div>
+                               
                              </div>
 
 
@@ -371,7 +370,12 @@
                  </div>
              </div>
          </div>
-
+         <div id="allpurchasecount" style="text-align:center;">
+        </div>
+        <div id="acceptedpurchasecount" class ="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:2</b></span>
+        </div>
+        <div id="workpurchasecount" class ="hide" style="text-align:center;"><span><b>Total Work Orders:247</b></span>
+        </div>
      </section>
  </main>
 
@@ -1525,7 +1529,7 @@ toggle between hiding and showing the dropdown content */
      $(document).ready(function() {
          LoadAllPurchaseOrders();
          universalpurchasesearch();
-
+         showcountnavbar();
      });
 
      setInterval(() => {
@@ -1533,7 +1537,28 @@ toggle between hiding and showing the dropdown content */
 
      }, 10000000);
 
-     
+     function showcountnavbar() {
+        $(".nav-tabs a").click(function() {
+            var activetab = $(this).parent().attr('id');
+           //allpurchaseorder acceptedpurchaseorder workorders
+           // console.log(activetab);acceptedpurchasecount workpurchasecount
+ if(activetab == 'acceptedpurchaseorder'){
+    $('#acceptedpurchasecount').removeClass('hide');
+    $('#allpurchasecount').addClass('hide');
+    $('#workpurchasecount').addClass('hide');
+}else if(activetab == 'workorders'){
+    $('#workpurchasecount').removeClass('hide');
+    $('#allpurchasecount').addClass('hide');
+    $('#acceptedpurchasecount').addClass('hide');
+}else{
+    $('#allpurchasecount').removeClass('hide');
+    $('#acceptedpurchasecount').addClass('hide');
+    $('#workpurchasecount').addClass('hide'); 
+}
+         
+
+        });
+    }
 
 function universalpurchasesearch() {
 
@@ -1596,11 +1621,11 @@ $("#keywordpurchaseorder").on("keyup", function() {
                  datas = JSON.parse(result);
                  var count = datas.length;
                  if (count > 0) {
-                     span1 = "<span>Total Purchase Count:" + count + "</span>";
+                     span1 = "<span><b>Total Purchase Count:" + count + "</b></span>";
                  } else {
                      span1 = "<span>No Purchase To Display </span>";
                  }
-                 $('#totalcount').html(span1);
+                 $('#allpurchasecount').html(span1);
                  html = "";
                  $.each(datas, function(i, data) {
                      //console.log(data.sorting);

@@ -180,9 +180,8 @@ class Procurement_model extends CI_Model
 
     }
 	
-	 public function getfavtender($supplierid) {
+	 public function getfavtender() {
         $this->db->select('*');
-        $this->db->where('supplierid',$supplierid);
 		$this->db->order_by('tenders_favourites.id','desc');
         $result=$this->db->get('tenders_favourites');
 		
@@ -220,7 +219,7 @@ class Procurement_model extends CI_Model
 
     public function getSupplierServices($supplierid)
     {
-        //echo"$supplierid";exit;
+        
      $this->db->select('*');
 	 $this->db->where('supplierid',$supplierid);
      $this->db->where('isdeleted',false);
