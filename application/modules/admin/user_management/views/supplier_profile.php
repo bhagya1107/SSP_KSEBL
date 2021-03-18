@@ -63,6 +63,30 @@
                             </div>
                         </div>
                         <!--profile cover end-->
+                        <script> 
+        setTimeout(function() {
+            $('#mydivss').hide('fast');
+        }, 10000);
+    </script>
+          <?php 
+          $msg=$this->session->flashdata('msg'); 
+          if($msg)
+          {
+            ?>
+
+            <div class="alert alert-success" id="mydivss">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <?php
+              echo $msg;
+              ?>
+            </div>
+
+            <?php 
+          }
+          ?>
+                        
                         
                         <div class="row">
                             <div class="col-lg-12">
@@ -574,7 +598,10 @@
                                                <a href="<?php echo base_url('webuser/User_management/approve_bank_account/'.$value->id)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Approve"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
                                                    <?php  }
                                     ?>
-                                             </td>
+                                     <?php  $idd=$value->supplierid;
+                                     $this->session->set_userdata('path','webuser/User_management/supplier_profile/'.$idd);?>
+                                        
+                                         </td> 
                                                                   </tr>
                                                                    <?php } ?>
 

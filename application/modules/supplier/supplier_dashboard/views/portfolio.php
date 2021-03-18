@@ -94,7 +94,18 @@
 
                         </ul>
                         <div class="tab-content">
-                            <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
+
+
+
+
+
+
+
+
+                        
+
+                        
+                        <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == 1) ? "in active" : "" ?>">
                                 <div class="row">
 
                                     <div class="card card-small ">
@@ -170,7 +181,90 @@
 
                                 </div>
                             </div>
-                            <div id="menu1" class="tab-pane fade <?php echo $tab == 2 ? "in active" : "" ?>">
+
+
+
+
+
+
+
+                            <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == 3) ? "in active" : "" ?>">
+                                <div class="row">
+
+                                    <div class="card card-small ">
+                                        <div class="card-header border-bottom" style="margin-top:10px;">
+                                            <!-- <h6 class="m-0">Add Products</h6> -->
+                                            <!-- <hr /> -->
+                                        </div>
+                                        <div class="row p-0 px-3 pt-3">
+                                            <div class="form-group col-md-12">
+                                                <label for="">Material Category</label>
+                                                <select class="form-control materialdata" id="productcategory" placeholder="Company name">
+                                                    <option value="">Select Material Category</option>
+                                                    <option value="1" data-name="Generation">Generation</option>
+                                                    <option value="2" data-name="Transmission">Transmission</option>
+                                                    <option value="3" data-name="Distribution">Distribution</option>
+                                                    <option value="4" data-name="Corporate">Corporate</option>
+                                                    <option value="5" data-name="Civil">Civil</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="">Material Group Data</label>
+                                                <select class="form-control materialdata" id="materialinput" placeholder="Company name">
+                                                    <option value="">Select Material Group Data
+                                                        <?php foreach ($materialdata as $materialdatas) { ?>
+                                                    <option value="<?php echo $materialdatas->material_group_code; ?>">
+                                                        <?php echo $materialdatas->material_group_name; ?></option>
+                                                <?php } ?>
+                                                </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-12">
+                                                <label for="">Select Material </label>
+                                                <select class="form-control material" id="material" placeholder="Year of  registration">
+                                                    <option value="">Select Material
+                                                    </option>
+                                                </select><span style="color:red;" id="materialclass" class="hide">Material Already Exists</span>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <button class="mb-2 btn btn-primary mr-2" id="save_products" onclick="save_products();">Add To My Products</button>
+
+                                                <!--  <h6>Added Products</h6>-->
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="table-responsive">
+                                                    <table id="materialproducts" class="table table-striped table-bordered table-hover" class="display" style="width: 100%">
+                                                        <thead>
+                                                            <tr style="background-color:#26265f ;color:#FFF ">
+                                                                <th>Sl No </th>
+                                                                <th>category </th>
+                                                                <th>Product Name</th>
+                                                                <th>Orders</th>
+                                                                <th>Overdue</th>
+                                                                <th>Receipts</th>
+                                                                <th>Defects</th>
+                                                                <th>VMI</th>
+                                                                <th>On-Time Performance</th>
+                                                                <th>Consigned Inventory</th>
+                                                                <th>Capacity Info</th>
+                                                                <th>Remove</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="menu1" class="tab-pane fade <?php echo ($tab == 1 and $user_type == 2 )? "in active" : "" ?>">
                                 <div class="row">
 
                                     <div class="card card-small ">

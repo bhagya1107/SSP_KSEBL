@@ -103,19 +103,20 @@
           <h1>SUPPLIER REGISTRATION</h1>
             <p>
               <h4 class=""> 
-                 <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor  &nbsp; &nbsp; &nbsp;
+                 <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor &nbsp; &nbsp; &nbsp;
                 <input type="radio" id="is_company" name="comp_type" required > &nbsp;Supplier  
               </h4>
             </p>
     <div class="checkbox-group required">
-       <div class="companyStatus">
-              <h4 class="section-heading">COMPANY NAME </h4> 
-              <p><input type="text" class="form-control" placeholder="Enter company" name="companyname" id=""></p>
-            </div>
+      
           
-      <div class="individualStatus hidedata" >
+      <div class="individualStatus " >
               <h4 class="section-heading"> NAME (AS PER THE PAN CARD)</h4> 
               <p><input type="text" class="form-control" placeholder="Enter Name" name="individualname" id=""></p>
+            </div>
+            <div class="companyStatus hidedata">
+              <h4 class="section-heading">COMPANY NAME </h4> 
+              <p><input type="text" class="form-control" placeholder="Enter company" name="companyname" id=""></p>
             </div>
   </div>
       

@@ -484,7 +484,11 @@ hr{
     <div class="tab-content mt-3">
         <div class="tab-chat tab-pane fade in active" id="messages" role="tabpanel">
             <div class="vertical-menu sidebar1" id="drag-1">
-    
+            <?php   
+                $user_type=$this->session->userdata('user_type');
+
+                ?>
+
             
     
         <br>
@@ -492,9 +496,10 @@ hr{
                 <a style="<?php if($getcompanypermissiondetails->tenders=='0') echo "display: none;" ?>"  href="<?=supplier_url('tenders')?>" class=""><b>TENDERS</b></a><hr>
                 <a style="<?php if($getcompanypermissiondetails->tenders=='0') echo "display: none;" ?>"  href="<?=supplier_url('tenders/my')?>">Favourite Tenders<i></i></a>
                    <a style="<?php if($getcompanypermissiondetails->tenders=='0') echo "display: none;" ?>"  href="<?=supplier_url('tenders/my')?>">Applied Tenders<i></i></a>
-                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0') echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>" class=""><b>PURCHASE ORDER</b></a><hr>
-                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0') echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>">My Purchase Order<i></i></a>
-
+                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0'  OR $user_type=="2") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>" class=""><b>PURCHASE ORDER</b></a><hr>
+                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0'  OR $user_type=="2") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>">My Purchase Order<i></i></a>
+                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0' OR $user_type=="1" OR $user_type=="3") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>" class=""><b>WORK ORDER</b></a><hr>
+                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0' OR $user_type=="1"  OR $user_type=="3") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>">My Work Order<i></i></a>
                 <a style="<?php if($getcompanypermissiondetails->delivery=='0') echo "display: none;" ?>"  href="<?=supplier_url('delivery')?>" class=""><b>DELIVERY</b></a><hr>
                      <a style="<?php if($getcompanypermissiondetails->delivery=='0') echo "display: none;" ?>"  href="<?=supplier_url('delivery/delivery_module')?>">View Calender<i></i></a>
 						<!-- <a href="#">Dispatch</a>

@@ -41,18 +41,11 @@ class User_management extends AD_Controller {
   }
   public function approve_bank_account()
   {
-  //  $supplierbankinfo="";
+    $path=$this->session->userdata('path');
     $id=$this->uri->segment(4);
-    // echo $id; exit;
-    $data['supplierbankinfo']=$this->userM->supplierbankinfo((int)$id);
-    // $supplierid=$supplierbankinfo->supplierid;
-    //  echo print_r($supplierbankinfo);
-    //  echo $supplierbankinfo->bankname;
-    //  exit;
     $this->userM->approve_bank_account('bank_details',$id);
     $this->session->set_flashdata('msg','Approved successfully');
-    redirect(base_url('webuser/user_management/suppliers'));
-    // redirect(base_url('webuser/user_management/supplier_profile/'.$supplierid));
+    redirect(base_url($path));
   }
   public function activate_account()
   {

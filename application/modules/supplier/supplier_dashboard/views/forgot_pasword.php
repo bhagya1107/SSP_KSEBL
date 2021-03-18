@@ -84,7 +84,8 @@
     width: 100%;
 }
 #tg-footer{
-	display:none;
+    margin-top: 20%;
+	display:block;
 }
 </style>
 <body class="fix-menu">
@@ -191,7 +192,7 @@ $(document).ready(function(){
 $("#generateotp").click(function() {
 	$('#paswordmess').addClass('hide');
 	var mobile=$('#mobile').val();
-	console.log(mobile);
+	console.log(mobile); 
 	console.log($.isNumeric(mobile));console.log(mobile.length);
  if($.isNumeric(mobile)&& mobile.length ==10 ){
 	 $('#paswordmess').removeClass('hide');
@@ -202,4 +203,3 @@ $("#generateotp").click(function() {
 });
 });
 </script>
-<?php $this->view('template/supplier_portal/footer',$page); ?>
