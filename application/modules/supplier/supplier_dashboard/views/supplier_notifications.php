@@ -61,8 +61,7 @@
                             </div>
                           </div>
                   </div>
-
-
+                 
                   <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                       <thead>
@@ -79,8 +78,8 @@
                         <tr>
                           <td>1</td>
                           <td>test</td>
-                          <td>testing</td>
-                          <td>26/08/2020</td>
+                          <td><?php echo $notifications;?></td>
+                          <td>26/08/2020</td> 
                           <td>
                           <button style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" data-toggle="modal" data-target="#notification" class="btn btn-primary btn-xs">Reply</button></td>
                         </tr>

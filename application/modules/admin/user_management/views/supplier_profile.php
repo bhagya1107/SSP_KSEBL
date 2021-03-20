@@ -140,14 +140,14 @@
                           { ?>
                                                         
                                                           <p  class="  f-right   " >
-                                                <a href="<?php echo base_url('webuser/User_management/activate_account/'.$getuserdetails->uid)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Activate"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
+                                                <a href="<?php echo base_url('webuser/User_management/activate_account/'.$getuserdetails->uid)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Activate"  onclick="if (confirm('Are you sure?')) commentDelete(1); return false" /></a>
                                                  </p> 
                                              <?php }
                                              else
                                              {
                                                 ?>
                                                     <p  class="  f-right" >
-                                                <a href="<?php echo base_url('webuser/User_management/deactivate_account/'.$getuserdetails->uid)?>" ><input type="button" style="background-color: red;" value="Deactivate"  class="btn  btn-sm btn-out-dashed btn-success btn-square" value=""  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
+                                                <a href="<?php echo base_url('webuser/User_management/deactivate_account/'.$getuserdetails->uid)?>" ><input type="button" style="background-color: red;" value="Deactivate"  class="btn  btn-sm btn-out-dashed btn-success btn-square" value=""  onclick="if (confirm('Are you sure?')) commentDelete(1); return false" /></a>
                                                  </p> 
 
                                                 <?php
@@ -180,6 +180,7 @@
         <tr>
              <th scope="row"> Name</th>
              <input type="hidden" name="uid" id="uid"  value="<?php echo "$getuserdetails->uid"?>" >
+             <?php $this->session->set_userdata('usertypes',$getuserdetails->user_type);?>
              <td><input type="text" class="form-control showprofile" id="name" name="name" readonly 
                   value="<?php echo "$getuserdetails->name"?>"></td>
          
@@ -299,7 +300,7 @@
                 <tr>
                     <th></th>
                     <td > <div class="form-group">
-                      <a href="<?php echo base_url('webuser/User_management/resend_password/'.$getuserdetails->uid)?>" onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" >  <button type="submit" class="btn btn-primary   "  style="margin-left: 150px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Resend Password</span></button></a></div></td>
+                      <a href="<?php echo base_url('webuser/User_management/resend_password/'.$getuserdetails->uid)?>" onclick="if (confirm('Are you sure?')) commentDelete(1); return false" >  <button type="submit" class="btn btn-primary   "  style="margin-left: 150px;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Resend Password</span></button></a></div></td>
 
                      
 
@@ -595,7 +596,7 @@
                                   <?php   }
                                   else
                                   { ?>  
-                                               <a href="<?php echo base_url('webuser/User_management/approve_bank_account/'.$value->id)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Approve"  onclick="if (confirm('Are you Sure?')) commentDelete(1); return false" /></a>
+                                               <a href="<?php echo base_url('webuser/User_management/approve_bank_account/'.$value->id)?>" ><input type="button"   class="btn  btn-sm btn-out-dashed btn-success btn-square" value="Approve"  onclick="if (confirm('Are you sure?')) commentDelete(1); return false" /></a>
                                                    <?php  }
                                     ?>
                                      <?php  $idd=$value->supplierid;

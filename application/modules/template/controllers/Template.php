@@ -50,6 +50,8 @@ class Template extends MX_Controller {
 			  $uid=$this->session->userdata('supplierid');
 			$this->load->model('Getmenus','GETM');
 			 $data['getcompanypermissiondetails']=$this->GETM->getCompanyPermission2($uid,$user_type); 
+			 $data['notifications']=$this->GETM->notifications($uid,$user_type); 
+			 $data['notificationsview']=$this->GETM->notificationsview($uid,$user_type); 
 			 //neethu end
 			$this->load->view($theme .'header',$data);
 			if(isset($_SESSION['theme']) &&  $_SESSION['theme']=='supplier'){ 

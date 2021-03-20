@@ -121,24 +121,7 @@
 
 				<div class="row h-100 ">
 
-			 <?php 
-        $rmsg=$this->session->flashdata('rmsg'); 
-        if($rmsg)
-        {
-          ?>
-          
-          <div class="alert alert-success" id="mydivss" style="margin-left: 100px;">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            <?php
-           echo $rmsg;
-            ?>
-          </div>
-        
-        <?php 
-        }
-        ?>
+			
 
 			
 				
@@ -147,10 +130,27 @@
 						
 						<div class="main-content-container container-fluid px-4 my-auto h-100">
 							<div class="row no-gutters h-100">
+							
 
 								<div class="auth-form mx-auto my-auto">
 									<div class="card" style=" background: transparent; box-shadow: none !important;">
 										<div class="card-body" style="margin-top:2rem;background:#fff;z-index:9;" >
+										<?php 
+											$rmsg=$this->session->flashdata('rmsg'); 
+											if($rmsg)
+											{
+											?> 
+												<!-- <span aria-hidden="true">&times;</span> -->
+												<span style="color:green" id="mydivss">
+												<?php
+											echo $rmsg;
+												?>
+													</span>
+											
+											
+											<?php 
+											}
+											?>
 											<img class="auth-form__logo d-table mx-auto mb-3" src="<?=base_url('assets/logo.png')?>" 
 												alt="Shards Dashboards - Register Template"
 												style=" border-radius: 5px; background: white; width: 100px; padding: 17px; ">

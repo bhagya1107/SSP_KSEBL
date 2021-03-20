@@ -96,7 +96,23 @@ function getCompanyPermission1($uid,$user_type) {
         $this->db->where('user_type',$user_type);
         return $this->db->get('access_permission')->row();  
     }
-    
+    function notifications($uid,$user_type) {
+      // $this->db->trans_start();
+      $this->db->select('*');
+      $this->db->where('user_id',$uid);
+      $this->db->where('user_type',$user_type);
+      $this->db->where('status','1');
+      return $this->db->get('notifications')->num_rows(); 
+  }
+  function notificationsview($uid,$user_type) {
+    // $this->db->trans_start();
+    $this->db->select('*');
+    $this->db->where('user_id',$uid);
+    $this->db->where('user_type',$user_type);
+    $this->db->where('status','1');
+    return $this->db->get('notifications')->row(); 
+}
+  
 //neethu end
 
 }

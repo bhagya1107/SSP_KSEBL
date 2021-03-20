@@ -249,9 +249,9 @@ $( document ).ajaxStop(function() {
              <div class="frame1">
               	<div class="center1">
 		              <div class="title">
-			             <h1>Drop Supplier list to upload</h1>
+			             <h1> Select  Supplier list  Excel file up to 10MB</h1>
 		              </div>
-                   <p style="color: black;" id="p">Select Excel file up to 10MB</p>
+                   <!-- <p style="color: black;" id="p">Select Excel file up to 10MB</p> -->
                    <!-- <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
                    <input  type="file"   name="file" id="file" accept=".xls, .xlsx" required > -->
 		                <!-- <div class="dropzone">  
@@ -263,7 +263,7 @@ $( document ).ajaxStop(function() {
 		                </div>   -->
                      <div class="dropzone">  
    
-			                  <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+			                  <!-- <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" /> -->
 			                  <input type="file"  name="file" id="file" class="form-control" accept=".xls, .xlsx" required />
       
 
@@ -422,21 +422,6 @@ function myFunction1() {
 <style type="text/css">
 
 
-.frame1 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 550px;
-	height: 250px;
-	margin-top: -100px;
-	margin-left: -200px;
-	border-radius: 2px;
-	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-	overflow: hidden;
-	background: linear-gradient(to top right, #0e214c 0%, hotpink 100%);
-	color: #333;
-	font-family: "Open Sans", Helvetica, sans-serif;
-}
 
 .center1 {
   border-top: 1px dashed black;
@@ -460,7 +445,7 @@ function myFunction1() {
 .title {
 	width: 100%;
 	height: 50px;
-	border-bottom: 1px solid #999;
+	/* border-bottom: 1px solid #999; */
 	text-align: center;
 }
 
@@ -472,7 +457,7 @@ h1 {
 
 .dropzone {
 	width: 250px;
-	height: 90px;
+	height: 43px;
 	border: 1px dashed #999;
 	border-radius: 3px;
 	text-align: center;
@@ -499,7 +484,7 @@ h1 {
 	color: #fff;
 	border-radius: 3px;
 	border: 0;
-	box-shadow: 0 3px 0 0 hotpink;
+	/* box-shadow: 0 3px 0 0 hotpink; */
 	transition: all 0.3s ease-in-out;
 	font-size: 14px;
 }

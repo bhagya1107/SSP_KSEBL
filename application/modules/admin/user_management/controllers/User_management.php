@@ -49,7 +49,16 @@ class User_management extends AD_Controller {
   }
   public function activate_account()
   {
+    $usertypes=$this->session->userdata('usertypes');
     $id=$this->uri->segment(4);
+    $data=array(
+      'user_id '=>$id,
+      'user_type'=>$usertypes,
+      'message'=>'Your Account is activated',
+      'status'=>1,
+      'tablename'=>'suppliers'
+       );
+    $this->userM->insert('notifications',$data);
     $this->userM->activate_account('suppliers',$id);
     $this->session->set_flashdata('msg','Approved successfully');
     redirect(base_url('webuser/user_management/suppliers'));

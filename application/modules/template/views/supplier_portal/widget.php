@@ -536,19 +536,19 @@ hr{
         </div>
         <div class="tab-pane fade" id="tasks" role="tabpanel">
         <br><br>
-            <h5>You have 4 new notification</h3>
-            <hr>
+            <h5  style="<?php if($notifications=='0') echo "display: none;" ?>" >You have <?php echo $notifications;?> new notification</h3>
+            <hr> 
             <ul class="notif-box">
                 <div class="notif-center submenu">
-                    <a href="#">
+                    <a href="#" style="<?php if($notifications=='0') echo "display: none;" ?>" >
                     <li><div class="notif-content">
-                            You Tender #33334FFV is approved.
+                    <?php echo $notificationsview->message;?>
                             <div class="clear-fix"></div>
-                            <span class="time">5 minutes ago</span>
+                            <!-- <span class="time">5 minutes ago</span> -->
                         </div>
                     </li>
                     </a>
-                    <a href="#">
+                    <!-- <a href="#">
                         <li>
                             <div class="notif-content">
                                 You Tender #E2332 is approved.
@@ -557,19 +557,11 @@ hr{
                             </div>
                         </li>
                     </a>
-                    
-                    <a href="#">
-                        <li>
-                            <div class="notif-content">
-                                You Tender #WE332452 is approved.
-                                <div class="clear-fix"></div>
-                                <span class="time">3 days ago</span>
-                            </div>
-                        </li>
-                    </a>
+                     -->
+                 
                     
                     
-                    <a href="#">
+                    <!-- <a href="#">
                         <li>
                             <div class="notif-content">
                                 You Tender #22222 is Rejected.
@@ -580,7 +572,7 @@ hr{
                     
                         </li>
                     
-                    </a>
+                    </a> -->
                 
                     <a class="see-all" href="<?=supplier_url('dashboard/notifications')?>">See all notifications<i class="fa fa-angle-right"></i> </a>
                 </div>

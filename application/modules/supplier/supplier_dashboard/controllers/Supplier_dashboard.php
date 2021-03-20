@@ -109,6 +109,9 @@ class Supplier_dashboard extends SP_Controller {
 		$data['mainpage'] = '';
 		$data['page_title'] = 'notifications';
 		$data['title'] = 'Company notifications';
+		$user_type=$this->session->userdata('user_type');
+		$uid=$this->session->userdata('supplierid');
+		$data['notifications']=$this->dashM->notifications($uid,$user_type); 
 		$this->template->make('supplier_dashboard/supplier_notifications',$data,'supplier_portal');
 
  	}

@@ -228,7 +228,10 @@
 													<i class="fa fa-font changefont" aria-hidden="true" data-name='14px' title="Medium" style="color:#fff;font-size:12px;"></i>&nbsp;
 													<i class="fa fa-font changefont" aria-hidden="true" data-name='17px' title="Large" style="color:#fff;font-size:14px;"></i></a></li>
 												<li title="Quick Link"  class="quicklinkheader " data-toggle="collapse" href="#multiCollapseExample1"  id="toggle-button"><a href="#"><i class="fa fa-th" aria-hidden="true" style="color:#fff" onclick=""></i></a></li>
-												<li title="notification"  ><a href="<?=supplier_url('dashboard/notifications')?>"><i class="fa fa-bell" aria-hidden="true" style="color:#fff"></i></a></li>
+												<li title="notification"  ><a href="<?=supplier_url('dashboard/notifications')?>" ><i class="fa fa-bell" aria-hidden="true" style="color:#fff"></i>
+												<?php if($notifications!='0'){ ?>
+												<span style="background-color: red; margin-top :-20px;"  class="badge"><?php echo $notifications;?></span>
+												<?php } ?></a></li>
 												<li title="logout"  ><a href="<?=supplier_url('dashboard/logout')?>"><i class="fa fa-sign-out" aria-hidden="true" style="color:#fff"></i></a></li>
 												
 												

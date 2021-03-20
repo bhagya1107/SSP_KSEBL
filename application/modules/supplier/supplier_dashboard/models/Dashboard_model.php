@@ -166,5 +166,13 @@ class Dashboard_model extends CI_Model
       $Query = $this->db->get('suppliermaterials');
       return $Query->num_rows(); 
   }
+  public function notifications($uid,$user_type) {
+    
+    $this->db->select('*');
+    $this->db->where('user_id',$uid);
+    $this->db->where('user_type',$user_type);
+    $this->db->where('status','1');
+    return $this->db->get('notifications')->row(); 
+}
     
 }
