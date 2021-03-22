@@ -540,7 +540,7 @@ hr{
             <hr> 
             <ul class="notif-box">
                 <div class="notif-center submenu">
-                    <a href="#" style="<?php if($notifications=='0') echo "display: none;" ?>" >
+                    <a href="#" >
                     <li><div class="notif-content">
                     <?php echo $notificationsview->message;?>
                             <div class="clear-fix"></div>

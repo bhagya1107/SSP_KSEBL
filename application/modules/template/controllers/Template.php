@@ -81,9 +81,11 @@ class Template extends MX_Controller {
 			$this->load->view($theme .'footer');
 
 	}
-	public function registration(){
-		echo 1;
-	}
+	// public function notification_change_status(){
+	// 	$uid = $this->input->post('uid');
+	// 	$user_type = $this->input->post('user_type');
+	// 	$this->GETM->update_notification_status( $uid, $user_type);
+	// }
 	
 
 

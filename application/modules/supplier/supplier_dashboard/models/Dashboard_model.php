@@ -82,6 +82,14 @@ class Dashboard_model extends CI_Model
   // $this->db->where('id',$id);
   //     return $this->db->get('employees')->row();
   // }
+  function update_notification_status($uid,$user_type) {
+    // $this->db->trans_start();
+    $this->db->where('user_id', $uid);
+    $this->db->where('user_type', $user_type);
+    $this->db->set('status', '2');
+    $this->db->update('notifications');
+      return;
+  }
   public function update_access_permission($table, $data, $user_type, $uid)
   {
     $this->db->where('supplierid', $uid);
@@ -166,13 +174,20 @@ class Dashboard_model extends CI_Model
     return $this->db->get("services")->result();
   }
 
- 
+  public function snotifications($uid,$user_type) {
+    
+    $this->db->select('*');
+    $this->db->where('user_id',$uid);
+    $this->db->where('user_type',$user_type); 
+    $this->db->where('status','1');
+    return $this->db->get('notifications')->row(); 
+}
  
   public function notifications($uid,$user_type) {
     
     $this->db->select('*');
     $this->db->where('user_id',$uid);
-    $this->db->where('user_type',$user_type);
+    $this->db->where('user_type',$user_type); 
     $this->db->where('status','1');
     return $this->db->get('notifications')->row(); 
 }

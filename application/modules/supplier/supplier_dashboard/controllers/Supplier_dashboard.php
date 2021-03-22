@@ -98,7 +98,7 @@ class Supplier_dashboard extends SP_Controller
 	}
 
 
-	public function notifications()
+	public function notifications() 
 	{
 
 		if (
@@ -109,6 +109,12 @@ class Supplier_dashboard extends SP_Controller
 			$data['mainpage'] = '';
 			$data['page_title'] = 'notifications';
 			$data['title'] = 'Company notifications';
+			$user_type=$this->session->userdata('user_type');
+			$uid=$this->session->userdata('supplierid');
+			// echo $uid;
+			// echo $user_type;
+			// exit;
+			$data['notifications']=$this->dashM->snotifications($uid,$user_type); 
 			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
@@ -953,6 +959,14 @@ class Supplier_dashboard extends SP_Controller
 
 
 	//neethu
+	public function notification_change_status()
+	{
+		$user_type = $this->session->userdata('user_type');
+		$uid = $this->session->userdata('uid');
+		// echo $uid;
+		$this->dashM->update_notification_status( $uid, $user_type);
+		redirect(base_url('supplier/dashboard/notifications'));
+	}
 	public function resend_pass()
 	{
 		//   echo "hii"; exit;
