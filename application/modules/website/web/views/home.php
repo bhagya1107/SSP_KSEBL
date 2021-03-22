@@ -289,7 +289,7 @@
 	
 			
 				
-				<script src="<?=base_url('assets/cdns/')?>jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+	<script src="<?=base_url('assets/cdns/')?>jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 	<script src="<?=base_url('assets/cdns/')?>popper.min.js" crossorigin="anonymous">
 	</script>
 	<script src="<?=base_url('assets/cdns/')?>bootstrap.min.js" crossorigin="anonymous">
