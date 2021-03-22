@@ -67,6 +67,12 @@
 
  <main id="tg-main" class="tg-main tg-haslayout">
      <section class="tg-main-section tg-haslayout">
+     <div id="allpurchasecount" style="text-align:center;">
+        </div>
+        <div id="acceptedpurchasecount" class ="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:2</b></span>
+        </div>
+        <div id="workpurchasecount" class ="hide" style="text-align:center;"><span><b>Total Work Orders:247</b></span>
+        </div>
          <div class="container">
              <div class="tg-section-name">
                  <h2>Purchase Orders</h2>
@@ -370,12 +376,7 @@
                  </div>
              </div>
          </div>
-         <div id="allpurchasecount" style="text-align:center;">
-        </div>
-        <div id="acceptedpurchasecount" class ="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:2</b></span>
-        </div>
-        <div id="workpurchasecount" class ="hide" style="text-align:center;"><span><b>Total Work Orders:247</b></span>
-        </div>
+         
      </section>
  </main>
 

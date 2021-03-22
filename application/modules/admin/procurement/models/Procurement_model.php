@@ -228,5 +228,19 @@ class Procurement_model extends CI_Model
         
     }
    
+
+    public function getappliedtender($supplierid) {
+      $this->db->select('array_agg(id) as idorder,tender_id');
+        
+        $this->db->where('user_id',$supplierid);
+       // $this->db->where('tender_id',8);
+		//$this->db->order_by('formengine_registration.id','desc');
+        $this->db->group_by('tender_id');
+        $this->db->order_by('idorder','desc');
+        $result=$this->db->get('formengine_registration');
+		 //echo $this->db->last_query();exit;
+		return $result->result();
+    }
+
  
 }

@@ -82,13 +82,19 @@
  								<option selected value="products">Products</option> 
 <?php }?> 
 <?php if($user_type == '2') { ?>
- 								<option selected value="services">Services</option> 
+ 								<option selected value="services">My Services</option> 
 <?php }?> 
 <?php if($user_type == '1' && '3') { ?>
  								<option  value="services">Services</option> 
 <?php }?> 
+
+<?php if($user_type == '2') { ?>
+ 								<option  value="services">All Services</option> 
+<?php }?> 
+<?php if($user_type == '1' && '3') { ?>
+ 								<option  value="all">All</option> 
+<?php }?>
  
-							   	<option value="all">All</option> 
 							</select>
  									
 

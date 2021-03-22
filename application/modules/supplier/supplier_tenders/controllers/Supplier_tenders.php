@@ -23,22 +23,17 @@ class Supplier_tenders extends SP_Controller
 			$data['indexurl'] = base_url() . "supplier/dashboard";
 			$data['tab'] = $tab;
 			$tender = json_decode($this->getTenderData());
-			$data['tender'] = $tender->result_data->list; //echo"<pre>";print_r($data['tender']);exit;
+			$data['tender'] = $tender->result_data->list; 
 			$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid); //print_r($data['getsuppliertender']);exit;
 			$data['getsuppliertenderservices'] = $this->procM->getSupplierServices($uid); //print_r($data['getsuppliertenderservices']);exit;
 			$data['materialid'] = array_column($data['getsuppliertender'], 'materialId');
 			$data['mytenderproducts'] = array();
 			$data['user_type'] = $this->session->userdata('user_type');//echo $user_type;exit;
-
+$data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);//echo"<pre>";print_r($data['appliedtenderdetails']);exit;
 			//echo"<pre>";print_r($data['materialid']);exit;
 			if (!empty($data['materialid'])) {
 				foreach ($data['tender'] as $key => $materialid) {
 					$materials = '';
-					// $prc_purchase_order_items= array_column($materialid->prc_proposed_delivery_details,'mst_material_id');
-					//print_r($prc_purchase_order_items);exit;
-					// foreach($prc_purchase_order_items as $key1 => $items){
-					//  $materials = $materials.','.implode(',',array_column($items,'mst_material_id'));
-					// }
 					$materialsArr = array_column($materialid->prc_proposed_delivery_details, 'mst_material_id');
 					//$materialsArr = explode(',',$materials);
 					// array_shift($materialsArr);
@@ -93,6 +88,29 @@ class Supplier_tenders extends SP_Controller
 		} //neethu end
 
 	}
+
+public function getappliedtenders($tenders){
+	
+	$uid = $this->session->userdata('supplierid');
+	$data['getapplytender'] = $this->procM->getappliedtender($uid);//echo"<pre>";print_r($data['getapplytender']);exit;
+			
+			 $data['appliedtenderid'] = array_column($data['getapplytender'], 'tender_id');//echo"<pre>";print_r($data['appliedtenderid']);exit;
+			$data['myappliedtenders'] = array();//echo"<pre>";print_r($data['myappliedtenders']);exit;
+
+			foreach ($tenders as $key => $materialid) {
+		//print_r($materialid);exit;
+		// echo"<pre>";print_r($materialid);exit;
+
+				if (in_array($materialid->id,$data['appliedtenderid'])) {
+					array_push($data['myappliedtenders'], $tenders[$key]);
+				}
+			}
+			//echo"<pre>";print_r($data['myappliedtenders']);exit;
+			//echo"gg";exit;
+			return $data['myappliedtenders'];
+}
+
+
 	public function getProductTender()
 	{
 		$uid = $this->session->userdata('supplierid');
@@ -146,22 +164,16 @@ class Supplier_tenders extends SP_Controller
 		$data['serviceid'] = array_column($data['getsuppliertenderservices'], 'serviceid');
 		$data['mytenderservices'] = array();
 
-		//echo"<pre>";print_r($data['serviceid']);exit;
+
 		if (!empty($data['serviceid'])) {
 			foreach ($data['tender'] as $key => $serviceid) {
-				$materials = '';
-				$prc_purchase_order_items = array_column($serviceid->prc_proposed_delivery_details, 'prc_purchase_order_item_dtl');
-				foreach ($prc_purchase_order_items as $key1 => $items) {
-					$materials = $materials . ',' . implode(',', array_column($items, 'mst_material_id'));
-				}
-				$materialsArr = explode(',', $materials);
-				array_shift($materialsArr);
+				$materialsArr = array_column($serviceid->prc_proposed_delivery_details, 'mst_material_id');
 				if (array_intersect($materialsArr, $data['serviceid'])) {
 					array_push($data['mytenderservices'], $data['tender'][$key]);
 				}
 			}
 		}
-		// echo"<pre>";print_r($data['mytenderproducts']);exit;
+
 		echo json_encode($data['mytenderservices']);
 	}
 
