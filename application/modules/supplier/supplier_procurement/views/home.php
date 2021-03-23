@@ -96,7 +96,7 @@
 									<td>Bulb</td>
 									<td>KSEB 20-21</td>
 									<td>120 Days</td>
-								  <td>26/08/2020</td>
+								  <td>26-08-2020</td>
 									<td><a href='#' data-toggle="modal" data-target="#myModal">1200</a></td>
 									<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
 								</tr>
@@ -255,14 +255,14 @@
 
 
      $("#procurementdate").on("change", function() {
-         var activetab = $("#deliverytabs li.active").attr('id');
+         //var activetab = $("#deliverytabs li.active").attr('id');
          var value = $(this).val();
          filterdeliverydata(value);
      });
 
 					function filterdeliverydata(value) {
 
-$(".commonfilter div[class!=tg-btnsbox]").filter(function() {
+$("#myTable tr").filter(function() {
 
 				var datetime1 = $(this).attr('datetime');
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)

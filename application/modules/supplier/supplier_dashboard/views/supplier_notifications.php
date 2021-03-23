@@ -77,7 +77,7 @@
                       <tbody> 
                         <tr>
                           <td>1</td>
-                          <td>test</td> 
+                          <td>test</td>
                           <td><?php echo $notificationsview->message;?></td>
                           <td>26/08/2020</td> 
                           <td>
