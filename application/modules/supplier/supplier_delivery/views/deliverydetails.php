@@ -33,7 +33,10 @@
 
  <main id="tg-main" class="tg-main tg-haslayout">
 
-     <section class="tg-main-section tg-haslayout">
+    <!-- <section class="tg-main-section tg-haslayout">-->
+     <div id="applydelivery" class ="" style="text-align:center;"><span><b>Total N.O Of Delivery Orders:2</b></span>
+        </div>
+
          <div class="container">
              <div class="tg-section-name">
                  <h2>Delivery Orders</h2>
@@ -383,10 +386,9 @@
 
              </div>
          </div>
-         <div id="applydelivery" class ="" style="text-align:center;"><span><b>Total N.O of Delivery Orders:2</b></span>
-        </div>
+         
 
-     </section>
+    <!-- </section>-->
  </main>
 
  <!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
@@ -1671,7 +1673,7 @@
              var activetab = $("#deliverytabs li.active").attr('id');
              // var tabcontentid = (activetab == 'favtender') ? 'deliveryorder' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
              var value = $(this).val().toLowerCase();
-             filtertenderdata(value);
+             filterdeliverydata(value);
 
          });
 
