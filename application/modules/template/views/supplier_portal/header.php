@@ -231,15 +231,16 @@
 												<li title="notification"  >
 												<!-- <a href="<?=supplier_url('dashboard/notifications')?>" id="change_status" > -->
 												
-												<a href="<?=site_url('supplier/dashboard/notification_change_status')?>" >
+												<a href="<?=site_url('supplier/dashboard/notification_change_status')?>" > 
 												<i class="fa fa-bell" aria-hidden="true" style="color:#fff"></i>
 												<?php if($notifications!='0'){ ?>
-												<span style="background-color: red; margin-top :-20px;"  class="badge"><?php echo $notifications;?></span>
+												<span style="background-color: red; margin-top :-20px;"  class="badge" id="notify" ><?php echo $notifications;?></span>
 												<?php } ?></a></li>
 												<li title="logout"  ><a href="<?=supplier_url('dashboard/logout')?>"><i class="fa fa-sign-out" aria-hidden="true" style="color:#fff"></i></a></li>
 												
 												
 											</ul>
+											
 										</nav>
 										
 									 
@@ -372,6 +373,14 @@
 		});
 									
 		});
+
+
+
+
+		setInterval(() => {	
+        var type = $('#notify').val();
+  
+    }, 1000);
 </script>
 									
 

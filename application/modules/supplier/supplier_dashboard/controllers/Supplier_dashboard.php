@@ -114,7 +114,7 @@ class Supplier_dashboard extends SP_Controller
 			// echo $uid;
 			// echo $user_type;
 			// exit;
-			$data['notifications']=$this->dashM->snotifications($uid,$user_type); 
+			$data['notificationsview']=$this->dashM->snotifications($uid,$user_type);  
 			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
