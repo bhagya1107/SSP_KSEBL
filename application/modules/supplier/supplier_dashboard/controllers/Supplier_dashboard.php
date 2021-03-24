@@ -91,6 +91,9 @@ class Supplier_dashboard extends SP_Controller
 			$data['mainpage'] = '';
 			$data['page_title'] = 'preference_profile';
 			$data['title'] = 'preference Profile';
+			$user_type=$this->session->userdata('user_type');
+			$uid=$this->session->userdata('supplierid');
+			$data['notificationsview']=$this->dashM->viewnotifications($uid,$user_type); 
 			$this->template->make('supplier_dashboard/preferences', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
@@ -937,6 +940,23 @@ class Supplier_dashboard extends SP_Controller
 		} else {
 			echo "Error while adding";
 		}
+	}
+	public function insert_notification_status()
+	{
+		$user_type = $this->session->userdata('user_type');
+		$uid = $this->session->userdata('uid');
+		$data=$this->input->post('display_status');
+		// echo $display_status; exit;
+		// $data = array(
+		// 	'preference_display_status' => $display_status,
+		// 	'user_id' => $uid,
+		// 	'user_type' => $user_type
+			
+		// );
+
+		$this->dashM->update_notifications_preference_display_status($data,$uid,$user_type);
+		$this->session->set_flashdata('msg', 'Changed successfully');
+	    redirect(base_url('supplier/dashboard/preference_profile'));		
 	}
 
 	public function deleteSupplierEmployees()

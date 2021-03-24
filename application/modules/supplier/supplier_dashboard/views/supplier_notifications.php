@@ -40,11 +40,11 @@
                 }
                 ?>
       
-              <div class="col-sm-12 col-xs-12">
+              <div class="col-sm-12 col-xs-12" >
                   <div class="row">
                           <div class="form-group">
-                            <div class="row">
-                              <div class="col-md-4">
+                            <div class="row" style="<?php if($notificationsview->preference_display_status=='false') echo "display: none;" ?>">
+                              <div class="col-md-4" >
                                 <input type="text" placeholder="Key Word" name="" style="margin-left: 10px;">
                               <!--   <select class="form-control">
                                 <option value="">
@@ -63,14 +63,15 @@
                   </div>
                  
                   <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
+                    <table class="table table-bordered table-hover" style="<?php if($notificationsview->preference_display_status=='false') echo "display: none;" ?>" >
                       <thead>
+                      <a href="<?php echo base_url('supplier/dashboard/preference_profile');?>" style="<?php if($notificationsview->preference_display_status=='true') echo "display: none;" ?>"><b>Turn On Your Notification</b></a>
                         <tr style="background-color:#26265f ;color:#FFF ">
                           <th>Sl No</th>
                           <th>Subject</th>
-                          <th style="width:50%;">Description</th>
+                          <th style="width:50%;">Description </th>
                           <th>Date Posted</th>
-                          <th>Action</th>
+                          <!-- <th>Action</th> -->
                           
                         </tr>
                       </thead>
@@ -80,8 +81,8 @@
                           <td>test</td>
                           <td><?php echo $notificationsview->message;?></td>
                           <td>26/08/2020</td> 
-                          <td>
-                          <button style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" data-toggle="modal" data-target="#notification" class="btn btn-primary btn-xs">Reply</button></td>
+                          <!-- <td> -->
+                          <!-- <button style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" data-toggle="modal" data-target="#notification" class="btn btn-primary btn-xs">Reply</button></td> -->
                         </tr>
                       </tbody>
                     </table>
