@@ -534,7 +534,7 @@ hr{
 
             </div>
         </div>
-        <div class="tab-pane fade" id="tasks" role="tabpanel">
+        <div class="tab-pane fade" id="tasks" role="tabpanel">   
         <br><br>
             <h5  style="<?php if($notifications=='0' or $notificationsview->preference_display_status=='false') echo "display: none;" ?>" >You have <?php echo $notifications;?> new notification</h3>
             <hr> 
