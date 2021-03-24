@@ -536,11 +536,19 @@ hr{
         </div>
         <div class="tab-pane fade" id="tasks" role="tabpanel">
         <br><br>
-            <h5  style="<?php if($notifications=='0') echo "display: none;" ?>" >You have <?php echo $notifications;?> new notification</h3>
+            <h5  style="<?php if($notifications=='0' or $notificationsview->preference_display_status=='false') echo "display: none;" ?>" >You have <?php echo $notifications;?> new notification</h3>
             <hr> 
             <ul class="notif-box">
-                <div class="notif-center submenu">
-                    <a href="#" >
+                <div class="notif-center submenu"> 
+                    <a href="<?php echo base_url('supplier/dashboard/preference_profile');?>"  style="<?php if($notificationsview->preference_display_status=='true') echo "display: none;" ?>">
+                    <li><div class="notif-content">
+                    <b>Turn on your notifications</b>
+                            <div class="clear-fix"></div>
+                            <!-- <span class="time">5 minutes ago</span> -->
+                        </div>
+                    </li>
+                    </a>
+                    <a href="#"  style="<?php if($notificationsview->preference_display_status=='false') echo "display: none;" ?>" >
                     <li><div class="notif-content">
                     <?php echo $notificationsview->message;?>
                             <div class="clear-fix"></div>
