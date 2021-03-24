@@ -252,22 +252,22 @@
 										<thead>
 											<tr>
 												<th scope="col">sl no</th>
-												<th scope="col">sample 2</th>
-												<th scope="col">sample 3</th>
-												<th scope="col">sample 4</th>
-												<th scope="col">sample 5</th>
-												<th scope="col">sample 6</th>
-											
+												<th scope="col">Product</th>
+												<th scope="col">Scheme</th>
+												<th scope="col">Plan Duration</th>
+												<th scope="col">Plan Start Date</th>
+												<th scope="col">Expected Quantity</th>
+												<th scope="col">Procured So Far</th>
 											</tr>
 										</thead>
 													<tr>
 													<td>1</td>
-													<td>abcd</td>
-													<td>test123</td>
-													<td>Pending</td>
-													<td>13-11-2020</td>
-													<td>test</td>
-
+													<td>Bulb</td>
+													<td>KSEB 20-21</td>
+													<td>120 Days</td>
+													<td>26-08-2020</td>
+													<td><a href='#' data-toggle="modal" data-target="#myModalexpected">1200</a></td>
+													<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
 												</tr>
 												</tbody>
 										<tbody>
@@ -284,9 +284,68 @@
                 				</div>
 							</div>
 							</div>
+
+							
 						</div>
 		
-	
+	<!---------------------------------modal quantity----------------------------------------->
+
+<div id="myModalexpected" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="margin-left:-10%;width:136%">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Expected Quantity</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+			<thead>
+				<tr>
+					<th>Place</th>
+					<th>Quantity</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Thiruvananthapuram</td>
+					<td>300</td>
+				
+				</tr>
+				<tr>
+					<td>Palakkad</td>
+					<td>400</td>
+				
+				</tr>
+				<tr>
+					<td>Thrissur</td>
+					<td>200</td>
+				
+				</tr>
+				<tr>
+					<td>Pathanamthitta</td>
+					<td>300</td>
+				
+				</tr>
+				<tr style="background-color:#55555573">
+					<td>Total</td>
+					<td>1200</td>
+				</tr>
+			
+			</tbody>
+		</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!----------------------------------------modal end ------------------------------->
+
 			
 				
 	<script src="<?=base_url('assets/cdns/')?>jquery-3.3.1.min.js" crossorigin="anonymous"></script>
@@ -329,9 +388,6 @@
 
 	// km
 	
-	
-
-	
 	$('.triggerbtn').click(function() {
 
 		var thiss=$(this);
@@ -349,14 +405,6 @@
 			
 			$('.triggerbtn').removeClass('changeclr');
 		})
-
-
-
-
-		
-
-
-
 
 		return;
 
@@ -434,15 +482,7 @@
             AdobeAn.compositionLoaded(lib.properties.id);
             fnStartAnimation();
         }
-		
-
-
-
-
-
-
-
-
+	
 $(document).on('click', '#user_login', function() {
             	alert();
   var username = $('#exampleModal').find('#susername').val()
@@ -466,11 +506,9 @@ $(document).on('click', '#user_login', function() {
     });
     </script>
 
-
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" >
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel" style="margin-left: 110px;">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

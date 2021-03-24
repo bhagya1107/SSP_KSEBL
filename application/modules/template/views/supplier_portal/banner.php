@@ -198,12 +198,12 @@
  					<div class="form-group row form_filter">
 
  						<div class="col-sm-3 col-xs-12" >
-							<span><b>Products:</b></span>
+							<span><b>Materials:</b></span>
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
  												data-placeholder="Select a TenderId" >
-												 <option>Select Product</option>
- 								<option value="0">LED</option> 
-								<option value="0">BULB</option> 
+												 <option>Select Materials</option>
+ 								<option value="0">Favourite Materials</option> 
+								<option value="0">All Materials</option> 
 							   
 							</select>
  									

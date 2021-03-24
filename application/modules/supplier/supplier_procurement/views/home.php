@@ -75,8 +75,8 @@
                   </div>-->
                 </div>
 			</div>
-
-
+			<div id="favtendercount" class="" style="text-align:center;"><span><b>Total Procurement Plans:1</b></span>
+        </div>
 					<div class="table-responsive" style="overflow-y:scroll; height:400px;">
 						<table class="table table-bordered table-hover">
 							<thead>
