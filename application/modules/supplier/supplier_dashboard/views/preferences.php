@@ -98,10 +98,12 @@
 									<td><input type="text"  class="form-control"  value=""/>	</td>
 								</tr>-->
 								<tr>
-									<td style="text-align:right"> Notification<?php $notificationsview->message;?> </td>
-									<td style="text-align:left"><input type="radio"   class="custom-control  custom-radio custom-control-inline" value="true"  name="display_status" id="display_status" checked="" /> &nbsp ON
+									<td style="text-align:right"> Notification </td>
+									<td style="text-align:left"><input type="radio"   class="custom-control  custom-radio custom-control-inline" value="true"  name="display_status" id="display_status" 
+                  <?php if ($viewnotifications->preference_display_status=="true"){ echo "checked"; }?> /> &nbsp ON
 									
-									<input type="radio"  class="custom-control custom-radio custom-control-inline"  name="display_status" value="false"  id="display_status" checked="" /> &nbsp OFF
+									<input type="radio"  class="custom-control custom-radio custom-control-inline"  name="display_status" value="false"  id="display_status"  
+                  <?php if ($viewnotifications->preference_display_status=="false"){ echo "checked"; }?> /> &nbsp OFF
 							</td>
 								</tr>
 								<!--<tr>

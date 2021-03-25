@@ -195,7 +195,7 @@ public function viewnotifications($uid,$user_type) {
   $this->db->select('*');
   $this->db->where('user_id',$uid);
   $this->db->where('user_type',$user_type); 
-  // $this->db->where('status','1');
+  //  $this->db->where('status','1');
   return $this->db->get('notifications')->row(); 
 }
  

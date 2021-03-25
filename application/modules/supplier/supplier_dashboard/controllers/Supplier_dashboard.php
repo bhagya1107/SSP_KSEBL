@@ -85,19 +85,19 @@ class Supplier_dashboard extends SP_Controller
 			$this->session->userdata('user_type') == '1' or $this->session->userdata('user_type') == '2'
 			or $this->session->userdata('user_type') == '3'
 		) {
-			$loged_user = $_SESSION['userid'];
-			$usertype = $_SESSION['user_type'];
+			// $loged_user = $_SESSION['userid'];
+			// $usertype = $_SESSION['user_type'];
 			$data['page'] = 'profile';
 			$data['mainpage'] = '';
 			$data['page_title'] = 'preference_profile';
 			$data['title'] = 'preference Profile';
 			$user_type=$this->session->userdata('user_type');
 			$uid=$this->session->userdata('supplierid');
-			$data['notificationsview']=$this->dashM->viewnotifications($uid,$user_type); 
+			$data['viewnotifications']=$this->dashM->viewnotifications($uid,$user_type); 
 			$this->template->make('supplier_dashboard/preferences', $data, 'supplier_portal');
 		} else {
-			echo " “Sorry, You Are Not Allowed to Access This Page” ";
-		}
+			$this->session->set_flashdata('msg', 'You are not allowed to access preferences');
+			redirect(base_url('supplier/dashboard'));		}
 	}
 
 
@@ -954,7 +954,7 @@ class Supplier_dashboard extends SP_Controller
 		// );
 
 		$this->dashM->update_notifications_preference_display_status($data,$uid,$user_type);
-		$this->session->set_flashdata('msg', 'Changed successfully');
+		$this->session->set_flashdata('msg', 'Notification Status Changed successfully');
 	    redirect(base_url('supplier/dashboard/preference_profile'));		
 	}
 
