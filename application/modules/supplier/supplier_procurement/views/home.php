@@ -59,6 +59,8 @@
 			</div>
 			<div class="col-sm-11 col-xs-11 pull-right">
 				<div class="row">
+					<div id="favtendercount" class="" style="text-align:center;"><span><b>Total Procurement Plans:1</b></span>
+        </div>
 				        <div class="form-group">
                  <!-- <div class="row">
                     <div class="col-md-4">
@@ -75,8 +77,7 @@
                   </div>-->
                 </div>
 			</div>
-			<div id="favtendercount" class="" style="text-align:center;"><span><b>Total Procurement Plans:1</b></span>
-        </div>
+		
 					<div class="table-responsive" style="overflow-y:scroll; height:400px;">
 						<table class="table table-bordered table-hover">
 							<thead>
@@ -93,13 +94,54 @@
 							<tbody id="myTable">
 								<tr>
 									<td>1</td>
-									<td>Bulb</td>
+									<td>DIST TFR 3PH 150kVA 11kV/433V	</td>
 									<td>KSEB 20-21</td>
-									<td>120 Days</td>
+									<td>150 Days</td>
 								  <td>26-08-2020</td>
 									<td><a href='#' data-toggle="modal" data-target="#myModal">1200</a></td>
 									<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
 								</tr>
+
+								<tr>
+									<td>2</td>
+									<td>TOR STEEL 20 mm		</td>
+									<td>KSEB 20-21</td>
+									<td>100 Days</td>
+								  <td>12-04-2021</td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1500</a></td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp2">400</a></td>
+								</tr>
+
+								<tr>
+									<td>3</td>
+									<td>Aerial Bunched Cable HT 3x120 + 1x95 sq.mm (Insulated Messemger)		</td>
+									<td>KSEB 20-21</td>
+									<td>200 Days</td>
+								  <td>01-07-2021</td>
+									<td><a href='#' data-toggle="modal" data-target="#myModal">1300</a></td>
+									<td><a href='#' data-toggle="modal" data-target="#myModal2">100</a></td>
+								</tr>
+
+								<tr>
+									<td>4</td>
+									<td>Earth Connector120sq.mm	</td>
+									<td>KSEB 20-21</td>
+									<td>120 Days</td>
+								  <td>20-03-2021</td>
+									<td><a href='#' data-toggle="modal" data-target="#myModal">2000</a></td>
+									<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
+								</tr>
+
+								<tr>
+									<td>5</td>
+									<td>CEMENT GRADE 43	</td>
+									<td>KSEB 20-21</td>
+									<td>120 Days</td>
+								  <td>11-09-2021</td>
+									<td><a href='#' data-toggle="modal" data-target="#myModal">1700</a></td>
+									<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
+								</tr>
+
 							</tbody>
 						</table>
 					</div>
@@ -168,6 +210,61 @@
   </div>
 </div>
 
+<div id="myModalp1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Expected Quantity</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+			<thead>
+				<tr>
+					<th>Place</th>
+					<th>Quantity</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Thiruvananthapuram</td>
+					<td>500</td>
+				
+				</tr>
+				<tr>
+					<td>Palakkad</td>
+					<td>500</td>
+				
+				</tr>
+				<tr>
+					<td>Thrissur</td>
+					<td>200</td>
+				
+				</tr>
+				<tr>
+					<td>Pathanamthitta</td>
+					<td>300</td>
+				
+				</tr>
+				<tr style="background-color:#55555573">
+					<td>Total</td>
+					<td>1500</td>
+				</tr>
+			
+			</tbody>
+		</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 
 <div id="myModal2" class="modal fade" role="dialog">
@@ -217,6 +314,66 @@
 				<tr style="background-color:#55555573">
 					<td>Total</td>
 					<td>1200</td>
+				</tr>
+			
+			</tbody>
+		</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="myModalp2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Procruded so far</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+			<thead>
+				<tr>
+					<th>Place</th>
+					<th>Quantity</th>
+					<th>Date</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Thiruvananthapuram</td>
+					<td>500</td>
+					<td>10-10-2020</td>
+				
+				</tr>
+				<tr>
+					<td>Palakkad</td>
+					<td>500</td>
+					<td>12-10-2020</td>
+				
+				</tr>
+				<tr>
+					<td>Thrissur</td>
+					<td>200</td>
+					<td>12-10-2020</td>
+				
+				</tr>
+				<tr>
+					<td>Pathanamthitta</td>
+					<td>300</td>
+					<td>14-10-2020</td>
+				
+				</tr>
+				<tr style="background-color:#55555573">
+					<td>Total</td>
+					<td>1500</td>
 				</tr>
 			
 			</tbody>

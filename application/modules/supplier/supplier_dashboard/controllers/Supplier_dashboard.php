@@ -359,10 +359,9 @@ class Supplier_dashboard extends SP_Controller
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
-		$result = curl_exec($curl);
-		$value = json_decode($result);
-		//echo"<pre>";print_r($value);exit;
-		echo json_encode($value->result_data->list);
+		$result = curl_exec( $curl );
+		   $value= json_decode($result);
+		   echo json_encode($value->result_data->list);
 	}
 
 	public function getMaterialProductsDetails()

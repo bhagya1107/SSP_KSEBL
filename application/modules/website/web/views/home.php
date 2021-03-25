@@ -120,11 +120,6 @@
 						</div>
 
 				<div class="row h-100 ">
-
-			
-
-			
-				
 					<?php  $attributes = array('id' => 'frm','style'=>'width:100%');  ?> 
 					<?=form_open('supplier/home/admin_login',$attributes);?>
 						
@@ -239,7 +234,7 @@
 							</div>
 							</div>
 							<div style="position:relative">
-							<div class="pln triggerbtn">
+							<div class="pln triggerbtn1">
 								<span class="spanclass">Procurement Plan</span>
 							</div>
 							<div class="bottom-left3 content pp">
@@ -262,13 +257,56 @@
 										</thead>
 													<tr>
 													<td>1</td>
-													<td>Bulb</td>
+													<td>DIST TFR 3PH 150kVA 11kV/433V	</td>
 													<td>KSEB 20-21</td>
 													<td>120 Days</td>
 													<td>26-08-2020</td>
 													<td><a href='#' data-toggle="modal" data-target="#myModalexpected">1200</a></td>
 													<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
 												</tr>
+
+												<tr>
+									<td>2</td>
+									<td>TOR STEEL 20 mm		</td>
+									<td>KSEB 20-21</td>
+									<td>120 Days</td>
+								  <td>26-08-2020</td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1500</a></td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp2">400</a></td>
+								</tr>
+
+								<tr>
+									<td>3</td>
+									<td>Earth Connector120sq.mm	</td>
+									<td>KSEB 20-21</td>
+									<td>120 Days</td>
+								  <td>26-08-2020</td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1600</a></td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp2">300</a></td>
+								</tr>
+
+								<tr>
+									<td>4</td>
+									<td>CEMENT GRADE 43	</td>
+									<td>KSEB 20-21</td>
+									<td>120 Days</td>
+								  <td>26-08-2020</td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1800</a></td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp2">100</a></td>
+								</tr>
+
+								<tr>
+									<td>5</td>
+									<td>GI PIPE- 100mm(4 INCH)	</td>
+									<td>KSEB 20-21</td>
+									<td>120 Days</td>
+								  <td>26-08-2020</td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1100</a></td>
+									<td><a href='#' data-toggle="modal" data-target="#myModalp2">500</a></td>
+								</tr>
+								
+
+							
 												</tbody>
 										<tbody>
 											<tr class="gradeX">
@@ -290,7 +328,7 @@
 		
 	<!---------------------------------modal quantity----------------------------------------->
 
-<div id="myModalexpected" class="modal fade" role="dialog">
+<div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -427,6 +465,45 @@
 	});
 
 
+	$('.triggerbtn1').click(function() {
+
+var thiss=$(this);
+var title = $(this).next('.spanclass');
+console.log(thiss.find('.creps'));
+$(this).addClass('changeclr');
+//console.log(title.prevObject.text());
+var content = $(this).next('.content');
+
+$('.modal-title').empty().html(title.prevObject.text());
+$('.modal-body').empty().html(content.html());
+$('#exampleModal2').modal();
+
+$('#exampleModal2').on('hidden.bs.modal', function () {
+	
+	$('.triggerbtn1').removeClass('changeclr');
+})
+
+return;
+
+var x1 = $(document).find('.expand'); 
+if (x1.length) {
+	x1.removeClass('expand');
+}
+
+var content = $(this).next('.content');
+var x = $(document).find('.expand');
+console.log(x);
+if (!x.length) {
+	content.addClass('expand');
+	
+} else {
+	x.html(content.html());
+}
+
+
+});
+
+
 	var isShow= '<?php echo $data ;?>';
 		//console.log(isShow);
 			if(isShow=='true'){
@@ -510,7 +587,28 @@ $(document).on('click', '#user_login', function() {
   <div class="modal-dialog" role="document">
     <div class="modal-content" >
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="margin-left: 110px;">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+      </div>
+     <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog exple2" role="document">
+    <div class=".col-xs-4 modal-content example2">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" >Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -959,4 +1057,12 @@ $(document).ready(function(){
 			background:#272360;
 			color:#fff;
 		}
+		.example2{
+		 margin-left: -8%;
+    width: 150%;
+		}
+		.modal-dialog{
+    overflow-y: initial !important
+}
+
 </style>
