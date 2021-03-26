@@ -68,7 +68,7 @@
  			<div class="container">
 				<div class="panel panel-default">
     <div class="panel-body">
- 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" style="margin-left: 2%;">
 
  					<div class="form-group row form_filter">
 
@@ -103,11 +103,16 @@
  				
 
 						 <div class="col-sm-3 col-xs-12 ">
-							<span><b>Tender Date:</b></span>
+							<span><b>Tender Date From:</b></span>
  							<input  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
+							<div class="col-sm-3 col-xs-12 ">
+							<span><b>Tender Date To:</b></span>
+ 							<input  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
+							
+ 						</div>
 						
  						<div class="col-sm-3 col-xs-12 ">
 							<span><b>keywords:</b></span>
@@ -133,7 +138,7 @@
 			<div class="container">
 			<div class="panel panel-default">
     <div class="panel-body">
- 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" >
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" style="margin-left: 2%;">
 
  					<div class="form-group row form_filter">
 
@@ -152,7 +157,13 @@
  						</div>
 
 						 <div class="col-sm-3 col-xs-12 ">
-							<span><b>Purchase Date:</b></span>
+							<span><b>Purchase Date From:</b></span>
+ 							<input  type ="date" class="select2 form-control "  id="datepickerpurchase" name="group_flat__id" placeholder="Select a date" >
+							
+ 						</div>
+
+							<div class="col-sm-3 col-xs-12 ">
+							<span><b>Purchase Date To:</b></span>
  							<input  type ="date" class="select2 form-control "  id="datepickerpurchase" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
@@ -193,7 +204,7 @@
 	<div class="container">
 	<div class="panel panel-default">
     <div class="panel-body">
- 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" >
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" style="margin-left: 2%;" >
 
  					<div class="form-group row form_filter">
 
@@ -201,9 +212,9 @@
 							<span><b>Materials:</b></span>
  							<select class="select2 form-control" id="tenderid" name="group_flat__id"
  												data-placeholder="Select a TenderId" >
-												 <option>Select Materials</option>
+												 <!--<option>Select Materials</option>-->
  								<option value="0">Favourite Materials</option> 
-								<option value="0">All Materials</option> 
+								<option value="1">All Materials</option> 
 							   
 							</select>
  									
@@ -211,11 +222,16 @@
  						</div>
 
 						<div class="col-sm-3 col-xs-12 ">
-						<span><b>Procurement Date:</b></span>
- 							<input type="date" class="select2 form-control"  id="procurementdate" name="group_flat__id" placeholder="Select a date" >
+						<span><b>Procurement Date From:</b></span>
+ 							<input  class="select2 form-control"  id="procurementdate" name="group_flat__id" placeholder="Select date From" >
 							
  						</div>
 
+							<div class="col-sm-3 col-xs-12 ">
+						<span><b>Procurement Date To:</b></span>
+ 							<input  class="select2 form-control"  id="procurementdateto" name="group_flat__id" placeholder="Select date To" >
+							
+ 						</div>
 						<!-- <div class="col-sm-3 col-xs-12 ">
  							
  							<select class="select2 form-control"  placeholder="Select a location/purchaser">
@@ -236,7 +252,7 @@
 
 						<div class="col-sm-3 col-xs-12 " style="margin-top:10px;">
  							
- 							<input type="button" value="search" class="btn btn-primary">
+ 						<!--	<input type="button" value="search" class="btn btn-primary">-->
  						
  						</div>
  					</div>
@@ -253,7 +269,7 @@
 	<div class="container">
 	<div class="panel panel-default">
     <div class="panel-body">
- 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" style="margin-left: 2%;">
 
  					<div class="form-group row form_filter">
 
@@ -271,7 +287,13 @@
  						</div>
 
 						<div class="col-sm-3 col-xs-12 ">
-						<span><b>Delivery Date:</b></span>
+						<span><b>Delivery Date From:</b></span>
+ 							<input type="date" class="select2 form-control"  id="delivery_date" name="group_flat__id" placeholder="Select a date" >
+							
+ 						</div>
+
+							<div class="col-sm-3 col-xs-12 ">
+						<span><b>Delivery Date To:</b></span>
  							<input type="date" class="select2 form-control"  id="delivery_date" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
@@ -313,7 +335,7 @@
 			<div class="container">
 			<div class="panel panel-default">
     <div class="panel-body">
- 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1">
+ 				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" style="margin-left: 2%;">
 
  					<div class="form-group row form_filter">
 
@@ -331,7 +353,13 @@
  						</div>
 
 						<div class="col-sm-3 col-xs-12 ">
-						<span><b>Date:</b></span>
+						<span><b>Date From:</b></span>
+ 							<input type="date" class="select2 form-control"  id="accountdate" name="group_flat__id" placeholder="Select a date" >
+							
+ 						</div>
+
+							<div class="col-sm-3 col-xs-12 ">
+						<span><b>Date To:</b></span>
  							<input type="date" class="select2 form-control"  id="accountdate" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>

@@ -59,7 +59,7 @@
 			</div>
 			<div class="col-sm-11 col-xs-11 pull-right">
 				<div class="row">
-					<div id="favtendercount" class="" style="text-align:center;"><span><b>Total Procurement Plans:1</b></span>
+					<div id="favtendercount" class="" style="text-align:center;"><span><b>Total Procurement Plans:5</b></span>
         </div>
 				        <div class="form-group">
                  <!-- <div class="row">
@@ -392,9 +392,14 @@
 
 
 						universalprocurementsearch();
-         $('#datepicker').datepicker({
-             dateFormat: 'yy-mm-dd'
+						//alert("jjj");
+         $('#procurementdate').datepicker({
+             dateFormat: 'dd-mm-yy'
          });
+									$('#procurementdateto').datepicker({
+             dateFormat: 'dd-mm-yy'
+         });
+									
      });
 
      function universalprocurementsearch() {
@@ -414,6 +419,13 @@
      $("#procurementdate").on("change", function() {
          //var activetab = $("#deliverytabs li.active").attr('id');
          var value = $(this).val();
+									console.log(value);
+         filterdeliverydata(value);
+     });
+					$("#procurementdateto").on("change", function() {
+         //var activetab = $("#deliverytabs li.active").attr('id');
+         var value = $(this).val();
+									console.log(value);
          filterdeliverydata(value);
      });
 
@@ -431,4 +443,7 @@ console.log(tenderlength);
 
 }
 
-					</script>
+
+<script href="https://code.jquery.com/jquery-3.5.1.js"> </script>
+<script href="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+					

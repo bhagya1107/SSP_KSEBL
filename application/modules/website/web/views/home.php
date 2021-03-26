@@ -215,7 +215,7 @@
 						<div class="btm" style="position:fixed">
 
 							<div style="position:relative">
-							<div class="creps triggerbtn">
+							<div class="creps triggerbtn" style="background-color:#6e6f6e;">
 								<span class="spanclass">Corporate Responsibility</span>
 							</div>
 							<div class="bottom-left content">
@@ -225,7 +225,7 @@
 							</div>
 
 							<div style="position:relative">
-							<div class="stds triggerbtn">
+							<div class="stds triggerbtn" style="background-color:#6e6f6e;">
 								<span class="spanclass">Standards</span>
 							</div>
 							<div class="bottom-left2 content">
@@ -233,13 +233,13 @@
 								Standards test
 							</div>
 							</div>
-							<div style="position:relative">
-							<div class="pln triggerbtn1">
+							<div style="position:relative;">
+							<div class="pln triggerbtn1" style="background-color:#6e6f6e;">
 								<span class="spanclass">Procurement Plan</span>
 							</div>
 							<div class="bottom-left3 content pp">
 								<!-- <div class="close" onclick="closex()">x</div> -->
-								Procurement Plan test
+							
 								<div class="table-responsive">
 
 									<table id="questions" class="table table-striped table-bordered table-hover"
@@ -261,52 +261,101 @@
 													<td>KSEB 20-21</td>
 													<td>120 Days</td>
 													<td>26-08-2020</td>
-													<td><a href='#' data-toggle="modal" data-target="#myModalexpected">1200</a></td>
-													<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
+													<td><a  data-toggle="modal" data-target="#myModalexpected">1200</a></td>
+													<td><a  data-toggle="modal" data-target="#myModal2">200</a></td>
 												</tr>
 
 												<tr>
 									<td>2</td>
 									<td>TOR STEEL 20 mm		</td>
 									<td>KSEB 20-21</td>
-									<td>120 Days</td>
+									<td>180 Days</td>
 								  <td>26-08-2020</td>
-									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1500</a></td>
-									<td><a href='#' data-toggle="modal" data-target="#myModalp2">400</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp1">1500</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">400</a></td>
 								</tr>
 
 								<tr>
 									<td>3</td>
 									<td>Earth Connector120sq.mm	</td>
 									<td>KSEB 20-21</td>
-									<td>120 Days</td>
+									<td>110 Days</td>
 								  <td>26-08-2020</td>
-									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1600</a></td>
-									<td><a href='#' data-toggle="modal" data-target="#myModalp2">300</a></td>
+									<td><a data-toggle="modal" data-target="#myModalp1">1600</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">300</a></td>
 								</tr>
 
 								<tr>
 									<td>4</td>
 									<td>CEMENT GRADE 43	</td>
 									<td>KSEB 20-21</td>
-									<td>120 Days</td>
+									<td>300 Days</td>
 								  <td>26-08-2020</td>
-									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1800</a></td>
-									<td><a href='#' data-toggle="modal" data-target="#myModalp2">100</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp1">1800</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">100</a></td>
 								</tr>
 
 								<tr>
 									<td>5</td>
 									<td>GI PIPE- 100mm(4 INCH)	</td>
-									<td>KSEB 20-21</td>
-									<td>120 Days</td>
-								  <td>26-08-2020</td>
-									<td><a href='#' data-toggle="modal" data-target="#myModalp1">1100</a></td>
-									<td><a href='#' data-toggle="modal" data-target="#myModalp2">500</a></td>
+									<td>KSEB 21-22</td>
+									<td>220 Days</td>
+								  <td>20-09-2021</td>
+									<td><a  data-toggle="modal" data-target="#myModalp1">1100</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">500</a></td>
 								</tr>
 								
 
-							
+								<tr>
+									<td>6</td>
+									<td>BOARD INSULATOR</td>
+									<td>KSEB 21-22</td>
+									<td>300 Days</td>
+								  <td>20-05-2021</td>
+									<td><a  data-toggle="modal" data-target="#myModalp1">1200</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">600</a></td>
+								</tr>
+
+								<tr>
+									<td>7</td>
+									<td>CLAMP FOR EARTH ELECTRODE</td>
+									<td>KSEB 20-20</td>
+									<td>150 Days</td>
+								  <td>15-10-2021</td>
+									<td><a  data-toggle="modal" data-target="#myModalp1">700</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">100</a></td>
+								</tr>
+
+								<tr>
+									<td>8</td>
+									<td>CLAMP FOR DTR METER BOX</td>
+									<td>KSEB 20-21</td>
+									<td>500 Days</td>
+								  <td>30-10-2021</td>
+									<td><a  data-toggle="modal" data-target="#myModalp1">3000</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">300</a></td>
+								</tr>
+
+								<tr>
+									<td>9</td>
+									<td>PIN FOR LT PIN INSULATOR</td>
+									<td>KSEB 20-21</td>
+									<td>200 Days</td>
+								  <td>20-07-2021</td>
+									<td><a  data-toggle="modal" data-target="#myModalp1">900</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">300</a></td>
+								</tr>
+
+								
+								<tr>
+									<td>10</td>
+									<td>STRIP ALUMINIUM FOR 25*10 MM </td>
+									<td>KSEB 20-21</td>
+									<td>100 Days</td>
+								  <td>1-09-2020</td>
+									<td><a  data-toggle="modal" data-target="#myModalp1">2000</a></td>
+									<td><a  data-toggle="modal" data-target="#myModalp2">100</a></td>
+								</tr>
 												</tbody>
 										<tbody>
 											<tr class="gradeX">
@@ -326,65 +375,6 @@
 							
 						</div>
 		
-	<!---------------------------------modal quantity----------------------------------------->
-
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content" style="margin-left:-10%;width:136%">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Expected Quantity</h4>
-      </div>
-      <div class="modal-body">
-        <table class="table">
-			<thead>
-				<tr>
-					<th>Place</th>
-					<th>Quantity</th>
-				
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Thiruvananthapuram</td>
-					<td>300</td>
-				
-				</tr>
-				<tr>
-					<td>Palakkad</td>
-					<td>400</td>
-				
-				</tr>
-				<tr>
-					<td>Thrissur</td>
-					<td>200</td>
-				
-				</tr>
-				<tr>
-					<td>Pathanamthitta</td>
-					<td>300</td>
-				
-				</tr>
-				<tr style="background-color:#55555573">
-					<td>Total</td>
-					<td>1200</td>
-				</tr>
-			
-			</tbody>
-		</table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!----------------------------------------modal end ------------------------------->
-
-			
 				
 	<script src="<?=base_url('assets/cdns/')?>jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 	<script src="<?=base_url('assets/cdns/')?>popper.min.js" crossorigin="anonymous">
@@ -1058,11 +1048,17 @@ $(document).ready(function(){
 			color:#fff;
 		}
 		.example2{
+			overflow:auto;
 		 margin-left: -8%;
     width: 150%;
+				height: 80vh;
 		}
+
 		.modal-dialog{
     overflow-y: initial !important
 }
 
+#exampleModal2{
+	overflow-y:auto;
+}
 </style>
