@@ -104,13 +104,13 @@
 
 						 <div class="col-sm-3 col-xs-12 ">
 							<span><b>Tender Date From:</b></span>
- 							<input  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
+ 							<input  type="date"  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
 							<div class="col-sm-3 col-xs-12 ">
 							<span><b>Tender Date To:</b></span>
- 							<input  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
+ 							<input  type="date"  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 						
@@ -141,16 +141,16 @@
  				<div class="col-sm-12 col-xs-12 p-10 col-md-offset-1" style="margin-left: 2%;">
 
  					<div class="form-group row form_filter">
-
  						<div class="col-sm-3 col-xs-12" >
 							<span><b>Purchase Orders:</b></span>
- 							<select class="select2 form-control" id="tenderid" name="group_flat__id"
- 												data-placeholder="Select a TenderId" >
+ 							<select class="select2 form-control" id="purchaseordernum" name="group_flat__id"
+ 												data-placeholder="Select a Purchase Orders" >
 												 <option  >Select  Orders</option>
 												 <!-- <option>Select Work Order</option> -->
- 								<option value="0">PCO6555590</option> 
-								<option value="0">PCO1223590</option> 
-							   	<option value="0">PCO68855590</option>
+													<?php foreach ($purchaseorder as $purchaseorders) { ?>
+                      <option value="<?php echo $purchaseorders->puchase_order_number; ?>">
+                        <?php echo $purchaseorders->puchase_order_number; ?></option>
+                              <?php } ?>
 							</select>
  									
 
@@ -168,17 +168,6 @@
 							
  						</div>
 
-						<!-- <div class="col-sm-2 col-xs-12 ">
- 							
- 							<select class="select2 form-control"  placeholder="Select a location/purchaser">
-							 <option>Select Tender</option>
-                            	<option value="0">Name1</option> 
-								<option value="0">Name2</option> 
-							   	<option value="0">Name3</option>
-							</select>	
-
- 								
- 						</div> -->
  						<div class="col-sm-3 col-xs-12 ">
 							<span><b>keywords:</b></span>
  							<input type="text" class=" form-control"  id="keywordpurchaseorder" name="keyword" placeholder="Key Word" >
@@ -223,13 +212,13 @@
 
 						<div class="col-sm-3 col-xs-12 ">
 						<span><b>Procurement Date From:</b></span>
- 							<input  class="select2 form-control"  id="procurementdate" name="group_flat__id" placeholder="Select date From" >
+ 							<input   class="select2 form-control"  id="procurementdate" name="group_flat__id" placeholder="Select date From" >
 							
  						</div>
 
 							<div class="col-sm-3 col-xs-12 ">
 						<span><b>Procurement Date To:</b></span>
- 							<input  class="select2 form-control"  id="procurementdateto" name="group_flat__id" placeholder="Select date To" >
+ 							<input class="select2 form-control"  id="procurementdateto" name="group_flat__id" placeholder="Select date To" >
 							
  						</div>
 						<!-- <div class="col-sm-3 col-xs-12 ">
