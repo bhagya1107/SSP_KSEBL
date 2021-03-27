@@ -41,6 +41,8 @@
 </head>
 <main id="tg-main" class="tg-main tg-haslayout">
 	<section class="tg-main-section tg-haslayout">
+		<div id="acceptedpurchasecount" class ="" style="text-align:center;"><span><b>Total Acounts:2</b></span>
+        </div>
 		<div class="container">
 			<div class="tg-section-name">
 				<h2>ACCOUNTS</h2>
