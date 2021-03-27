@@ -34,7 +34,7 @@
  <main id="tg-main" class="tg-main tg-haslayout">
 
     <!-- <section class="tg-main-section tg-haslayout">-->
-     <div id="applydelivery" class ="" style="text-align:center;"><span><b>Total N.O Of Delivery Orders:2</b></span>
+     <div id="applydelivery" class ="" style="text-align:center;"><span><b>Total  Delivery Orders:2</b></span>
         </div>
 
          <div class="container">

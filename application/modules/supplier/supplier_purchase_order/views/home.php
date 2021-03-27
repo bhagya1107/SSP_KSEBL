@@ -1633,7 +1633,7 @@ filterpurchasedata(tabcontentid, value);
                  datas = JSON.parse(result);
                  var count = datas.length;
                  if (count > 0) {
-                     span1 = "<span><b>Total Purchase Count:" + count + "</b></span>";
+                     span1 = "<span><b>Total Purchase Orders:" + count + "</b></span>";
                  } else {
                      span1 = "<span>No Purchase To Display </span>";
                  }
