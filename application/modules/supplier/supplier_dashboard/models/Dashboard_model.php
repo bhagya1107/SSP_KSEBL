@@ -159,7 +159,15 @@ class Dashboard_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->where('supplierid', $uid);
+    $this->db->where('is_deleted', 'false');
     return $this->db->get($table)->result();
+  }
+  public function getbankdetails1($table, $uid)
+  {
+    $this->db->select('*');
+    $this->db->where('supplierid', $uid);
+    $this->db->where('is_deleted', 'false');
+    return $this->db->get($table)->row();
   }
   public function delete($table, $id)
   {

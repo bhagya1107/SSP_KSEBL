@@ -61,7 +61,7 @@
                             ?>
 
                     <div class="row">
-                        <form method="post" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/insert_bank_details')?>" >
+                        <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/insert_bank_details')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                         <div class="col-md-5" style="border: 1px solid #CCC;">
                         <br />
@@ -104,7 +104,7 @@
                         
                         <div class="form-group">
                             <label>Account No</label>
-                            <input type="number" class="form-control" name="accountno" required />
+                            <input type="number" class="form-control" id="accountno" name="accountno" required />
                         </div>
                        <div class="form-group">
                             <label>Cancel Cheque Leaf/Letter From Bank<br>(pdf up to 10mb)</label>
@@ -112,15 +112,27 @@
                         </div>
                         
                         <div class="form-group">
-                            <button type="submit" value="submit" name="submit" class="tg-btn " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
-                            <button type="reset" value="cancel" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                            <button type="submit"  value="submit" name="submit" class="tg-btn "  id="subbtnn" onclick="myFunction()" ><span>Save</span></button>
+                            <button type="reset" value="cancel" id="cnbtnn" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
                         
                         </div>
                         </div>
                         </form>
-                        <div class="col-md-7">
+
+                       <script>
+                        function myFunction() {
+                                document.getElementById("subbtnn").style.display = "none";
+
+                                $('#subbtnn').css('display','none');
+                                $('#cnbtnn').css('display','none');
+                                                               }
+                           
+                        </script> 
+                        
+                      
+                        <div class="col-md-7" style="<?php if($getbankdetails1=='') echo "display: none;" ?>">
                             <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
+                            <table class="table table-bordered table-hover" >
                                 <thead>
                                 <tr style="background-color:#26265f ;color:#FFF ">
                                     <th>Sl No</th>
@@ -134,7 +146,10 @@
                                 
                                 </tr>
                                 </thead>
+
+                             
                                 <tbody>
+                             
 
                                      <?php 
                                      $i=1;
@@ -142,6 +157,7 @@
 
                                      ?>
                                 <tr>
+                                
                                     <td><?php echo $i;?></td>
                                     <td><?php echo $value->bankname;?></td>
                                     <td><?php echo $value->branchname;?></td>

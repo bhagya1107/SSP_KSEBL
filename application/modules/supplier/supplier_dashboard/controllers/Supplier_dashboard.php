@@ -231,6 +231,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Banking Services';
 			$uid = $this->session->userdata('uid');
 			$data['getbankdetails'] = $this->dashM->getbankdetails('bank_details', $uid);
+			$data['getbankdetails1'] = $this->dashM->getbankdetails1('bank_details', $uid);
 			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
@@ -587,21 +588,24 @@ class Supplier_dashboard extends SP_Controller
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('file1')) {
 
-			print_r($this->upload->display_errors());
+			// print_r($this->upload->display_errors());
+			$file1 = "";
 		} else {
 			$data = $this->upload->data();
 			$file1 = $data['file_name'];
 		}
 		if (!$this->upload->do_upload('file2')) {
 
-			print_r($this->upload->display_errors());
+			// print_r($this->upload->display_errors());
+			$file2 = "";
 		} else {
 			$data = $this->upload->data();
 			$file2 = $data['file_name'];
 		}
 		if (!$this->upload->do_upload('file3')) {
 
-			print_r($this->upload->display_errors());
+			// print_r($this->upload->display_errors());
+			$file3 = "";
 		} else {
 			$data = $this->upload->data();
 			$file3 = $data['file_name'];
@@ -609,7 +613,9 @@ class Supplier_dashboard extends SP_Controller
 		// echo $file1;
 		//  echo $file2;
 		// echo $file3; exit;
-
+		// $file1 = $data['file_name'];
+		// $file2 = $data['file_name'];
+		// $file3 = $data['file_name'];
 
 		if ($file1 != "" and $file2 != "" and $file3 != "") {
 
@@ -1345,7 +1351,11 @@ class Supplier_dashboard extends SP_Controller
 	public function delete($id)
 	{
 		$id = $this->uri->segment(4);
-		$this->dashM->delete('bank_details', $id);
+		// $this->dashM->delete('bank_details', $id);
+		$where = array('id' => $id);
+		$data = array('is_deleted' => true);
+		$result = $this->dashM->update('bank_details', $data, $where);
+
 		$this->session->set_flashdata('msg', 'Bank Details deleted successfully');
 		redirect(base_url('supplier/dashboard/banking'));
 	}

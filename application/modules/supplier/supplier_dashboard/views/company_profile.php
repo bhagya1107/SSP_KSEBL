@@ -64,7 +64,8 @@
 						<?php $this->view('profile_sidebar',$page); ?>
 				</div>
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
-					 <!-- <?=form_open_multipart('supplier/dashboard/update_companyprofile');  ?> -->
+					
+
 					   <form method="post" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/update_companyprofile')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
 						<div class="">
@@ -137,13 +138,13 @@
 								</tr>
 								<tr>
 									<td style="text-align:right">Company Email	</td>
-									<td><input type="email" name="email" id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td>
+									<td><input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td>
 									<td></td>
 								</tr>
 								
 								<tr>
 									<td style="text-align:right">Website	</td>
-									<td><input type="url" name="website" id="website" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->website;?>"/>	</td>
+									<td><input type="url" pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?" name="website" id="website" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->website;?>"/>	</td>
 									<td></td>
 								</tr>
 								
@@ -285,17 +286,18 @@
     });
 
        
-    function myFunction1() {
+    function myFunction1() 
+                  {
 
 
-$('.showprofile').attr("readonly", "readonly");
-$('.editbutton').removeClass('hide');
-$('.savebutton').addClass('hide');
-$('.choose-file').addClass('hide');
-$('.previewbutton').removeClass('hide');
-            
+                    $('.showprofile').attr("readonly", "readonly");
+                    $('.editbutton').removeClass('hide');
+                    $('.savebutton').addClass('hide');
+                    $('.choose-file').addClass('hide');
+                    $('.previewbutton').removeClass('hide');
+                                
 
-                                    }
+                  }
 
   
   
@@ -319,7 +321,7 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
- function save_companydetails() {
+ function save_companydetailsss() {
  	alert();
 
     var profile = $("#profile").val();
