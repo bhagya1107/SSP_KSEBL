@@ -1561,6 +1561,8 @@ toggle between hiding and showing the dropdown content */
         });
     }
 
+ 
+
 function universalpurchasesearch() {
 
 $("#keywordpurchaseorder").on("keyup", function() {
@@ -1601,6 +1603,15 @@ $("#keywordpurchaseorder").on("keyup", function() {
          var value = $(this).val();
          filterpurchasedata(tabcontentid, value);
      });
+
+     $("#purchaseordernum").on("change", function() {
+
+var activetab = $("#purchasetabs li.active").attr('id');
+var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
+var value = $(this).val();
+filterpurchasedata(tabcontentid, value);
+});
+
 
      function LoadAllPurchaseOrders() {
 
