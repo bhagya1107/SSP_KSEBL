@@ -60,19 +60,20 @@
      ::-webkit-scrollbar-thumb:hover {
          background: #555;
      }
-     .tg-btn{
-        left: 37%;
+
+     .tg-btn {
+         left: 37%;
      }
  </style>
 
  <main id="tg-main" class="tg-main tg-haslayout">
      <section class="tg-main-section tg-haslayout">
-     <div id="allpurchasecount" style="text-align:center;">
-        </div>
-        <div id="acceptedpurchasecount" class ="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:2</b></span>
-        </div>
-        <div id="workpurchasecount" class ="hide" style="text-align:center;"><span><b>Total Work Orders:247</b></span>
-        </div>
+         <div id="allpurchasecount" style="text-align:center;">
+         </div>
+         <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:2</b></span>
+         </div>
+         <div id="workpurchasecount" class="hide" style="text-align:center;"><span><b>Total Work Orders:247</b></span>
+         </div>
          <div class="container">
              <div class="tg-section-name">
                  <h2>Purchase Orders</h2>
@@ -94,7 +95,7 @@
                          <div class="row">
                              <div class="tg-tickets">
                                  <div class="commonfilter" id="allpurchasedetails"></div>
-                               
+
                              </div>
 
 
@@ -376,7 +377,7 @@
                  </div>
              </div>
          </div>
-         
+
      </section>
  </main>
 
@@ -1539,51 +1540,51 @@ toggle between hiding and showing the dropdown content */
      }, 10000000);
 
      function showcountnavbar() {
-        $(".nav-tabs a").click(function() {
-            var activetab = $(this).parent().attr('id');
-           //allpurchaseorder acceptedpurchaseorder workorders
-           // console.log(activetab);acceptedpurchasecount workpurchasecount
- if(activetab == 'acceptedpurchaseorder'){
-    $('#acceptedpurchasecount').removeClass('hide');
-    $('#allpurchasecount').addClass('hide');
-    $('#workpurchasecount').addClass('hide');
-}else if(activetab == 'workorders'){
-    $('#workpurchasecount').removeClass('hide');
-    $('#allpurchasecount').addClass('hide');
-    $('#acceptedpurchasecount').addClass('hide');
-}else{
-    $('#allpurchasecount').removeClass('hide');
-    $('#acceptedpurchasecount').addClass('hide');
-    $('#workpurchasecount').addClass('hide'); 
-}
-         
+         $(".nav-tabs a").click(function() {
+             var activetab = $(this).parent().attr('id');
+             //allpurchaseorder acceptedpurchaseorder workorders
+             // console.log(activetab);acceptedpurchasecount workpurchasecount
+             if (activetab == 'acceptedpurchaseorder') {
+                 $('#acceptedpurchasecount').removeClass('hide');
+                 $('#allpurchasecount').addClass('hide');
+                 $('#workpurchasecount').addClass('hide');
+             } else if (activetab == 'workorders') {
+                 $('#workpurchasecount').removeClass('hide');
+                 $('#allpurchasecount').addClass('hide');
+                 $('#acceptedpurchasecount').addClass('hide');
+             } else {
+                 $('#allpurchasecount').removeClass('hide');
+                 $('#acceptedpurchasecount').addClass('hide');
+                 $('#workpurchasecount').addClass('hide');
+             }
 
-        });
-    }
 
- 
+         });
+     }
 
-function universalpurchasesearch() {
 
-$("#keywordpurchaseorder").on("keyup", function() {
-    var activetab = $("#purchasetabs li.active").attr('id');
-    var tabcontentid =(activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
-    //var tabcontentid = $("#alltenders");
-    var value = $(this).val().toLowerCase();
 
-    filterpurchasedata(tabcontentid, value);
+     function universalpurchasesearch() {
 
-});
+         $("#keywordpurchaseorder").on("keyup", function() {
+             var activetab = $("#purchasetabs li.active").attr('id');
+             var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
+             //var tabcontentid = $("#alltenders");
+             var value = $(this).val().toLowerCase();
 
-}
+             filterpurchasedata(tabcontentid, value);
+
+         });
+
+     }
 
      function filterpurchasedata(tabcontentid, value) {
-
+         
          $(".commonfilter div[class!=tg-btn]").filter(function() {
              var datetime1 = $(this).attr('datetime');
              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
          });
-         console.log("bhagya");
+
          $('.hiddendate').addClass('hide');
          var spanid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
          var purchaselength = $("#" + tabcontentid + " .commonfilter .tg-ticket [style='display: block;']").length;
@@ -1596,21 +1597,47 @@ $("#keywordpurchaseorder").on("keyup", function() {
 
 
 
-     $("#datepickerpurchase").on("change", function() {
+     $(".filterclass").on("change", function() {
+
+         var activetab = $("#purchasetabs li.active").attr('id');
+         var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
+         //  var value = $(this).val();
+         datefilters();
+         //  filterpurchasedata(tabcontentid, value);
+     });
+
+     function datefilters() {
+         var results = [];
+         var fromDate = $("#datepickerpurchasefrom").val();
+         var toDate = $("#datepickerpurchaseto").val();
+         if (fromDate || toDate) {
+             console.log(fromDate);
+             console.log(toDate);
+             results = datas.filter(function(value, key) {
+                 if (toDate != '') {
+                     if (value['purchase_order_date'] >= fromDate && value['purchase_order_date'] <= toDate) {
+                         return value;
+                     }
+                 } else {
+                     if (value['purchase_order_date'] == fromDate)
+                         return value;
+
+                 }
+             });
+
+             buildpurchaseorders(results);
+
+         } else {
+             buildpurchaseorders(datas);
+         }
+     }
+     $("#purchaseordernum").on("change", function() {
 
          var activetab = $("#purchasetabs li.active").attr('id');
          var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
          var value = $(this).val();
          filterpurchasedata(tabcontentid, value);
      });
-
-     $("#purchaseordernum").on("change", function() {
-
-var activetab = $("#purchasetabs li.active").attr('id');
-var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
-var value = $(this).val();
-filterpurchasedata(tabcontentid, value);
-});
 
 
      function LoadAllPurchaseOrders() {
@@ -1638,26 +1665,7 @@ filterpurchasedata(tabcontentid, value);
                      span1 = "<span>No Purchase To Display </span>";
                  }
                  $('#allpurchasecount').html(span1);
-                 html = "";
-                 $.each(datas, function(i, data) {
-                     //console.log(data.sorting);
-
-                     html += "<div class='tg-ticket'><time class='tg-matchdate' >";
-                     var date1 = new Date(data.purchase_order_date);
-                     // console.log(date1);
-                     // console.log(date1.getDate());
-                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-                     html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4>TENDER " + data.id + "</h4></h4>";
-                     html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
-                     html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
-
-                     html += "<div class='tg-btn' ><a class='modal-view pullright' style='color:white;' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-purchase='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#myModalpurchase'>View</a>";
-
-                     html += "</div></div>";
-
-
-                 });
-                 $('#allpurchasedetails').empty().append(html);
+                 buildpurchaseorders(datas);
              },
              complete: function() {
                  $("#overlay").fadeOut();
@@ -1667,6 +1675,28 @@ filterpurchasedata(tabcontentid, value);
 
      }
 
+     function buildpurchaseorders(datas) {
+         html = "";
+         $.each(datas, function(i, data) {
+             //console.log(data.sorting);
+
+             html += "<div class='tg-ticket'><time class='tg-matchdate' >";
+             var date1 = new Date(data.purchase_order_date);
+             // console.log(date1);
+             // console.log(date1.getDate());
+             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
+             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4>TENDER " + data.id + "</h4></h4>";
+             html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
+             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
+
+             html += "<div class='tg-btn' ><a class='modal-view pullright' style='color:white;' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-purchase='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#myModalpurchase'>View</a>";
+
+             html += "</div></div>";
+
+
+         });
+         $('#allpurchasedetails').empty().append(html);
+     }
 
      function myFunction($month_dat) {
          var month = new Array();

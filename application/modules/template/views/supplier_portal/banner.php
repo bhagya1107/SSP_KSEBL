@@ -104,13 +104,13 @@
 
 						 <div class="col-sm-3 col-xs-12 ">
 							<span><b>Tender Date From:</b></span>
- 							<input  type="date"  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
+ 							<input  type="date"  class="select2 form-control filterclass"  id="datepickerfrom" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
 							<div class="col-sm-3 col-xs-12 ">
 							<span><b>Tender Date To:</b></span>
- 							<input  type="date"  class="select2 form-control"  id="datepicker" name="group_flat__id" placeholder="Select a date" >
+ 							<input  type="date"  class="select2 form-control filterclass"  id="datepickerto" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 						
@@ -158,13 +158,13 @@
 
 						 <div class="col-sm-3 col-xs-12 ">
 							<span><b>Purchase Date From:</b></span>
- 							<input  type ="date" class="select2 form-control "  id="datepickerpurchase" name="group_flat__id" placeholder="Select a date" >
+ 							<input  type ="date" class="select2 form-control filterclass"  id="datepickerpurchasefrom" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
 							<div class="col-sm-3 col-xs-12 ">
 							<span><b>Purchase Date To:</b></span>
- 							<input  type ="date" class="select2 form-control "  id="datepickerpurchase" name="group_flat__id" placeholder="Select a date" >
+ 							<input  type ="date" class="select2 form-control filterclass"  id="datepickerpurchaseto" name="group_flat__id" placeholder="Select a date" >
 							
  						</div>
 
@@ -212,13 +212,13 @@
 
 						<div class="col-sm-3 col-xs-12 ">
 						<span><b>Procurement Date From:</b></span>
- 							<input   class="select2 form-control"  id="procurementdate" name="group_flat__id" placeholder="Select date From" >
+ 							<input   class="select2 form-control filterclass"  id="procurementdate" name="group_flat__id" placeholder="Select date From" >
 							
  						</div>
 
 							<div class="col-sm-3 col-xs-12 ">
 						<span><b>Procurement Date To:</b></span>
- 							<input class="select2 form-control"  id="procurementdateto" name="group_flat__id" placeholder="Select date To" >
+ 							<input class="select2 form-control filterclass"  id="procurementdateto" name="group_flat__id" placeholder="Select date To" >
 							
  						</div>
 						<!-- <div class="col-sm-3 col-xs-12 ">

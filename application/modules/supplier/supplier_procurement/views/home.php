@@ -443,17 +443,19 @@
 				$("#procurementdate").on("change", function() {
 					//var activetab = $("#deliverytabs li.active").attr('id');
 					var value = $(this).val();
-					console.log(value);
+					//console.log(value);
 					filterdeliverydata(value);
 				});
 				$("#procurementdateto").on("change", function() {
 					//var activetab = $("#deliverytabs li.active").attr('id');
 					var value = $(this).val();
-					console.log(value);
+					//console.log(value);
 					filterdeliverydata(value);
 				});
 
 				function filterdeliverydata(value) {
+				//	console.log("hnn");
+				//	console.log(value);
 
 					$("#myTable tr").filter(function() {
 
@@ -466,5 +468,40 @@
 					console.log(tenderlength);
 
 				}
+
+				$(".filterclass").on("change", function() {
+					var value = $(this).val();
+					console.log("kkk");
+datefilters(value);
+});
+				function datefilters(value) {
+					
+					console.log("nakkk");
+					//console.log(value);
+         //var value = $(this).val();
+									console.log(value);
+         var fromDate = $("#procurementdate").val();
+         var toDate = $("#procurementdateto").val();
+         if (fromDate || toDate) {
+             console.log(fromDate);
+             console.log(toDate);
+             //results = value.filter(function(value, key) {
+                 if (toDate != '') {
+                     if (value >= fromDate && value <= toDate) {
+                         return value;
+                     }
+                 } else {
+                     if (value == fromDate)
+                         return value;
+
+                 }
+            
+
+													filterdeliverydata(value);
+
+         } else {
+										filterdeliverydata(value);
+         }
+     }
 	});
 				</script>
