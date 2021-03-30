@@ -57,6 +57,11 @@
 	margin-left: 9%;
  margin-right: 4%;
 }
+.searchbar{
+	position:fixed;
+	z-index: 888;
+
+}
   </style>
           
 	<div class="searchbar">

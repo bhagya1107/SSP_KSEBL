@@ -63,7 +63,10 @@
 
      .tg-btn {
          left: 37%;
-     }
+     }   
+     #tg-main{
+        margin-top: 12%;
+     } 
  </style>
 
  <main id="tg-main" class="tg-main tg-haslayout">
@@ -1603,6 +1606,7 @@ toggle between hiding and showing the dropdown content */
          var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
          //  var value = $(this).val();
          datefilters();
+         datefilterswork();
          //  filterpurchasedata(tabcontentid, value);
      });
 
@@ -1631,6 +1635,34 @@ toggle between hiding and showing the dropdown content */
              buildpurchaseorders(datas);
          }
      }
+
+     function datefilterswork() {
+         var results = [];
+         var fromDate = $("#datepickerpurchasefrom").val();
+         var toDate = $("#datepickerpurchaseto").val();
+         if (fromDate || toDate) {
+             console.log(fromDate);
+             console.log(toDate);
+             results = datas.filter(function(value, key) {
+                 if (toDate != '') {
+                     if (value['purchase_order_date'] >= fromDate && value['purchase_order_date'] <= toDate) {
+                         return value;
+                     }
+                 } else {
+                     if (value['purchase_order_date'] == fromDate)
+                         return value;
+
+                 }
+             });
+
+             buildpurchaseorderswork(results);
+
+         } else {
+            buildpurchaseorderswork(datas);
+         }
+     }
+
+
      $("#purchaseordernum").on("change", function() {
 
          var activetab = $("#purchasetabs li.active").attr('id');
@@ -1697,6 +1729,31 @@ toggle between hiding and showing the dropdown content */
          });
          $('#allpurchasedetails').empty().append(html);
      }
+
+     function buildpurchaseorderswork(datas) {
+         html = "";
+         $.each(datas, function(i, data) {
+             //console.log(data.sorting);
+
+             html += "<div class='tg-ticket'><time class='tg-matchdate' >";
+             var date1 = new Date(data.purchase_order_date);
+             // console.log(date1);
+             // console.log(date1.getDate());
+             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
+             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4>TENDER " + data.id + "</h4></h4>";
+             html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
+             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
+
+             html += "<div class='tg-btn' ><a class='modal-view pullright' style='color:white;' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-purchase='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#myModalpurchase'>View</a>";
+
+             html += "</div></div>";
+
+
+         });
+         $('#worktickets').empty().append(html);
+     }
+
+     
 
      function myFunction($month_dat) {
          var month = new Array();

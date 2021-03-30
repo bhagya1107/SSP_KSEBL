@@ -9,7 +9,12 @@ public function __construct()
 	public function index()
 	{
 	//neethu
-	
+// 	$procuredplns = array (
+//   array("Product" =>"DIST TFR 3PH 150kVA 11kV/433V	","Scheme"=>KSEB 20-21,"Plan Duration"=>100 Days,"Plan Start Date"=>12-04-2021,"Expected Quantity"=>18,"Procured so far"=>18),
+//   array("Product" =>"DIST TFR 3PH 150kVA 11kV/433V	","Scheme"=>KSEB 20-21,"Plan Duration"=>100 Days,"Plan Start Date"=>12-04-2021,"Expected Quantity"=>18,"Procured so far"=>18),
+//   array("Product" =>"DIST TFR 3PH 150kVA 11kV/433V	","Scheme"=>KSEB 20-21,"Plan Duration"=>100 Days,"Plan Start Date"=>12-04-2021,"Expected Quantity"=>18,"Procured so far"=>18),
+//   array("Product" =>"DIST TFR 3PH 150kVA 11kV/433V	","Scheme"=>KSEB 20-21,"Plan Duration"=>100 Days,"Plan Start Date"=>12-04-2021,"Expected Quantity"=>18,"Procured so far"=>18),
+// );
 		$this->load->model('Getmenus','GETM');
 		$user_type=$this->session->userdata('user_type');
 		$uid=$this->session->userdata('supplierid');

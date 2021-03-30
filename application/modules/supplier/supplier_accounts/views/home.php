@@ -30,7 +30,13 @@
 		color: #fff;
 		background-color: #1e315d;
 		border-color: #ffcc33;
-		;
+	}
+	#invoice{
+		overflow:auto;
+		height:80eh;
+	}
+	#fixedaccounts{
+		margin-top:12%;
 	}
 </style>
 
@@ -40,7 +46,7 @@
 
 </head>
 <main id="tg-main" class="tg-main tg-haslayout">
-	<section class="tg-main-section tg-haslayout">
+	<section class="tg-main-section tg-haslayout" id="fixedaccounts">
 		<div id="acceptedpurchasecount" class ="" style="text-align:center;"><span><b>Total Acounts:2</b></span>
         </div>
 		<div class="container">
@@ -146,8 +152,7 @@
 
 		</div>
 		</div>
-		<div id="applyinvoices" class ="" style="text-align:center;"><span><b>Total N.o Of Invoices:2</b></span>
-        </div>
+		
 	</section>
 </main>
 
