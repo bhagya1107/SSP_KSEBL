@@ -98,6 +98,16 @@ class Dashboard_model extends CI_Model
     $this->db->update('notifications');
       return;
   }
+  function update_preference($timezone,$date,$uid,$user_type) {
+    // $this->db->trans_start();
+    $this->db->where('user_id', $uid);
+    $this->db->where('user_type', $user_type);
+    $this->db->set('timezone', $timezone);
+    $this->db->set('date_formate', $date);
+    $this->db->update('notifications');
+      return;
+  }
+
   public function update_access_permission($table, $data, $user_type, $uid)
   {
     $this->db->where('supplierid', $uid);
