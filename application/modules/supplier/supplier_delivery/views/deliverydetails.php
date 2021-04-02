@@ -31,6 +31,12 @@
      #tg-main{
          margin-top:12%;
      }
+     .tg-section-name:after {
+   display:none;
+}
+     .tg-section-name {
+         top:27%;
+     }
  </style>
 
 

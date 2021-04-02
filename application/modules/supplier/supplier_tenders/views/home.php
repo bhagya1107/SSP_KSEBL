@@ -61,9 +61,9 @@
         top: 0;
         z-index: 99999;
     } */
-    #drag-2{
+    #drag-2 {
         margin-top: 12%;
-    width: 100%;
+        width: 100%;
     }
 </style>
 
@@ -768,13 +768,96 @@
 
     function mytenderdetails(tenderdetail) {
 
+        // var tenderdetails =   Object.keys(tenderdetail); 
+        // console.log("kkkk");
+        console.log(tenderdetails);
         var tenderopendetails = tenderdetail.prc_tender_opening_dtls;
+        var tenderprocurementprocess = tenderdetail.prc_procurement_process;
+        var tenderschedules = tenderdetail.prc_tender_schedules;
+        var tenderequestions = tenderdetail.prc_requestions;
+        var tenderclosing = tenderdetail.prc_tender_closing;
+        var tendertechnicalevaluations = tenderdetail.prc_tender_technical_evaluations;
+        var corrigendumdocuments = tenderdetail.prc_corrigendum_documents;
         var tenderprocurementdetails = tenderdetail.prc_procurement_process_dtls;
         var tenderpricebidopenings = tenderdetail.prc_tender_price_bid_openings;
         var tenderpurchasedetails = tenderdetail.prc_purchase_orders;
         var tenderdeliverydetails = tenderdetail.prc_proposed_delivery_details;
+        var tendermdcc = tenderdetail.prc_mdccs;
 
-        var html = "<div id='basicopeningdetails'>";
+        var html = "<div id='prc_general_dtls'>";
+
+        html += "<b><h5 style='color:orange;'>TENDER GENERAL DETAILS</h5><b>" +
+            "<label>Bid Opening Date:" + tenderdetail.bid_opening_date + "</label>" +
+            " <label>Bid Closing Date:" + tenderdetail.bid_closing_date + "</label>" +
+            " <label>Bid Cost:" + tenderdetail.bid_cost + "</label>" +
+            " <label>Bid Submission Fee:" + tenderdetail.bid_submision_fee + "</label>" +
+            " <label>Bid Validity Period Days:" + tenderdetail.bid_validity_period_days + "</label>" +
+            " <label>Emd Amount:" + tenderdetail.emd_amount + "</label>";
+
+        html += "</div>";
+
+
+        html += "<div id='basicprocurementprocess'>";
+
+        html += "<b><h5 style='color:orange;'>TENDER PROCUREMENT PROCESS </h5><b>" +
+            " <label>Job Assigned To:" + tenderprocurementprocess.job_assigned_to + "</label>" +
+            " <label>Job Assigned Date:" + tenderprocurementprocess.job_assigned_date + "</label>";
+
+
+        html += "</div>";
+
+        html += "<div id='prc_procurement_process_dtls'>";
+        tenderprocurementdetails.forEach(function(item, index) {
+
+            html += "<b><h5 style='color:orange;'>TENDER PROCUREMENT PROCESS DETAILS</h5><b>" +
+                "<label>procurement process Id:" + item.prc_procurement_process_id + "</label>" +
+                " <label>warranty period in month:" + item.warranty_period_in_month + "</label>" +
+                " <label>Purchase quantity:" + item.purchase_quantity + "</label>";
+        })
+        html += "</div>";
+
+
+
+        html += "<div id='basicprocessdetails'>";
+        tenderschedules.forEach(function(item, index) {
+
+            html += "<b><h5 style='color:orange;'>TENDER SCHEDULE DETAILS</h5><b>" +
+                " <label>Tender Uploading Date:" + item.proposed_tender_uploading_date + "</label>" +
+                " <label>Tender Opening Date:" + item.proposed_tender_opening_date + "</label>" +
+                " <label>Proposed Date:" + item.proposed_clarification_date + "</label>" +
+                " <label>Proposed Note Date:" + item.proposed_pq_note_date + "</label>" +
+                " <label>Proposed fa Date:" + item.proposed_note_to_fa_date + "</label>" +
+                " <label>Price Bid Opening Date:" + item.proposed_price_bid_opening_date + "</label>" +
+                " <label>Pc Note:" + item.proposed_pc_note + "</label>" +
+                " <label>PO Date:" + item.proposed_po_date + "</label>" +
+                " <label>Inspection Date:" + item.proposed_inspection_date + "</label>" +
+                " <label>MDCC Date:" + item.proposed_mdcc_date + "</label>";
+
+        })
+        html += "</div>";
+
+        html += "<div id='basicrequestions'>";
+        tenderequestions.forEach(function(item, index) {
+
+            html += "<b><h5 style='color:orange;'>TENDER REQUESTIONS DETAILS</h5><b>" +
+                " <label>Scheme Name:" + item.scheme_name + "</label>" +
+                " <label>Scheme Id:" + item.mst_scheme_id + "</label>" +
+                " <label>Fin Year Name:" + item.fin_year_name + "</label>" +
+                " <label>Display Name:" + item.disp_name + "</label>" +
+                " <label>Requestion Order Number:" + item.requesition_order_num + "</label>" +
+                " <label>Requistion Authority:" + item.requisition_authority + "</label>" +
+                " <label>Job Assigned To:" + item.job_assigned_to + "</label>" +
+                " <label>Material Name:" + item.material_name + "</label>" +
+                " <label>Total Quantity:" + item.total_quantity + "</label>" +
+                " <label>Total PAC Amount:" + item.total_pac_amount + "</label>" +
+                " <label>Procurement Office Id:" + item.point_of_procurement_office_id + "</label>" +
+                " <label>Procurement Status Description:" + item.procurement_status_descr + "</label>";
+
+        })
+        html += "</div>";
+
+
+        html += "<div id='basicopeningdetails'>";
         tenderopendetails.forEach(function(item, index) {
             html += "<b><h5 style='color:orange;'>TENDER OPENING DETAILS</h5><b>" +
                 " <label>Tender Opening Id:" + item.prc_tender_opening_id + "</label>" +
@@ -785,13 +868,46 @@
         })
         html += "</div>";
 
-        html += "<div id='prc_procurement_process_dtls'>";
-        tenderprocurementdetails.forEach(function(item, index) {
 
-            html += "<b><h5 style='color:orange;'>TENDER PROCUREMENT PROCESS DETAILS</h5><b>" +
-                "<label>procurement process Id:" + item.prc_procurement_process_id + "</label>" +
-                " <label>warranty period in month:" + item.warranty_period_in_month + "</label>" +
-                " <label>Purchase quantity:" + item.purchase_quantity + "</label>";
+
+        html += "<div id='basicclosingdetails'>";
+        tenderclosing.forEach(function(item, index) {
+
+            html += "<b><h5 style='color:orange;'>TENDER CLOSING DETAILS</h5><b>" +
+                " <label>Tender Closing Type:" + item.tender_closing_type + "</label>" +
+                " <label>Tender Closing Date:" + item.date_of_closing + "</label>"
+
+            ;
+
+        })
+        html += "</div>";
+
+        html += "<div id='basictechnicalevaluations'>";
+        tendertechnicalevaluations.forEach(function(item, index) {
+
+            html += "<b><h5 style='color:orange;'>TENDER TECHNICAL EVALUATIONS</h5><b>" +
+                " <label>Tender Opening Detail:" + item.prc_tender_opening_dtl_id + "</label>" +
+                " <label>Is Qualified:" + item.is_qualified + "</label>"
+
+            ;
+
+        })
+        html += "</div>";
+
+        html += "<div id='basiccorrigendumdoc'>";
+        corrigendumdocuments.forEach(function(item, index) {
+
+            html += "<b><h5 style='color:orange;'>TENDER CORRIGENDUM DOCUMENTS</h5><b>";
+
+        })
+        html += "</div>";
+
+
+        html += "<div id='prc_mdcc_dtls'>";
+        tendermdcc.forEach(function(item, index) {
+
+            html += "<b><h5 style='color:orange;'>TENDER MDCC DETAILS</h5><b>";
+
         })
         html += "</div>";
 
@@ -835,7 +951,7 @@
         })
         html += "</div>";
 
-        console.log(html);
+        //console.log(html);
         $('#tenderdetails').html(html);
     }
 </script>
