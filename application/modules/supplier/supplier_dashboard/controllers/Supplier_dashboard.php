@@ -271,7 +271,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['page_title'] = 'Portfolio';
 			$data['title'] = 'Portfolio';
 			$data['tab'] = 1;
-			$supplierid = $this->session->userdata('uid');
+			$supplierid = $this->session->userdata('uid'); 
 			$materialdata = json_decode($this->getMaterialGroupData()); //echo"<pre>";print_r($materialdata);exit;
 			$data['materialdata'] = $materialdata->result_data->list; //echo"<pre>";print_r($data['materialdata']);exit;
 			$getcategorydata = json_decode($this->getSbuData_get());
@@ -951,14 +951,17 @@ class Supplier_dashboard extends SP_Controller
 		$user_type = $this->session->userdata('user_type');
 		$uid = $this->session->userdata('uid');
 		$data=$this->input->post('display_status');
+		$timezone=$this->input->post('timezone');
+		$date=$this->input->post('date');
 		// echo $display_status; exit;
-		// $data = array(
-		// 	'preference_display_status' => $display_status,
+		// $data1 = array(
+		// 	'preference_display_status' => $timezone,
+		// 	'date_formate' => $date,
 		// 	'user_id' => $uid,
 		// 	'user_type' => $user_type
 			
 		// );
-
+		$this->dashM->update_preference($timezone,$date,$uid,$user_type);
 		$this->dashM->update_notifications_preference_display_status($data,$uid,$user_type);
 		$this->session->set_flashdata('msg', 'Notification Status Changed successfully');
 	    redirect(base_url('supplier/dashboard/preference_profile'));		

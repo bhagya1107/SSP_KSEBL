@@ -70,18 +70,21 @@
 									<td style="text-align:right"> Time Zone	</td>
 									<td> 
                            
-                            <select class="form-control" id="timezone">
-                            <option value="0">
+                            <select class="form-control" id="timezone" name="timezone">
+                            <option value="<?php echo $viewnotifications->timezone;?>">
+                           <?php echo $viewnotifications->timezone;?>
+                            </option> 
+                            <option value="Asia/Kolkata">
                              Asia/Kolkata
-                            </option> <option value="0">
+                            </option> <option value="Asia/Katmandu">
                                Asia/Katmandu
-                            </option> <option value="0">
+                            </option> <option value="Asia/Bangkok">
                               Asia/Bangkok
                             </option>
-                            <option value="0">
+                            <option value="Asia/Krasnoyarsk">
                               Asia/Krasnoyarsk
                             </option>
-							 <option value="0">
+							              <option value="Pacific/Midway">
                                Pacific/Midway
                             </option>
                             </select>
@@ -112,12 +115,15 @@
 								</tr>-->
 								<tr>
 									<td style="text-align:right">Date Format</td>
-									<td> <select class="form-control" id="date">
-                            <option value="0">
+									<td> <select class="form-control" id="date" name="date">
+                          <option value="<?php echo $viewnotifications->date_formate;?>">
+                           <?php echo $viewnotifications->date_formate;?>
+                            </option> 
+                            <option value="MM-DD-YYYY">
                             MM-DD-YYYY
-                            </option> <option value="0">
-                             YYYY-MM-DD
-                            </option> <option value="0">
+                            </option> <option value="YYYY-MM-DD">
+                            YYYY-MM-DD
+                            </option> <option value="DD-MM-YYYY">
                             DD-MM-YYYY
                             </option>
                             
