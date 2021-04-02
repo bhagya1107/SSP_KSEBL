@@ -36,6 +36,12 @@
 	div.dataTables_wrapper div.dataTables_filter {
     margin-left: 30%;
 	}
+	#procurementplanid{
+		margin-top: 12%;
+	}
+	:after{
+		display: none;
+	}
 </style>
 <!--************************************
 		Banner Start
@@ -67,7 +73,7 @@
 
 <main id="tg-main" class="tg-main tg-haslayout">
 	<section class="tg-main-section tg-haslayout">
-		<div class="container">
+		<div class="container" id="procurementplanid">
 			<div class="tg-section-name">
 				<h2>Procurement Plan</h2>
 			</div>
@@ -454,8 +460,7 @@
 				});
 
 				function filterdeliverydata(value) {
-				//	console.log("hnn");
-				//	console.log(value);
+			
 
 					$("#myTable tr").filter(function() {
 
@@ -471,14 +476,11 @@
 
 				$(".filterclass").on("change", function() {
 					var value = $(this).val();
-					console.log("kkk");
+					
 datefilters(value);
 });
 				function datefilters(value) {
-					
-					console.log("nakkk");
-					//console.log(value);
-         //var value = $(this).val();
+					 //var value = $(this).val();
 									console.log(value);
          var fromDate = $("#procurementdate").val();
          var toDate = $("#procurementdateto").val();

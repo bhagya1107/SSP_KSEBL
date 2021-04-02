@@ -61,6 +61,10 @@
         top: 0;
         z-index: 99999;
     } */
+    #drag-2{
+        margin-top: 12%;
+    width: 100%;
+    }
 </style>
 
 <head>
