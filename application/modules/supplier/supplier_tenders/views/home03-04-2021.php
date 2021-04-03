@@ -1088,9 +1088,7 @@
 
     function filtertenderdata(tabcontentid, value) {
 
-        var activetab = $("#tendertabs li.active").attr('id');
         $(".commonfilter div[class!=tg-btnsbox]").filter(function() {
-
             var datetime1 = $(this).attr('datetime');
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
@@ -1144,10 +1142,8 @@
                 getMyservices(true);
             }
             setTimeout(function() {
-                var activetab = $("#tendertabs li.active").attr('id');
                 var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
                 var value = $('#keywordtender').val().toLowerCase();
-                datefilters();
                 filtertenderdata(tabcontentid, value);
             }, 5000);
 
@@ -1273,11 +1269,6 @@
         } else {
             buildmytenders(datas);
         }
-        var activetab = $("#tendertabs li.active").attr('id');
-                var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
-                var value = $('#keywordtender').val().toLowerCase();
-                
-                filtertenderdata(tabcontentid, value);
     }
 
 
