@@ -28,15 +28,16 @@
      ::-webkit-scrollbar-thumb:hover {
          background: #555;
      }
-     #tg-main{
-         margin-top:12%;
-     }
      .tg-section-name:after {
    display:none;
 }
+     /* #tg-main{
+         margin-top:12%;
+     }
+    
      .tg-section-name {
          top:27%;
-     }
+     } */
  </style>
 
 

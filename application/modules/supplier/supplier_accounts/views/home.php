@@ -35,9 +35,9 @@
 		overflow:auto;
 		height:80eh;
 	}
-	#fixedaccounts{
+	/* #fixedaccounts{
 		margin-top:12%;
-	}
+	} */
 </style>
 
 <head>

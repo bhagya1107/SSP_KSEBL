@@ -64,9 +64,9 @@
      .tg-btn {
          left: 37%;
      }   
-     #tg-main{
+     /* #tg-main{
         margin-top: 12%;
-     } 
+     }  */
  </style>
 
  <main id="tg-main" class="tg-main tg-haslayout">
@@ -1582,7 +1582,9 @@ toggle between hiding and showing the dropdown content */
      }
 
      function filterpurchasedata(tabcontentid, value) {
+         console.log(value);
          
+        var activetab = $("#purchasetabs li.active").attr('id');
          $(".commonfilter div[class!=tg-btn]").filter(function() {
              var datetime1 = $(this).attr('datetime');
              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
@@ -1599,6 +1601,15 @@ toggle between hiding and showing the dropdown content */
      }
 
 
+     $("#purchaseordernum").on("change", function() {
+
+var activetab = $("#purchasetabs li.active").attr('id');
+var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
+var value = $(this).val();
+datefilters();
+filterpurchasedata(tabcontentid, value);
+
+});
 
      $(".filterclass").on("change", function() {
 
@@ -1607,7 +1618,7 @@ toggle between hiding and showing the dropdown content */
          //  var value = $(this).val();
          datefilters();
          datefilterswork();
-         //  filterpurchasedata(tabcontentid, value);
+          filterpurchasedata(tabcontentid, value);
      });
 
      function datefilters() {
@@ -1663,13 +1674,6 @@ toggle between hiding and showing the dropdown content */
      }
 
 
-     $("#purchaseordernum").on("change", function() {
-
-         var activetab = $("#purchasetabs li.active").attr('id');
-         var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
-         var value = $(this).val();
-         filterpurchasedata(tabcontentid, value);
-     });
 
 
      function LoadAllPurchaseOrders() {

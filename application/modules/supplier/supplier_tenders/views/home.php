@@ -61,10 +61,10 @@
         top: 0;
         z-index: 99999;
     } */
-    #drag-2 {
+    /* #drag-2 {
         margin-top: 12%;
         width: 100%;
-    }
+    } */
 </style>
 
 <head>
@@ -180,8 +180,8 @@
                                             </ul>
                                         </div>
                                         <div class="tg-btnsbox">
-                                            <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten->tenderid ?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-                                            <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $gettenderdetails->id) ?>">Apply </a>
+                                            <!-- <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten->tenderid ?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
+                                            <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $gettenderdetails->id) ?>">Apply </a> -->
 
                                         </div>
                                     </div>
@@ -1088,7 +1088,9 @@
 
     function filtertenderdata(tabcontentid, value) {
 
+        var activetab = $("#tendertabs li.active").attr('id');
         $(".commonfilter div[class!=tg-btnsbox]").filter(function() {
+
             var datetime1 = $(this).attr('datetime');
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
@@ -1142,8 +1144,10 @@
                 getMyservices(true);
             }
             setTimeout(function() {
+                var activetab = $("#tendertabs li.active").attr('id');
                 var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
                 var value = $('#keywordtender').val().toLowerCase();
+                datefilters();
                 filtertenderdata(tabcontentid, value);
             }, 5000);
 
@@ -1269,6 +1273,11 @@
         } else {
             buildmytenders(datas);
         }
+        var activetab = $("#tendertabs li.active").attr('id');
+                var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+                var value = $('#keywordtender').val().toLowerCase();
+                
+                filtertenderdata(tabcontentid, value);
     }
 
 

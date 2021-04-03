@@ -57,14 +57,14 @@
 	margin-left: 9%;
  margin-right: 4%;
 }
-.searchbar{
+/* .searchbar{
 	position:fixed;
 	z-index: 888;
 
-}
+} */
   </style>
           
-	<div class="searchbar">
+	<div class="searchbar" >
 	<?php
                             $user_type = $this->session->userdata('user_type');
                             ?>
