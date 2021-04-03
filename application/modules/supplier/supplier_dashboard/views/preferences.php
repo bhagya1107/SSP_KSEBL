@@ -70,7 +70,7 @@
 									<td style="text-align:right"> Time Zone	</td>
 									<td> 
                            
-                            <select class="form-control" id="timezone" name="timezone">
+                            <select class="form-control" id="timezone" name="timezone"> 
                             <option value="<?php echo $viewnotifications->timezone;?>">
                            <?php echo $viewnotifications->timezone;?>
                             </option> 
