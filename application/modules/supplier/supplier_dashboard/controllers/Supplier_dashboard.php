@@ -278,8 +278,8 @@ class Supplier_dashboard extends SP_Controller
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			//echo"<pre>";print_r($data['getcategory']);exit;
 			//$getmatrdata=json_decode($this->getMaterialData(1,9));
-			$getmatrdatavendor=json_decode($this->getMaterialvendor());
-			$data['getmaterialven']=$getmatrdatavendor->result_data->list;//echo"<pre>";print_r($data['getmaterialven']);exit;
+			// $getmatrdatavendor=json_decode($this->getMaterialvendor());
+			// $data['getmaterialven']=$getmatrdatavendor->result_data->list;//echo"<pre>";print_r($data['getmaterialven']);exit;
 			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid); //echo"<pre>";print_r($data['getsuppliermaterials']);exit;
 			$this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal');
 		} else {
@@ -390,22 +390,22 @@ class Supplier_dashboard extends SP_Controller
 		return $result;
 	}
 
-	public function getMaterialvendor()
-	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);//print_r($token1);exit;
+	// public function getMaterialvendor()
+	// {
+	// 	$token = $this->Login_POST();
+	// 	$token1 = json_decode($token);//print_r($token1);exit;
 
-		$apiurl     = 'http://hris.kseb.in/erpws/api/inv/v1/vendor_receipt/vendor_details/2/380';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));print_r($token1->result_data->token->access_token);exit;
-		$result = curl_exec($curl);// print_r($result);exit;
-		return $result;
-	}
+	// 	$apiurl     = 'http://hris.kseb.in/erpws/api/inv/v1/vendor_receipt/vendor_details/2/380';
+	// 	$curl       = curl_init();
+	// 	curl_setopt($curl, CURLOPT_URL, $apiurl);
+	// 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	// 	curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+	// 		'Content-Type: application/json',
+	// 		'Authorization: Bearer ' . $token1->result_data->token->access_token
+	// 	));print_r($token1->result_data->token->access_token);exit;
+	// 	$result = curl_exec($curl);// print_r($result);exit;
+	// 	return $result;
+	// }
 
 	public function getSbuData_get()
 	{

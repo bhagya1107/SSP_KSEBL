@@ -36,9 +36,9 @@
 	div.dataTables_wrapper div.dataTables_filter {
     margin-left: 30%;
 	}
-	#procurementplanid{
+	/* #procurementplanid{
 		margin-top: 12%;
-	}
+	} */
 	:after{
 		display: none;
 	}
