@@ -180,8 +180,8 @@
                                             </ul>
                                         </div>
                                         <div class="tg-btnsbox">
-                                            <!-- <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten->tenderid ?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-                                            <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $gettenderdetails->id) ?>">Apply </a> -->
+                                            <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten->tenderid ?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
+                                            <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $gettenderdetails->id) ?>">Apply </a>
 
                                         </div>
                                     </div>
