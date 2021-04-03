@@ -74,17 +74,17 @@
                             <option value="<?php echo $viewnotifications->timezone;?>">
                            <?php echo $viewnotifications->timezone;?>
                             </option> 
-                            <option value="Asia/Kolkata">
+                            <option value="Asia/Kolkata" style="<?php if($viewnotifications->timezone=='Asia/Kolkata') echo "display: none;" ?>">
                              Asia/Kolkata
-                            </option> <option value="Asia/Katmandu">
+                            </option> <option value="Asia/Katmandu" style="<?php if($viewnotifications->timezone=='Asia/Katmandu') echo "display: none;" ?>">
                                Asia/Katmandu
-                            </option> <option value="Asia/Bangkok">
+                            </option> <option value="Asia/Bangkok" style="<?php if($viewnotifications->timezone=='Asia/Bangkok') echo "display: none;" ?>">
                               Asia/Bangkok
                             </option>
-                            <option value="Asia/Krasnoyarsk">
+                            <option value="Asia/Krasnoyarsk" style="<?php if($viewnotifications->timezone=='Asia/Krasnoyarsk') echo "display: none;" ?>">
                               Asia/Krasnoyarsk
                             </option>
-							              <option value="Pacific/Midway">
+							              <option value="Pacific/Midway" style="<?php if($viewnotifications->timezone=='Pacific/Midway') echo "display: none;" ?>">
                                Pacific/Midway
                             </option>
                             </select>
@@ -119,11 +119,11 @@
                           <option value="<?php echo $viewnotifications->date_formate;?>">
                            <?php echo $viewnotifications->date_formate;?>
                             </option> 
-                            <option value="MM-DD-YYYY">
+                            <option value="MM-DD-YYYY" style="<?php if($viewnotifications->date_formate=='MM-DD-YYYY') echo "display: none;" ?>">
                             MM-DD-YYYY
-                            </option> <option value="YYYY-MM-DD">
+                            </option> <option value="YYYY-MM-DD"  style="<?php if($viewnotifications->date_formate=='YYYY-MM-DD') echo "display: none;" ?>">
                             YYYY-MM-DD
-                            </option> <option value="DD-MM-YYYY">
+                            </option> <option value="DD-MM-YYYY"  style="<?php if($viewnotifications->date_formate=='DD-MM-YYYY') echo "display: none;" ?>">
                             DD-MM-YYYY
                             </option>
                             
