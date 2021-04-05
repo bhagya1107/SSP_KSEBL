@@ -1097,13 +1097,23 @@
 
         $('.hiddendate').addClass('hide');
         var spanid = (activetab == 'favtender') ? 'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
-        var tenderlength = $("#" + tabcontentid + " .commonfilter .tg-ticket [style='display: block;']").length;
+        
+        var tenderlength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
+        favtender
+        applytender
         console.log(tenderlength);
+        var tendercountdiv = (activetab == 'favtender') ? 'favtendercount' : (activetab == 'applytender') ? 'applytedercount' : 'alltendercount'
+
         if (tenderlength == 0) {
             $('.' + spanid).removeClass('hide');
+            span1 = "<span><b>No Tenders Available </b></span>";
+            $("#" + tendercountdiv).html(span1);
         } else {
             $('.' + spanid).addClass('hide');
+            span1 = "<span><b>Total Tenders:" + tenderlength + "</b></span>";
+            $("#" + tendercountdiv).html(span1);
         }
+
     }
 
     $(".filterclass").on("change", function() {
