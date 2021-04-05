@@ -40,7 +40,14 @@
 					<?php $created_date=$getsubscriptionstatus->created_date;
 									$newEndingDate = date("d-m-Y", strtotime(date("Y-m-d", strtotime($created_date)) . " + 365 day"));
 
-									$created_date1=date("d-m-Y", strtotime($created_date))
+									$created_date1=date("d-m-Y", strtotime($created_date));
+									  $user_type=$this->session->userdata('user_type');
+	                                  $uid=$this->session->userdata('supplierid');
+									  $dateformatp=$getpreferencedate->value;
+									  $regdate=date_formate($uid,$user_type,$dateformatp,$created_date1);
+									  $renewdate=date_formate($uid,$user_type,$dateformatp,$newEndingDate);
+									  
+									  
 											?>
 					
 						<div class="table-responsive">
@@ -48,8 +55,9 @@
 								<tr >
 									<td style="text-align:right" class="col-md-6"><b> Your Subscription Status is Active until</b> 	</td>
 									<td> 
+									
                            
-                           <input type="text" name="" value="<?php echo $newEndingDate;?>" readonly >
+                           <input type="text" name="" value="<?php echo $renewdate;?>" readonly >
                        </td>
 								</tr>
 								
@@ -58,13 +66,13 @@
 								<tr>
 									<td style="text-align:right"> Registration Date </td>
 					<td>
-						<input type="text" name="" value="<?php echo $created_date1;?>" readonly >
+					<input type="text" name="" value="<?php echo $regdate;?>" readonly >
 							</td>
 								</tr>
 							
 								<tr>
 									<td style="text-align:right">Renewal Date</td>
-									<td><input type="text" name="" value="<?php echo $newEndingDate;?>" readonly > </td>
+									<td><input type="text" name="" value="<?php echo  $renewdate;?>" readonly > </td>
 									
 								</tr>
 							

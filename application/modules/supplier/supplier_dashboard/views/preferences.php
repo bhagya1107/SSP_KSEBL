@@ -68,27 +68,47 @@
 							<table class="table table-bordered table-hover">
 								<tr>
 									<td style="text-align:right"> Time Zone	</td>
-									<td> 
+									<td  > 
                            
                             <select class="form-control" id="timezone" name="timezone"> 
-                            <option value="<?php echo $viewnotifications->timezone;?>">
-                           <?php echo $viewnotifications->timezone;?>
+                            <option value="<?php echo $getpreferencetime->value;?>">
+                           <?php echo $getpreferencetime->value;?>
                             </option> 
-                            <option value="Asia/Kolkata" style="<?php if($viewnotifications->timezone=='Asia/Kolkata') echo "display: none;" ?>">
+                            <option value="Asia/Kolkata" style="<?php if($getpreferencetime->value=='Asia/Kolkata') echo "display: none;" ?>">
                              Asia/Kolkata
-                            </option> <option value="Asia/Katmandu" style="<?php if($viewnotifications->timezone=='Asia/Katmandu') echo "display: none;" ?>">
+                            </option> <option value="Asia/Katmandu" style="<?php if($getpreferencetime->value=='Asia/Katmandu') echo "display: none;" ?>">
                                Asia/Katmandu
-                            </option> <option value="Asia/Bangkok" style="<?php if($viewnotifications->timezone=='Asia/Bangkok') echo "display: none;" ?>">
+                            </option> <option value="Asia/Bangkok" style="<?php if($getpreferencetime->value=='Asia/Bangkok') echo "display: none;" ?>">
                               Asia/Bangkok
                             </option>
-                            <option value="Asia/Krasnoyarsk" style="<?php if($viewnotifications->timezone=='Asia/Krasnoyarsk') echo "display: none;" ?>">
+                            <option value="Asia/Krasnoyarsk" style="<?php if($getpreferencetime->value=='Asia/Krasnoyarsk') echo "display: none;" ?>">
                               Asia/Krasnoyarsk
                             </option>
-							              <option value="Pacific/Midway" style="<?php if($viewnotifications->timezone=='Pacific/Midway') echo "display: none;" ?>">
+							              <option value="Pacific/Midway" style="<?php if($getpreferencetime->value=='Pacific/Midway') echo "display: none;" ?>">
                                Pacific/Midway
                             </option>
                             </select>
                        </td>
+
+                       <!-- <td  style="<?php if($num!=0) echo "display: none;" ?>"> 
+                           
+                            <select class="form-control" id="timezone" name="timezone"> 
+                            
+                            <option value="Asia/Kolkata" >
+                             Asia/Kolkata
+                            </option> <option value="Asia/Katmandu" >
+                               Asia/Katmandu
+                            </option> <option value="Asia/Bangkok" >
+                              Asia/Bangkok
+                            </option>
+                            <option value="Asia/Krasnoyarsk" >
+                              Asia/Krasnoyarsk
+                            </option>
+							              <option value="Pacific/Midway" >
+                               Pacific/Midway
+                            </option>
+                            </select>
+                       </td> -->
 								</tr>
 								
 								
@@ -115,19 +135,32 @@
 								</tr>-->
 								<tr>
 									<td style="text-align:right">Date Format</td>
-									<td> <select class="form-control" id="date" name="date">
-                          <option value="<?php echo $viewnotifications->date_formate;?>">
-                           <?php echo $viewnotifications->date_formate;?>
+									<td  > <select class="form-control" id="date" name="date">
+                          <option value="<?php echo $getpreferencedate->value;?>">
+                           <?php echo $getpreferencedate->value;?>
                             </option> 
-                            <option value="MM-DD-YYYY" style="<?php if($viewnotifications->date_formate=='MM-DD-YYYY') echo "display: none;" ?>">
+                            <option value="MM-DD-YYYY" style="<?php if($getpreferencedate->value=='MM-DD-YYYY') echo "display: none;" ?>">
                             MM-DD-YYYY
-                            </option> <option value="YYYY-MM-DD"  style="<?php if($viewnotifications->date_formate=='YYYY-MM-DD') echo "display: none;" ?>">
+                            </option> <option value="YYYY-MM-DD"  style="<?php if($getpreferencedate->value=='YYYY-MM-DD') echo "display: none;" ?>">
                             YYYY-MM-DD
-                            </option> <option value="DD-MM-YYYY"  style="<?php if($viewnotifications->date_formate=='DD-MM-YYYY') echo "display: none;" ?>">
+                            </option> <option value="DD-MM-YYYY"  style="<?php if($getpreferencedate->value=='DD-MM-YYYY') echo "display: none;" ?>">
                             DD-MM-YYYY
                             </option>
                             
                             </select></td>
+<!-- 
+                            <td  style="<?php if($num!=0) echo "display: none;" ?>"> <select class="form-control" id="date" name="date">
+                          
+                            <option value="MM-DD-YYYY" >
+                            MM-DD-YYYY
+                            </option> <option value="YYYY-MM-DD"  >
+                            YYYY-MM-DD
+                            </option> <option value="DD-MM-YYYY"  >
+                            DD-MM-YYYY
+                            </option>
+                            
+                            </select></td>
+									 -->
 									
 								</tr>
 								<!--<tr>

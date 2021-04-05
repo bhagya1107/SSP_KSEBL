@@ -192,10 +192,29 @@ function decrypt(){
 
   return $_POST = $p;
 }
-
+///////////////////////////////////////////
 function acl_error_message($pagename='')
 {
   return "You are not allowed to access $pagename. Please contact Helpdesk";    
+}
+
+function date_formate($uid,$user_type,$dateformatp,$dates)
+{
+  if($dateformatp=="MM-DD-YYYY") 
+			{
+				$newDates = date("m-d-Y", strtotime($dates));  
+				return $newDates;
+			}
+		if($dateformatp=="YYYY-MM-DD") 
+			{
+				$newDates = date("Y-m-d", strtotime($dates));  
+				return $newDates;
+			}
+		if($dateformatp=="DD-MM-YYYY") 
+			{
+					$newDates = date("d-m-Y", strtotime($dates));  
+				  return $newDates;
+			} 
 }
 
 /////////////////////////////////////////

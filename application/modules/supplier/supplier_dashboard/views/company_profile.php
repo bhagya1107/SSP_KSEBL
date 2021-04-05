@@ -121,7 +121,12 @@
 								</tr>
 								<tr>
 									<td style="text-align:right">Incorporation Date </td>
-									<td><input type="text"  class="form-control " name="date" id="date" readonly value="<?php echo $getcompanydetails->incorporationdate;?>"/>	</td>
+                  <?php $dateformates=$getpreferencedate->value; 
+                     $dates= date('Y-m-d');
+                     $uid = $this->session->userdata('uid');
+                     $user_type=$this->session->userdata('user_type');
+                  ?>
+									<td><input type="text"  class="form-control " name="date" id="date" readonly value="<?php echo  $dates=date_formate($uid,$user_type,$dateformates,$dates);?>"/>	</td>
 									<td></td> 
 								</tr>
 								

@@ -54,6 +54,8 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Company Profile';
 			$data['indexurl'] = base_url() . "supplier/dashboard";
 			$uid = $this->session->userdata('uid');
+			$user_type=$this->session->userdata('user_type');
+			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid,$user_type);
 			$data['getcompanydetails'] = $this->dashM->getCompanyProfile($uid);
 			// $data['user_details']=$this->dashM->getUser_details($loged_user);
 			$this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal');
@@ -93,6 +95,10 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'preference Profile';
 			$user_type=$this->session->userdata('user_type');
 			$uid=$this->session->userdata('supplierid');
+			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid,$user_type);
+			$data['getpreferencetime'] = $this->dashM->getpreferencetime($uid,$user_type);
+			$data['num'] = $this->dashM->num($uid,$user_type);
+			$data['numviewnotifications']=$this->dashM->numviewnotifications($uid,$user_type); 
 			$data['viewnotifications']=$this->dashM->viewnotifications($uid,$user_type); 
 			$this->template->make('supplier_dashboard/preferences', $data, 'supplier_portal');
 		} else {
@@ -117,6 +123,7 @@ class Supplier_dashboard extends SP_Controller
 			// echo $uid;
 			// echo $user_type;
 			// exit;
+			
 			$data['notificationsview']=$this->dashM->snotifications($uid,$user_type); 
 			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal');
 		} else {
@@ -314,6 +321,8 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'subscription';
 			$data['tab'] = 1;
 			$uid = $this->session->userdata('uid');
+			$user_type = $this->session->userdata('user_type');
+			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid,$user_type);
 			$data['getsubscriptionstatus'] = $this->dashM->getsubscriptionstatus($uid);
 			$this->template->make('supplier_dashboard/subscription', $data, 'supplier_portal');
 		} else {
@@ -971,14 +980,37 @@ class Supplier_dashboard extends SP_Controller
 		$timezone=$this->input->post('timezone');
 		$date=$this->input->post('date');
 		// echo $display_status; exit;
-		// $data1 = array(
-		// 	'preference_display_status' => $timezone,
-		// 	'date_formate' => $date,
-		// 	'user_id' => $uid,
-		// 	'user_type' => $user_type
+		$data1 = 
+		 
+		array(
+			'name' => '1', // 1=time zone
+			'value' => $timezone,
+			'user_id' => $uid,
+			'user_type' => $user_type
 			
-		// );
-		$this->dashM->update_preference($timezone,$date,$uid,$user_type);
+	  );
+	  $data2 = 
+		 
+		array(
+			'name' => '2', // 2= date formate
+			'value' => $date,
+			'user_id' => $uid,
+			'user_type' => $user_type
+			
+	  );
+	  $get_preference = $this->dashM->get_preference($uid,$user_type);
+	//   echo $get_preference; exit;
+	  if($get_preference!=0)
+	  {
+		$this->dashM->update_globals_time($timezone,$uid,$user_type);
+		$this->dashM->update_globals_date($date,$uid,$user_type);
+	  }
+	  if($get_preference==0)
+	  {
+		$this->dashM->insert('globals',$data1);
+		$this->dashM->insert('globals',$data2);
+	  }
+		// $this->dashM->update_preference($timezone,$date,$uid,$user_type);
 		$this->dashM->update_notifications_preference_display_status($data,$uid,$user_type);
 		$this->session->set_flashdata('msg', 'Notification Status Changed successfully');
 	    redirect(base_url('supplier/dashboard/preference_profile'));		

@@ -70,7 +70,7 @@
                           <th>Sl No</th>
                           <th>Subject</th>
                           <th style="width:50%;">Description </th>
-                          <th>Date Posted</th>
+                          <!-- <th>Date Posted</th> -->
                           <!-- <th>Action</th> -->
                           
                         </tr>
@@ -80,7 +80,7 @@
                           <td>1</td>
                           <td>Account info</td>
                           <td><?php echo $notificationsview->message;?></td>
-                          <td><?php 
+                          <!-- <td><?php 
                           $dates=date('Y-m-d');
                           
                           if($notificationsview->date_formate=="MM-DD-YYYY") 
@@ -98,6 +98,7 @@
                           $newDates = date("d-m-Y", strtotime($dates));  
                           echo $newDates;
                           } ?> </td>
+                           -->
                           <!-- <td>26/08/2020</td>  -->
                           <!-- <td> -->
                           <!-- <button style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" data-toggle="modal" data-target="#notification" class="btn btn-primary btn-xs">Reply</button></td> -->

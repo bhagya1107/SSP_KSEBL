@@ -90,6 +90,26 @@ class Dashboard_model extends CI_Model
     $this->db->update('notifications');
       return;
   }
+  function update_globals_time($timezone,$uid,$user_type) {
+    // $this->db->trans_start();
+    $this->db->where('user_id', (string)$uid);
+    $this->db->where('user_type', (string)$user_type );
+    $this->db->where('name', '1'); //1= time zone
+    $this->db->set('value', $timezone);
+    $this->db->update('globals');
+      return;
+  }
+  function update_globals_date($date,$uid,$user_type) {
+    // $this->db->trans_start();
+    $this->db->where('user_id', (string)$uid);
+    $this->db->where('user_type', $user_type);
+    $this->db->where('name', '2'); //2=date formate
+    $this->db->set('value', $date);
+    $this->db->update('globals');
+      return;
+  }
+ 
+ 
   function update_notifications_preference_display_status($data,$uid,$user_type) {
     // $this->db->trans_start();
     $this->db->where('user_id', $uid);
@@ -106,6 +126,36 @@ class Dashboard_model extends CI_Model
     $this->db->set('date_formate', $date);
     $this->db->update('notifications');
       return;
+  }
+  public function get_preference($uid,$user_type)
+  {
+    $this->db->select('*');
+    $this->db->where('user_id', (string)$uid);
+    $this->db->where('user_type', (string)$user_type);
+    return $this->db->get('globals')->num_rows();
+  }
+  public function getpreferencedate($uid,$user_type)
+  {
+    $this->db->select('*');
+    $this->db->where('user_id', (string)$uid);
+    $this->db->where('user_type', (string)$user_type);
+    $this->db->where('name', '2');
+    return $this->db->get('globals')->row();
+  }
+  public function num($uid,$user_type)
+  {
+    $this->db->select('*');
+    $this->db->where('user_id', (string)$uid);
+    $this->db->where('user_type', (string)$user_type);
+    return $this->db->get('globals')->num_rows();
+  }
+  public function getpreferencetime($uid,$user_type)
+  {
+    $this->db->select('*');
+    $this->db->where('user_id', (string)$uid);
+    $this->db->where('user_type', (string)$user_type);
+    $this->db->where('name', '1');
+    return $this->db->get('globals')->row();
   }
 
   public function update_access_permission($table, $data, $user_type, $uid)
@@ -215,6 +265,14 @@ public function viewnotifications($uid,$user_type) {
   $this->db->where('user_type',$user_type); 
   //  $this->db->where('status','1');
   return $this->db->get('notifications')->row(); 
+}
+public function numviewnotifications($uid,$user_type) {
+    
+  $this->db->select('*');
+  $this->db->where('user_id',$uid);
+  $this->db->where('user_type',$user_type); 
+  //  $this->db->where('status','1');
+  return $this->db->get('notifications')->num_rows(); 
 }
  
   public function notifications($uid,$user_type) {
