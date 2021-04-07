@@ -68,9 +68,32 @@
 							<table class="table table-bordered table-hover">
 								<tr>
 									<td style="text-align:right"> Time Zone	</td>
-									<td  > 
+
+                  <td style="<?php if($num==2) echo "display: none;" ?>" > 
                            
-                            <select class="form-control" id="timezone" name="timezone"> 
+                           <select class="form-control" id="timezone" name="timezone" > 
+                         
+                           <option  >
+                            Asia/Kolkata
+                           </option> <option  >
+                              Asia/Katmandu
+                           </option> <option>
+                             Asia/Bangkok
+                           </option>
+                           <option >
+                             Asia/Krasnoyarsk
+                           </option>
+                           <option  >
+                              Pacific/Midway
+                           </option>
+                           </select>
+                      </td>
+
+
+
+									<td style="<?php if($num==0) echo "display: none;" ?>" > 
+                           
+                            <select class="form-control" id="timezone" name="timezone" style="<?php if($num==0) echo "display: none;" ?>"> 
                             <option value="<?php echo $getpreferencetime->value;?>">
                            <?php echo $getpreferencetime->value;?>
                             </option> 
@@ -90,25 +113,7 @@
                             </select>
                        </td>
 
-                       <!-- <td  style="<?php if($num!=0) echo "display: none;" ?>"> 
-                           
-                            <select class="form-control" id="timezone" name="timezone"> 
-                            
-                            <option value="Asia/Kolkata" >
-                             Asia/Kolkata
-                            </option> <option value="Asia/Katmandu" >
-                               Asia/Katmandu
-                            </option> <option value="Asia/Bangkok" >
-                              Asia/Bangkok
-                            </option>
-                            <option value="Asia/Krasnoyarsk" >
-                              Asia/Krasnoyarsk
-                            </option>
-							              <option value="Pacific/Midway" >
-                               Pacific/Midway
-                            </option>
-                            </select>
-                       </td> -->
+                        
 								</tr>
 								
 								
@@ -135,7 +140,24 @@
 								</tr>-->
 								<tr>
 									<td style="text-align:right">Date Format</td>
-									<td  > <select class="form-control" id="date" name="date">
+
+
+                  <td  style="<?php if($num==2) echo "display: none;" ?>"> <select class="form-control" id="date" name="date">
+                          
+                          <option value="MM-DD-YYYY" >
+                          MM-DD-YYYY
+                          </option> <option value="YYYY-MM-DD"  >
+                          YYYY-MM-DD
+                          </option> <option value="DD-MM-YYYY"  >
+                          DD-MM-YYYY
+                          </option>
+                          
+                          </select></td>
+
+
+
+
+									<td   style="<?php if($num==0) echo "display: none;" ?>"> <select class="form-control" id="date" name="date"  style="<?php if($num==0) echo "display: none;" ?>">
                           <option value="<?php echo $getpreferencedate->value;?>">
                            <?php echo $getpreferencedate->value;?>
                             </option> 
@@ -148,19 +170,8 @@
                             </option>
                             
                             </select></td>
-<!-- 
-                            <td  style="<?php if($num!=0) echo "display: none;" ?>"> <select class="form-control" id="date" name="date">
-                          
-                            <option value="MM-DD-YYYY" >
-                            MM-DD-YYYY
-                            </option> <option value="YYYY-MM-DD"  >
-                            YYYY-MM-DD
-                            </option> <option value="DD-MM-YYYY"  >
-                            DD-MM-YYYY
-                            </option>
-                            
-                            </select></td>
-									 -->
+
+                         
 									
 								</tr>
 								<!--<tr>

@@ -53,7 +53,7 @@
                                 </button>
                                 <?php
                             echo $msg;
-                                ?>
+                                ?> 
                             </div>
                             
                             <?php 
@@ -67,8 +67,14 @@
                         <br />
                         <div class="form-group">
                             <label>Select Bank</label>
-                            <select class="form-control" name="bank">
-                            <option value="SBI">
+                            <select class="form-control" name="bank"> 
+                            
+                                <?php foreach ($bankdata as $bankdatas) { ?>
+                                    <option value="<?php echo $bankdatas->material_group_code; ?>">
+                                    <?php echo $bankdatas->material_group_name; ?></option>
+                                <?php } ?>
+                                               
+                            <!-- <option value="SBI">
                                 SBI
                             </option> <option value="Federal Bank">
                                 Federal Bank
@@ -77,14 +83,18 @@
                             </option>
                             <option value="Central Bank of India">
                                 Central Bank of India
-                            </option>
+                            </option> -->
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label>Branch Name</label>
                               <select class="form-control" name="branch">
-                            <option value="Thampanoor">
+                              <?php foreach ($bankdata as $bankdatas) { ?>
+                                    <option value="<?php echo $bankdatas->material_group_code; ?>">
+                                    <?php echo $bankdatas->material_group_name; ?></option>
+                                <?php } ?>
+                            <!-- <option value="Thampanoor">
                                 Thampanoor
                             </option> <option value="Pattom">
                                 Pattom
@@ -93,7 +103,7 @@
                             </option>
                             <option value="Palayam">
                                 Palayam
-                            </option>
+                            </option> -->
                             </select>
                         </div>
 
@@ -204,3 +214,38 @@
 		</div>
 	</div>
 </main>
+
+<script>
+    var materiallistdata = {};
+
+    $(".materialdata").change(function() {
+        var materialgroup = $('#materialinput').val();
+        var productcategory = $('#productcategory').val();
+        console.log(materialgroup);
+        console.log(productcategory);
+        if (materialgroup != "" && productcategory != "") {
+            var load = '<option value="">Loading...</option>';
+            $('#material').html(load);
+            $.post("<?php echo site_url('supplier/dashboard/getMaterialProductsDetails'); ?>", { 
+                    materialgroup: materialgroup,
+                    productcategory: productcategory
+                },
+                function(data) {
+                    
+                    var res = JSON.parse(data);
+                    console.log(res);
+                    var html = '<option value="">Select Material</option>';
+
+                    res.forEach(function(item, index) {
+                        html += '<option value="' + item.id + '" data-name="' + item.material_name + '">' + item.material_name + '</option>';
+                    });
+                    console.log(html);
+                    $('#material').html(html);
+                    $('#savemicro').removeAttr("disabled");
+                    $(".ajaxLoader").css("display", "none");
+                });
+        }
+
+    });
+
+</script>

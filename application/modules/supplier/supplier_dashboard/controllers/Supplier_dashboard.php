@@ -239,6 +239,12 @@ class Supplier_dashboard extends SP_Controller
 			$uid = $this->session->userdata('uid');
 			$data['getbankdetails'] = $this->dashM->getbankdetails('bank_details', $uid);
 			$data['getbankdetails1'] = $this->dashM->getbankdetails1('bank_details', $uid);
+
+			
+			$bankdata = json_decode($this->getBankData()); //echo"<pre>";print_r($materialdata);exit;
+			$data['bankdata'] = $bankdata->result_data->list; //echo"<pre>";print_r($data['materialdata']);exit;
+			$getcategorydata = json_decode($this->getSbuData_get());
+			$data['getcategory'] = $getcategorydata->result_data->list;
 			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
@@ -990,7 +996,7 @@ class Supplier_dashboard extends SP_Controller
 			
 	  );
 	  $data2 = 
-		 
+		  
 		array(
 			'name' => '2', // 2= date formate
 			'value' => $date,
@@ -1509,6 +1515,41 @@ class Supplier_dashboard extends SP_Controller
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
 		$result = curl_exec($curl);
+		return $result;
+	}
+
+
+	public function getBankData()
+	{
+		$token = $this->Login_POST();
+		$token1 = json_decode($token);
+
+		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialGroupData';
+		$curl       = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		));
+		$result = curl_exec($curl); //print_r($result);exit;
+		return $result;
+	}
+
+	public function getBankById()
+	{
+		$token = $this->Login_POST();
+		$token1 = json_decode($token);
+
+		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialById/3';
+		$curl       = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		));
+		$result = curl_exec($curl); //print_r($result);exit;
 		return $result;
 	}
 }
