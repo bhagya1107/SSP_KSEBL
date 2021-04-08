@@ -4,14 +4,20 @@ class Dashboard extends AD_Controller {
 public function __construct()
 {
 	parent::__construct();
-  $this->load->model('Dashboard_model','dashM');
+    $this->load->model('Dashboard_model','dashM');
 }
 	public function index()
 	{
   	$data['page'] = 'dashboard';
     $data['title'] = 'Dashboard';
+	$data['total_suppliers'] = $this->dashM->total_suppliers();
+	$data['total_tenders'] = $this->dashM->total_tenders();
+	$data['completed_tenders'] = $this->dashM->completed_tenders();
+    // $data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);
 		$this->template->make('dashboard/home',$data);
   }
+  
+
 	public function profile()
 	{
 		$loged_user=$_SESSION['userid'];

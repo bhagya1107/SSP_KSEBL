@@ -13,8 +13,8 @@
 																	<div class="row align-items-center">
 																			<div class="col">
 																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
-																					<p class="m-b-5">Total Suppliers</p>
-																					<h4 class="m-b-0"><?php echo 121; ?></h4>
+																					<p class="m-b-5">Total Suppliers</p> 
+																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
 																			</div>
 																			<div class="col col-auto text-right">
 																					<i class="feather icon-user f-50 text-c-green"></i>
@@ -31,7 +31,7 @@
                                         <div class="col">
                                           <?php //$stations=getAfield('count(sid)',"station_master","where is_deleted=0",'stcount'); ?>
                                             <p class="m-b-5">Total Tenders</p>
-                                            <h4 class="m-b-0"><?php echo 8; ?></h4>
+                                            <h4 class="m-b-0"><?php echo $total_tenders; ?></h4>
                                         </div>
                                         <div class="col col-auto text-right">
                                             <i class="feather icon-credit-card f-50 text-c-yellow"></i>
@@ -48,7 +48,7 @@
                                         <div class="col">
                                             <?php //$user=getAfield('count(uid)',"web_users","where uid>1 and user_type<4 AND is_deleted=0",'usersc'); ?>
                                             <p class="m-b-5">Active Tenders</p>
-                                            <h4 class="m-b-0"><?php echo 17; ?></h4>
+                                            <h4 class="m-b-0"><?php echo $active_tenders=$total_tenders-$completed_tenders; ?></h4>
                                         </div>
                                         <div class="col col-auto text-right">
                                             <i class="feather icon-book f-50 text-c-pink"></i>
@@ -65,7 +65,7 @@
                                             <p class="m-b-5">Closed Tenders</p>
 
 
-                                            <h4 class="m-b-0"><?php echo 8; ?></h4>
+                                            <h4 class="m-b-0"><?php echo $completed_tenders; ?></h4>
                                         </div>
                                         <div class="col col-auto text-right">
                                             <i class="feather icon-book f-50 text-c-blue"></i>

@@ -195,7 +195,7 @@
                                              <div class="table-responsive">
                                                  <div class="tg-ticket" style="color:black;background-color:white;">
                                                      <div class="tg-matchdetail">
-                                                         <span class="tg-theme-tag">Purchase Date:27-05-2020</span>
+                                                         <span class="tg-theme-tag">Purchase Date:<?php echo  $dates=date_formate('27-05-2020');?></span>
                                                          <h4>OrderNo:PCO88944556</h4>
                                                          <ul class="tg-matchmetadata">
                                                              <li>
@@ -229,7 +229,7 @@
                                                                  <td>1</td>
                                                                  <td>PCO009877655</td>
                                                                  <td>BULB</td>
-                                                                 <td>27-05-2020</td>
+                                                                 <td><?php echo  $dates=date_formate('27-05-2020');?></td>
 
 
                                                                  <td style="width: 40%;">
@@ -245,7 +245,7 @@
                                                                  <td>2</td>
                                                                  <td>PCO009877655</td>
                                                                  <td>LED</td>
-                                                                 <td>27-05-2020</td>
+                                                                 <td><?php echo  $dates=date_formate('27-05-2020');?></td>
 
                                                                  <td style="width:370px;">
                                                                      <button type="button" class="btn" data-toggle="modal" data-target="#dispatch" style="width:20%;color: #fff;background-color: orange; border-color: orange;">PDI</button>
@@ -304,7 +304,7 @@
                                          <div class="table-responsive">
                                              <div class="tg-ticket" style="color:black;background-color:white;">
                                                  <div class="tg-matchdetail">
-                                                     <span class="tg-theme-tag">Purchase Date:02-12-2020</span>
+                                                     <span class="tg-theme-tag">Purchase Date:<?php echo  $dates=date_formate('02-12-2020');?></span>
                                                      <h4>OrderNo:#45666666</h4>
                                                      <ul class="tg-matchmetadata">
                                                          <li>
@@ -339,7 +339,7 @@
                                                              <td>1</td>
                                                              <td>PCO87654433</td>
                                                              <td>TENDER NAME2</td>
-                                                             <td>08-12-2020</td>
+                                                             <td><?php echo  $dates=date_formate('08-12-2020');?></td>
 
                                                              <td style="width:370px;">
                                                                  <button class="btn" data-toggle="modal" data-target="#myModal_vmi" style="width:20%;color: #fff;background-color: green; border-color: green;">VMI</button>
@@ -353,7 +353,7 @@
                                                              <td>1</td>
                                                              <td>PCO87654433</td>
                                                              <td>TENDER NAME2</td>
-                                                             <td>09-12-2020</td>
+                                                             <td><?php echo  $dates=date_formate('09-12-2020');?></td>
 
                                                              <td style="width:370px;">
                                                                  <button data-toggle="modal" class="btn" data-target="#dispatch" style="width:20%;color: #fff;background-color: orange; border-color: orange;">PDI</button> <button class="btn" data-toggle="modal" data-target="#mdcc" style="color: #fff;background-color: red; border-color: red;">MDCC</button> <button class="btn" data-toggle="modal" data-target="#shipment1" style="color: #fff;background-color: blue; border-color: blue;">Delivery</button>
@@ -434,11 +434,11 @@
                      </tr>
                      <tr>
                          <td> Tender Date:</td>
-                         <td>18-03-2020</td>
+                         <td><?php echo  $dates=date_formate('18-03-2020');?></td>
                      </tr>
                      <tr>
                          <td>Last Date of acceptance:</td>
-                         <td>01-01-2021</td>
+                         <td><?php echo  $dates=date_formate('01-01-2021');?></td>
                      </tr>
                      <tr>
                          <td><input type="checkbox"><a href="#">Agree to the terms & conditions</a></td>
@@ -516,7 +516,7 @@
                              <td>1</td>
                              <td>PC088944556</td>
                              <td>Tender name1</td>
-                             <td>27-11-2020</td>
+                             <td><?php echo  $dates=date_formate('27-11-2020');?></td>  
                              <td>
                                  <div class="dropdown">
                                      <button onclick="myFunction()" class="pull-center dropbtn">Action</button>
@@ -611,7 +611,7 @@
                  <div class="tg-ticket">
 
                      <h4 class="modal-title"><span id="inspect"></span></h4>
-                     <p><b>Purchase Date</b>:11-02-2020<br>
+                     <p><b>Purchase Date</b>:<?php echo  $dates=date_formate('11-02-2020');?><br>
                          <b>Order No</b>:#1145677<br>
                          <b>Destination</b>:TVM<br>
                          <b>Status</b>:Estimated time delivery on time<br>

@@ -76,7 +76,7 @@
 										<td>TDR8944566</td>
 										<td>Led Lights</td>
 										<td>1200</td>
-										<td>30/08/2020</td>
+										<td><?php echo  $dates=date_formate('27-05-2020');?></td>
 										<td>Waiting for dispatch</td>
 									</tr>
 								</tbody>

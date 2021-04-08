@@ -106,7 +106,7 @@
 								<th>Product</th>
 								<th>Scheme</th>
 								<th>Plan Duration</th>
-								<th>Plan Start Date</th>
+								<th>Plan Start Date</th> 
 								<th>Expected Quantity</th>
 								<th>Procured so far</th>
 							</tr>
@@ -117,7 +117,8 @@
 								<td>DIST TFR 3PH 150kVA 11kV/433V </td>
 								<td>KSEB 20-21</td>
 								<td>150 Days</td>
-								<td>26-08-2020</td>
+								<!-- <td>26-08-2020</td> -->
+								<td><?php echo  $dates=date_formate('26-08-2020');?></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModal">1200</a></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
 							</tr>
@@ -127,7 +128,7 @@
 								<td>TOR STEEL 20 mm </td>
 								<td>KSEB 20-21</td>
 								<td>100 Days</td>
-								<td>12-04-2021</td>
+								<td><?php echo  $dates=date_formate('12-04-2021');?></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModalp1">1500</a></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModalp2">400</a></td>
 							</tr>
@@ -137,7 +138,7 @@
 								<td>Aerial Bunched Cable HT 3x120 + 1x95 sq.mm (Insulated Messemger) </td>
 								<td>KSEB 20-21</td>
 								<td>200 Days</td>
-								<td>01-07-2021</td>
+								<td><?php echo  $dates=date_formate('01-07-2021');?></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModal">1300</a></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModal2">100</a></td>
 							</tr>
@@ -147,7 +148,7 @@
 								<td>Earth Connector120sq.mm </td>
 								<td>KSEB 20-21</td>
 								<td>120 Days</td>
-								<td>20-03-2021</td>
+								<td><?php echo  $dates=date_formate('20-03-2021');?></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModal">2000</a></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
 							</tr>
@@ -157,7 +158,7 @@
 								<td>CEMENT GRADE 43 </td>
 								<td>KSEB 20-21</td>
 								<td>120 Days</td>
-								<td>11-09-2021</td>
+								<td><?php echo  $dates=date_formate('11-09-2021');?></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModal">1700</a></td>
 								<td><a href='#' data-toggle="modal" data-target="#myModal2">200</a></td>
 							</tr>

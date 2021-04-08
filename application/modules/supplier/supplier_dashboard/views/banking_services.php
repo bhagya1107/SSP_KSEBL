@@ -66,15 +66,22 @@
                         <div class="col-md-5" style="border: 1px solid #CCC;">
                         <br />
                         <div class="form-group">
+                        <input type="hidden" id="productcategory" value="1">
                             <label>Select Bank</label>
-                            <select class="form-control" name="bank"> 
+
+                            <select class="form-control materialdata" id="materialinput" placeholder="Company name">
+                                                    <option value="">Select Bank
+                                                        <?php foreach ($materialdata as $materialdatas) { ?>
+                                                    <option value="<?php echo $materialdatas->material_group_code; ?>">
+                                                        <?php echo $materialdatas->material_group_name; ?></option>
+                                                <?php } ?>
+                                                </option>
+                          </select>
+
+                            <!-- <select class="form-control" name="bank"> 
                             
-                                <?php foreach ($bankdata as $bankdatas) { ?>
-                                    <option value="<?php echo $bankdatas->material_group_code; ?>">
-                                    <?php echo $bankdatas->material_group_name; ?></option>
-                                <?php } ?>
-                                               
-                            <!-- <option value="SBI">
+                                 
+                            <option value="SBI">
                                 SBI
                             </option> <option value="Federal Bank">
                                 Federal Bank
@@ -83,18 +90,20 @@
                             </option>
                             <option value="Central Bank of India">
                                 Central Bank of India
-                            </option> -->
-                            </select>
+                            </option>
+                            </select> -->
                         </div>
 
                         <div class="form-group">
                             <label>Branch Name</label>
-                              <select class="form-control" name="branch">
-                              <?php foreach ($bankdata as $bankdatas) { ?>
-                                    <option value="<?php echo $bankdatas->material_group_code; ?>">
-                                    <?php echo $bankdatas->material_group_name; ?></option>
-                                <?php } ?>
-                            <!-- <option value="Thampanoor">
+                            <select class="form-control material" id="material" placeholder="Year of  registration">
+                                                    <option value="">Select Branch
+                                                    </option>
+                            </select>
+
+                              <!-- <select class="form-control" name="branch">
+                             
+                            <option value="Thampanoor">
                                 Thampanoor
                             </option> <option value="Pattom">
                                 Pattom
@@ -103,8 +112,8 @@
                             </option>
                             <option value="Palayam">
                                 Palayam
-                            </option> -->
-                            </select>
+                            </option>
+                            </select> -->
                         </div>
 
                         <div class="form-group">
@@ -234,7 +243,7 @@
                     
                     var res = JSON.parse(data);
                     console.log(res);
-                    var html = '<option value="">Select Material</option>';
+                    var html = '<option value="">Select Branch</option>';
 
                     res.forEach(function(item, index) {
                         html += '<option value="' + item.id + '" data-name="' + item.material_name + '">' + item.material_name + '</option>';

@@ -239,12 +239,12 @@ class Supplier_dashboard extends SP_Controller
 			$uid = $this->session->userdata('uid');
 			$data['getbankdetails'] = $this->dashM->getbankdetails('bank_details', $uid);
 			$data['getbankdetails1'] = $this->dashM->getbankdetails1('bank_details', $uid);
-
-			
-			$bankdata = json_decode($this->getBankData()); //echo"<pre>";print_r($materialdata);exit;
-			$data['bankdata'] = $bankdata->result_data->list; //echo"<pre>";print_r($data['materialdata']);exit;
+			$materialdata = json_decode($this->getMaterialGroupData()); //echo"<pre>";print_r($materialdata);exit;
+			$data['materialdata'] = $materialdata->result_data->list; //echo"<pre>";print_r($data['materialdata']);exit;
 			$getcategorydata = json_decode($this->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
+			
+			
 			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
