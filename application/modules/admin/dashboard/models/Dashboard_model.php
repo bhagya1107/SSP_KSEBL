@@ -1,5 +1,5 @@
 <?php
-class Dashboard_model extends CI_Model
+class Dashboard_model extends CI_Model 
 {
 
   public function getStationLocations()
@@ -20,4 +20,21 @@ class Dashboard_model extends CI_Model
      $qrry=$this->db->query($qry);
      return $qrry->result();
    }
+  public function total_suppliers()
+ {
+   $this->db->select('*');
+   $this->db->where('active_status', 1);
+   return $this->db->get('suppliers')->num_rows();
+ }
+ public function total_tenders()
+ {
+   $this->db->select('*');
+   return $this->db->get('formengine_application_status')->num_rows();
+ }
+ public function completed_tenders()
+ {
+   $this->db->select('*');
+   $this->db->where('is_completed', 1);
+   return $this->db->get('formengine_application_status')->num_rows();
+ }
 }

@@ -44,8 +44,8 @@
 									  $user_type=$this->session->userdata('user_type');
 	                                  $uid=$this->session->userdata('supplierid');
 									  $dateformatp=$getpreferencedate->value;
-									  $regdate=date_formate($dateformatp,$created_date1);
-									  $renewdate=date_formate($dateformatp,$newEndingDate);
+									  $regdate=date_formate($created_date1);
+									  $renewdate=date_formate($newEndingDate);
 									  
 									  
 											?>

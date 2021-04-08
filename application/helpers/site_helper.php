@@ -198,7 +198,7 @@ function acl_error_message($pagename='')
   return "You are not allowed to access $pagename. Please contact Helpdesk";    
 }
 
-function date_formate($dateformatp,$dates)
+function date_formate($dates)
 {
    $uid=$_SESSION["uid"];
    $user_type=$_SESSION["user_type"];
@@ -209,20 +209,22 @@ function date_formate($dateformatp,$dates)
    $ci->db->where('user_type', $user_type);
    $dateformatp1 = $ci->db->get('globals');
    $dateformatpp= $dateformatp1->result_array();
-   $d=$dateformatpp[0];
+   $d=$dateformatpp[0]['value'];
+  // var_dump($d['value']);
+  //  print_r( $dateformatpp);
   //  print_r($d); exit;
 
-  if($dateformatp=="MM-DD-YYYY") 
+  if($d=="MM-DD-YYYY") 
 			{
 				$newDates = date("m-d-Y", strtotime($dates));  
 				return $newDates;
 			}
-		elseif($dateformatp=="YYYY-MM-DD") 
+		elseif($d=="YYYY-MM-DD") 
 			{
 				$newDates = date("Y-m-d", strtotime($dates));  
 				return $newDates;
 			}
-		elseif($dateformatp=="DD-MM-YYYY") 
+		elseif($d=="DD-MM-YYYY") 
 			{
 					$newDates = date("d-m-Y", strtotime($dates));  
 				  return $newDates;

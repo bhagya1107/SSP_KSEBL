@@ -149,7 +149,7 @@
                                                              <td>1</td>
                                                              <td>Estimated Delivery On Time</td>
                                                              <td>TVM</td>
-                                                             <td>12-01-2021</td>
+                                                             <td><?php echo  $dates=date_formate('27-05-2020');?></td>
                                                              <td>
                                                                  <div class="score-wrap">
                                                                      <span class="stars-active" style="width:88%">
@@ -180,7 +180,7 @@
                                                              <td>2</td>
                                                              <td>Delivered</td>
                                                              <td>KOLLAM</td>
-                                                             <td>27-12-2020</td>
+                                                             <td><?php echo  $dates=date_formate('27-12-2020');?></td>
                                                              <td>
                                                                  <div class="score-wrap">
                                                                      <span class="stars-active" style="width:88%">
@@ -209,7 +209,7 @@
                                                              <td>3</td>
                                                              <td>Overdue</td>
                                                              <td>PATTOM</td>
-                                                             <td>12-02-2021</td>
+                                                             <td><?php echo  $dates=date_formate('12-05-2020');?></td>
                                                              <td>
                                                                  <div class="score-wrap">
                                                                      <span class="stars-active" style="width:88%">
@@ -318,7 +318,7 @@
                                                          <td>1</td>
                                                          <td>Shipped</td>
                                                          <td>TVM</td>
-                                                         <td>21-01-2020</td>
+                                                         <td><?php echo  $dates=date_formate('21-01-2020');?></td>
                                                          <td>
                                                              <div class="score-wrap">
                                                                  <span class="stars-active" style="width:88%">
@@ -348,7 +348,7 @@
                                                          <td>2</td>
                                                          <td>Overdue</td>
                                                          <td>KOLLAM</td>
-                                                         <td>21-01-2020</td>
+                                                         <td><?php echo  $dates=date_formate('21-05-2020');?></td>
                                                          <td>
                                                              <div class="score-wrap">
                                                                  <span class="stars-active" style="width:88%">
@@ -497,11 +497,11 @@
                      </tr>
                      <tr>
                          <td> Tender Date:</td>
-                         <td>18-03-2020</td>
+                         <td><?php echo  $dates=date_formate('18-03-2020');?></td>
                      </tr>
                      <tr>
                          <td>Last Date of acceptance:</td>
-                         <td>01-01-2021</td>
+                         <td><?php echo  $dates=date_formate('01-01-2021');?></td>
                      </tr>
                      <tr>
                          <td><input type="checkbox"><a href="#">Agree to the terms & conditions</a></td>
@@ -579,7 +579,7 @@
                              <td>1</td>
                              <td>PC088944556</td>
                              <td>Tender name1</td>
-                             <td>27-11-2020</td>
+                             <td><?php echo  $dates=date_formate('27-11-2020');?></td>
                              <td>
                                  <div class="dropdown">
                                      <button onclick="myFunction()" class="pull-center dropbtn">Action</button>
@@ -674,7 +674,7 @@
                  <div class="tg-ticket">
 
                      <h4 class="modal-title"><span id="inspect"></span></h4>
-                     <p><b>Purchase Date</b>:11-02-2020<br>
+                     <p><b>Purchase Date</b>:<?php echo  $dates=date_formate('11-02-2020');?><br>
                          <b>Order No</b>:#1145677<br>
                          <b>Destination</b>:TVM<br>
                          <b>Status</b>:Estimated time delivery on time<br>
