@@ -1591,13 +1591,24 @@ toggle between hiding and showing the dropdown content */
          });
 
          $('.hiddendate').addClass('hide');
-         var spanid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
-         var purchaselength = $("#" + tabcontentid + " .commonfilter .tg-ticket [style='display: block;']").length;
-         if (purchaselength == 0) {
+         var spanid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchaseorder'
+         var purchaselength = $("#" + tabcontentid + " .tg-ticket [style!='display: none;']").length;
+         //var tenderlength = $("#"  + tabcontentid + " .tg-ticket[style!='display: none;']").length;
+
+         console.log("lmnb");
+         console.log(purchaselengths);
+        var purchasescountdiv = (activetab == 'favtender') ? 'acceptedpurchasecount' : (activetab == 'workorders') ? 'workorders' : 'allpurchasecount'
+
+         if (purchaselengths == 0) {
              $('.' + spanid).removeClass('hide');
+             span1 = "<span><b>No Purchase Orders Available </b></span>";
+            $("#" + purchasescountdiv).html(span1);
          } else {
              $('.' + spanid).addClass('hide');
+             span1 = "<span><b>Total Tenders:" + purchaselengths +  "</b></span>";
+            $("#" + purchasescountdiv).html(span1);
          }
+
      }
 
 

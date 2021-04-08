@@ -183,7 +183,7 @@
                                             <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten->tenderid ?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
                                             <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $gettenderdetails->id) ?>">Apply </a>
 
-                                        </div>
+                                        </div> 
                                     </div>
 
                                 <?php } ?>
@@ -1097,8 +1097,8 @@
 
         $('.hiddendate').addClass('hide');
         var spanid = (activetab == 'favtender') ? 'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
-        
-        var tenderlength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
+        var activetab1 = $("#tendertabs li.active").length;
+        var tenderlength = $("#"  + tabcontentid + " .tg-ticket[style!='display: none;']").length;
         favtender
         applytender
         console.log(tenderlength);
@@ -1110,7 +1110,7 @@
             $("#" + tendercountdiv).html(span1);
         } else {
             $('.' + spanid).addClass('hide');
-            span1 = "<span><b>Total Tenders:" + tenderlength + "</b></span>";
+            span1 = "<span><b>Total Tenders:" + tenderlength +  "</b></span>";
             $("#" + tendercountdiv).html(span1);
         }
 
@@ -1159,7 +1159,7 @@
                 var value = $('#keywordtender').val().toLowerCase();
                 datefilters();
                 filtertenderdata(tabcontentid, value);
-            }, 5000);
+            }, 5500);
 
         });
 
