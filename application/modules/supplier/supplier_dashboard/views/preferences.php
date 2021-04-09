@@ -69,7 +69,11 @@
 								<tr>
 									<td style="text-align:right"> Time Zone	</td>
 
-                  <td style="<?php if($num==2) echo "display: none;" ?>" > 
+
+
+                  <td > 
+                  <?php if($num==0)
+                  { ?>
                            
                            <select class="form-control" id="timezone" name="timezone" > 
                          
@@ -87,12 +91,10 @@
                               Pacific/Midway
                            </option>
                            </select>
-                      </td>
-
-
-
-									<td style="<?php if($num==0) echo "display: none;" ?>" > 
-                           
+                    
+                         <?php } ?>  
+                         <?php if($num!=0)
+                  { ?>
                             <select class="form-control" id="timezone" name="timezone" style="<?php if($num==0) echo "display: none;" ?>"> 
                             <option value="<?php echo $getpreferencetime->value;?>">
                            <?php echo $getpreferencetime->value;?>
@@ -111,12 +113,14 @@
                                Pacific/Midway
                             </option>
                             </select>
+                            <?php } ?>
                        </td>
 
-                        
+
+                 
 								</tr>
 								
-								
+								 
 									<!--<tr>
 									<td style="text-align:right">Character Encoding	</td>
 									<td><input type="text"  class="form-control"  value=""/>	</td>
@@ -127,12 +131,25 @@
 								</tr>-->
 								<tr>
 									<td style="text-align:right"> Notification </td>
+                  <?php if($numviewnotifications!=0)
+                  { ?>
 									<td style="text-align:left"><input type="radio"   class="custom-control  custom-radio custom-control-inline" value="true"  name="display_status" id="display_status" 
                   <?php if ($viewnotifications->preference_display_status=="true"){ echo "checked"; }?> /> &nbsp ON
 									
 									<input type="radio"  class="custom-control custom-radio custom-control-inline"  name="display_status" value="false"  id="display_status"  
                   <?php if ($viewnotifications->preference_display_status=="false"){ echo "checked"; }?> /> &nbsp OFF
 							</td>
+              <?php } ?>
+
+              <?php if($numviewnotifications==0)
+                  { ?>
+									<td style="text-align:left"><input type="radio"   class="custom-control  custom-radio custom-control-inline" value="true"  name="display_status" id="display_status" 
+                  checked /> &nbsp ON
+									
+									<input type="radio"  class="custom-control custom-radio custom-control-inline"  name="display_status" value="false"  id="display_status"  
+                 /> &nbsp OFF
+							</td>
+              <?php } ?>
 								</tr>
 								<!--<tr>
 								<td style="text-align:right;"> Font Size</td>
@@ -141,6 +158,46 @@
 								<tr>
 									<td style="text-align:right">Date Format</td>
 
+                  
+
+                  <td > 
+                  <?php if($num==0)
+                  { ?>
+
+                  <select class="form-control" id="date" name="date">
+                          
+                          <option value="MM-DD-YYYY" >
+                          MM-DD-YYYY
+                          </option> <option value="YYYY-MM-DD"  >
+                          YYYY-MM-DD
+                          </option> <option value="DD-MM-YYYY"  >
+                          DD-MM-YYYY
+                          </option>
+                          
+                          </select>
+
+                          <?php } ?>  
+                         <?php if($num!=0)
+                  { ?>
+
+
+								 <select class="form-control" id="date" name="date"  style="<?php if($num==0) echo "display: none;" ?>">
+                          <option value="<?php echo $getpreferencedate->value;?>">
+                           <?php echo $getpreferencedate->value;?>
+                            </option> 
+                            <option value="MM-DD-YYYY" style="<?php if($getpreferencedate->value=='MM-DD-YYYY') echo "display: none;" ?>">
+                            MM-DD-YYYY
+                            </option> <option value="YYYY-MM-DD"  style="<?php if($getpreferencedate->value=='YYYY-MM-DD') echo "display: none;" ?>">
+                            YYYY-MM-DD
+                            </option> <option value="DD-MM-YYYY"  style="<?php if($getpreferencedate->value=='DD-MM-YYYY') echo "display: none;" ?>">
+                            DD-MM-YYYY
+                            </option>
+                            
+                            </select>
+                      <?php } ?>
+                            </td>
+
+<!-- 
 
                   <td  style="<?php if($num==2) echo "display: none;" ?>"> <select class="form-control" id="date" name="date">
                           
@@ -169,7 +226,8 @@
                             DD-MM-YYYY
                             </option>
                             
-                            </select></td>
+                            </select>
+                            </td> -->
 
                          
 									

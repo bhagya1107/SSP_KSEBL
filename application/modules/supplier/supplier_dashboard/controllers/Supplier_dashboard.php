@@ -125,6 +125,7 @@ class Supplier_dashboard extends SP_Controller
 			// exit;
 			
 			$data['notificationsview']=$this->dashM->snotifications($uid,$user_type); 
+			$data['displaynotifications']=$this->dashM->displaynotifications($uid,$user_type); 
 			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
@@ -995,16 +996,29 @@ class Supplier_dashboard extends SP_Controller
 			'user_type' => $user_type
 			
 	  );
+	
 	  $data2 = 
 		  
-		array(
-			'name' => '2', // 2= date formate
-			'value' => $date,
-			'user_id' => $uid,
-			'user_type' => $user_type
-			
-	  );
+	  array(
+		  'name' => '2', // 2= date formate
+		  'value' => $date,
+		  'user_id' => $uid,
+		  'user_type' => $user_type
+		  
+	);
+
+	$data3 = 
+		  
+	array(
+		'message' => 'Notifications turn on successfully',
+		'status' => '2',
+		'preference_display_status' => 'true',
+		'user_id' => $uid,
+		'user_type' => $user_type
+		
+  );
 	  $get_preference = $this->dashM->get_preference($uid,$user_type);
+	  $get_preference_notifi = $this->dashM->get_preference_notifi($uid,$user_type);
 	//   echo $get_preference; exit;
 	  if($get_preference!=0)
 	  {
@@ -1017,6 +1031,11 @@ class Supplier_dashboard extends SP_Controller
 		$this->dashM->insert('globals',$data2);
 	  }
 		// $this->dashM->update_preference($timezone,$date,$uid,$user_type);
+		
+		if($get_preference_notifi==0)
+		{
+		$this->dashM->insert('notifications',$data3);
+		}
 		$this->dashM->update_notifications_preference_display_status($data,$uid,$user_type);
 		$this->session->set_flashdata('msg', 'Notification Status Changed successfully');
 	    redirect(base_url('supplier/dashboard/preference_profile'));		

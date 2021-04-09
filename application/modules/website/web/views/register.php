@@ -85,7 +85,7 @@
      <script>
         function validateAndSend() {
             if (regform.companyname.value == '' && regform.individualname.value == '') {
-                alert('You have to enter Company name.');
+                alert('You have to enter Name.');
                 return false;
             }
             // else {
@@ -121,7 +121,7 @@
   </div>
       
             <h4 class="section-heading">PAN CARD NO</h4>
-            <p><input type="text" class="form-control" required placeholder="Enter your PAN No" name="pannumber" id="panNumber"  ></p>
+            <p><input type="text" class="form-control" required placeholder="Enter your PAN No" pattern="[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}" name="pannumber" id="panNumber"  ></p>
             <span class="error"></span>
             <div class="companyStatus hidedata">
             <h4 class="section-heading ">Registration Type </h4>

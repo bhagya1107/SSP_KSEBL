@@ -124,7 +124,7 @@
                   <?php $dateformates=$getpreferencedate->value; 
                      $dates= date('Y-m-d');
                   ?>
-									<td><input type="text"  class="form-control " name="date" id="date" readonly value="<?php echo  $dates=date_formate($dates);?>"/>	</td>
+									<td><input type="text"  class="form-control " name="date" id="date" readonly value="<?php echo  date_formate($getcompanydetails->incorporationdate); ?>"/>	</td>
 									<td></td> 
 								</tr>
 								

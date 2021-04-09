@@ -134,6 +134,13 @@ class Dashboard_model extends CI_Model
     $this->db->where('user_type', (string)$user_type);
     return $this->db->get('globals')->num_rows();
   }
+  public function get_preference_notifi($uid,$user_type)
+  {
+    $this->db->select('*');
+    $this->db->where('user_id', $uid);
+    $this->db->where('user_type', $user_type);
+    return $this->db->get('notifications')->num_rows();
+  }
   public function getpreferencedate($uid,$user_type)
   {
     $this->db->select('*');
@@ -258,6 +265,15 @@ class Dashboard_model extends CI_Model
     $this->db->where('status','1');
     return $this->db->get('notifications')->row(); 
 }
+public function displaynotifications($uid,$user_type) {
+    
+  $this->db->select('*');
+  $this->db->where('user_id',$uid);
+  $this->db->where('user_type',$user_type); 
+  //  $this->db->where('status','2');
+  return $this->db->get('notifications')->result(); 
+}
+
 public function viewnotifications($uid,$user_type) {
     
   $this->db->select('*');

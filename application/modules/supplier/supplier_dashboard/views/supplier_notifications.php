@@ -76,33 +76,24 @@
                         </tr>
                       </thead>
                       <tbody> 
+                      <?php 
+                      $i=1;
+                      foreach ($displaynotifications as $key => $value) { 
+                        
+
+?>
                         <tr>
-                          <td>1</td>
+                          <td><?php echo $i;?></td>
                           <td>Account info</td>
-                          <td><?php echo $notificationsview->message;?></td>
-                          <!-- <td><?php 
-                          $dates=date('Y-m-d');
+                          <td><?php echo $value->message;?></td>
                           
-                          if($notificationsview->date_formate=="MM-DD-YYYY") 
-                          {
-                            $newDates = date("m-d-Y", strtotime($dates));  
-                            echo $newDates;
-                          }
-                         if($notificationsview->date_formate=="YYYY-MM-DD") 
-                          {
-                            $newDates = date("Y-m-d", strtotime($dates));  
-                            echo $newDates;
-                          }
-                         if($notificationsview->date_formate=="DD-MM-YYYY") 
-                          {
-                          $newDates = date("d-m-Y", strtotime($dates));  
-                          echo $newDates;
-                          } ?> </td>
-                           -->
                           <!-- <td>26/08/2020</td>  -->
                           <!-- <td> -->
                           <!-- <button style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" data-toggle="modal" data-target="#notification" class="btn btn-primary btn-xs">Reply</button></td> -->
                         </tr>
+                        <?php 
+                       $i++;  } ?>
+                
                       </tbody>
                     </table>
                   </div>
