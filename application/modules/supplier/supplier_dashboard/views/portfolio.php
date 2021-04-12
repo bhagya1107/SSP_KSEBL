@@ -123,13 +123,12 @@
                                             <div class="form-group col-md-12">
                                                 <label for="">Material Category</label>
                                                 <select class="form-control materialdata" id="productcategory" placeholder="Company name">
-                                                    <option value="">Select Material Category</option>
-                                                    <option value="1" data-name="Generation">Generation</option>
-                                                    <option value="2" data-name="Transmission">Transmission</option>
-                                                    <option value="3" data-name="Distribution">Distribution</option>
-                                                    <option value="4" data-name="Corporate">Corporate</option>
-                                                    <option value="5" data-name="Civil">Civil</option>
-
+                                                    <option value="">Select Material Group Data
+                                                        <?php foreach ($getcategory as $key=>$category) { ?>
+                                                    <option value="<?php echo $key; ?>">
+                                                        <?php echo $category; ?></option>
+                                                <?php } ?>
+                                                </option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-12">

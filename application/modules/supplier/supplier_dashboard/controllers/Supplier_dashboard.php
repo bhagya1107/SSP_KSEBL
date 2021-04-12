@@ -54,8 +54,8 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Company Profile';
 			$data['indexurl'] = base_url() . "supplier/dashboard";
 			$uid = $this->session->userdata('uid');
-			$user_type=$this->session->userdata('user_type');
-			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid,$user_type);
+			$user_type = $this->session->userdata('user_type');
+			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
 			$data['getcompanydetails'] = $this->dashM->getCompanyProfile($uid);
 			// $data['user_details']=$this->dashM->getUser_details($loged_user);
 			$this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal');
@@ -93,21 +93,22 @@ class Supplier_dashboard extends SP_Controller
 			$data['mainpage'] = '';
 			$data['page_title'] = 'preference_profile';
 			$data['title'] = 'preference Profile';
-			$user_type=$this->session->userdata('user_type');
-			$uid=$this->session->userdata('supplierid');
-			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid,$user_type);
-			$data['getpreferencetime'] = $this->dashM->getpreferencetime($uid,$user_type);
-			$data['num'] = $this->dashM->num($uid,$user_type);
-			$data['numviewnotifications']=$this->dashM->numviewnotifications($uid,$user_type); 
-			$data['viewnotifications']=$this->dashM->viewnotifications($uid,$user_type); 
+			$user_type = $this->session->userdata('user_type');
+			$uid = $this->session->userdata('supplierid');
+			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
+			$data['getpreferencetime'] = $this->dashM->getpreferencetime($uid, $user_type);
+			$data['num'] = $this->dashM->num($uid, $user_type);
+			$data['numviewnotifications'] = $this->dashM->numviewnotifications($uid, $user_type);
+			$data['viewnotifications'] = $this->dashM->viewnotifications($uid, $user_type);
 			$this->template->make('supplier_dashboard/preferences', $data, 'supplier_portal');
 		} else {
 			$this->session->set_flashdata('msg', 'You are not allowed to access preferences');
-			redirect(base_url('supplier/dashboard'));		}
+			redirect(base_url('supplier/dashboard'));
+		}
 	}
 
 
-	public function notifications() 
+	public function notifications()
 	{
 
 		if (
@@ -118,14 +119,14 @@ class Supplier_dashboard extends SP_Controller
 			$data['mainpage'] = '';
 			$data['page_title'] = 'notifications';
 			$data['title'] = 'Company notifications';
-			$user_type=$this->session->userdata('user_type');
-			$uid=$this->session->userdata('supplierid');
+			$user_type = $this->session->userdata('user_type');
+			$uid = $this->session->userdata('supplierid');
 			// echo $uid;
 			// echo $user_type;
 			// exit;
-			
-			$data['notificationsview']=$this->dashM->snotifications($uid,$user_type); 
-			$data['displaynotifications']=$this->dashM->displaynotifications($uid,$user_type); 
+
+			$data['notificationsview'] = $this->dashM->snotifications($uid, $user_type);
+			$data['displaynotifications'] = $this->dashM->displaynotifications($uid, $user_type);
 			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
@@ -240,12 +241,10 @@ class Supplier_dashboard extends SP_Controller
 			$uid = $this->session->userdata('uid');
 			$data['getbankdetails'] = $this->dashM->getbankdetails('bank_details', $uid);
 			$data['getbankdetails1'] = $this->dashM->getbankdetails1('bank_details', $uid);
-			$materialdata = json_decode($this->getMaterialGroupData()); //echo"<pre>";print_r($materialdata);exit;
-			$data['materialdata'] = $materialdata->result_data->list; //echo"<pre>";print_r($data['materialdata']);exit;
+			$materialdata = json_decode($this->getMaterialGroupData());
+			$data['materialdata'] = $materialdata->result_data->list;
 			$getcategorydata = json_decode($this->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
-			
-			
 			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal');
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
@@ -285,16 +284,12 @@ class Supplier_dashboard extends SP_Controller
 			$data['page_title'] = 'Portfolio';
 			$data['title'] = 'Portfolio';
 			$data['tab'] = 1;
-			$supplierid = $this->session->userdata('uid'); 
-			$materialdata = json_decode($this->getMaterialGroupData()); //echo"<pre>";print_r($materialdata);exit;
-			$data['materialdata'] = $materialdata->result_data->list; //echo"<pre>";print_r($data['materialdata']);exit;
+			$supplierid = $this->session->userdata('uid');
+			$materialdata = json_decode($this->getMaterialGroupData());
+			$data['materialdata'] = $materialdata->result_data->list;
 			$getcategorydata = json_decode($this->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
-			//echo"<pre>";print_r($data['getcategory']);exit;
-			//$getmatrdata=json_decode($this->getMaterialData(1,9));
-			// $getmatrdatavendor=json_decode($this->getMaterialvendor());
-			// $data['getmaterialven']=$getmatrdatavendor->result_data->list;//echo"<pre>";print_r($data['getmaterialven']);exit;
-			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid); //echo"<pre>";print_r($data['getsuppliermaterials']);exit;
+			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid);
 			$this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal');
 		} else {
 
@@ -329,7 +324,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['tab'] = 1;
 			$uid = $this->session->userdata('uid');
 			$user_type = $this->session->userdata('user_type');
-			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid,$user_type);
+			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
 			$data['getsubscriptionstatus'] = $this->dashM->getsubscriptionstatus($uid);
 			$this->template->make('supplier_dashboard/subscription', $data, 'supplier_portal');
 		} else {
@@ -376,9 +371,9 @@ class Supplier_dashboard extends SP_Controller
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
-		$result = curl_exec( $curl );
-		   $value= json_decode($result);
-		   echo json_encode($value->result_data->list);
+		$result = curl_exec($curl);
+		$value = json_decode($result);
+		echo json_encode($value->result_data->list);
 	}
 
 	public function getMaterialProductsDetails()
@@ -402,26 +397,10 @@ class Supplier_dashboard extends SP_Controller
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
-		$result = curl_exec($curl); //print_r($result);exit;
+		$result = curl_exec($curl); 
 		return $result;
 	}
 
-	// public function getMaterialvendor()
-	// {
-	// 	$token = $this->Login_POST();
-	// 	$token1 = json_decode($token);//print_r($token1);exit;
-
-	// 	$apiurl     = 'http://hris.kseb.in/erpws/api/inv/v1/vendor_receipt/vendor_details/2/380';
-	// 	$curl       = curl_init();
-	// 	curl_setopt($curl, CURLOPT_URL, $apiurl);
-	// 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-	// 	curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-	// 		'Content-Type: application/json',
-	// 		'Authorization: Bearer ' . $token1->result_data->token->access_token
-	// 	));print_r($token1->result_data->token->access_token);exit;
-	// 	$result = curl_exec($curl);// print_r($result);exit;
-	// 	return $result;
-	// }
 
 	public function getSbuData_get()
 	{
@@ -436,7 +415,7 @@ class Supplier_dashboard extends SP_Controller
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
-		$result = curl_exec($curl); //print_r($result);exit;
+		$result = curl_exec($curl); 
 		return $result;
 	}
 
@@ -454,7 +433,7 @@ class Supplier_dashboard extends SP_Controller
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
-		$result = curl_exec($curl); //print_r($result);exit;
+		$result = curl_exec($curl); 
 		return $result;
 	}
 
@@ -983,62 +962,59 @@ class Supplier_dashboard extends SP_Controller
 	{
 		$user_type = $this->session->userdata('user_type');
 		$uid = $this->session->userdata('uid');
-		$data=$this->input->post('display_status');
-		$timezone=$this->input->post('timezone');
-		$date=$this->input->post('date');
+		$data = $this->input->post('display_status');
+		$timezone = $this->input->post('timezone');
+		$date = $this->input->post('date');
 		// echo $display_status; exit;
-		$data1 = 
-		 
-		array(
-			'name' => '1', // 1=time zone
-			'value' => $timezone,
-			'user_id' => $uid,
-			'user_type' => $user_type
-			
-	  );
-	
-	  $data2 = 
-		  
-	  array(
-		  'name' => '2', // 2= date formate
-		  'value' => $date,
-		  'user_id' => $uid,
-		  'user_type' => $user_type
-		  
-	);
+		$data1 =
 
-	$data3 = 
-		  
-	array(
-		'message' => 'Notifications turn on successfully',
-		'status' => '2',
-		'preference_display_status' => 'true',
-		'user_id' => $uid,
-		'user_type' => $user_type
-		
-  );
-	  $get_preference = $this->dashM->get_preference($uid,$user_type);
-	  $get_preference_notifi = $this->dashM->get_preference_notifi($uid,$user_type);
-	//   echo $get_preference; exit;
-	  if($get_preference!=0)
-	  {
-		$this->dashM->update_globals_time($timezone,$uid,$user_type);
-		$this->dashM->update_globals_date($date,$uid,$user_type);
-	  }
-	  if($get_preference==0)
-	  {
-		$this->dashM->insert('globals',$data1);
-		$this->dashM->insert('globals',$data2);
-	  }
-		// $this->dashM->update_preference($timezone,$date,$uid,$user_type);
-		
-		if($get_preference_notifi==0)
-		{
-		$this->dashM->insert('notifications',$data3);
+			array(
+				'name' => '1', // 1=time zone
+				'value' => $timezone,
+				'user_id' => $uid,
+				'user_type' => $user_type
+
+			);
+
+		$data2 =
+
+			array(
+				'name' => '2', // 2= date formate
+				'value' => $date,
+				'user_id' => $uid,
+				'user_type' => $user_type
+
+			);
+
+		$data3 =
+
+			array(
+				'message' => 'Notifications turn on successfully',
+				'status' => '2',
+				'preference_display_status' => 'true',
+				'user_id' => $uid,
+				'user_type' => $user_type
+
+			);
+		$get_preference = $this->dashM->get_preference($uid, $user_type);
+		$get_preference_notifi = $this->dashM->get_preference_notifi($uid, $user_type);
+		//   echo $get_preference; exit;
+		if ($get_preference != 0) {
+			$this->dashM->update_globals_time($timezone, $uid, $user_type);
+			$this->dashM->update_globals_date($date, $uid, $user_type);
 		}
-		$this->dashM->update_notifications_preference_display_status($data,$uid,$user_type);
+		if ($get_preference == 0) {
+			$this->dashM->insert('globals', $data1);
+			$this->dashM->insert('globals', $data2);
+		}
+		// $this->dashM->update_preference($timezone,$date,$uid,$user_type);
+
+		if ($get_preference_notifi == 0) {
+			$this->dashM->insert('notifications', $data3);
+		}
+		$this->dashM->update_notifications_preference_display_status($data, $uid, $user_type);
 		$this->session->set_flashdata('msg', 'Notification Status Changed successfully');
-	    redirect(base_url('supplier/dashboard/preference_profile'));		
+		redirect(base_url('supplier/dashboard/preference_profile'));
 	}
 
 	public function deleteSupplierEmployees()
@@ -1066,7 +1042,7 @@ class Supplier_dashboard extends SP_Controller
 		$user_type = $this->session->userdata('user_type');
 		$uid = $this->session->userdata('uid');
 		// echo $uid;
-		$this->dashM->update_notification_status( $uid, $user_type);
+		$this->dashM->update_notification_status($uid, $user_type);
 		redirect(base_url('supplier/dashboard/notifications'));
 	}
 	public function resend_pass()
@@ -1551,7 +1527,7 @@ class Supplier_dashboard extends SP_Controller
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
-		$result = curl_exec($curl); //print_r($result);exit;
+		$result = curl_exec($curl); 
 		return $result;
 	}
 
@@ -1568,7 +1544,7 @@ class Supplier_dashboard extends SP_Controller
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
-		$result = curl_exec($curl); //print_r($result);exit;
+		$result = curl_exec($curl); 
 		return $result;
 	}
 }

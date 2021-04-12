@@ -210,6 +210,7 @@ function date_formate($dates)
    $dateformatp1 = $ci->db->get('globals');
    $dateformatpp= $dateformatp1->result_array();
    $d=$dateformatpp[0]['value'];
+   $_SESSION["user_dateformat"]=$d;
   // var_dump($d['value']);
   //  print_r( $dateformatpp);
   //  print_r($d); exit;

@@ -62,7 +62,7 @@
      }
 
      .tg-btn {
-         left: 37%;
+         left: 45%;
      }   
      /* #tg-main{
         margin-top: 12%;
@@ -75,7 +75,8 @@
          </div>
          <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:2</b></span>
          </div>
-         <div id="workpurchasecount" class="hide" style="text-align:center;"><span><b>Total Work Orders:247</b></span>
+        
+         <div id="workpurchasecount" class="hide" style="text-align:center;">
          </div>
          <div class="container">
              <div class="tg-section-name">
@@ -107,47 +108,14 @@
 
                      <div id="workhome" class="tab-pane fade  <?php echo $user_type == 2 ? "in active" : "" ?>">
                          <div class="row">
+                         <div class="tg-tickets">
                              <div class="tg-tickets commonfilter" id="worktickets">
-                                 <?php foreach ($purchaseorder as $purchaseorders) { ?>
-                                     <div class="tg-ticket">
-                                         <time class="tg-matchdate" datetime="2016-05-03"><?php
-                                                                                            $time = strtotime($purchaseorders->purchase_order_date);
-                                                                                            echo date('j  ', $time); ?><span><?php
-                                                                                                                                $time = strtotime($purchaseorders->purchase_order_date);
-                                                                                                                                echo date('M  ', $time); ?></span></time>
-                                         <div class="tg-matchdetail">
-                                             <span class="tg-theme-tag"><?php echo $purchaseorders->puchase_order_number ?></span>
-                                             <h4>WORK ID<?php echo $purchaseorders->prc_tender_id ?> </h4>
-                                             </h4>
-                                             <ul class="tg-matchmetadata">
-                                                 <li>
-                                                     <address>WORK CATEGORY:<?php echo $purchaseorders->purchase_order_category ?></address>
-                                                 </li>
-                                             </ul>
-                                         </div>
-                                         <div class="tg-btnsboxview">
-                                             <a class="tg-btn modal-view" onclick="mypurchasedetails(<?php echo htmlentities(json_encode($purchaseorders), ENT_QUOTES, 'UTF-8') ?>);" data-toggle="modal" data-target="#myModalpurchase">View</a>
-                                         </div>
-                                     </div>
-                                 <?php } ?>
-                                 <!--<div class="tg-ticket">
-									<time class="tg-matchdate" datetime="2016-05-03">20<span>JAN</span></time>
-									<div class="tg-matchdetail">
-										<span class="tg-theme-tag">Order No : PCO8895544</span>
-										<h4>Tender Name 2</h4></h4>
-										<ul class="tg-matchmetadata">
-											<li><address>Tender Short DIscription</address></li>
-										</ul>
-									</div>
-									<div class="tg-btnsbox">
-										<a class="tg-btn modal-view" href="#">View</a>
-									</div>
-								</div>-->
-
-
+                               
                              </div>
                          </div>
                      </div>
+                     </div>
+
                      <div id="menu1" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>">
                          <div class="row">
                              <div class="tg-tickets commonfilter" id="acceptedtickets">
@@ -1533,16 +1501,18 @@ toggle between hiding and showing the dropdown content */
 
      $(document).ready(function() {
          LoadAllPurchaseOrders();
+         LoadAllWorkOrders();
          universalpurchasesearch();
          showcountnavbar();
      });
 
      setInterval(() => {
          LoadAllPurchaseOrders();
-
+         LoadAllWorkOrders();
      }, 10000000);
 
      function showcountnavbar() {
+        
          $(".nav-tabs a").click(function() {
              var activetab = $(this).parent().attr('id');
              //allpurchaseorder acceptedpurchaseorder workorders
@@ -1745,6 +1715,44 @@ filterpurchasedata(tabcontentid, value);
          $('#allpurchasedetails').empty().append(html);
      }
 
+
+
+     function LoadAllWorkOrders() {
+
+$.ajax({
+    type: "POST",
+    url: '<?php echo base_url() ?>supplier/purchase_order/getAllpurchasesApi',
+    data: {
+        "purchaseid": 8,
+    },
+    type: 'POST',
+    // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+    // processData: false, // NEEDED, DON'T OMIT THIS
+    beforeSend: function() {
+        // setting a timeout
+        $("#overlay").fadeIn();
+    },
+    success: function(result) {
+
+        datas = JSON.parse(result);
+        var count = datas.length;
+        if (count > 0) {
+            span1 = "<span><b>Total Work Orders:" + count + "</b></span>";
+        } else {
+            span1 = "<span>No Works To Display </span>";
+        }
+        $('#workpurchasecount').html(span1);
+        buildpurchaseorderswork(datas);
+    },
+    complete: function() {
+        $("#overlay").fadeOut();
+    },
+});
+
+
+}
+
+
      function buildpurchaseorderswork(datas) {
          html = "";
          $.each(datas, function(i, data) {
@@ -1755,7 +1763,7 @@ filterpurchasedata(tabcontentid, value);
              // console.log(date1);
              // console.log(date1.getDate());
              html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4>TENDER " + data.id + "</h4></h4>";
+             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4>Work " + data.id + "</h4></h4>";
              html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
              html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
 
