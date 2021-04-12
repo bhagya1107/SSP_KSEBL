@@ -29,6 +29,8 @@ class User_management extends AD_Controller {
     $data['page'] = 'Supplier';
     $data['title'] = 'Supplier Profile';
     $id=$this->uri->segment(4);  
+    $data['supplierserviceinfo']=$this->userM->supplierserviceinfo('services',$id);
+    $data['supplierserviceinfo1']=$this->userM->supplierserviceinfo1('services',$id);
     $data['supplierinfo']=$this->userM->supplierinfo('suppliermaterials',$id);
     $data['supplierinfo1']=$this->userM->supplierinfo1('suppliermaterials',$id);
     $data['getbankdetails']=$this->userM->bank_details('bank_details',$id);

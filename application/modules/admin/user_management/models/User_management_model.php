@@ -116,7 +116,7 @@ function getpan($pannumber) {
  }
   public function supplierinfo($table,$id) 
   {
-   $this->db->select('*');
+   $this->db->select('*'); 
    $this->db->where('supplierId',$id);
    return $this->db->get($table)->result();
  }
@@ -126,6 +126,18 @@ function getpan($pannumber) {
    $this->db->where('supplierId',$id);
    return $this->db->get($table)->row();
  }
+ public function supplierserviceinfo($table,$id) 
+ {
+  $this->db->select('*'); 
+  $this->db->where('supplierid',$id);
+  return $this->db->get($table)->result();
+}
+public function supplierserviceinfo1($table,$id) 
+ {
+  $this->db->select('*');
+  $this->db->where('supplierid',$id);
+  return $this->db->get($table)->row();
+}
  
 
 }
