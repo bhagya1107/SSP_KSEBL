@@ -425,8 +425,27 @@
                                                                   
                                                                 </tr>
                                                                 <tr>
-                                                                  <td>No data available</td>
-                                                                  <td></td>
+                                                                <?php foreach ($supplierserviceinfo as $key => $value) {
+
+?>
+                                           <tr>
+                                              <td><?php echo $value->services;?></td>
+                                               <td><?php echo $value->categoryservices;?></td>
+                                           <!--    <td><?php echo $value->materialId;?></td> -->
+                                           </tr>
+                                            <?php } ?>
+                                       </tbody>
+                                           <?php if($supplierserviceinfo1=='')
+                                            {?>
+                                             <td></td>
+                                           
+                                            <td>No data available in table</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                          <?php } ?>
+                                                                  <!-- <td>No data available</td>
+                                                                  <td></td> -->
                                                                 </tr>
                                                            
                                                           </table>
@@ -511,8 +530,27 @@
                                                                   
                                                                 </tr>
                                                                 <tr>
-                                                                  <td>No data available</td>
-                                                                  <td></td>
+                                                                <?php foreach ($supplierserviceinfo as $key => $value) {
+
+?>
+                                           <tr>
+                                              <td><?php echo $value->services;?></td>
+                                               <td><?php echo $value->categoryservices;?></td>
+                                           <!--    <td><?php echo $value->materialId;?></td> -->
+                                           </tr>
+                                            <?php } ?>
+                                       </tbody>
+                                           <?php if($supplierserviceinfo1=='')
+                                            {?>
+                                             <td></td>
+                                           
+                                            <td>No data available in table</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                          <?php } ?>
+                                                                  <!-- <td>No data available</td>
+                                                                  <td></td> -->
                                                                 </tr>
                                                            
                                                           </table>

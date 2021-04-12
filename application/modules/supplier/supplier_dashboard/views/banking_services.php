@@ -66,10 +66,10 @@
                         <div class="col-md-5" style="border: 1px solid #CCC;">
                         <br />
                         <div class="form-group">
-                        <input type="hidden" id="productcategory" value="1">
+                        <input type="hidden" id="productcategory" value="1"> 
                             <label>Select Bank</label>
 
-                            <select class="form-control materialdata" id="materialinput" placeholder="Company name">
+                            <select class="form-control materialdata" id="materialinput" placeholder="Company name" name="bank">
                                                     <option value="">Select Bank
                                                         <?php foreach ($materialdata as $materialdatas) { ?>
                                                     <option value="<?php echo $materialdatas->material_group_code; ?>">
@@ -96,7 +96,7 @@
 
                         <div class="form-group">
                             <label>Branch Name</label>
-                            <select class="form-control material" id="material" placeholder="Year of  registration">
+                            <select class="form-control material" id="material" placeholder="Year of  registration" name="branch">
                                                     <option value="">Select Branch
                                                     </option>
                             </select>
@@ -138,7 +138,7 @@
                         </div>
                         </form>
 
-                       <script>
+                       <!-- <script>
                         function myFunction() {
                                 document.getElementById("subbtnn").style.display = "none";
 
@@ -146,7 +146,7 @@
                                 $('#cnbtnn').css('display','none');
                                                                }
                            
-                        </script> 
+                        </script>  -->
                         
                       
                         <div class="col-md-7" style="<?php if($getbankdetails1=='') echo "display: none;" ?>">
