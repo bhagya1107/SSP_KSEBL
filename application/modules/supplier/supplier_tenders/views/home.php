@@ -1,3 +1,4 @@
+
 <style>
     .btn-primary {
         color: #fff;
@@ -126,6 +127,7 @@
 
                 <div class="tab-content">
                     <input type="hidden" id="usertypeid" value="<?php echo $user_type; ?>">
+                    <input type="hidden" id="usertypedate" value="<?php echo $user_dateformat; ?>">
 
                     <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
                     <input type="hidden" id="mytenderservices" value="<?php echo htmlentities(json_encode($mytenderservices), ENT_QUOTES, 'UTF-8') ?>" />
@@ -158,33 +160,32 @@
                     <div id="menu1" class="tab-pane fade <?php echo $tab == 2 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
                             <div class="tg-tickets commonfilter" id="favid">
-                                <?php foreach ($getfavtender as $favten) { ?>
+                                <?php foreach ($getAllfavtender as $favten) { ?>
                                     <div class="tg-ticket">
 
                                         <time class="tg-matchdate"><small>Last date</small><br><?php
-                                                                                                $time = strtotime($favten->tenderdate);
+                                                                                                $time = strtotime($favten['tenderdate']);
                                                                                                 echo date('j  ', $time); ?>
-                                            <span><?php $time = strtotime($favten->tenderdate);
+                                            <span><?php $time = strtotime($favten['tenderdate']);
 
                                                     echo date('M ', $time); ?></span></time>
 
                                         <div class="tg-matchdetail">
-                                            <div class='hiddendate' hidden><?php echo $favten->tenderdate ?></div>
-                                            <span class="tg-theme-tag"><?php echo $favten->tenderno ?></span>
-                                            <h4>TENDER <?php echo $favten->tendername ?></h4>
+                                            <div class='hiddendate' hidden><?php echo $favten['tenderdate'] ?></div>
+                                            <span class="tg-theme-tag"><?php echo $favten['tenderno'] ?></span>
+                                            <h4>TENDER <?php echo $favten['tendername'] ?></h4>
                                             </h4>
                                             <ul class="tg-matchmetadata">
                                                 <li>
-                                                    <address>Tender Autority:<?php echo $favten->tenderauthority ?></address>
+                                                    <address>Tender Autority:<?php echo $favten['tenderauthority'] ?></address>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="tg-btnsbox">
+                                      <div class="tg-btnsbox">
                                             <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten->tenderid ?>);" data-tender="<?php echo htmlentities(json_encode($tenders), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
                                             <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $gettenderdetails->id) ?>">Apply </a>
 
-                                        </div> 
-                                    </div>
+                                        </div>   
 
                                 <?php } ?>
 
@@ -195,6 +196,7 @@
                         <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
                     </div>
+                   
                     <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
                             <div class="tg-tickets commonfilter" id="appliedtickets">
@@ -737,6 +739,7 @@
 </div>
 <!-------------------------------------------------------------------------------------------------------------->
 <script>
+
     function myfavtenderdetails(tender, favtenderid) {
 
         var getfavdetails = tender.filter(function(obj) {
@@ -783,7 +786,10 @@
         var tenderpurchasedetails = tenderdetail.prc_purchase_orders;
         var tenderdeliverydetails = tenderdetail.prc_proposed_delivery_details;
         var tendermdcc = tenderdetail.prc_mdccs;
-
+        var bidopeningdate=tenderdetail.bid_opening_date;
+        var dateopen =<?php echo (date_formate('bidopeningdate'));?>
+        cosole.log("jjmnnn");
+        console.log(dateopen);
         var html = "<div id='prc_general_dtls'>";
 
         html += "<b><h5 style='color:orange;'>TENDER GENERAL DETAILS</h5><b>" +
@@ -1034,6 +1040,8 @@
 </style>
 <script>
     var usertype = $("#usertypeid").val();
+    var usertypedate = $("#usertypedate").val();
+  //  alert(usertypedate);
     $(document).ready(function() {
 
         if (usertype == '2') {
