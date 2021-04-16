@@ -10,7 +10,7 @@ class Supplier_tenders extends SP_Controller
 	}
 	public function index($tab = 1)
 	{
-		
+
 		//echo $dates;exit;
 		//neethu
 		$this->load->model('Getmenus', 'GETM');
@@ -26,20 +26,20 @@ class Supplier_tenders extends SP_Controller
 			$data['tab'] = $tab;
 			$tender = json_decode($this->getTenderData());
 			$data['tender'] = $tender->result_data->list;
-			$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid); 
-			$data['getsuppliertenderservices'] = $this->procM->getSupplierServices($uid); 
+			$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid);
+			$data['getsuppliertenderservices'] = $this->procM->getSupplierServices($uid);
 			$data['materialid'] = array_column($data['getsuppliertender'], 'materialId');
 			$data['mytenderproducts'] = array();
 			$data['user_type'] = $this->session->userdata('user_type');
-			$dates=date_formate('');
+			$dates = date_formate('');
 			$data['user_dateformat'] = $_SESSION["user_dateformat"];
-$data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);
+			$data['appliedtenderdetails'] = $this->getappliedtenders($data['tender']);
 
 			if (!empty($data['materialid'])) {
 				foreach ($data['tender'] as $key => $materialid) {
 					$materials = '';
 					$materialsArr = array_column($materialid->prc_proposed_delivery_details, 'mst_material_id');
-				
+
 					if (array_intersect($materialsArr, $data['materialid'])) {
 						array_push($data['mytenderproducts'], $data['tender'][$key]);
 					}
@@ -49,7 +49,7 @@ $data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);
 			$data['serviceid'] = array_column($data['getsuppliertenderservices'], 'serviceid');
 			$data['mytenderservices'] = array();
 
-			
+
 			if (!empty($data['serviceid'])) {
 				foreach ($data['tender'] as $key => $serviceid) {
 					$materials = '';
@@ -64,15 +64,15 @@ $data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);
 					}
 				}
 			}
-			
-			$data['getfavtender'] = $this->procM->getfavtender($uid); 
+
+			$data['getfavtender'] = $this->procM->getfavtender($uid);
 			$data['favid'] = array_column($data['getfavtender'], 'tendername');
 
 			if (!empty($data['favid'])) {
 				foreach ($data['tender'] as $key => $tender1) {
 					if (in_array($tender1->id, $data['favid'])) {
 						$data['tender'][$key]->sorting = 1;
-						$data['getAllfavtender'][$tender1->id] = ['tenderid'=>$tender1->id,'tendername'=>$tender1->id,'tenderdate'=>$tender1->tender_date,'tenderno'=>$tender1->tender_num,'tenderauthority'=>$tender1->tendering_authority];
+						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->id, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tendering_authority];
 					} else {
 						$data['tender'][$key]->sorting  = 0;
 					}
@@ -80,7 +80,7 @@ $data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);
 				$col = array_column($data['tender'], "sorting");
 				array_multisort($col, SORT_ASC, $data['tender']);
 			}
-	
+
 			$supplierid = $this->session->userdata('uid');
 
 			$data['gettenderdetails'] = $this->Login->gettenderdetails('tenders_favourites', $supplierid);
@@ -95,43 +95,44 @@ $data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);
 
 	}
 
-public function getappliedtenders($tenders){
-	
-	$uid = $this->session->userdata('supplierid');
-	$data['getapplytender'] = $this->procM->getappliedtender($uid);
-			
-			 $data['appliedtenderid'] = array_column($data['getapplytender'], 'tender_id');
-			$data['myappliedtenders'] = array();
+	public function getappliedtenders($tenders)
+	{
 
-			foreach ($tenders as $key => $materialid) {
-				if (in_array($materialid->id,$data['appliedtenderid'])) {
-					array_push($data['myappliedtenders'], $tenders[$key]);
-				}
+		$uid = $this->session->userdata('supplierid');
+		$data['getapplytender'] = $this->procM->getappliedtender($uid);
+
+		$data['appliedtenderid'] = array_column($data['getapplytender'], 'tender_id');
+		$data['myappliedtenders'] = array();
+
+		foreach ($tenders as $key => $materialid) {
+			if (in_array($materialid->id, $data['appliedtenderid'])) {
+				array_push($data['myappliedtenders'], $tenders[$key]);
 			}
-			
-			return $data['myappliedtenders'];
-}
+		}
+
+		return $data['myappliedtenders'];
+	}
 
 
 	public function getProductTender()
 	{
 		$uid = $this->session->userdata('supplierid');
 		$tender = json_decode($this->getTenderData());
-		$data['tender'] = $tender->result_data->list; 
-		$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid); 
+		$data['tender'] = $tender->result_data->list;
+		$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid);
 		$data['materialid'] = array_column($data['getsuppliertender'], 'materialId');
 		$data['mytenderproducts'] = array();
 		if (!empty($data['materialid'])) {
 			foreach ($data['tender'] as $key => $materialid) {
 				$materials = '';
 				$materialsArr = array_column($materialid->prc_proposed_delivery_details, 'mst_material_id');
-			
+
 				if (array_intersect($materialsArr, $data['materialid'])) {
 					array_push($data['mytenderproducts'], $data['tender'][$key]);
 				}
 			}
 		}
-	
+
 		echo json_encode($data['mytenderproducts']);
 	}
 
@@ -139,7 +140,7 @@ public function getappliedtenders($tenders){
 	{
 		$uid = $this->session->userdata('supplierid');
 		$tender = json_decode($this->getTenderData());
-		$data['tender'] = $tender->result_data->list; 
+		$data['tender'] = $tender->result_data->list;
 		$data['getsuppliertenderservices'] = $this->procM->getSupplierServices($uid);
 		$data['serviceid'] = array_column($data['getsuppliertenderservices'], 'serviceid');
 		$data['mytenderservices'] = array();
@@ -644,7 +645,7 @@ public function getappliedtenders($tenders){
 		$uid = $this->session->userdata('supplierid');
 		$tender = json_decode($this->getTenderData());
 		$data['tender'] = $tender->result_data->list;
-		$data['getfavtender'] = $this->procM->getfavtender($uid); 
+		$data['getfavtender'] = $this->procM->getfavtender($uid);
 		$data['favid'] = array_column($data['getfavtender'], 'tendername');
 		if (!empty($data['favid'])) {
 			foreach ($data['tender'] as $key => $tender1) {
