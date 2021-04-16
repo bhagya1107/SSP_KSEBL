@@ -114,21 +114,47 @@
             <div class="row">
                 <div class="col-sm-12"><br><br>
                     <!-- Authentication card start -->
-                   
+                  
+
+                  
                             <div class="auth-box card">
                                 <div class="card-block scale-up-center"><br><br>
                                     <div class="row m-b-20">
-                                        <div class="col-md-12">
+                                        <!-- <div class="col-md-12">
                                             <h3 class="text-center">Change Password?</h3>
-                                        </div>
+                                        </div> -->
                                     </div><br><br>
-
-                                    <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/send_otp')?>" >
+                                   
+                                <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/change_pswd')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
-                              
+                                
+                                <?php 
+                            $msg=$this->session->flashdata('msg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-success" id="mydivss">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                <?php
+                            echo $msg;
+                                ?> 
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
                                     <div class="form-group form-primary text-center" id="email_block"   >
-                                      <label >Enter your Registered Mobile No</label>
-                                        <input type="tel" name="mobile" id="mobile"  pattern="[6789][0-9]{9}" class="form-control" required="" placeholder=" registered Mobile No" autocomplete="off" style="width: 60%;">
+                                      <label >New Password</label>
+                                        <input type="tel" name="new_pass" id="new_pass" class="form-control" required="" placeholder=" New password" autocomplete="off" style="width: 60%;">
+                                        
+                                        <span class="form-bar"></span>
+                                    </div>
+                                    <div class="form-group form-primary text-center" id="email_block"   >
+                                      <label >Confirm Password</label>
+                                        <input type="tel" name="confirm_pass" id="confirm_pass" class="form-control" required="" placeholder="Confirm password" autocomplete="off" style="width: 60%;">
                                         
                                         <span class="form-bar"></span>
                                     </div>
@@ -137,11 +163,11 @@
                                     <div class="row m-t-10 text-center">
                                    <div class="col-md-4 text-center " id="gtop" style="margin-left:33%" >
 										
-                                            <button type="submit" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">GET OTP</button>
-                                            <!-- <button type="button" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">GET OTP</button><span style= "color:green;" id="paswordmess" class="hide">OTP sent to your registered mobile number</span> -->
+                                            <button type="submit" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">SAVE</button><span style= "color:green;" id="paswordmess" class="hide">OTP sent to your registered mobile number</span>
                                     </div>
-                              </form>
+                              
                                     </div>
+                                    </form>
                                     <br><br>
                                     <span style="color:red" id="error">
                                          <?php
@@ -160,7 +186,7 @@
                                 </div>
                                 <br><br>
                             </div>
-                        </form>
+                       
                         <!-- end of form -->
                 </div>
                 <!-- end of col-sm-12 -->
@@ -191,7 +217,7 @@
 </body>
 
 </html>
-<!-- 
+
 <script>
 
 $(document).ready(function(){
@@ -209,4 +235,4 @@ $("#generateotp").click(function() {
  }
 });
 });
-</script> -->
+</script>

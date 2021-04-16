@@ -575,6 +575,53 @@ class Supplier_dashboard extends SP_Controller
 		$data['title'] = 'Change Password';
 		$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
 	}
+	public function changepassword()
+	{
+		$data['page'] = 'Change Password';
+		$data['mainpage'] = '';
+		$data['page_title'] = 'Change Password';
+		$data['title'] = 'Change Password';
+		$this->template->make('supplier_dashboard/change_password', $data, 'supplier_portal');
+	}
+	public function send_otp()
+	{
+		echo '<script type="text/javascript" >alert("your otp is 4563");
+		     </script>';
+			 echo ' <script>window.location.href="changepassword";</script>';
+		// redirect(base_url('supplier/dashboard/changepassword'));
+		// alert('your otp is 4563');
+	}
+	public function change_pswd()
+	{
+			// $old_pass=$this->input->post('old_pass');
+			$new_pass=$this->input->post('new_pass');
+			$confirm_pass=$this->input->post('confirm_pass');
+			$supplierid=$this->session->userdata('supplierid');
+			$user_type=$this->session->userdata('user_type');
+			// $que=$this->db->query("select * from admin_login where adminloginid='$session_id'");
+			// $row=$que->row();
+			//$pass=$row;
+			//print_r($row->password);exit;
+			// if(($old_pass==$row->password) && ($confirm_pass==$new_pass))
+			if ($confirm_pass==$new_pass)
+				{
+					$where = array('uid' => $supplierid);
+					$data = array('password' => $confirm_pass );
+					$result = $this->dashM->update('suppliers', $data, $where);
+			
+					// $this->model->change_pass_admin($session_id,$new_pass);
+					//echo "Password changed successfully !";
+					$this->session->set_flashdata('msg','Password changed successfully !"');
+					redirect(base_url('supplier/dashboard/changepassword'));
+				}
+			    else{
+					//echo "Invalid";
+					$this->session->set_flashdata('msg','invalid data'); 
+					redirect(base_url('supplier/dashboard/changepassword'));
+				
+		}
+	
+	}
 
 	public function update_companyprofile()
 	{
@@ -1546,5 +1593,22 @@ class Supplier_dashboard extends SP_Controller
 		));
 		$result = curl_exec($curl); 
 		return $result;
+	}
+
+	public function notification_count()
+	{
+		$user_type = $this->session->userdata("user_type");
+		$uid = $this->session->userdata('supplierid');
+		$count = $this->dashM->ajaxnotificationscount($user_type, $uid);
+		// if($count!=0)
+		// {
+		echo json_encode($count);
+		// }
+		// else
+		// {
+		// 	echo json_encode('');	
+		// }
+		
+		
 	}
 }

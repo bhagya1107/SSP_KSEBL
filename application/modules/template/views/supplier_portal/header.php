@@ -234,8 +234,12 @@
 												<a href="<?=site_url('supplier/dashboard/notification_change_status')?>" > 
 												<i class="fa fa-bell" aria-hidden="true" style="color:#fff"></i>
 												<?php if($notifications!='0' and  $notificationsview->preference_display_status=='true'){ ?>
-												<span style="background-color: red; margin-top :-20px;"  class="badge" id="notify" ><?php echo $notifications;?></span>
-												<?php } ?></a></li>
+													<span style="background-color: red; margin-top :-20px;"  class="badge notify" id="notify" ></span>
+												 <!-- <span style="background-color: red; margin-top :-20px;"  class="badge" id="notify" > -->
+												 <!-- <?php echo $notifications;?> -->
+												 <!-- </span> -->
+												<?php } ?>
+												</a></li> 
 												<li title="logout"  ><a href="<?=supplier_url('dashboard/logout')?>"><i class="fa fa-sign-out" aria-hidden="true" style="color:#fff"></i></a></li>
 												
 												
@@ -376,11 +380,33 @@
 
 
 
-
 		setInterval(() => {	
-        var type = $('#notify').val();
-  
+  fetch_count();
     }, 1000);
+
+	function fetch_count(){
+    $.ajax({
+    url: "<?php echo site_url('supplier/dashboard/notification_count')?>",
+    method: "POST",
+	
+    success: function(data) {
+		 
+			$('#notify').html(data);
+        if(data!= 0){ 
+        $('#notify').show()
+            } else {
+				$('#notify').hide();
+            };
+    
+    }
+  }); 
+}
+		// setInterval(() => {	
+        // var type = $('#notify').val();
+		// alert();
+  
+    // }, 1000);
+
 </script>
 									
 

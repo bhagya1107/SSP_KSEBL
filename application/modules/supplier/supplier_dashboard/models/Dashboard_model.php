@@ -317,4 +317,12 @@ public function check_products($supplierId)
     $result = $this->db->get('formengine_registration');
     return $result->result();
   }
+
+  function ajaxnotificationscount($user_type, $uid) {
+    $this->db->select('*');
+    $this->db->where('user_id',$uid);
+    $this->db->where('user_type',$user_type);
+    $this->db->where('status','1');
+    return $this->db->get('notifications')->num_rows(); 
+}
 }
