@@ -454,7 +454,8 @@ class Supplier_dashboard extends SP_Controller
 		$data['categoryname'] = $this->input->post('categoryname');
 		$data['materialId'] = $this->input->post('material');
 		$data['materialname'] = $this->input->post('product');
-		//$data['materialinput']=$this->input->post('materialinput');
+		$data['materialinputId']=$this->input->post('materialinput');
+		$data['materialinputname']=$this->input->post('materialinputname');
 		//$data['created_date']=date('Y-m-d H:i:s');
 		$data['supplierId'] = $this->session->userdata('uid');
 		//$data['isdeleted']=false;
@@ -505,6 +506,7 @@ class Supplier_dashboard extends SP_Controller
 			$data[] = array(
 				'no' => $i,
 				'category' => $r->categoryname,
+				'materialinputname' => $r->materialinputname,
 				'materialname' => $r->materialname,
 				'orders' => $edit,
 				'overdue' => $editoverdue,
