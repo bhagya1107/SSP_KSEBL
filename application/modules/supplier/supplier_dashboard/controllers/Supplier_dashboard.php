@@ -585,7 +585,9 @@ class Supplier_dashboard extends SP_Controller
 	}
 	public function send_otp()
 	{
-		echo '<script type="text/javascript" >alert("your otp is 4563");
+		// $otp=2548;
+		$otp=rand(1000, 9999);
+		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
 		     </script>';
 			 echo ' <script>window.location.href="changepassword";</script>';
 		// redirect(base_url('supplier/dashboard/changepassword'));
@@ -609,15 +611,20 @@ class Supplier_dashboard extends SP_Controller
 					$data = array('password' => $confirm_pass );
 					$result = $this->dashM->update('suppliers', $data, $where);
 			
-					// $this->model->change_pass_admin($session_id,$new_pass);
-					//echo "Password changed successfully !";
-					$this->session->set_flashdata('msg','Password changed successfully !"');
-					redirect(base_url('supplier/dashboard/changepassword'));
+					echo '<script type="text/javascript" >alert("Password changed successfully" );
+					</script>';
+					echo ' <script>window.location.href="changepassword";</script>';
+			   
+					// $this->session->set_flashdata('msg','Password changed successfully !"');
+					// redirect(base_url('supplier/dashboard/changepassword'));
 				}
 			    else{
-					//echo "Invalid";
-					$this->session->set_flashdata('msg','invalid data'); 
-					redirect(base_url('supplier/dashboard/changepassword'));
+					echo '<script type="text/javascript" >alert("Password mismatch" );
+					</script>';
+					echo ' <script>window.location.href="changepassword";</script>';
+			   
+					// $this->session->set_flashdata('msg','invalid data'); 
+					// redirect(base_url('supplier/dashboard/changepassword'));
 				
 		}
 	

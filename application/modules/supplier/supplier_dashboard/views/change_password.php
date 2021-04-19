@@ -125,7 +125,7 @@
                                         </div> -->
                                     </div><br><br>
                                    
-                                <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/change_pswd')?>" >
+                                <form method="post" id="p" enctype="multipart/form-data"  action="<?php echo base_url('supplier/dashboard/change_pswd')?>" id="frm" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                                 
                                 <?php 
@@ -148,9 +148,9 @@
                             ?>
                                     <div class="form-group form-primary text-center" id="email_block"   >
                                       <label >New Password</label>
-                                        <input type="tel" name="new_pass" id="new_pass" class="form-control" required="" placeholder=" New password" autocomplete="off" style="width: 60%;">
-                                        
-                                        <span class="form-bar"></span>
+                                        <input type="tel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" name="new_pass"  id="Password" title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" id="new_pass" class="form-control" required="" placeholder=" New password" autocomplete="off" style="width: 60%;">
+                                        <span id="pwderror" style="color:red;font-size:small"></span>  
+                                        <!-- <span class="form-bar"></span> -->
                                     </div>
                                     <div class="form-group form-primary text-center" id="email_block"   >
                                       <label >Confirm Password</label>
@@ -163,7 +163,9 @@
                                     <div class="row m-t-10 text-center">
                                    <div class="col-md-4 text-center " id="gtop" style="margin-left:33%" >
 										
-                                            <button type="submit" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">SAVE</button><span style= "color:green;" id="paswordmess" class="hide">OTP sent to your registered mobile number</span>
+                                   <input type="submit" class="btn btn-primary submit" onclick="validateAndSend()" value="Save" >
+
+                                            <!-- <button type="submit" name="submit" id="generateotp" onclick="validateAndSend()" class="btn btn-primary btn-md  waves-effect waves-light text-center">SAVE</button><span style= "color:green;" id="paswordmess" class="hide">OTP sent to your registered mobile number</span> -->
                                     </div>
                               
                                     </div>
@@ -236,3 +238,35 @@ $("#generateotp").click(function() {
 });
 });
 </script>
+
+<script>
+    function validateAndSend(){
+    //   e.preventDefault();
+      alert();
+      var password=$('#Password').val();
+      $('#pwderror').text("");
+
+      var validated =  true;
+        if(password.length < 8)
+            validated = false;
+        if(!/\d/.test(password))
+            validated = false;
+        if(!/[a-z]/.test(password))
+            validated = false;
+        if(!/[A-Z]/.test(password))
+            validated = false;
+        // if(/[^0-9a-zA-Z]/.test(password))
+        //     validated = false;
+
+      $('#pwderror').text(validated ? "" : "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
+
+
+      if(validated){
+        $('#frm')[0].submit();
+      }
+      
+
+    });
+  
+  </script>
+ 
