@@ -125,7 +125,7 @@
                                                 <select class="form-control materialdata" id="productcategory" placeholder="Company name">
                                                     <option value="">Select Material Group Data
                                                         <?php foreach ($getcategory as $key=>$category) { ?>
-                                                    <option value="<?php echo $key; ?>">
+                                                    <option data-name="<?php echo $category; ?>" value="<?php echo $key; ?>">
                                                         <?php echo $category; ?></option>
                                                 <?php } ?>
                                                 </option>
@@ -136,7 +136,7 @@
                                                 <select class="form-control materialdata" id="materialinput" placeholder="Company name">
                                                     <option value="">Select Material Group Data
                                                         <?php foreach ($materialdata as $materialdatas) { ?>
-                                                    <option value="<?php echo $materialdatas->material_group_code; ?>">
+                                                    <option data-name="<?php echo $materialdatas->material_group_name; ?>" value="<?php echo $materialdatas->material_group_code; ?>">
                                                         <?php echo $materialdatas->material_group_name; ?></option>
                                                 <?php } ?>
                                                 </option>
@@ -162,6 +162,7 @@
                                                             <tr style="background-color:#26265f ;color:#FFF ">
                                                                 <th>Sl No </th>
                                                                 <th>category </th>
+                                                                <th>materialGroup </th>
                                                                 <th>Product Name</th>
                                                                 <th>Orders</th>
                                                                 <th>Overdue</th>
@@ -664,6 +665,7 @@
         var productcategory = $("#productcategory").val();
         var categoryname = $('#productcategory option[value="' + productcategory + '"').attr('data-name');
         var materialinput = $("#materialinput").val();
+        var materialinputname = $('#materialinput option[value="' + materialinput + '"').attr('data-name');
         var material = $("#material").val();
         var product = $('#material option[value="' + material + '"').attr('data-name');
         var isValid = validateDuplicateEntries(material);
@@ -702,6 +704,7 @@
                     productcategory: productcategory,
                     categoryname: categoryname,
                     materialinput: materialinput,
+                    materialinputname: materialinputname,
                     material: material,
                     product: product,
 
@@ -758,6 +761,10 @@
                 {
                     "data": "category"
                 },
+                {
+                    "data": "materialinputname"
+                },
+
                 {
                     "data": "materialname"
                 },
