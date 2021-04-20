@@ -290,6 +290,9 @@ class Supplier_dashboard extends SP_Controller
 			$getcategorydata = json_decode($this->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid);
+			$getordersdata = json_decode($this->getordersbyId());
+			$data['ordersId'] = $getordersdata->result_data->list;
+			
 			$this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal');
 		} else {
 
@@ -454,7 +457,8 @@ class Supplier_dashboard extends SP_Controller
 		$data['categoryname'] = $this->input->post('categoryname');
 		$data['materialId'] = $this->input->post('material');
 		$data['materialname'] = $this->input->post('product');
-		//$data['materialinput']=$this->input->post('materialinput');
+		$data['materialinputId']=$this->input->post('materialinput');
+		$data['materialinputname']=$this->input->post('materialinputname');
 		//$data['created_date']=date('Y-m-d H:i:s');
 		$data['supplierId'] = $this->session->userdata('uid');
 		//$data['isdeleted']=false;
@@ -506,6 +510,7 @@ class Supplier_dashboard extends SP_Controller
 				'no' => $i,
 				'category' => $r->categoryname,
 				'materialname' => $r->materialname,
+				'materialinputname' => $r->materialinputname,
 				'orders' => $edit,
 				'overdue' => $editoverdue,
 				'receipts' => $editreceipts,
@@ -1611,4 +1616,23 @@ class Supplier_dashboard extends SP_Controller
 		
 		
 	}
+
+	public function getordersbyId()
+	{
+		$token = $this->Login_POST();
+		$token1 = json_decode($token);
+
+		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getordersbyId';
+		$curl       = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		));
+		$result = curl_exec($curl); 
+		//print_r($result);exit;
+		return $result;
+	}
+
 }
