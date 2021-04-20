@@ -12,21 +12,42 @@
               <div class="panel-body">
                 <div class="text-center">
                   <h3><i class="fa fa-lock fa-4x"></i></h3>
+                  <?php 
+                            $msg=$this->session->flashdata('msg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-success" id="mydivss">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                <?php
+                            echo $msg;
+                                ?> 
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
                   <h2 class="text-center">Forgot Password?</h2>
                   <p>You can reset your password here.</p>
                   <p>Enter your Registered Mobile No</p>
                   <div class="panel-body">
+                  <?php $s=$this->session->set_userdata('supplier',8); ?>  
+                    <!-- <form id="register-form" role="form" autocomplete="off" class="form" method="post"> -->
     
-                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
-    
+                    <form method="post" action="<?php echo base_url('supplier/dashboard/send_otp_supplier')?>" >
+                    <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
+  
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-earphone color-blue"></i></span>
-                          <input id="email" name="email" placeholder="Registered Mobile No" class="form-control"  type="email">
+                          <input id="mobile" name="mobile" placeholder="Registered Mobile No" class="form-control"  type="tel">
                         </div>
                       </div>
                       <div class="form-group">
-                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Submit" type="submit">
+                        <input name="submit" class="btn btn-lg btn-primary btn-block" value="Submit" type="submit">
                       </div>
                       
                       <input type="hidden" class="hide" name="token" id="token" value=""> 

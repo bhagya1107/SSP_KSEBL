@@ -583,6 +583,7 @@ class Supplier_dashboard extends SP_Controller
 		$data['title'] = 'Change Password';
 		$this->template->make('supplier_dashboard/change_password', $data, 'supplier_portal');
 	}
+	
 	public function send_otp()
 	{
 		// $otp=2548;
@@ -592,6 +593,45 @@ class Supplier_dashboard extends SP_Controller
 			 echo ' <script>window.location.href="changepassword";</script>';
 		// redirect(base_url('supplier/dashboard/changepassword'));
 		// alert('your otp is 4563');
+	}
+	public function send_otp_supplier()
+	{
+		$mobile=$this->input->post('mobile');
+		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+		$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers', $mobile);
+		if($get_supplier_mobile=='')
+		{
+			$this->session->set_flashdata('msg',"Not registerd mobile number" );
+			redirect(base_url('forgot_password'));
+	
+		}
+		if($get_supplier_mobile!='')
+		{
+		$otp=rand(1000, 9999);
+	    $this->session->set_flashdata('msg',"your otp is $otp" );
+		redirect(base_url('Change_forgot_password'));
+		}
+
+	}
+	public function update_supplier_password()
+	{
+		$confirm_pass=$this->input->post('confirm_pass');
+		$pass=$this->input->post('pass');
+		$supplier_mobile=$this->session->userdata('supplier_mobile');
+		if ($confirm_pass==$pass)
+		{
+			$where = array('mobile' => $supplier_mobile);
+			$data = array('password' => $pass );
+			$result = $this->dashM->update('suppliers', $data, $where);
+			$this->session->set_flashdata('rmsg','Password changed successfully');
+			redirect(base_url('home'));
+		}
+		else{
+		
+			$this->session->set_flashdata('msg','Password mismatch'); 
+		    redirect(base_url('Change_forgot_password'));
+		
+}
 	}
 	public function change_pswd()
 	{
