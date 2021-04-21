@@ -32,6 +32,24 @@
                             <?php 
                             }
                             ?>
+                             <?php 
+                            $msg=$this->session->flashdata('omsg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-success" id="mydivss">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                <?php
+                            echo $msg;
+                                ?> 
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
 
                   
                   <!-- <p>You can reset your password here.</p>
