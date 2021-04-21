@@ -54,6 +54,12 @@ class Dashboard_model extends CI_Model
     $this->db->where('mobile', $mobile);
     return $this->db->get($table)->row();
   }
+  // public function get_supplier_mobile($table,$mobile)
+  // {
+  //   $this->db->select('*');
+  //   $this->db->where('mobile', $mobile);
+  //   return $this->db->get($table)->row();
+  // }
 
   public function getCompanyProfile($uid)
   {

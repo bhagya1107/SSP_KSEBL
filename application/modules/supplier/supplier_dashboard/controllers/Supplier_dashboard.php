@@ -591,30 +591,42 @@ class Supplier_dashboard extends SP_Controller
 	
 	public function send_otp()
 	{
-		// $otp=2548;
-		$otp=rand(1000, 9999);
+		$mobile=$this->input->post('mobile');
+		$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers', $mobile);
+		if($get_supplier_mobile!='')
+		{
+		$otp=rand(100000, 999999);
 		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
 		     </script>';
-			 echo ' <script>window.location.href="changepassword";</script>';
+		echo ' <script>window.location.href="changepassword";</script>';
 		// redirect(base_url('supplier/dashboard/changepassword'));
 		// alert('your otp is 4563');
+		}
+		if($get_supplier_mobile=='')
+		{
+			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+		     </script>';
+			 echo ' <script>window.location.href="forgotpassword";</script>';
+	
+		}
 	}
 	public function send_otp_supplier()
 	{
 		$mobile=$this->input->post('mobile');
 		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
 		$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers', $mobile);
+		
+		if($get_supplier_mobile!='')
+		{
+		$otp=rand(100000, 999999);
+	    $this->session->set_flashdata('msg',"your otp is $otp" );
+		redirect(base_url('Change_forgot_password'));
+		}
 		if($get_supplier_mobile=='')
 		{
 			$this->session->set_flashdata('msg',"Not registerd mobile number" );
 			redirect(base_url('forgot_password'));
 	
-		}
-		if($get_supplier_mobile!='')
-		{
-		$otp=rand(1000, 9999);
-	    $this->session->set_flashdata('msg',"your otp is $otp" );
-		redirect(base_url('Change_forgot_password'));
 		}
 
 	}

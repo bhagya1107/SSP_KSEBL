@@ -15,12 +15,30 @@
                   <h2 class="text-center">Forgot Password?<?php $supplier_mobile=$this->session->userdata('supplier_mobile');
                 ?></h2>
                   <?php 
-                            $msg=$this->session->flashdata('msg'); 
+                            $msg=$this->session->flashdata('omsg'); 
                             if($msg)
                             {
                             ?>
                             
                             <div class="alert alert-danger" id="mydivss">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                <?php
+                            echo $msg;
+                                ?> 
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
+                             <?php 
+                            $msg=$this->session->flashdata('msg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-success" id="mydivss">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
