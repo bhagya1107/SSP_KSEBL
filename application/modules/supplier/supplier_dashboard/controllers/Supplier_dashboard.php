@@ -591,24 +591,13 @@ class Supplier_dashboard extends SP_Controller
 	
 	public function send_otp()
 	{
-		$mobile=$this->input->post('mobile');
-		$supplierid=$this->session->userdata('supplierid'); 
-		$get_supplier_mobile=$this->dashM->get_supplier_mobile_change_pass('suppliers', $mobile,$supplierid);
-		if($get_supplier_mobile!='')
-		{
-		$otp=rand(100000, 999999);
+		// $otp=2548;
+		$otp=rand(1000, 9999);
 		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
 		     </script>';
 			 echo ' <script>window.location.href="changepassword";</script>';
 		// redirect(base_url('supplier/dashboard/changepassword'));
 		// alert('your otp is 4563');
-		}
-		if($get_supplier_mobile=='')
-		{
-			echo '<script type="text/javascript" >alert("Not registerd mobile number" );
-		     </script>';
-			 echo ' <script>window.location.href="changepassword";</script>';
-		}
 	}
 	public function send_otp_supplier()
 	{
@@ -623,8 +612,8 @@ class Supplier_dashboard extends SP_Controller
 		}
 		if($get_supplier_mobile!='')
 		{
-		$otp=rand(100000, 999999);
-	    $this->session->set_flashdata('omsg',"your otp is $otp" );
+		$otp=rand(1000, 9999);
+	    $this->session->set_flashdata('msg',"your otp is $otp" );
 		redirect(base_url('Change_forgot_password'));
 		}
 

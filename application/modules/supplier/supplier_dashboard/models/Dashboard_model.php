@@ -54,13 +54,6 @@ class Dashboard_model extends CI_Model
     $this->db->where('mobile', $mobile);
     return $this->db->get($table)->row();
   }
-  public function  get_supplier_mobile_change_pass($table,$mobile,$supplierid)
-  {
-    $this->db->select('*');
-    $this->db->where('mobile', $mobile);
-    $this->db->where('uid', $supplierid);
-    return $this->db->get($table)->row();
-  }
 
   public function getCompanyProfile($uid)
   {
