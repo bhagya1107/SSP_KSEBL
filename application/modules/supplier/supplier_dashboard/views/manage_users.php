@@ -89,14 +89,14 @@
 
                    <div class="form-group">
                      <label>Name</label>
-                     <input type="text" id="name" name="name"  value="" class="form-control" required="" />
+                     <input type="text" id="name" name="name"  value="" class="form-control" required="" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"  />
                    </div>
 
                    
 
                    <div class="form-group">
                      <label>Email</label>
-                     <input type="text" id="email" name="email" class="form-control" required="" />
+                     <input type="email" id="email" name="email" class="form-control" required="" />
                    </div>
                    
                    <div class="form-group">
@@ -106,7 +106,7 @@
 
                    <div class="form-group">
                      <label>password</label>
-                     <input type="hidden" id="id" name="id" minlength="3" class="form-control" />
+                     <input type="hidden" id="id" name="id" minlength="8" class="form-control" required="" />
                     
                      <input type="password" id="password" class="icon" style="width: 85%;"  name="password" minlength="3" class="form-control "  onclick="viewpassword()" required="" />
                      <a id="resend_pass" class="" title="Resend password"  style="width: 10%; float:right;margin-top: 3px; display :none;" >

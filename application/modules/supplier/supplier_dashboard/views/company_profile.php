@@ -121,10 +121,11 @@
 								</tr>
 								<tr>
 									<td style="text-align:right">Incorporation Date </td>
-                  <?php $dateformates=$getpreferencedate->value; 
-                     $dates= date('Y-m-d');
-                  ?>
+                 <?php if($getcompanydetails->incorporationdate=='') {?>
+                  <td><input type="text"  class="form-control " name="date" id="date" readonly />	</td>
+                  <?php } else {?>
 									<td><input type="text"  class="form-control " name="date" id="date" readonly value="<?php echo  date_formate($getcompanydetails->incorporationdate); ?>"/>	</td>
+                  <?php } ?>
 									<td></td> 
 								</tr>
 								

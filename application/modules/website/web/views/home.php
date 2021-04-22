@@ -47,8 +47,8 @@
 							<div class="newreg triggerbtnx" onclick="window.location='<?=base_url('register')?>'">
 								<span>
 
-									<i class="fas fa-sign-in-alt"></i>
-									SUPPLIER SIGNUP</span>
+									<i class="fas fa-sign-in-alt" title="Supplier/Contractor signup"></i>
+									 SIGNUP</span>
 							</div>
 							<div class="newreg  triggerbtn  emp-btn">
 								<span>

@@ -112,11 +112,11 @@
           
       <div class="individualStatus " >
               <h4 class="section-heading"> NAME (AS PER THE PAN CARD)</h4> 
-              <p><input type="text" class="form-control" placeholder="Enter Name" name="individualname" id=""></p>
+              <p><input type="text" class="form-control" placeholder="Enter Name" name="individualname" id="" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" ></p>
             </div>
             <div class="companyStatus hidedata">
               <h4 class="section-heading">COMPANY NAME </h4> 
-              <p><input type="text" class="form-control" placeholder="Enter company" name="companyname" id=""></p>
+              <p><input type="text" class="form-control" placeholder="Enter company" name="companyname" id="" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" ></p>
             </div>
   </div>
       
@@ -141,7 +141,7 @@
               <h4 class="section-heading">Primary contact</h4>
               <div class="form-group">
                 <label for="firstName" class="sr-only">Full Name</label>
-                <input type="text" name="firstname" required id="fullName" class="form-control" placeholder="Full Name" >
+                <input type="text"  name="firstname" required id="fullName" class="form-control" placeholder="Full Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" >
               </div>
              <!-- <div class="form-group">
                 <label for="lastName" class="sr-only">Last Name</label>

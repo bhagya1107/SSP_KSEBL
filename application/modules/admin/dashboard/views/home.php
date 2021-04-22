@@ -7,13 +7,13 @@
                     <div class="row">
 
 
-											<div class="col-xl-3 col-md-6">
+											<div class="col-xl-3 col-md-6" >
 													<div class="card bg-c-green text-white">
 															<div class="card-block">
 																	<div class="row align-items-center">
 																			<div class="col">
 																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
-																					<p class="m-b-5">Total Suppliers</p> 
+																					<p class="m-b-6">Approved Supplier</p> 
 																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
 																			</div>
 																			<div class="col col-auto text-right">

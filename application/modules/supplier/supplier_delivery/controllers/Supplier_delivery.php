@@ -49,12 +49,27 @@ public function __construct()
   
    public function delivery_module($tab=1)
 	{
+    $this->load->model('Getmenus','GETM');
+    $user_type=$this->session->userdata('user_type');
+    $uid=$this->session->userdata('supplierid');
+    $getcompanypermissiondetails=$this->GETM->getCompanyPermission2($uid,$user_type);
+    
+       if($getcompanypermissiondetails->delivery=='1' and $this->session->userdata('active_status')=='1')
+     {
     $data['showdashbaord'] =true;
     $data['page'] = 'supplier_dashboard';
     $data['title'] = 'Delivery details';
     $data['indexurl'] = base_url()."supplier/dashboard";
     // $this->template->make('supplier_delivery/home',$data,'supplier_portal');
     $this->template->make('supplier_delivery/calendar',$data,'supplier_portal');
+  }
+  else
+  {
+    $acl_error_message=acl_error_message('Delivery details');
+    $this->session->set_flashdata('msg',$acl_error_message);
+    redirect(base_url('supplier/dashboard'));    
+  } //neethu end
+
 
   }
 }

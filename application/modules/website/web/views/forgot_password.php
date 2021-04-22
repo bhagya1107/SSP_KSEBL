@@ -43,7 +43,7 @@
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-earphone color-blue"></i></span>
-                          <input id="mobile" name="mobile" placeholder="Registered Mobile No" class="form-control"  type="tel">
+                          <input id="mobile" pattern="[6789][0-9]{9}" name="mobile" placeholder="Registered Mobile No" class="form-control"  type="tel">
                         </div>
                       </div>
                       <div class="form-group">

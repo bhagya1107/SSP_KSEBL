@@ -501,7 +501,7 @@ hr{
                 <a style="<?php if($getcompanypermissiondetails->purchase_order=='0' OR $user_type=="1" OR $user_type=="3") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>" class=""><b>WORK ORDER</b></a><hr>
                 <a style="<?php if($getcompanypermissiondetails->purchase_order=='0' OR $user_type=="1"  OR $user_type=="3") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>">My Work Order<i></i></a>
                 <a style="<?php if($getcompanypermissiondetails->delivery=='0') echo "display: none;" ?>"  href="<?=supplier_url('delivery')?>" class=""><b>DELIVERY</b></a><hr>
-                     <a style="<?php if($getcompanypermissiondetails->delivery=='0') echo "display: none;" ?>"  href="<?=supplier_url('delivery/delivery_module')?>">View Calender<i></i></a>
+                 <a style="<?php if($getcompanypermissiondetails->delivery=='0') echo "display: none;" ?>"  href="<?=supplier_url('delivery/delivery_module')?>">View Calender<i></i></a>
 						<!-- <a href="#">Dispatch</a>
                         <a href="#">Check Points<i></i></a>
                         <a href="#">Shipment<i></i></a> -->
