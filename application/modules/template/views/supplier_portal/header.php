@@ -382,7 +382,7 @@
 
 		setInterval(() => {	
   fetch_count();
-    }, 1000);
+    }, 50000);
 
 	function fetch_count(){
     $.ajax({

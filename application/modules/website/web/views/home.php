@@ -43,9 +43,9 @@
 		<div class="col-md-5 col-sm-12">
 			<div class="container-fluid icon-sidebar-nav h-100 bg">
 
-						<div class="ttm">
-							<div class="newreg triggerbtnx" onclick="window.location='<?=base_url('register')?>'">
-								<span>
+						<div class="ttm" >
+							<div class="newreg triggerbtnx" onclick="window.location='<?=base_url('register')?>'" title="Supplier/Contractor signup">
+								<span title="Supplier/Contractor signup">
 
 									<i class="fas fa-sign-in-alt" title="Supplier/Contractor signup"></i>
 									 SIGNUP</span>
@@ -85,6 +85,8 @@
 													<label class="custom-control-label" for="customCheck2" style="color: black;">Remember me for 30 days.</label>
 												</div></div>
 												<div class="clearfix"></div>
+												<button type="submit" id="" onclick="" class="btn btn-pill btn-accent d-table mx-auto">Access Account</button>
+											
 												<div class="form-group mb-3 d-table mx-auto dflex">
 												<div class="auth-form__meta d-flex mt-4" style="color:black">
 										<a href="<?=base_url('forgot_pasword')?>" style="color:black"><br><b>Forgot your password?</b></a>
@@ -101,7 +103,6 @@
 													?>
 												</span>
 
-												<button type="submit" id="" onclick="" class="btn btn-pill btn-accent d-table mx-auto">Access Account</button>
 												</form>
 											<!-- </div> -->
 									
@@ -167,6 +168,8 @@
 													<label class="custom-control-label" for="customCheck2" style="color: black;">Remember me for 30 days.</label>
 												</div></div>
 												<div class="clearfix"></div>
+												<button type="submit" class="btn btn-pill btn-accent d-table mx-auto">Access Account</button>
+												
 												<div class="form-group mb-3 d-table mx-auto dflex">
 												<div class="auth-form__meta d-flex mt-4" style="color:black">
 										<a href="<?=base_url('forgot_password')?>" style="color:black"><br><b>Forgot your password?</b></a>
@@ -180,8 +183,7 @@
 													?>
 												</span>
 
-												<button type="submit" class="btn btn-pill btn-accent d-table mx-auto">Access Account</button>
-												
+											
 											</div>
 
 											
