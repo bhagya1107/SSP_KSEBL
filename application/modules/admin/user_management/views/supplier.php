@@ -34,8 +34,10 @@
                        <label class="col-sm-5 col-lg-3">Status</label>
                        <div class="col-sm-7 col-lg-9" id="div1">
                         <select class="select2-placeholer form-control" data-placeholder="Select a status" name="status_type" id="status_type"  >
-                          <option value="0"   >To Approve</option>
-                          <option value="1"  > Approved</option>
+                       
+                          <option value="0"   <?php if ($getuserdetails1->active_status == "0") { echo ' selected="selected"'; } ?> >To Approve</option>
+                          <option value="1"  <?php if ($getuserdetails1->active_status == "1") { echo ' selected="selected"'; } ?> > Approved</option>
+                     
                         </select>
                       </div>
                     </div>
@@ -174,7 +176,16 @@
                          echo "Supplier"; 
                        } ?></td>
                        <td><?php echo $value->source;?></td>
-                       <td><a >Not Active</a></td>
+                       <td>
+                          <?php if($value->active_status=="1") 
+                          { echo "Active";
+                        }
+                        elseif($value->active_status=="0"){
+                          echo "Not Active";
+ 
+                        } 
+                        ?></td>
+                       <!-- <td><a >Not Active</a></td> -->
                        <td>
                         <a href="<?= admin_url('user_management/supplier_profile/'.$value->uid) ?>"><input type="button" class="btn  btn-sm btn-out-dashed btn-success btn-square" style="background-color: #0e214c"value="VIEW PROFILE"></a>
                       </td>
@@ -285,12 +296,12 @@ $( document ).ajaxStop(function() {
 
        //alert
       $(document).on("click", "a.deleteText", function() {
-    if (confirm('Are you sure ?')) {
-        $(this).prev('span.text').remove();
+      if (confirm('Are you sure ?')) {
+      $(this).prev('span.text').remove();
     }
 });
       //alert ent
-      table = $('#dt-ajax-object').DataTable({});
+      table = $('#dt-ajax-object').DataTable({}); 
       $(document).ready(function(){
 
        $("#status_type").on('change',function() 

@@ -9,6 +9,27 @@ class User_management_model extends CI_Model
    $this->db->order_by('uid','DESC');
    return $this->db->get("suppliers")->result();
  }
+ public function getUserProfile1() 
+  {
+   $this->db->select('*');
+   $this->db->where('active_status',0);
+   $this->db->order_by('uid','DESC');
+   return $this->db->get("suppliers")->row();
+ }
+ public function getUserProfile_approved_suppliers() 
+ {
+  $this->db->select('*');
+  $this->db->where('active_status',1);
+  $this->db->order_by('uid','DESC');
+  return $this->db->get("suppliers")->result();
+}
+public function getUserProfile_approved_suppliers1() 
+ {
+  $this->db->select('*');
+  $this->db->where('active_status',1);
+  $this->db->order_by('uid','DESC');
+  return $this->db->get("suppliers")->row();
+}
  public function resend_password($id,$pass) 
  {
    $this->db->where('uid',$id); 

@@ -15,6 +15,15 @@ class User_management extends AD_Controller {
     $data['page'] = 'Supplier'; 
     $data['title'] = 'Supplier';
     $data['getuserdetails']=$this->userM->getUserProfile();
+    $data['getuserdetails1']=$this->userM->getUserProfile1();
+    $this->template->make('user_management/supplier',$data); 
+  }
+  public function approved_suppliers()
+  {
+    $data['page'] = 'Supplier'; 
+    $data['title'] = 'Supplier';
+    $data['getuserdetails']=$this->userM->getUserProfile_approved_suppliers();
+    $data['getuserdetails1']=$this->userM->getUserProfile_approved_suppliers1();
     $this->template->make('user_management/supplier',$data); 
   }
   public function supervisors()

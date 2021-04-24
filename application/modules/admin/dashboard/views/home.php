@@ -9,18 +9,18 @@
 
 											<div class="col-xl-3 col-md-6" >
 													<div class="card bg-c-green text-white" style="height :125px;">
-															<div class="card-block">
+                                                    <a href="<?php echo base_url('webuser/user_management/approved_suppliers');?>" style="color: white;">	<div class="card-block">
 																	<div class="row align-items-center">
 																			<div class="col">
 																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
-																					<p class="m-b-6">Approved Suppliers</p> 
+																				<p class="m-b-6">Approved Suppliers</p>
 																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
 																			</div>
 																			<div class="col col-auto text-right">
 																					<i class="feather icon-user f-50 text-c-green"></i>
 																			</div>
 																	</div>
-															</div>
+															</div></a>
 													</div>
 											</div>
 
