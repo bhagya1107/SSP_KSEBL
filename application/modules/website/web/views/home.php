@@ -44,12 +44,12 @@
 			<div class="container-fluid icon-sidebar-nav h-100 bg">
 
 						<div class="ttm" >
-							<div class="newreg triggerbtnx" onclick="window.location='<?=base_url('register')?>'" title="Supplier/Contractor signup">
+							<!-- <div class="newreg triggerbtnx" onclick="window.location='<?=base_url('register')?>'" title="Supplier/Contractor signup">
 								<span title="Supplier/Contractor signup">
 
 									<i class="fas fa-sign-in-alt" title="Supplier/Contractor signup"></i>
 									 SIGNUP</span>
-							</div>
+							</div> -->
 							<div class="newreg  triggerbtn  emp-btn">
 								<span>
 
@@ -89,6 +89,7 @@
 											
 												<div class="form-group mb-3 d-table mx-auto dflex">
 												<div class="auth-form__meta d-flex mt-4" style="color:black">
+												
 										<a href="<?=base_url('forgot_pasword')?>" style="color:black"><br><b>Forgot your password?</b></a>
 									</div></div>
 
@@ -169,9 +170,22 @@
 												</div></div>
 												<div class="clearfix"></div>
 												<button type="submit" class="btn btn-pill btn-accent d-table mx-auto">Access Account</button>
+										
+
+										
+												<div class="newreg " onclick="window.location='<?=base_url('register')?>'" title="Supplier/Contractor signup">
+												<span title="Supplier/Contractor signup">
+
+			
+												 Signup</span>
+												</div>  
+
+
 												
 												<div class="form-group mb-3 d-table mx-auto dflex">
 												<div class="auth-form__meta d-flex mt-4" style="color:black">
+												
+												
 										<a href="<?=base_url('forgot_password')?>" style="color:black"><br><b>Forgot your password?</b></a>
 									</div></div>
 
