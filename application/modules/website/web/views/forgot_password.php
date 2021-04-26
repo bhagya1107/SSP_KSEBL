@@ -4,6 +4,21 @@
 <!------ Include the above in your HEAD tag ---------->
 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ <!-- //header  -->
+ <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="<?=base_url('assets/public/register')?>/css/bd-wizard.css">
+<!-- header link -->
+ <nav class="navbar navbar-expand-sm navbar-light bg-white">
+      <div class="container">
+      <a class="navbar-brand" href="#"><img src="<?=base_url('assets/logo.png')?>" alt="logo"></a>
+        <a class="navbar-brand" href="<?=base_url('');?>" style="margin-left: 80%;color:black"><b>Home</b></a>
+       
+      </div>
+    </nav>
+
+
  <div class="form-gap"></div>
 <div class="container">
 	<div class="row">
@@ -12,24 +27,24 @@
               <div class="panel-body">
                 <div class="text-center">
                   <h3><i class="fa fa-lock fa-4x"></i></h3>
-                  <?php 
-                            $msg=$this->session->flashdata('msg'); 
-                            if($msg)
-                            {
-                            ?>
-                            
-                            <div class="alert alert-danger" id="mydivss">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                                <?php
-                            echo $msg;
-                                ?> 
-                            </div>
-                            
-                            <?php 
-                            }
-                            ?>
+      
+                  <?php
+                  $msg = $this->session->flashdata('msg');
+                  if ($msg) {
+                  ?>
+
+        <div class="alert alert-danger">
+          <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"> -->
+            <!-- <span aria-hidden="true">&times;</span> -->
+          <!-- </button> -->
+          <?php
+          echo $msg;
+          ?>
+        </div>
+
+      <?php
+      }
+      ?>
                   <h2 class="text-center">Forgot Password?</h2>
                   <p>You can reset your password here.</p>
                   <p>Enter your Registered Mobile No</p>
@@ -43,7 +58,7 @@
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-earphone color-blue"></i></span>
-                          <input id="mobile" pattern="[6789][0-9]{9}" name="mobile" placeholder="Registered Mobile No" class="form-control"  type="tel">
+                          <input id="mobile" pattern="[6789][0-9]{9}" name="mobile" placeholder="Registered Mobile No" class="form-control"  type="tel" required="">
                         </div>
                       </div>
                       <div class="form-group">

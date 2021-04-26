@@ -3,7 +3,23 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+ 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ 
+  <!-- //header  -->
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="<?=base_url('assets/public/register')?>/css/bd-wizard.css">
+<!-- header link -->
+ <nav class="navbar navbar-expand-sm navbar-light bg-white">
+      <div class="container">
+      <a class="navbar-brand" href="#"><img src="<?=base_url('assets/logo.png')?>" alt="logo"></a>
+        <a class="navbar-brand" href="<?=base_url('');?>" style="margin-left: 80%;color:black"><b>Home</b></a>
+       
+      </div>
+    </nav>
+
  <div class="form-gap"></div>
 <div class="container">
 	<div class="row">

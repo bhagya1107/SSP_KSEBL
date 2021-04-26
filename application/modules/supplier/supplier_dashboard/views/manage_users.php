@@ -101,7 +101,7 @@
                    
                    <div class="form-group">
                      <label>Mobile Number (Username)</label>
-                     <input type="tel" id="mobilenumber" name="mobilenumber"  pattern="[6789][0-9]{9}" class="form-control" required="" />
+                     <input type="tel" id="mobilenumber" name="mobilenumber"  pattern="[6789][0-9]{9}" class="form-control" required="" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
                    </div>
 
                    <div class="form-group">

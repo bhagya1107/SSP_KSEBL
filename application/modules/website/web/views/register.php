@@ -149,7 +149,7 @@
               </div>-->
               <div class="form-group">
                 <label for="phoneNumber" class="sr-only">Mobile Number</label>
-                <input type="text" name="phonenumber" required id="phoneNumber" class="form-control" placeholder="Mobile Number" pattern="[6789][0-9]{9}">
+                <input type="text" name="phonenumber" required id="phoneNumber" class="form-control" placeholder="Mobile Number" pattern="[6789][0-9]{9}"  onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
               </div> 
               <div class="form-group">
                 <label for="emailAddress" class="sr-only">Email Address</label>
