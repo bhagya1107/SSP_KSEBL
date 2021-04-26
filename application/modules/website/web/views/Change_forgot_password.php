@@ -37,9 +37,9 @@
                             ?>
                             
                             <div class="alert alert-danger" id="mydivss">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                                </button>
+                                </button> -->
                                 <?php
                             echo $msg;
                                 ?> 
@@ -55,9 +55,9 @@
                             ?>
                             
                             <div class="alert alert-success" id="mydivss">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                                </button>
+                                </button> -->
                                 <?php
                             echo $msg;
                                 ?> 
@@ -91,7 +91,7 @@
                         
                       </div>
                       <div class="form-group">
-                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Submit" type="submit">
+                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Submit" type="submit" style="background-color :#272360;">
                       </div>
                       
                       <input type="hidden" class="hide" name="token" id="token" value=""> 
