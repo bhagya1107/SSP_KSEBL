@@ -97,7 +97,7 @@
 									<td><input type="text" id="gstin" name="gstin" class="form-control " readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
 									<td><label  class="choose-file hide " id="a">pdf up to 10mb</label><input id="file" type="file"  name="file2" class="form-control showprofile choose-file hide"  value="doc.img"/>
 											 <?php if($getcompanydetails->gst_tinfile=='')
-                                                                 {?>
+                                                                 {?> 
                                                                  <p>No GST/TIN Certificate</p>
                                                                <?php }
                                                                else {?>

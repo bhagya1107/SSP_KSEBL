@@ -946,7 +946,7 @@ class Supplier_dashboard extends SP_Controller
 		$data['email'] = $this->input->post('email');
 		$data['password'] = $this->input->post('password');
 		$data['usertype'] = $this->input->post('usertype');
-		$data['supplierid'] = $this->session->userdata('uid');
+		$data['supplierid'] = $this->session->userdata('uid'); 
 
 		$id = $this->input->post('id');
 		$data['isdeleted'] = false;
