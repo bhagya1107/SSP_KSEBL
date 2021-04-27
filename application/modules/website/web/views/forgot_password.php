@@ -27,13 +27,19 @@
               <div class="panel-body">
                 <div class="text-center">
                   <h3><i class="fa fa-lock fa-4x"></i></h3>
-      
+                  <script>
+
+setTimeout(function() {
+    $('#mydivss').hide('fast');
+}, 7000);
+
+</script>
                   <?php
                   $msg = $this->session->flashdata('msg');
                   if ($msg) {
                   ?>
 
-        <div class="alert alert-danger">
+        <div class="alert alert-danger" id="mydivss">
           <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"> -->
             <!-- <span aria-hidden="true">&times;</span> -->
           <!-- </button> -->
@@ -45,7 +51,7 @@
       <?php
       }
       ?>
-                  <h2 class="text-center">Forgot Password?</h2>
+                  <h2 class="text-center">Forgot Password?</h2> 
                   <p>You can reset your password here.</p>
                   <p>Enter your Registered Mobile No</p>
                   <div class="panel-body">

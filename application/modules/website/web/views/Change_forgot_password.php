@@ -30,6 +30,14 @@
                   <!-- <h3><i class="fa fa-lock fa-4x"></i></h3> -->
                   <h2 class="text-center">Forgot Password?<?php $supplier_mobile=$this->session->userdata('supplier_mobile');
                 ?></h2>
+                <script>
+
+setTimeout(function() {
+    $('#mydivss').hide('fast');
+}, 10000);
+
+</script>
+
                   <?php 
                             $msg=$this->session->flashdata('omsg'); 
                             if($msg)
@@ -54,7 +62,7 @@
                             {
                             ?>
                             
-                            <div class="alert alert-success" id="mydivss">
+                            <div class="alert alert-success">
                                 <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button> -->
@@ -78,15 +86,15 @@
   
                       <div class="form-group">
                         <div class="input-group">
-                          <span class="input-group-addon"><i class=" color-blue"></i></span>
-                          <input  name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"   id="Password" title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="New Password" class="form-control"  type="text">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                          <input  name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"   id="Password" title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="New Password" class="form-control"  type="password">
                       </div>
                         
-                      </div>
+                      </div> 
                       <div class="form-group">
                         <div class="input-group">
-                          <span class="input-group-addon"><i class=" color-blue"></i></span>
-                          <input id="confirm_pass" name="confirm_pass" placeholder="Confirm password" class="form-control"  type="text">
+                          <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                          <input id="confirm_pass" name="confirm_pass" placeholder="Confirm password" class="form-control"  type="password">
                       </div>
                         
                       </div>

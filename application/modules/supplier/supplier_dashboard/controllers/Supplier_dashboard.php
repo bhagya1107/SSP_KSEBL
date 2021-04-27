@@ -582,31 +582,45 @@ class Supplier_dashboard extends SP_Controller
 	}
 	public function changepassword()
 	{
+		// $session_mobile=$this->session->userdata('supplier_mobile');
+		if (
+		$this->session->userdata('supplier_mobile') != '') {
 		$data['page'] = 'Change Password';
 		$data['mainpage'] = '';
 		$data['page_title'] = 'Change Password';
 		$data['title'] = 'Change Password';
 		$this->template->make('supplier_dashboard/change_password', $data, 'supplier_portal');
+			}
+			else{
+				redirect(base_url('supplier/dashboard/forgotpassword'));
+			}
 	}
 	
 	public function send_otp()
 	{
 		$mobile=$this->input->post('mobile');
-		$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers', $mobile);
+		$uid=$this->session->userdata('supplierid');
+		$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers',$mobile,$uid);
 		if($get_supplier_mobile!='')
 		{
+		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
 		$otp=rand(100000, 999999);
-		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
-		     </script>';
-		echo ' <script>window.location.href="changepassword";</script>';
-		// redirect(base_url('supplier/dashboard/changepassword'));
-		// alert('your otp is 4563');
+		// echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
+		//      </script>';
+		// echo ' <script>window.location.href="changepassword";</script>';
+		$this->session->set_flashdata('msg',"your otp is $otp" );
+		redirect(base_url('supplier/dashboard/changepassword'));
+	
 		}
 		if($get_supplier_mobile=='')
 		{
-			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
-		     </script>';
-			 echo ' <script>window.location.href="forgotpassword";</script>';
+			// echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+		    //  </script>';
+			//  echo ' <script>window.location.href="forgotpassword";</script>';
+
+			$this->session->set_flashdata('msg',"Not registerd mobile number" );
+			redirect(base_url('supplier/dashboard/forgotpassword'));
+	
 	
 		}
 	}
@@ -632,6 +646,8 @@ class Supplier_dashboard extends SP_Controller
 	}
 	public function update_supplier_password()
 	{
+		
+
 		$confirm_pass=$this->input->post('confirm_pass');
 		$pass=$this->input->post('pass');
 		$supplier_mobile=$this->session->userdata('supplier_mobile');
@@ -645,43 +661,39 @@ class Supplier_dashboard extends SP_Controller
 		}
 		else{
 		
-			$this->session->set_flashdata('msg','Password mismatch'); 
+			$this->session->set_flashdata('omsg','Password mismatch'); 
 		    redirect(base_url('Change_forgot_password'));
 		
 }
 	}
 	public function change_pswd()
 	{
-			// $old_pass=$this->input->post('old_pass');
+			
 			$new_pass=$this->input->post('new_pass');
 			$confirm_pass=$this->input->post('confirm_pass');
 			$supplierid=$this->session->userdata('supplierid');
 			$user_type=$this->session->userdata('user_type');
-			// $que=$this->db->query("select * from admin_login where adminloginid='$session_id'");
-			// $row=$que->row();
-			//$pass=$row;
-			//print_r($row->password);exit;
-			// if(($old_pass==$row->password) && ($confirm_pass==$new_pass))
+		
 			if ($confirm_pass==$new_pass)
 				{
 					$where = array('uid' => $supplierid);
 					$data = array('password' => $confirm_pass );
 					$result = $this->dashM->update('suppliers', $data, $where);
 			
-					echo '<script type="text/javascript" >alert("Password changed successfully" );
-					</script>';
-					echo ' <script>window.location.href="changepassword";</script>';
+					// echo '<script type="text/javascript" >alert("Password changed successfully" );
+					// </script>';
+					// echo ' <script>window.location.href="changepassword";</script>';
 			   
-					// $this->session->set_flashdata('msg','Password changed successfully !"');
-					// redirect(base_url('supplier/dashboard/changepassword'));
+					$this->session->set_flashdata('omsg','Password changed successfully !"');
+					redirect(base_url('supplier/dashboard/forgotpassword'));
 				}
 			    else{
-					echo '<script type="text/javascript" >alert("Password mismatch" );
-					</script>';
-					echo ' <script>window.location.href="changepassword";</script>';
+					// echo '<script type="text/javascript" >alert("Password mismatch" );
+					// </script>';
+					// echo ' <script>window.location.href="changepassword";</script>';
 			   
-					// $this->session->set_flashdata('msg','invalid data'); 
-					// redirect(base_url('supplier/dashboard/changepassword'));
+					$this->session->set_flashdata('omsg','Password mismatch'); 
+					redirect(base_url('supplier/dashboard/changepassword'));
 				
 		}
 	

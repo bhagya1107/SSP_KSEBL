@@ -48,10 +48,11 @@ class Dashboard_model extends CI_Model
     $this->db->where('isdeleted', false);
     return $this->db->get("suppliermaterials")->result();
   }
-  public function get_supplier_mobile($table,$mobile)
+  public function get_supplier_mobile($table,$mobile,$uid)
   {
     $this->db->select('*');
     $this->db->where('mobile', $mobile);
+    $this->db->where('uid', $uid);
     return $this->db->get($table)->row();
   }
   // public function get_supplier_mobile($table,$mobile)

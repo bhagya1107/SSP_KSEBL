@@ -127,14 +127,16 @@
                                    
                                 <form method="post" id="p" enctype="multipart/form-data"  action="<?php echo base_url('supplier/dashboard/change_pswd')?>" id="frm" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
-                                
+                             
+                                    <div class="form-group form-primary text-center" id="email_block"   >
+                                       
                                 <?php 
                             $msg=$this->session->flashdata('msg'); 
                             if($msg)
                             {
                             ?>
                             
-                            <div class="alert alert-success" id="mydivss">
+                            <div class="alert alert-success" id="mydivss" style="width: 60%;margin-left:20%;">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
@@ -146,15 +148,32 @@
                             <?php 
                             }
                             ?>
-                                    <div class="form-group form-primary text-center" id="email_block"   >
+                               <?php 
+                            $msg=$this->session->flashdata('omsg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-danger" id="mydivss" style="width: 60%;margin-left:20%;">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                <?php
+                            echo $msg;
+                                ?> 
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
                                       <label >New Password</label>
-                                        <input type="tel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" name="new_pass"  id="Password" title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" id="new_pass" class="form-control" required="" placeholder=" New password" autocomplete="off" style="width: 60%;">
+                                        <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" name="new_pass"  id="Password" title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" id="new_pass" class="form-control" required="" placeholder=" New password" autocomplete="off" style="width: 60%;">
                                         <span id="pwderror" style="color:red;font-size:small"></span>  
                                         <!-- <span class="form-bar"></span> -->
                                     </div>
                                     <div class="form-group form-primary text-center" id="email_block"   >
                                       <label >Confirm Password</label>
-                                        <input type="tel" name="confirm_pass" id="confirm_pass" class="form-control" required="" placeholder="Confirm password" autocomplete="off" style="width: 60%;">
+                                        <input type="password" name="confirm_pass" id="confirm_pass" class="form-control" required="" placeholder="Confirm password" autocomplete="off" style="width: 60%;">
                                         
                                         <span class="form-bar"></span>
                                     </div>
@@ -163,7 +182,7 @@
                                     <div class="row m-t-10 text-center">
                                    <div class="col-md-4 text-center " id="gtop" style="margin-left:33%" >
 										
-                                   <input type="submit" class="btn btn-primary submit" onclick="validateAndSend()" value="Save" >
+                                   <input type="submit" class="btn btn-primary submit" onclick="validateAndSend()" value="Submit" >
 
                                             <!-- <button type="submit" name="submit" id="generateotp" onclick="validateAndSend()" class="btn btn-primary btn-md  waves-effect waves-light text-center">SAVE</button><span style= "color:green;" id="paswordmess" class="hide">OTP sent to your registered mobile number</span> -->
                                     </div>

@@ -127,6 +127,49 @@
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                               
                                     <div class="form-group form-primary text-center" id="email_block"   >
+                                    <script>
+
+                                setTimeout(function() {
+                                    $('#mydivss').hide('fast');
+                                }, 7000);
+
+                                </script>  
+                                <?php 
+                            $msg=$this->session->flashdata('msg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-danger" id="mydivss" style="width: 60%;margin-left:20%;">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                                <?php
+                            echo $msg;
+                                ?> 
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
+                            <?php 
+                            $msg=$this->session->flashdata('omsg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-success" id="mydivss" style="width: 60%;margin-left:20%;">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                                <?php
+                            echo $msg;
+                                ?> 
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
                                       <label >Enter your Registered Mobile No</label>
                                         <input type="tel" name="mobile" id="mobile"  pattern="[6789][0-9]{9}" class="form-control" required="" placeholder=" registered Mobile No" autocomplete="off" style="width: 60%;">
                                         
