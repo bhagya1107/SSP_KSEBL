@@ -628,7 +628,7 @@ class Supplier_dashboard extends SP_Controller
 	{
 		$mobile=$this->input->post('mobile');
 		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-		$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers', $mobile);
+		$get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
 		
 		if($get_supplier_mobile!='')
 		{
