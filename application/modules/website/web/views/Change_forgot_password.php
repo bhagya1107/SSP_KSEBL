@@ -88,14 +88,14 @@ setTimeout(function() {
                       <div class="form-group">
                         <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                          <input  name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"   id="Password" title="Password must contain at least one number and one uppercase and lowercase letter, one special character, and at least 8 or more characters" placeholder="New Password" class="form-control"  type="password" required="">
+                          <input  name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"   id="txtPassword" title="Password must contain at least one number and one uppercase and lowercase letter, one special character, and at least 8 or more characters" placeholder="New Password" class="form-control"  type="password" required="">
                       </div>
                         
                       </div> 
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                          <input id="confirm_pass" name="confirm_pass" placeholder="Confirm password" class="form-control"  type="password" required="">
+                          <input id="txtConfirmPassword" name="confirm_pass" placeholder="Confirm password" class="form-control"  type="password" required="">
                       </div>
                         
                       </div>
@@ -119,4 +119,20 @@ setTimeout(function() {
     padding-top: 70px;
 }
 </style>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var txtPassword = document.getElementById("txtPassword");
+        var txtConfirmPassword = document.getElementById("txtConfirmPassword");
+        txtPassword.onchange = ConfirmPassword;
+        txtConfirmPassword.onkeyup = ConfirmPassword;
+        function ConfirmPassword() {
+            txtConfirmPassword.setCustomValidity("");
+            if (txtPassword.value != txtConfirmPassword.value) {
+                txtConfirmPassword.setCustomValidity("Passwords do not match.");
+            }
+        }
+    }
+</script>
+
 <?php } else {  redirect(base_url('forgot_password'));  } ?>
