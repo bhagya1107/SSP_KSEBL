@@ -94,10 +94,17 @@
 								
 								<tr>
 									<td style="text-align:right">GST/TIN	</td>
+                  <?php if($getcompanydetails->gst!='')
+                                                                 {?>
 									<td><input type="text" id="gstin" name="gstin" class="form-control " readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
+                  <?php } ?>
+                  <?php if($getcompanydetails->gst=='')
+                                                                 {?>
+									<td><input type="text" id="gstin" name="gstin" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
+                  <?php } ?>
 									<td><label  class="choose-file hide " id="a">pdf up to 10mb</label><input id="file" type="file"  name="file2" class="form-control showprofile choose-file hide"  value="doc.img"/>
 											 <?php if($getcompanydetails->gst_tinfile=='')
-                                                                 {?> 
+                                                                 {?>
                                                                  <p>No GST/TIN Certificate</p>
                                                                <?php }
                                                                else {?>
@@ -106,7 +113,14 @@
 								</tr>
 								<tr>
 									<td style="text-align:right">Incorporation No </td>
+                  <?php if($getcompanydetails->incorporationno!='')
+                                                                 {?>
 									<td><input type="text"  class="form-control "  id="incorporation" name="incorporation" readonly value="<?php echo $getcompanydetails->incorporationno;?>"/>	</td>
+                                                                  <?php } ?>
+                  <?php if($getcompanydetails->incorporationno=='')
+                                                                 {?>
+									<td><input type="text"  class="form-control showprofile"  id="incorporation" name="incorporation" readonly value="<?php echo $getcompanydetails->incorporationno;?>"/>	</td>
+                                                                  <?php } ?>
 									<td><label  class="choose-file hide " id="b">pdf up to 10mb</label><input id="file0" type="file" name="file1"  class="form-control choose-file hide " value=""/>
 										<?php if($getcompanydetails->incorporationcertificate=='')
                                                                  {?>
@@ -121,10 +135,12 @@
 								</tr>
 								<tr>
 									<td style="text-align:right">Incorporation Date </td>
+                  <?php  if($getcompanydetails->incorporationdate!='') {
+                  ?>
+									<td><input type="text"  class="form-control " name="date" id="date" readonly value="<?php echo date_formate( $getcompanydetails->incorporationdate); ?>"/>	</td>
+                  <?php } ?>
                  <?php if($getcompanydetails->incorporationdate=='') {?>
-                  <td><input type="text"  class="form-control " name="date" id="date" readonly />	</td>
-                  <?php } else {?>
-									<td><input type="text"  class="form-control " name="date" id="date" readonly value="<?php echo  date_formate($getcompanydetails->incorporationdate); ?>"/>	</td>
+                  <td><input type="date"  class="form-control showprofile" name="date" id="date" readonly />	</td>
                   <?php } ?>
 									<td></td> 
 								</tr>
@@ -174,7 +190,7 @@
                 </div>
                 <button type="reset" onclick="myFunction1()"  class="tg-btn pull-right savebutton hide"   value="cancel" style="background-color: #ff6666!important; "  name="cancel" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
                 
-                  <button type="submit" class="tg-btn pull-right savebutton hide"   id="saveprofilefn"  style="" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Save</span></button>
+                  <button type="submit" class="tg-btn pull-right savebutton hide"   id="saveprofilefn"  style="" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="if (confirm('Make sure your details are currect.')) commentDelete(1); return false"><span>Save</span></button>
                  
                   <!-- <a href="<?php echo base_url('supplier/dashboard/profile');?>" class="tg-btn pull-center savebutton hide"   id="" style="background-color: #ff6666!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></a> -->
 							</div>

@@ -605,25 +605,58 @@ class Supplier_dashboard extends SP_Controller
 		{
 		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
 		$otp=rand(100000, 999999);
-		// echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
-		//      </script>';
-		// echo ' <script>window.location.href="changepassword";</script>';
-		$this->session->set_flashdata('msg',"your otp is $otp" );
-		redirect(base_url('supplier/dashboard/changepassword'));
+		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
+		     </script>';
+		echo ' <script>window.location.href="changepassword";</script>';
+		// $this->session->set_flashdata('msg',"your otp is $otp" );
+		// redirect(base_url('supplier/dashboard/changepassword'));
 	
 		}
 		if($get_supplier_mobile=='')
 		{
-			// echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
-		    //  </script>';
-			//  echo ' <script>window.location.href="forgotpassword";</script>';
+			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+		     </script>';
+			 echo ' <script>window.location.href="forgotpassword";</script>';
 
-			$this->session->set_flashdata('msg',"Not registerd mobile number" );
-			redirect(base_url('supplier/dashboard/forgotpassword'));
+			// $this->session->set_flashdata('msg',"Not registerd mobile number" );
+			// redirect(base_url('supplier/dashboard/forgotpassword'));
 	
 	
 		}
 	}
+	public function change_pswd()
+	{
+			
+			$new_pass=$this->input->post('new_pass');
+			$confirm_pass=$this->input->post('confirm_pass');
+			$supplierid=$this->session->userdata('supplierid');
+			$user_type=$this->session->userdata('user_type');
+		
+			if ($confirm_pass==$new_pass)
+				{
+					$where = array('uid' => $supplierid);
+					$data = array('password' => $confirm_pass );
+					$result = $this->dashM->update('suppliers', $data, $where);
+			
+					echo '<script type="text/javascript" >alert("Password changed successfully" );
+					</script>';
+					echo ' <script>window.location.href="personal_profile";</script>';
+			   
+					// $this->session->set_flashdata('omsg','Password changed successfully !"');
+					// redirect(base_url('supplier/dashboard/forgotpassword'));
+				}
+			    else{
+					echo '<script type="text/javascript" >alert("Password mismatch" );
+					</script>';
+					echo ' <script>window.location.href="changepassword";</script>';
+			   
+					// $this->session->set_flashdata('omsg','Password mismatch'); 
+					// redirect(base_url('supplier/dashboard/changepassword'));
+				
+		}
+	
+	}
+	// forgot password
 	public function send_otp_supplier()
 	{
 		$mobile=$this->input->post('mobile');
@@ -633,13 +666,34 @@ class Supplier_dashboard extends SP_Controller
 		if($get_supplier_mobile!='')
 		{
 		$otp=rand(100000, 999999);
+		$session_otp=$this->session->set_userdata('session_otp',$otp);
 	    $this->session->set_flashdata('msg',"your otp is $otp" );
-		redirect(base_url('Change_forgot_password'));
+		redirect(base_url('verify_otp'));
 		}
 		if($get_supplier_mobile=='')
 		{
 			$this->session->set_flashdata('msg',"Not registerd mobile number" );
 			redirect(base_url('forgot_password'));
+	
+		}
+
+	}
+	public function send_otp_supplier_verify()
+	{
+		$otp=$this->input->post('otp');
+		$session_otp=$this->session->userdata('session_otp');
+		// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+		// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
+		
+		if($otp==$session_otp)
+		{
+		$session_otp_change=$this->session->set_userdata('session_otp_change','100');
+		redirect(base_url('Change_forgot_password'));
+		}
+		else
+		{
+			$this->session->set_flashdata('rmsg',"Not Valid OTP" );
+			redirect(base_url('verify_otp'));
 	
 		}
 
@@ -656,8 +710,12 @@ class Supplier_dashboard extends SP_Controller
 			$where = array('mobile' => $supplier_mobile);
 			$data = array('password' => $pass );
 			$result = $this->dashM->update('suppliers', $data, $where);
+			$this->session->unset_userdata('session_otp');
+			$this->session->unset_userdata('supplier_mobile');
+			$this->session->unset_userdata('session_otp_change');
 			$this->session->set_flashdata('rmsg','Password changed successfully');
 			redirect(base_url('home'));
+			
 		}
 		else{
 		
@@ -666,38 +724,7 @@ class Supplier_dashboard extends SP_Controller
 		
 }
 	}
-	public function change_pswd()
-	{
-			
-			$new_pass=$this->input->post('new_pass');
-			$confirm_pass=$this->input->post('confirm_pass');
-			$supplierid=$this->session->userdata('supplierid');
-			$user_type=$this->session->userdata('user_type');
-		
-			if ($confirm_pass==$new_pass)
-				{
-					$where = array('uid' => $supplierid);
-					$data = array('password' => $confirm_pass );
-					$result = $this->dashM->update('suppliers', $data, $where);
-			
-					// echo '<script type="text/javascript" >alert("Password changed successfully" );
-					// </script>';
-					// echo ' <script>window.location.href="changepassword";</script>';
-			   
-					$this->session->set_flashdata('omsg','Password changed successfully !"');
-					redirect(base_url('supplier/dashboard/forgotpassword'));
-				}
-			    else{
-					// echo '<script type="text/javascript" >alert("Password mismatch" );
-					// </script>';
-					// echo ' <script>window.location.href="changepassword";</script>';
-			   
-					$this->session->set_flashdata('omsg','Password mismatch'); 
-					redirect(base_url('supplier/dashboard/changepassword'));
-				
-		}
-	
-	}
+
 
 	public function update_companyprofile()
 	{
@@ -758,6 +785,9 @@ class Supplier_dashboard extends SP_Controller
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
 				'email' => $email,
+				'gst' => $gst,
+				'incorporationno'=> $incorporationNo,
+				'incorporationdate'=>$incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'incorporationcertificate' => $file1,
@@ -782,6 +812,9 @@ class Supplier_dashboard extends SP_Controller
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
 				'email' => $email,
+				'gst' => $gst,
+				'incorporationno'=> $incorporationNo,
+				'incorporationdate'=>$incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'incorporationcertificate' => $file1,
@@ -805,6 +838,9 @@ class Supplier_dashboard extends SP_Controller
 			$data = array(
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
+				'gst' => $gst,
+				'incorporationno'=> $incorporationNo,
+				'incorporationdate'=>$incorporationdate,
 				'email' => $email,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
@@ -829,6 +865,9 @@ class Supplier_dashboard extends SP_Controller
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
 				'email' => $email,
+				'gst' => $gst,
+				'incorporationno'=> $incorporationNo,
+				'incorporationdate'=>$incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'gst_tinfile' => $file2,
@@ -853,6 +892,9 @@ class Supplier_dashboard extends SP_Controller
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
 				'email' => $email,
+				'gst' => $gst,
+				'incorporationno'=> $incorporationNo,
+				'incorporationdate'=>$incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'incorporationcertificate' => $file1
@@ -876,6 +918,9 @@ class Supplier_dashboard extends SP_Controller
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
 				'email' => $email,
+				'gst' => $gst,
+				'incorporationno'=> $incorporationNo,
+				'incorporationdate'=>$incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'gst_tinfile' => $file2
@@ -898,6 +943,9 @@ class Supplier_dashboard extends SP_Controller
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
 				'email' => $email,
+				'gst' => $gst,
+				'incorporationno'=> $incorporationNo,
+				'incorporationdate'=>$incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'authorisedpersonfile' => $file3
@@ -918,6 +966,9 @@ class Supplier_dashboard extends SP_Controller
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
 				'email' => $email,
+				'gst' => $gst,
+				'incorporationno'=> $incorporationNo,
+				'incorporationdate'=>$incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson
 			);
@@ -934,6 +985,7 @@ class Supplier_dashboard extends SP_Controller
 			redirect(base_url('supplier/dashboard/profile'));
 		}
 	}
+
 
 
 

@@ -1,3 +1,4 @@
+<?php if ($this->session->userdata('session_otp_change')!='') {?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -87,14 +88,14 @@ setTimeout(function() {
                       <div class="form-group">
                         <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                          <input  name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"   id="Password" title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="New Password" class="form-control"  type="password">
+                          <input  name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"   id="Password" title="Password must contain at least one number and one uppercase and lowercase letter, one special character, and at least 8 or more characters" placeholder="New Password" class="form-control"  type="password" required="">
                       </div>
                         
                       </div> 
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                          <input id="confirm_pass" name="confirm_pass" placeholder="Confirm password" class="form-control"  type="password">
+                          <input id="confirm_pass" name="confirm_pass" placeholder="Confirm password" class="form-control"  type="password" required="">
                       </div>
                         
                       </div>
@@ -118,3 +119,4 @@ setTimeout(function() {
     padding-top: 70px;
 }
 </style>
+<?php } else {  redirect(base_url('forgot_password'));  } ?>

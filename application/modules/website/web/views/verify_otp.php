@@ -1,3 +1,4 @@
+<?php if ($this->session->userdata('session_otp')!='') {?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -26,20 +27,20 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <div class="text-center">
-                  <h3><i class="fa fa-lock fa-4x"></i></h3>
+                  <h3><i class="fa fa-user-lock fa-4x"></i></h3>
                   <script>
 
-setTimeout(function() {
-    $('#mydivss').hide('fast');
-}, 7000);
+                    setTimeout(function() {
+                        $('#mydivss1').hide('fast');
+                    }, 7000);
 
-</script>
+                    </script>
                   <?php
                   $msg = $this->session->flashdata('msg');
                   if ($msg) {
                   ?>
 
-        <div class="alert alert-danger" id="mydivss">
+        <div class="alert alert-success" id="mydivss">
           <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"> -->
             <!-- <span aria-hidden="true">&times;</span> -->
           <!-- </button> -->
@@ -51,20 +52,38 @@ setTimeout(function() {
       <?php
       }
       ?>
-                  <h2 class="text-center">Forgot Password?</h2> 
-                  <p>You can reset your password here.</p>
-                  <p>Enter your Registered Mobile No</p>
+      
+      <?php
+                  $msg = $this->session->flashdata('rmsg');
+                  if ($msg) {
+                  ?>
+
+        <div class="alert alert-danger" id="mydivss1">
+          <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"> -->
+            <!-- <span aria-hidden="true">&times;</span> -->
+          <!-- </button> -->
+          <?php
+          echo $msg;
+          ?>
+        </div>
+
+      <?php
+      }
+      ?>
+                 
+             
+                  <p>Enter your OTP </p>
                   <div class="panel-body">
                   <?php $s=$this->session->set_userdata('supplier',8); ?>  
                     <!-- <form id="register-form" role="form" autocomplete="off" class="form" method="post"> -->
     
-                    <form method="post" action="<?php echo base_url('supplier/dashboard/send_otp_supplier')?>" >
+                    <form method="post" action="<?php echo base_url('supplier/dashboard/send_otp_supplier_verify')?>" >
                     <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
   
                       <div class="form-group">
                         <div class="input-group">
-                          <span class="input-group-addon"><i class="glyphicon glyphicon-earphone color-blue"></i></span>
-                          <input id="mobile" pattern="[6789][0-9]{9}" name="mobile" placeholder="Registered Mobile No" class="form-control"  type="tel" required="" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                          <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                          <input id="otp"  name="otp" placeholder="Enter your OTP " class="form-control"  type="text" required="" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                         </div>
                       </div>
                       <div class="form-group">
@@ -87,3 +106,4 @@ setTimeout(function() {
     padding-top: 70px;
 }
 </style>
+<?php } else { redirect(base_url('forgot_password')); } ?>
