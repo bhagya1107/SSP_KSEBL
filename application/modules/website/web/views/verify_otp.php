@@ -89,7 +89,7 @@
                       <div class="form-group">
                         <input name="submit" class="btn btn-lg btn-primary btn-block" value="Submit" type="submit" style="background-color :#272360;">
                       </div>
-                      
+                      <a href="<?php echo base_url('supplier/dashboard/resend_otp')?> ">Resend OTP</a>
                       <input type="hidden" class="hide" name="token" id="token" value=""> 
                     </form>
     

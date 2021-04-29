@@ -580,11 +580,25 @@ class Supplier_dashboard extends SP_Controller
 		$data['title'] = 'Change Password';
 		$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
 	}
+	public function verity_otp_change_password()
+	{
+		if (
+			$this->session->userdata('supplier_mobile') != '') {
+		$data['page'] = 'verity otp';
+		$data['mainpage'] = '';
+		$data['page_title'] = 'Verify otp';
+		$data['title'] = 'Verify OTP';
+		$this->template->make('supplier_dashboard/verity_otp_change_pass', $data, 'supplier_portal');
+	}
+	else{
+		redirect(base_url('supplier/dashboard/forgotpassword'));
+	}
+	}
 	public function changepassword()
 	{
-		// $session_mobile=$this->session->userdata('supplier_mobile');
+		
 		if (
-		$this->session->userdata('supplier_mobile') != '') {
+		$this->session->userdata('supplier_mobile') != '' and $this->session->userdata('session_otp') != '') {
 		$data['page'] = 'Change Password';
 		$data['mainpage'] = '';
 		$data['page_title'] = 'Change Password';
@@ -605,11 +619,12 @@ class Supplier_dashboard extends SP_Controller
 		{
 		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
 		$otp=rand(100000, 999999);
+		$session_otp=$this->session->set_userdata('session_otp',$otp);
 		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
 		     </script>';
-		echo ' <script>window.location.href="changepassword";</script>';
+		echo ' <script>window.location.href="verity_otp_change_password";</script>';
 		// $this->session->set_flashdata('msg',"your otp is $otp" );
-		// redirect(base_url('supplier/dashboard/changepassword'));
+		// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
 	
 		}
 		if($get_supplier_mobile=='')
@@ -624,6 +639,41 @@ class Supplier_dashboard extends SP_Controller
 	
 		}
 	}
+	public function verify_send_otp_change_pass()
+	{
+		$otp=$this->input->post('otp');
+		$session_otp=$this->session->userdata('session_otp');
+		// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+		// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
+		
+		if($otp==$session_otp)
+		{
+		$session_otp_change=$this->session->set_userdata('session_otp_change','100');
+		redirect(base_url('supplier/dashboard/changepassword'));  
+
+		}
+		else
+		{
+			echo '<script type="text/javascript" >alert("Not Valid OTP" );
+		     </script>';
+			echo ' <script>window.location.href="verity_otp_change_password";</script>';
+
+			// $this->session->set_flashdata('rmsg',"Not Valid OTP" );
+			// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
+	
+		}
+
+	}
+	public function resend_otp_change_pass()
+	{
+		$otp=rand(100000, 999999);
+		$session_otp=$this->session->set_userdata('session_otp',$otp);
+		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
+		     </script>';
+		echo ' <script>window.location.href="verity_otp_change_password";</script>';
+	    // $this->session->set_flashdata('msg',"your otp is $otp" );
+		// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
+	}
 	public function change_pswd()
 	{
 			
@@ -637,6 +687,9 @@ class Supplier_dashboard extends SP_Controller
 					$where = array('uid' => $supplierid);
 					$data = array('password' => $confirm_pass );
 					$result = $this->dashM->update('suppliers', $data, $where);
+					$this->session->unset_userdata('session_otp');
+					$this->session->unset_userdata('supplier_mobile');
+					$this->session->unset_userdata('session_otp_change');
 			
 					echo '<script type="text/javascript" >alert("Password changed successfully" );
 					</script>';
@@ -697,6 +750,13 @@ class Supplier_dashboard extends SP_Controller
 	
 		}
 
+	}
+	public function resend_otp()
+	{
+		$otp=rand(100000, 999999);
+		$session_otp=$this->session->set_userdata('session_otp',$otp);
+	    $this->session->set_flashdata('msg',"your otp is $otp" );
+		redirect(base_url('verify_otp'));
 	}
 	public function update_supplier_password()
 	{

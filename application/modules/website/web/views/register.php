@@ -170,7 +170,7 @@
           </section>
 
           <label for="">
-              <input type="checkbox" name="" id="agree_terms"> I agree to the  <a href="#">Terms and condition</a>
+              <input type="checkbox" name="" id="agree_terms"> I agree to the  <a target="_blank" href="terms and conditions.pdf">Terms and conditions</a>
           </label>
           <input type="submit" class="form-control submit" onclick="validateAndSend()" value="Register" disabled>
 

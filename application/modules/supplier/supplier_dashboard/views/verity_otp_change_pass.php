@@ -114,42 +114,28 @@
             <div class="row">
                 <div class="col-sm-12"><br><br>
                     <!-- Authentication card start -->
-                  
-
-                  
+                   
                             <div class="auth-box card">
                                 <div class="card-block scale-up-center"><br><br>
                                     <div class="row m-b-20">
-                                        <!-- <div class="col-md-12">
-                                            <h3 class="text-center">Change Password?</h3>
-                                        </div> -->
+                                        <div class="col-md-12">
+                                            <!-- <h3 class="text-center">Change Password?</h3> -->
+                                        </div>
                                     </div><br><br>
-                                   
-                                <form method="post" id="p" enctype="multipart/form-data"  action="<?php echo base_url('supplier/dashboard/change_pswd')?>" id="frm" >
+
+                                    <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/verify_send_otp_change_pass')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
-                             
+                              
                                     <div class="form-group form-primary text-center" id="email_block"   >
-                                       
+                                    <script>
+
+                                setTimeout(function() {
+                                    $('#mydivss').hide('fast');
+                                }, 7000);
+
+                                </script>  
                                 <?php 
                             $msg=$this->session->flashdata('msg'); 
-                            if($msg)
-                            {
-                            ?>
-                            
-                            <div class="alert alert-success" id="mydivss" style="width: 60%;margin-left:20%;">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                                <?php
-                            echo $msg;
-                                ?> 
-                            </div>
-                            
-                            <?php 
-                            }
-                            ?>
-                               <?php 
-                            $msg=$this->session->flashdata('omsg'); 
                             if($msg)
                             {
                             ?>
@@ -157,7 +143,7 @@
                             <div class="alert alert-danger" id="mydivss" style="width: 60%;margin-left:20%;">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                                </button>
+                            </button>
                                 <?php
                             echo $msg;
                                 ?> 
@@ -166,14 +152,26 @@
                             <?php 
                             }
                             ?>
-                                      <label >New Password</label>
-                                        <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" name="new_pass"  id="txtPassword" title="Password must contain at least one number and one uppercase and lowercase letter,one special character, and at least 8 or more characters"  class="form-control" required="" placeholder=" New password" autocomplete="off" style="width: 60%;">
-                                        <span id="pwderror" style="color:red;font-size:small"></span>  
-                                        <!-- <span class="form-bar"></span> -->
-                                    </div>
-                                    <div class="form-group form-primary text-center" id="email_block"   >
-                                      <label >Confirm Password</label>
-                                        <input type="password" name="confirm_pass" id="txtConfirmPassword" class="form-control" required="" placeholder="Confirm password" autocomplete="off" style="width: 60%;">
+                            <?php 
+                            $msg=$this->session->flashdata('omsg'); 
+                            if($msg)
+                            {
+                            ?>
+                            
+                            <div class="alert alert-success" id="mydivss" style="width: 60%;margin-left:20%;">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                                <?php
+                            echo $msg;
+                                ?> 
+                            </div>
+                            
+                            <?php 
+                            }
+                            ?>
+                                      <label >Enter OTP</label>
+                                        <input type="text" name="otp" id="otp"   class="form-control" required="" placeholder=" Enter your OTP" autocomplete="off" style="width: 60%;">
                                         
                                         <span class="form-bar"></span>
                                     </div>
@@ -182,13 +180,13 @@
                                     <div class="row m-t-10 text-center">
                                    <div class="col-md-4 text-center " id="gtop" style="margin-left:33%" >
 										
-                                   <input type="submit" class="btn btn-primary submit" onclick="validateAndSend()" value="Submit" >
-
-                                            <!-- <button type="submit" name="submit" id="generateotp" onclick="validateAndSend()" class="btn btn-primary btn-md  waves-effect waves-light text-center">SAVE</button><span style= "color:green;" id="paswordmess" class="hide">OTP sent to your registered mobile number</span> -->
+                                            <button type="submit" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">Submit</button><br>
+                                            <!-- <button type="button" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">GET OTP</button><span style= "color:green;" id="paswordmess" class="hide">OTP sent to your registered mobile number</span> -->
+                                            <a href="<?php echo base_url('supplier/dashboard/resend_otp_change_pass')?> ">Resend OTP</a>
                                     </div>
-                              
+                                  
+                              </form>
                                     </div>
-                                    </form>
                                     <br><br>
                                     <span style="color:red" id="error">
                                          <?php
@@ -207,7 +205,7 @@
                                 </div>
                                 <br><br>
                             </div>
-                       
+                        </form>
                         <!-- end of form -->
                 </div>
                 <!-- end of col-sm-12 -->
@@ -238,7 +236,7 @@
 </body>
 
 </html>
-
+<!-- 
 <script>
 
 $(document).ready(function(){
@@ -256,50 +254,4 @@ $("#generateotp").click(function() {
  }
 });
 });
-</script>
-
-<script>
-    function validateAndSend(){
-    //   e.preventDefault();
-      alert();
-      var password=$('#Password').val();
-      $('#pwderror').text("");
-
-      var validated =  true;
-        if(password.length < 8)
-            validated = false;
-        if(!/\d/.test(password))
-            validated = false;
-        if(!/[a-z]/.test(password))
-            validated = false;
-        if(!/[A-Z]/.test(password))
-            validated = false;
-        // if(/[^0-9a-zA-Z]/.test(password))
-        //     validated = false;
-
-      $('#pwderror').text(validated ? "" : "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
-
-
-      if(validated){
-        $('#frm')[0].submit();
-      }
-      
-
-    });
-  
-  </script>
-  <script type="text/javascript">
-    window.onload = function () {
-        var txtPassword = document.getElementById("txtPassword");
-        var txtConfirmPassword = document.getElementById("txtConfirmPassword");
-        txtPassword.onchange = ConfirmPassword;
-        txtConfirmPassword.onkeyup = ConfirmPassword;
-        function ConfirmPassword() {
-            txtConfirmPassword.setCustomValidity("");
-            if (txtPassword.value != txtConfirmPassword.value) {
-                txtConfirmPassword.setCustomValidity("Passwords do not match.");
-            }
-        }
-    }
-</script>
- 
+</script> -->
