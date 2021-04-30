@@ -210,6 +210,11 @@
             <td><input type="text" class="form-control showprofile" id="address" name="address" readonly 
                   value="<?php echo "$getcompanydetails->companyaddress"?>"></td>
         </tr>
+        <tr style="<?php if($getuserdetails->user_type==2) echo "display: none;" ?>">
+            <th scope="row">GST Number</th>
+            <td><input type="text" class="form-control showprofile" id="gst" name="gst" readonly 
+                  value="<?php echo "$getcompanydetails->gst"?>"></td>
+        </tr>
         <tr>
             <th scope="row">Type</th>
             <td><input type="text" class="form-control showprofile" id="user_type" name="user_type" readonly 
