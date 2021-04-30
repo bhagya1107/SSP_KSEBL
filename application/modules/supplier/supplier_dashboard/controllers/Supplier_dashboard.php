@@ -646,7 +646,7 @@ class Supplier_dashboard extends SP_Controller
 		// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
 		// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
 		
-		if($otp==$session_otp)
+		if($otp==$session_otp) 
 		{
 		$session_otp_change=$this->session->set_userdata('session_otp_change','100');
 		redirect(base_url('supplier/dashboard/changepassword'));  

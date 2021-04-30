@@ -35,7 +35,7 @@ class Dashboard_model extends CI_Model
 
   public function getcategroy()
   {
-    $this->db->select('*');
+    $this->db->select('*'); 
     return $this->db->get('category')->row();
   }
 

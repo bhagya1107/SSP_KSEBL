@@ -174,7 +174,7 @@
           </label>
           <input type="submit" class="form-control submit" onclick="validateAndSend()" value="Register" disabled>
 
-        </div>
+        </div> 
   
         </form>
     </div>

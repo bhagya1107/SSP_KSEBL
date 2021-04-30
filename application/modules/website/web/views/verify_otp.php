@@ -69,7 +69,7 @@
 
       <?php
       }
-      ?>
+      ?> 
                  
              
                   <p>Enter your OTP </p>
