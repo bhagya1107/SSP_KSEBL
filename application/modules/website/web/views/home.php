@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--
+<!-- 
 	NOTES:
 	1. All tokens are represented by '$' sign in the template.
 	2. You can write your code only wherever mentioned.
@@ -25,6 +25,232 @@
 		href="<?=base_url('assets/public/')?>styles/shards-dashboards.1.1.0.min.css">
 	<link rel="stylesheet" href="<?=base_url('assets/public/')?>styles/extras.1.1.0.min.css">
 	<script async defer src="<?=base_url('assets/cdns/')?>buttons.js"></script> 
+
+
+
+
+
+	<!-- loader start -->
+	
+	<style>
+	
+	.system-site-wrap .system-loader {
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		margin: -23px 0 0 -70px;
+	}
+	
+	div.system-loader-wrap {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 99999;
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+	
+	.system-loader {
+		top: 0;
+		left: 45%;
+		width: 70px;
+		margin: 100px auto 0;
+		text-align: center;
+		position: absolute;
+	}
+	
+	.system-loader>div {
+		width: 18px;
+		height: 18px;
+		border-radius: 100%;
+		display: inline-block;
+		background-color: #5dc560;
+		-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+		animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	}
+	
+	.system-loader .bounce1 {
+		-webkit-animation-delay: -0.32s;
+		animation-delay: -0.32s;
+	}
+	
+	.system-loader .bounce2 {
+		-webkit-animation-delay: -0.16s;
+		animation-delay: -0.16s;
+	}
+	
+	.sp-profile-brochure .file_icon {
+		font-size: 20px;
+		position: absolute;
+		left: 10px;
+		top: 10px;
+	}
+	
+	.single-sp_jobs .tg-mapbox #location-pickr-map {
+		height: 260px;
+	}
+	
+	@-webkit-keyframes sk-bouncedelay {
+		0%,
+		80%,
+		100% {
+			-webkit-transform: scale(0);
+			transform: scale(0);
+		}
+		40% {
+			-webkit-transform: scale(1.0);
+			transform: scale(1.0);
+		}
+	}
+	
+	@keyframes sk-bouncedelay {
+		0%,
+		80%,
+		100% {
+			-webkit-transform: scale(0);
+			transform: scale(0);
+		}
+		40% {
+			-webkit-transform: scale(1.0);
+			transform: scale(1.0);
+		}
+	}
+	
+	.welcome-msg {
+		left: 0px;
+		width: 50px;
+		float: left;
+	}
+	
+	@media screen and (min-width: 767px) {
+		.custom-menu {
+			display: block!important;
+		}
+		#loader1 {
+			padding-left: 40%!important;
+			padding-top: 14%!important;
+		}
+		lottie-player {
+			height: 300px;
+			width: 300px;
+		}
+	}
+	
+	@media screen and (max-width: 1209px) {
+		.tg-main-section {
+			padding: 0
+		}
+	}
+	
+	@media screen and (max-width: 767px) {
+		.searchbar {
+			padding-top: 12%;
+		}
+		/* .bannerimg {
+			display: none
+		} */
+	}
+	
+	@media screen and (max-width: 550px) {
+		.searchbar {
+			padding-top: 15%;
+		}
+	}
+	
+	/* km addons */
+	
+		</style>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		
+		<div id="loader1" class="center1">
+				<lottie-player src='{"v":"5.5.9","fr":60,"ip":0,"op":90,"w":612,"h":792,"nm":"zap","ddd":0,"assets":[],"layers":[{"ddd":0,"ind":1,"ty":4,"nm":"zap Outlines 2","sr":1,"ks":{"o":{"a":1,"k":[{"i":{"x":[0.667],"y":[1]},"o":{"x":[0.333],"y":[0]},"t":45,"s":[0]},{"t":70,"s":[100]}],"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[306,396,0],"ix":2},"a":{"a":0,"k":[306,396,0],"ix":1},"s":{"a":1,"k":[{"i":{"x":[0.667,0.667,0.667],"y":[1,1,1]},"o":{"x":[0.333,0.333,0.333],"y":[0,0,0]},"t":45,"s":[0,0,100]},{"t":70,"s":[100,100,100]}],"ix":6}},"ao":0,"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[1.894,3.342],[3.842,0],[0,0],[0,0],[5.893,0.618],[2.197,-3.378],[0,0],[-5.019,-3.086],[-1.972,0],[0,0],[0,0],[-5.909,-0.453],[-2.124,3.352],[0,0]],"o":[[-1.895,-3.342],[0,0],[0,0],[0.618,-5.893],[-4.008,-0.421],[0,0],[-3.086,5.019],[1.68,1.033],[0,0],[0,0],[-0.451,5.909],[3.956,0.301],[0,0],[1.973,-3.296]],"v":[[158.186,-58.532],[148.905,-63.94],[9.171,-63.94],[32.599,-242.933],[23.049,-254.722],[12.938,-249.904],[-156.993,47.806],[-153.493,62.48],[-147.908,64.06],[-10.262,64.06],[-28.828,243.324],[-18.947,254.842],[-9.065,249.886],[158.057,-47.793]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"tr","p":{"a":0,"k":[306,396.5],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":1,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"tm","s":{"a":0,"k":0,"ix":1},"e":{"a":0,"k":100,"ix":2},"o":{"a":0,"k":0,"ix":3},"m":1,"ix":2,"nm":"Trim Paths 1","mn":"ADBE Vector Filter - Trim","hd":false},{"ty":"fl","c":{"a":0,"k":[0.5647058823529412,0.5372549019607843,0.8862745098039215,1],"ix":4},"o":{"a":0,"k":100,"ix":5},"r":1,"bm":0,"nm":"Fill 1","mn":"ADBE Vector Graphic - Fill","hd":false}],"ip":0,"op":182,"st":0,"bm":0},{"ddd":0,"ind":2,"ty":4,"nm":"zap Outlines","sr":1,"ks":{"o":{"a":0,"k":100,"ix":11},"r":{"a":0,"k":0,"ix":10},"p":{"a":0,"k":[306,396,0],"ix":2},"a":{"a":0,"k":[306,396,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6}},"ao":0,"ef":[{"ty":5,"nm":"Emboss","np":6,"mn":"ADBE Emboss","ix":1,"en":1,"ef":[{"ty":0,"nm":"Direction","mn":"ADBE Emboss-0001","ix":1,"v":{"a":0,"k":45,"ix":1}},{"ty":0,"nm":"Relief","mn":"ADBE Emboss-0002","ix":2,"v":{"a":0,"k":1,"ix":2}},{"ty":0,"nm":"Contrast","mn":"ADBE Emboss-0003","ix":3,"v":{"a":0,"k":0,"ix":3}},{"ty":0,"nm":"Blend With Original","mn":"ADBE Emboss-0004","ix":4,"v":{"a":0,"k":2,"ix":4}}]}],"shapes":[{"ty":"gr","it":[{"ind":0,"ty":"sh","ix":1,"ks":{"a":0,"k":{"i":[[1.894,3.342],[3.842,0],[0,0],[0,0],[5.893,0.618],[2.197,-3.378],[0,0],[-5.019,-3.086],[-1.972,0],[0,0],[0,0],[-5.909,-0.453],[-2.124,3.352],[0,0]],"o":[[-1.895,-3.342],[0,0],[0,0],[0.618,-5.893],[-4.008,-0.421],[0,0],[-3.086,5.019],[1.68,1.033],[0,0],[0,0],[-0.451,5.909],[3.956,0.301],[0,0],[1.973,-3.296]],"v":[[158.186,-58.532],[148.905,-63.94],[9.171,-63.94],[32.599,-242.933],[23.049,-254.722],[12.938,-249.904],[-156.993,47.806],[-153.493,62.48],[-147.908,64.06],[-10.262,64.06],[-28.828,243.324],[-18.947,254.842],[-9.065,249.886],[158.057,-47.793]],"c":true},"ix":2},"nm":"Path 1","mn":"ADBE Vector Shape - Group","hd":false},{"ty":"st","c":{"a":0,"k":[0.5647058823529412,0.5372549019607843,0.8862745098039215,1],"ix":3},"o":{"a":0,"k":100,"ix":4},"w":{"a":0,"k":10,"ix":5},"lc":2,"lj":2,"bm":0,"nm":"Stroke 1","mn":"ADBE Vector Graphic - Stroke","hd":false},{"ty":"tr","p":{"a":0,"k":[306,396.5],"ix":2},"a":{"a":0,"k":[0,0],"ix":1},"s":{"a":0,"k":[100,100],"ix":3},"r":{"a":0,"k":0,"ix":6},"o":{"a":0,"k":100,"ix":7},"sk":{"a":0,"k":0,"ix":4},"sa":{"a":0,"k":0,"ix":5},"nm":"Transform"}],"nm":"Group 1","np":2,"cix":2,"bm":0,"ix":1,"mn":"ADBE Vector Group","hd":false},{"ty":"tm","s":{"a":1,"k":[{"i":{"x":[0.667],"y":[1]},"o":{"x":[0.333],"y":[0]},"t":0,"s":[0]},{"t":45,"s":[0]}],"ix":1},"e":{"a":1,"k":[{"i":{"x":[0.667],"y":[1]},"o":{"x":[0.333],"y":[0]},"t":0,"s":[0]},{"t":45,"s":[100]}],"ix":2},"o":{"a":0,"k":0,"ix":3},"m":1,"ix":2,"nm":"Trim Paths 1","mn":"ADBE Vector Filter - Trim","hd":false}],"ip":0,"op":182,"st":0,"bm":0}],"markers":[]}'  background="transparent"  speed="1"    loop  autoplay></lottie-player>
+				<!-- height:300px; width:300px; -->
+		</div>
+		<div class="clearfix"></div>
+			<script>
+				document.onreadystatechange = function() { 
+            if (document.readyState !== "complete") { 
+                document.querySelector( 
+                  "body").style.visibility = "hidden"; 
+				  
+                document.querySelector( 
+                  "#loader1").style.visibility = "visible"; 
+				 
+            } else { 
+                document.querySelector( 
+                  "#loader1").style.display = "none"; 
+                document.querySelector( 
+                  "body").style.visibility = "visible"; 
+				 
+            } 
+        };
+
+		</script>
+		<style>
+		/* #cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #000; z-index:9999;cursor:pointer;} */
+
+
+			#loader1{
+				/* margin:auto; */
+				/* padding-left:40%!important; 
+				padding-top:14%!important;   */
+				background:#FFF;
+				position: fixed; height: 100%; width: 100%;
+				top:0; left: 0;
+				z-index:9999;
+				cursor:pointer;
+				padding:25%;
+			}
+			.center1 { 
+				position: absolute; 
+				top: 0; 
+				bottom: 0; 
+				left: 0; 
+				right: 0; 
+				margin: auto; 
+				cursor:pointer;
+			} 
+			#tg-header{
+     width: 100%;
+     position:fixed;
+     top: 0px;
+
+}
+			
+			/* select > option:hover{
+                box-shadow: 0 0 10px 100px #FED20F inset;
+                transition: all .2s ease-in-out;
+				cursor:pointer;
+            } */
+
+		</style>
+
+<style>
+.container {
+    width: 95%;
+	cursor:pointer;
+
+}
+
+#tg-banner{
+	z-index: 999;
+}
+.usernamecls{
+	color:white;
+}
+</style>
+
+	<!-- loader ends -->
+
+
+
+
+
+
+
 	
 <script> 
         setTimeout(function() {
