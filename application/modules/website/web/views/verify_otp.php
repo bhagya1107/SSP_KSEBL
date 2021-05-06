@@ -14,7 +14,7 @@
  <nav class="navbar navbar-expand-sm navbar-light bg-white">
       <div class="container">
       <a class="navbar-brand" href="#"><img src="<?=base_url('assets/logo.png')?>" alt="logo"></a>
-        <a class="navbar-brand" href="<?=base_url('');?>" style="margin-left: 80%;color:black"><b>Home</b></a>
+        <a class="navbar-brand" href="<?=base_url('supplier/dashboard/forgotpasstohome');?>" style="margin-left: 80%;color:black"><b>Home</b></a>
        
       </div>
     </nav>

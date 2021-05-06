@@ -16,7 +16,7 @@
  <nav class="navbar navbar-expand-sm navbar-light bg-white">
       <div class="container">
       <a class="navbar-brand" href="#"><img src="<?=base_url('assets/logo.png')?>" alt="logo"></a>
-        <a class="navbar-brand" href="<?=base_url('');?>" style="margin-left: 80%;color:black"><b>Home</b></a>
+        <a class="navbar-brand" href="<?=base_url('supplier/dashboard/forgotpasstohome');?>" style="margin-left: 80%;color:black"><b>Home</b></a>
        
       </div>
     </nav>
@@ -80,9 +80,13 @@ setTimeout(function() {
                   <!-- <p>You can reset your password here.</p>
                   <p>Enter your Registered Mobile No</p> -->
                   <div class="panel-body">
-    
+                  <?php $emp= $this->session->userdata('Employee'); ?>
                     <!-- <form id="register-form" role="form" autocomplete="off" class="form" method="post"> -->
+                    <?php if($emp=='Employee') {?>
+                      <form method="post" action="<?php echo base_url('supplier/dashboard/update_employee_password')?>" >
+                      <?php } else { ?>
                     <form method="post" action="<?php echo base_url('supplier/dashboard/update_supplier_password')?>" >
+                    <?php } ?>
                     <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
   
                       <div class="form-group">

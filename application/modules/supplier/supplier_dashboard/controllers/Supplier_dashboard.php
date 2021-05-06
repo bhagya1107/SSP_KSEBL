@@ -572,6 +572,8 @@ class Supplier_dashboard extends SP_Controller
 		}
 	}
 
+
+	
 	public function forgotpassword()
 	{
 		$data['page'] = 'ForgotPassword';
@@ -710,6 +712,15 @@ class Supplier_dashboard extends SP_Controller
 	
 	}
 	// forgot password
+
+	public function forgotpasstohome()
+	{
+			$this->session->unset_userdata('session_otp');
+			$this->session->unset_userdata('supplier_mobile');
+			$this->session->unset_userdata('session_otp_change');
+			$this->session->unset_userdata('Employee');
+			redirect(base_url(''));
+	}
 	public function send_otp_supplier()
 	{
 		$mobile=$this->input->post('mobile');
@@ -773,6 +784,60 @@ class Supplier_dashboard extends SP_Controller
 			$this->session->unset_userdata('session_otp');
 			$this->session->unset_userdata('supplier_mobile');
 			$this->session->unset_userdata('session_otp_change');
+			$this->session->set_flashdata('rmsg','Password changed successfully');
+			redirect(base_url('home'));
+			
+		}
+		else{
+		
+			$this->session->set_flashdata('omsg','Password mismatch'); 
+		    redirect(base_url('Change_forgot_password'));
+		
+}
+	}
+
+	//forgot password employee
+	public function emp_forgot_password()
+	{
+		$this->session->set_userdata('Employee','Employee'); 
+		redirect(base_url('forgot_password'));
+	}
+	public function send_otp_employee()
+	{
+		$mobile=$this->input->post('mobile');
+		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+		$get_employee_mobile=$this->dashM->get_employee_mobile_forget_pass('employees', $mobile);
+		
+		if($get_employee_mobile!='')
+		{
+		$otp=rand(100000, 999999);
+		$session_otp=$this->session->set_userdata('session_otp',$otp);
+	    $this->session->set_flashdata('msg',"your otp is $otp" );
+		redirect(base_url('verify_otp'));
+		}
+		if($get_employee_mobile=='')
+		{
+			$this->session->set_flashdata('msg',"Not registerd mobile number" );
+			redirect(base_url('forgot_password'));
+	
+		}
+
+	}
+	public function update_employee_password()
+	{
+		$confirm_pass=$this->input->post('confirm_pass');
+		$pass=$this->input->post('pass');
+		$supplier_mobile=$this->session->userdata('supplier_mobile');
+		if ($confirm_pass==$pass)
+		{
+			$where = array('mobilenum' => $supplier_mobile);
+			$data = array('password' => $pass );
+			$result = $this->dashM->update('employees', $data, $where);
+			$this->session->unset_userdata('session_otp');
+			$this->session->unset_userdata('supplier_mobile');
+			$this->session->unset_userdata('session_otp_change');
+			$this->session->unset_userdata('Employee');
+			// $this->session->userdata('tabs',2);
 			$this->session->set_flashdata('rmsg','Password changed successfully');
 			redirect(base_url('home'));
 			

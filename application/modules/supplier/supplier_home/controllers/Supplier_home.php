@@ -78,7 +78,7 @@ class Supplier_home extends MX_Controller {
 				
 						$_SESSION['theme'] = 'supplier';
 						$_SESSION['key'] = '';
-					
+						
 						 redirect(USER.'/dashboard');
             // if($username=="user1")
             // {
@@ -98,6 +98,7 @@ class Supplier_home extends MX_Controller {
 						$this->session->unset_userdata('account_user','userid','pid');
 						$url=base_url();
 					//	$url.=USER."";
+					$this->session->unset_userdata('tabs');
 						redirect($url);
 				}
 
@@ -108,6 +109,7 @@ class Supplier_home extends MX_Controller {
 				$this->session->unset_userdata('username','userid');
 				$url=base_url();
 			//	$url.=ADMIN."/home";
+			$this->session->unset_userdata('tabs');
 				redirect($url);
 			}
 		}
@@ -118,6 +120,7 @@ class Supplier_home extends MX_Controller {
 			$this->session->unset_userdata('account_user','userid','pid');
 			$url=base_url();
 		//	$url.=ADMIN."/home";
+		$this->session->unset_userdata('tabs');
 			redirect($url);
 		}
 	}
@@ -130,7 +133,7 @@ class Supplier_home extends MX_Controller {
 
 		// decrypt();
 		
-
+		
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('username','User Name','required|max_length[50]|trim');
 		$this->form_validation->set_rules('password','Password ','required|min_length[3]|max_length[30]');
@@ -141,6 +144,7 @@ class Supplier_home extends MX_Controller {
 
 			$username=$this->input->post('username');
 			$password=$this->input->post('password');
+			// echo $username;
 			// echo $password;exit;
 
            
@@ -184,7 +188,8 @@ class Supplier_home extends MX_Controller {
 				
 						$_SESSION['theme'] = 'supplier';
 						$_SESSION['key'] = '';
-					$_SESSION['showpop'] = 'false';
+					   // $_SESSION['showpop'] = 'false';
+					   $this->session->set_userdata('tabs',2);
 						 redirect(USER.'/dashboard');
 
 
@@ -198,11 +203,13 @@ class Supplier_home extends MX_Controller {
 					}
 					$this->session->set_flashdata('msg',$msg);
 					$this->session->unset_userdata('account_user','userid','pid');
-						$_SESSION['showpop'] = 'true';
+						// $_SESSION['showpop'] = 'true';
 						// echo json_encode('msg'=>$msg);
 						$url=base_url();
 					//	$url.=USER."";
-						redirect($url);
+					// $_SESSION['tab'] = 2;
+					$this->session->set_userdata('tabs',2);
+					redirect($url);
 				}
 
 			}
@@ -211,19 +218,23 @@ class Supplier_home extends MX_Controller {
 				$this->session->set_flashdata('msg',"Invalid Username or Password");
 				$this->session->unset_userdata('username','userid');
 				$url=base_url();
-				$_SESSION['showpop'] = 'true';
+				// $_SESSION['showpop'] = 'true';
 			//	$u=rl.ADMIN."/home";
+			// $_SESSION['tab'] = 2;
+			$this->session->set_userdata('tabs',2);
 				redirect($url);
 			}
 		}
 		else
 		{
-			$_SESSION['showpop'] = 'true';
+			// $_SESSION['showpop'] = 'true';
 			$valerror=validation_errors();
 			$this->session->set_flashdata('msg',$valerror);
 			$this->session->unset_userdata('account_user','userid','pid');
 			$url=base_url();
 		//	$url.=ADMIN."/home";
+		// $_SESSION['tab'] = 2;
+		$this->session->set_userdata('tabs',2);
 			redirect($url);
 		}
 	}
