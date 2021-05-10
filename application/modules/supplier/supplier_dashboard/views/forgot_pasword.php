@@ -116,9 +116,12 @@
                     <!-- Authentication card start -->
                    
                             <div class="auth-box card">
-                                <div class="card-block scale-up-center"><br><br>
+                                <div class="card-block scale-up-center"><br><br> 
                                     <div class="row m-b-20">
                                         <div class="col-md-12">
+                                        <?php $emp=$this->session->userdata('Employee');
+                                        $uid=$this->session->userdata('uid'); 
+                                        ?>
                                             <h3 class="text-center">Change Password?</h3>
                                         </div>
                                     </div><br><br> 
