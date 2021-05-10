@@ -125,6 +125,11 @@
                                         </div> -->
                                     </div><br><br>
                                    
+                                    <?php $emp=$this->session->userdata('Employee'); 
+                                        if($emp=='Employee') {?>
+                                        
+                                        <form method="post" id="p" enctype="multipart/form-data"  action="<?php echo base_url('supplier/dashboard/change_pswd_emp')?>" id="frm" >
+                               <?php } else { ?>
                                 <form method="post" id="p" enctype="multipart/form-data"  action="<?php echo base_url('supplier/dashboard/change_pswd')?>" id="frm" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                              
