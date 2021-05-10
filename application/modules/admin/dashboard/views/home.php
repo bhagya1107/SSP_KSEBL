@@ -13,7 +13,7 @@
 																	<div class="row align-items-center">
 																			<div class="col">
 																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
-																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Approved Suppliers</p>
+																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Approved Registrations</p>
 																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
 																			</div>
 																			<div class=" text-right">
@@ -23,6 +23,63 @@
 															</div></a>
 													</div>
 											</div>
+                                            <div class="col-xl-3 col-md-6" >
+												<div class="card bg-c-green text-white" style="height :125px;">
+                                                    <a href="<?php echo base_url('webuser/user_management/approved_suppliers');?>" style="color: white;">	
+                                                    <div class="card-block">
+																	<div class="row align-items-center">
+																			<div class="col">
+																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
+																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Pending Registrations</p>
+																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
+																			</div>
+																			<div class=" text-right">
+																					<i class="feather icon-user f-50 text-c-green"></i>
+																			</div>
+																	</div>
+															</div></a>
+													</div>
+											</div>
+
+
+
+
+
+                                            <div class="col-xl-3 col-md-6" >
+												<div class="card bg-c-green text-white" style="height :125px;">
+                                                    <a href="<?php echo base_url('webuser/user_management/approved_suppliers');?>" style="color: white;">	
+                                                    <div class="card-block">
+																	<div class="row align-items-center">
+																			<div class="col">
+																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
+																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Suppliers registerd</p>
+																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
+																			</div>
+																			<div class=" text-right">
+																					<i class="feather icon-user f-50 text-c-green"></i>
+																			</div>
+																	</div>
+															</div></a>
+													</div>
+											</div>
+                                            <div class="col-xl-3 col-md-6" >
+												<div class="card bg-c-green text-white" style="height :125px;">
+                                                    <a href="<?php echo base_url('webuser/user_management/approved_suppliers');?>" style="color: white;">	
+                                                    <div class="card-block">
+																	<div class="row align-items-center">
+																			<div class="col">
+																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
+																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Contractors registerd</p>
+																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
+																			</div>
+																			<div class=" text-right">
+																					<i class="feather icon-user f-50 text-c-green"></i>
+																			</div>
+																	</div>
+															</div></a>
+													</div>
+											</div>
+
 
                         <div class="col-xl-3 col-md-6"  >
                             <div class="card bg-c-yellow text-white " style="height :125px;">
@@ -75,7 +132,8 @@
                                 </div>
                             </div>
                         </div>
-
+<!-- new--------------------- -->
+                                        <!-- new end------------------------------------- -->
            <!-- latest activity end -->
                     </div>
                 </div>
