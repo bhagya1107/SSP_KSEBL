@@ -122,7 +122,7 @@
                                     <div class="row m-b-20">
                                         <!-- <div class="col-md-12">
                                             <h3 class="text-center">Change Password?</h3>
-                                        </div> -->
+                                        </div> --> 
                                     </div><br><br>
                                    
                                     <?php $emp=$this->session->userdata('Employee'); 
