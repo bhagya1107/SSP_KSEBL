@@ -129,6 +129,7 @@
                                         <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/send_otp_employee_changepass')?>" >
                                <?php } else {?>
                                     <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/send_otp')?>" >
+                                    <?php } ?>
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                               
                                     <div class="form-group form-primary text-center" id="email_block"   >
@@ -136,7 +137,7 @@
  
                                 setTimeout(function() {
                                     $('#mydivss').hide('fast');
-                                }, 7000);
+                                }, 7000); 
 
                                 </script>  
                                 <?php 
