@@ -794,7 +794,7 @@ class Supplier_dashboard extends SP_Controller
 		    redirect(base_url('Change_forgot_password'));
 		
 } 
-	}
+	} 
 
 	//forgot password employee
 	public function emp_forgot_password()

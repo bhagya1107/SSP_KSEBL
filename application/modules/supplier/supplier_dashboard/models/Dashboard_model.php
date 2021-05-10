@@ -57,7 +57,7 @@ class Dashboard_model extends CI_Model
   }
   
   public function get_supplier_mobile_forget_pass($table,$mobile)
-  {
+  { 
     $this->db->select('*'); 
     $this->db->where('mobile', $mobile);
     return $this->db->get($table)->row();
