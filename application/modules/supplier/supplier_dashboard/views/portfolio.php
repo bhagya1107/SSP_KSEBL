@@ -203,9 +203,9 @@
                                         <div class="row p-0 px-3 pt-3">
 
                                             <div class="form-group col-md-12">
-                                                <label for="">Services category Material</label>
+                                                <label for="">Services Utility/Wing</label>
                                                 <select class="form-control" id="inputservicesCity" placeholder="Company name">
-                                                <option value="">Select Services Category</option>
+                                                <option value="">Select Utility/Wing</option>
                                                     <option value="Man Power" data-name="Generation">Man Power</option>
                                                     <option value="Machines" data-name="Transmission">Machines</option>
 

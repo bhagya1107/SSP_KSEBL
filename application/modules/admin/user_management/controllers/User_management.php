@@ -26,6 +26,14 @@ class User_management extends AD_Controller {
     $data['getuserdetails1']=$this->userM->getUserProfile_approved_suppliers1();
     $this->template->make('user_management/supplier',$data); 
   }
+  public function Pending_approvals()
+  {
+    $data['page'] = 'Supplier'; 
+    $data['title'] = 'Supplier';
+    $data['getuserdetails']=$this->userM->getUserProfile_Pending_approvals();
+    $data['getuserdetails1']=$this->userM->getUserProfile_Pending_approvals1();
+    $this->template->make('user_management/supplier',$data); 
+  }
   public function supervisors()
   {
     $data['page'] = 'supervisors';

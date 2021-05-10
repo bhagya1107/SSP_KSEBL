@@ -26,6 +26,24 @@ class Dashboard_model extends CI_Model
    $this->db->where('active_status', 1);
    return $this->db->get('suppliers')->num_rows();
  }
+ public function Pending_approvals()
+ {
+   $this->db->select('*');
+   $this->db->where('active_status', 0);
+   return $this->db->get('suppliers')->num_rows();
+ }
+ public function contractors_registered()
+ {
+   $this->db->select('*');
+   $this->db->where('user_type', '2');
+   return $this->db->get('suppliers')->num_rows();
+ }
+ public function suppliers_registered()
+ {
+   $this->db->select('*');
+   $this->db->where('user_type', '3');
+   return $this->db->get('suppliers')->num_rows();
+ }
  public function total_tenders()
  {
    $this->db->select('*');
