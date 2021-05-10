@@ -787,13 +787,13 @@ class Supplier_dashboard extends SP_Controller
 			$this->session->set_flashdata('rmsg','Password changed successfully');
 			redirect(base_url('home'));
 			
-		}
+		} 
 		else{
 		
 			$this->session->set_flashdata('omsg','Password mismatch'); 
 		    redirect(base_url('Change_forgot_password'));
 		
-}
+} 
 	}
 
 	//forgot password employee

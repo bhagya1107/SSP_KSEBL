@@ -485,7 +485,7 @@
 
                                                                 <a href="<?=base_url('supplier/dashboard/emp_forgot_password')?>" style="color:black"><br><b>Forgot your password?</b></a>
                                                             </div>
-                                                        </div>
+                                                        </div> 
                                                       
 
                                                         <span style="color:red" class="mydivssn"> <br />   <?php

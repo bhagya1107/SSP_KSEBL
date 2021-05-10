@@ -104,7 +104,7 @@
                      <input type="tel" id="mobilenumber" name="mobilenumber"  pattern="[6789][0-9]{9}" class="form-control" required="" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
                    </div>
 
-                   <div class="form-group">
+                   <div class="form-group"> 
                      <label>password</label>
                      <input type="hidden" id="id" name="id" minlength="8" class="form-control" required="" />
                     

@@ -183,7 +183,7 @@
 									</td>									
 								</tr>
 									
-							</table>
+							</table> 
 							<div class="form-group" >
                 <div class="col-md-offset-4 pull-right col-xs-offset-4">
                   <a class="tg-btn pull-center editbutton" id="editprofilefn" style="" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>

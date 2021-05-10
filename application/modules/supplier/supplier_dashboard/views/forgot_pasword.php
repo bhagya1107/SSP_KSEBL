@@ -128,7 +128,7 @@
                               
                                     <div class="form-group form-primary text-center" id="email_block"   >
                                     <script>
-
+ 
                                 setTimeout(function() {
                                     $('#mydivss').hide('fast');
                                 }, 7000);

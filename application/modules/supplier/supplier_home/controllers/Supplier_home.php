@@ -169,7 +169,7 @@ class Supplier_home extends MX_Controller {
 					$data = array(
 					'uid' => $uid,
 					'login_ip'=>$ip,
-					'login_time'=>$lgtime
+					'login_time'=>$lgtime 
 					);
 					$this->db->insert('login_history', $data);
 					$session_data= array(

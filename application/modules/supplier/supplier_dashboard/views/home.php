@@ -42,7 +42,7 @@
 								<ul class="tg-matchmetadata">
 									<li><address>Tender Short DIscription</address></li>
 								</ul>
-							</div>
+							</div> 
 							<div class="tg-btnsbox">
 								<a class="tg-btn" href="#">read more</a>
 								<a class="tg-btn" href="#">Apply </a>

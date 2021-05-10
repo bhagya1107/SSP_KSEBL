@@ -136,7 +136,7 @@ setTimeout(function() {
                 txtConfirmPassword.setCustomValidity("Passwords do not match.");
             }
         }
-    }
+    } 
 </script>
 
 <?php } else {  redirect(base_url('forgot_password'));  } ?>

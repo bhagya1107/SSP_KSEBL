@@ -16,7 +16,7 @@
 																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Approved Registrations</p>
 																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
 																			</div>
-																			<div class=" text-right">
+				 															<div class=" text-right">
 																					<i class="feather icon-user f-50 text-c-green"></i>
 																			</div>
 																	</div>
