@@ -121,8 +121,10 @@
                                         <div class="col-md-12">
                                             <h3 class="text-center">Change Password?</h3>
                                         </div>
-                                    </div><br><br>
-
+                                    </div><br><br> 
+                                    <?php if($emp=='Employee') {?>
+                                        <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/send_otp_employee_changepass')?>" >
+                               <?php } else {?>
                                     <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/send_otp')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                               
