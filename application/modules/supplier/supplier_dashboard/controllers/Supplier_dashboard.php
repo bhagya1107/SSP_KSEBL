@@ -572,6 +572,41 @@ class Supplier_dashboard extends SP_Controller
 		}
 	}
 
+<<<<<<< HEAD
+=======
+//employee change password
+ public function forgotpasswordemployees() 
+	{
+		$data['page'] = 'ForgotPassword';
+		$data['mainpage'] = '';
+		$data['page_title'] = 'ForgotPassword';
+		$data['title'] = 'Change Password';
+		$this->session->set_userdata('Employee','Employee');
+		$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
+	}
+	public function send_otp_employee_changepass()
+	{
+		$mobile=$this->input->post('mobile');
+		$uid=$this->session->userdata('uid');
+		$get_supplier_mobile=$this->dashM->get_employee_mobile('employees',$mobile,$uid);
+		if($get_supplier_mobile!='')
+		{
+		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+		$otp=rand(100000, 999999);
+		$session_otp=$this->session->set_userdata('session_otp',$otp);
+		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
+		     </script>';
+		echo ' <script>window.location.href="verity_otp_change_password";</script>';
+		// $this->session->set_flashdata('msg',"your otp is $otp" );
+		// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
+	
+		} 
+		if($get_supplier_mobile=='')
+		{
+			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+		     </script>';
+			 echo ' <script>window.location.href="forgotpassword";</script>';
+>>>>>>> b429fdd (dashboard controller model)
 
 	
 	public function forgotpassword()

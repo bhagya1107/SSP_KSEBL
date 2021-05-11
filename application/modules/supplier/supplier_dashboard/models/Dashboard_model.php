@@ -60,7 +60,7 @@ class Dashboard_model extends CI_Model
   { 
     $this->db->select('*'); 
     $this->db->where('mobile', $mobile);
-    return $this->db->get($table)->row();
+    return $this->db->get($table)->row(); 
   }
   public function get_employee_mobile_forget_pass($table,$mobile)
   {
