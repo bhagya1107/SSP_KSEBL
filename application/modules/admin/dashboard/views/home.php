@@ -6,17 +6,10 @@
                 <div class="page-body">
                     <div class="row">
 
-<<<<<<< HEAD
-
-											<div class="col-xl-3 col-md-6" >
-													<div class="card bg-c-green text-white" style="height :125px;">
-                                                    <a href="<?php echo base_url('webuser/user_management/approved_suppliers');?>" style="color: white;">	<div class="card-block">
-=======
                     <div class="col-xl-3 col-md-6" >
 												<div class="card bg-c-green text-white" style="height :125px;">
                                                     <a href="<?php echo base_url('webuser/user_management/Pending_approvals');?>" style="color: white;">	
                                                     <div class="card-block">
->>>>>>> 8877153 (dashboard reg cards)
 																	<div class="row align-items-center">
 																			<div class="col">
 																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
