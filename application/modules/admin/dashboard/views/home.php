@@ -6,27 +6,17 @@
                 <div class="page-body">
                     <div class="row">
 
+<<<<<<< HEAD
 
 											<div class="col-xl-3 col-md-6" >
 													<div class="card bg-c-green text-white" style="height :125px;">
                                                     <a href="<?php echo base_url('webuser/user_management/approved_suppliers');?>" style="color: white;">	<div class="card-block">
-																	<div class="row align-items-center">
-																			<div class="col">
-																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
-																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Approved Registrations</p>
-																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
-																			</div>
-				 															<div class=" text-right">
-																					<i class="feather icon-user f-50 text-c-green"></i>
-																			</div>
-																	</div>
-															</div></a>
-													</div>
-											</div>
-                                            <div class="col-xl-3 col-md-6" >
+=======
+                    <div class="col-xl-3 col-md-6" >
 												<div class="card bg-c-green text-white" style="height :125px;">
                                                     <a href="<?php echo base_url('webuser/user_management/Pending_approvals');?>" style="color: white;">	
                                                     <div class="card-block">
+>>>>>>> 8877153 (dashboard reg cards)
 																	<div class="row align-items-center">
 																			<div class="col">
 																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
@@ -41,6 +31,25 @@
 													</div>
 											</div>
 
+											<div class="col-xl-3 col-md-6" >
+													<div class="card bg-c-green text-white" style="height :125px;">
+                                                    <a href="<?php echo base_url('webuser/user_management/approved_registrations');?>" style="color: white;">	
+                                                    <div class="card-block">
+																	<div class="row align-items-center">
+																			<div class="col">
+																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
+																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Approved Registrations</p>
+																					<h4 class="m-b-0"><?php echo $total_suppliers; ?></h4>
+																			</div>
+				 															<div class=" text-right">
+																					<i class="feather icon-user f-50 text-c-green"></i>
+																			</div>
+																	</div>
+															</div></a>
+													</div>
+											</div>
+                                            
+
 
 
 
@@ -52,8 +61,8 @@
 																	<div class="row align-items-center">
 																			<div class="col">
 																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
-																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Suppliers registerd</p>
-																					<h4 class="m-b-0"><?php echo $suppliers_registered; ?></h4>
+																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Approved Suppliers </p>
+																					<h4 class="m-b-0"><?php echo $approved_suppliers; ?></h4>
 																			</div>
 																			<div class=" text-right">
 																					<i class="feather icon-user f-50 text-c-green"></i>
@@ -64,13 +73,13 @@
 											</div>
                                             <div class="col-xl-3 col-md-6" >
 												<div class="card bg-c-green text-white" style="height :125px;">
-                                                    <a href="<?php echo base_url('webuser/user_management/approved_suppliers');?>" style="color: white;">	
+                                                    <a href="<?php echo base_url('webuser/user_management/approved_contractors');?>" style="color: white;">	
                                                     <div class="card-block">
 																	<div class="row align-items-center">
 																			<div class="col">
 																					<?php // $hic=getAfield('count(uid)',"web_users","where user_type=4 AND is_deleted=0 and river_id>0",'hcount'); ?>
-																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Contractors registerd</p>
-																					<h4 class="m-b-0"><?php echo $contractors_registered; ?></h4>
+																				<p class="m-b-6" style="display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">Approved Contractors</p>
+																					<h4 class="m-b-0"><?php echo $approved_contractors; ?></h4>
 																			</div>
 																			<div class=" text-right">
 																					<i class="feather icon-user f-50 text-c-green"></i>

@@ -12,26 +12,48 @@ class User_management extends AD_Controller {
   }
   public function suppliers()
   {
+    $this->session->unset_userdata('type');
     $data['page'] = 'Supplier'; 
     $data['title'] = 'Supplier';
     $data['getuserdetails']=$this->userM->getUserProfile();
     $data['getuserdetails1']=$this->userM->getUserProfile1();
     $this->template->make('user_management/supplier',$data); 
   }
-  public function approved_suppliers()
+  public function approved_registrations()
   {
+    $this->session->unset_userdata('type');
     $data['page'] = 'Supplier'; 
     $data['title'] = 'Supplier';
-    $data['getuserdetails']=$this->userM->getUserProfile_approved_suppliers();
+    $data['getuserdetails']=$this->userM->getUserProfile_approved_registrations();
     $data['getuserdetails1']=$this->userM->getUserProfile_approved_suppliers1();
     $this->template->make('user_management/supplier',$data); 
   }
   public function Pending_approvals()
   {
+    $this->session->unset_userdata('type');
     $data['page'] = 'Supplier'; 
     $data['title'] = 'Supplier';
+    
     $data['getuserdetails']=$this->userM->getUserProfile_Pending_approvals();
     $data['getuserdetails1']=$this->userM->getUserProfile_Pending_approvals1();
+    $this->template->make('user_management/supplier',$data); 
+  }
+  public function approved_suppliers()
+  {
+    $data['page'] = 'Supplier'; 
+    $data['title'] = 'Supplier';
+    $this->session->set_userdata('type','supplier');
+    $data['getuserdetails']=$this->userM->getUserProfile_approved_suppliers();
+    $data['getuserdetails1']=$this->userM->getUserProfile_approved_suppliers1();
+    $this->template->make('user_management/supplier',$data); 
+  }
+  public function approved_contractors()
+  {
+    $data['page'] = 'Supplier'; 
+    $data['title'] = 'Supplier';
+    $this->session->set_userdata('type','contractor');
+    $data['getuserdetails']=$this->userM->getUserProfile_approved_contractors();
+    $data['getuserdetails1']=$this->userM->getUserProfile_approved_suppliers1();
     $this->template->make('user_management/supplier',$data); 
   }
   public function supervisors()

@@ -12,8 +12,8 @@ public function __construct()
     $data['title'] = 'Dashboard';
 	$data['total_suppliers'] = $this->dashM->total_suppliers();
 	$data['Pending_approvals'] = $this->dashM->Pending_approvals();
-	$data['suppliers_registered'] = $this->dashM->suppliers_registered();
-	$data['contractors_registered'] = $this->dashM->contractors_registered();
+	$data['approved_suppliers'] = $this->dashM->approved_suppliers();
+	$data['approved_contractors'] = $this->dashM->approved_contractors();
 	$data['total_tenders'] = $this->dashM->total_tenders();
 	$data['completed_tenders'] = $this->dashM->completed_tenders();
     // $data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);

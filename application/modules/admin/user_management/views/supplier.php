@@ -45,12 +45,12 @@
                   <div class="col-lg-3">
                    <div class="form-group row form_filter"  >
                      <label class="col-sm-5 col-lg-3" >User&nbsp;Type</label>
-
+                      <?php $type=$this->session->userdata('type');?>
                      <div class="col-sm-7 col-lg-9" >
                       <select style="margin-left: 10px;" class="select2-placeholer form-control" data-placeholder="Select a status" name="user_type" id="user_type">
                         <option value="" >All</option>
-                        <option value="2"  > Contractors</option>
-                        <option value="3"  > Suppliers</option>
+                        <option value="2"  <?php if ($type == "contractor") { echo ' selected="selected"'; } ?>  > Contractors</option>
+                        <option value="3"   <?php if ($type == "supplier") { echo ' selected="selected"'; } ?> > Suppliers</option>
                         <option value="1"   >Both</option>
                       </select>
                     </div>
