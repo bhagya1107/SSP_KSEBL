@@ -573,314 +573,367 @@ class Supplier_dashboard extends SP_Controller
 	}
 
 //employee change password
- public function forgotpasswordemployees() 
+public function forgotpasswordemployees() 
+{
+	$data['page'] = 'ForgotPassword';
+	$data['mainpage'] = '';
+	$data['page_title'] = 'ForgotPassword';
+	$data['title'] = 'Change Password';
+	$this->session->set_userdata('Employee','Employee');
+	$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
+}
+public function send_otp_employee_changepass()
+{
+	$mobile=$this->input->post('mobile');
+	$uid=$this->session->userdata('uid');
+	$get_supplier_mobile=$this->dashM->get_employee_mobile('employees',$mobile,$uid);
+	if($get_supplier_mobile!='')
 	{
-		$data['page'] = 'ForgotPassword';
-		$data['mainpage'] = '';
-		$data['page_title'] = 'ForgotPassword';
-		$data['title'] = 'Change Password';
-		$this->session->set_userdata('Employee','Employee');
-		$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
-	}
-	public function send_otp_employee_changepass()
-	{
-		$mobile=$this->input->post('mobile');
-		$uid=$this->session->userdata('uid');
-		$get_supplier_mobile=$this->dashM->get_employee_mobile('employees',$mobile,$uid);
-		if($get_supplier_mobile!='')
-		{
-		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-		$otp=rand(100000, 999999);
-		$session_otp=$this->session->set_userdata('session_otp',$otp);
-		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
-		     </script>';
-		echo ' <script>window.location.href="verity_otp_change_password";</script>';
-		// $this->session->set_flashdata('msg',"your otp is $otp" );
-		// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
-	
-		} 
-		if($get_supplier_mobile=='')
-		{
-			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
-		     </script>';
-			 echo ' <script>window.location.href="forgotpassword";</script>';
+	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+	$otp=rand(100000, 999999);
+	$session_otp=$this->session->set_userdata('session_otp',$otp);
+	echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
+		 </script>';
+	echo ' <script>window.location.href="verity_otp_change_password";</script>';
+	// $this->session->set_flashdata('msg',"your otp is $otp" );
+	// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
 
-	
-	public function forgotpassword()
+	} 
+	if($get_supplier_mobile=='')
 	{
-		$data['page'] = 'ForgotPassword';
-		$data['mainpage'] = '';
-		$data['page_title'] = 'ForgotPassword';
-		$data['title'] = 'Change Password';
-		$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
+		echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+		 </script>';
+		 echo ' <script>window.location.href="forgotpassword";</script>';
+
+		// $this->session->set_flashdata('msg',"Not registerd mobile number" );
+		// redirect(base_url('supplier/dashboard/forgotpassword'));
+
+
 	}
-	public function verity_otp_change_password()
-	{
-		if (
-			$this->session->userdata('supplier_mobile') != '') {
-		$data['page'] = 'verity otp';
-		$data['mainpage'] = '';
-		$data['page_title'] = 'Verify otp';
-		$data['title'] = 'Verify OTP';
-		$this->template->make('supplier_dashboard/verity_otp_change_pass', $data, 'supplier_portal');
-	}
-	else{
-		redirect(base_url('supplier/dashboard/forgotpassword'));
-	}
-	}
-	public function changepassword()
-	{
+}
+public function change_pswd_emp()
+{
 		
-		if (
-		$this->session->userdata('supplier_mobile') != '' and $this->session->userdata('session_otp') != '') {
-		$data['page'] = 'Change Password';
-		$data['mainpage'] = '';
-		$data['page_title'] = 'Change Password';
-		$data['title'] = 'Change Password';
-		$this->template->make('supplier_dashboard/change_password', $data, 'supplier_portal');
+		$new_pass=$this->input->post('new_pass');
+		$confirm_pass=$this->input->post('confirm_pass');
+		$supplierid=$this->session->userdata('uid');
+		$user_type=$this->session->userdata('user_type');
+	
+		if ($confirm_pass==$new_pass)
+			{
+				$where = array('id' => $supplierid);
+				$data = array('password' => $confirm_pass );
+				$result = $this->dashM->update('employees', $data, $where);
+				$this->session->unset_userdata('session_otp');
+				$this->session->unset_userdata('supplier_mobile');
+				$this->session->unset_userdata('session_otp_change');
+		
+				echo '<script type="text/javascript" >alert("Password changed successfully" );
+				</script>';
+				echo ' <script>window.location.href="personal_profile";</script>';
+		   
+				// $this->session->set_flashdata('omsg','Password changed successfully !"');
+				// redirect(base_url('supplier/dashboard/forgotpassword'));
 			}
 			else{
-				redirect(base_url('supplier/dashboard/forgotpassword'));
-			}
-	}
-	
-	public function send_otp()
-	{
-		$mobile=$this->input->post('mobile');
-		$uid=$this->session->userdata('supplierid');
-		$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers',$mobile,$uid);
-		if($get_supplier_mobile!='')
-		{
-		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-		$otp=rand(100000, 999999);
-		$session_otp=$this->session->set_userdata('session_otp',$otp);
-		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
-		     </script>';
-		echo ' <script>window.location.href="verity_otp_change_password";</script>';
-		// $this->session->set_flashdata('msg',"your otp is $otp" );
-		// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
-	
-		}
-		if($get_supplier_mobile=='')
-		{
-			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
-		     </script>';
-			 echo ' <script>window.location.href="forgotpassword";</script>';
-
-			// $this->session->set_flashdata('msg',"Not registerd mobile number" );
-			// redirect(base_url('supplier/dashboard/forgotpassword'));
-	
-	
-		}
-	}
-	public function verify_send_otp_change_pass()
-	{
-		$otp=$this->input->post('otp');
-		$session_otp=$this->session->userdata('session_otp');
-		// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-		// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
-		
-		if($otp==$session_otp) 
-		{
-		$session_otp_change=$this->session->set_userdata('session_otp_change','100');
-		redirect(base_url('supplier/dashboard/changepassword'));  
-
-		}
-		else
-		{
-			echo '<script type="text/javascript" >alert("Not Valid OTP" );
-		     </script>';
-			echo ' <script>window.location.href="verity_otp_change_password";</script>';
-
-			// $this->session->set_flashdata('rmsg',"Not Valid OTP" );
-			// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
-	
-		}
-
-	}
-	public function resend_otp_change_pass()
-	{
-		$otp=rand(100000, 999999);
-		$session_otp=$this->session->set_userdata('session_otp',$otp);
-		echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
-		     </script>';
-		echo ' <script>window.location.href="verity_otp_change_password";</script>';
-	    // $this->session->set_flashdata('msg',"your otp is $otp" );
-		// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
-	}
-	public function change_pswd()
-	{
+				echo '<script type="text/javascript" >alert("Password mismatch" );
+				</script>';
+				echo ' <script>window.location.href="changepassword";</script>';
+		   
+				// $this->session->set_flashdata('omsg','Password mismatch'); 
+				// redirect(base_url('supplier/dashboard/changepassword'));
 			
-			$new_pass=$this->input->post('new_pass');
-			$confirm_pass=$this->input->post('confirm_pass');
-			$supplierid=$this->session->userdata('supplierid');
-			$user_type=$this->session->userdata('user_type');
-		
-			if ($confirm_pass==$new_pass)
-				{
-					$where = array('uid' => $supplierid);
-					$data = array('password' => $confirm_pass );
-					$result = $this->dashM->update('suppliers', $data, $where);
-					$this->session->unset_userdata('session_otp');
-					$this->session->unset_userdata('supplier_mobile');
-					$this->session->unset_userdata('session_otp_change');
-			
-					echo '<script type="text/javascript" >alert("Password changed successfully" );
-					</script>';
-					echo ' <script>window.location.href="personal_profile";</script>';
-			   
-					// $this->session->set_flashdata('omsg','Password changed successfully !"');
-					// redirect(base_url('supplier/dashboard/forgotpassword'));
-				}
-			    else{
-					echo '<script type="text/javascript" >alert("Password mismatch" );
-					</script>';
-					echo ' <script>window.location.href="changepassword";</script>';
-			   
-					// $this->session->set_flashdata('omsg','Password mismatch'); 
-					// redirect(base_url('supplier/dashboard/changepassword'));
-				
-		}
-	
 	}
-	// forgot password
 
-	public function forgotpasstohome()
-	{
-			$this->session->unset_userdata('session_otp');
-			$this->session->unset_userdata('supplier_mobile');
-			$this->session->unset_userdata('session_otp_change');
-			$this->session->unset_userdata('Employee');
-			redirect(base_url(''));
-	}
-	public function send_otp_supplier()
-	{
-		$mobile=$this->input->post('mobile');
-		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-		$get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
-		
-		if($get_supplier_mobile!='')
-		{
-		$otp=rand(100000, 999999);
-		$session_otp=$this->session->set_userdata('session_otp',$otp);
-	    $this->session->set_flashdata('msg',"your otp is $otp" );
-		redirect(base_url('verify_otp'));
-		}
-		if($get_supplier_mobile=='')
-		{
-			$this->session->set_flashdata('msg',"Not registerd mobile number" );
-			redirect(base_url('forgot_password'));
-	
-		}
-
-	}
-	public function send_otp_supplier_verify()
-	{
-		$otp=$this->input->post('otp');
-		$session_otp=$this->session->userdata('session_otp');
-		// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-		// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
-		
-		if($otp==$session_otp)
-		{
-		$session_otp_change=$this->session->set_userdata('session_otp_change','100');
-		redirect(base_url('Change_forgot_password'));
-		}
-		else
-		{
-			$this->session->set_flashdata('rmsg',"Not Valid OTP" );
-			redirect(base_url('verify_otp'));
-	
-		}
-
-	}
-	public function resend_otp()
-	{
-		$otp=rand(100000, 999999);
-		$session_otp=$this->session->set_userdata('session_otp',$otp);
-	    $this->session->set_flashdata('msg',"your otp is $otp" );
-		redirect(base_url('verify_otp'));
-	}
-	public function update_supplier_password()
-	{
-		
-
-		$confirm_pass=$this->input->post('confirm_pass');
-		$pass=$this->input->post('pass');
-		$supplier_mobile=$this->session->userdata('supplier_mobile');
-		if ($confirm_pass==$pass)
-		{
-			$where = array('mobile' => $supplier_mobile);
-			$data = array('password' => $pass );
-			$result = $this->dashM->update('suppliers', $data, $where);
-			$this->session->unset_userdata('session_otp');
-			$this->session->unset_userdata('supplier_mobile');
-			$this->session->unset_userdata('session_otp_change');
-			$this->session->set_flashdata('rmsg','Password changed successfully');
-			redirect(base_url('home'));
-			
-		} 
-		else{
-		
-			$this->session->set_flashdata('omsg','Password mismatch'); 
-		    redirect(base_url('Change_forgot_password'));
-		
-} 
-	} 
-
-	//forgot password employee
-	public function emp_forgot_password()
-	{
-		$this->session->set_userdata('Employee','Employee'); 
-		redirect(base_url('forgot_password'));
-	}
-	public function send_otp_employee()
-	{
-		$mobile=$this->input->post('mobile');
-		$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-		$get_employee_mobile=$this->dashM->get_employee_mobile_forget_pass('employees', $mobile);
-		
-		if($get_employee_mobile!='')
-		{
-		$otp=rand(100000, 999999);
-		$session_otp=$this->session->set_userdata('session_otp',$otp);
-	    $this->session->set_flashdata('msg',"your otp is $otp" );
-		redirect(base_url('verify_otp'));
-		}
-		if($get_employee_mobile=='')
-		{
-			$this->session->set_flashdata('msg',"Not registerd mobile number" );
-			redirect(base_url('forgot_password'));
-	
-		}
-
-	}
-	public function update_employee_password()
-	{
-		$confirm_pass=$this->input->post('confirm_pass');
-		$pass=$this->input->post('pass');
-		$supplier_mobile=$this->session->userdata('supplier_mobile');
-		if ($confirm_pass==$pass)
-		{
-			$where = array('mobilenum' => $supplier_mobile);
-			$data = array('password' => $pass );
-			$result = $this->dashM->update('employees', $data, $where);
-			$this->session->unset_userdata('session_otp');
-			$this->session->unset_userdata('supplier_mobile');
-			$this->session->unset_userdata('session_otp_change');
-			$this->session->unset_userdata('Employee');
-			// $this->session->userdata('tabs',2);
-			$this->session->set_flashdata('rmsg','Password changed successfully');
-			redirect(base_url('home'));
-			
-		}
-		else{
-		
-			$this->session->set_flashdata('omsg','Password mismatch'); 
-		    redirect(base_url('Change_forgot_password'));
-		
 }
+
+
+//supplier change password	
+public function forgotpassword()
+{
+	$data['page'] = 'ForgotPassword';
+	$data['mainpage'] = '';
+	$data['page_title'] = 'ForgotPassword';
+	$data['title'] = 'Change Password';
+	$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
+}
+public function verity_otp_change_password()
+{
+	if (
+		$this->session->userdata('supplier_mobile') != '') {
+	$data['page'] = 'verity otp';
+	$data['mainpage'] = '';
+	$data['page_title'] = 'Verify otp';
+	$data['title'] = 'Verify OTP';
+	$this->template->make('supplier_dashboard/verity_otp_change_pass', $data, 'supplier_portal');
+}
+else{
+	redirect(base_url('supplier/dashboard/forgotpassword'));
+}
+}
+public function changepassword()
+{
+	
+	if (
+	$this->session->userdata('supplier_mobile') != '' and $this->session->userdata('session_otp') != '') {
+	$data['page'] = 'Change Password';
+	$data['mainpage'] = '';
+	$data['page_title'] = 'Change Password';
+	$data['title'] = 'Change Password';
+	$this->template->make('supplier_dashboard/change_password', $data, 'supplier_portal');
+		}
+		else{
+			redirect(base_url('supplier/dashboard/forgotpassword'));
+		}
+}
+
+public function send_otp()
+{
+	$mobile=$this->input->post('mobile');
+	$uid=$this->session->userdata('supplierid');
+	$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers',$mobile,$uid);
+	if($get_supplier_mobile!='')
+	{
+	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+	$otp=rand(100000, 999999);
+	$session_otp=$this->session->set_userdata('session_otp',$otp);
+	echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
+		 </script>';
+	echo ' <script>window.location.href="verity_otp_change_password";</script>';
+	// $this->session->set_flashdata('msg',"your otp is $otp" );
+	// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
+
 	}
+	if($get_supplier_mobile=='')
+	{
+		echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+		 </script>';
+		 echo ' <script>window.location.href="forgotpassword";</script>';
+
+		// $this->session->set_flashdata('msg',"Not registerd mobile number" );
+		// redirect(base_url('supplier/dashboard/forgotpassword'));
+
+
+	}
+}
+public function verify_send_otp_change_pass()
+{
+	$otp=$this->input->post('otp');
+	$session_otp=$this->session->userdata('session_otp');
+	// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+	// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
+	
+	if($otp==$session_otp) 
+	{
+	$session_otp_change=$this->session->set_userdata('session_otp_change','100');
+	redirect(base_url('supplier/dashboard/changepassword'));  
+
+	}
+	else
+	{
+		echo '<script type="text/javascript" >alert("Not Valid OTP" );
+		 </script>';
+		echo ' <script>window.location.href="verity_otp_change_password";</script>';
+
+		// $this->session->set_flashdata('rmsg',"Not Valid OTP" );
+		// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
+
+	}
+
+}
+public function resend_otp_change_pass()
+{
+	$otp=rand(100000, 999999);
+	$session_otp=$this->session->set_userdata('session_otp',$otp);
+	echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
+		 </script>';
+	echo ' <script>window.location.href="verity_otp_change_password";</script>';
+	// $this->session->set_flashdata('msg',"your otp is $otp" );
+	// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
+}
+public function change_pswd()
+{
+		
+		$new_pass=$this->input->post('new_pass');
+		$confirm_pass=$this->input->post('confirm_pass');
+		$supplierid=$this->session->userdata('supplierid');
+		$user_type=$this->session->userdata('user_type');
+	
+		if ($confirm_pass==$new_pass)
+			{
+				$where = array('uid' => $supplierid);
+				$data = array('password' => $confirm_pass );
+				$result = $this->dashM->update('suppliers', $data, $where);
+				$this->session->unset_userdata('session_otp');
+				$this->session->unset_userdata('supplier_mobile');
+				$this->session->unset_userdata('session_otp_change');
+		
+				echo '<script type="text/javascript" >alert("Password changed successfully" );
+				</script>';
+				echo ' <script>window.location.href="personal_profile";</script>';
+		   
+				// $this->session->set_flashdata('omsg','Password changed successfully !"');
+				// redirect(base_url('supplier/dashboard/forgotpassword'));
+			}
+			else{
+				echo '<script type="text/javascript" >alert("Password mismatch" );
+				</script>';
+				echo ' <script>window.location.href="changepassword";</script>';
+		   
+				// $this->session->set_flashdata('omsg','Password mismatch'); 
+				// redirect(base_url('supplier/dashboard/changepassword'));
+			
+	}
+
+}
+// forgot password
+
+public function forgotpasstohome()
+{
+		$this->session->unset_userdata('session_otp');
+		$this->session->unset_userdata('supplier_mobile');
+		$this->session->unset_userdata('session_otp_change');
+		$this->session->unset_userdata('Employee');
+		$this->session->unset_userdata('Supplier');
+		redirect(base_url(''));
+}
+public function send_otp_supplier()
+{
+	$mobile=$this->input->post('mobile');
+	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+	$get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
+	
+	if($get_supplier_mobile!='')
+	{
+	$otp=rand(100000, 999999);
+	$session_otp=$this->session->set_userdata('session_otp',$otp);
+	$this->session->set_flashdata('msg',"your otp is $otp" );
+	redirect(base_url('verify_otp'));
+	}
+	if($get_supplier_mobile=='')
+	{
+		$this->session->set_flashdata('msg',"Not registerd mobile number" );
+		redirect(base_url('forgot_password'));
+
+	}
+
+}
+public function send_otp_supplier_verify()
+{
+	$otp=$this->input->post('otp');
+	$session_otp=$this->session->userdata('session_otp');
+	// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+	// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
+	
+	if($otp==$session_otp)
+	{
+	$session_otp_change=$this->session->set_userdata('session_otp_change','100');
+	redirect(base_url('Change_forgot_password'));
+	}
+	else
+	{
+		$this->session->set_flashdata('rmsg',"Not Valid OTP" );
+		redirect(base_url('verify_otp'));
+
+	}
+
+}
+public function resend_otp()
+{
+	$otp=rand(100000, 999999);
+	$session_otp=$this->session->set_userdata('session_otp',$otp);
+	$this->session->set_flashdata('msg',"your otp is $otp" );
+	redirect(base_url('verify_otp'));
+}
+public function update_supplier_password()
+{
+	
+
+	$confirm_pass=$this->input->post('confirm_pass');
+	$pass=$this->input->post('pass');
+	$supplier_mobile=$this->session->userdata('supplier_mobile');
+	if ($confirm_pass==$pass)
+	{
+		$where = array('mobile' => $supplier_mobile);
+		$data = array('password' => $pass );
+		$result = $this->dashM->update('suppliers', $data, $where);
+		$this->session->unset_userdata('session_otp');
+		$this->session->unset_userdata('supplier_mobile');
+		$this->session->unset_userdata('session_otp_change');
+		$this->session->unset_userdata('Supplier');
+		$this->session->set_flashdata('rmsg','Password changed successfully');
+		redirect(base_url('home'));
+		
+	} 
+	else{
+	
+		$this->session->set_flashdata('omsg','Password mismatch'); 
+		redirect(base_url('Change_forgot_password'));
+	
+} 
+} 
+
+//forgot password employee
+public function emp_forgot_password()
+{
+	$this->session->set_userdata('Employee','Employee'); 
+	redirect(base_url('forgot_password'));
+}
+public function sup_forgot_password()
+{
+	$this->session->set_userdata('Supplier','Supplier'); 
+	redirect(base_url('forgot_password'));
+}
+public function send_otp_employee()
+{
+	$mobile=$this->input->post('mobile');
+	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
+	$get_employee_mobile=$this->dashM->get_employee_mobile_forget_pass('employees', $mobile);
+	
+	if($get_employee_mobile!='')
+	{
+	$otp=rand(100000, 999999);
+	$session_otp=$this->session->set_userdata('session_otp',$otp);
+	$this->session->set_flashdata('msg',"your otp is $otp" );
+	redirect(base_url('verify_otp'));
+	}
+	if($get_employee_mobile=='')
+	{
+		$this->session->set_flashdata('msg',"Not registerd mobile number" );
+		redirect(base_url('forgot_password'));
+
+	}
+
+}
+public function update_employee_password()
+{
+	$confirm_pass=$this->input->post('confirm_pass');
+	$pass=$this->input->post('pass');
+	$supplier_mobile=$this->session->userdata('supplier_mobile');
+	if ($confirm_pass==$pass)
+	{
+		$where = array('mobilenum' => $supplier_mobile);
+		$data = array('password' => $pass );
+		$result = $this->dashM->update('employees', $data, $where);
+		$this->session->unset_userdata('session_otp');
+		$this->session->unset_userdata('supplier_mobile');
+		$this->session->unset_userdata('session_otp_change');
+		$this->session->unset_userdata('Employee');
+		// $this->session->userdata('tabs',2);
+		$this->session->set_flashdata('rmsg','Password changed successfully');
+		redirect(base_url('home'));
+		
+	}
+	else{
+	
+		$this->session->set_flashdata('omsg','Password mismatch'); 
+		redirect(base_url('Change_forgot_password'));
+	
+}
+}
+
+
+
 
 
 	public function update_companyprofile() 
