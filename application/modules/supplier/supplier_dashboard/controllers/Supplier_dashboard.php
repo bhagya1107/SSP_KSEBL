@@ -883,7 +883,7 @@ class Supplier_dashboard extends SP_Controller
 	}
 
 
-	public function update_companyprofile()
+	public function update_companyprofile() 
 	{
 		// echo "string"; exit;
 

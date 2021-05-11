@@ -248,7 +248,7 @@ class Dashboard_model extends CI_Model
     $this->db->where('id', $uid);
     return $this->db->get('employees')->row();
   }
-  public function getbankdetails($table, $uid)
+  public function getbankdetails($table, $uid) 
   {
     $this->db->select('*');
     $this->db->where('supplierid', $uid);
