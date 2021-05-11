@@ -52,7 +52,7 @@ setTimeout(function() {
       }
       ?>
       <?php $emp= $this->session->userdata('Employee'); ?>
-                  <h2 class="text-center">Forgot Password?<?php echo $emp;?></h2> 
+                  <h2 class="text-center">Forgot Password?</h2> 
                   <p>You can reset your password here.</p>
                   <p>Enter your Registered Mobile No</p>
                   <div class="panel-body">
