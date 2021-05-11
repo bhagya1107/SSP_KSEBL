@@ -572,8 +572,6 @@ class Supplier_dashboard extends SP_Controller
 		}
 	}
 
-<<<<<<< HEAD
-=======
 //employee change password
  public function forgotpasswordemployees() 
 	{
@@ -606,7 +604,6 @@ class Supplier_dashboard extends SP_Controller
 			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
 		     </script>';
 			 echo ' <script>window.location.href="forgotpassword";</script>';
->>>>>>> b429fdd (dashboard controller model)
 
 	
 	public function forgotpassword()
