@@ -448,7 +448,7 @@
 
                                                     <?php  $attributes = array('id' => 'frm','style'=>'width:100%');  ?>
                                                     <?=form_open('supplier/home/user_login',$attributes);?>
-
+                                                    <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
 
 
                                                         <div class="form-group dflex" style="color: white;">
