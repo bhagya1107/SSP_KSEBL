@@ -498,8 +498,8 @@ hr{
                    <a style="<?php if($getcompanypermissiondetails->tenders=='0') echo "display: none;" ?>"  href="<?=supplier_url('tenders/my')?>">Applied Tenders<i></i></a>
                 <a style="<?php if($getcompanypermissiondetails->purchase_order=='0'  OR $user_type=="2") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>" class=""><b>PURCHASE ORDER</b></a><hr>
                 <a style="<?php if($getcompanypermissiondetails->purchase_order=='0'  OR $user_type=="2") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>">My Purchase Order<i></i></a>
-                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0' OR $user_type=="1" OR $user_type=="3") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>" class=""><b>WORK ORDER</b></a><hr>
-                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0' OR $user_type=="1"  OR $user_type=="3") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>">My Work Order<i></i></a>
+                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0' OR $user_type=="1" OR $user_type=="3" OR $user_type=="4" OR $user_type=="5" OR $user_type=="6") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>" class=""><b>WORK ORDER</b></a><hr>
+                <a style="<?php if($getcompanypermissiondetails->purchase_order=='0' OR $user_type=="1"  OR $user_type=="3" OR $user_type=="4" OR $user_type=="5" OR $user_type=="6") echo "display: none;" ?>"  href="<?=supplier_url('purchase_order')?>">My Work Order<i></i></a>
                 <a style="<?php if($getcompanypermissiondetails->delivery=='0') echo "display: none;" ?>"  href="<?=supplier_url('delivery')?>" class=""><b>DELIVERY</b></a><hr>
                  <a style="<?php if($getcompanypermissiondetails->delivery=='0') echo "display: none;" ?>"  href="<?=supplier_url('delivery/delivery_module')?>">View Calender<i></i></a>
 						<!-- <a href="#">Dispatch</a>
@@ -508,13 +508,13 @@ hr{
                         <!-- <a href="#">Order Tracking<i></i></a>
                         <a href="#">Delivery Confirmation<i></i></a> -->
                 <!--<a href="<?=supplier_url('accounts/workmeasure')?>" class="active">WORK MEASUREMENT</a>-->
-                 
+                   
 
     
                 <a style="<?php if($getcompanypermissiondetails->accounts=='0') echo "display: none;" ?>"  href="<?=supplier_url('accounts/payments')?>" class=""><b>ACCOUNTS</b></a><hr>
                         <a style="<?php if($getcompanypermissiondetails->accounts=='0') echo "display: none;" ?>"  href="<?=supplier_url('accounts/payments')?>">Invoices</a>
                         <a  style="<?php if($getcompanypermissiondetails->accounts=='0') echo "display: none;" ?>"  href="<?=supplier_url('accounts/payments/2')?>">Payments</a>
-                        <a href="#"><b>WORK MEASUREMENT</b></a>  
+                        <a style="<?php if($getcompanypermissiondetails->work_measurement=='0') echo "display: none;" ?>" href="#"><b>WORK MEASUREMENT</b></a>  
                 <?php   
                 $user_type=$this->session->userdata('user_type');
 

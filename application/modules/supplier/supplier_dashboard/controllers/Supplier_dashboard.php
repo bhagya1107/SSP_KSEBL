@@ -113,7 +113,8 @@ class Supplier_dashboard extends SP_Controller
 
 		if (
 			$this->session->userdata('user_type') == '1' or $this->session->userdata('user_type') == '2'
-			or $this->session->userdata('user_type') == '3'
+			or $this->session->userdata('user_type') == '3' or $this->session->userdata('user_type') == '4' or $this->session->userdata('user_type') == '5'
+			or $this->session->userdata('user_type') == '6'
 		) {
 			$data['page'] = 'notifications';
 			$data['mainpage'] = '';
