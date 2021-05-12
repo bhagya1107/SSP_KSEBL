@@ -48,7 +48,7 @@
                               </div>
                               <div class='form-row'>
                                 <div class=' col-md-12'>
-                                  <label for='feFirstName'><b> Tender Name   :<?php echo $gettenderdetails->tendername;;?></b></label> 
+                                  <label for='feFirstName'><b> Tender Name   :<?php echo $gettenderdetails->tendername;?></b></label> 
                                 </div> 
                               </div>
                               <div class='form-row'>

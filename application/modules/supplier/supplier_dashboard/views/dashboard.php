@@ -1,7 +1,7 @@
 <style>
   .fa-2x {
     font-size: 8em !important;
-    ;
+    color: #272360;
   }
 
   #loader {
@@ -128,6 +128,7 @@
     /* background:#ffa600!important; */
     background: #ffbb3b !important;
   }
+  
 </style>
 <link href="<?= base_url() ?>assets/supplier_portal/css/dashboard.css" rel="stylesheet" id="bootstrap-css">
 
@@ -173,16 +174,16 @@
       <?php
       }
       ?>
-      <div class=" col-md-6 ">
-        <div class="card dash-content">
+       <a href="<?= base_url() ?>supplier/tenders"> <div class=" col-md-6 ">
+      <div class="card dash-content">
           <div class="content">
             <div class="row">
               <div class="col-md-4">
-                <span class="content-text mt-40" style="margin-top:20%"> <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
-              </div>
+              <span class="content-text mt-40" style="margin-top:20%"> <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
+               </div>
               <div class="col-md-8" style="display:inline-flex;    margin-top: 17%;padding-left:0px">
                 <div class="col-md-11">
-                  <h3 style="text-transform:unset">Active Tenders</h3>
+                  <h3 style="text-transform:unset">Applied Tenders</h3>
                 </div>
                 <div class="col-md-1">
                   <span class="count blue"><?php echo $getcounttenders ?></span>
@@ -199,8 +200,9 @@
           </div>
         </div>
       </div>
+      </a>
 
-      <div class=" col-md-6">
+      <a href="<?= base_url() ?>supplier/purchase_order"><div class=" col-md-6">
         <div class="card dash-content">
           <div class="content">
             <div class="row">
@@ -209,7 +211,7 @@
               </div>
               <div class="col-md-8" style="display:inline-flex;margin-top: 17%;padding-left:0px">
                 <div class="col-md-11">
-                  <h3 style="text-transform:unset">Active Purchase Orders</h3>
+                  <h3 style="text-transform:unset">Accepted Purchase Orders</h3>
                 </div>
                 <div class="col-md-1">
                   <span class="count green"><?php echo $countpurchaseorder ?></span>
@@ -226,6 +228,7 @@
           </div>
         </div>
       </div>
+      </a>
     </div>
 
 

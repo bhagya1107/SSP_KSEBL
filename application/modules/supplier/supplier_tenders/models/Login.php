@@ -31,7 +31,7 @@ class Login extends CI_Model
   {
    $this->db->select('*');
    $this->db->where('supplierid',$supplierid);
-   $this->db->where('id',$id);
+   $this->db->where('tenderid',$id);
    return $this->db->get($table)->row();
  }
 
@@ -95,6 +95,13 @@ class Login extends CI_Model
     else {
         return FALSE;
     }
+  }
+
+  public function update_appliedstatus($data, $where)
+  {
+      $query=$this->db->update('tenders_favourites',$data,$where);
+      return $query;
+      
   }
 
 

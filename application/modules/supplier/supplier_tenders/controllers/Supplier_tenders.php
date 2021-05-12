@@ -9,9 +9,7 @@ class Supplier_tenders extends SP_Controller
 		$this->load->model('Login', 'Login');
 	}
 	public function index($tab = 1)
-	{
-
-		//echo $dates;exit;
+	{//echo $dates;exit;
 		//neethu
 		$this->load->model('Getmenus', 'GETM');
 		$user_type = $this->session->userdata('user_type');
