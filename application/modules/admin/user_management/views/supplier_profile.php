@@ -485,7 +485,7 @@
                                                         <table class="table m-0" >
                                                               <tbody>
                                                                 <tr>
-                                                                  <th scope="row">Category Name  </th>
+                                                                  <th scope="row">Utility/wings</th>
                                                                    <th scope="row">Product Name</th>
                                                                    <!-- <th scope="row">Material id</th> -->
                                                                   
@@ -530,7 +530,7 @@
                                                               <tbody>
                                                                 <tr>
                                                                   <th scope="row">Service Name  </th>
-                                                                   <th scope="row">Service</th>
+                                                                   <th scope="row">Utility/Wing</th>
                                                                
                                                                   
                                                                 </tr>
