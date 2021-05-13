@@ -73,7 +73,7 @@ setTimeout(function() {
                             </div>
                             
                             <?php 
-                            }
+                            } 
                             ?>
 
                   
@@ -139,4 +139,4 @@ setTimeout(function() {
     } 
 </script>
 
-<?php } else {  redirect(base_url('forgot_password'));  } ?>
+<?php } else {  redirect(base_url(''));  } ?>

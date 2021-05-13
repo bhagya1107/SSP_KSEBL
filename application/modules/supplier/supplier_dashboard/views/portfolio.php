@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="row p-0 px-3 pt-3">
                                             <div class="form-group col-md-12">
-                                                <label for="">Material Category</label>
+                                                <label for="">Material Utility/Wing</label>
                                                 <select class="form-control materialdata" id="productcategory" placeholder="Company name">
                                                     <option value="">Select Material Group Data
                                                         <?php foreach ($getcategory as $key=>$category) { ?>
@@ -161,8 +161,8 @@
                                                         <thead>
                                                             <tr style="background-color:#26265f ;color:#FFF ">
                                                                 <th>Sl No </th>
-                                                                <th>category </th>
-                                                                <th>materialGroup </th>
+                                                                <th>Utility/Wing </th>
+                                                                <th>material Group </th>
                                                                 <th>Product Name</th>
                                                                 <th>Orders</th>
                                                                 <th>Overdue</th>
@@ -232,8 +232,8 @@
 
                                                         <tr>
                                                             <th>Sl No </th>
-                                                            <th>Service Category </th>
-                                                            <th>Services</th>
+                                                            <th>Service Name </th>
+                                                            <th>Utility/Wing </th>
                                                             <th>Remove</th>
 
                                                         </tr>

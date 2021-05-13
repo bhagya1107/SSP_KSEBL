@@ -796,6 +796,7 @@ public function forgotpasstohome()
 		$this->session->unset_userdata('session_otp_change');
 		$this->session->unset_userdata('Employee');
 		$this->session->unset_userdata('Supplier');
+		// $this->session->unset_userdata('supplier');
 		redirect(base_url(''));
 }
 public function send_otp_supplier()
@@ -875,19 +876,28 @@ public function update_supplier_password()
 } 
 
 //forgot password employee
-public function emp_forgot_password()
+public function forgot_passwordss()
 {
+	echo "hii";
+}
+public function emp_forgot_password()
+{ 
+	echo "hii"; exit;
 	$this->session->set_userdata('Employee','Employee'); 
+	// $this->session->set_userdata('supplier','abc'); 
 	redirect(base_url('forgot_password'));
 }
 public function sup_forgot_password()
 {
+	$this->session->set_userdata('supplier','abc');
 	$this->session->set_userdata('Supplier','Supplier'); 
 	redirect(base_url('forgot_password'));
 }
 public function send_otp_employee()
 {
+	// echo "emp"; exit;
 	$mobile=$this->input->post('mobile');
+	$this->session->set_userdata('Employee','Employee');
 	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
 	$get_employee_mobile=$this->dashM->get_employee_mobile_forget_pass('employees', $mobile);
 	

@@ -306,7 +306,7 @@
                             <div class="form-group mb-3 d-table mx-auto dflex">
                                 <div class="auth-form__meta d-flex mt-4" style="color:black">
 
-                                    <a href="<?=base_url('forgot_pasword')?>" style="color:black"><b>Forgot your password?</b></a>
+                                    <a href="<?=base_url('forgot_pasupplier/dashboard/emp_forgot_passwordsword')?>" style="color:black"><b>empForgot your password?</b></a>
                                 </div>
                             </div>
 
@@ -426,7 +426,7 @@
                                                             <div class="auth-form__meta d-flex mt-41" style="color:black">
 
 
-                                                                <a href="<?=base_url('forgot_password')?>" style="color:black"><b>Forgot your password?</b></a>
+                                                                <a href="<?=base_url('forgot_password?value=Supplier')?>" style="color:black"><b>Forgot your password?</b></a>
                                                             </div>
                                                         </div>
 
@@ -483,7 +483,7 @@
                                                             <div class="auth-form__meta d-flex mt-41" style="color:black">
 
 
-                                                                <a href="<?=base_url('supplier/dashboard/emp_forgot_password')?>" style="color:black"><br><b>Forgot your password?</b></a>
+                                                                <a href="<?=base_url('forgot_password?value=1')?>" style="color:black"><br><b>Forgot your password?</b></a>
                                                             </div>
                                                         </div> 
                                                       

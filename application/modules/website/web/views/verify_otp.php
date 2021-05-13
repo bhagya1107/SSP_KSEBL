@@ -67,12 +67,12 @@
           ?>
         </div>
 
-      <?php
+      <?php 
       }
       ?> 
                  
              
-                  <p>Enter your OTP </p>
+                  <p>Enter your OTP </p> 
                   <div class="panel-body">
                   <?php $s=$this->session->set_userdata('supplier',8); ?>  
                     <!-- <form id="register-form" role="form" autocomplete="off" class="form" method="post"> -->
@@ -106,4 +106,4 @@
     padding-top: 70px;
 }
 </style>
-<?php } else { redirect(base_url('forgot_password')); } ?>
+<?php } else { redirect(base_url('')); } ?>
