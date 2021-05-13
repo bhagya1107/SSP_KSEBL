@@ -8,8 +8,10 @@ class Supplier_tenders extends SP_Controller
 		$this->load->model('procurement/Procurement_model', 'procM');
 		$this->load->model('Login', 'Login');
 	}
-	public function index($tab = 1)
-	{//echo $dates;exit;
+
+
+	public function index($tab=1)
+	{
 		//neethu
 		$this->load->model('Getmenus', 'GETM');
 		$user_type = $this->session->userdata('user_type');
@@ -65,12 +67,12 @@ class Supplier_tenders extends SP_Controller
 
 			$data['getfavtender'] = $this->procM->getfavtender($uid);
 			$data['favid'] = array_column($data['getfavtender'], 'tendername');
-
+   $favappliedtenders= array_combine($data['favid'],array_values($data['getfavtender']));
 			if (!empty($data['favid'])) {
 				foreach ($data['tender'] as $key => $tender1) {
 					if (in_array($tender1->id, $data['favid'])) {
 						$data['tender'][$key]->sorting = 1;
-						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->id, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tendering_authority];
+						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->id, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tendering_authority,'is_applied'=>$favappliedtenders[$tender1->id]->is_applied];
 					} else {
 						$data['tender'][$key]->sorting  = 0;
 					}
@@ -78,11 +80,9 @@ class Supplier_tenders extends SP_Controller
 				$col = array_column($data['tender'], "sorting");
 				array_multisort($col, SORT_ASC, $data['tender']);
 			}
-
 			$supplierid = $this->session->userdata('uid');
 
 			$data['gettenderdetails'] = $this->Login->gettenderdetails('tenders_favourites', $supplierid);
-
 			$this->template->make('supplier_tenders/home', $data, 'supplier_portal');
 			//neethu
 		} else {
@@ -255,7 +255,7 @@ class Supplier_tenders extends SP_Controller
 			$form_questions = $this->procM->getFormengine_questions($where, $userid);
 
 			// print_r($form_questions);
-			// exit;
+			 //exit;
 			$data['getfavtender'] = $this->procM->getfavtender($uid);
 			$data['tenderId'] = $tenderId;
 			$tender = json_decode($this->getTenderData());
@@ -301,16 +301,19 @@ class Supplier_tenders extends SP_Controller
 
 
 
-					$data['form_questions'] = $dataAppend;
+				
 				}
 			}
-
+			$data['form_questions'] = $dataAppend;
 			$supplierid = $this->session->userdata('uid');
 			$id = $this->uri->segment(4);
+		
+
 			$data['gettenderdetails'] = $this->Login->gettenderdetails1('tenders_favourites', $supplierid, $id);
 
 			$data['tender_id'] = $tenderId;
 			$data['user_id'] = $this->session->userdata('userid');
+			
 			$this->template->make('supplier_tenders/apply_tender', $data, 'supplier_portal');
 			//neethu
 		} else {
@@ -526,6 +529,15 @@ class Supplier_tenders extends SP_Controller
 			$res =  $this->procM->insert('formengine_registration', $newarray);
 		}
 
+			$appliedstatus = array(
+				'is_applied' => true
+			);
+$where=array(
+	'tenderid' => $tenderid,
+	'supplierid' => $userid
+);
+
+			$res =  $this->Login->update_appliedstatus($appliedstatus,$where);
 
 		$statusUpdate = array(
 			'is_completed' => $is_completed,
