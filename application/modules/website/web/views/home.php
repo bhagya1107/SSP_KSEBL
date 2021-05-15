@@ -383,7 +383,7 @@
                                                 <img class="auth-form__logo d-table mx-auto mb-3" src="<?=base_url('assets/logo.png')?>" alt="Shards Dashboards - Register Template" style=" border-radius: 5px; background: white; width: 100px; padding: 17px; ">
                                                 <h5 class="auth-form__title text-center mb-4" style=" color: black; ">Access Your Account</h5>
 
-
+  
 
 
                                                 <!--  supplier login starts here -->

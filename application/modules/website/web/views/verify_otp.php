@@ -17,7 +17,7 @@
         <a class="navbar-brand" href="<?=base_url('supplier/dashboard/forgotpasstohome');?>" style="margin-left: 80%;color:black"><b>Home</b></a>
        
       </div> 
-    </nav>
+    </nav>  
 
 
  <div class="form-gap"></div>

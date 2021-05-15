@@ -777,7 +777,7 @@ public function change_pswd()
 				// redirect(base_url('supplier/dashboard/forgotpassword'));
 			}
 			else{
-				echo '<script type="text/javascript" >alert("Password mismatch" );
+				echo '<script type="text/javascript" >alert("Password mismatch" ); 
 				</script>';
 				echo ' <script>window.location.href="changepassword";</script>';
 		   

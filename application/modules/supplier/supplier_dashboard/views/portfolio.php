@@ -80,7 +80,7 @@
                     </div>
 
 
-                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right">
+                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right"> 
                         <ul class="nav nav-tabs">
                             <?php
                             $user_type = $this->session->userdata('user_type');

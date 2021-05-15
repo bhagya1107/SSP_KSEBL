@@ -49,7 +49,7 @@ setTimeout(function() {
           ?>
         </div>
 
-      <?php
+      <?php 
       }
       ?>
       <?php
