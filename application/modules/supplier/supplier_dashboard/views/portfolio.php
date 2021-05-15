@@ -152,7 +152,6 @@
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <button class="mb-2 btn btn-primary mr-2" id="save_products" onclick="save_products();">Add To My Products</button>
-
                                                 <!--  <h6>Added Products</h6>-->
                                             </div>
                                             <div class="col-md-12">
