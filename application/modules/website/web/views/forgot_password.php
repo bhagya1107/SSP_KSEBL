@@ -1,3 +1,4 @@
+<?php if($_GET["value"]!='') { ?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -48,17 +49,19 @@ setTimeout(function() {
           ?>
         </div>
 
-      <?php
+      <?php 
       }
       ?>
-      <?php $emp= $this->session->userdata('Employee'); ?>
+      <?php
+       $emp= $_GET["value"];
+      $value= $_GET["value"];?>
                   <h2 class="text-center">Forgot Password?</h2> 
                   <p>You can reset your password here.</p>
                   <p>Enter your Registered Mobile No</p>
                   <div class="panel-body">
                   <?php $s=$this->session->set_userdata('supplier',8); ?>  
                     <!-- <form id="register-form" role="form" autocomplete="off" class="form" method="post"> -->
-                    <?php if($emp=='Employee') {?>
+                    <?php if($emp==1) {?>
                     <form method="post" action="<?php echo base_url('supplier/dashboard/send_otp_employee')?>" >
                     <?php } else { ?>
                       <form method="post" action="<?php echo base_url('supplier/dashboard/send_otp_supplier')?>" >
@@ -91,3 +94,6 @@ setTimeout(function() {
     padding-top: 70px;
 }
 </style>
+<?php } else {
+  redirect(base_url(''));
+}?>

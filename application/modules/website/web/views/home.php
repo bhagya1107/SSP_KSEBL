@@ -306,7 +306,7 @@
                             <div class="form-group mb-3 d-table mx-auto dflex">
                                 <div class="auth-form__meta d-flex mt-4" style="color:black">
 
-                                    <a href="<?=base_url('forgot_pasword')?>" style="color:black"><b>Forgot your password?</b></a>
+                                    <a href="<?=base_url('forgot_pasupplier/dashboard/emp_forgot_passwordsword')?>" style="color:black"><b>empForgot your password?</b></a>
                                 </div>
                             </div>
 
@@ -383,7 +383,7 @@
                                                 <img class="auth-form__logo d-table mx-auto mb-3" src="<?=base_url('assets/logo.png')?>" alt="Shards Dashboards - Register Template" style=" border-radius: 5px; background: white; width: 100px; padding: 17px; ">
                                                 <h5 class="auth-form__title text-center mb-4" style=" color: black; ">Access Your Account</h5>
 
-
+  
 
 
                                                 <!--  supplier login starts here -->
@@ -392,6 +392,7 @@
                                                     <?php  $attributes = array('id' => 'frm','style'=>'width:100%');  ?>
                                                     <?=form_open('supplier/home/admin_login',$attributes);?>
 
+                                                    <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
 
 
                                                         <div class="form-group dflex" style="color: white;">
@@ -426,7 +427,7 @@
                                                             <div class="auth-form__meta d-flex mt-41" style="color:black">
 
 
-                                                                <a href="<?=base_url('forgot_password')?>" style="color:black"><b>Forgot your password?</b></a>
+                                                                <a href="<?=base_url('forgot_password?value=Supplier')?>" style="color:black"><b>Forgot your password?</b></a>
                                                             </div>
                                                         </div>
 
@@ -483,7 +484,7 @@
                                                             <div class="auth-form__meta d-flex mt-41" style="color:black">
 
 
-                                                                <a href="<?=base_url('supplier/dashboard/emp_forgot_password')?>" style="color:black"><br><b>Forgot your password?</b></a>
+                                                                <a href="<?=base_url('forgot_password?value=1')?>" style="color:black"><br><b>Forgot your password?</b></a>
                                                             </div>
                                                         </div> 
                                                       

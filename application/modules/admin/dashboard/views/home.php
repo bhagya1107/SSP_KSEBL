@@ -7,6 +7,7 @@
                     <div class="row">
 
                     <div class="col-xl-3 col-md-6" >
+                    <!-- //supplier -->
 												<div class="card bg-c-green text-white" style="height :125px;">
                                                     <a href="<?php echo base_url('webuser/user_management/Pending_approvals');?>" style="color: white;">	
                                                     <div class="card-block">
@@ -81,7 +82,8 @@
 															</div></a>
 													</div>
 											</div>
-
+<!-- // supplier end -->
+<!-- tender strart -->
 
                         <div class="col-xl-3 col-md-6"  >
                             <div class="card bg-c-yellow text-white " style="height :125px;">
@@ -102,7 +104,7 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-c-pink text-white" style="height :125px;">
+                            <div class="card bg-c-yellow text-white" style="height :125px;">
                                 <div class="card-block">
                                     <div class="row align-items-center">
                                         <div class="col">
@@ -111,14 +113,14 @@
                                             <h4 class="m-b-0"><?php echo $active_tenders=$total_tenders-$completed_tenders; ?></h4>
                                         </div>
                                         <div class="col col-auto text-right">
-                                            <i class="feather icon-book f-50 text-c-pink"></i>
+                                        <i class="feather icon-credit-card f-50 text-c-yellow"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-c-blue text-white " style="height :125px;" >
+                            <div class="card bg-c-yellow text-white " style="height :125px;" >
                                 <div class="card-block">
                                     <div class="row align-items-center">
                                         <div class="col">
@@ -128,7 +130,8 @@
                                             <h4 class="m-b-0"><?php echo $completed_tenders; ?></h4>
                                         </div>
                                         <div class="col col-auto text-right">
-                                            <i class="feather icon-book f-50 text-c-blue"></i>
+                                        <i class="feather icon-credit-card f-50 text-c-yellow"></i>
+                                            <!-- <i class="feather icon-book f-50 text-c-blue"></i> -->
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +149,7 @@
                                         </div>
                                         <!-- <div class="col col-auto text-right"> -->
                                         <div class="col col-auto text-right">
-                                            <i class="feather icon-credit-card f-50 text-c-yellow"></i>
+                                        <i class="feather icon-credit-card f-50 text-c-yellow"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +157,7 @@
                             </div>
                         </div>
 
-
+<!-- tender end -->
 
                         
                         <div class="col-xl-3 col-md-6">
