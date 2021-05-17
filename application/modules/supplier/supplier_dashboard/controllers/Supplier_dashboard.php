@@ -19,7 +19,7 @@ class Supplier_dashboard extends SP_Controller
 		$purchaseOrder = json_decode($this->getPOData());
 		$data['purchaseorder'] = $purchaseOrder->result_data->list;
 		$data['countpurchaseorder'] = count($data['purchaseorder']);
-		// $this->template->make('supplier_dashboard/home',$data,'supplier_portal');
+		//$this->template->make('supplier_dashboard/home',$data,'supplier_portal');
 		$this->template->make('supplier_dashboard/dashboard', $data, 'supplier_portal');
 	}
 	public function dashboard1()
@@ -522,7 +522,8 @@ class Supplier_dashboard extends SP_Controller
 				'delete' => $delete,
 				'capacityinfo' => $capacityinfo,
 				'id' => $r->id,
-				'materialId' => $r->materialId
+				'materialId' => $r->materialId,
+				'materialgroupId' => $r->materialinputId
 
 			);
 			$i++;
@@ -777,7 +778,7 @@ public function change_pswd()
 				// redirect(base_url('supplier/dashboard/forgotpassword'));
 			}
 			else{
-				echo '<script type="text/javascript" >alert("Password mismatch" ); 
+				echo '<script type="text/javascript" >alert("Password mismatch" );
 				</script>';
 				echo ' <script>window.location.href="changepassword";</script>';
 		   
@@ -796,7 +797,6 @@ public function forgotpasstohome()
 		$this->session->unset_userdata('session_otp_change');
 		$this->session->unset_userdata('Employee');
 		$this->session->unset_userdata('Supplier');
-		// $this->session->unset_userdata('supplier');
 		redirect(base_url(''));
 }
 public function send_otp_supplier()
@@ -876,28 +876,19 @@ public function update_supplier_password()
 } 
 
 //forgot password employee
-public function forgot_passwordss()
-{
-	echo "hii";
-}
 public function emp_forgot_password()
-{ 
-	echo "hii"; exit;
+{
 	$this->session->set_userdata('Employee','Employee'); 
-	// $this->session->set_userdata('supplier','abc'); 
 	redirect(base_url('forgot_password'));
 }
 public function sup_forgot_password()
 {
-	$this->session->set_userdata('supplier','abc');
 	$this->session->set_userdata('Supplier','Supplier'); 
 	redirect(base_url('forgot_password'));
 }
 public function send_otp_employee()
 {
-	// echo "emp"; exit;
 	$mobile=$this->input->post('mobile');
-	$this->session->set_userdata('Employee','Employee');
 	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
 	$get_employee_mobile=$this->dashM->get_employee_mobile_forget_pass('employees', $mobile);
 	
@@ -1893,9 +1884,9 @@ public function update_employee_password()
 	}
 
 	public function getPOData()
-	{
+	{ 
 		$token = $this->Login_POST();
-		$token1 = json_decode($token);
+		$token1 = json_decode($token);//print_r($token1);exit;
 
 		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getPOData';
 		$curl       = curl_init();
@@ -1906,6 +1897,7 @@ public function update_employee_password()
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
 		));
 		$result = curl_exec($curl);
+		
 		return $result;
 	}
 

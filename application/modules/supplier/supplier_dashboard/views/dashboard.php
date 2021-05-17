@@ -174,7 +174,7 @@
       <?php
       }
       ?>
-       <a href="<?= base_url() ?>supplier/tenders"> <div class=" col-md-6 ">
+       <a href="<?= base_url() ?>supplier/tenders/appliedindex"> <div class=" col-md-6 ">
       <div class="card dash-content">
           <div class="content">
             <div class="row">
