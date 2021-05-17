@@ -172,7 +172,7 @@
 
 <!-------------------------Purchase DetailsEnd---------------------------------------------------->
 
-<script src="<?php echo base_url();?>DataTables-1.10.21/js/jquery.dataTables.js">
+<script src="<?php echo base_url();?>DataTables-1.10.21/js/jquery.dataTables.js"></script>
 <script src="<?php echo base_url();?>DataTables-1.10.21/js/dataTables.bootstrap4.js"></script>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
 <script src="<?php echo base_url();?>perfect-scrollbar/dist/perfect-scrollbar.min.js">

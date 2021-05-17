@@ -7,12 +7,18 @@
  <link rel="stylesheet" href="collapsible.css">
  <script type="text/javascript" src="jquery.js"></script>
  <script type="text/javascript" src="collapsible.js"></script>
+ <script src="<?php echo base_url();?>DataTables-1.10.21/js/jquery.dataTables.js"></script>
+<script src="<?php echo base_url();?>DataTables-1.10.21/js/dataTables.bootstrap4.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+</script>
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets\supplier\styles\supplierloader.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="path/to/material-design-iconic-font/css/material-design-iconic-font.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-
+ <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css " rel="stylesheet">
+ <link href="<?php echo base_url();?>DataTables-1.10.21/css/dataTables.bootstrap4.css"
+    rel="stylesheet">
  <style>
      .btn-primary {
          color: #fff;
@@ -932,34 +938,22 @@
 
              <!-- Modal body -->
              <div class="modal-body">
-                 <h4 class="modal-title"><span id="questions"></span></h4>
+                 <h4 class="modal-title"></h4>
                  <div class="table-responsive">
 
-                     <table id="questions" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                     <table id="predispatchlist" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
                          <thead>
                              <tr>
                                  <th scope="col">sl no</th>
+                                 <th scope="col">Date</th>
                                  <th scope="col">status</th>
                                  <th scope="col">#</th>
 
 
                              </tr>
                          </thead>
-                         <tr>
-                             <td>1</td>
-                             <td>Approved for inspection</td>
-                             <td><button class="btn" data-toggle="modal" data-target="#Payment" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;">Pay</button></td>
 
-
-
-                         </tr>
-
-                         <tbody>
-                             <tr class="gradeX">
-                                 <!--<td colspan="6" class="dataTables_empty">No data found</td>-->
-                             </tr>
-                         </tbody>
-
+                        
 
                      </table>
 
@@ -991,36 +985,36 @@
              <div class="form-group row">
                  <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o From:</label>
                  <div class="col-md-6 col-sm-6" id="ques_group">
-                     <input type="text" class="form-control" id="subject" placeholder="">
+                     <input type="text" name="serialfrom" class="form-control" id="serialfrom" placeholder="">
                  </div>
              </div>
              <div class="form-group row">
                  <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o To:</label>
                  <div class="col-md-6 col-sm-6" id="ques_group">
-                     <input type="text" class="form-control" id="subject" placeholder="">
+                     <input type="text" name="serialto"  class="form-control" id="serialto" placeholder="">
                  </div>
              </div>
              <div class="form-group row">
                  <label for="subject" class="col-md-3 col-sm-3 control-label">Quantity:</label>
                  <div class="col-md-6 col-sm-6" id="ques_group">
-                     <input type="text" class="form-control" id="subject" placeholder="">
+                     <input type="text"  name="quantitypdi" class="form-control" id="quantitypdi" placeholder="">
                  </div>
              </div>
              <div class="form-group row">
                  <label for="subject" class="col-md-3 col-sm-3 control-label">Visit Request Date:</label>
                  <div class="col-md-6 col-sm-6" id="ques_group">
-                     <input type="date" class="form-control" id="subject" placeholder="">
+                     <input type="date" name="visitdate"  class="form-control" id="visitdate" placeholder="">
                  </div>
              </div>
 
              <div class="form-group row">
                  <label for="subject" class="col-md-3 col-sm-3 control-label">Serial Upload file:</label>
                  <div class="col-md-6 col-sm-6" id="ques_group">
-                     <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                     <input type="file" name="fileToUpload" name="fileToUpload" id="fileToUpload"><br>
                  </div>
              </div>
              <div class="modal-footer">
-                 <button type="button" class="btn btn-primary" data-dismiss="modal">Request</button>
+                 <button type="button" class="btn btn-primary"  onclick="requestdata()" data-dismiss="modal">Request</button>
 
                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
              </div>
@@ -1706,7 +1700,7 @@ filterpurchasedata(tabcontentid, value);
              html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
              html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
 
-             html += "<div class='tg-btn' ><a class='modal-view pullright' style='color:white;' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-purchase='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#myModalpurchase'>View</a>";
+             html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
 
              html += "</div></div>";
 
@@ -1753,6 +1747,60 @@ $.ajax({
 }
 
 
+dispatch_table = $('#predispatchlist').DataTable({
+   
+   
+    'ajax': {
+        url: '<?php echo site_url("supplier/purchase_order/getpredispatchData");?>', 
+        
+         "scrollX": true,
+        type: 'POST',
+        "data": function(d) {
+            d.<?=$this->security->get_csrf_token_name();?> =
+                "<?=$this->security->get_csrf_hash()?>";
+
+           // d.districtid = distval;
+            //d.blockid = block;
+           // d.cdsid = cds;
+            //d.adsid = ads;
+           // d.typeid = typeid;
+        }
+    },
+
+
+    "buttons": [],
+    "columns": [{
+             "data": "slno"
+            
+        },
+         {
+            "data": "date"
+        },
+        
+        {
+            "data": "status"
+        },
+         {
+            "data": "button"
+        },
+         
+        
+        
+          
+        
+    ],
+
+
+    "drawCallback": function(settings) {
+        console.log('ggg');
+        $(".ajaxLoader").css("display", "none");
+    },
+
+});
+
+
+
+
      function buildpurchaseorderswork(datas) {
          html = "";
          $.each(datas, function(i, data) {
@@ -1767,7 +1815,7 @@ $.ajax({
              html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
              html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
 
-             html += "<div class='tg-btn' ><a class='modal-view pullright' style='color:white;' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-purchase='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#myModalpurchase'>View</a>";
+             html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
 
              html += "</div></div>";
 
@@ -1797,4 +1845,71 @@ $.ajax({
          return month[$month_dat];
          //document.getElementById("demo").innerHTML = n;
      }
+
+
+     function requestdata() {
+	
+    var serialfrom = $("#serialfrom").val();
+	var serialto = $('#serialto').val();
+	var quantitypdi = $("#quantitypdi").val();
+	var visitdate = $("#visitdate").val();
+	var fileToUpload = $("#fileToUpload").val();
+	
+    $(".error_msg").remove();
+    var flag = 0;
+
+
+    if (serialfrom == '') {
+        flag = 1;
+        $("#serialfrom").append("<span class='error_msg'>serialfrom Required</span>"); 
+    }
+	
+	if (serialto == '') {
+        flag = 1;
+        $("#serialto").append("<span class='error_msg'>serialto Required</span>");
+    }
+
+    if (quantity == "") {
+        flag = 1;
+        $("#quantity").append("<span class='error_msg'>quantity Required</span>");
+    } 
+
+    if (visitdate == "") {
+        flag = 1;
+        $("#visitdate").append("<span class='error_msg'>Visit Date Required</span>");
+    } 
+  
+    if (flag == 0) {
+
+        $("#savemicro").prop("disabled", true);
+        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+        $(".ajaxLoader").css("display", "block");
+        $.post("<?php echo site_url('supplier/purchase_order/insert_predispatch')?>", { 
+
+            serialfrom: serialfrom,
+            serialto:serialto,
+            quantitypdi: quantitypdi,
+            visitdate: visitdate,
+            fileToUpload:fileToUpload,
+            
+           
+            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
+        }, function(data) {
+			 // alert(data);
+             $('#savemicro').removeAttr("disabled");
+			window.location.reload();
+
+        });
+
+    }
+
+
+}
+
+
+
+
+
  </script>

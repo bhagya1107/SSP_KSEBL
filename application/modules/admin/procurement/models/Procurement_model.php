@@ -242,5 +242,14 @@ class Procurement_model extends CI_Model
 		return $result->result();
     }
 
+    public function getListOfPreDispatch($supplierid)
+    {
+        
+     $this->db->select('*');
+	 $this->db->where('supplierid',$supplierid);
+  
+        return $this->db->get("pdi_predispatch")->result();
+        
+    }
  
 }

@@ -4,7 +4,10 @@ class Supplier_purchase_order extends SP_Controller {
 public function __construct()
 {
 	parent::__construct();
-
+	$this->load->model('dashboard/Dashboard_model', 'dashM');
+	$this->load->model('procurement/Procurement_model', 'procM');
+	
+	
 }
 	public function index($tab=1)
 	{
@@ -99,5 +102,61 @@ public function __construct()
 			echo json_encode($data['purchaseorder']);
 			
 		}
+
+		public function insert_predispatch()
+	{
+
+		$res = '';
+		$data['serialno_from'] = $this->input->post('serialfrom');
+		$data['serialno_to'] = $this->input->post('serialto');
+		$data['quantity'] = $this->input->post('quantitypdi');
+		$data['visit_request_date'] = $this->input->post('visitdate');
+		$data['upload_file'] ="1";
+		$data['supplierid'] = $this->session->userdata('uid'); 
+
+				$res =  $this->procM->insert('pdi_predispatch', $data);
+			 if($res > 0) {
+				$this->session->set_flashdata('msg', 'Selected Tenders added to Favourites');
+			} else {
+				echo "Error while adding";
+			}
+		} 
+	
+		public function getpredispatchData()
+	{
+
+		$draw = intval($this->input->get("draw"));
+		$start = intval($this->input->get("start"));
+		$length = intval($this->input->get("length"));
+		$supplierid = $this->session->userdata('uid');
+
+		$pdidata = $this->procM->getListOfPreDispatch($supplierid);
+
+		$data = array();
+
+		$i = 1;
+		foreach ($pdidata as $r) {
+
+
+			$data[] = array(
+				'slno' => $i,
+				'date' => $r->visit_request_date,
+				'status' =>'Requested',
+				'button' =>'',
+				
+			);
+			$i++;
+		}
+
+		$output = array(
+			"draw" => $draw,
+
+			"data" => $data
+		);
+
+		echo json_encode($output);
+	}
+
+
 
 }
