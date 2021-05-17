@@ -81,11 +81,11 @@
 <main id="tg-main" class="tg-main tg-haslayout">
     <section class="tg-main-section tg-haslayout">
 
-        <div id="alltendercount" style="text-align:center;">
+        <div id="alltendercount" class="<?php echo $tab == 1 ? "" : "hide" ?>" style="text-align:center;">
         </div>
-        <div id="favtendercount" class="hide" style="text-align:center;"><span><b>Total Favourites Tenders:<?php echo count($getfavtender); ?></b></span>
+        <div id="favtendercount" class="<?php echo $tab == 2 ? "" : "hide" ?>" style="text-align:center;"><span><b>Total Favourites Tenders:<?php echo count($getfavtender); ?></b></span>
         </div>
-        <div id="applytedercount" class="hide" style="text-align:center;"><span><b>Total Applied Tenders:<?php echo count($appliedtenderdetails); ?></b></span>
+        <div id="applytedercount" class="<?php echo $tab == 3 ? "" : "hide" ?>" style="text-align:center;"><span><b>Total Applied Tenders:<?php echo count($appliedtenderdetails); ?></b></span>
         </div>
 
         <div class="container">
@@ -182,7 +182,7 @@
                                       <div class="tg-btnsbox">
                                             <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten['tenderid'] ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
                                         <?php if($favten['is_applied']) { ?>
-                                            <a class="btn btn-success btn-sm" href="#">Apply </a>
+                                            <a class="btn btn-success btn-sm" href="#">Applied </a>
                                           <?php } else { ?>
                                             <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $favten['tenderid']) ?>">Apply </a>
                                          

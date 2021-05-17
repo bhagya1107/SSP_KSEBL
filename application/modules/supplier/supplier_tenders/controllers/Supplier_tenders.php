@@ -673,4 +673,88 @@ $where=array(
 
 		echo json_encode($data['tender']);
 	}
+
+	public function appliedindex($tab=3)
+	{
+		//neethu
+		$this->load->model('Getmenus', 'GETM');
+		$user_type = $this->session->userdata('user_type');
+		$uid = $this->session->userdata('supplierid');
+		$getcompanypermissiondetails = $this->GETM->getCompanyPermission2($uid, $user_type);
+
+		if ($getcompanypermissiondetails->tenders == '1' and $this->session->userdata('active_status') == '1') { //neethu end
+			$data['showdashbaord'] = true;
+			$data['page'] = 'tenders';
+			$data['title'] = 'Tenders';
+			$data['indexurl'] = base_url() . "supplier/dashboard";
+			$data['tab'] = $tab;
+			$tender = json_decode($this->getTenderData());
+			$data['tender'] = $tender->result_data->list;
+			$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid);
+			$data['getsuppliertenderservices'] = $this->procM->getSupplierServices($uid);
+			$data['materialid'] = array_column($data['getsuppliertender'], 'materialId');
+			$data['mytenderproducts'] = array();
+			$data['user_type'] = $this->session->userdata('user_type');
+			$dates = date_formate('');
+			$data['user_dateformat'] = $_SESSION["user_dateformat"];
+			$data['appliedtenderdetails'] = $this->getappliedtenders($data['tender']);
+
+			if (!empty($data['materialid'])) {
+				foreach ($data['tender'] as $key => $materialid) {
+					$materials = '';
+					$materialsArr = array_column($materialid->prc_proposed_delivery_details, 'mst_material_id');
+
+					if (array_intersect($materialsArr, $data['materialid'])) {
+						array_push($data['mytenderproducts'], $data['tender'][$key]);
+					}
+				}
+			}
+
+			$data['serviceid'] = array_column($data['getsuppliertenderservices'], 'serviceid');
+			$data['mytenderservices'] = array();
+
+
+			if (!empty($data['serviceid'])) {
+				foreach ($data['tender'] as $key => $serviceid) {
+					$materials = '';
+					$prc_purchase_order_items = array_column($serviceid->prc_purchase_orders, 'prc_purchase_order_item_dtl');
+					foreach ($prc_purchase_order_items as $key1 => $items) {
+						$materials = $materials . ',' . implode(',', array_column($items, 'mst_material_id'));
+					}
+					$materialsArr = explode(',', $materials);
+					array_shift($materialsArr);
+					if (array_intersect($materialsArr, $data['serviceid'])) {
+						array_push($data['mytenderservices'], $data['tender'][$key]);
+					}
+				}
+			}
+
+			$data['getfavtender'] = $this->procM->getfavtender($uid);
+			$data['favid'] = array_column($data['getfavtender'], 'tendername');
+   $favappliedtenders= array_combine($data['favid'],array_values($data['getfavtender']));
+			if (!empty($data['favid'])) {
+				foreach ($data['tender'] as $key => $tender1) {
+					if (in_array($tender1->id, $data['favid'])) {
+						$data['tender'][$key]->sorting = 1;
+						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->id, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tendering_authority,'is_applied'=>$favappliedtenders[$tender1->id]->is_applied];
+					} else {
+						$data['tender'][$key]->sorting  = 0;
+					}
+				}
+				$col = array_column($data['tender'], "sorting");
+				array_multisort($col, SORT_ASC, $data['tender']);
+			}
+			$supplierid = $this->session->userdata('uid');
+
+			$data['gettenderdetails'] = $this->Login->gettenderdetails('tenders_favourites', $supplierid);
+			$this->template->make('supplier_tenders/home', $data, 'supplier_portal');
+			//neethu
+		} else {
+			$acl_error_message = acl_error_message('Tenders');
+			$this->session->set_flashdata('msg', $acl_error_message);
+			redirect(base_url('supplier/dashboard'));
+		} //neethu end
+
+	}
+
 }

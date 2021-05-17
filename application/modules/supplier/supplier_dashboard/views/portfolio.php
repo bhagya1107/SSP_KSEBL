@@ -80,7 +80,7 @@
                     </div>
 
 
-                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right"> 
+                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right">
                         <ul class="nav nav-tabs">
                             <?php
                             $user_type = $this->session->userdata('user_type');
@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="row p-0 px-3 pt-3">
                                             <div class="form-group col-md-12">
-                                                <label for="">Material Utility/Wing</label>
+                                                <label for="">Material Category</label>
                                                 <select class="form-control materialdata" id="productcategory" placeholder="Company name">
                                                     <option value="">Select Material Group Data
                                                         <?php foreach ($getcategory as $key=>$category) { ?>
@@ -152,6 +152,7 @@
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <button class="mb-2 btn btn-primary mr-2" id="save_products" onclick="save_products();">Add To My Products</button>
+
                                                 <!--  <h6>Added Products</h6>-->
                                             </div>
                                             <div class="col-md-12">
@@ -160,8 +161,8 @@
                                                         <thead>
                                                             <tr style="background-color:#26265f ;color:#FFF ">
                                                                 <th>Sl No </th>
-                                                                <th>Utility/Wing </th>
-                                                                <th>material Group </th>
+                                                                <th>category </th>
+                                                                <th>materialGroup </th>
                                                                 <th>Product Name</th>
                                                                 <th>Orders</th>
                                                                 <th>Overdue</th>
@@ -231,8 +232,8 @@
 
                                                         <tr>
                                                             <th>Sl No </th>
-                                                            <th>Service Name </th>
-                                                            <th>Utility/Wing </th>
+                                                            <th>Service Category </th>
+                                                            <th>Services</th>
                                                             <th>Remove</th>
 
                                                         </tr>
@@ -611,8 +612,8 @@
 
 <!-------------------------payment End---------------------------------------------------->
 
-<script src="<?php echo base_url(); ?>DataTables-1.10.21/js/jquery.dataTables.js">
-    < script src = "<?php echo base_url(); ?>DataTables-1.10.21/js/dataTables.bootstrap4.js" >
+<script src="<?php echo base_url(); ?>DataTables-1.10.21/js/jquery.dataTables.js"></script>
+    <script src = "<?php echo base_url(); ?>DataTables-1.10.21/js/dataTables.bootstrap4.js" >
 </script>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
 <script src="<?php echo base_url(); ?>perfect-scrollbar/dist/perfect-scrollbar.min.js">
@@ -631,8 +632,7 @@
     $(".materialdata").change(function() {
         var materialgroup = $('#materialinput').val();
         var productcategory = $('#productcategory').val();
-        console.log(materialgroup);
-        console.log(productcategory);
+      
         if (materialgroup != "" && productcategory != "") {
             var load = '<option value="">Loading...</option>';
             $('#material').html(load);
@@ -643,13 +643,13 @@
                 function(data) {
                     
                     var res = JSON.parse(data);
-                    console.log(res);
+                  
                     var html = '<option value="">Select Material</option>';
 
                     res.forEach(function(item, index) {
                         html += '<option value="' + item.id + '" data-name="' + item.material_name + '">' + item.material_name + '</option>';
                     });
-                    console.log(html);
+                   
                     $('#material').html(html);
                     $('#savemicro').removeAttr("disabled");
                     $(".ajaxLoader").css("display", "none");
@@ -667,7 +667,7 @@
         var materialinputname = $('#materialinput option[value="' + materialinput + '"').attr('data-name');
         var material = $("#material").val();
         var product = $('#material option[value="' + material + '"').attr('data-name');
-        var isValid = validateDuplicateEntries(material);
+        var isValid = validateDuplicateEntries(material,materialinput);
         if (isValid == true) {
 
 
@@ -725,8 +725,7 @@
     $(document).ready(function() {
 
         material_table = $('#materialproducts').DataTable({
-            //console.log('kkkkk');
-
+       
             'ajax': {
                 url: '<?php echo site_url("supplier/dashboard/getMaterialListData"); ?>',
                 "scrollX": true,
@@ -743,7 +742,6 @@
                 },
                 "dataSrc": function(json) {
                     materiallistdata = json.data;
-                    console.log(materiallistdata);
                     // You can also modify `json.data` if required
                     return json.data;
                 }
@@ -814,16 +812,15 @@
 
     });
 
-    function validateDuplicateEntries(material) {
-        console.log(material);
-         console.log(materiallistdata);
+    function validateDuplicateEntries(material,materialgroupId) {
+        
         // return false;
         var filterednames = materiallistdata.filter(function(obj) {
-            console.log(obj.materialId);
-            return (obj.materialId == material);
+           
+            return (obj.materialId == material || obj.materialgroupId == materialgroupId);
 
         });
-        console.log(filterednames);
+       
         if (filterednames.length > 0) {
             $('#materialclass').removeClass('hide');
             return false;
@@ -907,8 +904,7 @@
     $(document).ready(function() {
 
         services_table = $('#servicestable').DataTable({
-            //console.log('kkkkk');
-
+           
             'ajax': {
                 url: '<?php echo site_url("supplier/dashboard/getServicesListData"); ?>',
                 "scrollX": true,
@@ -925,7 +921,7 @@
                 },
                 "dataSrc": function(json) {
                     materiallistdataservice = json.data;
-                    console.log(materiallistdataservice);
+                    
                     // You can also modify `json.data` if required
                     return json.data;
                 }
