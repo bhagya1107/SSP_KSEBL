@@ -7,12 +7,7 @@ class Procurement extends AD_Controller {
     $this->load->model('Procurement_model','procM');
 
   }
-  public function tenders()
-  {
-    $data['page'] = 'Teders';
-    $data['title'] = 'Tender';
-    $this->template->make('procurement/tenders',$data);
-  }
+ 
   public function applied_suppliers()
   {
     $data['page'] = 'Teders';
@@ -276,5 +271,52 @@ class Procurement extends AD_Controller {
 
 
   }
+
+  public function Login_POST()
+	{
+		$data = array(
+			"email" => "1036226@kseberp.in",
+			"password" => "password"
+		);
+
+		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+		$data_array = json_encode($data);
+		$curl       = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		$result = curl_exec($curl);
+		return $result;
+	}
+
+
+  public function tenders()
+  {
+    $data['page'] = 'Teders';
+    $data['title'] = 'Tender';
+    
+			$tenderdata = json_decode($this->getAdminTenderData());
+			$data['tenderdata'] = $tenderdata->result_data->list;
+    $this->template->make('procurement/tenders',$data);
+  }
+
+  public function getAdminTenderData()
+	{
+		$token = $this->Login_POST();
+		$token1 = json_decode($token);
+
+		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getTenderData';
+    // $apiurl = 'http://hris.kseb.in/erpws/api/prc/getMaterialGroupData';
+		$curl       = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		));
+		$result = curl_exec($curl); 
+		return $result;
+	}
 
 }

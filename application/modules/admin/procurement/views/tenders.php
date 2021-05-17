@@ -1,3 +1,11 @@
+<style type="text/css">
+  .tbllength {
+    max-width: 160px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+  }
+</style>
 <form name="frm" action="" name="frm" id="frm" enctype="multipart/form-data" method="post">
 <div class="pcoded-content">
   <div class="pcoded-inner-content">
@@ -47,23 +55,53 @@
 
                         <div class="card">
 
+                      
+                                         
+
                             <div class="card-block">
                                 <div class="table-responsive dt-responsive">
                                     <table id="dt-ajax-object" class="table table-striped table-bordered nowrap">
                                         <thead>
+                                        
                                             <tr>
-                                              <th>#</th>
+                                              <!-- <th>#</th>
+                                             
                                               <th>Tender Name</th>
                                               <th>Tender Date</th>
                                               <th>Tender End date</th>
                                               <th>Status</th>
+                                              <th>#</th> -->
                                               <th>#</th>
-                                              
-
-                                            </tr>
+                                             
+                                              <th>Tender Num</th>
+                                              <th>Tender Title</th>
+                                              <th>Tender Description</th>
+                                              <th>Tender Date</th>
+                                              <th></th>
+                                          </tr>
+                                      
                                         </thead>
                                         <tbody>
+
+                                       
+                                        <?php $i=1;
+                                        foreach ($tenderdata as $tenderdatas) { ?> 
                                           <tr>
+                                            <td><?php echo $i;?></td>
+                                              <td><?php echo $tenderdatas->tender_num; ?></td>
+                                              <td class="tbllength" title="<?php echo $tenderdatas->tender_title; ?>"><?php echo $tenderdatas->tender_title; ?></td>
+                                              <td class="tbllength" title="<?php echo $tenderdatas->tender_description; ?>" ><?php echo $tenderdatas->tender_description; ?></td>
+                                              <td><?php echo $tenderdatas->tender_date; ?></td> 
+                                            
+                                           
+                                            <td><a href="<?php echo admin_url("procurement/form_engine/1") ?>"><input type="button" class="btn  btn-sm btn-out-dashed btn-info btn-square" value="Form Engine" /></a></td>
+                                           
+                                          </tr>
+                                          <?php $i++; } ?>
+<!--                                 
+                                          <tr>
+ 
+
                                             <td>1</td>
                                             <td>Tender Name 1</td>
                                             <td>20/08/2020</td>
@@ -72,6 +110,7 @@
                                             <td><a href="<?php echo admin_url("procurement/form_engine/1") ?>"><input type="button" class="btn  btn-sm btn-out-dashed btn-info btn-square" value="Form Engine" /></a></td>
                                            
                                           </tr>
+                                        
                                           <tr>
                                             <td>2</td>
                                             <td>Tender Name 2</td>
@@ -93,20 +132,9 @@
                                             <td><a href="<?php echo admin_url("procurement/pq_list") ?>"><input type="button" class="btn  btn-sm btn-out-dashed btn-danger btn-square" value="PQ-LIST" /></a>
                                             <a href="<?php echo admin_url("procurement/response_consolidate") ?>"><input type="button" class="btn  btn-sm btn-out-dashed btn-success btn-square" value="RESPONSE CONSOLIDATE" /></a></td>
                                             
-                                          </tr>
+                                          </tr> -->
                                         </tbody>
-                                        <tfoot>
-                                          <tr>
-                                            <th>#</th>
-                                            <th>Tender Name</th>
-                                            <th>Tender Date</th>
-                                            <th>Tender End date</th>
-                                            <th>Status</th>
-                                            <th>#</th>
-                                           
-
-                                          </tr>
-                                        </tfoot>
+                                    
                                     </table>
                                     <!-- <input type="button" class="btn  btn-sm btn-out-dashed btn-primary btn-square" value="CREATE NEW PROCUREMENT" style="width:100%" /> -->
                                 </div>
