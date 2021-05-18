@@ -56,6 +56,18 @@
         background: rgba(0, 0, 0, 0.6);
     }
 
+    .tg-matchmetadata {
+        width:130%;
+    }
+
+    .tg-ticket h4 {
+        font-size: 20px;
+        width:195%;
+    }
+.appliedbuttons{
+    margin-top: 12%;
+}
+
     /* #tendertabs{
         position:fixed;
         top: 0;
@@ -171,11 +183,11 @@
                                         <div class="tg-matchdetail">
                                             <div class='hiddendate' hidden><?php echo $favten['tenderdate'] ?></div>
                                             <span class="tg-theme-tag"><?php echo $favten['tenderno'] ?></span>
-                                            <h4>TENDER <?php echo $favten['tendername'] ?></h4>
+                                            <h4> <?php echo $favten['tendername'] ?></h4>
                                             </h4>
                                             <ul class="tg-matchmetadata">
                                                 <li>
-                                                    <address>Tender Autority:<?php echo $favten['tenderauthority'] ?></address>
+                                                    <address>Tender Description:<?php echo $favten['tenderauthority'] ?></address>
                                                 </li>
                                             </ul>
                                         </div>
@@ -215,15 +227,15 @@
                                         <div class="tg-matchdetail">
                                             <div class='hiddendate' hidden><?php echo $appliedtenders->tender_date ?></div>
                                             <span class="tg-theme-tag"><?php echo $appliedtenders->tender_num ?></span>
-                                            <h4>TENDER <?php echo $appliedtenders->id ?></h4>
+                                            <h4> <?php echo $appliedtenders->tender_title ?></h4>
                                             </h4>
                                             <ul class="tg-matchmetadata">
                                                 <li>
-                                                    <address>Tender Autority:<?php echo $appliedtenders->tendering_authority ?></address>
+                                                    <address>Tender Description:<?php echo $appliedtenders->tender_description ?></address>
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="tg-btnsbox">
+                                        <div class="tg-btnsbox appliedbuttons">
                                             <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $appliedtenders->id ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
                                             <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus">Tender Status </a>
                                             <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
@@ -1201,9 +1213,9 @@
                     html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
                     var date1 = new Date(data.tender_date);
                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-                    html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
+                    html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>" + data.tender_title + "</h4></h4>";
                     html += "<div class='hiddendate' hidden >" + data.tender_date + "</div>";
-                    html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
+                    html += "<ul class='tg-matchmetadata'><li><address>Tender Description:" + data.tender_description + " </address></li></ul></div>";
 
                     html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
 
@@ -1302,9 +1314,9 @@
             html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
             var date1 = new Date(data.tender_date);
             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-            html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
+            html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4> " + data.tender_title + "</h4></h4>";
             html += "<div class='hiddendate' hidden >" + data.tender_date + "</div>";
-            html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
+            html += "<ul class='tg-matchmetadata'><li><address>Tender Description:" + data.tender_description + " </address></li></ul></div>";
 
             html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
 
@@ -1357,9 +1369,9 @@
                     html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
                     var date1 = new Date(data.tender_date);
                     html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-                    html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.id + "</h4></h4>";
+                    html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.tender_num + "</span><h4>TENDER " + data.tender_title + "</h4></h4>";
                     html += "<div class='hiddendate' hidden >" + data.tender_date + "</div>";
-                    html += "<ul class='tg-matchmetadata'><li><address>Tender Autority:" + data.tendering_authority + " </address></li></ul></div>";
+                    html += "<ul class='tg-matchmetadata'><li><address>Tender Description:" + data.tender_description + " </address></li></ul></div>";
 
                     html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
 

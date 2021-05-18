@@ -76,6 +76,30 @@ public function __construct()
 			  return $result;
  
 		}
+
+		public function PDIRequest_POST()
+		{
+			 $data = array(
+						"VendorId" => "1036226",
+						"POId" => "1",
+						"serialn.ofrom"=>"100",
+						"serialn.ofrom"=>"150",
+						"quantity"=>"10",
+						"visit request date"=>"2021-05-07",
+						"file"=>"",
+					);  
+				
+			  $apiurl     = 'http://hris.kseb.in/erpws/api/login';
+			  $data_array = json_encode( $data );
+			  $curl       = curl_init();
+			  curl_setopt( $curl, CURLOPT_URL, $apiurl );
+			  curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+			  curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
+			  curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json' ) );
+			  $result = curl_exec( $curl );
+			  return $result;
+ 
+		}
   
   	public function getPOData()
 		{
@@ -111,17 +135,37 @@ public function __construct()
 		$data['serialno_to'] = $this->input->post('serialto');
 		$data['quantity'] = $this->input->post('quantitypdi');
 		$data['visit_request_date'] = $this->input->post('visitdate');
-		$data['upload_file'] ="1";
+		$data['upload_file'] ="";
 		$data['supplierid'] = $this->session->userdata('uid'); 
 
 				$res =  $this->procM->insert('pdi_predispatch', $data);
 			 if($res > 0) {
 				$this->session->set_flashdata('msg', 'Selected Tenders added to Favourites');
+				$this->callpdirequest_postapi($data);
 			} else {
 				echo "Error while adding";
 			}
+
+
 		} 
-	
+		private function callpdirequest_postapi($data)
+		{
+			$token=$this->Login_POST();
+			$token1=json_decode($token);
+		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+		$data_array = json_encode($data);
+		$curl       = curl_init();
+		curl_setopt( $curl, CURLOPT_URL, $apiurl );
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+		curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
+		curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		) );
+		$result = curl_exec( $curl );
+		return $result;
+		}
+
 		public function getpredispatchData()
 	{
 

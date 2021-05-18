@@ -72,7 +72,7 @@ class Supplier_tenders extends SP_Controller
 				foreach ($data['tender'] as $key => $tender1) {
 					if (in_array($tender1->id, $data['favid'])) {
 						$data['tender'][$key]->sorting = 1;
-						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->id, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tendering_authority,'is_applied'=>$favappliedtenders[$tender1->id]->is_applied];
+						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->tender_title, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tender_description,'is_applied'=>$favappliedtenders[$tender1->id]->is_applied];
 					} else {
 						$data['tender'][$key]->sorting  = 0;
 					}
