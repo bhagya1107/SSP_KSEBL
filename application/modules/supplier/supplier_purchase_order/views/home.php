@@ -2,7 +2,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
 
- <script src="<?= base_url() ?>assets/supplier_portal/js/vendor/jquery-library.js"></script>
+  <script src="<?= base_url() ?>assets/supplier_portal/js/vendor/jquery-library.js"></script>
  <script src="<?= base_url() ?>assets/supplier_portal/js/vendor/bootstrap.min.js"></script>
  <link rel="stylesheet" href="collapsible.css">
  <script type="text/javascript" src="jquery.js"></script>
@@ -70,6 +70,9 @@
      .tg-btn {
          left: 45%;
      }   
+     .tg-tickets h4{
+         width:180%;
+     }
      /* #tg-main{
         margin-top: 12%;
      }  */
@@ -187,7 +190,7 @@
                                                          </div>
                                                      </div>
 
-                                                     <table id="siteins" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                                                     <table id="siteins" cellpadding="0"   class="table table-striped table-bordered table-hover" class="display" style="width:100%;border:0;">
                                                          <thead>
                                                              <tr>
                                                                  <th scope="col">sl no</th>
@@ -297,7 +300,7 @@
                                                      </div>
                                                  </div>
 
-                                                 <table id="siteins" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                                                 <table id="siteins" cellpadding="0"  class="table table-striped table-bordered table-hover" class="display" style="width:100%;border:0;">
                                                      <thead>
                                                          <tr>
                                                              <th scope="col">sl no</th>
@@ -444,11 +447,11 @@
              </div>
              <div class="modal-body">
                  <label>Comment</label>
-                 <textarea class="form-control"></textarea>
+                 <textarea class="form-control" name="commentrequest" id="commentrequest"></textarea>
 
              </div>
              <div class="modal-footer">
-                 <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                 <button type="button" class="btn btn-primary" onclick="changerequest()" data-dismiss="modal">Save</button>
 
                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
              </div>
@@ -1113,18 +1116,18 @@
  </div>
 
 
- <div class="modal fade" id="schedulesdd">
+ <!-- <div class="modal fade" id="schedulesdd">
      <div class="modal-dialog">
          <div class="modal-content">
 
              <!-- Modal Header -->
-             <div class="modal-header">
+             <!-- <div class="modal-header">
                  <h4 class="modal-title" id="adding">Add Schedule</h4>
                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-             </div>
+             </div> -->
 
              <!-- Modal body -->
-             <div class="modal-body">
+             <!-- <div class="modal-body">
                  <form id="questions_form">
                      <div class="form-group row">
                          <label for="subject" class="col-md-2 col-sm-3 control-label">Product</label>
@@ -1148,18 +1151,18 @@
                      <input type="hidden" name="pay" id="pay">
 
                  </form>
-             </div>
+             </div> -->
 
              <!-- Modal footer -->
-             <div class="modal-footer">
+             <!-- <div class="modal-footer">
 
                  <button type="button" class="btn btn-primary" onclick="">Save</button>
                  <button type="button" style="margin-right: 252px;" class="btn btn-danger" data-dismiss="modal">Close</button>
-             </div>
+             </div> -->
 
-         </div>
+         <!-- </div>
      </div>
- </div>
+ </div> -->
 
 
 
@@ -1234,19 +1237,19 @@
                      <div class="form-group row">
                          <label for="subject" class="col-md-2 col-sm-3 control-label">Product</label>
                          <div class="col-md-10 col-sm-9" id="ques_group">
-                             <input type="text" class="form-control" id="subject" placeholder="Add Product">
+                             <input type="text" class="form-control" name="productdelivery" id="productdelivery" placeholder="Add Product">
                          </div>
                      </div>
                      <div class="form-group row">
                          <label for="subject" class="col-md-2 col-sm-3 control-label">Quantity</label>
                          <div class="col-md-10 col-sm-9" id="ques_group">
-                             <input type="text" class="form-control" id="subject" placeholder="Add Quantity">
+                             <input type="text" class="form-control" name="quantitydelivery" id="quantitydelivery" placeholder="Add Quantity">
                          </div>
                      </div>
                      <div class="form-group row">
                          <label for="subject" class="col-md-2 col-sm-3 control-label">Schedule date</label>
                          <div class="col-md-5 col-sm-5" id="ques_group">
-                             <input type="date" class="form-control" id="subject" placeholder="Schedule date">
+                             <input type="date" class="form-control" id="deliverydate" name="deliverydate" placeholder="Schedule date">
                          </div>
                      </div>
 
@@ -1258,7 +1261,7 @@
              <!-- Modal footer -->
              <div class="modal-footer">
 
-                 <button type="button" class="btn btn-primary" onclick="">Save</button>
+                 <button type="button" class="btn btn-primary" onclick="addscheduleddelivery()">Save</button>
                  <button type="button" style="margin-right: 252px;" class="btn btn-danger" data-dismiss="modal">Close</button>
              </div>
 
@@ -1689,14 +1692,16 @@ filterpurchasedata(tabcontentid, value);
      function buildpurchaseorders(datas) {
          html = "";
          $.each(datas, function(i, data) {
+             //console.log("jkkk");
              //console.log(data.sorting);
 
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
              var date1 = new Date(data.purchase_order_date);
+             var tenderTitle = (data.prc_tender != null) ? data.prc_tender.tender_title : '';
              // console.log(date1);
              // console.log(date1.getDate());
              html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4>TENDER " + data.id + "</h4></h4>";
+             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4> " + tenderTitle + "</h4></h4>";
              html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
              html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
 
@@ -1808,6 +1813,7 @@ dispatch_table = $('#predispatchlist').DataTable({
 
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
              var date1 = new Date(data.purchase_order_date);
+             //var tenderTitle = (data.prc_tender != null) ? data.prc_tender.tender_title : '-';
              // console.log(date1);
              // console.log(date1.getDate());
              html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
@@ -1908,8 +1914,96 @@ dispatch_table = $('#predispatchlist').DataTable({
 
 }
 
+function addscheduleddelivery() {
+	
+    var productdelivery = $("#productdelivery").val();
+	var quantitydelivery = $('#quantitydelivery').val();
+	var deliverydate = $("#deliverydate").val();
+	
+    $(".error_msg").remove();
+    var flag = 0;
 
 
+    if (productdelivery == '') {
+        flag = 1;
+        $("#productdelivery").append("<span class='error_msg'>Product Required</span>"); 
+    }
+	
+	if (quantitydelivery == '') {
+        flag = 1;
+        $("#serialto").append("<span class='error_msg'>quantity Required</span>");
+    }
+
+    if (deliverydate == "") {
+        flag = 1;
+        $("#deliverydate").append("<span class='error_msg'>quantity Required</span>");
+    } 
+
+   
+  
+    if (flag == 0) {
+
+        $("#savemicro").prop("disabled", true);
+        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+        $(".ajaxLoader").css("display", "block");
+        $.post("<?php echo site_url('supplier/purchase_order/insert_deliveryschedule')?>", { 
+
+            productdelivery: productdelivery,
+            quantitydelivery:quantitydelivery,
+            deliverydate: deliverydate,
+            
+            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
+        }, function(data) {
+			 // alert(data);
+             $('#savemicro').removeAttr("disabled");
+			window.location.reload();
+
+        });
+
+    }
+
+
+}
+
+function changerequest() {
+	
+    var commentrequest = $("#commentrequest").val();
+    $(".error_msg").remove();
+    var flag = 0;
+
+
+    if (commentrequest == '') {
+        flag = 1;
+        $("#commentrequest").append("<span class='error_msg'>Comment Required</span>"); 
+    }
+	
+	
+  
+    if (flag == 0) {
+
+        $("#savemicro").prop("disabled", true);
+        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+        $(".ajaxLoader").css("display", "block");
+        $.post("<?php echo site_url('supplier/purchase_order/post_changerequest')?>", { 
+
+            commentrequest: commentrequest,
+            
+            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
+        }, function(data) {
+			 // alert(data);
+             $('#savemicro').removeAttr("disabled");
+			window.location.reload();
+
+        });
+
+    }
+
+
+}
 
 
  </script>
