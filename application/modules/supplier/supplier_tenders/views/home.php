@@ -237,7 +237,7 @@
                                         </div>
                                         <div class="tg-btnsbox appliedbuttons">
                                             <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $appliedtenders->id ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus">Tender Status </a>
+                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus" onclick="tenderstatus()" id="tender">Tender Status </a>
                                             <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
                                             <a class="btn btn-primary btn-sm" id="application_form">Application Form </a>
                                             <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#siteinspect">Factory Visit </a>
@@ -369,7 +369,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="">Submit</button>
+                <button type="button" class="btn btn-primary" onclick="ClarificationsTender()">Submit</button>
             </div>
 
         </div>
@@ -454,7 +454,7 @@
                     <div class="form-group row">
                         <label for="subject" class="col-md-2 col-sm-3 control-label">Pay Amount</label>
                         <div class="col-md-10 col-sm-9" id="ques_group">
-                            <input type="text" class="form-control" id="subject" placeholder="Add fee amount">
+                            <input type="text" class="form-control" id="payamount" placeholder="Add fee amount">
                         </div>
                     </div>
 
@@ -466,7 +466,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
 
-                <button type="button" style="margin-right: 252px;" class="btn btn-primary" onclick="">Submit</button>
+                <button type="button" style="margin-right: 252px;" class="btn btn-primary" onclick="tenderpayamount()">Submit</button>
             </div>
 
         </div>
@@ -688,20 +688,20 @@
 
                             <div class="form-group row">
                                 <label for="comment" class="col-md-2 col-sm-3 control-label">Questions</label>
-                                <div class="col-md-10 col-sm-9" id="comment_des_group">
-                                    <textarea class="form-control" readonly value="Use of MRO Supply in Business Type?">Use of MRO Supply in Business Type?</textarea>
+                                <div class="col-md-10 col-sm-9" id="commentquestionid">
+                                    <textarea class="form-control" id="questionidclarifictn" readonly value="Use of MRO Supply in Business Type?">Use of MRO Supply in Business Type?</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="comment" class="col-md-2 col-sm-3 control-label">Comment</label>
-                                <div class="col-md-10 col-sm-9" id="comment_des_group">
-                                    <textarea class="form-control" cols="4" rows="5"></textarea>
+                                <div class="col-md-10 col-sm-9" id="commentques">
+                                    <textarea class="form-control" id="questioncomment" cols="4" rows="5"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="comment" class="col-md-2 col-sm-3 control-label">File Upload</label>
-                                <div class="col-md-10 col-sm-9" id="comment_des_group">
-                                    <input type="file" id="nofile">
+                                <div class="col-md-10 col-sm-9" id="commentfileupload">
+                                    <input type="file" id="nofilequestion">
                                 </div>
                             </div>
 
@@ -761,9 +761,19 @@
             }
         });
         mytenderdetails(getfavdetails[0]);
-        //console.log(getfavdetails);
+    }
+
+    function tenderstatus(tender, favtenderid) {
+
+        var getfavdetails = tender.filter(function(obj) {
+            if (obj.id == favtenderid) {
+                return obj;
+            }
+        });
+       mytenderdetails(getfavdetails[0]);
 
     }
+
 
 
     function save_tenders(tenders) {
@@ -1429,10 +1439,70 @@
         return month[$month_dat];
         //document.getElementById("demo").innerHTML = n;
     }
+
+    function tenderpayamount() {
+       
+    var payamount = $("#payamount").val();
+    $(".error_msg").remove();
+    var flag = 0;
+
+    if (payamount == '') {
+        flag = 1;
+        $("#payamount").append("<span class='error_msg'>Pay Amount Required</span>"); 
+    }
+	
+    if (flag == 0) {
+
+        $("#savemicro").prop("disabled", true);
+        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+        $(".ajaxLoader").css("display", "block");
+        $.post("<?php echo site_url('supplier/tenders/post_payAmount')?>", { 
+
+            payamount: payamount,
+            tenderId: tenderId,
+            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
+        }, function(data) {
+			 // alert(data);
+             $('#savemicro').removeAttr("disabled");
+			window.location.reload();
+
+        });
+
+    }
+}
+
+function ClarificationsTender() {
+       
+       var questionidclarifictn = $("#questionidclarifictn").val();
+       var filequestion = $("#nofilequestion").val();
+       var questioncomment = $("#questioncomment").val();
+       $(".error_msg").remove();
+       var flag = 0;
+    
+       if (flag == 0) {
+   
+           $("#savemicro").prop("disabled", true);
+           var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+               csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+   
+           $(".ajaxLoader").css("display", "block");
+           $.post("<?php echo site_url('supplier/tenders/post_clarifications')?>", { 
+   
+            questionidclarifictn: questionidclarifictn,
+            filequestion: filequestion,
+            questioncomment: questioncomment,
+               <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
+           }, function(data) {
+                // alert(data);
+                $('#savemicro').removeAttr("disabled");
+               window.location.reload();
+   
+           });
+   
+       }
+   }
+
 </script>
 
-<style>
-    .tg-wrapper {
-        /* overflow-y:hidden; */
-    }
-</style>

@@ -757,4 +757,64 @@ $where=array(
 
 	}
 
+	public function post_payAmount()
+	{
+
+		$data['tenderId'] = $this->input->post('tenderId');
+		$data['payamount'] = $this->input->post('payamount');
+		$data['vendorId'] = $this->session->userdata('uid'); 
+
+				//$res =  $this->procM->insert('delivery_schedule', $data);
+				$res=	$this->callpost_payamount($data);
+		
+		} 
+
+	private function callpost_payamount($data)
+		{
+			$token=$this->Login_POST();
+			$token1=json_decode($token);
+		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+		$data_array = json_encode($data);
+		$curl       = curl_init();
+		curl_setopt( $curl, CURLOPT_URL, $apiurl );
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+		curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
+		curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		) );
+		$result = curl_exec( $curl );
+		return $result;
+		}
+
+		public function post_clarifications()
+		{
+	
+			$data['questioncomment'] = $this->input->post('questioncomment');
+			$data['nofilequestion'] = $this->input->post('nofilequestion');
+			$data['questionidclarifictn'] = $this->input->post('questionidclarifictn');
+			$data['vendorId'] = $this->session->userdata('uid'); 
+	
+					$res=	$this->callpost_clarifications($data);
+			
+			} 
+	
+		private function callpost_clarifications($data)
+			{
+				$token=$this->Login_POST();
+				$token1=json_decode($token);
+			$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+			$data_array = json_encode($data);
+			$curl       = curl_init();
+			curl_setopt( $curl, CURLOPT_URL, $apiurl );
+			curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+			curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
+			curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 
+				'Content-Type: application/json',
+				'Authorization: Bearer ' . $token1->result_data->token->access_token
+			) );
+			$result = curl_exec($curl);
+			return $result;
+			}
+
 }

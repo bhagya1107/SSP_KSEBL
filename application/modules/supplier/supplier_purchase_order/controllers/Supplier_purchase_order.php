@@ -140,7 +140,7 @@ public function __construct()
 
 				$res =  $this->procM->insert('pdi_predispatch', $data);
 			 if($res > 0) {
-				$this->session->set_flashdata('msg', 'Selected Tenders added to Favourites');
+				$this->session->set_flashdata('msg', 'PDI added Sucessfully');
 				$this->callpdirequest_postapi($data);
 			} else {
 				echo "Error while adding";
@@ -201,6 +201,115 @@ public function __construct()
 		echo json_encode($output);
 	}
 
+	public function insert_deliveryschedule()
+	{
 
+		$res = '';
+		$data['material'] = $this->input->post('productdelivery');
+		$data['quantity'] = $this->input->post('quantitydelivery');
+		$data['schedule_date'] = $this->input->post('deliverydate');
+		$data['supplier_id'] = $this->session->userdata('uid'); 
+
+				$res =  $this->procM->insert('delivery_schedule', $data);
+			 if($res > 0) {
+				$this->session->set_flashdata('msg', 'Delivery Scheduled added Sucessfully');
+				$this->callscheduleddelivery_postapi($data);
+			} else {
+				echo "Error while adding";
+			}
+
+		} 
+
+		private function callscheduleddelivery_postapi($data)
+		{
+			$token=$this->Login_POST();
+			$token1=json_decode($token);
+		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+		$data_array = json_encode($data);
+		$curl       = curl_init();
+		curl_setopt( $curl, CURLOPT_URL, $apiurl );
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+		curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
+		curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		) );
+		$result = curl_exec( $curl );
+		return $result;
+		}
+
+		public function post_changerequest()
+	{
+
+		$res = '';
+		$data['commentrequest'] = $this->input->post('commentrequest');
+		$data['supplier_id'] = $this->session->userdata('uid'); 
+
+				//$res =  $this->procM->insert('delivery_schedule', $data);
+				$res=	$this->callchangerequest_postapi($data);
+
+			 if($res > 0) {
+				$this->session->set_flashdata('msg', 'Delivery Scheduled added Sucessfully');
+			
+			} else {
+				echo "Error while adding";
+			}
+
+		} 
+
+		private function callchangerequest_postapi($data)
+		{
+			$token=$this->Login_POST();
+			$token1=json_decode($token);
+		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+		$data_array = json_encode($data);
+		$curl       = curl_init();
+		curl_setopt( $curl, CURLOPT_URL, $apiurl );
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+		curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
+		curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		) );
+		$result = curl_exec( $curl );
+		return $result;
+		}
+
+		public function post_acceptloa()
+	{
+
+		$res = '';
+		$data['poid'] = $this->session->userdata('poid');
+		$data['Loa'] = $this->session->userdata('Loa');
+		$data['supplier_id'] = $this->session->userdata('uid'); 
+
+				$res=	$this->callacceptloa_postapi($data);
+
+			 if($res > 0) {
+				$this->session->set_flashdata('msg', 'LOA added Sucessfully');
+			
+			} else {
+				echo "Error while adding";
+			}
+
+		} 
+
+		private function callacceptloa_postapi($data)
+		{
+			$token=$this->Login_POST();
+			$token1=json_decode($token);
+		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+		$data_array = json_encode($data);
+		$curl       = curl_init();
+		curl_setopt( $curl, CURLOPT_URL, $apiurl );
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+		curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
+		curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		) );
+		$result = curl_exec( $curl );
+		return $result;
+		}
 
 }

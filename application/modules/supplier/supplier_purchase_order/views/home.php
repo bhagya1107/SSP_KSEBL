@@ -73,6 +73,9 @@
      .tg-tickets h4{
          width:180%;
      }
+     .tg-ticket h4 {
+        width: 180%;
+     }
      /* #tg-main{
         margin-top: 12%;
      }  */
@@ -100,7 +103,7 @@
                  </div>
                  <ul class="nav nav-tabs" id="purchasetabs">
                      <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
-                     <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">My Purchase Orders</a></li>
+                     <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
                      <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
                  </ul>
                  <div class="tab-content">
@@ -129,32 +132,20 @@
                          <div class="row">
                              <div class="tg-tickets commonfilter" id="acceptedtickets">
                                  <div class="tg-ticket">
-                                     <time class="tg-matchdate" datetime="2016-05-03">27<span>Dec</span></time>
+                                     <time class="tg-matchdate" datetime="2016-05-03">26<span>APR</span></time>
                                      <div class="tg-matchdetail">
-                                         <span class="tg-theme-tag">Order No : PCO88944556</span>
-                                         <h4>Tender Name 1</h4>
+                                         <span class="tg-theme-tag">Order No : PO-65-1004#00003</span>
+                                         <h4>TENDER DTD 26.04.2021 FOR AERIAL BUNCHED CABLE HT 3X120 + 1X95 SQ.MM (INSULATED MESSEMGER)</h4>
                                          </h4>
                                          <ul class="tg-matchmetadata">
                                              <li>
-                                                 <address>Tender Short Description</address>
+                                                 <address>PURCHASE CATEGORY:NEW</address>
                                              </li>
                                          </ul>
                                      </div>
 
                                      <div class="tg-btnsbox">
 
-
-                                         <!-- <div class="dropdown">
-										<button onclick="myFunction()" style="margin-bottom: -39px;" class="pull-right dropbtn">Action</button>
-										<div id="myDropdown" class=" pull-right dropdown-content">
-										<a data-toggle="modal" data-target="#myModal_vmi">VMI</a>
-										<a data-toggle="modal" data-target="#dispatch">PreDispatch Inspection</a>
-										<a data-toggle="modal" data-target="#mdcc">MDCC</a>
-											<!--<a data-toggle="modal" data-target="#shipment">Shipments</a>-->
-                                         <!--<a data-toggle="modal" data-target="#shipment">Delivery Schedule</a>
-											
-										</div>
-										</div>-->
                                          <div style="margin-left:20px;">
                                              <a class="fa  fa-print" title="print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
                                              <a class="fa  fa-download" title="download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
@@ -251,14 +242,14 @@
                              </div>
 
                              <div class="tg-ticket">
-                                 <time class="tg-matchdate" datetime="2016-05-03">20<span>JAN</span></time>
+                                 <time class="tg-matchdate" datetime="2016-05-03">27<span>APR</span></time>
                                  <div class="tg-matchdetail">
-                                     <span class="tg-theme-tag">Order No : PCO8895544</span>
-                                     <h4>Tender Name 2</h4>
+                                     <span class="tg-theme-tag">Order No : PO-65-1004#00002</span>
+                                     <h4>TENDER DTD 26.04.2021 FOR AERIAL BUNCHED CABLE HT 3X120 + 1X95 SQ.MM (INSULATED MESSEMGER)</h4>
                                      </h4>
                                      <ul class="tg-matchmetadata">
                                          <li>
-                                             <address>Tender Short Description</address>
+                                             <address>PURCHASE CATEGORY:NEW</address>
                                          </li>
                                      </ul>
                                  </div>
@@ -384,7 +375,7 @@
 
                      <button type="button" class="btn btn-primary">View & Download Pdf</button>
 
-                     <button type="button" class="btn btn-success loa-view">Letter of Acceptance</button>
+                     <button type="button" class="btn btn-success loa-view" >Letter of Acceptance</button>
 
                  </div>
 
@@ -426,7 +417,7 @@
 
              </div>
              <div class="modal-footer">
-                 <button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+                 <button type="button" class="btn btn-primary" onclick="acceptloa()" data-dismiss="modal">Accept</button>
 
                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
              </div>
@@ -1714,6 +1705,30 @@ filterpurchasedata(tabcontentid, value);
          $('#allpurchasedetails').empty().append(html);
      }
 
+     function buildAcceptedpurchaseorders(datas) {
+         html = "";
+         $.each(datas, function(i, data) {
+             //console.log("jkkk");
+             //console.log(data.sorting);
+
+             html += "<div class='tg-ticket'><time class='tg-matchdate' >";
+             var date1 = new Date(data.purchase_order_date);
+             var tenderTitle = (data.prc_tender != null) ? data.prc_tender.tender_title : '';
+             // console.log(date1);
+             // console.log(date1.getDate());
+             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
+             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4> " + tenderTitle + "</h4></h4>";
+             html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
+             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
+
+             html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
+
+             html += "</div></div>";
+
+
+         });
+         $('#allpurchasedetails').empty().append(html);
+     }
 
 
      function LoadAllWorkOrders() {
@@ -1973,14 +1988,11 @@ function changerequest() {
     $(".error_msg").remove();
     var flag = 0;
 
-
     if (commentrequest == '') {
         flag = 1;
         $("#commentrequest").append("<span class='error_msg'>Comment Required</span>"); 
     }
 	
-	
-  
     if (flag == 0) {
 
         $("#savemicro").prop("disabled", true);
@@ -2002,8 +2014,25 @@ function changerequest() {
 
     }
 
-
 }
+
+ function acceptloa() {
+	
+        $(".ajaxLoader").css("display", "block");
+        $.post("<?php echo site_url('supplier/purchase_order/post_changerequest')?>", { 
+
+            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
+        }, function(data) {
+			 // alert(data);
+             $('#savemicro').removeAttr("disabled");
+			window.location.reload();
+
+        });
+
+    }
+
+
+
 
 
  </script>
