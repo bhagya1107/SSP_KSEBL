@@ -251,5 +251,14 @@ class Procurement_model extends CI_Model
         return $this->db->get("pdi_predispatch")->result();
         
     }
+
+    public function getListOfAdminTenders()
+    {
+        
+     $this->db->select('tender_id');
+	 
+        return $this->db->get("tender_questions")->result();
+        
+    }
  
 }

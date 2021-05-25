@@ -330,51 +330,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="Service">
-    <div class="modal-dialog">
-        <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title" id="adding">Add Questions</h4>
-
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form id="questions_form">
-                    <div class="form-group row">
-                        <label for="subject" class="col-md-2 col-sm-3 control-label">Subject</label>
-                        <div class="col-md-10 col-sm-9" id="ques_group">
-                            <input type="text" class="form-control" id="subject" placeholder="Add Subject">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="description" class="col-md-2 col-sm-3 control-label">Description</label>
-                        <div class="col-md-10 col-sm-9" id="ques_des_group">
-                            <input type="description" class="form-control" id="description" placeholder=" Add Description">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="comment" class="col-md-2 col-sm-3 control-label">Comment</label>
-                        <div class="col-md-10 col-sm-9" id="comment_des_group">
-                            <input type="description" class="form-control" id="description" placeholder="Add Comment">
-                        </div>
-                    </div>
-                    <input type="hidden" name="questionid" id="questionid">
-
-                </form>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="ClarificationsTender()">Submit</button>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <!------------------------Site Inspections------------------------------------------------------->
 
@@ -528,144 +484,8 @@
 </div>
 <!------------------------------payment end------------------------------------------------>
 
-<div class="modal fade" id="application_modal">
-    <div class="modal-dialog">
-        <div class="modal-content" style="">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title" id="payment">Preview Of Application Form</h4>
-                <h4 class="modal-title" id="payment"></h4>
-
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="modal-body">
-                    <form id="questions_form">
-                        <table>
-
-                            <div class="form-group row">
-                                <label for="subject" class="col-md-6 col-sm-6 control-label">Type of Business?</label>
-                                <div class="col-md-6 col-sm-6">MRO Supply
-                                    <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>-->
-                                </div>
-
-
-                            </div>
-                            <div class="form-group row">
-                                <label for="subject" class="col-md-6 col-sm-6 control-label">Company Establishment Date?</label>
-                                <div class="col-md-6 col-sm-6">30-11-2020 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="comment" class="col-md-6 col-sm-6 control-label">Ownership Classification?</label>
-                                <div class="col-md-6 col-sm-6">Large Business </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="comment" class="col-md-6 col-sm-6 control-label">Annual Production?</label>
-                                <div class="col-md-6 col-sm-6">2 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="comment" class="col-md-6 col-sm-6 control-label">Change of Ownership in the past 3 yrs?</label>
-                                <div class="col-md-6 col-sm-6">Yes </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="comment" class="col-md-6 col-sm-6 control-label">Third Party Certification?</label>
-                                <div class="col-md-6 col-sm-6">Association For Service Disabled Veterans </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="comment" class="col-md-6 col-sm-6 control-label">Is GST Applicable?</label>
-                                <div class="col-md-6 col-sm-6">Yes</div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="comment" class="col-md-6 col-sm-6 control-label">Company Turnover?</label>
-                                <div class="col-md-6 col-sm-6">200000</div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="comment" class="col-md-6 col-sm-6 control-label">Incorporation Certificate?</label>
-                                <div class="col-md-6 col-sm-6"><a href="xx"></a>img.doc </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="comment" class="col-md-6 col-sm-6 control-label">TurnOver Slab?</label>
-                                <div class="col-md-6 col-sm-6">10L-20L </div>
-                            </div>
-                        </table>
-                        <input type="hidden" name="questionid" id="questionid">
-
-                    </form>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Servissce">Clarification</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-
-    </div>
-</div>
 <!--------------------------------------------------clarifications----------------------------------------->
-<div class="modal fade" id="myModalclarification" style="padding-left: 0px !important;">
-    <div class="modal-dialog">
-        <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Clarifications</h4>
-                <a href="#" class="gx-fab-btn gx-btn-primary position-absolute addButtonCustom" data-toggle="modal" id="add" data-target="#Servissce">
-                    <i class="zmdi zmdi-plus-circle zmdi-hc-2x" style="margin-left:480px; border-color: #ffcc33;"></i>
-                </a>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <h4 class="modal-title"><span id="questions"></span></h4>
-                <div class="table-responsive">
-
-                    <table id="questions" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th scope="col">sl no</th>
-                                <th scope="col">questions</th>
-                                <th scope="col">reply</th>
-                                <th scope="col">status</th>
-                                <th scope="col">Post Date</th>
-
-                            </tr>
-                        </thead>
-                        <tr>
-                            <td>1</td>
-                            <td>Annual production rate</td>
-                            <td></td>
-                            <td>Pending</td>
-                            <td>13-11-2020</td>
-
-
-                        </tr>
-                        </tbody>
-                        <tbody>
-                            <tr class="gradeX">
-                                <!--<td colspan="6" class="dataTables_empty">No data found</td>-->
-                            </tr>
-                        </tbody>
-                        <tfoot>
-
-                        </tfoot>
-
-                    </table>
-
-                </div>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
 <div class="modal fade" id="Servissce">
@@ -685,13 +505,13 @@
 
                     <div class="modal-body">
                         <form id="questions_form">
-
+<!-- 
                             <div class="form-group row">
                                 <label for="comment" class="col-md-2 col-sm-3 control-label">Questions</label>
                                 <div class="col-md-10 col-sm-9" id="commentquestionid">
                                     <textarea class="form-control" id="questionidclarifictn" readonly value="Use of MRO Supply in Business Type?">Use of MRO Supply in Business Type?</textarea>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group row">
                                 <label for="comment" class="col-md-2 col-sm-3 control-label">Comment</label>
                                 <div class="col-md-10 col-sm-9" id="commentques">
@@ -712,7 +532,7 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="">Save</button>
+                        <button type="button" class="btn btn-primary" onclick="ClarificationsTender()">Save</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
                     </div>
@@ -1029,7 +849,8 @@
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body" style="padding:unset;overflow-wrap: break-word;">
+            <div class="modal-body" style="padding:unset;overflow-wrap: break-word;"><br>
+            <div style="margin:2%;"><b>TENDER NUM:<?php echo $appliedtenders->tender_num ?></b></div><br>
                 <div id="dataAppend"></div>
 
             </div>
@@ -1037,7 +858,7 @@
             <div class="clearfix" style="margin:13%;"></div>
             <hr>
             <div class="modal-footer" style="position:absolute;bottom:0px;float:right;right:0;border:none">
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Servissce">Clarification</button>
+                <button type="button" class="btn btn-warning" id="clarificationmodal" data-toggle="modal" onclick="clarificationpopup()" data-target="#Servissce">Clarifications</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
 
@@ -1503,6 +1324,12 @@ function ClarificationsTender() {
    
        }
    }
+ 
+function clarificationpopup()
+{
+
+    $('#preview_modal').modal('hide');  
+}
 
 </script>
 

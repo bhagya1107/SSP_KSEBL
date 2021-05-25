@@ -5,6 +5,10 @@
     overflow: hidden;
     white-space: nowrap; 
   }
+  .btnsucessor{
+    background-color: #e32d2d !important;
+    border-color : #e32d2d !important;
+  }
 </style>
 <form name="frm" action="" name="frm" id="frm" enctype="multipart/form-data" method="post">
 <div class="pcoded-content">
@@ -94,7 +98,18 @@
                                               <td><?php echo $tenderdatas->tender_date; ?></td> 
                                             
                                            
-                                            <td><a href="<?php echo admin_url("procurement/form_engine/1") ?>"><input type="button" class="btn  btn-sm btn-out-dashed btn-info btn-square" value="Form Engine" /></a></td>
+                                            <td>
+                                            <?php if(!in_array($tenderdatas->tender_id,$savedformengines)) { ?>
+                                            <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id) ?>">
+                                          
+                                                <input type="button" class="btn  btn-sm btn-out-dashed btn-info btn-square" value="Form Engine" />
+                                            </a>
+                                          <?php  }else { ?>
+                                            <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id) ?>">
+                                            <input type="button" class="btn  btn-sm btn-out-dashed btn-info btn-square btnsucessor" value=" Update Form Engine" />
+                                            </a>
+                                            <?php  } ?>
+                                            </td>
                                            
                                           </tr>
                                           <?php $i++; } ?>
