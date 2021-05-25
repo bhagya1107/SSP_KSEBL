@@ -64,9 +64,9 @@
         font-size: 20px;
         width:195%;
     }
-.appliedbuttons{
-    margin-top: 12%;
-}
+ .appliedbuttons{
+    margin: 1%;
+} 
 
     /* #tendertabs{
         position:fixed;
