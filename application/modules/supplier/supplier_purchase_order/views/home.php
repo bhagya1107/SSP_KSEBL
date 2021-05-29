@@ -409,7 +409,7 @@
                          <td><?php echo  $dates=date_formate('01-01-2021');?></td>
                      </tr>
                      <tr>
-                         <td><input type="checkbox"><a href="#">Agree to the terms & conditions</a></td>
+                         <td><input type="checkbox">&nbsp;&nbsp;<a href="#">Agree to the terms & conditions</a></td>
                      </tr>
 
 

@@ -33,14 +33,14 @@ class Procurement extends AD_Controller {
   }
 
   public function form_engine($tid){
+     $tnum =$this->input->get('tender_num');
     $data['page'] = 'Teders';
     $data['title'] = 'Form Engine';
     $data['form_types'] =$this->procM->getFormengine_Titles();
     $data['form_questions'] =$this->procM->getFormengine_questions();
     $data['tenderId']=$tid;
-
+    $data['tendernum']=$tnum;
     $data['tenderIds_qs']=$this->procM->getFormengine_tenderqs($tid);
-
     $data['templates'] = $this->procM->getAllTemplates();
     // print_r($data['form_questions']);
     // exit;

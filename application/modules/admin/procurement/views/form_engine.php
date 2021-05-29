@@ -1,7 +1,4 @@
-                
-                
-                
-                <div class="pcoded-content">
+<div class="pcoded-content">
                     <div class="pcoded-inner-content">
                         <!-- Main-body start -->
                         <div class="main-body">
@@ -12,7 +9,11 @@
                                         <div class="col-lg-12">
                                             <div class="page-header-title1">
                                                 <div class="d-inline1 row">
-                                                    <div class="col-lg-6"><h4>Form Engine</h4></div>
+                                                    <div class="col-lg-6"><h4>Form Engine</h4>
+                                                    <br>
+                                                     <h5>TENDER NUM:<?php echo $tendernum ?></h5> 
+                                                    </div>
+                                                    
                                                     <?php 
                                                     $count =0;
                                                     if($form_questions){
@@ -263,7 +264,7 @@
                    var tenderId ="<?php echo $tenderId;?>";
                    swal({
                         title: "Are you sure?",
-                        text: "Are you sure want to add the question to this template!",
+                        text: "Do you want to add this query to the Form Engine ?",
                         icon: "warning",
                         buttons: [
                             'No, cancel it!',
@@ -294,7 +295,7 @@
                    $('#myModal').modal('toggle');
                    swal({
                         title: "Are you sure?",
-                        text: "Are you sure want to delete the question from this template!",
+                        text: "Do you want to delete the question from this template!",
                         icon: "warning",
                         buttons: [
                             'No, cancel it!',
