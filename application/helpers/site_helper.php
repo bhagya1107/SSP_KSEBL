@@ -237,5 +237,10 @@ function date_formate($dates)
     } 
 }
 
+function api_error_message()
+{
+  return "Connection to hris.kseb.in is interupted";    
+}
+
 /////////////////////////////////////////
  ?>

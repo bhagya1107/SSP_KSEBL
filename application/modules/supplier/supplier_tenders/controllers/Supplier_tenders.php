@@ -177,6 +177,9 @@ class Supplier_tenders extends SP_Controller
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 		$result = curl_exec($curl);
+		if(empty($result)){
+			echo api_error_message();exit;
+		}
 		return $result;
 	}
 	public function getTenderData()
