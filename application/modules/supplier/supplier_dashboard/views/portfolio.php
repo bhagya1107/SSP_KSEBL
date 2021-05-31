@@ -49,12 +49,24 @@
 </style>
 
 
-<main id="tg-main" class="tg-main tg-haslayout">
+<!-- <main id="tg-main" class="tg-main tg-haslayout">
     <section class="">
         <div class="container">
-            <div class="row">
+            <div class="row"> -->
 
-                <div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+                <!-- <div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+                    
+
+
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <?php // $this->view('profile_sidebar', $page); ?>
+
+                    </div>
+
+
+
+                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right"> -->
+
                     <?php
                     $msg = $this->session->flashdata('msg');
                     if ($msg) {
@@ -72,15 +84,6 @@
                     <?php
                     }
                     ?>
-
-
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <?php $this->view('profile_sidebar', $page); ?>
-
-                    </div>
-
-
-                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right">
                         <ul class="nav nav-tabs">
                             <?php
                             $user_type = $this->session->userdata('user_type');
@@ -96,22 +99,22 @@
                         <div class="tab-content">
 
 
-                    <?php 
-                    if($user_type== 1)
-                    {
-                        $num=1;
-                    }
-                    if($user_type== 3)
-                    {
-                        $num=3;
-                    }
+                            <?php 
+                            if($user_type== 1)
+                            {
+                                $num=1;
+                            }
+                            if($user_type== 3)
+                            {
+                                $num=3;
+                            }
 
-                    ?>
-
-
+                            ?>
 
 
-                 <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == $num) ? "in active" : "" ?>">
+
+
+                            <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == $num) ? "in active" : "" ?>">
                                 <div class="row">
 
                                     <div class="card card-small ">
@@ -256,15 +259,15 @@
 
 
 
-                    </div>
+                    <!-- </div>
 
 
                     
-                </div>
-            </div>
+                </div> -->
+            <!-- </div>
         </div>
     </section>
-</main>
+</main> -->
 <style>
 
 
