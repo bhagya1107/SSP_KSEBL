@@ -73,6 +73,10 @@ public function __construct()
 			  curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
 			  curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json' ) );
 			  $result = curl_exec( $curl );
+					$token1 = json_decode($result);
+					if(empty($token1)){
+						echo api_error_message();exit;
+					}
 			  return $result;
  
 		}
@@ -115,9 +119,6 @@ public function __construct()
 	   'Authorization: Bearer ' . $token1->result_data->token->access_token
 	   ));
 	   $result = curl_exec($curl);
-				if(empty($result)){
-					echo api_error_message();exit;
-				}
 	  return $result;
 		}
 
