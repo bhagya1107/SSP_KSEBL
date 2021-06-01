@@ -34,7 +34,16 @@
         }
 
     }
+    .col-md-5 {
+          width: 41.66666667%;
+          float:left;
+      }
+  
+      /* .col-md-7 {
+    width: 58.33333333%;
+} */
 </style>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;" />
 
 
 <!-- <main id="tg-main" class="tg-main tg-haslayout">
@@ -67,7 +76,7 @@
               }
               ?>
 
-            <div class="row">
+            <div class="row1">
               <form method="post" action="<?php echo base_url('supplier/dashboard/insert_companyprofile')?>">
                  <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                 <div class="col-md-5" style="border: 1px solid #CCC;">
@@ -137,8 +146,8 @@
                                   </script> 
                 </div>
                 </form>
-                  <div class="col-md-7">
-                    <div class="table-responsive">
+                  <div class="col-md-7" >
+                    <div class="table-responsive"  style="padding-left:10px">
                       <table id="employyeedetls" class="table table-bordered table-hover" class="display" style="width: 100%">
                         <thead>
                           <tr style="background-color:#26265f ;color:#FFF ">

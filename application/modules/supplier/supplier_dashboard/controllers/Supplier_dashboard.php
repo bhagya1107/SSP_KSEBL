@@ -66,13 +66,14 @@ class Supplier_dashboard extends SP_Controller
 		}
 	}
 
-	public function test(){
+	public function supplier_administration($tab='tab_1'){
 		$loged_user = $_SESSION['userid'];
 		$usertype = $_SESSION['user_type'];
 		$data['page'] = 'Administration';
 		$data['mainpage'] = '';
 		$data['page_title'] = 'Administration';
 		$data['title'] = 'Administration';
+		$data['tab_s'] = $tab;
 		$uid = $this->session->userdata('uid');
 		$this->template->make('supplier_dashboard/administration_index', $data, 'supplier_portal');
 

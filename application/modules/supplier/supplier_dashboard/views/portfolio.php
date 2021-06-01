@@ -46,6 +46,20 @@
 
     }
 
+    .nav-tabs>li.active>a {
+        color: black!important;
+    }
+
+    ::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+    /* ::-webkit-scrollbar-y {
+    width: 10px;
+    height: 10px;
+    display: none; 
+} */
+
 </style>
 
 
@@ -115,7 +129,7 @@
 
 
                             <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == $num) ? "in active" : "" ?>">
-                                <div class="row">
+                                <div class="row1">
 
                                     <div class="card card-small ">
                                         <div class="card-header border-bottom" style="margin-top:10px;">
@@ -159,8 +173,8 @@
                                                 <!--  <h6>Added Products</h6>-->
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="table-responsive">
-                                                    <table id="materialproducts" class="table table-striped table-bordered table-hover" class="display" style="width: 100%">
+                                                <div class="table-responsive" style="font-size: inherit;">
+                                                    <table id="materialproducts" class="table table-striped table-bordered table-hover" class="display" style="width: 100%;font-size: inherit;">
                                                         <thead>
                                                             <tr style="background-color:#26265f ;color:#FFF ">
                                                                 <th>Sl No </th>
@@ -196,7 +210,7 @@
 
 
                             <div id="menu1" class="tab-pane fade <?php echo ($tab == 1 and $user_type == 2 )? "in active" : "" ?>">
-                                <div class="row">
+                                <div class="row1">
 
                                     <div class="card card-small ">
                                         <div class="card-header border-bottom" style="margin-top:10px;">
@@ -230,7 +244,7 @@
                                                 <h6>Added Services</h6>
                                             </div>
                                             <div class="col-md-12">
-                                                <table class="table  table-responsive" id="servicestable" style="width: 100%">
+                                                <table class="table  table-responsive" id="servicestable" style="width: 100%;font-size: inherit;">
                                                     <thead>
 
                                                         <tr>
@@ -563,7 +577,7 @@
                 <h4 class="modal-title"><span id="questions"></span></h4>
                 <div class="table-responsive">
 
-                    <table id="questions" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                    <table id="questions" class="table table-striped table-bordered table-hover" class="display" style="width:100%;font-size: inherit;">
                         <thead>
                             <tr>
                                 <th scope="col">sl no</th>

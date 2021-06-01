@@ -44,7 +44,7 @@
                   <div class="row">
                           <div class="form-group">
                             <div class="row" style="<?php if($notificationsview->preference_display_status=='false') echo "display: none;" ?>">
-                              <div class="col-md-4" >
+                              <div class="col-md-4" style="float:left">
                                 <input type="text" placeholder="Key Word" name="" style="margin-left: 10px;">
                               <!--   <select class="form-control">
                                 <option value="">

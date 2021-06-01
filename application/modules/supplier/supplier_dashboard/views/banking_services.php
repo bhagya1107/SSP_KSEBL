@@ -29,6 +29,11 @@
         }
 
     }
+
+    .col-md-5 {
+          width: 41.66666667%;
+          float:left;
+      }
     
 </style>
 <!-- <main id="tg-main" class="tg-main tg-haslayout">
@@ -60,7 +65,7 @@
                             }
                             ?>
 
-                    <div class="row">
+                    <div class="row1 col-md-12">
                         <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/insert_bank_details')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
                         <div class="col-md-5" style="border: 1px solid #CCC;">
@@ -150,7 +155,7 @@
                         
                       
                         <div class="col-md-7" style="<?php if($getbankdetails1=='') echo "display: none;" ?>">
-                            <div class="table-responsive">
+                            <div class="table-responsive" style="padding-left:10px">
                             <table class="table table-bordered table-hover" >
                                 <thead>
                                 <tr style="background-color:#26265f ;color:#FFF ">
