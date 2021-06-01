@@ -73,6 +73,10 @@ public function __construct()
 			  curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
 			  curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json' ) );
 			  $result = curl_exec( $curl );
+					$token1 = json_decode($result);
+					if(empty($token1)){
+						echo api_error_message();exit;
+					}
 			  return $result;
  
 		}
@@ -106,7 +110,7 @@ public function __construct()
 		$token=$this->Login_POST();
 		$token1=json_decode($token);
 			
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getPOData';
+		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getPOData?vender_id=10003744';
 	    $curl       = curl_init();
 	    curl_setopt( $curl, CURLOPT_URL, $apiurl );
 	    curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
@@ -114,7 +118,7 @@ public function __construct()
 	   'Content-Type: application/json',
 	   'Authorization: Bearer ' . $token1->result_data->token->access_token
 	   ));
-	   $result = curl_exec( $curl );
+	   $result = curl_exec($curl);
 	  return $result;
 		}
 

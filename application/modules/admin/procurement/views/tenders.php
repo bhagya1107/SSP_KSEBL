@@ -100,12 +100,14 @@
                                            
                                             <td>
                                             <?php if(!in_array($tenderdatas->tender_id,$savedformengines)) { ?>
-                                            <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id) ?>">
+                                              <?php $tender_num = urlencode($tenderdatas->tender_num) ?>
+                                            <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id."?tender_num=".$tender_num) ?>">
                                           
                                                 <input type="button" class="btn  btn-sm btn-out-dashed btn-info btn-square" value="Form Engine" />
                                             </a>
                                           <?php  }else { ?>
-                                            <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id) ?>">
+                                            <?php $tender_num = urlencode($tenderdatas->tender_num) ?>
+                                            <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id."?tender_num=".$tender_num) ?>">
                                             <input type="button" class="btn  btn-sm btn-out-dashed btn-info btn-square btnsucessor" value=" Update Form Engine" />
                                             </a>
                                             <?php  } ?>
