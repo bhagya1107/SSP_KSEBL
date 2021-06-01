@@ -57,12 +57,26 @@ class Supplier_dashboard extends SP_Controller
 			$user_type = $this->session->userdata('user_type');
 			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
 			$data['getcompanydetails'] = $this->dashM->getCompanyProfile($uid);
-			// $data['user_details']=$this->dashM->getUser_details($loged_user);
-			$this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal');
+			$this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal',true);
+
+			// $this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal');
 		} else {
 			$this->session->set_flashdata('msg', 'You are not allowed to access Company Profile');
 			redirect(base_url('supplier/dashboard'));
 		}
+	}
+
+	public function supplier_administration($tab='tab_1'){
+		$loged_user = $_SESSION['userid'];
+		$usertype = $_SESSION['user_type'];
+		$data['page'] = 'Administration';
+		$data['mainpage'] = '';
+		$data['page_title'] = 'Administration';
+		$data['title'] = 'Administration';
+		$data['tab_s'] = $tab;
+		$uid = $this->session->userdata('uid');
+		$this->template->make('supplier_dashboard/administration_index', $data, 'supplier_portal');
+
 	}
 	public function personal_profile()
 	{
@@ -75,7 +89,8 @@ class Supplier_dashboard extends SP_Controller
 		$uid = $this->session->userdata('uid');
 		$data['getpersonalprofile'] = $this->dashM->getpersonalprofile('suppliers', $uid);
 		$data['getpersonalprofile1'] = $this->dashM->getpersonalprofileemp('employees', $uid);
-		$this->template->make('supplier_dashboard/personal_profile', $data, 'supplier_portal');
+		$this->template->make('supplier_dashboard/personal_profile', $data, 'supplier_portal',true);
+		// $this->load->view('supplier_dashboard/personal_profile', $data, 'supplier_portal',true);
 	}
 
 	/***************************bhagya********************************/
@@ -100,7 +115,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['num'] = $this->dashM->num($uid, $user_type);
 			$data['numviewnotifications'] = $this->dashM->numviewnotifications($uid, $user_type);
 			$data['viewnotifications'] = $this->dashM->viewnotifications($uid, $user_type);
-			$this->template->make('supplier_dashboard/preferences', $data, 'supplier_portal');
+			$this->template->make('supplier_dashboard/preferences', $data, 'supplier_portal',true);
 		} else {
 			$this->session->set_flashdata('msg', 'You are not allowed to access preferences');
 			redirect(base_url('supplier/dashboard'));
@@ -128,7 +143,7 @@ class Supplier_dashboard extends SP_Controller
 
 			$data['notificationsview'] = $this->dashM->snotifications($uid, $user_type);
 			$data['displaynotifications'] = $this->dashM->displaynotifications($uid, $user_type);
-			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal');
+			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal',true);
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
 		}
@@ -152,7 +167,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Users';
 			$data['getemployeeusertypesdetails'] = $this->dashM->getemployeesusertype();
 			$data['getemployeesdetails'] = $this->dashM->getEmployees();
-			$this->template->make('supplier_dashboard/manage_users', $data, 'supplier_portal');
+			$this->template->make('supplier_dashboard/manage_users', $data, 'supplier_portal',true);
 		} else {
 
 			$this->session->set_flashdata('msg', 'You are not allowed to access Employees');
@@ -246,7 +261,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['materialdata'] = $materialdata->result_data->list;
 			$getcategorydata = json_decode($this->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
-			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal');
+			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal',true);
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
 		}
@@ -268,7 +283,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['page_title'] = 'Access Permission';
 			$data['title'] = 'Access Permission';
 			// $data['getcompanypermissiondetails']=$this->dashM->getCompanyPermission(); 
-			$this->template->make('supplier_dashboard/permission', $data, 'supplier_portal');
+			$this->template->make('supplier_dashboard/permission', $data, 'supplier_portal',true);
 		} else {
 
 			$this->session->set_flashdata('msg', 'You are not allowed to access  Permission Page');
@@ -293,8 +308,9 @@ class Supplier_dashboard extends SP_Controller
 			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid);
 			$getordersdata = json_decode($this->getordersbyId());
 			$data['ordersId'] = $getordersdata->result_data->list;
-			
-			$this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal');
+			$this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal',true);
+
+			// $this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal');
 		} else {
 
 			$this->session->set_flashdata('msg', 'You are not allowed to access Company Portfolio');
@@ -330,7 +346,7 @@ class Supplier_dashboard extends SP_Controller
 			$user_type = $this->session->userdata('user_type');
 			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
 			$data['getsubscriptionstatus'] = $this->dashM->getsubscriptionstatus($uid);
-			$this->template->make('supplier_dashboard/subscription', $data, 'supplier_portal');
+			$this->template->make('supplier_dashboard/subscription', $data, 'supplier_portal',true);
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
 		}

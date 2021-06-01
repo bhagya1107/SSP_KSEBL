@@ -29,7 +29,7 @@
     display:none;
   }
 
-}
+} 
 
 
 </style>
@@ -54,17 +54,17 @@
         <?php 
         }
         ?>
-<main id="tg-main" class="tg-main tg-haslayout">
+<!-- <main id="tg-main" class="tg-main tg-haslayout">
 	<div class="container">
 		<div class="row">
 	
 			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">  
 
 				<div class="col-md-3 col-sm-4 col-xs-12">
-						<?php $this->view('profile_sidebar',$page); ?>
+						<?php //$this->view('profile_sidebar',$page); ?>
 				</div>
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
-					
+					 -->
 
 					   <form method="post" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/update_companyprofile')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
@@ -201,13 +201,13 @@
 						</div>
 					</form>
 
-				</div>
+				<!-- </div>
 			
 				
 			</div>
 		</div>
 	</div>
-</main>
+</main> -->
 
 
 
