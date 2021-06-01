@@ -44,7 +44,7 @@
      }
 
      .alert {
-         margin-left: 7% !important;
+         margin-left: 10% !important;
      }
 
      /* width */
@@ -82,8 +82,34 @@
  </style>
 
  <main id="tg-main" class="tg-main tg-haslayout">
-     <section class="tg-main-section tg-haslayout">
+     <section class="tg-main-section tg-haslayout"> 
+     <?php if($purchaseorder =="") { ?>
+  <div class="alert alert-danger" role="alert">
+  Connection to kseb.his.in is Interupted
+</div>
          <div id="allpurchasecount" style="text-align:center;">
+         </div>
+         <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b></b></span>
+         </div>
+        
+         <div id="workpurchasecount" class="hide" style="text-align:center;">
+         </div>
+         <div class="container">
+             <div class="tg-section-name">
+                 <h2>Purchase Orders</h2>
+             </div>
+            
+             <?php $user_type = $this->session->userdata('user_type'); ?>
+             <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">
+             
+                
+                 <ul class="nav nav-tabs" id="purchasetabs">
+                     <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
+                     <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
+                     <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
+                 </ul> <?php } else {?>
+
+                    <div id="allpurchasecount" style="text-align:center;">
          </div>
          <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:2</b></span>
          </div>
@@ -94,18 +120,23 @@
              <div class="tg-section-name">
                  <h2>Purchase Orders</h2>
              </div>
+            
              <?php $user_type = $this->session->userdata('user_type'); ?>
              <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">
+             
                  <div id="overlay">
                      <div class="cv-spinner">
                          <span class="spinner"></span>
                      </div>
                  </div>
+                
                  <ul class="nav nav-tabs" id="purchasetabs">
                      <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
                      <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
                      <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
                  </ul>
+
+
                  <div class="tab-content">
                      <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
                          <div class="row">
@@ -147,10 +178,10 @@
                                      <div class="tg-btnsbox">
 
                                          <div style="margin-left:20px;">
-                                             <a class="fa  fa-print" title="print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
-                                             <a class="fa  fa-download" title="download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
-                                             <a class="fa fa-file-o" title="document" style="font-size:24px" data-toggle="modal" data-target="#documents"> </a>&nbsp;
-                                             <a class="fa  fa-file" title="terms and conditions" style="font-size:24px" data-toggle="modal" data-target="#termsconditions"> </a>&nbsp;
+                                             <a class="fa  fa-print" title="Print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
+                                             <a class="fa  fa-download" title="Download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
+                                             <a class="fa fa-file-o" title="Document" style="font-size:24px" data-toggle="modal" data-target="#documents"> </a>&nbsp;
+                                             <a class="fa  fa-file" title="Terms and Conditions" style="font-size:24px" data-toggle="modal" data-target="#termsconditions"> </a>&nbsp;
 
                                          </div>
                                      </div>
@@ -257,10 +288,10 @@
                                  <div class="tg-btnsbox">
 
                                      <div style="margin-left:20px;">
-                                         <a class="fa  fa-print" title="print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
-                                         <a class="fa  fa-download" title="download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
-                                         <a class="fa fa-file-o" title="document" style="font-size:24px" data-toggle="modal" data-target="#documents"> </a>&nbsp;
-                                         <a class="fa  fa-file" title="terms and conditions" style="font-size:24px" data-toggle="modal" data-target="#termsconditions"> </a>&nbsp;
+                                         <a class="fa  fa-Print" title="Print" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
+                                         <a class="fa  fa-Download" title="Download" style="font-size:24px" data-toggle="modal" data-target="#tenderstatus"> </a>&nbsp;
+                                         <a class="fa fa-File-o" title="Document" style="font-size:24px" data-toggle="modal" data-target="#documents"> </a>&nbsp;
+                                         <a class="fa  fa-File" title="Terms and Conditions" style="font-size:24px" data-toggle="modal" data-target="#termsconditions"> </a>&nbsp;
 
                                      </div>
                                  </div>
@@ -439,7 +470,6 @@
              <div class="modal-body">
                  <label>Comment</label>
                  <textarea class="form-control" name="commentrequest" id="commentrequest"></textarea>
-
              </div>
              <div class="modal-footer">
                  <button type="button" class="btn btn-primary" onclick="changerequest()" data-dismiss="modal">Save</button>
@@ -1260,7 +1290,7 @@
      </div>
  </div>
 
-
+<?php } ?>
 
  <!-------------------------Split shipment End---------------------------------------------------->
 
@@ -1661,7 +1691,8 @@ filterpurchasedata(tabcontentid, value);
                  $("#overlay").fadeIn();
              },
              success: function(result) {
-
+console.log(typeof result);
+if(result!="null"){
                  datas = JSON.parse(result);
                  var count = datas.length;
                  if (count > 0) {
@@ -1671,7 +1702,9 @@ filterpurchasedata(tabcontentid, value);
                  }
                  $('#allpurchasecount').html(span1);
                  buildpurchaseorders(datas);
+                 }
              },
+             
              complete: function() {
                  $("#overlay").fadeOut();
              },
@@ -1747,7 +1780,7 @@ $.ajax({
         $("#overlay").fadeIn();
     },
     success: function(result) {
-
+if(result!="null"){
         datas = JSON.parse(result);
         var count = datas.length;
         if (count > 0) {
@@ -1757,6 +1790,7 @@ $.ajax({
         }
         $('#workpurchasecount').html(span1);
         buildpurchaseorderswork(datas);
+}
     },
     complete: function() {
         $("#overlay").fadeOut();

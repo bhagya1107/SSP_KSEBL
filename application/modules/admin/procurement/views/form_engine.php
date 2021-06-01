@@ -100,7 +100,7 @@
                                                                         <div id="dymaicfield" ></div>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <button class="btn  btn-sm btn-out-dashed btn-info btn-square" type="submit">Save</button>
+                                                                        <button class="btn btn-success btn-sm btn-out-dashed btn-info btn-square" type="submit">Save</button>
                                                                     </div>
                                                                 </fieldset>
 										                    </form>
