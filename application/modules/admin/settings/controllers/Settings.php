@@ -24,9 +24,43 @@ public function __construct()
     $data['page'] = 'Settings';
     $data['mainpage'] = '';
     $data['title'] = 'Settings';
-    // $data['form_types'] =$this->procM->getFormengine_Titles();
-    //  $data['form_questions'] =$this->procM->getFormengine_questions();
    $this->template->make('settings/fee_management',$data);
+
+  }
+  public function globals(){
+    $data['page'] = 'Globals';
+    $data['mainpage'] = '';
+    $data['title'] = 'Globals';
+    $data['globals'] =$this->SettingsM->getGlobalsdata();
+
+    // echo getApi_url();
+   $this->template->make('settings/global_settings',$data);
+  }
+
+  public function save_globals(){
+
+    foreach ($this->input->post() as $key => $value) {
+     
+      $check_exist=$this->SettingsM->checkGlobalExist($key);
+      $data=array(
+            'name'=>$key,
+            'value'=>$value,
+        
+        );
+      if(!$check_exist){
+       
+          $this->SettingsM->insert('admin_globals',$data);
+
+      }else{
+       
+        // $where=array('name'=>$key);
+        simpleUpdate('admin_globals',$data,'name',$key);
+      }
+     
+
+    }
+    // exit;
+    redirect(admin_url("settings/globals"));
 
   }
  
