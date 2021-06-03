@@ -77,7 +77,7 @@
                                               <th>#</th> -->
                                               <th>#</th>
                                              
-                                              <th>Tender Num</th>
+                                              <th>Tender Number</th>
                                               <th>Tender Title</th>
                                               <th>Tender Description</th>
                                               <th>Tender Date</th>
