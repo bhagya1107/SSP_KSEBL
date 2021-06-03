@@ -407,7 +407,7 @@
                     <div class="modal-header">
                     <h4 class="modal-title">Preview for this Tender</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Preview for this Tender</h4>
+                        
                     </div>
                     <form>
                          <div class="modal-body">

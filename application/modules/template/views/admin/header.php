@@ -501,6 +501,13 @@ $(document).ready(function () {
 												</a>
 								  			</li>
 								  		</ul>
+										  <ul class="pcoded-submenu">
+											<li class="">
+												<a href="<?=admin_url('settings/globals')?>">
+													<span class="pcoded-mtext">Globals</span>
+												</a>
+								  			</li>
+								  		</ul>
 								</li>
 								
 								<li class="">

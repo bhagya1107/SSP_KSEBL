@@ -553,7 +553,7 @@ hr{
             </div>
         </div>
         <div class="tab-pane fade" id="tasks" role="tabpanel">   
-        <br><br>
+            <br><br>
             <h5  style="<?php if($notifications=='0' or $notificationsview->preference_display_status=='false') echo "display: none;" ?>" >You have <?php echo $notifications;?> new notification</h3>
             <hr> 
             <ul class="notif-box">
@@ -600,11 +600,9 @@ hr{
                     
                     </a> -->
                 
-                    <a class="see-all" href="<?=supplier_url('dashboard/notifications')?>">See all notifications<i class="fa fa-angle-right"></i> </a>
+                    <a class="see-all" href="<?=supplier_url('dashboard/supplier_administration/tab_9')?>">See all notifications<i class="fa fa-angle-right"></i> </a>
                 </div>
             </ul>
-
-                
 
         </div>
 

@@ -177,7 +177,8 @@
 
 <?php if($countpurchaseorder =="") { ?>
   <div class="alert alert-danger" role="alert">
-  Connection to kseb.his.in has been interrupted.Please try again !
+  <?php echo api_error_message(); ?>
+  <!-- Connection to kseb.his.in has been interrupted.Please try again ! -->
 </div>
 
 <a href="<?= base_url() ?>supplier/tenders/appliedindex"> <div class=" col-md-6 ">

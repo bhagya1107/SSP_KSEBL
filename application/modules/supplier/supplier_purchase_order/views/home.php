@@ -85,7 +85,8 @@
      <section class="tg-main-section tg-haslayout"> 
      <?php if($purchaseorder =="") { ?>
   <div class="alert alert-danger" role="alert">
-  Connection to kseb.his.in is Interupted
+  <?php echo api_error_message(); ?>
+  <!-- Connection to kseb.his.in is Interupted -->
 </div>
          <div id="allpurchasecount" style="text-align:center;">
          </div>

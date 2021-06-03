@@ -1089,7 +1089,7 @@
     }
     <?php if($countpurchaseorder =="") { ?>
   <div class="alert alert-danger" role="alert">
-  Connection to kseb.his.in is Interupted
+  <?php echo api_error_message(); ?>
 </div> 
 <?php }  else {?> 
     function getMytenders(overlay) {
