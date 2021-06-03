@@ -24,7 +24,7 @@ class Template extends MX_Controller {
 				echo 'No direct access allowed';
 	} 
 
-	public function make($page,$data=array(),$theme='')
+	public function make($page,$data=array(),$theme='',$directload='')
 	{
 
 			if(!isset($data['showdashbaord'] )){
@@ -53,7 +53,16 @@ class Template extends MX_Controller {
 			 $data['notifications']=$this->GETM->notifications($uid,$user_type);  
 			 $data['notificationsview']=$this->GETM->notificationsview($uid,$user_type); 
 			 //neethu end
-			$this->load->view($theme .'header',$data);
+
+			
+
+			
+			if($directload==true){
+				$this->load->view($theme .'assets',$data);
+				$this->load->view($page,$data);
+				return;
+			 }
+			 $this->load->view($theme .'header',$data);
 			if(isset($_SESSION['theme']) &&  $_SESSION['theme']=='supplier'){ 
 				
 				

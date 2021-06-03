@@ -28,15 +28,15 @@
 	
 </style>
 
-<main id="tg-main" class="tg-main tg-haslayout">
+<!-- <main id="tg-main" class="tg-main tg-haslayout">
 	<div class="container">
 		<div class="row">
 			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
 
 				<div class="col-md-3 col-sm-4 col-xs-12">
-						<?php $this->view('profile_sidebar',$page); ?>
+						<?php //$this->view('profile_sidebar',$page); ?>
 				</div>
-				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
+				<div class="col-md-9 col-sm-8 col-xs-12 pull-right"> -->
 					<?php $created_date=$getsubscriptionstatus->created_date;
 									$newEndingDate = date("d-m-Y", strtotime(date("Y-m-d", strtotime($created_date)) . " + 365 day"));
 
@@ -83,9 +83,9 @@
 						</div>
 
 
-				</div>
+				<!-- </div>
 				
 			</div>
 		</div>
 	</div>
-</main>
+</main> -->

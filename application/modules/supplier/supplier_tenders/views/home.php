@@ -67,6 +67,9 @@
  .appliedbuttons{
     margin: 1%;
 } 
+.alert{
+    margin-left:0% !important;
+}
 
     /* #tendertabs{
         position:fixed;
@@ -119,6 +122,7 @@
             <?php
             }
             ?>
+       
             <div class="tg-section-name">
                 <h2>Tenders</h2>
             </div>
@@ -129,14 +133,26 @@
                         <span class="spinner"></span>
                     </div>
                 </div>
+                <?php if($tender =="") { ?>
+  <div class="alert alert-danger" role="alert">
+  Connection to kseb.his.in is Interupted
+</div> 
                 <ul class="nav nav-tabs" id="tendertabs">
+
                     <li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
                     <!-- <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
                     <li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
                     <li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
                 </ul>
+                <?php }  else {?>
+                    <ul class="nav nav-tabs" id="tendertabs">
 
-                <div class="tab-content">
+<li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
+<!-- <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
+<li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
+<li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
+</ul>
+           <div class="tab-content">
                     <input type="hidden" id="usertypeid" value="<?php echo $user_type; ?>">
 
                     <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
@@ -870,6 +886,7 @@
 
 
 </div>
+<?php } ?>
 
 <style>
     /* @media (min-width: 576px){
@@ -1070,7 +1087,11 @@
 
 
     }
-
+    <?php if($countpurchaseorder =="") { ?>
+  <div class="alert alert-danger" role="alert">
+  Connection to kseb.his.in is Interupted
+</div> 
+<?php }  else {?> 
     function getMytenders(overlay) {
 
 
@@ -1105,6 +1126,7 @@
             },
         });
     }
+    <?php }?>
 
     function datefilters() {
         var results = [];

@@ -177,7 +177,7 @@
                             }
                             ?>
                                       <label >Enter your Registered Mobile No</label>
-                                        <input type="tel" name="mobile" id="mobile"  pattern="[6789][0-9]{9}" class="form-control" required="" placeholder=" registered Mobile No" autocomplete="off" style="width: 60%;">
+                                        <input type="tel" name="mobile" id="mobile"  pattern="[6789][0-9]{9}" class="form-control" required="" placeholder="Registered Mobile No" autocomplete="off" style="width: 60%;">
                                         
                                         <span class="form-bar"></span>
                                     </div>

@@ -136,7 +136,10 @@
                 	?>
 					
 					<li title="Dashboard"><a href="<?=supplier_url('dashboard')?>"> DASHBOARD</a></li>
-					<li title="Administration"><a href="<?=supplier_url('dashboard/personal_profile')?>">Administration</a>
+					<!-- <li title="Administration"><a href="<?=supplier_url('dashboard/personal_profile')?>">Administration</a>
+					</li> -->
+
+					<li title="Administration"><a href="<?=supplier_url('dashboard/supplier_administration')?>">Administration</a>
 					</li>
 
 					<li style="<?php if($getcompanypermissiondetails->procurement_plan=='0') echo "display: none;" ?>"><a href="<?=supplier_url('procurement')?>">ProcurementPlan</a>
@@ -209,7 +212,7 @@
                 									$user_type=$this->session->userdata('user_type');
 
                 								?>
-												<li title="Administration"><a href="<?=supplier_url('dashboard/personal_profile')?>" 
+												<li title="Administration"><a href="<?=supplier_url('dashboard/supplier_administration')?>" 
 													
 
 												 ><i class="fa fa-users" aria-hidden="true"></i> Administration

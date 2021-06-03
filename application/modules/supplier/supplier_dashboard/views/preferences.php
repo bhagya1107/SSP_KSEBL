@@ -31,7 +31,7 @@
     }
 
 </style>
-
+<!-- 
 <main id="tg-main" class="tg-main tg-haslayout">
 	<div class="container">
 		<div class="row">
@@ -39,10 +39,10 @@
 
 
 				<div class="col-md-3 col-sm-4 col-xs-12">
-						<?php $this->view('profile_sidebar',$page); ?>
+						<?php// $this->view('profile_sidebar',$page); ?>
 				</div>
 
-				<div class="col-md-9 col-sm-8 col-xs-12 pull-right">
+				<div class="col-md-9 col-sm-8 col-xs-12 pull-right"> -->
         <?php 
                             $msg=$this->session->flashdata('msg'); 
                             if($msg)
@@ -197,7 +197,7 @@
                       <?php } ?>
                             </td>
 
-<!-- 
+                <!-- 
 
                   <td  style="<?php if($num==2) echo "display: none;" ?>"> <select class="form-control" id="date" name="date">
                           
@@ -246,12 +246,12 @@
                   </form>
 						</div>
 
-				</div>
+				<!-- </div>
 				
 			</div>
 		</div>
 	</div>
-</main>
+</main> -->
 
 <script>
 $( ".datepicker" ).datepicker({

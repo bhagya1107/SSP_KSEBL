@@ -33,7 +33,9 @@
 
 
       <li style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" href="<?=supplier_url('dashboard/subscription')?>" class='<?php if($this->uri->segment(3) == 'subscription') echo "liActive";?>'><em>Subscription Status</em></a></li>
+
       <li style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"  href="<?=supplier_url('dashboard/preference_profile')?>" class='<?php if($this->uri->segment(3) == 'preference_profile') echo "liActive";?>'><em>Preferences</em></a></li>
+      
       <li style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"> <a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" href="<?=supplier_url('dashboard/notifications')?>" class='<?php if($this->uri->segment(3) == 'notifications') echo "liActive";?>'><em>Notifications</em><i></i></a>
      <!-- <li> <a href="<?=supplier_url('dashboard/fontsize')?>" class='<?php if($this->uri->segment(3) == 'fontsize') echo "liActive";?>'><em>Font Size</em><i></i></a>-->
     </ul>

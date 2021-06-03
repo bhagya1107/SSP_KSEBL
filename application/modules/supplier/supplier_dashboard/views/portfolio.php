@@ -46,15 +46,41 @@
 
     }
 
+    .nav-tabs>li.active>a {
+        color: black!important;
+    }
+
+    ::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+    /* ::-webkit-scrollbar-y {
+    width: 10px;
+    height: 10px;
+    display: none; 
+} */
+
 </style>
 
 
-<main id="tg-main" class="tg-main tg-haslayout">
+<!-- <main id="tg-main" class="tg-main tg-haslayout">
     <section class="">
         <div class="container">
-            <div class="row">
+            <div class="row"> -->
 
-                <div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+                <!-- <div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+                    
+
+
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <?php // $this->view('profile_sidebar', $page); ?>
+
+                    </div>
+
+
+
+                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right"> -->
+
                     <?php
                     $msg = $this->session->flashdata('msg');
                     if ($msg) {
@@ -72,15 +98,6 @@
                     <?php
                     }
                     ?>
-
-
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <?php $this->view('profile_sidebar', $page); ?>
-
-                    </div>
-
-
-                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right">
                         <ul class="nav nav-tabs">
                             <?php
                             $user_type = $this->session->userdata('user_type');
@@ -96,23 +113,23 @@
                         <div class="tab-content">
 
 
-                    <?php 
-                    if($user_type== 1)
-                    {
-                        $num=1;
-                    }
-                    if($user_type== 3)
-                    {
-                        $num=3;
-                    }
+                            <?php 
+                            if($user_type== 1)
+                            {
+                                $num=1;
+                            }
+                            if($user_type== 3)
+                            {
+                                $num=3;
+                            }
 
-                    ?>
-
-
+                            ?>
 
 
-                 <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == $num) ? "in active" : "" ?>">
-                                <div class="row">
+
+
+                            <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == $num) ? "in active" : "" ?>">
+                                <div class="row1">
 
                                     <div class="card card-small ">
                                         <div class="card-header border-bottom" style="margin-top:10px;">
@@ -156,8 +173,8 @@
                                                 <!--  <h6>Added Products</h6>-->
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="table-responsive">
-                                                    <table id="materialproducts" class="table table-striped table-bordered table-hover" class="display" style="width: 100%">
+                                                <div class="table-responsive" style="font-size: inherit;">
+                                                    <table id="materialproducts" class="table table-striped table-bordered table-hover" class="display" style="width: 100%;font-size: inherit;">
                                                         <thead>
                                                             <tr style="background-color:#26265f ;color:#FFF ">
                                                                 <th>Sl No </th>
@@ -193,7 +210,7 @@
 
 
                             <div id="menu1" class="tab-pane fade <?php echo ($tab == 1 and $user_type == 2 )? "in active" : "" ?>">
-                                <div class="row">
+                                <div class="row1">
 
                                     <div class="card card-small ">
                                         <div class="card-header border-bottom" style="margin-top:10px;">
@@ -227,7 +244,7 @@
                                                 <h6>Added Services</h6>
                                             </div>
                                             <div class="col-md-12">
-                                                <table class="table  table-responsive" id="servicestable" style="width: 100%">
+                                                <table class="table  table-responsive" id="servicestable" style="width: 100%;font-size: inherit;">
                                                     <thead>
 
                                                         <tr>
@@ -256,15 +273,15 @@
 
 
 
-                    </div>
+                    <!-- </div>
 
 
                     
-                </div>
-            </div>
+                </div> -->
+            <!-- </div>
         </div>
     </section>
-</main>
+</main> -->
 <style>
 
 
@@ -560,7 +577,7 @@
                 <h4 class="modal-title"><span id="questions"></span></h4>
                 <div class="table-responsive">
 
-                    <table id="questions" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                    <table id="questions" class="table table-striped table-bordered table-hover" class="display" style="width:100%;font-size: inherit;">
                         <thead>
                             <tr>
                                 <th scope="col">sl no</th>

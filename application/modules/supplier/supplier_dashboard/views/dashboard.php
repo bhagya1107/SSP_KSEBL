@@ -174,6 +174,111 @@
       <?php
       }
       ?>
+
+<?php if($countpurchaseorder =="") { ?>
+  <div class="alert alert-danger" role="alert">
+  Connection to kseb.his.in has been interrupted.Please try again !
+</div>
+
+<a href="<?= base_url() ?>supplier/tenders/appliedindex"> <div class=" col-md-6 ">
+      <div class="card dash-content">
+          <div class="content">
+            <div class="row">
+              <div class="col-md-4">
+              <span class="content-text mt-40" style="margin-top:20%"> <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
+               </div>
+              <div class="col-md-8" style="display:inline-flex;    margin-top: 17%;padding-left:0px">
+                <div class="col-md-11">
+                  <h3 style="text-transform:unset">Applied Tenders</h3>
+                </div>
+                <div class="col-md-1">
+                  <span class="count blue"><?php echo $getcounttenders ?></span>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="bar col-md-9  mt-3" style="margin-left: 150px;">
+              <div class="border">
+                <div class="color blue-background"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </a>
+
+      <a href="<?= base_url() ?>supplier/purchase_order"><div class=" col-md-6">
+        <div class="card dash-content">
+          <div class="content">
+            <div class="row">
+              <div class="col-md-4">
+                <span class="content-text mt-40" style="margin-top:20%"> <i class="fa fa-id-card fa-2x" aria-hidden="true"></i></span>
+              </div>
+              <div class="col-md-8" style="display:inline-flex;margin-top: 17%;padding-left:0px">
+                <div class="col-md-11">
+                  <h3 style="text-transform:unset">Accepted Purchase Orders</h3>
+                </div>
+                <div class="col-md-1">
+                  <span class="count green"></span>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="bar col-md-9  mt-3" style="margin-left: 150px;">
+              <div class="border">
+                <div class="color green-background"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </a>
+    </div>
+
+
+    <div class="clearfix mb-40"></div>
+    <div class="container">
+
+      <div class=" col-md-12 ">
+        <div class="card content">
+          <h4>Pending Actions</h4>
+          <hr>
+          <div class="activity-feed">
+            <div class="feed-item">
+              <div class="date">Sep 25</div>
+              <div class="text">Responded to need <a href="single-need.php">“Volunteer opportunity”</a></div>
+            </div>
+            <div class="feed-item">
+              <div class="date">Sep 24</div>
+              <div class="text">Added an interest “Volunteer Activities”</div>
+            </div>
+            <div class="feed-item">
+              <div class="date">Sep 23</div>
+              <div class="text">Joined the group <a href="single-group.php">“Boardsmanship Forum”</a></div>
+            </div>
+            <div class="feed-item">
+              <div class="date">Sep 21</div>
+              <div class="text">Responded to need <a href="single-need.php">“In-Kind Opportunity”</a></div>
+            </div>
+            <div class="feed-item">
+              <div class="date">Sep 18</div>
+              <div class="text">Created need <a href="single-need.php">“Volunteer Opportunity”</a></div>
+            </div>
+            <div class="feed-item">
+              <div class="date">Sep 17</div>
+              <div class="text">Attending the event <a href="single-event.php">“Some New Event”</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+
+                    <?php } else { ?>
+                
        <a href="<?= base_url() ?>supplier/tenders/appliedindex"> <div class=" col-md-6 ">
       <div class="card dash-content">
           <div class="content">
@@ -336,7 +441,7 @@
               
         
         </div> -->
-
+        <?php  } ?> 
     </div>
 
   </section>
