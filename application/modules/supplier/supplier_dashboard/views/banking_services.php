@@ -75,12 +75,16 @@
                             <label>Select Bank</label>
 
                             <select class="form-control materialdata" id="materialinput" placeholder="Company name" name="bank">
-                                                    <option value="">Select Bank
+                            <?php if($materialdata!="") { ?>
+                                                    <option value="">Select Bank </option>
+                                                    <?php }else{ ?>
+                                                        <option value=""> <p class="apidropdown">Connection to kseb.his.in has been interrupted</p></option>
+                                                  <?php } ?>
                                                         <?php foreach ($materialdata as $materialdatas) { ?>
                                                     <option value="<?php echo $materialdatas->material_group_code; ?>">
                                                         <?php echo $materialdatas->material_group_name; ?></option>
                                                 <?php } ?>
-                                                </option>
+                                               
                           </select>
 
                             <!-- <select class="form-control" name="bank"> 
@@ -102,8 +106,11 @@
                         <div class="form-group">
                             <label>Branch Name</label>
                             <select class="form-control material" id="material" placeholder="Year of  registration" name="branch">
-                                                    <option value="">Select Branch
-                                                    </option>
+                            <?php if($materialdata!="") { ?>
+                                                    <option value="">Select Branch</option>
+                                                    <?php }else{ ?>
+                                                        <option value=""> <p class="apidropdown">Connection to kseb.his.in has been interrupted</p></option>
+                                                  <?php } ?>
                             </select>
 
                               <!-- <select class="form-control" name="branch">
