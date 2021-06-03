@@ -140,23 +140,31 @@
                                             <div class="form-group col-md-12">
                                                 <label for="">Material Category</label>
                                                 <select class="form-control materialdata" id="productcategory" placeholder="Company name">
-                                                    <option value="">Select Material Group Data
+                                                <?php if($getcategory!="") { ?>
+                                                    <option value="">Select Material Group Data </option>
+                                                    <?php }else{ ?>
+                                                        <option value=""> <p class="apidropdown">Connection to kseb.his.in has been interrupted.Please try again !</p></option>
+                                                  <?php } ?>
                                                         <?php foreach ($getcategory as $key=>$category) { ?>
                                                     <option data-name="<?php echo $category; ?>" value="<?php echo $key; ?>">
                                                         <?php echo $category; ?></option>
                                                 <?php } ?>
-                                                </option>
+                                               
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <label for="">Material Group Data</label>
                                                 <select class="form-control materialdata" id="materialinput" placeholder="Company name">
-                                                    <option value="">Select Material Group Data
+                                                <?php if($getcategory!="") { ?>
+                                                   <option value="">Select Material Group Data </option>
+                                                   <?php }else{ ?>
+                                                    <option value=""> <p class="apidropdown">Connection to kseb.his.in has been interrupted.Please try again !</p></option>
+                                                  <?php } ?>
                                                         <?php foreach ($materialdata as $materialdatas) { ?>
                                                     <option data-name="<?php echo $materialdatas->material_group_name; ?>" value="<?php echo $materialdatas->material_group_code; ?>">
                                                         <?php echo $materialdatas->material_group_name; ?></option>
                                                 <?php } ?>
-                                                </option>
+                                               
                                                 </select>
                                             </div>
 
