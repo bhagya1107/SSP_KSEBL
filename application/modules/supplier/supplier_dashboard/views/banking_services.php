@@ -36,16 +36,7 @@
       }
     
 </style>
-<!-- <main id="tg-main" class="tg-main tg-haslayout">
-	<div class="container">
-		<div class="row">
-			<div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
 
-                <div class="col-md-3 col-sm-4 col-xs-12">
-						<?php// $this->view('profile_sidebar',$page); ?>
-				</div> -->
-
-				<!-- <div class="col-md-9 col-sm-8 col-xs-12 pull-right"> -->
                     <?php 
                             $msg=$this->session->flashdata('msg'); 
                             if($msg)
@@ -78,7 +69,7 @@
                             <?php if($materialdata!="") { ?>
                                                     <option value="">Select Bank </option>
                                                     <?php }else{ ?>
-                                                        <option value=""> <p class="apidropdown">Connection to kseb.his.in has been interrupted</p></option>
+                                                        <option value=""> <p class="apidropdown"><?php echo api_error_message(); ?></p></option>
                                                   <?php } ?>
                                                         <?php foreach ($materialdata as $materialdatas) { ?>
                                                     <option value="<?php echo $materialdatas->material_group_code; ?>">
@@ -109,7 +100,7 @@
                             <?php if($materialdata!="") { ?>
                                                     <option value="">Select Branch</option>
                                                     <?php }else{ ?>
-                                                        <option value=""> <p class="apidropdown">Connection to kseb.his.in has been interrupted</p></option>
+                                                        <option value=""> <p class="apidropdown"><?php echo api_error_message(); ?></p></option>
                                                   <?php } ?>
                             </select>
 

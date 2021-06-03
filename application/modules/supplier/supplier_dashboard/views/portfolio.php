@@ -143,7 +143,7 @@
                                                 <?php if($getcategory!="") { ?>
                                                     <option value="">Select Material Group Data </option>
                                                     <?php }else{ ?>
-                                                        <option value=""> <p class="apidropdown">Connection to kseb.his.in has been interrupted.Please try again !</p></option>
+                                                        <option value=""> <p class="apidropdown"><?php echo api_error_message(); ?></p></option>
                                                   <?php } ?>
                                                         <?php foreach ($getcategory as $key=>$category) { ?>
                                                     <option data-name="<?php echo $category; ?>" value="<?php echo $key; ?>">
@@ -158,7 +158,7 @@
                                                 <?php if($getcategory!="") { ?>
                                                    <option value="">Select Material Group Data </option>
                                                    <?php }else{ ?>
-                                                    <option value=""> <p class="apidropdown">Connection to kseb.his.in has been interrupted.Please try again !</p></option>
+                                                    <option value=""> <p class="apidropdown"><?php echo api_error_message(); ?></p></option>
                                                   <?php } ?>
                                                         <?php foreach ($materialdata as $materialdatas) { ?>
                                                     <option data-name="<?php echo $materialdatas->material_group_name; ?>" value="<?php echo $materialdatas->material_group_code; ?>">

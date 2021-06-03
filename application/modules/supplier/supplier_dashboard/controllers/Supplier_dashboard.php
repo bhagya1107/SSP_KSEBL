@@ -6,9 +6,12 @@ class Supplier_dashboard extends SP_Controller
 	{
 		parent::__construct();
 		$this->load->model('Dashboard_model', 'dashM');
+		//	$this->load->controller('supplier_Api', 'Api');
 	}
 	public function index()
 	{
+
+
 		$data['showdashbaord'] = true;
 		$data['page'] = 'supplier_dashboard';
 		$data['title'] = 'Supplier Dashboard';
@@ -16,7 +19,8 @@ class Supplier_dashboard extends SP_Controller
 		$uid = $this->session->userdata('supplierid');
 		$data['getcompanydetails'] = $this->dashM->getappliedtender($uid);
 		$data['getcounttenders'] = count($data['getcompanydetails']);
-		$purchaseOrder = json_decode($this->getPOData());
+		$data['api'] =  $this->api->Login_POST();
+		$purchaseOrder = json_decode($this->api->getPOData());
 		$data['purchaseorder'] = $purchaseOrder->result_data->list;
 		$data['countpurchaseorder'] = count($data['purchaseorder']);
 		// $this->template->make('supplier_dashboard/home',$data,'supplier_portal');
@@ -57,7 +61,7 @@ class Supplier_dashboard extends SP_Controller
 			$user_type = $this->session->userdata('user_type');
 			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
 			$data['getcompanydetails'] = $this->dashM->getCompanyProfile($uid);
-			$this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal',true);
+			$this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal', true);
 
 			// $this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal');
 		} else {
@@ -66,7 +70,8 @@ class Supplier_dashboard extends SP_Controller
 		}
 	}
 
-	public function supplier_administration($tab='tab_1'){
+	public function supplier_administration($tab = 'tab_1')
+	{
 		$loged_user = $_SESSION['userid'];
 		$usertype = $_SESSION['user_type'];
 		$data['page'] = 'Administration';
@@ -76,7 +81,6 @@ class Supplier_dashboard extends SP_Controller
 		$data['tab_s'] = $tab;
 		$uid = $this->session->userdata('uid');
 		$this->template->make('supplier_dashboard/administration_index', $data, 'supplier_portal');
-
 	}
 	public function personal_profile()
 	{
@@ -89,7 +93,7 @@ class Supplier_dashboard extends SP_Controller
 		$uid = $this->session->userdata('uid');
 		$data['getpersonalprofile'] = $this->dashM->getpersonalprofile('suppliers', $uid);
 		$data['getpersonalprofile1'] = $this->dashM->getpersonalprofileemp('employees', $uid);
-		$this->template->make('supplier_dashboard/personal_profile', $data, 'supplier_portal',true);
+		$this->template->make('supplier_dashboard/personal_profile', $data, 'supplier_portal', true);
 		// $this->load->view('supplier_dashboard/personal_profile', $data, 'supplier_portal',true);
 	}
 
@@ -115,7 +119,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['num'] = $this->dashM->num($uid, $user_type);
 			$data['numviewnotifications'] = $this->dashM->numviewnotifications($uid, $user_type);
 			$data['viewnotifications'] = $this->dashM->viewnotifications($uid, $user_type);
-			$this->template->make('supplier_dashboard/preferences', $data, 'supplier_portal',true);
+			$this->template->make('supplier_dashboard/preferences', $data, 'supplier_portal', true);
 		} else {
 			$this->session->set_flashdata('msg', 'You are not allowed to access preferences');
 			redirect(base_url('supplier/dashboard'));
@@ -143,7 +147,7 @@ class Supplier_dashboard extends SP_Controller
 
 			$data['notificationsview'] = $this->dashM->snotifications($uid, $user_type);
 			$data['displaynotifications'] = $this->dashM->displaynotifications($uid, $user_type);
-			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal',true);
+			$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal', true);
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
 		}
@@ -167,7 +171,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Users';
 			$data['getemployeeusertypesdetails'] = $this->dashM->getemployeesusertype();
 			$data['getemployeesdetails'] = $this->dashM->getEmployees();
-			$this->template->make('supplier_dashboard/manage_users', $data, 'supplier_portal',true);
+			$this->template->make('supplier_dashboard/manage_users', $data, 'supplier_portal', true);
 		} else {
 
 			$this->session->set_flashdata('msg', 'You are not allowed to access Employees');
@@ -257,11 +261,11 @@ class Supplier_dashboard extends SP_Controller
 			$uid = $this->session->userdata('uid');
 			$data['getbankdetails'] = $this->dashM->getbankdetails('bank_details', $uid);
 			$data['getbankdetails1'] = $this->dashM->getbankdetails1('bank_details', $uid);
-			$materialdata = json_decode($this->getMaterialGroupData());
+			$materialdata = json_decode($this->api->getallmaterialsubcatid_get());
 			$data['materialdata'] = $materialdata->result_data->list;
-			$getcategorydata = json_decode($this->getSbuData_get());
+			$getcategorydata = json_decode($this->api->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
-			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal',true);
+			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal', true);
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
 		}
@@ -283,7 +287,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['page_title'] = 'Access Permission';
 			$data['title'] = 'Access Permission';
 			// $data['getcompanypermissiondetails']=$this->dashM->getCompanyPermission(); 
-			$this->template->make('supplier_dashboard/permission', $data, 'supplier_portal',true);
+			$this->template->make('supplier_dashboard/permission', $data, 'supplier_portal', true);
 		} else {
 
 			$this->session->set_flashdata('msg', 'You are not allowed to access  Permission Page');
@@ -301,14 +305,14 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Portfolio';
 			$data['tab'] = 1;
 			$supplierid = $this->session->userdata('uid');
-			$materialdata = json_decode($this->getMaterialGroupData());
+			$materialdata = json_decode($this->api->getallmaterialsubcatid_get());
 			$data['materialdata'] = $materialdata->result_data->list;
-			$getcategorydata = json_decode($this->getSbuData_get());
+			$getcategorydata = json_decode($this->api->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid);
-			$getordersdata = json_decode($this->getordersbyId());
+			$getordersdata = json_decode($this->api->getordersbyId());
 			$data['ordersId'] = $getordersdata->result_data->list;
-			$this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal',true);
+			$this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal', true);
 
 			// $this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal');
 		} else {
@@ -346,7 +350,7 @@ class Supplier_dashboard extends SP_Controller
 			$user_type = $this->session->userdata('user_type');
 			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
 			$data['getsubscriptionstatus'] = $this->dashM->getsubscriptionstatus($uid);
-			$this->template->make('supplier_dashboard/subscription', $data, 'supplier_portal',true);
+			$this->template->make('supplier_dashboard/subscription', $data, 'supplier_portal', true);
 		} else {
 			echo " “Sorry, You Are Not Allowed to Access This Page” ";
 		}
@@ -360,105 +364,13 @@ class Supplier_dashboard extends SP_Controller
 		$this->template->make('supplier_dashboard/forgot_password', $data, 'supplier_portal');
 	}
 
-	public function Login_POST()
-	{
-		$data = array(
-			"email" => "1036226@kseberp.in",
-			"password" => "password"
-		);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
-		$data_array = json_encode($data);
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-		$result = curl_exec($curl);
-		//$token1 = json_decode($result);
-		// if(empty($token1)){
-		// 	echo api_error_message();exit;
-		// }
-		return $result;
-	}
-
-	public function getMaterialData($materialgroup, $productcategory)
-	{
-		//$materialgroup=$this->input->post('materialgroup');
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialData/' . $productcategory . '/' . $materialgroup;
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl);
-		$value = json_decode($result);
-		echo json_encode($value->result_data->list);
-	}
 
 	public function getMaterialProductsDetails()
 	{
 
 		$materialgroup = $this->input->post('materialgroup');
 		$productcategory = $this->input->post('productcategory');
-		$this->getMaterialData($materialgroup, $productcategory);
-	}
-
-	public function getMaterialGroupData()
-	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialGroupData';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl); 
-		return $result;
-	}
-
-
-	public function getSbuData_get()
-	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getSbuData';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl); 
-		return $result;
-	}
-
-
-	public function getMaterialById()
-	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialById/3';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl); 
-		return $result;
+		$this->api->getMaterialData($materialgroup, $productcategory);
 	}
 
 	public function check_products()
@@ -478,8 +390,8 @@ class Supplier_dashboard extends SP_Controller
 		$data['categoryname'] = $this->input->post('categoryname');
 		$data['materialId'] = $this->input->post('material');
 		$data['materialname'] = $this->input->post('product');
-		$data['materialinputId']=$this->input->post('materialinput');
-		$data['materialinputname']=$this->input->post('materialinputname');
+		$data['materialinputId'] = $this->input->post('materialinput');
+		$data['materialinputname'] = $this->input->post('materialinputname');
 		//$data['created_date']=date('Y-m-d H:i:s');
 		$data['supplierId'] = $this->session->userdata('uid');
 		//$data['isdeleted']=false;
@@ -496,8 +408,6 @@ class Supplier_dashboard extends SP_Controller
 
 	public function getMaterialListData()
 	{
-		//echo $supplierid;exit;
-
 		$draw = intval($this->input->get("draw"));
 		$start = intval($this->input->get("start"));
 		$length = intval($this->input->get("length"));
@@ -554,7 +464,7 @@ class Supplier_dashboard extends SP_Controller
 
 			"data" => $data
 		);
-		// print_r($output);exit;
+
 		echo json_encode($output);
 	}
 
@@ -594,224 +504,171 @@ class Supplier_dashboard extends SP_Controller
 		}
 	}
 
-//employee change password
-public function forgotpasswordemployees() 
-{
-	$data['page'] = 'ForgotPassword';
-	$data['mainpage'] = '';
-	$data['page_title'] = 'ForgotPassword';
-	$data['title'] = 'Change Password';
-	$this->session->set_userdata('Employee','Employee');
-	$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
-}
-public function send_otp_employee_changepass()
-{
-	$mobile=$this->input->post('mobile');
-	$uid=$this->session->userdata('uid');
-	$get_supplier_mobile=$this->dashM->get_employee_mobile('employees',$mobile,$uid);
-	if($get_supplier_mobile!='')
+	//employee change password
+	public function forgotpasswordemployees()
 	{
-	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-	$otp=rand(100000, 999999);
-	$session_otp=$this->session->set_userdata('session_otp',$otp);
-	echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
-		 </script>';
-	echo ' <script>window.location.href="verity_otp_change_password";</script>';
-	// $this->session->set_flashdata('msg',"your otp is $otp" );
-	// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
-
-	} 
-	if($get_supplier_mobile=='')
+		$data['page'] = 'ForgotPassword';
+		$data['mainpage'] = '';
+		$data['page_title'] = 'ForgotPassword';
+		$data['title'] = 'Change Password';
+		$this->session->set_userdata('Employee', 'Employee');
+		$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
+	}
+	public function send_otp_employee_changepass()
 	{
-		echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+		$mobile = $this->input->post('mobile');
+		$uid = $this->session->userdata('uid');
+		$get_supplier_mobile = $this->dashM->get_employee_mobile('employees', $mobile, $uid);
+		if ($get_supplier_mobile != '') {
+			$session_mobile = $this->session->set_userdata('supplier_mobile', $mobile);
+			$otp = rand(100000, 999999);
+			$session_otp = $this->session->set_userdata('session_otp', $otp);
+			echo '<script type="text/javascript" >alert("your otp is ' . $otp . '" );
 		 </script>';
-		 echo ' <script>window.location.href="forgotpassword";</script>';
-
-		// $this->session->set_flashdata('msg',"Not registerd mobile number" );
-		// redirect(base_url('supplier/dashboard/forgotpassword'));
-
-
-	}
-}
-public function change_pswd_emp()
-{
-		
-		$new_pass=$this->input->post('new_pass');
-		$confirm_pass=$this->input->post('confirm_pass');
-		$supplierid=$this->session->userdata('uid');
-		$user_type=$this->session->userdata('user_type');
-	
-		if ($confirm_pass==$new_pass)
-			{
-				$where = array('id' => $supplierid);
-				$data = array('password' => $confirm_pass );
-				$result = $this->dashM->update('employees', $data, $where);
-				$this->session->unset_userdata('session_otp');
-				$this->session->unset_userdata('supplier_mobile');
-				$this->session->unset_userdata('session_otp_change');
-		
-				echo '<script type="text/javascript" >alert("Password changed successfully" );
-				</script>';
-				echo ' <script>window.location.href="personal_profile";</script>';
-		   
-				// $this->session->set_flashdata('omsg','Password changed successfully !"');
-				// redirect(base_url('supplier/dashboard/forgotpassword'));
-			}
-			else{
-				echo '<script type="text/javascript" >alert("Password mismatch" );
-				</script>';
-				echo ' <script>window.location.href="changepassword";</script>';
-		   
-				// $this->session->set_flashdata('omsg','Password mismatch'); 
-				// redirect(base_url('supplier/dashboard/changepassword'));
-			
-	}
-
-}
-
-
-//supplier change password	
-public function forgotpassword()
-{
-	$data['page'] = 'ForgotPassword';
-	$data['mainpage'] = '';
-	$data['page_title'] = 'ForgotPassword';
-	$data['title'] = 'Change Password';
-	$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
-}
-public function verity_otp_change_password()
-{
-	if (
-		$this->session->userdata('supplier_mobile') != '') {
-	$data['page'] = 'verity otp';
-	$data['mainpage'] = '';
-	$data['page_title'] = 'Verify otp';
-	$data['title'] = 'Verify OTP';
-	$this->template->make('supplier_dashboard/verity_otp_change_pass', $data, 'supplier_portal');
-}
-else{
-	redirect(base_url('supplier/dashboard/forgotpassword'));
-}
-}
-public function changepassword()
-{
-	
-	if (
-	$this->session->userdata('supplier_mobile') != '' and $this->session->userdata('session_otp') != '') {
-	$data['page'] = 'Change Password';
-	$data['mainpage'] = '';
-	$data['page_title'] = 'Change Password';
-	$data['title'] = 'Change Password';
-	$this->template->make('supplier_dashboard/change_password', $data, 'supplier_portal');
+			echo ' <script>window.location.href="verity_otp_change_password";</script>';
 		}
-		else{
+		if ($get_supplier_mobile == '') {
+			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+		 </script>';
+			echo ' <script>window.location.href="forgotpassword";</script>';
+		}
+	}
+	public function change_pswd_emp()
+	{
+
+		$new_pass = $this->input->post('new_pass');
+		$confirm_pass = $this->input->post('confirm_pass');
+		$supplierid = $this->session->userdata('uid');
+		$user_type = $this->session->userdata('user_type');
+
+		if ($confirm_pass == $new_pass) {
+			$where = array('id' => $supplierid);
+			$data = array('password' => $confirm_pass);
+			$result = $this->dashM->update('employees', $data, $where);
+			$this->session->unset_userdata('session_otp');
+			$this->session->unset_userdata('supplier_mobile');
+			$this->session->unset_userdata('session_otp_change');
+
+			echo '<script type="text/javascript" >alert("Password changed successfully" );
+				</script>';
+			echo ' <script>window.location.href="personal_profile";</script>';
+		} else {
+			echo '<script type="text/javascript" >alert("Password mismatch" );
+				</script>';
+			echo ' <script>window.location.href="changepassword";</script>';
+		}
+	}
+
+
+	//supplier change password	
+	public function forgotpassword()
+	{
+		$data['page'] = 'ForgotPassword';
+		$data['mainpage'] = '';
+		$data['page_title'] = 'ForgotPassword';
+		$data['title'] = 'Change Password';
+		$this->template->make('supplier_dashboard/forgot_pasword', $data, 'supplier_portal');
+	}
+	public function verity_otp_change_password()
+	{
+		if (
+			$this->session->userdata('supplier_mobile') != ''
+		) {
+			$data['page'] = 'verity otp';
+			$data['mainpage'] = '';
+			$data['page_title'] = 'Verify otp';
+			$data['title'] = 'Verify OTP';
+			$this->template->make('supplier_dashboard/verity_otp_change_pass', $data, 'supplier_portal');
+		} else {
 			redirect(base_url('supplier/dashboard/forgotpassword'));
 		}
-}
-
-public function send_otp()
-{
-	$mobile=$this->input->post('mobile');
-	$uid=$this->session->userdata('supplierid');
-	$get_supplier_mobile=$this->dashM->get_supplier_mobile('suppliers',$mobile,$uid);
-	if($get_supplier_mobile!='')
+	}
+	public function changepassword()
 	{
-	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-	$otp=rand(100000, 999999);
-	$session_otp=$this->session->set_userdata('session_otp',$otp);
-	echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
+
+		if (
+			$this->session->userdata('supplier_mobile') != '' and $this->session->userdata('session_otp') != ''
+		) {
+			$data['page'] = 'Change Password';
+			$data['mainpage'] = '';
+			$data['page_title'] = 'Change Password';
+			$data['title'] = 'Change Password';
+			$this->template->make('supplier_dashboard/change_password', $data, 'supplier_portal');
+		} else {
+			redirect(base_url('supplier/dashboard/forgotpassword'));
+		}
+	}
+
+	public function send_otp()
+	{
+		$mobile = $this->input->post('mobile');
+		$uid = $this->session->userdata('supplierid');
+		$get_supplier_mobile = $this->dashM->get_supplier_mobile('suppliers', $mobile, $uid);
+		if ($get_supplier_mobile != '') {
+			$session_mobile = $this->session->set_userdata('supplier_mobile', $mobile);
+			$otp = rand(100000, 999999);
+			$session_otp = $this->session->set_userdata('session_otp', $otp);
+			echo '<script type="text/javascript" >alert("your otp is ' . $otp . '" );
 		 </script>';
-	echo ' <script>window.location.href="verity_otp_change_password";</script>';
-	// $this->session->set_flashdata('msg',"your otp is $otp" );
-	// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
-
-	}
-	if($get_supplier_mobile=='')
-	{
-		echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
+			echo ' <script>window.location.href="verity_otp_change_password";</script>';
+		}
+		if ($get_supplier_mobile == '') {
+			echo '<script type="text/javascript" >alert("Not registerd Mobile Number" );
 		 </script>';
-		 echo ' <script>window.location.href="forgotpassword";</script>';
-
-		// $this->session->set_flashdata('msg',"Not registerd mobile number" );
-		// redirect(base_url('supplier/dashboard/forgotpassword'));
-
-
+			echo ' <script>window.location.href="forgotpassword";</script>';
+		}
 	}
-}
-public function verify_send_otp_change_pass()
-{
-	$otp=$this->input->post('otp');
-	$session_otp=$this->session->userdata('session_otp');
-	// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-	// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
-	
-	if($otp==$session_otp) 
+	public function verify_send_otp_change_pass()
 	{
-	$session_otp_change=$this->session->set_userdata('session_otp_change','100');
-	redirect(base_url('supplier/dashboard/changepassword'));  
+		$otp = $this->input->post('otp');
+		$session_otp = $this->session->userdata('session_otp');
 
+		if ($otp == $session_otp) {
+			$session_otp_change = $this->session->set_userdata('session_otp_change', '100');
+			redirect(base_url('supplier/dashboard/changepassword'));
+		} else {
+			echo '<script type="text/javascript" >alert("Not Valid OTP" );
+		 </script>';
+			echo ' <script>window.location.href="verity_otp_change_password";</script>';
+		}
 	}
-	else
+	public function resend_otp_change_pass()
 	{
-		echo '<script type="text/javascript" >alert("Not Valid OTP" );
+		$otp = rand(100000, 999999);
+		$session_otp = $this->session->set_userdata('session_otp', $otp);
+		echo '<script type="text/javascript" >alert("your otp is ' . $otp . '" );
 		 </script>';
 		echo ' <script>window.location.href="verity_otp_change_password";</script>';
-
-		// $this->session->set_flashdata('rmsg',"Not Valid OTP" );
-		// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
-
 	}
+	public function change_pswd()
+	{
 
-}
-public function resend_otp_change_pass()
-{
-	$otp=rand(100000, 999999);
-	$session_otp=$this->session->set_userdata('session_otp',$otp);
-	echo '<script type="text/javascript" >alert("your otp is '.$otp.'" );
-		 </script>';
-	echo ' <script>window.location.href="verity_otp_change_password";</script>';
-	// $this->session->set_flashdata('msg',"your otp is $otp" );
-	// redirect(base_url('supplier/dashboard/verity_otp_change_password'));
-}
-public function change_pswd()
-{
-		
-		$new_pass=$this->input->post('new_pass');
-		$confirm_pass=$this->input->post('confirm_pass');
-		$supplierid=$this->session->userdata('supplierid');
-		$user_type=$this->session->userdata('user_type');
-	
-		if ($confirm_pass==$new_pass)
-			{
-				$where = array('uid' => $supplierid);
-				$data = array('password' => $confirm_pass );
-				$result = $this->dashM->update('suppliers', $data, $where);
-				$this->session->unset_userdata('session_otp');
-				$this->session->unset_userdata('supplier_mobile');
-				$this->session->unset_userdata('session_otp_change');
-		
-				echo '<script type="text/javascript" >alert("Password changed successfully" );
+		$new_pass = $this->input->post('new_pass');
+		$confirm_pass = $this->input->post('confirm_pass');
+		$supplierid = $this->session->userdata('supplierid');
+		$user_type = $this->session->userdata('user_type');
+
+		if ($confirm_pass == $new_pass) {
+			$where = array('uid' => $supplierid);
+			$data = array('password' => $confirm_pass);
+			$result = $this->dashM->update('suppliers', $data, $where);
+			$this->session->unset_userdata('session_otp');
+			$this->session->unset_userdata('supplier_mobile');
+			$this->session->unset_userdata('session_otp_change');
+
+			echo '<script type="text/javascript" >alert("Password changed successfully" );
 				</script>';
-				echo ' <script>window.location.href="personal_profile";</script>';
-		   
-				// $this->session->set_flashdata('omsg','Password changed successfully !"');
-				// redirect(base_url('supplier/dashboard/forgotpassword'));
-			}
-			else{
-				echo '<script type="text/javascript" >alert("Password mismatch" ); 
+			echo ' <script>window.location.href="personal_profile";</script>';
+		} else {
+			echo '<script type="text/javascript" >alert("Password mismatch" ); 
 				</script>';
-				echo ' <script>window.location.href="changepassword";</script>';
-		   
-				// $this->session->set_flashdata('omsg','Password mismatch'); 
-				// redirect(base_url('supplier/dashboard/changepassword'));
-			
+			echo ' <script>window.location.href="changepassword";</script>';
+		}
 	}
+	// forgot password
 
-}
-// forgot password
-
-public function forgotpasstohome()
-{
+	public function forgotpasstohome()
+	{
 		$this->session->unset_userdata('session_otp');
 		$this->session->unset_userdata('supplier_mobile');
 		$this->session->unset_userdata('session_otp_change');
@@ -819,156 +676,131 @@ public function forgotpasstohome()
 		$this->session->unset_userdata('Supplier');
 		// $this->session->unset_userdata('supplier');
 		redirect(base_url(''));
-}
-public function send_otp_supplier()
-{
-	$mobile=$this->input->post('mobile');
-	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-	$get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
-	
-	if($get_supplier_mobile!='')
-	{
-	$otp=rand(100000, 999999);
-	$session_otp=$this->session->set_userdata('session_otp',$otp);
-	$this->session->set_flashdata('msg',"your otp is $otp" );
-	redirect(base_url('verify_otp'));
 	}
-	if($get_supplier_mobile=='')
+	public function send_otp_supplier()
 	{
-		$this->session->set_flashdata('msg',"Not registerd mobile number" );
-		redirect(base_url('forgot_password'));
+		$mobile = $this->input->post('mobile');
+		$session_mobile = $this->session->set_userdata('supplier_mobile', $mobile);
+		$get_supplier_mobile = $this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
 
+		if ($get_supplier_mobile != '') {
+			$otp = rand(100000, 999999);
+			$session_otp = $this->session->set_userdata('session_otp', $otp);
+			$this->session->set_flashdata('msg', "your otp is $otp");
+			redirect(base_url('verify_otp'));
+		}
+		if ($get_supplier_mobile == '') {
+			$this->session->set_flashdata('msg', "Not registerd mobile number");
+			redirect(base_url('forgot_password'));
+		}
 	}
+	public function send_otp_supplier_verify()
+	{
+		$otp = $this->input->post('otp');
+		$session_otp = $this->session->userdata('session_otp');
 
-}
-public function send_otp_supplier_verify()
-{
-	$otp=$this->input->post('otp');
-	$session_otp=$this->session->userdata('session_otp');
-	// $session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-	// $get_supplier_mobile=$this->dashM->get_supplier_mobile_forget_pass('suppliers', $mobile);
-	
-	if($otp==$session_otp)
-	{
-	$session_otp_change=$this->session->set_userdata('session_otp_change','100');
-	redirect(base_url('Change_forgot_password'));
+		if ($otp == $session_otp) {
+			$session_otp_change = $this->session->set_userdata('session_otp_change', '100');
+			redirect(base_url('Change_forgot_password'));
+		} else {
+			$this->session->set_flashdata('rmsg', "Not Valid OTP");
+			redirect(base_url('verify_otp'));
+		}
 	}
-	else
+	public function resend_otp()
 	{
-		$this->session->set_flashdata('rmsg',"Not Valid OTP" );
+		$otp = rand(100000, 999999);
+		$session_otp = $this->session->set_userdata('session_otp', $otp);
+		$this->session->set_flashdata('msg', "your otp is $otp");
 		redirect(base_url('verify_otp'));
+	}
+	public function update_supplier_password()
+	{
 
+
+		$confirm_pass = $this->input->post('confirm_pass');
+		$pass = $this->input->post('pass');
+		$supplier_mobile = $this->session->userdata('supplier_mobile');
+		if ($confirm_pass == $pass) {
+			$where = array('mobile' => $supplier_mobile);
+			$data = array('password' => $pass);
+			$result = $this->dashM->update('suppliers', $data, $where);
+			$this->session->unset_userdata('session_otp');
+			$this->session->unset_userdata('supplier_mobile');
+			$this->session->unset_userdata('session_otp_change');
+			$this->session->unset_userdata('Supplier');
+			$this->session->set_flashdata('rmsg', 'Password changed successfully');
+			redirect(base_url('home'));
+		} else {
+
+			$this->session->set_flashdata('omsg', 'Password mismatch');
+			redirect(base_url('Change_forgot_password'));
+		}
 	}
 
-}
-public function resend_otp()
-{
-	$otp=rand(100000, 999999);
-	$session_otp=$this->session->set_userdata('session_otp',$otp);
-	$this->session->set_flashdata('msg',"your otp is $otp" );
-	redirect(base_url('verify_otp'));
-}
-public function update_supplier_password()
-{
-	
-
-	$confirm_pass=$this->input->post('confirm_pass');
-	$pass=$this->input->post('pass');
-	$supplier_mobile=$this->session->userdata('supplier_mobile');
-	if ($confirm_pass==$pass)
+	//forgot password employee
+	public function forgot_passwordss()
 	{
-		$where = array('mobile' => $supplier_mobile);
-		$data = array('password' => $pass );
-		$result = $this->dashM->update('suppliers', $data, $where);
-		$this->session->unset_userdata('session_otp');
-		$this->session->unset_userdata('supplier_mobile');
-		$this->session->unset_userdata('session_otp_change');
-		$this->session->unset_userdata('Supplier');
-		$this->session->set_flashdata('rmsg','Password changed successfully');
-		redirect(base_url('home'));
-		
-	} 
-	else{
-	
-		$this->session->set_flashdata('omsg','Password mismatch'); 
-		redirect(base_url('Change_forgot_password'));
-	
-} 
-} 
-
-//forgot password employee
-public function forgot_passwordss()
-{
-	echo "hii";
-}
-public function emp_forgot_password()
-{ 
-	echo "hii"; exit;
-	$this->session->set_userdata('Employee','Employee'); 
-	// $this->session->set_userdata('supplier','abc'); 
-	redirect(base_url('forgot_password'));
-}
-public function sup_forgot_password()
-{
-	$this->session->set_userdata('supplier','abc');
-	$this->session->set_userdata('Supplier','Supplier'); 
-	redirect(base_url('forgot_password'));
-}
-public function send_otp_employee()
-{
-	// echo "emp"; exit;
-	$mobile=$this->input->post('mobile');
-	$this->session->set_userdata('Employee','Employee');
-	$session_mobile=$this->session->set_userdata('supplier_mobile',$mobile);
-	$get_employee_mobile=$this->dashM->get_employee_mobile_forget_pass('employees', $mobile);
-	
-	if($get_employee_mobile!='')
-	{
-	$otp=rand(100000, 999999);
-	$session_otp=$this->session->set_userdata('session_otp',$otp);
-	$this->session->set_flashdata('msg',"your otp is $otp" );
-	redirect(base_url('verify_otp'));
+		echo "hii";
 	}
-	if($get_employee_mobile=='')
+	public function emp_forgot_password()
 	{
-		$this->session->set_flashdata('msg',"Not registerd mobile number" );
+		echo "hii";
+		exit;
+		$this->session->set_userdata('Employee', 'Employee');
+		// $this->session->set_userdata('supplier','abc'); 
 		redirect(base_url('forgot_password'));
-
 	}
-
-}
-public function update_employee_password()
-{
-	$confirm_pass=$this->input->post('confirm_pass');
-	$pass=$this->input->post('pass');
-	$supplier_mobile=$this->session->userdata('supplier_mobile');
-	if ($confirm_pass==$pass)
+	public function sup_forgot_password()
 	{
-		$where = array('mobilenum' => $supplier_mobile);
-		$data = array('password' => $pass );
-		$result = $this->dashM->update('employees', $data, $where);
-		$this->session->unset_userdata('session_otp');
-		$this->session->unset_userdata('supplier_mobile');
-		$this->session->unset_userdata('session_otp_change');
-		$this->session->unset_userdata('Employee');
-		// $this->session->userdata('tabs',2);
-		$this->session->set_flashdata('rmsg','Password changed successfully');
-		redirect(base_url('home'));
-		
+		$this->session->set_userdata('supplier', 'abc');
+		$this->session->set_userdata('Supplier', 'Supplier');
+		redirect(base_url('forgot_password'));
 	}
-	else{
-	
-		$this->session->set_flashdata('omsg','Password mismatch'); 
-		redirect(base_url('Change_forgot_password'));
-	
-}
-}
+	public function send_otp_employee()
+	{
+		// echo "emp"; exit;
+		$mobile = $this->input->post('mobile');
+		$this->session->set_userdata('Employee', 'Employee');
+		$session_mobile = $this->session->set_userdata('supplier_mobile', $mobile);
+		$get_employee_mobile = $this->dashM->get_employee_mobile_forget_pass('employees', $mobile);
+
+		if ($get_employee_mobile != '') {
+			$otp = rand(100000, 999999);
+			$session_otp = $this->session->set_userdata('session_otp', $otp);
+			$this->session->set_flashdata('msg', "your otp is $otp");
+			redirect(base_url('verify_otp'));
+		}
+		if ($get_employee_mobile == '') {
+			$this->session->set_flashdata('msg', "Not registerd mobile number");
+			redirect(base_url('forgot_password'));
+		}
+	}
+	public function update_employee_password()
+	{
+		$confirm_pass = $this->input->post('confirm_pass');
+		$pass = $this->input->post('pass');
+		$supplier_mobile = $this->session->userdata('supplier_mobile');
+		if ($confirm_pass == $pass) {
+			$where = array('mobilenum' => $supplier_mobile);
+			$data = array('password' => $pass);
+			$result = $this->dashM->update('employees', $data, $where);
+			$this->session->unset_userdata('session_otp');
+			$this->session->unset_userdata('supplier_mobile');
+			$this->session->unset_userdata('session_otp_change');
+			$this->session->unset_userdata('Employee');
+			// $this->session->userdata('tabs',2);
+			$this->session->set_flashdata('rmsg', 'Password changed successfully');
+			redirect(base_url('home'));
+		} else {
+
+			$this->session->set_flashdata('omsg', 'Password mismatch');
+			redirect(base_url('Change_forgot_password'));
+		}
+	}
 
 
-
-
-
-	public function update_companyprofile() 
+	public function update_companyprofile()
 	{
 		// echo "string"; exit;
 
@@ -1028,8 +860,8 @@ public function update_employee_password()
 				'mobile' => $mobile,
 				'email' => $email,
 				'gst' => $gst,
-				'incorporationno'=> $incorporationNo,
-				'incorporationdate'=>$incorporationdate,
+				'incorporationno' => $incorporationNo,
+				'incorporationdate' => $incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'incorporationcertificate' => $file1,
@@ -1055,8 +887,8 @@ public function update_employee_password()
 				'mobile' => $mobile,
 				'email' => $email,
 				'gst' => $gst,
-				'incorporationno'=> $incorporationNo,
-				'incorporationdate'=>$incorporationdate,
+				'incorporationno' => $incorporationNo,
+				'incorporationdate' => $incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'incorporationcertificate' => $file1,
@@ -1081,8 +913,8 @@ public function update_employee_password()
 				'companyaddress' => $companyaddress,
 				'mobile' => $mobile,
 				'gst' => $gst,
-				'incorporationno'=> $incorporationNo,
-				'incorporationdate'=>$incorporationdate,
+				'incorporationno' => $incorporationNo,
+				'incorporationdate' => $incorporationdate,
 				'email' => $email,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
@@ -1108,8 +940,8 @@ public function update_employee_password()
 				'mobile' => $mobile,
 				'email' => $email,
 				'gst' => $gst,
-				'incorporationno'=> $incorporationNo,
-				'incorporationdate'=>$incorporationdate,
+				'incorporationno' => $incorporationNo,
+				'incorporationdate' => $incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'gst_tinfile' => $file2,
@@ -1135,8 +967,8 @@ public function update_employee_password()
 				'mobile' => $mobile,
 				'email' => $email,
 				'gst' => $gst,
-				'incorporationno'=> $incorporationNo,
-				'incorporationdate'=>$incorporationdate,
+				'incorporationno' => $incorporationNo,
+				'incorporationdate' => $incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'incorporationcertificate' => $file1
@@ -1161,8 +993,8 @@ public function update_employee_password()
 				'mobile' => $mobile,
 				'email' => $email,
 				'gst' => $gst,
-				'incorporationno'=> $incorporationNo,
-				'incorporationdate'=>$incorporationdate,
+				'incorporationno' => $incorporationNo,
+				'incorporationdate' => $incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'gst_tinfile' => $file2
@@ -1186,8 +1018,8 @@ public function update_employee_password()
 				'mobile' => $mobile,
 				'email' => $email,
 				'gst' => $gst,
-				'incorporationno'=> $incorporationNo,
-				'incorporationdate'=>$incorporationdate,
+				'incorporationno' => $incorporationNo,
+				'incorporationdate' => $incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson,
 				'authorisedpersonfile' => $file3
@@ -1209,8 +1041,8 @@ public function update_employee_password()
 				'mobile' => $mobile,
 				'email' => $email,
 				'gst' => $gst,
-				'incorporationno'=> $incorporationNo,
-				'incorporationdate'=>$incorporationdate,
+				'incorporationno' => $incorporationNo,
+				'incorporationdate' => $incorporationdate,
 				'website' => $website,
 				'authorizedperson' => $authorizedperson
 			);
@@ -1240,7 +1072,7 @@ public function update_employee_password()
 		$data['email'] = $this->input->post('email');
 		$data['password'] = $this->input->post('password');
 		$data['usertype'] = $this->input->post('usertype');
-		$data['supplierid'] = $this->session->userdata('uid'); 
+		$data['supplierid'] = $this->session->userdata('uid');
 
 		$id = $this->input->post('id');
 		$data['isdeleted'] = false;
@@ -1913,58 +1745,6 @@ public function update_employee_password()
 		}
 	}
 
-	public function getPOData()
-	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getPOData?vender_id=10003744';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl);
-		return $result;
-	}
-
-
-	public function getBankData()
-	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialGroupData';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl); 
-		return $result;
-	}
-
-	public function getBankById()
-	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialById/3';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl); 
-		return $result;
-	}
-
 	public function notification_count()
 	{
 		$user_type = $this->session->userdata("user_type");
@@ -1978,26 +1758,7 @@ public function update_employee_password()
 		// {
 		// 	echo json_encode('');	
 		// }
-		
-		
+
+
 	}
-
-	public function getordersbyId()
-	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getordersbyId';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl); 
-		//print_r($result);exit;
-		return $result;
-	}
-
 }

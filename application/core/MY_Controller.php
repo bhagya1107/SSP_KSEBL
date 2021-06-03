@@ -20,6 +20,7 @@ class AD_Controller extends MX_Controller
             redirect($redirects);
         }
         $this->load->module('template');
+       // $this->load->module('api');
     }
 }
 
@@ -44,5 +45,6 @@ class SP_Controller extends MX_Controller
             redirect($redirects);
         }
         $this->load->module('template');
+        $this->load->module('api');
     }
 }

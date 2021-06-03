@@ -96,7 +96,4 @@ class Template extends MX_Controller {
 	// 	$this->GETM->update_notification_status( $uid, $user_type);
 	// }
 	
-
-
-
 }
