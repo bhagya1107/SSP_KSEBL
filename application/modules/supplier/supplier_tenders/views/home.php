@@ -57,19 +57,21 @@
     }
 
     .tg-matchmetadata {
-        width:130%;
+        width: 130%;
     }
 
     .tg-ticket h4 {
         font-size: 20px;
-        width:195%;
+        width: 195%;
     }
- .appliedbuttons{
-    margin: 1%;
-} 
-.alert{
-    margin-left:0% !important;
-}
+
+    .appliedbuttons {
+        margin: 1%;
+    }
+
+    .alert {
+        margin-left: 0% !important;
+    }
 
     /* #tendertabs{
         position:fixed;
@@ -122,7 +124,7 @@
             <?php
             }
             ?>
-       
+
             <div class="tg-section-name">
                 <h2>Tenders</h2>
             </div>
@@ -133,45 +135,45 @@
                         <span class="spinner"></span>
                     </div>
                 </div>
-                <?php if($tender =="") { ?>
-  <div class="alert alert-danger" role="alert">
-  Connection to kseb.his.in is Interupted
-</div> 
-                <ul class="nav nav-tabs" id="tendertabs">
-
-                    <li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
-                    <!-- <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
-                    <li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
-                    <li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
-                </ul>
-                <?php }  else {?>
+                <?php if ($tender == "") { ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo api_error_message(); ?>
+                    </div>
                     <ul class="nav nav-tabs" id="tendertabs">
 
-<li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
-<!-- <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
-<li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
-<li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
-</ul>
-           <div class="tab-content">
-                    <input type="hidden" id="usertypeid" value="<?php echo $user_type; ?>">
+                        <li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
 
-                    <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
-                    <input type="hidden" id="mytenderservices" value="<?php echo htmlentities(json_encode($mytenderservices), ENT_QUOTES, 'UTF-8') ?>" />
-                    <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
-                        <div class="row" style="margin-top: 15px;">
-                            <div class="tg-tickets">
-                                <div class="commonfilter" id="alltenderdetails">
+                        <li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
+                        <li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
+                    </ul>
+                <?php } else { ?>
+                    <ul class="nav nav-tabs" id="tendertabs">
+
+                        <li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
+                        <!-- <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a data-toggle="tab" href="#menu3">Tenders</a></li> -->
+                        <li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
+                        <li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <input type="hidden" id="usertypeid" value="<?php echo $user_type; ?>">
+
+                        <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
+                        <input type="hidden" id="mytenderservices" value="<?php echo htmlentities(json_encode($mytenderservices), ENT_QUOTES, 'UTF-8') ?>" />
+                        <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
+                            <div class="row" style="margin-top: 15px;">
+                                <div class="tg-tickets">
+                                    <div class="commonfilter" id="alltenderdetails">
+
+                                    </div>
+                                    <!--  <span class="no-tender-alltender hide">No tender available</span>-->
 
                                 </div>
-                                <!--  <span class="no-tender-alltender hide">No tender available</span>-->
 
                             </div>
-
                         </div>
-                    </div>
 
 
-                    <!-- <div id="menu3" class="tab-pane fade  <?php echo $tab == 4 ? "in active" : "" ?>">
+                        <!-- <div id="menu3" class="tab-pane fade  <?php echo $tab == 4 ? "in active" : "" ?>">
 						<div class="row" style="margin-top: 15px;">
 							<div class="tg-tickets">
 							
@@ -183,96 +185,96 @@
 
 
 
-                    <div id="menu1" class="tab-pane fade <?php echo $tab == 2 ? "in active" : "" ?>">
-                        <div class="row" style="margin-top: 15px;">
-                            <div class="tg-tickets commonfilter" id="favid">
-                            <?php foreach ($getAllfavtender as $favten) { ?>
-                                    <div class="tg-ticket">
+                        <div id="menu1" class="tab-pane fade <?php echo $tab == 2 ? "in active" : "" ?>">
+                            <div class="row" style="margin-top: 15px;">
+                                <div class="tg-tickets commonfilter" id="favid">
+                                    <?php foreach ($getAllfavtender as $favten) { ?>
+                                        <div class="tg-ticket">
 
-                                        <time class="tg-matchdate"><small>Last date</small><br><?php
-                                                                                                $time = strtotime($favten['tenderdate']);
-                                                                                                echo date('j  ', $time); ?>
-                                            <span><?php $time = strtotime($favten['tenderdate']);
+                                            <time class="tg-matchdate"><small>Last date</small><br><?php
+                                                                                                    $time = strtotime($favten['tenderdate']);
+                                                                                                    echo date('j  ', $time); ?>
+                                                <span><?php $time = strtotime($favten['tenderdate']);
 
-                                                    echo date('M ', $time); ?></span></time>
+                                                        echo date('M ', $time); ?></span></time>
 
-                                        <div class="tg-matchdetail">
-                                            <div class='hiddendate' hidden><?php echo $favten['tenderdate'] ?></div>
-                                            <span class="tg-theme-tag"><?php echo $favten['tenderno'] ?></span>
-                                            <h4> <?php echo $favten['tendername'] ?></h4>
-                                            </h4>
-                                            <ul class="tg-matchmetadata">
-                                                <li>
-                                                    <address>Tender Description:<?php echo $favten['tenderauthority'] ?></address>
-                                                </li>
-                                            </ul>
+                                            <div class="tg-matchdetail">
+                                                <div class='hiddendate' hidden><?php echo $favten['tenderdate'] ?></div>
+                                                <span class="tg-theme-tag"><?php echo $favten['tenderno'] ?></span>
+                                                <h4> <?php echo $favten['tendername'] ?></h4>
+                                                </h4>
+                                                <ul class="tg-matchmetadata">
+                                                    <li>
+                                                        <address>Tender Description:<?php echo $favten['tenderauthority'] ?></address>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-btnsbox">
+                                                <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten['tenderid'] ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
+                                                <?php if ($favten['is_applied']) { ?>
+                                                    <a class="btn btn-success btn-sm" href="#">Applied </a>
+                                                <?php } else { ?>
+                                                    <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $favten['tenderid']) ?>">Apply </a>
+
+                                                <?php  } ?>
+                                            </div>
                                         </div>
-                                      <div class="tg-btnsbox">
-                                            <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten['tenderid'] ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-                                        <?php if($favten['is_applied']) { ?>
-                                            <a class="btn btn-success btn-sm" href="#">Applied </a>
-                                          <?php } else { ?>
-                                            <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $favten['tenderid']) ?>">Apply </a>
-                                         
-                                        <?php  } ?> 
-                                        </div> 
-                                    </div>
 
-                                <?php } ?>
-
-                            </div>
-
-                            <span class="no-tender-fav hide">No tender available</span>
-                        </div>
-                        <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
-
-                    </div>
-                    <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
-                        <div class="row" style="margin-top: 15px;">
-                            <div class="tg-tickets commonfilter" id="appliedtickets">
-                                <?php foreach ($appliedtenderdetails as $appliedtenders) { ?>
-                                    <div class="tg-ticket">
-
-                                        <time class="tg-matchdate"><small>Last date</small><br><?php
-                                                                                                $time = strtotime($appliedtenders->tender_date);
-                                                                                                echo date('j  ', $time); ?>
-                                            <span><?php $time = strtotime($appliedtenders->tender_date);
-
-                                                    echo date('M ', $time); ?></span></time>
-
-                                        <div class="tg-matchdetail">
-                                            <div class='hiddendate' hidden><?php echo $appliedtenders->tender_date ?></div>
-                                            <span class="tg-theme-tag"><?php echo $appliedtenders->tender_num ?></span>
-                                            <h4> <?php echo $appliedtenders->tender_title ?></h4>
-                                            </h4>
-                                            <ul class="tg-matchmetadata">
-                                                <li>
-                                                    <address>Tender Description:<?php echo $appliedtenders->tender_description ?></address>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tg-btnsbox appliedbuttons">
-                                            <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $appliedtenders->id ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus" onclick="tenderstatus()" id="tender">Tender Status </a>
-                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
-                                            <a class="btn btn-primary btn-sm" id="application_form">Application Form </a>
-                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#siteinspect">Factory Visit </a>
-
-                                        </div>
-                                    </div>
-
-                                <?php } ?>
-                                <div class="tg-btnsbox">
+                                    <?php } ?>
 
                                 </div>
-                            </div>
 
+                                <span class="no-tender-fav hide">No tender available</span>
+                            </div>
+                            <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
                         </div>
-                        <span class="no-tender-apply hide">No tender available</span>
-                    </div>
+                        <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
+                            <div class="row" style="margin-top: 15px;">
+                                <div class="tg-tickets commonfilter" id="appliedtickets">
+                                    <?php foreach ($appliedtenderdetails as $appliedtenders) { ?>
+                                        <div class="tg-ticket">
 
-                </div>
+                                            <time class="tg-matchdate"><small>Last date</small><br><?php
+                                                                                                    $time = strtotime($appliedtenders->tender_date);
+                                                                                                    echo date('j  ', $time); ?>
+                                                <span><?php $time = strtotime($appliedtenders->tender_date);
+
+                                                        echo date('M ', $time); ?></span></time>
+
+                                            <div class="tg-matchdetail">
+                                                <div class='hiddendate' hidden><?php echo $appliedtenders->tender_date ?></div>
+                                                <span class="tg-theme-tag"><?php echo $appliedtenders->tender_num ?></span>
+                                                <h4> <?php echo $appliedtenders->tender_title ?></h4>
+                                                </h4>
+                                                <ul class="tg-matchmetadata">
+                                                    <li>
+                                                        <address>Tender Description:<?php echo $appliedtenders->tender_description ?></address>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tg-btnsbox appliedbuttons">
+                                                <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $appliedtenders->id ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
+                                                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus" onclick="tenderstatus()" id="tender">Tender Status </a>
+                                                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
+                                                <a class="btn btn-primary btn-sm" id="application_form">Application Form </a>
+                                                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#siteinspect">Factory Visit </a>
+
+                                            </div>
+                                        </div>
+
+                                    <?php } ?>
+                                    <div class="tg-btnsbox">
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <span class="no-tender-apply hide">No tender available</span>
+                        </div>
+
+                    </div>
 
             </div>
 
@@ -280,7 +282,7 @@
 
         </div>
         </div>
-
+    <?php } ?>
     </section>
 </main>
 <!-- <button id="buttonscroll" class="scroltop" onclick="window.scrollTo(0, 0);" style="display: inline-block;"><i class=" fa fa-arrow-up"></i></button> -->
@@ -521,7 +523,7 @@
 
                     <div class="modal-body">
                         <form id="questions_form">
-<!-- 
+                            <!-- 
                             <div class="form-group row">
                                 <label for="comment" class="col-md-2 col-sm-3 control-label">Questions</label>
                                 <div class="col-md-10 col-sm-9" id="commentquestionid">
@@ -606,7 +608,7 @@
                 return obj;
             }
         });
-       mytenderdetails(getfavdetails[0]);
+        mytenderdetails(getfavdetails[0]);
 
     }
 
@@ -866,7 +868,7 @@
 
             <!-- Modal body -->
             <div class="modal-body" style="padding:unset;overflow-wrap: break-word;"><br>
-            <div style="margin:2%;"><b>TENDER NUM:<?php echo $appliedtenders->tender_num ?></b></div><br>
+                <div style="margin:2%;"><b>TENDER NUM:<?php echo $appliedtenders->tender_num ?></b></div><br>
                 <div id="dataAppend"></div>
 
             </div>
@@ -886,7 +888,7 @@
 
 
 </div>
-<?php } ?>
+
 
 <style>
     /* @media (min-width: 576px){
@@ -962,7 +964,7 @@
         $('.hiddendate').addClass('hide');
         var spanid = (activetab == 'favtender') ? 'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
         var activetab1 = $("#tendertabs li.active").length;
-        var tenderlength = $("#"  + tabcontentid + " .tg-ticket[style!='display: none;']").length;
+        var tenderlength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
         favtender
         applytender
         console.log(tenderlength);
@@ -974,7 +976,7 @@
             $("#" + tendercountdiv).html(span1);
         } else {
             $('.' + spanid).addClass('hide');
-            span1 = "<span><b>Total Tenders:" + tenderlength +  "</b></span>";
+            span1 = "<span><b>Total Tenders:" + tenderlength + "</b></span>";
             $("#" + tendercountdiv).html(span1);
         }
 
@@ -1087,11 +1089,7 @@
 
 
     }
-    <?php if($countpurchaseorder =="") { ?>
-  <div class="alert alert-danger" role="alert">
-  <?php echo api_error_message(); ?>
-</div> 
-<?php }  else {?> 
+
     function getMytenders(overlay) {
 
 
@@ -1126,7 +1124,7 @@
             },
         });
     }
-    <?php }?>
+
 
     function datefilters() {
         var results = [];
@@ -1153,10 +1151,10 @@
             buildmytenders(datas);
         }
         var activetab = $("#tendertabs li.active").attr('id');
-                var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
-                var value = $('#keywordtender').val().toLowerCase();
-                
-                filtertenderdata(tabcontentid, value);
+        var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+        var value = $('#keywordtender').val().toLowerCase();
+
+        filtertenderdata(tabcontentid, value);
     }
 
 
@@ -1284,74 +1282,71 @@
     }
 
     function tenderpayamount() {
-       
-    var payamount = $("#payamount").val();
-    $(".error_msg").remove();
-    var flag = 0;
 
-    if (payamount == '') {
-        flag = 1;
-        $("#payamount").append("<span class='error_msg'>Pay Amount Required</span>"); 
-    }
-	
-    if (flag == 0) {
+        var payamount = $("#payamount").val();
+        $(".error_msg").remove();
+        var flag = 0;
 
-        $("#savemicro").prop("disabled", true);
-        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
-            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+        if (payamount == '') {
+            flag = 1;
+            $("#payamount").append("<span class='error_msg'>Pay Amount Required</span>");
+        }
 
-        $(".ajaxLoader").css("display", "block");
-        $.post("<?php echo site_url('supplier/tenders/post_payAmount')?>", { 
+        if (flag == 0) {
 
-            payamount: payamount,
-            tenderId: tenderId,
-            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
-        }, function(data) {
-			 // alert(data);
-             $('#savemicro').removeAttr("disabled");
-			window.location.reload();
+            $("#savemicro").prop("disabled", true);
+            var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+                csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
 
-        });
+            $(".ajaxLoader").css("display", "block");
+            $.post("<?php echo site_url('supplier/tenders/post_payAmount') ?>", {
 
-    }
-}
-
-function ClarificationsTender() {
-       
-       var questionidclarifictn = $("#questionidclarifictn").val();
-       var filequestion = $("#nofilequestion").val();
-       var questioncomment = $("#questioncomment").val();
-       $(".error_msg").remove();
-       var flag = 0;
-    
-       if (flag == 0) {
-   
-           $("#savemicro").prop("disabled", true);
-           var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
-               csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
-   
-           $(".ajaxLoader").css("display", "block");
-           $.post("<?php echo site_url('supplier/tenders/post_clarifications')?>", { 
-   
-            questionidclarifictn: questionidclarifictn,
-            filequestion: filequestion,
-            questioncomment: questioncomment,
-               <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
-           }, function(data) {
+                payamount: payamount,
+                tenderId: tenderId,
+                <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
+            }, function(data) {
                 // alert(data);
                 $('#savemicro').removeAttr("disabled");
-               window.location.reload();
-   
-           });
-   
-       }
-   }
- 
-function clarificationpopup()
-{
+                window.location.reload();
 
-    $('#preview_modal').modal('hide');  
-}
+            });
 
+        }
+    }
+
+    function ClarificationsTender() {
+
+        var questionidclarifictn = $("#questionidclarifictn").val();
+        var filequestion = $("#nofilequestion").val();
+        var questioncomment = $("#questioncomment").val();
+        $(".error_msg").remove();
+        var flag = 0;
+
+        if (flag == 0) {
+
+            $("#savemicro").prop("disabled", true);
+            var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+                csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+            $(".ajaxLoader").css("display", "block");
+            $.post("<?php echo site_url('supplier/tenders/post_clarifications') ?>", {
+
+                questionidclarifictn: questionidclarifictn,
+                filequestion: filequestion,
+                questioncomment: questioncomment,
+                <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
+            }, function(data) {
+                // alert(data);
+                $('#savemicro').removeAttr("disabled");
+                window.location.reload();
+
+            });
+
+        }
+    }
+
+    function clarificationpopup() {
+
+        $('#preview_modal').modal('hide');
+    }
 </script>
-

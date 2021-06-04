@@ -1727,7 +1727,7 @@ if(result!="null"){
              // console.log(date1.getDate());
              html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
              html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4> " + tenderTitle + "</h4></h4>";
-             html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
+             html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
              html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
 
              html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
