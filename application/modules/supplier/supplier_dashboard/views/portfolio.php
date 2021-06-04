@@ -216,15 +216,131 @@ if ($msg) {
     </div>
 
 
+                        <ul class="nav nav-tabs">
+                            <?php
+                            $user_type = $this->session->userdata('user_type');
+                            ?>
+                            <li style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Products</a></li>
+                            <li style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo  $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Services</a></li>
+                        </ul>
+                        <ul class="breadcrumb-title" style="margin-left:85%;">
+
+                            <!--<h5><a href="<?php echo base_url("supplier/dashboard/portfoliocompany") ?>">VIEW MATERIALS</a></h5>-->
+
+                        </ul>
+                        <div class="tab-content">
+
+
+                            <?php 
+                            if($user_type== 1)
+                            {
+                                $num=1;
+                            }
+                            if($user_type== 3)
+                            {
+                                $num=3;
+                            }
+
+                            ?>
 
 
 
-    <div id="menu1" class="tab-pane fade <?php echo ($tab == 1 and $user_type == 2) ? "in active" : "" ?>">
-        <div class="row1">
 
-            <div class="card card-small ">
-                <div class="card-header border-bottom" style="margin-top:10px;">
-                    <!-- <h6 class="m-0">Add Services</h6>
+                            <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == $num) ? "in active" : "" ?>">
+                                <div class="row1">
+
+                                    <div class="card card-small ">
+                                        <div class="card-header border-bottom" style="margin-top:10px;">
+                                            <!-- <h6 class="m-0">Add Products</h6> -->
+                                            <!-- <hr /> -->
+                                        </div>
+                                        <div class="row p-0 px-3 pt-3">
+                                            <div class="form-group col-md-12">
+                                                <label for="">Utility/Wing</label>
+                                                <select class="form-control materialdata" id="productcategory" placeholder="Company name">
+                                                <?php if($getcategory!="") { ?>
+                                                    <option value="">Select Material Group Data </option>
+                                                    <?php }else{ ?>
+                                                        <option value=""> <p class="apidropdown"><?php echo api_error_message(); ?></p></option>
+                                                  <?php } ?>
+                                                        <?php foreach ($getcategory as $key=>$category) { ?>
+                                                    <option data-name="<?php echo $category; ?>" value="<?php echo $key; ?>">
+                                                        <?php echo $category; ?></option>
+                                                <?php } ?>
+                                               
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="">Material Group Data</label>
+                                                <select class="form-control materialdata" id="materialinput" placeholder="Company name">
+                                                <?php if($getcategory!="") { ?>
+                                                   <option value="">Select Material Group Data </option>
+                                                   <?php }else{ ?>
+                                                    <option value=""> <p class="apidropdown"><?php echo api_error_message(); ?></p></option>
+                                                  <?php } ?>
+                                                        <?php foreach ($materialdata as $materialdatas) { ?>
+                                                    <option data-name="<?php echo $materialdatas->material_group_name; ?>" value="<?php echo $materialdatas->material_group_code; ?>">
+                                                        <?php echo $materialdatas->material_group_name; ?></option>
+                                                <?php } ?>
+                                               
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-12">
+                                                <label for="">Select Material </label>
+                                                <select class="form-control material" id="material" placeholder="Year of  registration">
+                                                    <option value="">Select Material
+                                                    </option>
+                                                </select><span style="color:red;" id="materialclass" class="hide">Material Already Exists</span>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <button class="mb-2 btn btn-primary mr-2" id="save_products" onclick="save_products();">Add To My Products</button>
+
+                                                <!--  <h6>Added Products</h6>-->
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="table-responsive" style="font-size: inherit;">
+                                                    <table id="materialproducts" class="table table-striped table-bordered table-hover" class="display" style="width: 100%;font-size: inherit;">
+                                                        <thead>
+                                                            <tr style="background-color:#26265f ;color:#FFF ">
+                                                                <th>Sl No </th>
+                                                                <th>Utility/Wing </th>
+                                                                <th>materialGroup </th>
+                                                                <th>Product Name</th>
+                                                                <th>Orders</th>
+                                                                <th>Overdue</th>
+                                                                <th>Receipts</th>
+                                                                <th>Defects</th>
+                                                                <th>VMI</th>
+                                                                <th>On-Time Performance</th>
+                                                                <th>Consigned Inventory</th>
+                                                                <th>Capacity Info</th>
+                                                                <th>Remove</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div id="menu1" class="tab-pane fade <?php echo ($tab == 1 and $user_type == 2 )? "in active" : "" ?>">
+                                <div class="row1">
+
+                                    <div class="card card-small ">
+                                        <div class="card-header border-bottom" style="margin-top:10px;">
+                                            <!-- <h6 class="m-0">Add Services</h6>
                                                     <hr /> -->
                 </div>
                 <div class="row p-0 px-3 pt-3">
@@ -257,11 +373,19 @@ if ($msg) {
                         <table class="table  table-responsive" id="servicestable" style="width: 100%;font-size: inherit;">
                             <thead>
 
+<<<<<<< HEAD
                                 <tr>
                                     <th>Sl No </th>
                                     <th>Service Category </th>
                                     <th>Services</th>
                                     <th>Remove</th>
+=======
+                                                        <tr>
+                                                            <th>Sl No </th>
+                                                            <th>Service Category </th>
+                                                            <th>Utility/Wing</th>
+                                                            <th>Remove</th>
+>>>>>>> c38c9860257ae5ce776c20dd70fe6fd1f56c05b4
 
                                 </tr>
 
