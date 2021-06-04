@@ -37,28 +37,29 @@
     div.dataTables_wrapper {
         margin: 0 auto;
     }
+    
 
-
-    @media screen and (max-width: 767px) {
-        .searchbar {
-            display: none;
+    @media screen and (max-width: 767px){
+        .searchbar{
+            display:none;
         }
 
     }
 
     .nav-tabs>li.active>a {
-        color: black !important;
+        color: black!important;
     }
 
     ::-webkit-scrollbar:vertical {
-        display: none;
-    }
+  display: none;
+}
 
     /* ::-webkit-scrollbar-y {
     width: 10px;
     height: 10px;
     display: none; 
 } */
+
 </style>
 
 
@@ -67,13 +68,12 @@
         <div class="container">
             <div class="row"> -->
 
-<!-- <div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
+                <!-- <div id="tg-twocolumns" class="tg-twocolumns tg-main-section tg-haslayout">
                     
 
 
                     <div class="col-md-3 col-sm-4 col-xs-12">
-                        <?php // $this->view('profile_sidebar', $page); 
-                        ?>
+                        <?php // $this->view('profile_sidebar', $page); ?>
 
                     </div>
 
@@ -81,141 +81,23 @@
 
                     <div class="col-md-9 col-sm-8 col-xs-12 pull-right"> -->
 
-<?php
-$msg = $this->session->flashdata('msg');
-if ($msg) {
-?>
+                    <?php
+                    $msg = $this->session->flashdata('msg');
+                    if ($msg) {
+                    ?>
 
-    <div class="alert alert-success" id="mydivss">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <?php
-        echo $msg;
-        ?>
-    </div>
-
-<?php
-}
-?>
-<ul class="nav nav-tabs">
-    <?php
-    $user_type = $this->session->userdata('user_type');
-    ?>
-    <li style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Products</a></li>
-    <li style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo  $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Services</a></li>
-</ul>
-<ul class="breadcrumb-title" style="margin-left:85%;">
-
-    <!--<h5><a href="<?php echo base_url("supplier/dashboard/portfoliocompany") ?>">VIEW MATERIALS</a></h5>-->
-
-</ul>
-<div class="tab-content">
-
-
-    <?php
-    if ($user_type == 1) {
-        $num = 1;
-    }
-    if ($user_type == 3) {
-        $num = 3;
-    }
-
-    ?>
-
-
-
-
-    <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == $num) ? "in active" : "" ?>">
-        <div class="row1">
-
-            <div class="card card-small ">
-                <div class="card-header border-bottom" style="margin-top:10px;">
-                    <!-- <h6 class="m-0">Add Products</h6> -->
-                    <!-- <hr /> -->
-                </div>
-                <div class="row p-0 px-3 pt-3">
-                    <div class="form-group col-md-12">
-                        <label for="">Material Utility/Wing</label>
-                        <select class="form-control materialdata" id="productcategory" placeholder="Company name">
-                            <?php if ($getcategory != "") { ?>
-                                <option value="">Select Material Group Data </option>
-                            <?php } else { ?>
-                                <option value="">
-                                    <p class="apidropdown"><?php echo api_error_message(); ?></p>
-                                </option>
-                            <?php } ?>
-                            <?php foreach ($getcategory as $key => $category) { ?>
-                                <option data-name="<?php echo $category; ?>" value="<?php echo $key; ?>">
-                                    <?php echo $category; ?></option>
-                            <?php } ?>
-
-                        </select>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="">Material Group Data</label>
-                        <select class="form-control materialdata" id="materialinput" placeholder="Company name">
-                            <?php if ($getcategory != "") { ?>
-                                <option value="">Select Material Group Data </option>
-                            <?php } else { ?>
-                                <option value="">
-                                    <p class="apidropdown"><?php echo api_error_message(); ?></p>
-                                </option>
-                            <?php } ?>
-                            <?php foreach ($materialdata as $materialdatas) { ?>
-                                <option data-name="<?php echo $materialdatas->material_group_name; ?>" value="<?php echo $materialdatas->material_group_code; ?>">
-                                    <?php echo $materialdatas->material_group_name; ?></option>
-                            <?php } ?>
-
-                        </select>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label for="">Select Material </label>
-                        <select class="form-control material" id="material" placeholder="Year of  registration">
-                            <option value="">Select Material
-                            </option>
-                        </select><span style="color:red;" id="materialclass" class="hide">Material Already Exists</span>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <button class="mb-2 btn btn-primary mr-2" id="save_products" onclick="save_products();">Add To My Products</button>
-
-                        <!--  <h6>Added Products</h6>-->
-                    </div>
-                    <div class="col-md-12">
-                        <div class="table-responsive" style="font-size: inherit;">
-                            <table id="materialproducts" class="table table-striped table-bordered table-hover" class="display" style="width: 100%;font-size: inherit;">
-                                <thead>
-                                    <tr style="background-color:#26265f ;color:#FFF ">
-                                        <th>Sl No </th>
-                                        <th>category </th>
-                                        <th>materialGroup </th>
-                                        <th>Product Name</th>
-                                        <th>Orders</th>
-                                        <th>Overdue</th>
-                                        <th>Receipts</th>
-                                        <th>Defects</th>
-                                        <th>VMI</th>
-                                        <th>On-Time Performance</th>
-                                        <th>Consigned Inventory</th>
-                                        <th>Capacity Info</th>
-                                        <th>Remove</th>
-
-                                    </tr>
-                                </thead>
-
-                            </table>
+                        <div class="alert alert-success" id="mydivss">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <?php
+                            echo $msg;
+                            ?>
                         </div>
-                    </div>
 
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
+                    <?php
+                    }
+                    ?>
                         <ul class="nav nav-tabs">
                             <?php
                             $user_type = $this->session->userdata('user_type');
@@ -242,9 +124,6 @@ if ($msg) {
                             }
 
                             ?>
-
-
-
 
                             <div id="home" class="tab-pane fade  <?php echo ($tab == 1 and $user_type == $num) ? "in active" : "" ?>">
                                 <div class="row1">
@@ -342,77 +221,69 @@ if ($msg) {
                                         <div class="card-header border-bottom" style="margin-top:10px;">
                                             <!-- <h6 class="m-0">Add Services</h6>
                                                     <hr /> -->
-                </div>
-                <div class="row p-0 px-3 pt-3">
+                                        </div>
+                                        <div class="row p-0 px-3 pt-3">
 
-                    <div class="form-group col-md-12">
-                        <label for="">Services Utility/Wing</label>
-                        <select class="form-control" id="inputservicesCity" placeholder="Company name">
-                            <option value="">Select Utility/Wing</option>
-                            <option value="Man Power" data-name="Generation">Man Power</option>
-                            <option value="Machines" data-name="Transmission">Machines</option>
+                                            <div class="form-group col-md-12">
+                                                <label for="">Services Utility/Wing</label>
+                                                <select class="form-control" id="inputservicesCity" placeholder="Company name">
+                                                <option value="">Select Utility/Wing</option>
+                                                    <option value="Man Power" data-name="Generation">Man Power</option>
+                                                    <option value="Machines" data-name="Transmission">Machines</option>
 
-                        </select>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="">Select Services</label>
-                        <select class="form-control materialdata" id="inputservices" placeholder="Company name">
-                            <option value="">Select Services Name</option>
-                            <option value="LABOUR" data-name="Generation">LABOUR</option>
-                            <option value="TEST" data-name="Transmission">TEST</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="">Select Services</label>
+                                                <select class="form-control materialdata" id="inputservices" placeholder="Company name">
+                                                    <option value="">Select Services Name</option>
+                                                    <option value="LABOUR" data-name="Generation">LABOUR</option>
+                                                    <option value="TEST" data-name="Transmission">TEST</option>
 
 
-                        </select>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <button class="mb-2 btn btn-primary mr-2" id="save_services" onclick="save_services();">Add To My Services</button>
-                        <br> <br>
-                        <h6>Added Services</h6>
-                    </div>
-                    <div class="col-md-12">
-                        <table class="table  table-responsive" id="servicestable" style="width: 100%;font-size: inherit;">
-                            <thead>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <button class="mb-2 btn btn-primary mr-2" id="save_services" onclick="save_services();">Add To My Services</button>
+                                                <br> <br>
+                                                <h6>Added Services</h6>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <table class="table  table-responsive" id="servicestable" style="width: 100%;font-size: inherit;">
+                                                    <thead>
 
-<<<<<<< HEAD
-                                <tr>
-                                    <th>Sl No </th>
-                                    <th>Service Category </th>
-                                    <th>Services</th>
-                                    <th>Remove</th>
-=======
                                                         <tr>
                                                             <th>Sl No </th>
                                                             <th>Service Category </th>
                                                             <th>Utility/Wing</th>
                                                             <th>Remove</th>
->>>>>>> c38c9860257ae5ce776c20dd70fe6fd1f56c05b4
 
-                                </tr>
+                                                        </tr>
 
-                            </thead>
-                        </table>
+                                                    </thead>
+                                                </table>
 
-                    </div>
-
-
-                </div>
-            </div>
+                                            </div>
 
 
-        </div>
-
-    </div>
-
-</div>
+                                        </div>
+                                    </div>
 
 
+                                </div>
 
-<!-- </div>
+                            </div>
+
+                        </div>
+
+
+
+                    <!-- </div>
 
 
                     
                 </div> -->
-<!-- </div>
+            <!-- </div>
         </div>
     </section>
 </main> -->
@@ -764,7 +635,7 @@ if ($msg) {
 <!-------------------------payment End---------------------------------------------------->
 
 <script src="<?php echo base_url(); ?>DataTables-1.10.21/js/jquery.dataTables.js"></script>
-<script src="<?php echo base_url(); ?>DataTables-1.10.21/js/dataTables.bootstrap4.js">
+    <script src = "<?php echo base_url(); ?>DataTables-1.10.21/js/dataTables.bootstrap4.js" >
 </script>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
 <script src="<?php echo base_url(); ?>perfect-scrollbar/dist/perfect-scrollbar.min.js">
@@ -781,30 +652,26 @@ if ($msg) {
     var materiallistdata = {};
 
     $(".materialdata").change(function() {
-        var productcategory = $('#productcategory').val();
         var materialgroup = $('#materialinput').val();
-
+        var productcategory = $('#productcategory').val();
+      
         if (materialgroup != "" && productcategory != "") {
             var load = '<option value="">Loading...</option>';
             $('#material').html(load);
-
-            var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
-                csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
             $.post("<?php echo site_url('supplier/dashboard/getMaterialProductsDetails'); ?>", {
                     materialgroup: materialgroup,
-                    productcategory: productcategory,
-                    <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
+                    productcategory: productcategory
                 },
                 function(data) {
-
+                    
                     var res = JSON.parse(data);
-
+                  
                     var html = '<option value="">Select Material</option>';
-                    //Array.from(res).forEach
+
                     res.forEach(function(item, index) {
                         html += '<option value="' + item.id + '" data-name="' + item.material_name + '">' + item.material_name + '</option>';
                     });
-
+                   
                     $('#material').html(html);
                     $('#savemicro').removeAttr("disabled");
                     $(".ajaxLoader").css("display", "none");
@@ -822,7 +689,7 @@ if ($msg) {
         var materialinputname = $('#materialinput option[value="' + materialinput + '"').attr('data-name');
         var material = $("#material").val();
         var product = $('#material option[value="' + material + '"').attr('data-name');
-        var isValid = validateDuplicateEntries(material, materialinput);
+        var isValid = validateDuplicateEntries(material,materialinput);
         if (isValid == true) {
 
 
@@ -880,7 +747,7 @@ if ($msg) {
     $(document).ready(function() {
 
         material_table = $('#materialproducts').DataTable({
-
+       
             'ajax': {
                 url: '<?php echo site_url("supplier/dashboard/getMaterialListData"); ?>',
                 "scrollX": true,
@@ -967,15 +834,15 @@ if ($msg) {
 
     });
 
-    function validateDuplicateEntries(material, materialgroupId) {
-
+    function validateDuplicateEntries(material,materialgroupId) {
+        
         // return false;
         var filterednames = materiallistdata.filter(function(obj) {
-
+           
             return (obj.materialId == material || obj.materialgroupId == materialgroupId);
 
         });
-
+       
         if (filterednames.length > 0) {
             $('#materialclass').removeClass('hide');
             return false;
@@ -1059,7 +926,7 @@ if ($msg) {
     $(document).ready(function() {
 
         services_table = $('#servicestable').DataTable({
-
+           
             'ajax': {
                 url: '<?php echo site_url("supplier/dashboard/getServicesListData"); ?>',
                 "scrollX": true,
@@ -1076,7 +943,7 @@ if ($msg) {
                 },
                 "dataSrc": function(json) {
                     materiallistdataservice = json.data;
-
+                    
                     // You can also modify `json.data` if required
                     return json.data;
                 }
