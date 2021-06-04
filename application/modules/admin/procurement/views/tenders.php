@@ -64,7 +64,10 @@
 
                             <div class="card-block">
                                 <div class="table-responsive dt-responsive">
-                                    <table id="dt-ajax-object" class="table table-striped table-bordered nowrap">
+
+                                <!-- id="dt-ajax-object" -->
+                                <!-- this is data_table id -->
+                                    <table  id="dt-ajax-object" class="table table-striped table-bordered nowrap">
                                         <thead>
                                         
                                             <tr>
@@ -81,6 +84,9 @@
                                               <th>Tender Title</th>
                                               <th>Tender Description</th>
                                               <th>Tender Date</th>
+                                              <!-- <th>Tender Publishing Date</th>
+                                              <th>Tender Closing Date</th> -->
+                                              <th>Status</th>
                                               <th></th>
                                           </tr>
                                       
@@ -96,7 +102,9 @@
                                               <td class="tbllength" title="<?php echo $tenderdatas->tender_title; ?>"><?php echo $tenderdatas->tender_title; ?></td>
                                               <td class="tbllength" title="<?php echo $tenderdatas->tender_description; ?>" ><?php echo $tenderdatas->tender_description; ?></td>
                                               <td><?php echo $tenderdatas->tender_date; ?></td> 
-                                            
+                                              <!-- <td><?php echo $tenderdatas->tender_publishing_date; ?></td> 
+                                              <td><?php echo $tenderdatas->tender_closing_date; ?></td>  -->
+                                              <td><?php echo $tenderdatas->status; ?></td> 
                                            
                                             <td>
                                             <?php if(!in_array($tenderdatas->tender_id,$savedformengines)) { ?>
@@ -107,9 +115,9 @@
                                             </a>
                                           <?php  }else { ?>
                                             <?php $tender_num = urlencode($tenderdatas->tender_num) ?>
-                                            <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id."?tender_num=".$tender_num) ?>">
+                                            <!-- <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id."?tender_num=".$tender_num) ?>"> -->
                                             <input type="button" class="btn  btn-sm btn-out-dashed btn-info btn-square btnsucessor" value=" Update Form Engine" />
-                                            </a>
+                                            <!-- </a> -->
                                             <?php  } ?>
                                             </td>
                                            
