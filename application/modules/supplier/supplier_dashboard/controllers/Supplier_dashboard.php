@@ -1768,7 +1768,7 @@ class Supplier_dashboard extends SP_Controller
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
+		));//echo $apiurl;exit;
 		$result = curl_exec($curl);
 		$value = json_decode($result);
 		echo json_encode($value->result_data->list);
@@ -1777,7 +1777,9 @@ class Supplier_dashboard extends SP_Controller
 	{
 		$materialgroup = $this->input->post('materialgroup');
 		$productcategory = $this->input->post('productcategory');
-		$this->getMaterialData($materialgroup, $productcategory);
+		$result = $this->api->getMaterialData($materialgroup, $productcategory);
+		$value = json_decode($result);
+		echo json_encode($value->result_data->list);
 	}
 
 

@@ -673,7 +673,7 @@
                 function(data) {
                     
                     var res = JSON.parse(data);
-                  
+                  console.log(data);
                     var html = '<option value="">Select Material</option>';
 
                     res.forEach(function(item, index) {
