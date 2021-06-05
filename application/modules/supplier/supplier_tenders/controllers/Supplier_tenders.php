@@ -67,7 +67,17 @@ class Supplier_tenders extends SP_Controller
 
 			$data['getfavtender'] = $this->procM->getfavtender($uid);
 			$data['favid'] = array_column($data['getfavtender'], 'tendername');
-   $favappliedtenders= array_combine($data['favid'],array_values($data['getfavtender']));
+   			$favappliedtenders= array_combine($data['favid'],array_values($data['getfavtender']));
+
+
+			//     to find if any qs are ampped for a tender
+			// km updated
+			$getTenderListing=$this->procM->getListOfAdminTenders(); 
+    		$data['savedformengines']=array_column($getTenderListing,'tender_id');
+			// print_r($getTenderListing);
+			// print_r($data['savedformengines']);exit;
+
+
 			if (!empty($data['favid'])) {
 				foreach ($data['tender'] as $key => $tender1) {
 					if (in_array($tender1->id, $data['favid'])) {

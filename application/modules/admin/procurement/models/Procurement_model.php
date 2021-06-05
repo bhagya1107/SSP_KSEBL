@@ -256,7 +256,7 @@ class Procurement_model extends CI_Model
     {
         
      $this->db->select('tender_id');
-	 
+     $this->db->group_by('tender_id');
         return $this->db->get("tender_questions")->result();
         
     }
