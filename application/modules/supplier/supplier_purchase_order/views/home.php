@@ -112,7 +112,7 @@
 
                     <div id="allpurchasecount" style="text-align:center;">
          </div>
-         <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:2</b></span>
+         <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:0</b></span>
          </div>
         
          <div id="workpurchasecount" class="hide" style="text-align:center;">
@@ -162,7 +162,7 @@
 
                      <div id="menu1" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>">
                          <div class="row">
-                             <div class="tg-tickets commonfilter" id="acceptedtickets">
+                             <!-- <div class="tg-tickets commonfilter" id="acceptedtickets">
                                  <div class="tg-ticket">
                                      <time class="tg-matchdate" datetime="2016-05-03">26<span>APR</span></time>
                                      <div class="tg-matchdetail">
@@ -271,9 +271,9 @@
 
 
                                  </div>
-                             </div>
+                             </div> -->
 
-                             <div class="tg-ticket">
+                             <!-- <div class="tg-ticket">
                                  <time class="tg-matchdate" datetime="2016-05-03">27<span>APR</span></time>
                                  <div class="tg-matchdetail">
                                      <span class="tg-theme-tag">Order No : PO-65-1004#00002</span>
@@ -373,7 +373,7 @@
                                          </div>
                                      </div>
                                  </div>
-                             </div>
+                             </div> -->
                          </div>
                      </div>
 
@@ -1465,19 +1465,18 @@ toggle between hiding and showing the dropdown content */
 
  <script>
      function mypurchasedetails(purchasedetail) {
-
-         var purchaseopendetails = purchasedetail.prc_purchase_order_item_dtl;
-         var purchasevendordetails = purchasedetail.prc_vendors;
+        
+         var purchaseopendetails = purchasedetail['purchase basic details'];
+         var purchasevendordetails = purchasedetail.vendorname;
          var purchasematerialdetails = purchasedetail.prc_purchase_order_item_dtl;
-         var purchaseSchemedetails = purchasedetail.mst_scheme;
-         console.log(purchaseopendetails);
-         console.log(purchasematerialdetails);
+         var purchaseSchemedetails = purchasedetail.purchaseschemedetails;
+         
          var html = "<div id='basicpurchasevendordetails'>";
 
          html += "<b><h5 style='color:orange;'>PURCHASE VENDOR DETAILS</h5><b>" +
-             " <label>Vendor Name:" + purchasevendordetails.vendor_name + "</label>" +
-             " <label>General Desc:" + purchasevendordetails.general_desc + "</label>" +
-             "<label>Registered Office Address:" + purchasevendordetails.registered_office_address1 + "</label>";
+             " <label>Vendor Name:" + purchasevendordetails + "</label>" +
+             " <label>General Desc:" + purchasedetail['General Desc'] + "</label>" +
+             "<label>Registered Office Address:" + purchasedetail['Registered Office Address'] + "</label>";
 
 
          html += "</div>";
@@ -1487,30 +1486,31 @@ toggle between hiding and showing the dropdown content */
          purchaseopendetails.forEach(function(item, index) {
 
              html += "<b><h5 style='color:orange;'>PURCHASE BASIC DETAILS</h5><b>" +
-                 " <label>Purchase Order Id:" + item.prc_purchase_order_id + "</label>" +
-                 " <label>Material Code:" + item.mst_material.material_code + "</label>" +
-                 " <label>Material Name:" + item.mst_material.material_name + "</label>" +
-                 "<label>Material Description:" + item.mst_material.material_descr + "</label>" +
+                 " <label>Purchase Order Id:" +purchasedetail.purchaseorderId + "</label>" +
+                 " <label>Material Code:" + item.materialcode + "</label>" +
+                 " <label>Material Name:" + item.material_name + "</label>" +
+                 "<label>Material Description:" + item['material description'] + "</label>" +
                  " <label>Quantity:" + item.quantity + "</label>" +
-                 "<label>Basic Price:" + item.basic_price + "</label>" +
-                 "<label>Total Price:" + item.total_price + "</label>" +
-                 "<label>Offer Valid Upto:" + item.offer_valid_upto + "</label>" +
-                 "<label>Start Date:" + item.mst_material.start_date + "</label>";
+                 "<label>Basic Price:" + item['basic price'] + "</label>" +
+                 "<label>Total Price:" + item['total price'] + "</label>" +
+                 "<label>Offer Valid Upto:" + item['offervalidupto'] + "</label>" +
+                 "<label>Start Date:" + item['startdate'] + "</label>"
+                 "<label>End Date:" + item['enddate'] + "</label>";
 
          })
 
          html += "</div>";
 
-
-
          html += "<div id='basicpurchaseschemedetails'>";
+         purchaseSchemedetails.forEach(function(item, index) {
+       
          html += "<b><h5 style='color:orange;'>PURCHASE SCHEME DETAILS</h5><b>" +
-             " <label>Scheme Code:" + purchaseSchemedetails.scheme_code + "</label>" +
-             " <label>Scheme Name:" + purchaseSchemedetails.scheme_name + "</label>";
+             " <label>Scheme Code:" + item.schemecode + "</label>" +
+             " <label>Scheme Name:" + item.schemename + "</label>";
 
          html += "</div>";
 
-
+        })
 
          console.log(html);
          $('#modalpurchase').html(html);
@@ -1717,23 +1717,21 @@ if(result!="null"){
      function buildpurchaseorders(datas) {
          html = "";
          $.each(datas, function(i, data) {
-             //console.log("jkkk");
-             //console.log(data.sorting);
-
+        
+             $.each(data['tender details'], function(i, datadetail) { 
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
-             var date1 = new Date(data.purchase_order_date);
-             var tenderTitle = (data.prc_tender != null) ? data.prc_tender.tender_title : '';
-             // console.log(date1);
-             // console.log(date1.getDate());
-             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4> " + tenderTitle + "</h4></h4>";
+            
+             var tenderTitle = (datadetail.tender_title != null) ? datadetail.tender_title : '';
+             
+             html +=  "<span></span></time>";
+             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data['purchase no'] + "</span><h4> " + tenderTitle + "</h4></h4>";
              html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
-             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
+             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY: </address></li></ul></div>";
 
              html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
 
              html += "</div></div>";
-
+             });
 
          });
          $('#allpurchasedetails').empty().append(html);
@@ -1742,9 +1740,7 @@ if(result!="null"){
      function buildAcceptedpurchaseorders(datas) {
          html = "";
          $.each(datas, function(i, data) {
-             //console.log("jkkk");
-             //console.log(data.sorting);
-
+         
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
              var date1 = new Date(data.purchase_order_date);
              var tenderTitle = (data.prc_tender != null) ? data.prc_tender.tender_title : '';
@@ -1857,26 +1853,27 @@ dispatch_table = $('#predispatchlist').DataTable({
 
 
      function buildpurchaseorderswork(datas) {
-         html = "";
-         $.each(datas, function(i, data) {
-             //console.log(data.sorting);
+        html = "";
 
+         $.each(datas, function(i, data) {
+        
+             $.each(data['tender details'], function(i, datadetail) { 
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
-             var date1 = new Date(data.purchase_order_date);
-             //var tenderTitle = (data.prc_tender != null) ? data.prc_tender.tender_title : '-';
-             // console.log(date1);
-             // console.log(date1.getDate());
-             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4>Work " + data.id + "</h4></h4>";
-             html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
-             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
+            
+             var tenderTitle = (datadetail.tender_title != null) ? datadetail.tender_title : '';
+             
+             html +=  "<span></span></time>";
+             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data['purchase no'] + "</span><h4> " + tenderTitle + "</h4></h4>";
+             html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
+             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY: </address></li></ul></div>";
 
              html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
 
              html += "</div></div>";
-
+             });
 
          });
+         
          $('#worktickets').empty().append(html);
      }
 

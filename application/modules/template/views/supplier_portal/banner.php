@@ -153,9 +153,10 @@
 												 <option  >Select  Orders</option>
 												 <!-- <option>Select Work Order</option> -->
 													<?php foreach ($purchaseorder as $purchaseorders) { ?>
-                      <option value="<?php echo $purchaseorders->puchase_order_number; ?>">
-                        <?php echo $purchaseorders->puchase_order_number; ?></option>
-                              <?php } ?>
+													<?php $purchaseorderdetails=(array)$purchaseorders?>
+                      <option value="<?php echo $purchaseorderdetails['purchase no']; ?>">
+                        <?php echo $purchaseorderdetails['purchase no']; ?></option>
+              <?php } ?>
 							</select>
  									
 

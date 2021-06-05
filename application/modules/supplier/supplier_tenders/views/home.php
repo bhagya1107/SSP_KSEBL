@@ -229,38 +229,43 @@
                             <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
                         </div>
-                        <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
-                            <div class="row" style="margin-top: 15px;">
-                                <div class="tg-tickets commonfilter" id="appliedtickets">
-                                    <?php foreach ($appliedtenderdetails as $appliedtenders) { ?>
-                                        <div class="tg-ticket">
+                        <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
-                                            <time class="tg-matchdate"><small>Last date</small><br><?php
-                                                                                                    $time = strtotime($appliedtenders->tender_date);
-                                                                                                    echo date('j  ', $time); ?>
-                                                <span><?php $time = strtotime($appliedtenders->tender_date);
+                   
+                    <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="tg-tickets commonfilter" id="appliedtickets">
+                                <?php foreach ($appliedtenderdetails as $appliedtenders) {
+                                    
+                                    // print_r($appliedtenders);exit;
+                                    ?>
+                                    <div class="tg-ticket">
 
-                                                        echo date('M ', $time); ?></span></time>
+                                        <time class="tg-matchdate"><small>Last date</small><br><?php
+                                                                                                $time = strtotime($appliedtenders->tender_date);
+                                                                                                echo date('j  ', $time); ?>
+                                            <span><?php $time = strtotime($appliedtenders->tender_date);
 
-                                            <div class="tg-matchdetail">
-                                                <div class='hiddendate' hidden><?php echo $appliedtenders->tender_date ?></div>
-                                                <span class="tg-theme-tag"><?php echo $appliedtenders->tender_num ?></span>
-                                                <h4> <?php echo $appliedtenders->tender_title ?></h4>
-                                                </h4>
-                                                <ul class="tg-matchmetadata">
-                                                    <li>
-                                                        <address>Tender Description:<?php echo $appliedtenders->tender_description ?></address>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="tg-btnsbox appliedbuttons">
-                                                <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $appliedtenders->id ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-                                                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus" onclick="tenderstatus()" id="tender">Tender Status </a>
-                                                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
-                                                <a class="btn btn-primary btn-sm" id="application_form">Application Form </a>
-                                                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#siteinspect">Factory Visit </a>
+                                                    echo date('M ', $time); ?></span></time>
 
-                                            </div>
+                                        <div class="tg-matchdetail">
+                                            <div class='hiddendate' hidden><?php echo $appliedtenders->tender_date ?></div>
+                                            <span class="tg-theme-tag"><?php echo $appliedtenders->tender_num ?></span>
+                                            <h4> <?php echo $appliedtenders->tender_title ?></h4>
+                                            </h4>
+                                            <ul class="tg-matchmetadata">
+                                                <li>
+                                                    <address>Tender Description:<?php echo $appliedtenders->tender_description; ?></address>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tg-btnsbox appliedbuttons">
+                                            <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $appliedtenders->id ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
+                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus" onclick="tenderstatus()" id="tender">Tender Status </a>
+                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
+                                            <a class="btn btn-primary btn-sm" id="application_form" ids="<?= $appliedtenders->id; ?>">Application Form </a>
+                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#siteinspect">Factory Visit </a>
+
                                         </div>
 
                                     <?php } ?>
@@ -506,7 +511,7 @@
 
 
 
-<div class="modal fade" id="Servissce">
+<div class="modal fade" id="Servissce" style="z-index:999999!important;">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -634,7 +639,7 @@
 
         // var tenderdetails =   Object.keys(tenderdetail); 
         // console.log("kkkk");
-        console.log(tenderdetails);
+      //  console.log(tenderdetails);
         var tenderopendetails = tenderdetail.prc_tender_opening_dtls;
         var tenderprocurementprocess = tenderdetail.prc_procurement_process;
         var tenderschedules = tenderdetail.prc_tender_schedules;
@@ -829,21 +834,21 @@
             // alert();
 
             e.preventDefault();
-            // 
-
+            
+            $tenderid=$(this).attr('ids');
             //formData = {tenderid : '8'};
 
             $.ajax({
                 type: "POST",
                 url: '<?php echo base_url() ?>supplier/tenders/getApplicationForm',
                 data: {
-                    "tenderid": 8,
+                    "tenderid": $tenderid,
                 },
                 type: 'POST',
                 // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
                 // processData: false, // NEEDED, DON'T OMIT THIS
                 success: function(result) {
-                    console.log(result);
+                   // console.log(result);
                     data = JSON.parse(result);
                     $('#dataAppend').html(data);
                     $('#preview_modal').modal();

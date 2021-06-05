@@ -79,7 +79,7 @@
 								<tr>
 									<td style="text-align:right">Change Password	</td>
 									<td><p>
-                                            <a style="color:#3343ff" href="<?php echo site_url('supplier/dashboard/forgotpassword');?>" title="Reset Password"> Click Here For Change password</a>
+                                            <a style="color:#3343ff" onclick="window.top.location.href='<?php echo site_url('supplier/dashboard/forgotpassword');?>'" href="#" title="Reset Password"> Click Here For Change password</a>
                                         </p>	</td>
 								</tr>
 							</table>
