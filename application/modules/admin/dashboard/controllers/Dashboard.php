@@ -6,6 +6,42 @@ public function __construct()
 	parent::__construct();
     $this->load->model('Dashboard_model','dashM');
 }
+
+public function Login_POST()
+	{
+		$data = array(
+			"email" => "1036226@kseberp.in",
+			"password" => "password"
+		);
+
+		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+		$data_array = json_encode($data);
+		$curl       = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		$result = curl_exec($curl);
+		return $result;
+	}
+
+public function getAdminTenderData()
+{
+	$token = $this->Login_POST();
+	$token1 = json_decode($token);
+
+	$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getadmintenders';
+	$curl       = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $apiurl);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+		'Content-Type: application/json',
+		'Authorization: Bearer ' . $token1->result_data->token->access_token
+	));
+	$result = curl_exec($curl); 
+	return $result;
+}
+
 	public function index()
 	{
   	$data['page'] = 'dashboard';
@@ -14,8 +50,14 @@ public function __construct()
 	$data['Pending_approvals'] = $this->dashM->Pending_approvals();
 	$data['approved_suppliers'] = $this->dashM->approved_suppliers();
 	$data['approved_contractors'] = $this->dashM->approved_contractors();
-	$data['total_tenders'] = $this->dashM->total_tenders();
+	$data['total_tenders'] = $this->dashM->total_tenders(); 
 	$data['completed_tenders'] = $this->dashM->completed_tenders();
+	// tender count from api
+	$tenderdata = json_decode($this->getAdminTenderData());
+	$data['tenderdata'] = $tenderdata->result_data->list;
+	$api_tender_count= count($data['tenderdata']);
+    //   echo $api_tender_count; exit;
+
     // $data['appliedtenderdetails']= $this->getappliedtenders($data['tender']);
 		$this->template->make('dashboard/home',$data);
   }
