@@ -299,17 +299,20 @@ class Procurement extends AD_Controller {
     $data['savedformengines']=array_column($getTenderListing,'tender_id');
    
 			$tenderdata = json_decode($this->getAdminTenderData());
-			$data['tenderdata'] = $tenderdata->result_data->list;//echo"<pre>";print_r($data['tenderdata']);exit;
-    $this->template->make('procurement/tenders',$data);
+			$data['tenderdata'] = $tenderdata->result_data->list;
+      // echo"<pre>";print_r($data['tenderdata']);exit;
+      $col = array_column($data['tenderdata'], 'tender_date');
+      array_multisort($col,SORT_DESC,$data['tenderdata']);
+      // echo"<pre>";print_r($data['tenderdata']);exit;
+      $this->template->make('procurement/tenders',$data);
   }
-
+ 
   public function getAdminTenderData()
 	{
 		$token = $this->Login_POST();
 		$token1 = json_decode($token);
 
 		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getadmintenders';
-    // $apiurl = 'http://hris.kseb.in/erpws/api/prc/getMaterialGroupData';
 		$curl       = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $apiurl);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);

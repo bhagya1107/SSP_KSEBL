@@ -6,12 +6,10 @@ class Supplier_dashboard extends SP_Controller
 	{
 		parent::__construct();
 		$this->load->model('Dashboard_model', 'dashM');
-		//	$this->load->controller('supplier_Api', 'Api');
 	}
+
 	public function index()
 	{
-
-
 		$data['showdashbaord'] = true;
 		$data['page'] = 'supplier_dashboard';
 		$data['title'] = 'Supplier Dashboard';
@@ -19,13 +17,13 @@ class Supplier_dashboard extends SP_Controller
 		$uid = $this->session->userdata('supplierid');
 		$data['getcompanydetails'] = $this->dashM->getappliedtender($uid);
 		$data['getcounttenders'] = count($data['getcompanydetails']);
-		$data['api'] =  $this->api->Login_POST();
 		$purchaseOrder = json_decode($this->api->getPOData());
 		$data['purchaseorder'] = $purchaseOrder->result_data->list;
 		$data['countpurchaseorder'] = count($data['purchaseorder']);
 		// $this->template->make('supplier_dashboard/home',$data,'supplier_portal');
 		$this->template->make('supplier_dashboard/dashboard', $data, 'supplier_portal');
 	}
+
 	public function dashboard1()
 	{
 		$data['showdashbaord'] = true;
@@ -263,7 +261,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['getbankdetails1'] = $this->dashM->getbankdetails1('bank_details', $uid);
 			$materialdata = json_decode($this->api->getallmaterialsubcatid_get());
 			$data['materialdata'] = $materialdata->result_data->list;
-			$getcategorydata = json_decode($this->api->getSbuData_get());
+			$getcategorydata = json_decode($this->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal', true);
 		} else {
@@ -305,8 +303,8 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Portfolio';
 			$data['tab'] = 1;
 			$supplierid = $this->session->userdata('uid');
-			$materialdata = json_decode($this->api->getallmaterialsubcatid_get());
-			$data['materialdata'] = $materialdata->result_data->list;
+			$materialdata = json_decode($this->api->getallmaterialsubcatid_get()); //print_r($materialdata);exit;
+			$data['materialdata'] = $materialdata->result_data->list; //print_r($data['materialdata']);exit;
 			$getcategorydata = json_decode($this->api->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid);
@@ -365,13 +363,7 @@ class Supplier_dashboard extends SP_Controller
 	}
 
 
-	public function getMaterialProductsDetails()
-	{
 
-		$materialgroup = $this->input->post('materialgroup');
-		$productcategory = $this->input->post('productcategory');
-		$this->api->getMaterialData($materialgroup, $productcategory);
-	}
 
 	public function check_products()
 	{
@@ -478,9 +470,9 @@ class Supplier_dashboard extends SP_Controller
 		$data['title'] = 'MATERIAL DETAILS';
 		$data['tab'] = 1;
 
-		$materialdata = json_decode($this->getMaterialGroupData());
+		$materialdata = json_decode($this->api->getMaterialGroupData());
 		$data['materialdata'] = $materialdata->result_data->list;
-		$sbudata = json_decode($this->getSbuData_get());
+		$sbudata = json_decode($this->api->getSbuData_get());
 		$data['SbuData'] = $sbudata->result_data->list;
 		$data['getcategroy'] = $this->dashM->getcategroy();
 		$supplierid = $this->session->userdata('uid');
@@ -1761,4 +1753,34 @@ class Supplier_dashboard extends SP_Controller
 
 
 	}
+
+	//---------------------------------------API STARTING------------------------------------------------------------//
+
+
+	public function getMaterialData($materialgroup, $productcategory)
+	{
+		$token = $this->api->Login_POST();
+		$token1 = json_decode($token);
+		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialData/' . $productcategory . '/' . $materialgroup;
+		$curl       = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		));
+		$result = curl_exec($curl);
+		$value = json_decode($result);
+		echo json_encode($value->result_data->list);
+	}
+	public function getMaterialProductsDetails()
+	{
+		$materialgroup = $this->input->post('materialgroup');
+		$productcategory = $this->input->post('productcategory');
+		$this->getMaterialData($materialgroup, $productcategory);
+	}
+
+
+	//----------------------------------------API END-----------------------------------------------------------------//
+
 }
