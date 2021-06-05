@@ -138,7 +138,7 @@
                                                 <label for="">Utility/Wing</label>
                                                 <select class="form-control materialdata" id="productcategory" placeholder="Company name">
                                                 <?php if($getcategory!="") { ?>
-                                                    <option value="">Select Material Group Data </option>
+                                                    <option value="">Select Utility/Wing </option>
                                                     <?php }else{ ?>
                                                         <option value=""> <p class="apidropdown"><?php echo api_error_message(); ?></p></option>
                                                   <?php } ?>
@@ -657,11 +657,19 @@
       
         if (materialgroup != "" && productcategory != "") {
             var load = '<option value="">Loading...</option>';
-            $('#material').html(load);
+
+            var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+             csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+                    $('#material').html(load);
+
             $.post("<?php echo site_url('supplier/dashboard/getMaterialProductsDetails'); ?>", {
                     materialgroup: materialgroup,
-                    productcategory: productcategory
-                },
+                    productcategory: productcategory,
+
+     <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>" 
+     },
+    
                 function(data) {
                     
                     var res = JSON.parse(data);
@@ -676,6 +684,7 @@
                     $('#savemicro').removeAttr("disabled");
                     $(".ajaxLoader").css("display", "none");
                 });
+        
         }
 
     });

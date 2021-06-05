@@ -231,7 +231,7 @@
                         </div>
                         <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
-                    </div>
+                   
                     <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
                             <div class="tg-tickets commonfilter" id="appliedtickets">
