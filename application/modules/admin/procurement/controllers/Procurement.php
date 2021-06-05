@@ -303,6 +303,7 @@ class Procurement extends AD_Controller {
       // echo"<pre>";print_r($data['tenderdata']);exit;
       $col = array_column($data['tenderdata'], 'tender_date');
       array_multisort($col,SORT_DESC,$data['tenderdata']);
+      
       // echo"<pre>";print_r($data['tenderdata']);exit;
       $this->template->make('procurement/tenders',$data);
   }
