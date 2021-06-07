@@ -1754,25 +1754,6 @@ class Supplier_dashboard extends SP_Controller
 
 	}
 
-	//---------------------------------------API STARTING------------------------------------------------------------//
-
-
-	public function getMaterialData($materialgroup, $productcategory)
-	{
-		$token = $this->api->Login_POST();
-		$token1 = json_decode($token);
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getMaterialData/' . $productcategory . '/' . $materialgroup;
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));//echo $apiurl;exit;
-		$result = curl_exec($curl);
-		$value = json_decode($result);
-		echo json_encode($value->result_data->list);
-	}
 	public function getMaterialProductsDetails()
 	{
 		$materialgroup = $this->input->post('materialgroup');
@@ -1782,7 +1763,5 @@ class Supplier_dashboard extends SP_Controller
 		echo json_encode($value->result_data->list);
 	}
 
-
-	//----------------------------------------API END-----------------------------------------------------------------//
-
+	
 }
