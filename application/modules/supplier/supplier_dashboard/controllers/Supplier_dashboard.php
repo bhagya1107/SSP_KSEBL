@@ -261,7 +261,7 @@ class Supplier_dashboard extends SP_Controller
 			$data['getbankdetails1'] = $this->dashM->getbankdetails1('bank_details', $uid);
 			$materialdata = json_decode($this->api->getallmaterialsubcatid_get());
 			$data['materialdata'] = $materialdata->result_data->list;
-			$getcategorydata = json_decode($this->getSbuData_get());
+			$getcategorydata = json_decode($this->api->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			$this->template->make('supplier_dashboard/banking_services', $data, 'supplier_portal', true);
 		} else {
@@ -303,8 +303,8 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Portfolio';
 			$data['tab'] = 1;
 			$supplierid = $this->session->userdata('uid');
-			$materialdata = json_decode($this->api->getallmaterialsubcatid_get()); //print_r($materialdata);exit;
-			$data['materialdata'] = $materialdata->result_data->list; //print_r($data['materialdata']);exit;
+			$materialdata = json_decode($this->api->getallmaterialsubcatid_get()); 
+			$data['materialdata'] = $materialdata->result_data->list; 
 			$getcategorydata = json_decode($this->api->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid);
@@ -1762,6 +1762,4 @@ class Supplier_dashboard extends SP_Controller
 		$value = json_decode($result);
 		echo json_encode($value->result_data->list);
 	}
-
-	
 }

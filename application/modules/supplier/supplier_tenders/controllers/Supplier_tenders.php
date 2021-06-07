@@ -10,7 +10,7 @@ class Supplier_tenders extends SP_Controller
 	}
 
 
-	public function index($tab=1)
+	public function index($tab = 1)
 	{
 		//neethu
 		$this->load->model('Getmenus', 'GETM');
@@ -24,7 +24,7 @@ class Supplier_tenders extends SP_Controller
 			$data['title'] = 'Tenders';
 			$data['indexurl'] = base_url() . "supplier/dashboard";
 			$data['tab'] = $tab;
-			$tender = json_decode($this->getTenderData());
+			$tender = json_decode($this->api->getTenderData());
 			$data['tender'] = $tender->result_data->list;
 			$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid);
 			$data['getsuppliertenderservices'] = $this->procM->getSupplierServices($uid);
@@ -67,13 +67,13 @@ class Supplier_tenders extends SP_Controller
 
 			$data['getfavtender'] = $this->procM->getfavtender($uid);
 			$data['favid'] = array_column($data['getfavtender'], 'tendername');
-   			$favappliedtenders= array_combine($data['favid'],array_values($data['getfavtender']));
+			$favappliedtenders = array_combine($data['favid'], array_values($data['getfavtender']));
 
 
 			//     to find if any qs are ampped for a tender
 			// km updated
-			$getTenderListing=$this->procM->getListOfAdminTenders(); 
-    		$data['savedformengines']=array_column($getTenderListing,'tender_id');
+			$getTenderListing = $this->procM->getListOfAdminTenders();
+			$data['savedformengines'] = array_column($getTenderListing, 'tender_id');
 			// print_r($getTenderListing);
 			// print_r($data['savedformengines']);exit;
 
@@ -82,7 +82,7 @@ class Supplier_tenders extends SP_Controller
 				foreach ($data['tender'] as $key => $tender1) {
 					if (in_array($tender1->id, $data['favid'])) {
 						$data['tender'][$key]->sorting = 1;
-						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->tender_title, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tender_description,'is_applied'=>$favappliedtenders[$tender1->id]->is_applied];
+						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->tender_title, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tender_description, 'is_applied' => $favappliedtenders[$tender1->id]->is_applied];
 					} else {
 						$data['tender'][$key]->sorting  = 0;
 					}
@@ -125,7 +125,7 @@ class Supplier_tenders extends SP_Controller
 	public function getProductTender()
 	{
 		$uid = $this->session->userdata('supplierid');
-		$tender = json_decode($this->getTenderData());
+		$tender = json_decode($this->api->getTenderData());
 		$data['tender'] = $tender->result_data->list;
 		$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid);
 		$data['materialid'] = array_column($data['getsuppliertender'], 'materialId');
@@ -147,7 +147,7 @@ class Supplier_tenders extends SP_Controller
 	public function getProductServices()
 	{
 		$uid = $this->session->userdata('supplierid');
-		$tender = json_decode($this->getTenderData());
+		$tender = json_decode($this->api->getTenderData());
 		$data['tender'] = $tender->result_data->list;
 		$data['getsuppliertenderservices'] = $this->procM->getSupplierServices($uid);
 		$data['serviceid'] = array_column($data['getsuppliertenderservices'], 'serviceid');
@@ -171,45 +171,6 @@ class Supplier_tenders extends SP_Controller
 		$this->index(2);
 	}
 
-
-	public function Login_POST()
-	{
-		$data = array(
-			"email" => "1036226@kseberp.in",
-			"password" => "password"
-		);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
-		$data_array = json_encode($data);
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-		$result = curl_exec($curl);
-		// $token1 = json_decode($result);
-		// if(empty($token1)){
-		// 	echo api_error_message();exit;
-		// }
-		return $result;
-	}
-	public function getTenderData()
-	{
-		$logintoken = $this->Login_POST();
-		$token1 = json_decode($logintoken);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getTenderData';
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl);
-		return $result;
-	}
 	public function insert_favtenders()
 	{
 
@@ -269,10 +230,10 @@ class Supplier_tenders extends SP_Controller
 			$form_questions = $this->procM->getFormengine_questions($where, $userid);
 
 			// print_r($form_questions);
-			 //exit;
+			//exit;
 			$data['getfavtender'] = $this->procM->getfavtender($uid);
 			$data['tenderId'] = $tenderId;
-			$tender = json_decode($this->getTenderData());
+			$tender = json_decode($this->api->getTenderData());
 			$data['tender'] = $tender->result_data->list;
 
 			$dataAppend = '';
@@ -309,25 +270,18 @@ class Supplier_tenders extends SP_Controller
 						}
 					}
 					$dataAppend .= "<div class='clearfix'></div>";
-
-
-
-
-
-
-				
 				}
 			}
 			$data['form_questions'] = $dataAppend;
 			$supplierid = $this->session->userdata('uid');
 			$id = $this->uri->segment(4);
-		
+
 
 			$data['gettenderdetails'] = $this->Login->gettenderdetails1('tenders_favourites', $supplierid, $id);
 
 			$data['tender_id'] = $tenderId;
 			$data['user_id'] = $this->session->userdata('userid');
-			
+
 			$this->template->make('supplier_tenders/apply_tender', $data, 'supplier_portal');
 			//neethu
 		} else {
@@ -383,11 +337,6 @@ class Supplier_tenders extends SP_Controller
 						}
 					}
 					$dataAppend .= "<div class='clearfix'></div>";
-
-
-
-
-
 
 					$data['form_questions'] = $dataAppend;
 				}
@@ -525,10 +474,6 @@ class Supplier_tenders extends SP_Controller
 			}
 
 
-
-
-
-
 			$newarray = array(
 				'question_id' => $questionId,
 				'is_attribute' => $isattribute,
@@ -543,15 +488,15 @@ class Supplier_tenders extends SP_Controller
 			$res =  $this->procM->insert('formengine_registration', $newarray);
 		}
 
-			$appliedstatus = array(
-				'is_applied' => true
-			);
-$where=array(
-	'tenderid' => $tenderid,
-	'supplierid' => $userid
-);
+		$appliedstatus = array(
+			'is_applied' => true
+		);
+		$where = array(
+			'tenderid' => $tenderid,
+			'supplierid' => $userid
+		);
 
-			$res =  $this->Login->update_appliedstatus($appliedstatus,$where);
+		$res =  $this->Login->update_appliedstatus($appliedstatus, $where);
 
 		$statusUpdate = array(
 			'is_completed' => $is_completed,
@@ -603,7 +548,6 @@ $where=array(
 			}
 
 			$result = $this->Login->getTenderanswers($tenderId, $userId, $questionId);
-			//	echo $this->db->last_query();
 			$answer = "";
 			if ($result) {
 				$answer = $result->answer;
@@ -667,7 +611,7 @@ $where=array(
 	public function getAAlltendersApi()
 	{
 		$uid = $this->session->userdata('supplierid');
-		$tender = json_decode($this->getTenderData());
+		$tender = json_decode($this->api->getTenderData());
 		$data['tender'] = $tender->result_data->list;
 		$data['getfavtender'] = $this->procM->getfavtender($uid);
 		$data['favid'] = array_column($data['getfavtender'], 'tendername');
@@ -682,13 +626,10 @@ $where=array(
 			$col = array_column($data['tender'], "sorting");
 			array_multisort($col, SORT_ASC, $data['tender']);
 		}
-
-
-
 		echo json_encode($data['tender']);
 	}
 
-	public function appliedindex($tab=3)
+	public function appliedindex($tab = 3)
 	{
 		//neethu
 		$this->load->model('Getmenus', 'GETM');
@@ -702,7 +643,7 @@ $where=array(
 			$data['title'] = 'Tenders';
 			$data['indexurl'] = base_url() . "supplier/dashboard";
 			$data['tab'] = $tab;
-			$tender = json_decode($this->getTenderData());
+			$tender = json_decode($this->api->getTenderData());
 			$data['tender'] = $tender->result_data->list;
 			$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid);
 			$data['getsuppliertenderservices'] = $this->procM->getSupplierServices($uid);
@@ -745,12 +686,12 @@ $where=array(
 
 			$data['getfavtender'] = $this->procM->getfavtender($uid);
 			$data['favid'] = array_column($data['getfavtender'], 'tendername');
-   $favappliedtenders= array_combine($data['favid'],array_values($data['getfavtender']));
+			$favappliedtenders = array_combine($data['favid'], array_values($data['getfavtender']));
 			if (!empty($data['favid'])) {
 				foreach ($data['tender'] as $key => $tender1) {
 					if (in_array($tender1->id, $data['favid'])) {
 						$data['tender'][$key]->sorting = 1;
-						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->id, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tendering_authority,'is_applied'=>$favappliedtenders[$tender1->id]->is_applied];
+						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->id, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tendering_authority, 'is_applied' => $favappliedtenders[$tender1->id]->is_applied];
 					} else {
 						$data['tender'][$key]->sorting  = 0;
 					}
@@ -776,59 +717,55 @@ $where=array(
 
 		$data['tenderId'] = $this->input->post('tenderId');
 		$data['payamount'] = $this->input->post('payamount');
-		$data['vendorId'] = $this->session->userdata('uid'); 
+		$data['vendorId'] = $this->session->userdata('uid');
 
-				//$res =  $this->procM->insert('delivery_schedule', $data);
-				$res=	$this->callpost_payamount($data);
-		
-		} 
+		$res =	$this->callpost_payamount($data);
+	}
 
 	private function callpost_payamount($data)
-		{
-			$token=$this->Login_POST();
-			$token1=json_decode($token);
+	{
+		$token = $this->Login_POST();
+		$token1 = json_decode($token);
 		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
 		$data_array = json_encode($data);
 		$curl       = curl_init();
-		curl_setopt( $curl, CURLOPT_URL, $apiurl );
-		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
-		curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
-		curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
 			'Content-Type: application/json',
 			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		) );
-		$result = curl_exec( $curl );
+		));
+		$result = curl_exec($curl);
 		return $result;
-		}
+	}
 
-		public function post_clarifications()
-		{
-	
-			$data['questioncomment'] = $this->input->post('questioncomment');
-			$data['nofilequestion'] = $this->input->post('nofilequestion');
-			$data['questionidclarifictn'] = $this->input->post('questionidclarifictn');
-			$data['vendorId'] = $this->session->userdata('uid'); 
-	
-					$res=	$this->callpost_clarifications($data);
-			
-			} 
-	
-		private function callpost_clarifications($data)
-			{
-				$token=$this->Login_POST();
-				$token1=json_decode($token);
-			$apiurl     = 'http://hris.kseb.in/erpws/api/login';
-			$data_array = json_encode($data);
-			$curl       = curl_init();
-			curl_setopt( $curl, CURLOPT_URL, $apiurl );
-			curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
-			curl_setopt( $curl, CURLOPT_POSTFIELDS, $data_array );
-			curl_setopt( $curl, CURLOPT_HTTPHEADER, array( 
-				'Content-Type: application/json',
-				'Authorization: Bearer ' . $token1->result_data->token->access_token
-			) );
-			$result = curl_exec($curl);
-			return $result;
-			}
+	public function post_clarifications()
+	{
 
+		$data['questioncomment'] = $this->input->post('questioncomment');
+		$data['nofilequestion'] = $this->input->post('nofilequestion');
+		$data['questionidclarifictn'] = $this->input->post('questionidclarifictn');
+		$data['vendorId'] = $this->session->userdata('uid');
+
+		$res =	$this->callpost_clarifications($data);
+	}
+
+	private function callpost_clarifications($data)
+	{
+		$token = $this->Login_POST();
+		$token1 = json_decode($token);
+		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+		$data_array = json_encode($data);
+		$curl       = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $apiurl);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+			'Content-Type: application/json',
+			'Authorization: Bearer ' . $token1->result_data->token->access_token
+		));
+		$result = curl_exec($curl);
+		return $result;
+	}
 }
