@@ -1157,6 +1157,9 @@
         .triggerbtn {
             min-height: 50px;
         }
+        .triggerbtn1 {
+            min-height: 50px;
+        }
         .pln {
             cursor: pointer;
             text-align: center;
