@@ -103,7 +103,7 @@
           <h1>SUPPLIER REGISTRATION</h1>
             <p>
               <h4 class=""> 
-                 <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor &nbsp; &nbsp; &nbsp;
+                 <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor &nbsp; 
                 <input type="radio" id="is_company" name="comp_type" required > &nbsp;Supplier  
               </h4>
             </p>
