@@ -87,19 +87,21 @@
 
                         <div class="col-xl-3 col-md-6"  >
                             <div class="card bg-c-yellow text-white " style="height :125px;">
+                            <a href="<?php echo base_url('webuser/procurement/tenders');?>" style="color: white;">	
+                                                   
                                 <div class="card-block">
                                     <div class="row align-items-center">
                                         <div class="col">
                                           <?php //$stations=getAfield('count(sid)',"station_master","where is_deleted=0",'stcount'); ?>
-                                            <p class="m-b-5">Total Tenders</p>
-                                            <h4 class="m-b-0"><?php echo $total_tenders; ?></h4>
+                                            <p class="m-b-5">Total Tenders</p> 
+                                            <h4 class="m-b-0"><?php echo count($tenderdata); ?></h4>
                                         </div>
                                         <!-- <div class="col col-auto text-right"> -->
                                         <div class="col col-auto text-right">
                                             <i class="feather icon-credit-card f-50 text-c-yellow"></i>
                                         </div>
                                     </div>
-                                </div>
+                                </div></a>
                             </div>
                         </div>
 
@@ -124,7 +126,7 @@
                                 <div class="card-block">
                                     <div class="row align-items-center">
                                         <div class="col">
-                                            <p class="m-b-5">Closed Tenders</p>
+                                            <p class="m-b-5">Closed Tenders</p> 
 
 
                                             <h4 class="m-b-0"><?php echo $completed_tenders; ?></h4>
@@ -141,7 +143,7 @@
                             <div class="card bg-c-yellow text-white " style="height :125px;">
                             <a href="<?php echo base_url('webuser/procurement/tenders');?>" style="color: white;">
                                 <div class="card-block">
-                                    <div class="row align-items-center">
+                                    <div class="row align-items-center"> 
                                         <div class="col">
                                           <?php //$stations=getAfield('count(sid)',"station_master","where is_deleted=0",'stcount'); ?>
                                             <p class="m-b-5">Applied Tenders</p>
