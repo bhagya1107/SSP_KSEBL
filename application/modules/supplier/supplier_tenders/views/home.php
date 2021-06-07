@@ -213,8 +213,14 @@
                                                 <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $favten['tenderid'] ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
                                                 <?php if ($favten['is_applied']) { ?>
                                                     <a class="btn btn-success btn-sm" href="#">Applied </a>
-                                                <?php } else { ?>
-                                                    <a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/tenders/apply/" . $favten['tenderid']) ?>">Apply </a>
+                                                <?php } else { 
+                                                    // checking if questions are mapped for this tender
+                                                    $disabled='';
+                                                    if(!in_array($favten['tenderid'],$savedformengines)) { 
+                                                        $disabled='disabled';
+                                                    }
+                                            ?>
+                                                    <a class="btn btn-primary btn-sm" <?=  $disabled;?> href="<?php echo base_url("supplier/tenders/apply/" . $favten['tenderid']) ?>">Apply </a>
 
                                                 <?php  } ?>
                                             </div>
