@@ -643,9 +643,6 @@
 
     function mytenderdetails(tenderdetail) {
 
-        // var tenderdetails =   Object.keys(tenderdetail); 
-        // console.log("kkkk");
-      //  console.log(tenderdetails);
         var tenderopendetails = tenderdetail.prc_tender_opening_dtls;
         var tenderprocurementprocess = tenderdetail.prc_procurement_process;
         var tenderschedules = tenderdetail.prc_tender_schedules;
@@ -1183,10 +1180,10 @@
             html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
 
             if (data.sorting == 0) {
-                html += "<a class='btn btn-primary btn-sm' id='save_tenders' onclick='save_tenders(" + JSON.stringify(data) + ")'>Add to Favourites</a>";
-            } else {
-                html += "<a class='btn btn-success btn-sm' >Added to Favourites </a>";
-            }
+                        html += "<a class='btn btn-primary btn-sm' id='save_tenders' onclick='save_tenders(" + JSON.stringify(data) + ")'>Add to Favourites</a>";
+                    } else {
+                        html += "<a class='btn btn-success btn-sm' >Added to Favourites </a>";
+                    }
 
             html += "</div></div>";
         });
