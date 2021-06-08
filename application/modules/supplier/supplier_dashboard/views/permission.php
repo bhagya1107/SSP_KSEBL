@@ -63,19 +63,19 @@
                   } 
                   ?>
 
-						</div>
+						</div> 
 
-						<div style=" border-style: solid;  border-width: thin; width: 400px;" ><br><br>
+						<div style=" border-style: solid;  border-width: thin;" ><br><br>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
               <form method="post" action="<?php echo base_url('supplier/dashboard/Supplier_dashboard/insert_access_permission');?>">
               <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
    
-              			 <div class="form-group" style="width:200px; margin-left: 100px;" id="div1">
+              			 <div class="form-group" style="width:190px; margin-left: 15%" id="div1">
                     <!--  <label>User Type</label> -->
                      <select class="form-control" name="user_type" id="s" >
                       <option selected disabled >
                          -Select User Type-
-                       </option>
+                       </option>  
                       <option value="4" >
                          Accounts Manager
                        </option> <option value="5" >
@@ -89,7 +89,7 @@
                 <div   id="div2">
                   <h1></h1>
                 </div>
-                <div id="div2" style="margin-left: 100px;">
+                <div id="div2" style="margin-left: 15%;">
 
                   <input type="checkbox" id="procurement_plan" name="procurement_plan" value="1" >
                   <label for="accounts"style="margin-top:-21px;margin-left:27px;"> Procurement Plan
@@ -113,7 +113,7 @@
                   <input type="checkbox" id="work_measurement" name="work_measurement" value="1" >
                   <label for="work_measurement" style="margin-top:-21px;margin-left:27px;"> Work Measurement</label><br>
               
-                  <input type="submit" class="tg-btn " value="Submit">
+                  <input type="submit" class="tg-btn " value="Submit"> 
 						    </div><br><br>
               </form>
             </div>

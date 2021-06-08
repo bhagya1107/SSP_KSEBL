@@ -96,17 +96,57 @@
        <form method="POST" action="<?php echo base_url().'supplier/dashboard/regcompany'?>" id="frm" name="regform"> 
             <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
       <!-- 'supplier/dashboard/regcompany' -->
-      <!-- <?=form_open('');?> -->
+      <!-- <?=form_open('');?> --> 
       <div class="col-md-3"></div>
           
           <div class="col-md-8">
           <h1>SUPPLIER REGISTRATION</h1>
+          <style>
+          on the same line, according to the markup I linked to above, it would be like so:
+
+fieldset {
+      overflow: hidden
+    }
+    
+    .some-class {
+      float: left;
+      clear: none;
+    }
+    
+    label {
+      float: left;
+      clear: none;
+      display: block;
+      padding: 0px 1em 0px 8px;
+    }
+    
+    input[type=radio], 
+    input.radio {
+      float: left;
+      clear: none;
+      margin: 2px 0 0 2px;
+    }
+          </style>
+      <fieldset>
+      <div class="some-class"> 
+      
+        <input type="radio" class="radio" id="is_individual" name="comp_type" required checked/>
+        <label style="font-size: 20px; margin-top :-7px;">Contractor</label>
+        <input type="radio" class="radio" id="is_company" name="comp_type" required />
+        <label style="font-size: 20px;margin-top :-7px;" >Supplier</label> 
+      
+      </div>
+    </fieldset> 
+ 
+
+
+           <!-- 
             <p>
               <h4 class=""> 
                  <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor &nbsp; 
                 <input type="radio" id="is_company" name="comp_type" required > &nbsp;Supplier  
               </h4>
-            </p>
+            </p> -->
     <div class="checkbox-group required">
       
           
