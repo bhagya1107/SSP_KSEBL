@@ -146,7 +146,7 @@ fieldset {
                  <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor &nbsp; 
                 <input type="radio" id="is_company" name="comp_type" required > &nbsp;Supplier  
               </h4>
-            </p>
+            </p> -->
     <div class="checkbox-group required">
       
           
