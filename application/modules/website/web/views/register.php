@@ -128,7 +128,7 @@ fieldset {
     }
           </style>
       <fieldset>
-      <div class="some-class">
+      <div class="some-class"> 
       
         <input type="radio" class="radio" id="is_individual" name="comp_type" required checked/>
         <label style="font-size: 20px; margin-top :-7px;">Contractor</label>

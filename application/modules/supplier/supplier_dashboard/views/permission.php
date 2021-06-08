@@ -113,7 +113,7 @@
                   <input type="checkbox" id="work_measurement" name="work_measurement" value="1" >
                   <label for="work_measurement" style="margin-top:-21px;margin-left:27px;"> Work Measurement</label><br>
               
-                  <input type="submit" class="tg-btn " value="Submit">
+                  <input type="submit" class="tg-btn " value="Submit"> 
 						    </div><br><br>
               </form>
             </div>
