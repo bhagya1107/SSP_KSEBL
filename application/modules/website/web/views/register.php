@@ -101,6 +101,46 @@
           
           <div class="col-md-8">
           <h1>SUPPLIER REGISTRATION</h1>
+          <style>
+          on the same line, according to the markup I linked to above, it would be like so:
+
+fieldset {
+      overflow: hidden
+    }
+    
+    .some-class {
+      float: left;
+      clear: none;
+    }
+    
+    label {
+      float: left;
+      clear: none;
+      display: block;
+      padding: 0px 1em 0px 8px;
+    }
+    
+    input[type=radio], 
+    input.radio {
+      float: left;
+      clear: none;
+      margin: 2px 0 0 2px;
+    }
+          </style>
+      <fieldset>
+      <div class="some-class">
+      
+        <input type="radio" class="radio" id="is_individual" name="comp_type" required checked/>
+        <label style="font-size: 20px; margin-top :-7px;">Contractor</label>
+        <input type="radio" class="radio" id="is_company" name="comp_type" required />
+        <label style="font-size: 20px;margin-top :-7px;" >Supplier</label> 
+      
+      </div>
+    </fieldset> 
+ 
+
+
+           <!-- 
             <p>
               <h4 class=""> 
                  <input type="radio" id="is_individual" name="comp_type" required checked> &nbsp;Contractor &nbsp; 
