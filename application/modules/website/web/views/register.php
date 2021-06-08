@@ -96,7 +96,7 @@
        <form method="POST" action="<?php echo base_url().'supplier/dashboard/regcompany'?>" id="frm" name="regform"> 
             <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
       <!-- 'supplier/dashboard/regcompany' -->
-      <!-- <?=form_open('');?> -->
+      <!-- <?=form_open('');?> --> 
       <div class="col-md-3"></div>
           
           <div class="col-md-8">

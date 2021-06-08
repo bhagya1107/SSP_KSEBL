@@ -75,7 +75,7 @@
                      <select class="form-control" name="user_type" id="s" >
                       <option selected disabled >
                          -Select User Type-
-                       </option>
+                       </option>  
                       <option value="4" >
                          Accounts Manager
                        </option> <option value="5" >
