@@ -161,6 +161,7 @@ class Supplier_home extends MX_Controller {
 				$lock_user=$chk['islocked'];
 			    $supplierid=$chk['supplierid'];
 			    $supplier_active_status=$chk['active_status'];
+							$supplier_erp_id=$chk['erp_supplier_id'];
 			   
 				if($lock_user!=1 and $supplier_active_status==1 )
 				{
@@ -185,7 +186,8 @@ class Supplier_home extends MX_Controller {
 				$this->session->set_userdata('supplierid',$supplierid);
 				$this->session->set_userdata('uid',$uid);
 				$this->session->set_userdata('user_type',$user_type);
-				
+				$this->session->set_userdata('supplier_erp_id',$supplier_erp_id);
+
 						$_SESSION['theme'] = 'supplier';
 						$_SESSION['key'] = '';
 					   // $_SESSION['showpop'] = 'false';
