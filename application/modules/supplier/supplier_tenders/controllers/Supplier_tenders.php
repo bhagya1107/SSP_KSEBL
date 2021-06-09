@@ -724,20 +724,7 @@ class Supplier_tenders extends SP_Controller
 
 	private function callpost_payamount($data)
 	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
-		$data_array = json_encode($data);
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl);
-		return $result;
+		$this->api->curl_postdata($data);;
 	}
 
 	public function post_clarifications()
@@ -753,19 +740,6 @@ class Supplier_tenders extends SP_Controller
 
 	private function callpost_clarifications($data)
 	{
-		$token = $this->Login_POST();
-		$token1 = json_decode($token);
-		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
-		$data_array = json_encode($data);
-		$curl       = curl_init();
-		curl_setopt($curl, CURLOPT_URL, $apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json',
-			'Authorization: Bearer ' . $token1->result_data->token->access_token
-		));
-		$result = curl_exec($curl);
-		return $result;
+		$this->api->curl_postdata($data);
 	}
 }
