@@ -1487,10 +1487,6 @@ toggle between hiding and showing the dropdown content */
 
              html += "<b><h5 style='color:orange;'>PURCHASE BASIC DETAILS</h5><b>" +
                  " <label>Purchase Order Id:" +purchasedetail.purchaseorderId + "</label>" +
-                 "<label>Purchase Price Type:" + purchasedetail.purchase_price_type + "</label>" +
-                 "<label>Purchase Order Type:" + purchasedetail.purchase_order_type + "</label>" +
-                 "<label>Purchase Area Type:" + purchasedetail.purchase_area_type + "</label>" +
-                 "<label>Purchase Area Type:" + purchasedetail.purchase_value + "</label>" +
                  " <label>Material Code:" + item.materialcode + "</label>" +
                  " <label>Material Name:" + item.material_name + "</label>" +
                  "<label>Material Description:" + item['material description'] + "</label>" +
@@ -1696,8 +1692,8 @@ filterpurchasedata(tabcontentid, value);
                  $("#overlay").fadeIn();
              },
              success: function(result) {
-                console.log(typeof result);
-                if(result!="null"){
+console.log(typeof result);
+if(result!="null"){
                  datas = JSON.parse(result);
                  var count = datas.length;
                  if (count > 0) {
@@ -1724,13 +1720,13 @@ filterpurchasedata(tabcontentid, value);
         
              $.each(data['tender details'], function(i, datadetail) { 
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
-             var date1 = new Date(data.purchase_order_date);
+            
              var tenderTitle = (datadetail.tender_title != null) ? datadetail.tender_title : '';
-             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-            // html +=  "<span></span></time>";
+             
+             html +=  "<span></span></time>";
              html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data['purchase no'] + "</span><h4> " + tenderTitle + "</h4></h4>";
              html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
-             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category+ "</address></li></ul></div>";
+             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY: </address></li></ul></div>";
 
              html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
 
@@ -1748,6 +1744,8 @@ filterpurchasedata(tabcontentid, value);
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
              var date1 = new Date(data.purchase_order_date);
              var tenderTitle = (data.prc_tender != null) ? data.prc_tender.tender_title : '';
+             // console.log(date1);
+             // console.log(date1.getDate());
              html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
              html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data.puchase_order_number + "</span><h4> " + tenderTitle + "</h4></h4>";
              html += "<div class='hiddendate' hidden >" + data.purchase_order_date + "</div>";
@@ -1861,12 +1859,13 @@ dispatch_table = $('#predispatchlist').DataTable({
         
              $.each(data['tender details'], function(i, datadetail) { 
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
-             var date1 = new Date(data.purchase_order_date);
+            
              var tenderTitle = (datadetail.tender_title != null) ? datadetail.tender_title : '';
-             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
+             
+             html +=  "<span></span></time>";
              html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data['purchase no'] + "</span><h4> " + tenderTitle + "</h4></h4>";
              html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
-             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
+             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY: </address></li></ul></div>";
 
              html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
 
