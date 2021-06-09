@@ -287,7 +287,7 @@ class Procurement extends AD_Controller {
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 		$result = curl_exec($curl);
-		return $result;
+		return $result; 
 	}
 
 
@@ -300,7 +300,7 @@ class Procurement extends AD_Controller {
    
 			$tenderdata = json_decode($this->getAdminTenderData());
 			$data['tenderdata'] = $tenderdata->result_data->list;
-      // echo"<pre>";print_r($data['tenderdata']);exit;
+      //  echo"<pre>";print_r($data['tenderdata']);exit;
       $col = array_column($data['tenderdata'], 'tender_date');
       array_multisort($col,SORT_DESC,$data['tenderdata']);
       

@@ -106,8 +106,8 @@
                                               <td><?php echo $tenderdatas->tender_closing_date; ?></td> 
                                               <td><?php echo $tenderdatas->status; ?></td> 
                                            
-                                            <td>
-                                            <?php if(!in_array($tenderdatas->tender_id,$savedformengines)) { ?>
+                                            <td> 
+                                            <?php if(!in_array($tenderdatas->formenginerequired=="N" and $tenderdatas->tender_id,$savedformengines )) { ?>
                                               <?php $tender_num = urlencode($tenderdatas->tender_num) ?>
                                             <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id."?tender_num=".$tender_num) ?>">
                                           

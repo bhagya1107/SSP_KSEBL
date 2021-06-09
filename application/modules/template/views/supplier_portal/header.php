@@ -177,14 +177,26 @@
 		<header id="tg-header" class="tg-header tg-haslayout">
 
 			<div class="col-md-1">
-				<ul class="tg-socialicons welcome-msg">
+			<style>
+			@media screen and (max-width: 767px){
+			.wel{
+				display:none;
+				
+			}
+			.limtiCharClass {
+              /* force single line */
+				width: 50px;                 /* fixed width */
+			}
+		}
+			</style>
+				<ul class="tg-socialicons welcome-msg ">
 					
 					<small style="color:#FFF;margin-left:35%;margin-top:16%;line-height: 25px;">Welcome</small>
 					<li style="color:#FFF;;margin-left:45%;line-height: 16px; display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">
-						<a href="<?=supplier_url('dashboard/personal_profile')?>" >
+					<div >	<a class="limtiCharClass" href="<?=supplier_url('dashboard/personal_profile')?>" >
 							<?php echo substr(strtoupper($this->session->userdata('username')),0,35); ?> 
 						</a>
-						
+		            </div>	
 					</li>
 					
 					
@@ -271,7 +283,16 @@
 								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigationm-mobile">
 									<i class="fa fa-bars"></i>
 								</button>
-								<strong class="tg-logo">
+								<style>
+			@media screen and (max-width: 767px){
+			.welc{
+				margin-top :-22px;
+				
+			}
+			
+		}
+			</style>
+								<strong class="tg-logo welc">
 									<a href="#"><img src="<?=base_url()?>assets/logo2.png" alt="image description" width="30px"></a>
 								</strong>
 							</div>
