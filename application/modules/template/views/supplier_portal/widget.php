@@ -13,9 +13,17 @@
 
 
       <style>
+      	@media screen and (max-width: 767px){
+			.vertical-menuss {
+                width: 250px;
+              
+                            
+            }
+		}
 
 .vertical-menu {
-    width: 342px;
+    /* width: 342px; */
+    width: 270px;
     z-index: 1;
     top: 0;
     left: 0;
@@ -467,7 +475,7 @@ hr{
 
     <!-- <div class="test"> -->
 
-  <div class="vertical-menu quick-menu  ">
+  <div class="vertical-menuss quick-menu  ">
     
         <button type="button" class="close" id="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -483,7 +491,7 @@ hr{
   
     <div class="tab-content mt-3">
         <div class="tab-chat tab-pane fade in active" id="messages" role="tabpanel">
-            <div class="vertical-menu sidebar1" id="drag-1">
+            <div class="vertical-menu vertical-menuss sidebar1" id="drag-1">
             <?php   
                 $user_type=$this->session->userdata('user_type');
 
