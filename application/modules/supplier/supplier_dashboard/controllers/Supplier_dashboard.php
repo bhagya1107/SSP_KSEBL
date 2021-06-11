@@ -140,7 +140,6 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Company notifications';
 			$user_type = $this->session->userdata('user_type');
 			$uid = $this->session->userdata('supplierid');
-			// echo $uid;
 			// echo $user_type;
 			// exit;
 
