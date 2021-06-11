@@ -4,6 +4,38 @@
  
  
 <style>  
+	@media screen and (max-width: 767px){
+			.one_line {
+        /* display:inline-block!important;
+        width: 70%!important;
+        text-align :center!important; */
+        
+        /* float :left!important; */
+        
+              
+                            
+            }
+		}
+
+/* horizondal scroll bar */
+.scrollmenu {
+ 
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  /* padding: 14px; */
+  text-decoration: none;
+}
+
+/* horizondal scroll bar end */
+
+
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px; 
@@ -68,13 +100,13 @@
 
 					   <form method="post" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/update_companyprofile')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
-						<div class="">
+						<div class="scrollmenu">
 							
 							<table class="table editcompany">
 								<tr>
 									<input type="hidden" name="supplierid" value="<?php echo $getcompanydetails->supplierid;?>">
 									<td style="text-align:right;width:35%;">Company Name	</td>
-									<td style="width:35%;"><input type="text" name="profile" id="profile" readonly class="form-control "  value="<?php echo $getcompanydetails->companyname;?>"/>	</td>
+									<td style="width:35%;"><input style="width:300px !important;"  type="text" name="profile" id="profile" readonly class="form-control "  value="<?php echo $getcompanydetails->companyname;?>"/>	</td>
 									
 									<td></td>
 								</tr>
@@ -102,7 +134,7 @@
                                                                  {?>
 									<td><input type="text" id="gstin" name="gstin" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->gst;?>"/>	</td>
                   <?php } ?>
-									<td><label  class="choose-file hide " id="a">pdf up to 10mb</label><input id="file" accept = "application/pdf" onchange="validatePDF(this)" type="file"  name="file2" class="form-control showprofile choose-file hide" />
+									<td  ><label  class="choose-file hide " id="a">pdf up to 10mb</label><input style="width:200px !important;" id="file" accept = "application/pdf" onchange="validatePDF(this)" type="file"  name="file2" class="form-control showprofile choose-file hide" />
 											 <?php if($getcompanydetails->gst_tinfile=='')
                                                                  {?>
                                                                  <p>No GST/TIN Certificate</p>
@@ -184,16 +216,18 @@
 								</tr>
 									
 							</table> 
-							<div class="form-group" >
+							<div class="form-group one_line" >
                 <div class="col-md-offset-4 pull-right col-xs-offset-4">
                   <a class="tg-btn pull-center editbutton" id="editprofilefn" style="" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>
                 </div>
-                <button type="reset" onclick="myFunction1()"  class="tg-btn pull-right savebutton hide"   value="cancel" style="background-color: #ff6666!important; "  name="cancel" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                <div >
+                <button type="reset" onclick="myFunction1()"  class="tg-btn pull-right savebutton hide one_line"   value="cancel" style="background-color: #ff6666!important; "  name="cancel" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
                 
-                  <button type="submit" class="tg-btn pull-right savebutton hide"   id="saveprofilefn"  style="" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="if (confirm('Make sure your details are correct.')) commentDelete(1); return false"><span>Save</span></button>
+                <button type="submit" class="tg-btn pull-right savebutton hide one_line "   id="saveprofilefn"  style=" float: right;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="if (confirm('Make sure your details are correct.')) commentDelete(1); return false"><span>Save</span></button>
                  
                   <!-- <a href="<?php echo base_url('supplier/dashboard/profile');?>" class="tg-btn pull-center savebutton hide"   id="" style="background-color: #ff6666!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></a> -->
 							</div>
+              </div>
  
 
  

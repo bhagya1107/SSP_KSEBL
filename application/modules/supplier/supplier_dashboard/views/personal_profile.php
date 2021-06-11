@@ -52,7 +52,7 @@
 									//  echo $user_type; exit();
 									?>
 
-						<div class="table-responsive">
+						<div class="table-responsive" >
 							<table class="table table-bordered table-hover" style="<?php if( $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" >
 								<tr> 
 									

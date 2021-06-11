@@ -179,13 +179,11 @@
 			<div class="col-md-1">
 			<style>
 			@media screen and (max-width: 767px){
-			.wel{
-				display:none;
-				
-			}
+			
 			.limtiCharClass {
               /* force single line */
-				width: 50px;                 /* fixed width */
+				width: 50px;
+				                 /* fixed width */
 			}
 		}
 			</style>
