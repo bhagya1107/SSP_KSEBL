@@ -22,7 +22,7 @@
 		}
 
 .vertical-menu {
-    width: 342px;
+    width: 347px;
     /* width: 270px; */
     z-index: 1;
     top: 0;
