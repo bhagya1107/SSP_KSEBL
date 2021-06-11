@@ -93,18 +93,36 @@ class Api extends MX_Controller
       return $this->curl_getdata($appendurl);
    }
 
-   public function getMaterialById()
-   {
-
-      $appendurl = "prc/getMaterialById/173";
-      return $this->curl_getdata($appendurl);
-   }
-
-
    public function getTenderData()
    {
 
       $appendurl = "prc/getTenderData";
+      return $this->curl_getdata($appendurl);
+   }
+
+
+   public function getPOData($erp_id)
+   {
+      if ($erp_id != "") {
+         $appendurl = "prc/getPOData?vender_id=$erp_id";
+         return $this->curl_getdata($appendurl);
+      } else {
+         $appendurl = "prc/getPOData?vender_id=10003744";
+         return $this->curl_getdata($appendurl);
+      }
+   }
+
+   public function getordersbyId()
+   {
+      $appendurl = "prc/getordersbyId";
+      return $this->curl_getdata($appendurl);
+   }
+
+   //----------------------------------API not using----------------------------------------------//
+   public function getMaterialById()
+   {
+
+      $appendurl = "prc/getMaterialById/173";
       return $this->curl_getdata($appendurl);
    }
 
@@ -114,12 +132,6 @@ class Api extends MX_Controller
       $appendurl = "prc/getTenderData?id=1&mst_material_id=3";
       return $this->curl_getdata($appendurl);
    }
-   public function getPOData()
-   {
-
-      $appendurl = "prc/getPOData?vender_id=10003744";
-      return $this->curl_getdata($appendurl);
-   }
 
    public function getPODataById()
    {
@@ -127,10 +139,5 @@ class Api extends MX_Controller
       $appendurl = "prc/getPOData?prc_tender_id=1&vender_id=1";
       return $this->curl_getdata($appendurl);
    }
-
-   public function getordersbyId()
-   {
-      $appendurl = "prc/getordersbyId";
-      return $this->curl_getdata($appendurl);
-   }
+   //-------------------------------------API not END--------------------------------------------------//
 }
