@@ -15,9 +15,10 @@ class Supplier_dashboard extends SP_Controller
 		$data['title'] = 'Supplier Dashboard';
 		$data['indexurl'] = base_url() . "supplier/dashboard";
 		$uid = $this->session->userdata('supplierid');
+		$erp_id = $this->session->userdata('supplier_erp_id');
 		$data['getcompanydetails'] = $this->dashM->getappliedtender($uid);
 		$data['getcounttenders'] = count($data['getcompanydetails']);
-		$purchaseOrder = json_decode($this->api->getPOData());
+		$purchaseOrder = json_decode($this->api->getPOData($erp_id));
 		$data['purchaseorder'] = $purchaseOrder->result_data->list;
 		$data['countpurchaseorder'] = count($data['purchaseorder']);
 		// $this->template->make('supplier_dashboard/home',$data,'supplier_portal');
@@ -303,8 +304,8 @@ class Supplier_dashboard extends SP_Controller
 			$data['title'] = 'Portfolio';
 			$data['tab'] = 1;
 			$supplierid = $this->session->userdata('uid');
-			$materialdata = json_decode($this->api->getallmaterialsubcatid_get()); 
-			$data['materialdata'] = $materialdata->result_data->list; 
+			$materialdata = json_decode($this->api->getallmaterialsubcatid_get());
+			$data['materialdata'] = $materialdata->result_data->list;
 			$getcategorydata = json_decode($this->api->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid);
