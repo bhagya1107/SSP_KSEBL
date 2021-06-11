@@ -15,15 +15,15 @@
       <style>
       	@media screen and (max-width: 767px){
 			.vertical-menuss {
-                width: 250px;
+                width: 250px !important;
               
                             
             }
 		}
 
 .vertical-menu {
-    /* width: 342px; */
-    width: 270px;
+    width: 342px;
+    /* width: 270px; */
     z-index: 1;
     top: 0;
     left: 0;
@@ -470,12 +470,12 @@ hr{
 
 <div class="quick-sidebar-overlay hidedata"></div>
 <!-- <div class="hidedata" id="quicklinks"> -->
-<div class="hidedata quick-sidebar" id="multiCollapseExample1">
+<div class="hidedata quick-sidebar" id="multiCollapseExample1" >
     
 
     <!-- <div class="test"> -->
 
-  <div class="vertical-menuss quick-menu  ">
+  <div class="vertical-menu vertical-menuss  quick-menu  " >
     
         <button type="button" class="close" id="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
