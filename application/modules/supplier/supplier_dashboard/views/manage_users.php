@@ -42,6 +42,15 @@
       /* .col-md-7 {
     width: 58.33333333%;
 } */
+        
+/* horizondal scroll bar */
+@media screen and (max-width: 767px){
+div.scrollmenu {
+ width :100%;
+ overflow: auto;
+ white-space: nowrap;
+}
+}
 </style>
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;" />
 
@@ -79,7 +88,7 @@
             <div class="row1">
               <form method="post" action="<?php echo base_url('supplier/dashboard/insert_companyprofile')?>">
                  <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
-                <div class="col-md-5" style="border: 1px solid #CCC;">
+                <div class="col-md-5 scrollmenu" style="border: 1px solid #CCC;">
                   <br />
                    <div class="form-group">
                      <label>User Type</label>

@@ -27,6 +27,11 @@
         .searchbar{
             display:none;
         }
+        div.scrollmenu {
+        width :100%;
+        overflow: auto;
+        white-space: nowrap;
+        }
 
     }
 
@@ -59,7 +64,7 @@
                     <div class="row1 col-md-12">
                         <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/insert_bank_details')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
-                        <div class="col-md-5" style="border: 1px solid #CCC;">
+                        <div class="col-md-5 scrollmenu" style="border: 1px solid #CCC;">
                         <br />
                         <div class="form-group">
                         <input type="hidden" id="productcategory" value="1"> 

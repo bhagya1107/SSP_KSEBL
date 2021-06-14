@@ -73,6 +73,34 @@
         margin-left: 0% !important;
     }
 
+    
+/* horizondal scroll bar */
+@media screen and (max-width: 767px){
+div.scrollmenu {
+ 
+ overflow: auto;
+ white-space: nowrap;
+}
+
+.tg-tickets {
+    width: 250%;
+    float: left;
+}
+
+.tg-ticket {
+    width: 250%;
+    float: left;
+    padding: 20px;
+    background: #f7f7f7;
+    /* km */
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+    border-color: rgba(223, 225, 229, 0);
+}
+}
+
+
+/* horizondal scroll bar end */
+
     /* #tendertabs{
         position:fixed;
         top: 0;
@@ -96,7 +124,7 @@
 </head>
 
 <main id="tg-main" class="tg-main tg-haslayout">
-    <section class="tg-main-section tg-haslayout">
+    <section class="tg-main-section tg-haslayout" >
 
         <div id="alltendercount" class="<?php echo $tab == 1 ? "" : "hide" ?>" style="text-align:center;">
         </div>
@@ -129,7 +157,7 @@
                 <h2>Tenders</h2>
             </div>
 
-            <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:100vh" id="innerscroll">
+            <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; overflow-x:hidden;height:100vh;" id="innerscroll">
                 <div id="overlay">
                     <div class="cv-spinner">
                         <span class="spinner"></span>
@@ -139,7 +167,7 @@
                     <div class="alert alert-danger" role="alert">
                         <?php echo api_error_message(); ?>
                     </div>
-                    <ul class="nav nav-tabs" id="tendertabs">
+                    <ul class="nav nav-tabs  " id="tendertabs">
 
                         <li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
 
@@ -154,7 +182,7 @@
                         <li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
                         <li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
                     </ul>
-                    <div class="tab-content">
+                    <div class="tab-content scrollmenu">
                         <input type="hidden" id="usertypeid" value="<?php echo $user_type; ?>">
 
                         <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
@@ -185,11 +213,11 @@
 
 
 
-                        <div id="menu1" class="tab-pane fade <?php echo $tab == 2 ? "in active" : "" ?>">
+                        <div id="menu1" class="tab-pane fade scrollmenu <?php echo $tab == 2 ? "in active" : "" ?>">
                             <div class="row" style="margin-top: 15px;">
-                                <div class="tg-tickets commonfilter" id="favid">
+                                <div class="tg-tits commonfilter" id="favid">
                                     <?php foreach ($getAllfavtender as $favten) { ?>
-                                        <div class="tg-ticket">
+                                        <div class="tg-ticket" >
 
                                             <time class="tg-matchdate"><small>Last date</small><br><?php
                                                                                                     $time = strtotime($favten['tenderdate']);
@@ -198,10 +226,11 @@
 
                                                         echo date('M ', $time); ?></span></time>
 
-                                            <div class="tg-matchdetail">
+                                            <div class="tg-matchdetail" >
                                                 <div class='hiddendate' hidden><?php echo $favten['tenderdate'] ?></div>
                                                 <span class="tg-theme-tag"><?php echo $favten['tenderno'] ?></span>
-                                                <h4> <?php echo $favten['tendername'] ?></h4>
+                                                <!-- <?php $message = str_replace ("\r\n", "<br>", $favten['tendername']  );?> -->
+                                                <h4 > <?php echo $favten['tendername'] ?></h4>
                                                 </h4>
                                                 <ul class="tg-matchmetadata">
                                                     <li>
@@ -238,7 +267,7 @@
                         <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
                    
-                    <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
+                    <div id="menu2" class="tab-pane fade scrollmenu <?php echo $tab == 3 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
                             <div class="tg-tickets commonfilter" id="appliedtickets">
                                 <?php foreach ($appliedtenderdetails as $appliedtenders) {

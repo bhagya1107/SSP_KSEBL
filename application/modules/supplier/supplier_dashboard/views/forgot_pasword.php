@@ -87,6 +87,28 @@
     margin-top: 20%;
 	display:block;
 }
+
+@media screen and (max-width: 767px){
+   
+        div.scrollmenu {
+        width :250px!important;
+        overflow: auto;
+        white-space: nowrap;
+        }
+        .login-block
+        {
+            width :250px!important;
+            background: #f7f7f7 !important; 
+        }
+        .fonts{
+            font-size: 18px!important;
+        }
+        .alignment {
+               margin-left: -40px!important;
+        }
+
+    }
+
 </style>
 <body class="fix-menu">
     <!-- Pre-loader start -->
@@ -108,9 +130,9 @@
     </div>
     <!-- Pre-loader end -->
 
-    <section class="login-block">
+    <section class="login-block ">
         <!-- Container-fluid starts -->
-        <div class="container">
+        <div class="container scrollmenu" >
             <div class="row">
                 <div class="col-sm-12"><br><br>
                     <!-- Authentication card start -->
@@ -122,7 +144,7 @@
                                         <?php $emp=$this->session->userdata('Employee');
                                         $uid=$this->session->userdata('uid'); 
                                         ?>
-                                            <h3 class="text-center">Change Password?</h3>
+                                            <h3 class="text-center fonts">Change Password?</h3>
                                         </div>
                                     </div><br><br> 
                                     <?php if($emp=='Employee') {?>
@@ -176,8 +198,8 @@
                             <?php 
                             }
                             ?>
-                                      <label >Enter your Registered Mobile No</label>
-                                        <input type="tel" name="mobile" id="mobile"  pattern="[6789][0-9]{9}" class="form-control" required="" placeholder="Registered Mobile No" autocomplete="off" style="width: 60%;">
+                                      <label >Enter Registered Mobile No</label>
+                                        <input type="tel" name="mobile" id="mobile"  pattern="[6789][0-9]{9}" class="form-control" required="" placeholder=" Mobile Number" autocomplete="off" style="width: 60%;">
                                         
                                         <span class="form-bar"></span>
                                     </div>
@@ -186,7 +208,7 @@
                                     <div class="row m-t-10 text-center">
                                    <div class="col-md-4 text-center " id="gtop" style="margin-left:33%" >
 										
-                                            <button type="submit" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">GET OTP</button>
+                                            <button type="submit" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center alignment">GET OTP</button>
                                             <!-- <button type="button" id="generateotp"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center">GET OTP</button><span style= "color:green;" id="paswordmess" class="hide">OTP sent to your registered mobile number</span> -->
                                     </div>
                               </form>

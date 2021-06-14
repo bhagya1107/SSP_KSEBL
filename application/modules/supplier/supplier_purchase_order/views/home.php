@@ -20,6 +20,31 @@
  <link href="<?php echo base_url();?>DataTables-1.10.21/css/dataTables.bootstrap4.css"
     rel="stylesheet">
  <style>
+        
+/* horizondal scroll bar */
+@media screen and (max-width: 767px){
+div.scrollmenu {
+ 
+ overflow: auto;
+ white-space: nowrap;
+}
+
+.tg-tickets {
+    width: 250%;
+    float: left;
+}
+
+.tg-ticket {
+    width: 250%;
+    float: left;
+    padding: 20px;
+    background: #f7f7f7;
+    /* km */
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+    border-color: rgba(223, 225, 229, 0);
+}
+}
+/* horizondal scroll bar end */
      .btn-primary {
          color: #fff;
          background-color: #1e315d;
@@ -101,7 +126,7 @@
              </div>
             
              <?php $user_type = $this->session->userdata('user_type'); ?>
-             <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">
+             <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; " id="innerscroll">
              
                 
                  <ul class="nav nav-tabs" id="purchasetabs">
@@ -123,7 +148,7 @@
              </div>
             
              <?php $user_type = $this->session->userdata('user_type'); ?>
-             <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; height:100vh;" id="innerscroll">
+             <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; height:50vh;" id="innerscroll">
              
                  <div id="overlay">
                      <div class="cv-spinner">
