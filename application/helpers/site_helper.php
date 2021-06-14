@@ -249,5 +249,9 @@ function getApi_url(){
   return getAfield('value','admin_globals',"WHERE name='api_baseurl'");
 }
 
+function apiarray_error_message()
+{
+  return "API Error has been Occured";    
+}
+
 /////////////////////////////////////////
- ?>

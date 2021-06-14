@@ -139,8 +139,10 @@ class Supplier_tenders extends SP_Controller
 					array_push($data['mytenderproducts'], $data['tender'][$key]);
 				}
 			}
+		} else {
+			$apiarray_error_message = apiarray_error_message('Tenders');
+			$this->session->set_flashdata('msg', $apiarray_error_message);
 		}
-
 		echo json_encode($data['mytenderproducts']);
 	}
 
