@@ -491,7 +491,7 @@ hr{
   
     <div class="tab-content mt-3">
         <div class="tab-chat tab-pane fade in active" id="messages" role="tabpanel">
-            <div class="vertical-menu vertical-menuss sidebar1" id="drag-1">
+            <div class="vertical-menu vertical-menuss sidebar1" id="drag-1"> 
             <?php   
                 $user_type=$this->session->userdata('user_type');
 

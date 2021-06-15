@@ -10,6 +10,13 @@
  overflow: auto;
  white-space: nowrap;
 }
+@media screen and (max-width: 767px){
+    .scrollmenuc {
+ 
+ overflow: auto;
+ white-space: nowrap;
+}
+}
 
 /* horizondal scroll bar end */
 
@@ -310,22 +317,22 @@
 <!--  -->
 
 
-<div id="myModal_capacity" class="modal fade" role="dialog">
+<div id="myModal_capacity" class="modal fade " role="dialog" >
     <div class="modal-dialog">
 
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content ">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Capacity Info</h4>
             </div>
-            <div class="modal-body">
-                <div class="modal-body mx-3">
-                    <div class="table-responsive">
+            <div class="modal-body" >
+                <div class="modal-body mx-3 scrollmenuc">
+                    <div class="table-responsive "  >
                         <table class="table table-bordered table-hover">
                             <tr>
                                 <td style="text-align:right">Processing Lead Time </td>
-                                <td><input type="text" class="form-control" value="20" /> </td>
+                                <td style="width:300px!important;"><input type="text" class="form-control" value="20" style="width:300px!important;" /> </td>
                             </tr>
                             <tr>
                                 <td style="text-align:right">Order Modifiers </td>
