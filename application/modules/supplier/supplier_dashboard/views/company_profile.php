@@ -6,12 +6,11 @@
 <style>  
 	@media screen and (max-width: 767px){
 			.one_line {
-        /* display:inline-block!important;
-        width: 70%!important;
-        text-align :center!important; */
-        
-        /* float :left!important; */
-        
+      
+        width: 50%!important;
+        display:table-cell;
+        padding:0 16px;
+      
               
                             
             }
@@ -218,12 +217,12 @@
 							</table> 
 							<div class="form-group one_line" >
                 <div class="col-md-offset-4 pull-right col-xs-offset-4">
-                  <a class="tg-btn pull-center editbutton" id="editprofilefn" style="" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>
+                  <a class="tg-btn pull-center editbutton" id="editprofilefn" style="cursor: pointer;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Edit</span></a>
                 </div>
                 <div >
-                <button type="reset" onclick="myFunction1()"  class="tg-btn pull-right savebutton hide one_line"   value="cancel" style="background-color: #ff6666!important; "  name="cancel" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                <button type="reset" onclick="myFunction1()"  class="tg-btn pull-right savebutton hide one_line"   value="cancel" style="background-color: #ff6666!important;  text-align: center!important; "  name="cancel" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
                 
-                <button type="submit" class="tg-btn pull-right savebutton hide one_line "   id="saveprofilefn"  style=" float: right;" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="if (confirm('Make sure your details are correct.')) commentDelete(1); return false"><span>Save</span></button>
+                <button type="submit" class="tg-btn pull-right savebutton hide one_line "   id="saveprofilefn"  style=" float: right;  text-align: center!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="if (confirm('Make sure your details are correct.')) commentDelete(1); return false"><span>Save</span></button>
                  
                   <!-- <a href="<?php echo base_url('supplier/dashboard/profile');?>" class="tg-btn pull-center savebutton hide"   id="" style="background-color: #ff6666!important; " data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></a> -->
 							</div>

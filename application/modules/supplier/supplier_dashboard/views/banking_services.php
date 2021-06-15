@@ -32,6 +32,13 @@
         overflow: auto;
         white-space: nowrap;
         }
+        .one_line {
+      
+      width: 50%!important;
+      display:table-cell;
+      padding:0 16px;
+                          
+          }
 
     }
 
@@ -139,8 +146,8 @@
                         </div>
                         
                         <div class="form-group">
-                            <button type="submit"  value="submit" name="submit" class="tg-btn "  id="subbtnn" onclick="myFunction()" ><span>Save</span></button>
-                            <button type="reset" value="cancel" id="cnbtnn" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                            <button type="submit"  value="submit" name="submit" class="tg-btn one_line"  id="subbtnn" onclick="myFunction()" ><span>Save</span></button>
+                            <button type="reset" value="cancel" id="cnbtnn" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right one_line" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
                         
                         </div>
                         </div>

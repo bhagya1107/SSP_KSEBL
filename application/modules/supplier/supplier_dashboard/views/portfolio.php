@@ -3,6 +3,17 @@
 <link href="<?php echo base_url(); ?>perfect-scrollbar/css/perfect-scrollbar" rel="stylesheet">
 <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css " rel="stylesheet">
 <style>
+
+/* horizondal scroll bar */
+.scrollmenu {
+ 
+ overflow: auto;
+ white-space: nowrap;
+}
+
+/* horizondal scroll bar end */
+
+
     /* width */
     ::-webkit-scrollbar {
         width: 10px;
@@ -248,7 +259,8 @@
                                                 <br> <br>
                                                 <h6>Added Services</h6>
                                             </div>
-                                            <div class="col-md-12">
+
+                                            <div class="col-md-12 scrollmenu ">
                                                 <table class="table  table-responsive" id="servicestable" style="width: 100%;font-size: inherit;">
                                                     <thead>
 

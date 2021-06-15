@@ -50,6 +50,14 @@ div.scrollmenu {
  overflow: auto;
  white-space: nowrap;
 }
+.one_line {
+      
+      width: 50%!important;
+      display:table-cell;
+      padding:0 16px;
+      /* text-align:center; */
+                          
+          }
 }
 </style>
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;" />
@@ -133,8 +141,8 @@ div.scrollmenu {
                      <!-- <input type="text" id="id" name="id"  style="width: 10%; align:left;" minlength="3" class="form-control" /> -->
                    </div>
                    <div class="form-group">
-                     <button type="submit" class="tg-btn pull-center" id="save_companyprofile"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="save_companyprofile(event);" ><span>Save</span></button>
-                     <button type="reset" onclick="myFunction1()" value="cancel" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                     <button type="submit" class="tg-btn pull-center one_line" id="save_companyprofile"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="save_companyprofile(event);" ><span>Save</span></button>
+                     <button type="reset" onclick="myFunction1()" value="cancel" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right one_line" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
                         
                       <!-- <a href="<?php echo base_url('supplier/dashboard/manage_user')?>" class="tg-btn pull-center " style=" background-color: #ff6666!important; float:right;" id="e"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></a> -->
                    </div>
