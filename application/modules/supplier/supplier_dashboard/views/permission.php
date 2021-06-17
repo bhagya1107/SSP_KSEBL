@@ -42,7 +42,7 @@
 
 				<div class="col-md-9 col-sm-8 col-xs-12 pull-right"> -->
 
-						<div class="">
+						<div class="" style="cursor: default!important;">
   
                 <?php 
                   $msg=$this->session->flashdata('msg'); 
@@ -133,7 +133,8 @@
         url:"<?php echo base_url('supplier/dashboard/Supplier_dashboard/getdetails')?>",  
          dataType: 'json',
         data:{
-          id: $('#s').val()
+          id: $('#s').val(),
+          <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
         },
         success:function(result)
         {

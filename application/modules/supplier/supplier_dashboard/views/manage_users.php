@@ -47,8 +47,8 @@
 @media screen and (max-width: 767px){
 div.scrollmenu {
  width :100%;
- overflow: auto;
- white-space: nowrap;
+ /* overflow: auto;
+ white-space: nowrap; */
 }
 .one_line {
       
@@ -142,7 +142,7 @@ div.scrollmenu {
                    </div>
                    <div class="form-group">
                      <button type="submit" class="tg-btn pull-center one_line" id="save_companyprofile"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" onclick="save_companyprofile(event);" ><span>Save</span></button>
-                     <button type="reset" onclick="myFunction1()" value="cancel" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right one_line" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                     <button type="reset" onclick="myFunction1()" value="cancel" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right one_line" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Clear</span></button>
                         
                       <!-- <a href="<?php echo base_url('supplier/dashboard/manage_user')?>" class="tg-btn pull-center " style=" background-color: #ff6666!important; float:right;" id="e"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></a> -->
                    </div>

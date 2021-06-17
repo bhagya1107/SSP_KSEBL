@@ -5,7 +5,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 /* Track */
@@ -29,8 +29,8 @@
         }
         div.scrollmenu {
         width :100%;
-        overflow: auto;
-        white-space: nowrap;
+        /* overflow: auto;
+        white-space: nowrap; */
         }
         .one_line {
       
@@ -71,7 +71,7 @@
                     <div class="row1 col-md-12">
                         <form method="post" id="p" enctype="multipart/form-data" action="<?php echo base_url('supplier/dashboard/insert_bank_details')?>" >
                                 <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
-                        <div class="col-md-5 scrollmenu" style="border: 1px solid #CCC;">
+                        <div class="col-md-5 scrollmenu" style="border: 1px solid #CCC;height:600px!important;">
                         <br />
                         <div class="form-group">
                         <input type="hidden" id="productcategory" value="1"> 
@@ -147,7 +147,7 @@
                         
                         <div class="form-group">
                             <button type="submit"  value="submit" name="submit" class="tg-btn one_line"  id="subbtnn" onclick="myFunction()" ><span>Save</span></button>
-                            <button type="reset" value="cancel" id="cnbtnn" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right one_line" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Cancel</span></button>
+                            <button type="reset" value="cancel" id="cnbtnn" style="background-color: #ff6666!important; "  name="cancel" class="tg-btn pull-right one_line" data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987"><span>Clear</span></button>
                         
                         </div>
                         </div>
