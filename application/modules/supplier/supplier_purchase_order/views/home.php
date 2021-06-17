@@ -2,49 +2,48 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
 
-  <script src="<?= base_url() ?>assets/supplier_portal/js/vendor/jquery-library.js"></script>
+ <script src="<?= base_url() ?>assets/supplier_portal/js/vendor/jquery-library.js"></script>
  <script src="<?= base_url() ?>assets/supplier_portal/js/vendor/bootstrap.min.js"></script>
  <link rel="stylesheet" href="collapsible.css">
  <script type="text/javascript" src="jquery.js"></script>
  <script type="text/javascript" src="collapsible.js"></script>
- <script src="<?php echo base_url();?>DataTables-1.10.21/js/jquery.dataTables.js"></script>
-<script src="<?php echo base_url();?>DataTables-1.10.21/js/dataTables.bootstrap4.js"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
-</script>
+ <script src="<?php echo base_url(); ?>DataTables-1.10.21/js/jquery.dataTables.js"></script>
+ <script src="<?php echo base_url(); ?>DataTables-1.10.21/js/dataTables.bootstrap4.js"></script>
+ <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+ </script>
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets\supplier\styles\supplierloader.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="path/to/material-design-iconic-font/css/material-design-iconic-font.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
  <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css " rel="stylesheet">
- <link href="<?php echo base_url();?>DataTables-1.10.21/css/dataTables.bootstrap4.css"
-    rel="stylesheet">
+ <link href="<?php echo base_url(); ?>DataTables-1.10.21/css/dataTables.bootstrap4.css" rel="stylesheet">
  <style>
-        
-/* horizondal scroll bar */
-@media screen and (max-width: 767px){
-div.scrollmenu {
- 
- overflow: auto;
- white-space: nowrap;
-}
+     /* horizondal scroll bar */
+     @media screen and (max-width: 767px) {
+         div.scrollmenu {
 
-.tg-tickets {
-    width: 250%;
-    float: left;
-}
+             overflow: auto;
+             white-space: nowrap;
+         }
 
-.tg-ticket {
-    width: 250%;
-    float: left;
-    padding: 20px;
-    background: #f7f7f7;
-    /* km */
-    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
-    border-color: rgba(223, 225, 229, 0);
-}
-}
-/* horizondal scroll bar end */
+         .tg-tickets {
+             width: 250%;
+             float: left;
+         }
+
+         .tg-ticket {
+             width: 250%;
+             float: left;
+             padding: 20px;
+             background: #f7f7f7;
+             /* km */
+             box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+             border-color: rgba(223, 225, 229, 0);
+         }
+     }
+
+     /* horizondal scroll bar end */
      .btn-primary {
          color: #fff;
          background-color: #1e315d;
@@ -94,100 +93,103 @@ div.scrollmenu {
 
      .tg-btn {
          left: 45%;
-     }   
-     .tg-tickets h4{
-         width:180%;
      }
+
+     .tg-tickets h4 {
+         width: 180%;
+     }
+
      .tg-ticket h4 {
-        width: 180%;
+         width: 180%;
      }
+
      /* #tg-main{
         margin-top: 12%;
      }  */
  </style>
 
  <main id="tg-main" class="tg-main tg-haslayout">
-     <section class="tg-main-section tg-haslayout"> 
-     <?php if($purchaseorder =="") { ?>
-  <div class="alert alert-danger" role="alert">
-  <?php echo api_error_message(); ?>
-  <!-- Connection to kseb.his.in is Interupted -->
-</div>
-         <div id="allpurchasecount" style="text-align:center;">
-         </div>
-         <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b></b></span>
-         </div>
-        
-         <div id="workpurchasecount" class="hide" style="text-align:center;">
-         </div>
-         <div class="container">
-             <div class="tg-section-name">
-                 <h2>Purchase Orders</h2>
+     <section class="tg-main-section tg-haslayout">
+         <?php if ($purchaseorder == "") { ?>
+             <div class="alert alert-danger" role="alert">
+                 <?php echo api_error_message(); ?>
+                 <!-- Connection to kseb.his.in is Interupted -->
              </div>
-            
-             <?php $user_type = $this->session->userdata('user_type'); ?>
-             <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; " id="innerscroll">
-             
-                
-                 <ul class="nav nav-tabs" id="purchasetabs">
-                     <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
-                     <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
-                     <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
-                 </ul> <?php } else {?>
+             <div id="allpurchasecount" style="text-align:center;">
+             </div>
+             <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b></b></span>
+             </div>
 
-                    <div id="allpurchasecount" style="text-align:center;">
-         </div>
-         <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:0</b></span>
-         </div>
-        
-         <div id="workpurchasecount" class="hide" style="text-align:center;">
-         </div>
-         <div class="container">
-             <div class="tg-section-name">
-                 <h2>Purchase Orders</h2>
+             <div id="workpurchasecount" class="hide" style="text-align:center;">
              </div>
-            
-             <?php $user_type = $this->session->userdata('user_type'); ?>
-             <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; height:50vh;" id="innerscroll">
-             
-                 <div id="overlay">
-                     <div class="cv-spinner">
-                         <span class="spinner"></span>
-                     </div>
+             <div class="container">
+                 <div class="tg-section-name">
+                     <h2>Purchase Orders</h2>
                  </div>
-                
-                 <ul class="nav nav-tabs" id="purchasetabs">
-                     <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
-                     <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
-                     <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
-                 </ul>
+
+                 <?php $user_type = $this->session->userdata('user_type'); ?>
+                 <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; " id="innerscroll">
 
 
-                 <div class="tab-content">
-                     <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
-                         <div class="row">
-                             <div class="tg-tickets">
-                                 <div class="commonfilter" id="allpurchasedetails"></div>
+                     <ul class="nav nav-tabs" id="purchasetabs">
+                         <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
+                         <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
+                         <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
+                     </ul> <?php } else { ?>
 
+                     <div id="allpurchasecount" style="text-align:center;">
+                     </div>
+                     <div id="acceptedpurchasecount" class="hide" style="text-align:center;"><span><b>Total Accepted Purchase Orders:0</b></span>
+                     </div>
+
+                     <div id="workpurchasecount" class="hide" style="text-align:center;">
+                     </div>
+                     <div class="container">
+                         <div class="tg-section-name">
+                             <h2>Purchase Orders</h2>
+                         </div>
+
+                         <?php $user_type = $this->session->userdata('user_type'); ?>
+                         <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; height:50vh;" id="innerscroll">
+
+                             <div id="overlay">
+                                 <div class="cv-spinner">
+                                     <span class="spinner"></span>
+                                 </div>
                              </div>
 
+                             <ul class="nav nav-tabs" id="purchasetabs">
+                                 <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
+                                 <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
+                                 <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
+                             </ul>
 
-                         </div>
-                     </div>
 
-                     <div id="workhome" class="tab-pane fade  <?php echo $user_type == 2 ? "in active" : "" ?>">
-                         <div class="row">
-                         <div class="tg-tickets">
-                             <div class="tg-tickets commonfilter" id="worktickets">
-                               
-                             </div>
-                         </div>
-                     </div>
-                     </div>
+                             <div class="tab-content">
+                                 <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
+                                     <div class="row">
+                                         <div class="tg-tickets">
+                                             <div class="commonfilter" id="allpurchasedetails"></div>
 
-                     <div id="menu1" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>">
-                         <div class="row">
-                             <!-- <div class="tg-tickets commonfilter" id="acceptedtickets">
+                                         </div>
+
+
+                                     </div>
+                                 </div>
+
+                                 <div id="workhome" class="tab-pane fade  <?php echo $user_type == 2 ? "in active" : "" ?>">
+                                     <div class="row">
+                                         <div class="tg-tickets">
+                                             <div class="tg-tickets commonfilter" id="worktickets">
+
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+
+                                 <div id="menu1" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>">
+                                     <div class="row">
+                                         <!-- <div class="tg-tickets commonfilter" id="acceptedtickets">
                                  <div class="tg-ticket">
                                      <time class="tg-matchdate" datetime="2016-05-03">26<span>APR</span></time>
                                      <div class="tg-matchdetail">
@@ -220,7 +222,7 @@ div.scrollmenu {
                                              <div class="table-responsive">
                                                  <div class="tg-ticket" style="color:black;background-color:white;">
                                                      <div class="tg-matchdetail">
-                                                         <span class="tg-theme-tag">Purchase Date:<?php echo  $dates=date_formate('27-05-2020');?></span>
+                                                         <span class="tg-theme-tag">Purchase Date:<?php echo  $dates = date_formate('27-05-2020'); ?></span>
                                                          <h4>OrderNo:PCO88944556</h4>
                                                          <ul class="tg-matchmetadata">
                                                              <li>
@@ -254,7 +256,7 @@ div.scrollmenu {
                                                                  <td>1</td>
                                                                  <td>PCO009877655</td>
                                                                  <td>BULB</td>
-                                                                 <td><?php echo  $dates=date_formate('27-05-2020');?></td>
+                                                                 <td><?php echo  $dates = date_formate('27-05-2020'); ?></td>
 
 
                                                                  <td style="width: 40%;">
@@ -270,7 +272,7 @@ div.scrollmenu {
                                                                  <td>2</td>
                                                                  <td>PCO009877655</td>
                                                                  <td>LED</td>
-                                                                 <td><?php echo  $dates=date_formate('27-05-2020');?></td>
+                                                                 <td><?php echo  $dates = date_formate('27-05-2020'); ?></td>
 
                                                                  <td style="width:370px;">
                                                                      <button type="button" class="btn" data-toggle="modal" data-target="#dispatch" style="width:20%;color: #fff;background-color: orange; border-color: orange;">PDI</button>
@@ -298,7 +300,7 @@ div.scrollmenu {
                                  </div>
                              </div> -->
 
-                             <!-- <div class="tg-ticket">
+                                         <!-- <div class="tg-ticket">
                                  <time class="tg-matchdate" datetime="2016-05-03">27<span>APR</span></time>
                                  <div class="tg-matchdetail">
                                      <span class="tg-theme-tag">Order No : PO-65-1004#00002</span>
@@ -329,7 +331,7 @@ div.scrollmenu {
                                          <div class="table-responsive">
                                              <div class="tg-ticket" style="color:black;background-color:white;">
                                                  <div class="tg-matchdetail">
-                                                     <span class="tg-theme-tag">Purchase Date:<?php echo  $dates=date_formate('02-12-2020');?></span>
+                                                     <span class="tg-theme-tag">Purchase Date:<?php echo  $dates = date_formate('02-12-2020'); ?></span>
                                                      <h4>OrderNo:#45666666</h4>
                                                      <ul class="tg-matchmetadata">
                                                          <li>
@@ -364,7 +366,7 @@ div.scrollmenu {
                                                              <td>1</td>
                                                              <td>PCO87654433</td>
                                                              <td>TENDER NAME2</td>
-                                                             <td><?php echo  $dates=date_formate('08-12-2020');?></td>
+                                                             <td><?php echo  $dates = date_formate('08-12-2020'); ?></td>
 
                                                              <td style="width:370px;">
                                                                  <button class="btn" data-toggle="modal" data-target="#myModal_vmi" style="width:20%;color: #fff;background-color: green; border-color: green;">VMI</button>
@@ -378,7 +380,7 @@ div.scrollmenu {
                                                              <td>1</td>
                                                              <td>PCO87654433</td>
                                                              <td>TENDER NAME2</td>
-                                                             <td><?php echo  $dates=date_formate('09-12-2020');?></td>
+                                                             <td><?php echo  $dates = date_formate('09-12-2020'); ?></td>
 
                                                              <td style="width:370px;">
                                                                  <button data-toggle="modal" class="btn" data-target="#dispatch" style="width:20%;color: #fff;background-color: orange; border-color: orange;">PDI</button> <button class="btn" data-toggle="modal" data-target="#mdcc" style="color: #fff;background-color: red; border-color: red;">MDCC</button> <button class="btn" data-toggle="modal" data-target="#shipment1" style="color: #fff;background-color: blue; border-color: blue;">Delivery</button>
@@ -399,12 +401,12 @@ div.scrollmenu {
                                      </div>
                                  </div>
                              </div> -->
+                                     </div>
+                                 </div>
+
+                             </div>
                          </div>
                      </div>
-
-                 </div>
-             </div>
-         </div>
 
      </section>
  </main>
@@ -432,7 +434,7 @@ div.scrollmenu {
 
                      <button type="button" class="btn btn-primary">View & Download Pdf</button>
 
-                     <button type="button" class="btn btn-success loa-view" >Letter of Acceptance</button>
+                     <button type="button" class="btn btn-success loa-view">Letter of Acceptance</button>
 
                  </div>
 
@@ -459,11 +461,11 @@ div.scrollmenu {
                      </tr>
                      <tr>
                          <td> Tender Date:</td>
-                         <td><?php echo  $dates=date_formate('18-03-2020');?></td>
+                         <td><?php echo  $dates = date_formate('18-03-2020'); ?></td>
                      </tr>
                      <tr>
                          <td>Last Date of acceptance:</td>
-                         <td><?php echo  $dates=date_formate('01-01-2021');?></td>
+                         <td><?php echo  $dates = date_formate('01-01-2021'); ?></td>
                      </tr>
                      <tr>
                          <td><input type="checkbox">&nbsp;&nbsp;<a href="#">Agree to the terms & conditions</a></td>
@@ -540,7 +542,7 @@ div.scrollmenu {
                              <td>1</td>
                              <td>PC088944556</td>
                              <td>Tender name1</td>
-                             <td><?php echo  $dates=date_formate('27-11-2020');?></td>  
+                             <td><?php echo  $dates = date_formate('27-11-2020'); ?></td>
                              <td>
                                  <div class="dropdown">
                                      <button onclick="myFunction()" class="pull-center dropbtn">Action</button>
@@ -635,7 +637,7 @@ div.scrollmenu {
                  <div class="tg-ticket">
 
                      <h4 class="modal-title"><span id="inspect"></span></h4>
-                     <p><b>Purchase Date</b>:<?php echo  $dates=date_formate('11-02-2020');?><br>
+                     <p><b>Purchase Date</b>:<?php echo  $dates = date_formate('11-02-2020'); ?><br>
                          <b>Order No</b>:#1145677<br>
                          <b>Destination</b>:TVM<br>
                          <b>Status</b>:Estimated time delivery on time<br>
@@ -1003,7 +1005,7 @@ div.scrollmenu {
                              </tr>
                          </thead>
 
-                        
+
 
                      </table>
 
@@ -1041,19 +1043,19 @@ div.scrollmenu {
              <div class="form-group row">
                  <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o To:</label>
                  <div class="col-md-6 col-sm-6" id="ques_group">
-                     <input type="text" name="serialto"  class="form-control" id="serialto" placeholder="">
+                     <input type="text" name="serialto" class="form-control" id="serialto" placeholder="">
                  </div>
              </div>
              <div class="form-group row">
                  <label for="subject" class="col-md-3 col-sm-3 control-label">Quantity:</label>
                  <div class="col-md-6 col-sm-6" id="ques_group">
-                     <input type="text"  name="quantitypdi" class="form-control" id="quantitypdi" placeholder="">
+                     <input type="text" name="quantitypdi" class="form-control" id="quantitypdi" placeholder="">
                  </div>
              </div>
              <div class="form-group row">
                  <label for="subject" class="col-md-3 col-sm-3 control-label">Visit Request Date:</label>
                  <div class="col-md-6 col-sm-6" id="ques_group">
-                     <input type="date" name="visitdate"  class="form-control" id="visitdate" placeholder="">
+                     <input type="date" name="visitdate" class="form-control" id="visitdate" placeholder="">
                  </div>
              </div>
 
@@ -1064,7 +1066,7 @@ div.scrollmenu {
                  </div>
              </div>
              <div class="modal-footer">
-                 <button type="button" class="btn btn-primary"  onclick="requestdata()" data-dismiss="modal">Request</button>
+                 <button type="button" class="btn btn-primary" onclick="requestdata()" data-dismiss="modal">Request</button>
 
                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
              </div>
@@ -1168,13 +1170,13 @@ div.scrollmenu {
          <div class="modal-content">
 
              <!-- Modal Header -->
-             <!-- <div class="modal-header">
+ <!-- <div class="modal-header">
                  <h4 class="modal-title" id="adding">Add Schedule</h4>
                  <button type="button" class="close" data-dismiss="modal">&times;</button>
              </div> -->
 
-             <!-- Modal body -->
-             <!-- <div class="modal-body">
+ <!-- Modal body -->
+ <!-- <div class="modal-body">
                  <form id="questions_form">
                      <div class="form-group row">
                          <label for="subject" class="col-md-2 col-sm-3 control-label">Product</label>
@@ -1200,14 +1202,14 @@ div.scrollmenu {
                  </form>
              </div> -->
 
-             <!-- Modal footer -->
-             <!-- <div class="modal-footer">
+ <!-- Modal footer -->
+ <!-- <div class="modal-footer">
 
                  <button type="button" class="btn btn-primary" onclick="">Save</button>
                  <button type="button" style="margin-right: 252px;" class="btn btn-danger" data-dismiss="modal">Close</button>
              </div> -->
 
-         <!-- </div>
+ <!-- </div>
      </div>
  </div> -->
 
@@ -1316,7 +1318,7 @@ div.scrollmenu {
      </div>
  </div>
 
-<?php } ?>
+ <?php } ?>
 
  <!-------------------------Split shipment End---------------------------------------------------->
 
@@ -1490,12 +1492,12 @@ toggle between hiding and showing the dropdown content */
 
  <script>
      function mypurchasedetails(purchasedetail) {
-        
+
          var purchaseopendetails = purchasedetail['purchase basic details'];
          var purchasevendordetails = purchasedetail.vendorname;
          var purchasematerialdetails = purchasedetail.prc_purchase_order_item_dtl;
          var purchaseSchemedetails = purchasedetail.purchaseschemedetails;
-         
+
          var html = "<div id='basicpurchasevendordetails'>";
 
          html += "<b><h5 style='color:orange;'>PURCHASE VENDOR DETAILS</h5><b>" +
@@ -1511,7 +1513,7 @@ toggle between hiding and showing the dropdown content */
          purchaseopendetails.forEach(function(item, index) {
 
              html += "<b><h5 style='color:orange;'>PURCHASE BASIC DETAILS</h5><b>" +
-                 " <label>Purchase Order Id:" +purchasedetail.purchaseorderId + "</label>" +
+                 " <label>Purchase Order Id:" + purchasedetail.purchaseorderId + "</label>" +
                  "<label>Purchase Price Type:" + purchasedetail.purchase_price_type + "</label>" +
                  "<label>Purchase Order Type:" + purchasedetail.purchase_order_type + "</label>" +
                  "<label>Purchase Area Type:" + purchasedetail.purchase_area_type + "</label>" +
@@ -1524,7 +1526,7 @@ toggle between hiding and showing the dropdown content */
                  "<label>Total Price:" + item['total price'] + "</label>" +
                  "<label>Offer Valid Upto:" + item['offervalidupto'] + "</label>" +
                  "<label>Start Date:" + item['startdate'] + "</label>"
-                 "<label>End Date:" + item['enddate'] + "</label>";
+             "<label>End Date:" + item['enddate'] + "</label>";
 
          })
 
@@ -1532,17 +1534,17 @@ toggle between hiding and showing the dropdown content */
 
          html += "<div id='basicpurchaseschemedetails'>";
          purchaseSchemedetails.forEach(function(item, index) {
-       
-         html += "<b><h5 style='color:orange;'>PURCHASE SCHEME DETAILS</h5><b>" +
-             " <label>Scheme Code:" + item.schemecode + "</label>" +
-             " <label>Scheme Name:" + item.schemename + "</label>";
 
-         html += "</div>";
+             html += "<b><h5 style='color:orange;'>PURCHASE SCHEME DETAILS</h5><b>" +
+                 " <label>Scheme Code:" + item.schemecode + "</label>" +
+                 " <label>Scheme Name:" + item.schemename + "</label>";
 
-        })
+             html += "</div>";
+
+         })
 
          console.log(html);
-         $('#modalpurchase').html(html);
+          $('#modalpurchase').html(html);
      }
 
 
@@ -1560,7 +1562,7 @@ toggle between hiding and showing the dropdown content */
      }, 10000000);
 
      function showcountnavbar() {
-        
+
          $(".nav-tabs a").click(function() {
              var activetab = $(this).parent().attr('id');
              //allpurchaseorder acceptedpurchaseorder workorders
@@ -1600,31 +1602,25 @@ toggle between hiding and showing the dropdown content */
      }
 
      function filterpurchasedata(tabcontentid, value) {
-         console.log(value);
-         
-        var activetab = $("#purchasetabs li.active").attr('id');
+
+         var activetab = $("#purchasetabs li.active").attr('id');
          $(".commonfilter div[class!=tg-btn]").filter(function() {
-             var datetime1 = $(this).attr('datetime');
-             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+             $(this).toggle($(this).text().indexOf(value) > -1)
          });
 
          $('.hiddendate').addClass('hide');
          var spanid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchaseorder'
-         var purchaselength = $("#" + tabcontentid + " .tg-ticket [style!='display: none;']").length;
-         //var tenderlength = $("#"  + tabcontentid + " .tg-ticket[style!='display: none;']").length;
+         var purchaselength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
+         var purchasescountdiv = (activetab == 'favtender') ? 'acceptedpurchasecount' : (activetab == 'workorders') ? 'workorders' : 'allpurchasecount'
 
-         console.log("lmnb");
-         console.log(purchaselengths);
-        var purchasescountdiv = (activetab == 'favtender') ? 'acceptedpurchasecount' : (activetab == 'workorders') ? 'workorders' : 'allpurchasecount'
-
-         if (purchaselengths == 0) {
+         if (purchaselength == 0) {
              $('.' + spanid).removeClass('hide');
              span1 = "<span><b>No Purchase Orders Available </b></span>";
-            $("#" + purchasescountdiv).html(span1);
+             $("#" + purchasescountdiv).html(span1);
          } else {
              $('.' + spanid).addClass('hide');
-             span1 = "<span><b>Total Tenders:" + purchaselengths +  "</b></span>";
-            $("#" + purchasescountdiv).html(span1);
+             span1 = "<span><b>Total PurchaseOrders:" + purchaselength + "</b></span>";
+             $("#" + purchasescountdiv).html(span1);
          }
 
      }
@@ -1632,13 +1628,13 @@ toggle between hiding and showing the dropdown content */
 
      $("#purchaseordernum").on("change", function() {
 
-var activetab = $("#purchasetabs li.active").attr('id');
-var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
-var value = $(this).val();
-datefilters();
-filterpurchasedata(tabcontentid, value);
+         var activetab = $("#purchasetabs li.active").attr('id');
+         var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
+         var value = $(this).val();
+         datefilters();
+         filterpurchasedata(tabcontentid, value);
 
-});
+     });
 
      $(".filterclass").on("change", function() {
 
@@ -1647,7 +1643,7 @@ filterpurchasedata(tabcontentid, value);
          //  var value = $(this).val();
          datefilters();
          datefilterswork();
-          filterpurchasedata(tabcontentid, value);
+         filterpurchasedata(tabcontentid, value);
      });
 
      function datefilters() {
@@ -1698,7 +1694,7 @@ filterpurchasedata(tabcontentid, value);
              buildpurchaseorderswork(results);
 
          } else {
-            buildpurchaseorderswork(datas);
+             buildpurchaseorderswork(datas);
          }
      }
 
@@ -1721,20 +1717,20 @@ filterpurchasedata(tabcontentid, value);
                  $("#overlay").fadeIn();
              },
              success: function(result) {
-                console.log(typeof result);
-                if(result!="null"){
-                 datas = JSON.parse(result);
-                 var count = datas.length;
-                 if (count > 0) {
-                     span1 = "<span><b>Total Purchase Orders:" + count + "</b></span>";
-                 } else {
-                     span1 = "<span>No Purchase To Display </span>";
-                 }
-                 $('#allpurchasecount').html(span1);
-                 buildpurchaseorders(datas);
+                 console.log(typeof result);
+                 if (result != "null") {
+                     datas = JSON.parse(result);
+                     var count = datas.length;
+                     if (count > 0) {
+                         span1 = "<span><b>Total Purchase Orders:" + count + "</b></span>";
+                     } else {
+                         span1 = "<span>No Purchase To Display </span>";
+                     }
+                     $('#allpurchasecount').html(span1);
+                     buildpurchaseorders(datas);
                  }
              },
-             
+
              complete: function() {
                  $("#overlay").fadeOut();
              },
@@ -1746,20 +1742,20 @@ filterpurchasedata(tabcontentid, value);
      function buildpurchaseorders(datas) {
          html = "";
          $.each(datas, function(i, data) {
-        
-             $.each(data['tender details'], function(i, datadetail) { 
-             html += "<div class='tg-ticket'><time class='tg-matchdate' >";
-             var date1 = new Date(data.purchase_order_date);
-             var tenderTitle = (datadetail.tender_title != null) ? datadetail.tender_title : '';
-             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-            // html +=  "<span></span></time>";
-             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data['purchase no'] + "</span><h4> " + tenderTitle + "</h4></h4>";
-             html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
-             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category+ "</address></li></ul></div>";
 
-             html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
+             $.each(data['tender details'], function(i, datadetail) {
+                 html += "<div class='tg-ticket'><time class='tg-matchdate' >";
+                 var date1 = new Date(data.purchase_order_date);
+                 var tenderTitle = (datadetail.tender_title != null) ? datadetail.tender_title : '';
+                 html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
+                 // html +=  "<span></span></time>";
+                 html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data['purchase no'] + "</span><h4> " + tenderTitle + "</h4></h4>";
+                 html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
+                 html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + "</address></li></ul></div>";
 
-             html += "</div></div>";
+                 html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
+
+                 html += "</div></div>";
              });
 
          });
@@ -1769,7 +1765,7 @@ filterpurchasedata(tabcontentid, value);
      function buildAcceptedpurchaseorders(datas) {
          html = "";
          $.each(datas, function(i, data) {
-         
+
              html += "<div class='tg-ticket'><time class='tg-matchdate' >";
              var date1 = new Date(data.purchase_order_date);
              var tenderTitle = (data.prc_tender != null) ? data.prc_tender.tender_title : '';
@@ -1790,120 +1786,120 @@ filterpurchasedata(tabcontentid, value);
 
      function LoadAllWorkOrders() {
 
-$.ajax({
-    type: "POST",
-    url: '<?php echo base_url() ?>supplier/purchase_order/getAllpurchasesApi',
-    data: {
-        "purchaseid": 8,
-    },
-    type: 'POST',
-    // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
-    // processData: false, // NEEDED, DON'T OMIT THIS
-    beforeSend: function() {
-        // setting a timeout
-        $("#overlay").fadeIn();
-    },
-    success: function(result) {
-if(result!="null"){
-        datas = JSON.parse(result);
-        var count = datas.length;
-        if (count > 0) {
-            span1 = "<span><b>Total Work Orders:" + count + "</b></span>";
-        } else {
-            span1 = "<span>No Works To Display </span>";
-        }
-        $('#workpurchasecount').html(span1);
-        buildpurchaseorderswork(datas);
-}
-    },
-    complete: function() {
-        $("#overlay").fadeOut();
-    },
-});
+         $.ajax({
+             type: "POST",
+             url: '<?php echo base_url() ?>supplier/purchase_order/getAllpurchasesApi',
+             data: {
+                 "purchaseid": 8,
+             },
+             type: 'POST',
+             // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+             // processData: false, // NEEDED, DON'T OMIT THIS
+             beforeSend: function() {
+                 // setting a timeout
+                 $("#overlay").fadeIn();
+             },
+             success: function(result) {
+                 if (result != "null") {
+                     datas = JSON.parse(result);
+                     var count = datas.length;
+                     if (count > 0) {
+                         span1 = "<span><b>Total Work Orders:" + count + "</b></span>";
+                     } else {
+                         span1 = "<span>No Works To Display </span>";
+                     }
+                     $('#workpurchasecount').html(span1);
+                     buildpurchaseorderswork(datas);
+                 }
+             },
+             complete: function() {
+                 $("#overlay").fadeOut();
+             },
+         });
 
 
-}
+     }
 
 
-dispatch_table = $('#predispatchlist').DataTable({
-   
-   
-    'ajax': {
-        url: '<?php echo site_url("supplier/purchase_order/getpredispatchData");?>', 
-        
-         "scrollX": true,
-        type: 'POST',
-        "data": function(d) {
-            d.<?=$this->security->get_csrf_token_name();?> =
-                "<?=$this->security->get_csrf_hash()?>";
-
-           // d.districtid = distval;
-            //d.blockid = block;
-           // d.cdsid = cds;
-            //d.adsid = ads;
-           // d.typeid = typeid;
-        }
-    },
+     dispatch_table = $('#predispatchlist').DataTable({
 
 
-    "buttons": [],
-    "columns": [{
-             "data": "slno"
-            
-        },
-         {
-            "data": "date"
-        },
-        
-        {
-            "data": "status"
-        },
-         {
-            "data": "button"
-        },
-         
-        
-        
-          
-        
-    ],
+         'ajax': {
+             url: '<?php echo site_url("supplier/purchase_order/getpredispatchData"); ?>',
+
+             "scrollX": true,
+             type: 'POST',
+             "data": function(d) {
+                 d.<?= $this->security->get_csrf_token_name(); ?> =
+                     "<?= $this->security->get_csrf_hash() ?>";
+
+                 // d.districtid = distval;
+                 //d.blockid = block;
+                 // d.cdsid = cds;
+                 //d.adsid = ads;
+                 // d.typeid = typeid;
+             }
+         },
 
 
-    "drawCallback": function(settings) {
-        console.log('ggg');
-        $(".ajaxLoader").css("display", "none");
-    },
+         "buttons": [],
+         "columns": [{
+                 "data": "slno"
 
-});
+             },
+             {
+                 "data": "date"
+             },
+
+             {
+                 "data": "status"
+             },
+             {
+                 "data": "button"
+             },
+
+
+
+
+
+         ],
+
+
+         "drawCallback": function(settings) {
+             console.log('ggg');
+             $(".ajaxLoader").css("display", "none");
+         },
+
+     });
 
 
 
 
      function buildpurchaseorderswork(datas) {
-        html = "";
+         html = "";
 
          $.each(datas, function(i, data) {
-        
-             $.each(data['tender details'], function(i, datadetail) { 
-             html += "<div class='tg-ticket'><time class='tg-matchdate' >";
-             var date1 = new Date(data.purchase_order_date);
-             var tenderTitle = (datadetail.tender_title != null) ? datadetail.tender_title : '';
-             html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
-             html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data['purchase no'] + "</span><h4> " + tenderTitle + "</h4></h4>";
-             html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
-             html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
 
-             html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
+             $.each(data['tender details'], function(i, datadetail) {
+                 html += "<div class='tg-ticket'><time class='tg-matchdate' >";
+                 var date1 = new Date(data.purchase_order_date);
+                 var tenderTitle = (datadetail.tender_title != null) ? datadetail.tender_title : '';
+                 html += date1.getDate() + "<span>" + myFunction(date1.getMonth()) + "</span></span></time>";
+                 html += "<div class='tg-matchdetail'><span class='tg-theme-tag'>" + data['purchase no'] + "</span><h4> " + tenderTitle + "</h4></h4>";
+                 html += "<div class='hiddendate' hidden >" + data.vendorname + "</div>";
+                 html += "<ul class='tg-matchmetadata'><li><address>PURCHASE CATEGORY:" + data.purchase_order_category + " </address></li></ul></div>";
 
-             html += "</div></div>";
+                 html += "<div class='tg-btn' onclick='mypurchasedetails(" + JSON.stringify(data) + ")' data-toggle='modal' data-target='#myModalpurchase' ><a class='modal-view pullright' style='color:white;'>View</a>";
+
+                 html += "</div></div>";
              });
 
          });
-         
+
          $('#worktickets').empty().append(html);
      }
 
-     
+
 
      function myFunction($month_dat) {
          var month = new Array();
@@ -1927,166 +1923,165 @@ dispatch_table = $('#predispatchlist').DataTable({
 
 
      function requestdata() {
-	
-    var serialfrom = $("#serialfrom").val();
-	var serialto = $('#serialto').val();
-	var quantitypdi = $("#quantitypdi").val();
-	var visitdate = $("#visitdate").val();
-	var fileToUpload = $("#fileToUpload").val();
-	
-    $(".error_msg").remove();
-    var flag = 0;
+
+         var serialfrom = $("#serialfrom").val();
+         var serialto = $('#serialto').val();
+         var quantitypdi = $("#quantitypdi").val();
+         var visitdate = $("#visitdate").val();
+         var fileToUpload = $("#fileToUpload").val();
+
+         $(".error_msg").remove();
+         var flag = 0;
 
 
-    if (serialfrom == '') {
-        flag = 1;
-        $("#serialfrom").append("<span class='error_msg'>serialfrom Required</span>"); 
-    }
-	
-	if (serialto == '') {
-        flag = 1;
-        $("#serialto").append("<span class='error_msg'>serialto Required</span>");
-    }
+         if (serialfrom == '') {
+             flag = 1;
+             $("#serialfrom").append("<span class='error_msg'>serialfrom Required</span>");
+         }
 
-    if (quantity == "") {
-        flag = 1;
-        $("#quantity").append("<span class='error_msg'>quantity Required</span>");
-    } 
+         if (serialto == '') {
+             flag = 1;
+             $("#serialto").append("<span class='error_msg'>serialto Required</span>");
+         }
 
-    if (visitdate == "") {
-        flag = 1;
-        $("#visitdate").append("<span class='error_msg'>Visit Date Required</span>");
-    } 
-  
-    if (flag == 0) {
+         if (quantity == "") {
+             flag = 1;
+             $("#quantity").append("<span class='error_msg'>quantity Required</span>");
+         }
 
-        $("#savemicro").prop("disabled", true);
-        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
-            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+         if (visitdate == "") {
+             flag = 1;
+             $("#visitdate").append("<span class='error_msg'>Visit Date Required</span>");
+         }
 
-        $(".ajaxLoader").css("display", "block");
-        $.post("<?php echo site_url('supplier/purchase_order/insert_predispatch')?>", { 
+         if (flag == 0) {
 
-            serialfrom: serialfrom,
-            serialto:serialto,
-            quantitypdi: quantitypdi,
-            visitdate: visitdate,
-            fileToUpload:fileToUpload,
-            
-           
-            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
-        }, function(data) {
-			 // alert(data);
+             $("#savemicro").prop("disabled", true);
+             var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+                 csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+             $(".ajaxLoader").css("display", "block");
+             $.post("<?php echo site_url('supplier/purchase_order/insert_predispatch') ?>", {
+
+                 serialfrom: serialfrom,
+                 serialto: serialto,
+                 quantitypdi: quantitypdi,
+                 visitdate: visitdate,
+                 fileToUpload: fileToUpload,
+
+
+                 <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
+             }, function(data) {
+                 // alert(data);
+                 $('#savemicro').removeAttr("disabled");
+                 window.location.reload();
+
+             });
+
+         }
+
+
+     }
+
+     function addscheduleddelivery() {
+
+         var productdelivery = $("#productdelivery").val();
+         var quantitydelivery = $('#quantitydelivery').val();
+         var deliverydate = $("#deliverydate").val();
+
+         $(".error_msg").remove();
+         var flag = 0;
+
+
+         if (productdelivery == '') {
+             flag = 1;
+             $("#productdelivery").append("<span class='error_msg'>Product Required</span>");
+         }
+
+         if (quantitydelivery == '') {
+             flag = 1;
+             $("#serialto").append("<span class='error_msg'>quantity Required</span>");
+         }
+
+         if (deliverydate == "") {
+             flag = 1;
+             $("#deliverydate").append("<span class='error_msg'>quantity Required</span>");
+         }
+
+
+
+         if (flag == 0) {
+
+             $("#savemicro").prop("disabled", true);
+             var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+                 csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+             $(".ajaxLoader").css("display", "block");
+             $.post("<?php echo site_url('supplier/purchase_order/insert_deliveryschedule') ?>", {
+
+                 productdelivery: productdelivery,
+                 quantitydelivery: quantitydelivery,
+                 deliverydate: deliverydate,
+
+                 <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
+             }, function(data) {
+                 // alert(data);
+                 $('#savemicro').removeAttr("disabled");
+                 window.location.reload();
+
+             });
+
+         }
+
+
+     }
+
+     function changerequest() {
+
+         var commentrequest = $("#commentrequest").val();
+         $(".error_msg").remove();
+         var flag = 0;
+
+         if (commentrequest == '') {
+             flag = 1;
+             $("#commentrequest").append("<span class='error_msg'>Comment Required</span>");
+         }
+
+         if (flag == 0) {
+
+             $("#savemicro").prop("disabled", true);
+             var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+                 csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+             $(".ajaxLoader").css("display", "block");
+             $.post("<?php echo site_url('supplier/purchase_order/post_changerequest') ?>", {
+
+                 commentrequest: commentrequest,
+
+                 <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
+             }, function(data) {
+                 // alert(data);
+                 $('#savemicro').removeAttr("disabled");
+                 window.location.reload();
+
+             });
+
+         }
+
+     }
+
+     function acceptloa() {
+
+         $(".ajaxLoader").css("display", "block");
+         $.post("<?php echo site_url('supplier/purchase_order/post_changerequest') ?>", {
+
+             <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
+         }, function(data) {
+             // alert(data);
              $('#savemicro').removeAttr("disabled");
-			window.location.reload();
+             window.location.reload();
 
-        });
+         });
 
-    }
-
-
-}
-
-function addscheduleddelivery() {
-	
-    var productdelivery = $("#productdelivery").val();
-	var quantitydelivery = $('#quantitydelivery').val();
-	var deliverydate = $("#deliverydate").val();
-	
-    $(".error_msg").remove();
-    var flag = 0;
-
-
-    if (productdelivery == '') {
-        flag = 1;
-        $("#productdelivery").append("<span class='error_msg'>Product Required</span>"); 
-    }
-	
-	if (quantitydelivery == '') {
-        flag = 1;
-        $("#serialto").append("<span class='error_msg'>quantity Required</span>");
-    }
-
-    if (deliverydate == "") {
-        flag = 1;
-        $("#deliverydate").append("<span class='error_msg'>quantity Required</span>");
-    } 
-
-   
-  
-    if (flag == 0) {
-
-        $("#savemicro").prop("disabled", true);
-        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
-            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
-
-        $(".ajaxLoader").css("display", "block");
-        $.post("<?php echo site_url('supplier/purchase_order/insert_deliveryschedule')?>", { 
-
-            productdelivery: productdelivery,
-            quantitydelivery:quantitydelivery,
-            deliverydate: deliverydate,
-            
-            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
-        }, function(data) {
-			 // alert(data);
-             $('#savemicro').removeAttr("disabled");
-			window.location.reload();
-
-        });
-
-    }
-
-
-}
-
-function changerequest() {
-	
-    var commentrequest = $("#commentrequest").val();
-    $(".error_msg").remove();
-    var flag = 0;
-
-    if (commentrequest == '') {
-        flag = 1;
-        $("#commentrequest").append("<span class='error_msg'>Comment Required</span>"); 
-    }
-	
-    if (flag == 0) {
-
-        $("#savemicro").prop("disabled", true);
-        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
-            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
-
-        $(".ajaxLoader").css("display", "block");
-        $.post("<?php echo site_url('supplier/purchase_order/post_changerequest')?>", { 
-
-            commentrequest: commentrequest,
-            
-            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
-        }, function(data) {
-			 // alert(data);
-             $('#savemicro').removeAttr("disabled");
-			window.location.reload();
-
-        });
-
-    }
-
-}
-
- function acceptloa() {
-	
-        $(".ajaxLoader").css("display", "block");
-        $.post("<?php echo site_url('supplier/purchase_order/post_changerequest')?>", { 
-
-            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
-        }, function(data) {
-			 // alert(data);
-             $('#savemicro').removeAttr("disabled");
-			window.location.reload();
-
-        });
-
-    }
-
+     }
  </script>
