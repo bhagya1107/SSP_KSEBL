@@ -734,18 +734,8 @@ class Supplier_dashboard extends SP_Controller
 	}
 
 	//forgot password employee
-	public function forgot_passwordss()
-	{
-		echo "hii";
-	}
-	public function emp_forgot_password()
-	{
-		echo "hii";
-		exit;
-		$this->session->set_userdata('Employee', 'Employee');
-		// $this->session->set_userdata('supplier','abc'); 
-		redirect(base_url('forgot_password'));
-	}
+
+	
 	public function sup_forgot_password()
 	{
 		$this->session->set_userdata('supplier', 'abc');
