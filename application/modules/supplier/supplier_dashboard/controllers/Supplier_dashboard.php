@@ -509,6 +509,7 @@ class Supplier_dashboard extends SP_Controller
 	}
 	public function send_otp_employee_changepass()
 	{
+		// echo "hii"; exit;
 		$mobile = $this->input->post('mobile');
 		$uid = $this->session->userdata('uid');
 		$get_supplier_mobile = $this->dashM->get_employee_mobile('employees', $mobile, $uid);
@@ -544,7 +545,8 @@ class Supplier_dashboard extends SP_Controller
 
 			echo '<script type="text/javascript" >alert("Password changed successfully" );
 				</script>';
-			echo ' <script>window.location.href="personal_profile";</script>';
+			// echo ' <script>window.location.href="personal_profile";</script>';
+			echo ' <script>window.location.href="supplier_administration";</script>';
 		} else {
 			echo '<script type="text/javascript" >alert("Password mismatch" );
 				</script>';
@@ -651,7 +653,7 @@ class Supplier_dashboard extends SP_Controller
 
 			echo '<script type="text/javascript" >alert("Password changed successfully" );
 				</script>';
-			echo ' <script>window.location.href="personal_profile";</script>';
+			echo ' <script>window.location.href="supplier_administration";</script>';
 		} else {
 			echo '<script type="text/javascript" >alert("Password mismatch" ); 
 				</script>';

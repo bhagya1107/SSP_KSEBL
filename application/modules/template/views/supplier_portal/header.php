@@ -191,7 +191,9 @@
 					
 					<small style="color:#FFF;margin-left:35%;margin-top:16%;line-height: 25px;">Welcome</small>
 					<li style="color:#FFF;;margin-left:45%;line-height: 16px; display: inline-block; white-space: nowrap;overflow-x: auto; overflow-y: hidden;">
-					<div >	<a class="limtiCharClass" href="<?=supplier_url('dashboard/personal_profile')?>" >
+					<div >	
+					<!-- <a class="limtiCharClass" href="<?=supplier_url('dashboard/personal_profile')?>" > -->
+					<a class="limtiCharClass"  style="cursor: pointer;">
 							<?php echo substr(strtoupper($this->session->userdata('username')),0,35); ?> 
 						</a>
 		            </div>	
