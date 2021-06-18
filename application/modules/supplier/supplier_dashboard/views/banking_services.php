@@ -24,9 +24,9 @@
 }
 
 @media screen and (max-width: 767px){
-        .searchbar{
+        /* .searchbar{
             display:none;
-        }
+        } */
         div.scrollmenu {
         width :100%;
         /* overflow: auto;
@@ -48,9 +48,16 @@
       }
     
 </style>
+<script>
+
+        setTimeout(function() {
+            $('#mydivss').hide('fast');
+        }, 1000);
+   
+</script>
 
                     <?php 
-                            $msg=$this->session->flashdata('msg'); 
+                            $msg=$this->session->flashdata('msg');  
                             if($msg)
                             {
                             ?>
@@ -164,9 +171,9 @@
                         </script>  -->
                         
                       
-                        <div class="col-md-7" style="<?php if($getbankdetails1=='') echo "display: none;" ?>">
+                        <!-- <div class="col-md-7" > -->
                             <div class="table-responsive" style="padding-left:10px">
-                            <table class="table table-bordered table-hover" >
+                            <table class="table table-bordered table-hover" style="<?php if($getbankdetails1=='') echo "display: none;" ?>" >
                                 <thead>
                                 <tr style="background-color:#26265f ;color:#FFF ">
                                     <th>Sl No</th>
@@ -228,7 +235,7 @@
                             </table>
                             </div>
                         </div>
-                    </div>
+                    <!-- </div> -->
 
 
 <!-- 

@@ -163,7 +163,7 @@ div.scrollmenu {
                                   </script> 
                 </div>
                 </form>
-                  <div class="col-md-7" >
+                  <!-- <div class="col-md-7" > -->
                     <div class="table-responsive"  style="padding-left:10px">
                       <table id="employyeedetls" class="table table-bordered table-hover" class="display" style="width: 100%">
                         <thead>
@@ -185,7 +185,7 @@ div.scrollmenu {
                       </table>
                     </div> 
                   </div>
-            </div>
+            <!-- </div> -->
 
 
 
