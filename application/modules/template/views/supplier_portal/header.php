@@ -234,7 +234,7 @@
 											</ul>
 											
 											 
-										</nav>	
+										</nav>	 
 										<nav class="tg-addnav pull-right" >
 										 
 											<ul >
@@ -247,7 +247,7 @@
 												<!-- <a href="<?=supplier_url('dashboard/notifications')?>" id="change_status" > -->
 												
 												<!-- <a href="<?=site_url('supplier/dashboard/notification_change_status')?>" >  -->
-												<a  href="<?=site_url('supplier/dashboard/supplier_administration/#tab_9')?>">
+												<a  href="<?=site_url('supplier/dashboard/supplier_administration/tab_9')?>">
 												<i class="fa fa-bell" aria-hidden="true" style="color:#fff"></i>
 												<?php if($notifications!='0' and  $notificationsview->preference_display_status=='true'){ ?>
 													<span style="background-color: red; margin-top :-20px;"  class="badge notify" id="notify" ></span>

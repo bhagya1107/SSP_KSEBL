@@ -202,7 +202,7 @@
                                                             <tr style="background-color:#26265f ;color:#FFF ">
                                                                 <th>Sl No </th>
                                                                 <th>Utility/Wing </th>
-                                                                <th>materialGroup </th>
+                                                                <th>material Group </th>
                                                                 <th>Product Name</th>
                                                                 <th>Orders</th>
                                                                 <th>Overdue</th>
