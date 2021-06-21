@@ -84,7 +84,7 @@
                         <input type="hidden" id="productcategory" value="1"> 
                             <label>Select Bank</label>
 
-                            <select class="form-control materialdata" id="materialinput" placeholder="Company name" name="bank">
+                            <select class="form-control materialdata" id="materialinput" placeholder="Company name" name="bank" required >
                             <?php if($materialdata!="") { ?>
                                                     <option value="">Select Bank </option>
                                                     <?php }else{ ?>
@@ -115,7 +115,7 @@
 
                         <div class="form-group">
                             <label>Branch Name</label>
-                            <select class="form-control material" id="material" placeholder="Year of  registration" name="branch">
+                            <select class="form-control material" id="material" placeholder="Year of  registration" name="branch" required>
                             <?php if($materialdata!="") { ?>
                                                     <option value="">Select Branch</option>
                                                     <?php }else{ ?>
@@ -259,11 +259,12 @@
             $('#material').html(load);
             $.post("<?php echo site_url('supplier/dashboard/getMaterialProductsDetails'); ?>", { 
                     materialgroup: materialgroup,
-                    productcategory: productcategory
+                    productcategory: productcategory,
+                    <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
+                
                 },
                 function(data) {
-                    
-                    var res = JSON.parse(data);
+                       var res = JSON.parse(data);
                     console.log(res);
                     var html = '<option value="">Select Branch</option>';
 
@@ -274,7 +275,7 @@
                     $('#material').html(html);
                     $('#savemicro').removeAttr("disabled");
                     $(".ajaxLoader").css("display", "none");
-                });
+                }); 
         }
 
     });
