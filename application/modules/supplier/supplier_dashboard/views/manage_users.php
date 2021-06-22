@@ -60,6 +60,7 @@ div.scrollmenu {
           }
 }
 </style>
+
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;" />
 
 
@@ -100,8 +101,8 @@ div.scrollmenu {
                   <br />
                    <div class="form-group">
                      <label>User Type</label>
-                     <select class="form-control" id="usertype" name="usertype">
-                      <option selected disabled>--Select User Type--</option>
+                     <select class="form-control" id="usertype" name="usertype" placeholder="Type" required="" >
+                      <option value="">--Select User Type--</option>
                       <option value="4" >
                          Accounts Manager
                        </option> <option value="5">
@@ -111,6 +112,8 @@ div.scrollmenu {
                          Basic User
                        </option>
                      </select>
+                   
+
                    </div>
 
                    <div class="form-group">
@@ -211,6 +214,7 @@ div.scrollmenu {
 </script>
 
 <script>
+
  function save_companyprofile(e) {
   e.preventDefault();
 	

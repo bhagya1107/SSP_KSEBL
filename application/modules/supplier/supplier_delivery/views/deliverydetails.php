@@ -161,7 +161,7 @@
                                                                      </span>
                                                                  </div>
                                                              </td>
-                                                             <td><button data-toggle="modal" data-target="#" class="btn btn-primary">Reshedule</button>
+                                                             <td><button data-toggle="modal" data-target="#" class="btn btn-primary">Reschedule</button>
                                                                  <!-- <button  data-toggle="modal" data-target="#dispatch" style="width:80px; height:29px; color: #fff;background-color: orange; border-color: orange;">GRN</button> 
  <!--<button  data-toggle="modal" data-target="#mdcc" style="width:80px; height:29px; color: #fff;background-color: red; border-color: red;">MDCC</button> <button  data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>-->
                                                              </td>
@@ -222,7 +222,7 @@
                                                                  </div>
                                                              </td>
                                                              <td><button data-toggle="modal" data-target="#" class="btn btn-danger">Overdue</button>
-                                                                 <button data-toggle="modal" data-target="#" class="btn btn-primary">Reshedule</button> <button data-toggle="modal" data-target="#mdcc" class="btn btn-success">Deliver</button>
+                                                                 <button data-toggle="modal" data-target="#" class="btn btn-primary">Reschedule</button> <button data-toggle="modal" data-target="#mdcc" class="btn btn-success">Deliver</button>
                                                              </td>
                                                              <!-- <button  data-toggle="modal" data-target="#shipment1" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button></td>
 -->
@@ -361,7 +361,7 @@
                                                              </div>
                                                          </td>
                                                          <td><button data-toggle="modal" data-target="#" class="btn btn-danger">Overdue</button>
-                                                             <button data-toggle="modal" data-target="#" class="btn btn-primary">Reshedule</button> <button data-toggle="modal" data-target="#" class="btn btn-success">Deliver</button>
+                                                             <button data-toggle="modal" data-target="#" class="btn btn-primary">Reschedule</button> <button data-toggle="modal" data-target="#" class="btn btn-success">Deliver</button>
                                                              <!--<button  data-toggle="modal" data-target="#delivery_schedule" style="width:80px; height:29px; color: #fff;background-color: blue; border-color: blue;">Delivery</button>-->
                                                          </td>
 
