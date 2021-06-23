@@ -50,6 +50,7 @@
 </style>
 <script>
 
+
         setTimeout(function() {
             $('#mydivss').hide('fast');
         }, 1000);
@@ -84,7 +85,7 @@
                         <input type="hidden" id="productcategory" value="1"> 
                             <label>Select Bank</label>
 
-                            <select class="form-control materialdata" id="materialinput" placeholder="Company name" name="bank" required >
+                            <select  class="form-control materialdata" id="materialinput" placeholder="Company name" name="bank" required >
                             <?php if($materialdata!="") { ?>
                                                     <option value="">Select Bank </option>
                                                     <?php }else{ ?>
@@ -140,7 +141,7 @@
 
                         <div class="form-group">
                             <label>IFSC Code</label>
-                            <input type="text" class="form-control"  name="ifsc" required />
+                            <input type="text" class="form-control" id="ifsc"  name="ifsc" required />
                         </div>
                         
                         <div class="form-group">
@@ -160,15 +161,39 @@
                         </div>
                         </form>
 
-                       <!-- <script>
+                       <script>
                         function myFunction() {
-                                document.getElementById("subbtnn").style.display = "none";
+                            
+                            
+                                 document.getElementById("subbtnn").style.display = "none";
+                                 document.getElementById("cnbtnn").style.display = "none"; 
+                                 $(document).ready(function(){
+                                    $('form input').change(function () {
+                                       
+                                        $('#subbtnn').css('display','block');
+                                        $('#cnbtnn').css('display','block');
+                                        $('#cnbtnn').css('margin-top','-53px');
+                                    });
+                                    $('select').on('change', function() {
+                                        $('#subbtnn').css('display','block');
+                                        $('#cnbtnn').css('display','block');
+                                        $('#cnbtnn').css('margin-top','-53px');
+                                    });
+                                    $('#accountno').on('input', function() {
+                                        $('#subbtnn').css('display','block');
+                                        $('#cnbtnn').css('display','block');
+                                        $('#cnbtnn').css('margin-top','-53px');
+                                    });
+                                    $('#ifsc').on('input', function() {
+                                        $('#subbtnn').css('display','block');
+                                        $('#cnbtnn').css('display','block');
+                                        $('#cnbtnn').css('margin-top','-53px');
+                                    });
+                                });
 
-                                $('#subbtnn').css('display','none');
-                                $('#cnbtnn').css('display','none');
-                                                               }
+                                                    }
                            
-                        </script>  -->
+                        </script> 
                         
                       
                         <!-- <div class="col-md-7" > -->
@@ -247,6 +272,9 @@
 </main> -->
 
 <script>
+
+
+
     var materiallistdata = {};
 
     $(".materialdata").change(function() {
