@@ -93,12 +93,12 @@ class Supplier_purchase_order extends SP_Controller
 		$res =  $this->procM->insert('pdi_predispatch', $data);
 		if ($res > 0) {
 			$this->session->set_flashdata('msg', 'PDI added Sucessfully');
-			$this->callpdirequest_postapi($data);
+			$this->callpostapi($data);
 		} else {
 			echo "Error while adding";
 		}
 	}
-	private function callpdirequest_postapi($data)
+	private function callpostapi($data)
 	{
 		$this->api->curl_postdata($data);
 	}
@@ -150,15 +150,10 @@ class Supplier_purchase_order extends SP_Controller
 		$res =  $this->procM->insert('delivery_schedule', $data);
 		if ($res > 0) {
 			$this->session->set_flashdata('msg', 'Delivery Scheduled added Sucessfully');
-			$this->callscheduleddelivery_postapi($data);
+			$this->callpostapi($data);
 		} else {
 			echo "Error while adding";
 		}
-	}
-
-	private function callscheduleddelivery_postapi($data)
-	{
-		$this->api->curl_postdata($data);
 	}
 
 	public function post_changerequest()
@@ -169,18 +164,13 @@ class Supplier_purchase_order extends SP_Controller
 		$data['supplier_id'] = $this->session->userdata('uid');
 
 		//$res =  $this->procM->insert('delivery_schedule', $data);
-		$res =	$this->callchangerequest_postapi($data);
+		$res =	$this->callpostapi($data);
 
 		if ($res > 0) {
 			$this->session->set_flashdata('msg', 'Delivery Scheduled added Sucessfully');
 		} else {
 			echo "Error while adding";
 		}
-	}
-
-	private function callchangerequest_postapi($data)
-	{
-		$this->api->curl_postdata($data);
 	}
 
 	public function post_acceptloa()
@@ -191,17 +181,12 @@ class Supplier_purchase_order extends SP_Controller
 		$data['Loa'] = $this->session->userdata('Loa');
 		$data['supplier_id'] = $this->session->userdata('uid');
 
-		$res =	$this->callacceptloa_postapi($data);
+		$res =	$this->callpostapi($data);
 
 		if ($res > 0) {
 			$this->session->set_flashdata('msg', 'LOA added Sucessfully');
 		} else {
 			echo "Error while adding";
 		}
-	}
-
-	private function callacceptloa_postapi($data)
-	{
-		$this->api->curl_postdata($data);
 	}
 }
