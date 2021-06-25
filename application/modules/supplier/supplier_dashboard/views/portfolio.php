@@ -900,9 +900,11 @@
         var inputservicesCity = $("#inputservicesCity").val();
         var inputservices = $("#inputservices").val();
 
-        var isValid = validateDuplicateEntries(material);
-        if (isValid == true) {
+        //var isValid = validateDuplicateEntries(material);
+        $(".error_msg").remove();
 
+	
+        
 
             $(".error_msg").remove();
             var flag = 0;
@@ -943,12 +945,67 @@
                 });
             }
 
-        }
+        
 
+    }
+
+    function save_companyprofile(e) {
+  e.preventDefault();
+	
+  var name = $("#name").val();
+	var mobilenumber = $('#mobilenumber').val();
+	var email = $("#email").val();
+	var password = $("#password").val();
+	var usertype = $("#usertype").val();
+	
+    $(".error_msg").remove();
+    var flag = 0;
+
+
+    if (name == '') {
+        flag = 1;
+        $("#name").append("<span class='error_msg'>Name Required</span>"); 
+    }
+	
+	if (mobilenumber == '') {
+        flag = 1;
+        $("#mobilenumber").append("<span class='error_msg'>mobilenumber Required</span>");
+    }
+
+    if (email == "") {
+        flag = 1;
+        $("#material").append("<span class='error_msg'>Material Required</span>");
+    } 
+
+  
+    if (flag == 0) {
+
+        $("#savemicro").prop("disabled", true);
+        var csrfName = '<?php echo $this->security->get_csrf_token_name(); ?>',
+            csrfHash = '<?php echo $this->security->get_csrf_hash(); ?>';
+
+        $(".ajaxLoader").css("display", "block");
+        $.post("<?php echo site_url('supplier/dashboard/insert_companyprofile')?>", { 
+
+            name: name,
+			      email:email,
+            mobilenumber: mobilenumber,
+			      password: password,
+			      usertype:usertype,
+            supplierid: 1,
+           
+            <?php echo $this->security->get_csrf_token_name();?>: "<?php echo $this->security->get_csrf_hash()?>"
+        }, function(data) {
+			 // alert(data);
+             $('#savemicro').removeAttr("disabled");
+			window.location.reload();
+
+        });
 
     }
 
 
+}
 
 
     $(document).ready(function() {
@@ -1014,15 +1071,17 @@
         var cnf = confirm("Are you sure to delete?");
         if (cnf) {
             var data = services_table.row($(this).parents('tr')).data();
-            var supplierid = data['id'];
+            var supplierid = data['no'];
             $.post("<?php echo site_url('supplier/dashboard/deleteSupplierServices') ?>", {
                 supplierid: supplierid,
                 <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
             }, function(data) {
-                alert(data);
+               // alert(data);
                 window.location.reload();
 
             });
         }
     });
+
+  
 </script>
