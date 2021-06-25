@@ -88,6 +88,26 @@ class User_management extends AD_Controller {
     $this->session->set_flashdata('msg','Approved successfully');
     redirect(base_url($path));
   }
+  // public function activate_account()
+  // {
+  //   $usertypes=$this->session->userdata('usertypes');
+  //   $id=$this->uri->segment(4);
+  //   $data=array(
+  //     'user_id '=>$id,
+  //     'user_type'=>$usertypes,
+  //     'message'=>'Your Account is activated',
+  //     'status'=>1,
+  //     'tablename'=>'suppliers'
+  //      );
+  //   $this->userM->insert('notifications',$data);
+  //   $this->userM->activate_account('suppliers',$id);
+  //   $this->session->set_flashdata('msg','Approved successfully');
+  //   redirect(base_url('webuser/user_management/suppliers'));
+  // }
+
+
+
+
   public function activate_account()
   {
     $usertypes=$this->session->userdata('usertypes');
@@ -99,11 +119,26 @@ class User_management extends AD_Controller {
       'status'=>1,
       'tablename'=>'suppliers'
        );
+
+    // API
+    $query= $this->userM->getsupplierdetailspostapi();
+    $datas= json_encode($query);
+    // $this->api->curl_postdataadmin($datas);
+    // API END
     $this->userM->insert('notifications',$data);
     $this->userM->activate_account('suppliers',$id);
     $this->session->set_flashdata('msg','Approved successfully');
     redirect(base_url('webuser/user_management/suppliers'));
   }
+  public function testapi()
+  {
+   $query= $this->userM->getsupplierdetailspostapi();
+    // print_r($query);
+    echo json_encode($query);
+  }
+
+
+
   public function deactivate_account()
   {
     $id=$this->uri->segment(4);

@@ -118,6 +118,21 @@ class Api extends MX_Controller
       return $this->curl_getdata($appendurl);
    }
 
+
+   public function curl_postdataadmin($url, $data)
+   {
+
+      $baseurl = getApi_url();
+      $apiurl     = "$baseurl/$url";
+      $data_array = json_encode($data);
+      $curl       = curl_init();
+      curl_setopt($curl, CURLOPT_URL, $apiurl);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($curl, CURLOPT_POSTFIELDS, $data_array);
+      curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+      $result1 = curl_exec($curl);
+      return $result1;
+   }
    //----------------------------------API not using----------------------------------------------//
    public function getMaterialById()
    {

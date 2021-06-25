@@ -70,8 +70,11 @@ public function getUserProfile_Pending_approvals1()
  }
  public function activate_account($table,$id)
  {
+  $insert_id = $this->db->insert_id();
+  $sei=50566+$insert_id;
    $this->db->where('uid',$id); 
    $this->db->set('active_status',1);
+   $this->db->set('erp_supplier_id',$sei);
    $this->db->update('suppliers');
  }
  public function approve_bank_account($table,$id)
@@ -190,6 +193,11 @@ public function supplierserviceinfo1($table,$id)
   $this->db->select('*');
   $this->db->where('supplierid',$id);
   return $this->db->get($table)->row();
+}
+public function getsupplierdetailspostapi()
+{
+  $this->db->select('*'); 
+  return $this->db->get('suppliers')->result();
 }
  
 
