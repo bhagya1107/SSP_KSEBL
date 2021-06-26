@@ -202,6 +202,8 @@ jQuery(document).ready(function($) {
     //getting the main subjects
     // var id_of_selected = $(this).attr('load-in');
     var paneID = $(this).attr('href');
+    sessionStorage.setItem('activeTab', paneID);
+    console.log(paneID);
     var src = $(paneID).attr('data-src');
     if($(paneID+" iframe").attr("src")=="")
     {
@@ -233,6 +235,22 @@ function onMyFrameLoad(iframeid){
 
 }
 
+
+$(window).load(function(){
+    var activeTab = sessionStorage.getItem('activeTab');
+    if(activeTab){
+      // setTimeout(function(){ 
+        console.log(activeTab);
+        console.log('jk');
+          $('#myTabs li').removeClass('active');
+          $('#myTabs a[href="' + activeTab + '"]').parent().addClass('active');
+          $('.tab-content div').removeClass('in active');
+          $(activeTab).addClass('in active');
+          $('#myTabs a[href="' + activeTab + '"]').trigger('click');
+      //  }, 13000);
+
+    }
+});
 
 
 </script>
