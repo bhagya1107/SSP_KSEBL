@@ -16,6 +16,7 @@ class Supplier_purchase_order extends SP_Controller
 		$user_type = $this->session->userdata('user_type');
 		$uid = $this->session->userdata('supplierid');
 		$erp_id = $this->session->userdata('supplier_erp_id');
+		$poid=9;
 		$getcompanypermissiondetails = $this->GETM->getCompanyPermission2($uid, $user_type);
 
 		if ($getcompanypermissiondetails->purchase_order == '1' and $this->session->userdata('active_status') == '1') { //neethu end	
@@ -31,6 +32,8 @@ class Supplier_purchase_order extends SP_Controller
 			$data['indexurl'] = base_url() . "supplier/dashboard";
 			$purchaseOrder = json_decode($this->api->getPOData($erp_id));
 			$data['purchaseorder'] = $purchaseOrder->result_data->list;
+			$purchaseOrderpdiList = json_decode($this->api->getLstOfApprovedStatusPDI($erp_id,$poid));
+			$data['purchaseOrderpdiList'] = $purchaseOrderpdiList->result_data->list;
 			$this->template->make('supplier_purchase_order/home', $data, 'supplier_portal');
 
 			//neethu
@@ -105,25 +108,30 @@ class Supplier_purchase_order extends SP_Controller
 
 	public function getpredispatchData()
 	{
-
+		$erp_id = $this->session->userdata('supplier_erp_id');
+		$poid=9;
 		$draw = intval($this->input->get("draw"));
 		$start = intval($this->input->get("start"));
 		$length = intval($this->input->get("length"));
 		$supplierid = $this->session->userdata('uid');
 
 		$pdidata = $this->procM->getListOfPreDispatch($supplierid);
-
+		$purchaseOrderpdiList = json_decode($this->api->getLstOfApprovedStatusPDI($erp_id,$poid));
+		$purchaseOrderpdiListdetail = $purchaseOrderpdiList->result_data->list;
 		$data = array();
 
 		$i = 1;
-		foreach ($pdidata as $r) {
-
-
+		
+		foreach ($purchaseOrderpdiListdetail as $r) {
+			$pay='';
+			if($r->inspection_status=="Approved"){
+						$pay = '<button class="btn btn-primary dropdown-toggle"  data-toggle="modal" data-target="#PaymentPDI" type="button">Pay</button>';
+			}
 			$data[] = array(
 				'slno' => $i,
-				'date' => $r->visit_request_date,
-				'status' => 'Requested',
-				'button' => '',
+				'date' => $r->visit_planning_date,
+				'status' => $r->inspection_status,
+				'button' => $pay,
 
 			);
 			$i++;

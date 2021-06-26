@@ -205,13 +205,13 @@
                                                                 <th>material Group </th>
                                                                 <th>Product Name</th>
                                                                 <th>Orders</th>
-                                                                <th>Overdue</th>
+                                                                <th>Mdcc</th>
                                                                 <th>Receipts</th>
-                                                                <th>Defects</th>
+                                                                <!-- <th>Defects</th>
                                                                 <th>VMI</th>
                                                                 <th>On-Time Performance</th>
                                                                 <th>Consigned Inventory</th>
-                                                                <th>Capacity Info</th>
+                                                                <th>Capacity Info</th> -->
                                                                 <th>Remove</th>
 
                                                             </tr>
@@ -825,22 +825,22 @@
                 {
                     "data": "receipts"
                 },
-                {
-                    "data": "defects"
-                },
-                {
-                    "data": "vmi"
-                },
-                {
-                    "data": "On-Time Performance"
-                },
-                {
-                    "data": "Consigned Inventory"
-                },
+                // {
+                //     "data": "defects"
+                // },
+                // {
+                //     "data": "vmi"
+                // },
+                // {
+                //     "data": "On-Time Performance"
+                // },
+                // {
+                //     "data": "Consigned Inventory"
+                // },
 
-                {
-                    "data": "capacityinfo"
-                },
+                // {
+                //     "data": "capacityinfo"
+                // },
                 {
                     "data": "delete"
                 },
@@ -1052,7 +1052,11 @@
 
                 {
                     "data": "delete"
-                }
+                },
+                {
+                "data": "id",
+				"visible":false
+            }
 
 
 
@@ -1071,7 +1075,7 @@
         var cnf = confirm("Are you sure to delete?");
         if (cnf) {
             var data = services_table.row($(this).parents('tr')).data();
-            var supplierid = data['no'];
+            var supplierid = data['id'];
             $.post("<?php echo site_url('supplier/dashboard/deleteSupplierServices') ?>", {
                 supplierid: supplierid,
                 <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"

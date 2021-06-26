@@ -842,8 +842,8 @@
 </div>
 
 
-
-<div class="modal fade" id="Payment">
+ 
+<div class="modal fade" id="PaymentPDI">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -851,10 +851,10 @@
             <div class="modal-header">
                 <h4 class="modal-title" id="adding">Add Payment</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
+            </div> 
 
             <!-- Modal body -->
-            <div class="modal-body">
+             <div class="modal-body">
                 <form id="questions_form">
                     <div class="form-group row">
                         <label for="subject" class="col-md-2 col-sm-3 control-label">Pay Amount</label>
@@ -866,17 +866,17 @@
                     <input type="hidden" name="pay" id="pay">
 
                 </form>
-            </div>
+            </div> 
 
             <!-- Modal footer -->
-            <div class="modal-footer">
+           <div class="modal-footer">
 
                 <button type="button" style="margin-right: 252px;" class="btn btn-primary" onclick="">Submit</button>
             </div>
 
         </div>
     </div>
-</div>
+</div> 
 
 <div id="mdcc" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -1494,7 +1494,7 @@ toggle between hiding and showing the dropdown content */
 
     function buildAcceptedpurchaseorders(datas) {
         var acceptedData = datas.filter(function(val) {
-            if (val['letter of acceptance status'] == 'accepted') {
+            if (val['letter of acceptance status'] == 'pending') {//bl changes(25-06-2021)
                 return val;
             }
         });

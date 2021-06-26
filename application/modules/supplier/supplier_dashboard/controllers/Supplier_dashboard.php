@@ -309,8 +309,8 @@ class Supplier_dashboard extends SP_Controller
 			$getcategorydata = json_decode($this->api->getSbuData_get());
 			$data['getcategory'] = $getcategorydata->result_data->list;
 			$data['getsuppliermaterials'] = $this->dashM->getSupplierMaterials($supplierid);
-			$getordersdata = json_decode($this->api->getordersbyId());
-			$data['ordersId'] = $getordersdata->result_data->list;
+			// $getordersdata = json_decode($this->api->getordersbyId());
+			// $data['ordersId'] = $getordersdata->result_data->list;
 			$this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal', true);
 
 			// $this->template->make('supplier_dashboard/portfolio', $data, 'supplier_portal');
@@ -407,11 +407,19 @@ class Supplier_dashboard extends SP_Controller
 		$supplierid = $this->session->userdata('uid');
 
 		$materialdata = $this->dashM->getSupplierMaterials($supplierid);
-
+		$getMaterialDetails = json_decode($this->api->getMaterialDetails());
+		$data['getMaterial'] = $getMaterialDetails->result_data->list;
+		$materialarray= array_column($data['getMaterial'],'materialid');
+		$materialdetail=array_combine($materialarray,$data['getMaterial']);
 		$data = array();
 
 		$i = 1;
-		foreach ($materialdata as $r) {
+		foreach ($materialdata as $r) { 
+			$materialquantity='';
+			if(isset($materialdetail[$r->materialId])){
+				$materialquantity=$materialdetail[$r->materialId];
+			}
+			
 			$edit = '<a href="javascript:void(0)" data-toggle="modal" data-target="#orders" id="edit-user" style="color:#eebd01" >2</a>';
 			$editoverdue = '<a href="javascript:void(0)" data-toggle="modal" data-target="#overdue" id="edit-user"style="color:#eebd01">2</a>';
 			$editreceipts = '<a href="javascript:void(0)" data-toggle="modal" data-target="#pay" id="edit-user"style="color:#eebd01">1 </a>';
@@ -435,15 +443,18 @@ class Supplier_dashboard extends SP_Controller
 				'category' => $r->categoryname,
 				'materialname' => $r->materialname,
 				'materialinputname' => $r->materialinputname,
-				'orders' => $edit,
-				'overdue' => $editoverdue,
-				'receipts' => $editreceipts,
-				'defects' => $editdefects,
-				'vmi' => $editvmi,
-				'On-Time Performance' => $editperformance,
-				'Consigned Inventory' => '',
+				'orders' =>($materialquantity)?$materialquantity->po_qty:'',
+				'overdue' =>($materialquantity)?$materialquantity->mdcc_qty:'',
+				'receipts' =>($materialquantity)?$materialquantity->reciept_qty:'',
+			//	'orders' => $edit,
+			//	'overdue' => $editoverdue,
+				//'receipts' => $editreceipts,
+				//'defects' => $editdefects,
+				//'vmi' => $editvmi,
+				//'On-Time Performance' => $editperformance,
+				//'Consigned Inventory' => '',
 				'delete' => $delete,
-				'capacityinfo' => $capacityinfo,
+			//	'capacityinfo' => $capacityinfo,
 				'id' => $r->id,
 				'materialId' => $r->materialId,
 				'materialgroupId' => $r->materialinputId
@@ -454,7 +465,6 @@ class Supplier_dashboard extends SP_Controller
 
 		$output = array(
 			"draw" => $draw,
-
 			"data" => $data
 		);
 
@@ -1695,6 +1705,7 @@ class Supplier_dashboard extends SP_Controller
 
 			$data[] = array(
 				'no' => $i,
+				'id' => $r->id,
 				'services' => $r->services,
 				'servicesname' => $r->categoryservices,
 				'delete' => $delete,

@@ -112,10 +112,24 @@ class Api extends MX_Controller
       }
    }
 
-   public function getordersbyId()
-   {
-      $appendurl = "prc/getordersbyId";
-      return $this->curl_getdata($appendurl);
+   public function getLstOfApprovedStatusPDI($erp_id,$poId){
+      if ($erp_id != "") {
+         $appendurl = "prc/getLstOfApprovedStatusPDI?erp_id=$erp_id&prc_purchase_order_id=$poId";
+         return $this->curl_getdata($appendurl);
+      } else {
+         $appendurl = "prc/getLstOfApprovedStatusPDI?erp_id=10003888&prc_purchase_order_id=9";
+         return $this->curl_getdata($appendurl);
+      }
+   }
+
+   public function getMaterialDetails($erp_id="",$materialId=""){
+      if ($erp_id != "") {
+         $appendurl = "prc/getMaterialDetails?$erp_id/$materialId";
+         return $this->curl_getdata($appendurl);
+      } else {
+         $appendurl = "prc/getMaterialDetails/10003526/10";
+         return $this->curl_getdata($appendurl);
+      }
    }
 
    //----------------------------------API not using----------------------------------------------//
