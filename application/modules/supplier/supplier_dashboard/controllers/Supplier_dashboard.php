@@ -1209,7 +1209,16 @@ class Supplier_dashboard extends SP_Controller
 		$data = $this->input->post('display_status');
 		$timezone = $this->input->post('timezone');
 		$date = $this->input->post('date');
-		// echo $display_status; exit;
+		// echo $data; exit;
+		$datanotification =
+
+			array(
+				'name' => '3', // 3=Notification display status
+				'value' => $data,
+				'user_id' => $uid,
+				'user_type' => $user_type
+
+			);
 		$data1 =
 
 			array(
@@ -1246,10 +1255,12 @@ class Supplier_dashboard extends SP_Controller
 		if ($get_preference != 0) {
 			$this->dashM->update_globals_time($timezone, $uid, $user_type);
 			$this->dashM->update_globals_date($date, $uid, $user_type);
+			$this->dashM->update_globals_status($data, $uid, $user_type);
 		}
 		if ($get_preference == 0) {
 			$this->dashM->insert('globals', $data1);
 			$this->dashM->insert('globals', $data2);
+			$this->dashM->insert('globals', $datanotification);
 		}
 		// $this->dashM->update_preference($timezone,$date,$uid,$user_type);
 

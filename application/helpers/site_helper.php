@@ -198,7 +198,7 @@ function acl_error_message($pagename='')
   return "You are not allowed to access $pagename. Please contact Helpdesk";    
 }
 
-function date_formate($dates)
+function date_formate($dates) 
 {
    $uid=$_SESSION["uid"];
    $user_type=$_SESSION["user_type"];
@@ -235,6 +235,15 @@ function date_formate($dates)
         $newDates = date("d-m-Y", strtotime($dates));  
         return $newDates;
     } 
+}
+function insertInNotifications($data)
+{
+  $ci =& get_instance();
+  if($ci->db->insert('notifications', $data))
+  {
+    $insert_id = $ci->db->insert_id();
+    return $insert_id;
+  }
 }
 
 function api_error_message()

@@ -180,6 +180,15 @@ class Dashboard_model extends CI_Model
     $this->db->update('globals');
       return;
   }
+  function update_globals_status($data,$uid,$user_type) {
+    // $this->db->trans_start();
+    $this->db->where('user_id', (string)$uid);
+    $this->db->where('user_type', $user_type);
+    $this->db->where('name', '3'); //2=Notification status
+    $this->db->set('value', $data);
+    $this->db->update('globals');
+      return;
+  }
  
  
   function update_notifications_preference_display_status($data,$uid,$user_type) {
