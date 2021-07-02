@@ -240,8 +240,6 @@ $(window).load(function(){
     var activeTab = sessionStorage.getItem('activeTab');
     if(activeTab){
       // setTimeout(function(){ 
-        console.log(activeTab);
-        console.log('jk');
           $('#myTabs li').removeClass('active');
           $('#myTabs a[href="' + activeTab + '"]').parent().addClass('active');
           $('.tab-content div').removeClass('in active');
@@ -250,6 +248,10 @@ $(window).load(function(){
       //  }, 13000);
 
     }
+    else{
+      $tab_selected == 'tab_1'; 
+    }
+
 });
 
 
