@@ -556,17 +556,17 @@ hr{
 
                         <a href="<?=supplier_url('dashboard/supplier_administration/tab_8')?>" style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>">Preferences</a>
 
-                        <a href="<?=supplier_url('dashboard/supplier_administration/tab_9')?>" style="<?php if($user_type=='6' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>">Notifications<i></i></a>
+                        <a href="<?=supplier_url('dashboard/supplier_administration/tab_9')?>" style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>">Notifications<i></i></a>
 
             </div>
         </div>
-        <div class="tab-pane fade" id="tasks" role="tabpanel">   
+        <div class="tab-pane fade" id="tasks" role="tabpanel" >   
             <br><br>
-            <h5  style="<?php if($notifications=='0' or $notificationsview->preference_display_status=='false') echo "display: none;" ?>" >You have <?php echo $notifications;?> new notification</h3>
+            <h5  style="<?php if( $notificationsview==''  or $notifications=='0' or $notificationsview->preference_display_status=='false') echo "display: none;" ?>" >You have <?php echo $notifications;?> new notification</h3>
             <hr> 
             <ul class="notif-box">
                 <div class="notif-center submenu"> 
-                    <a href="<?php echo base_url('supplier/dashboard/preference_profile');?>"  style="<?php if($notificationsview->preference_display_status=='true') echo "display: none;" ?>">
+                    <a href="<?php echo base_url('supplier/dashboard/preference_profile');?>"  style="<?php if($notificationsview==''  or  $notificationsview->preference_display_status=='true') echo "display: none;" ?>">
                     <li><div class="notif-content">
                     <b>Turn on your notifications</b>
                             <div class="clear-fix"></div>
@@ -574,8 +574,8 @@ hr{
                         </div>
                     </li>
                     </a>
-                    <a href="#"  style="<?php if($notificationsview->preference_display_status=='false') echo "display: none;" ?>" >
-                    <li><div class="notif-content">
+                    <a href="#"  style="<?php if($notificationsview=='' or $notificationsview->preference_display_status=='false') echo "display: none;" ?>">
+                    <li style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"><div class="notif-content">
                     <?php echo $notificationsview->message;?>
                             <div class="clear-fix"></div>
                             <!-- <span class="time">5 minutes ago</span> -->
@@ -608,7 +608,7 @@ hr{
                     
                     </a> -->
                 
-                    <a class="see-all" href="<?=supplier_url('dashboard/supplier_administration/tab_9')?>">See all notifications<i class="fa fa-angle-right"></i> </a>
+                    <a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" class="see-all" href="<?=supplier_url('dashboard/supplier_administration/tab_9')?>">See all notifications<i class="fa fa-angle-right"></i> </a>
                 </div>
             </ul>
 

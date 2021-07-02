@@ -72,8 +72,8 @@
    
               			 <div class="form-group" style="width:190px; margin-left: 15%" id="div1">
                     <!--  <label>User Type</label> -->
-                     <select class="form-control" name="user_type" id="s" >
-                      <option selected disabled >
+                     <select class="form-control" name="user_type" id="s" required="">
+                      <option value="" selected disabled >
                          -Select User Type-
                        </option>  
                       <option value="4" >

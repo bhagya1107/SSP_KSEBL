@@ -1388,7 +1388,7 @@ class Supplier_dashboard extends SP_Controller
 		);
 		$result = $this->dashM->update_access_permission('access_permission', $data, $user_type, $uid);
 		if ($result >= 0) {
-			$this->session->set_flashdata('msg', 'Access Permission added successfully');
+			$this->session->set_flashdata('msg', 'Access Permission updated successfully');
 			redirect(base_url('supplier/dashboard/permission'));
 		} else {
 			echo "Error while Updating";

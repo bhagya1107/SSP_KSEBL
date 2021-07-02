@@ -224,7 +224,7 @@
                 									$user_type=$this->session->userdata('user_type');
 
                 								?>
-												<li title="Administration"><a href="<?=supplier_url('dashboard/supplier_administration')?>" 
+												<li title="Administration"><a href="<?=supplier_url('dashboard/supplier_administration/tab_1')?>" 
 													
 
 												 ><i class="fa fa-users" aria-hidden="true"></i> Administration
