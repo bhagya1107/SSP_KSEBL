@@ -125,7 +125,8 @@ class User_management extends AD_Controller {
     $datas= json_encode($query);
     // $this->api->curl_postdataadmin($datas);
     // API END
-    $this->userM->insert('notifications',$data);
+    // $this->userM->insert('notifications',$data);
+    insertInNotifications($data);
     $this->userM->activate_account('suppliers',$id);
     $this->session->set_flashdata('msg','Approved successfully');
     redirect(base_url('webuser/user_management/suppliers'));
