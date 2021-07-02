@@ -46,7 +46,7 @@
 
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 
 <main id="tg-main" class="tg-main tg-haslayout">
 	<div class="container">
@@ -194,10 +194,9 @@ jQuery(document).ready(function($) {
 
 
   var paneID ;
-  $('.nav-tabs > li > a').on('click', function(event) {
-    document.querySelector("#loader2").style.visibility = "hidden"; 
-
-    //avoid <a> tag to load his href
+  // $('.nav-tabs > li > a').on('click', function(event) { 
+    $('#myTabs li a').on('click', function(event) {
+      document.querySelector("#loader2").style.visibility = "hidden"; 
     event.preventDefault();
     //getting the main subjects
     // var id_of_selected = $(this).attr('load-in');
@@ -249,6 +248,7 @@ $(window).load(function(){
 
     }
     else{
+      console.log("llmm");
       $tab_selected == 'tab_1'; 
     }
 
