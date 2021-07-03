@@ -607,13 +607,13 @@ hr{
                         </li>
                     
                     </a> -->
-                           
+                    <a style="<?php if($notificationsview!='') echo "display: none;" ?>" >No notifications </a>
+      
                     <a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" class="see-all" href="<?=supplier_url('dashboard/supplier_administration/tab_9')?>">See all notifications<i class="fa fa-angle-right"></i> </a>
                 </div>
             </ul>
 
         </div>
-        <a style="<?php if($notificationsview!='') echo "display: none;" ?>" >No notifications </a>
         
     
     </div>
