@@ -327,7 +327,7 @@
                             </tr>
                         </thead>
                         <tr>
-                            <td>1</td>
+                            <!-- <td>1</td>
                             <td>PC088944556</td>
                             <td>Tender name1</td>
                             <td><?php echo  $dates = date_formate('27-11-2020'); ?></td>
@@ -343,7 +343,7 @@
 
                                     </div>
                                 </div>
-                            </td>
+                            </td> -->
 
                         </tr>
 
@@ -1314,9 +1314,12 @@ toggle between hiding and showing the dropdown content */
 
 
     function universalpurchasesearch() {
+        
 
         $("#keywordpurchaseorder").on("keyup", function() {
+           
             var activetab = $("#purchasetabs li.active").attr('id');
+            
             var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
             var value = $(this).val().toLowerCase();
             filterpurchasedata(tabcontentid, value);
@@ -1326,12 +1329,19 @@ toggle between hiding and showing the dropdown content */
     }
 
     function filterpurchasedata(tabcontentid, value) {
-
+       
         var activetab = $("#purchasetabs li.active").attr('id');
-        $(".commonfilter div[class!=tg-btn]").filter(function() {
-            $(this).toggle($(this).text().indexOf(value) > -1)
+      
+        // $(".commonfilter div[class!=tg-btnsbox]").filter(function() {
+            $(".commonfilter").filter(function() {
+                if ($(this).is('.tg-btnsbox *')) {
+                    return;
+                }
+           var text= $(this).text().toLowerCase();
+           $(this).toggle(text.indexOf(value) > -1)
+          
         });
-
+        
         $('.hiddendate').addClass('hide');
         var spanid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchaseorder'
         var purchaselength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
@@ -1523,7 +1533,7 @@ toggle between hiding and showing the dropdown content */
                 html += "  <div class='tg-btnsbox'>"
 
                     +
-                    "<button type='button' class='collapsible btn btn-primary'>View Purchase Details</button>" +
+                    "<button type='button' class='collapsible btn btn-primary '>View Purchase Details</button>" +
                     "<div class='content'>" +
                     "<div class='table-responsive'>" +
                     "<div class='tg-ticket' style='color:black;background-color:white;'>" +
@@ -1541,9 +1551,9 @@ toggle between hiding and showing the dropdown content */
                     "<div class='tg-btnsbox'>" +
                     "<div class='dropdown'>" +
                     "<div id='myDropdown' class='pull-right dropdown-content'>" +
-                    "<a data-toggle='modal' data-target='#myModal_vmi'>VMI</a>" +
-                    " <a data-toggle='modal' data-target='#mdcc'>MDCC</a>" +
-                    " <a data-toggle='modal' data-target='#shipment'>Shipments</a>" +
+                    // "<a data-toggle='modal' data-target='#myModal_vmi'>VMI</a>" +
+                    // " <a data-toggle='modal' data-target='#mdcc'>MDCC</a>" +
+                    // " <a data-toggle='modal' data-target='#shipment'>Shipments</a>" +
                     "</div>" +
                     " </div>" +
                     " </div>"
@@ -1615,11 +1625,11 @@ toggle between hiding and showing the dropdown content */
                     +
                     "</div>" +
                     "  <div class='tg-btnsbox'>" +
-                    "<div style='margin-left:20px;'>" +
-                    " <a class='fa  fa-print' title='print' style='font-size:24px' data-toggle='modal' data-target='#tenderstatus'> </a>&nbsp" +
-                    "<a class='fa  fa-download' title='download' style='font-size:24px' data-toggle='modal' data-target='#tenderstatus'> </a>&nbsp" +
-                    "<a class='fa fa-file-o' title='document' style='font-size:24px' data-toggle='modal' data-target='#documents'> </a>&nbsp" +
-                    "<a class='fa  fa-file' title='terms and conditions' style='font-size:24px' data-toggle='modal' data-target='#termsconditions'> </a>&nbsp" +
+                    "<div class='tg-btnsbox' style='margin-left:20px;'>" +
+                    " <a class='fa  fa-print iconpo' title='print' style='font-size:24px' data-toggle='modal' data-target='#tenderstatus'> </a>&nbsp" +
+                    "<a class='fa  fa-download iconpo' title='download' style='font-size:24px' data-toggle='modal' data-target='#tenderstatus'> </a>&nbsp" +
+                    "<a class='fa fa-file-o iconpo' title='document' style='font-size:24px' data-toggle='modal' data-target='#documents'> </a>&nbsp" +
+                    "<a class='fa  fa-file iconpo' title='terms and conditions' style='font-size:24px' data-toggle='modal' data-target='#termsconditions'> </a>&nbsp" +
                     "</div>" +
                     "</div>";
                 html += "</div></div>";
