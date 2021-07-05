@@ -1365,6 +1365,15 @@ class Supplier_dashboard extends SP_Controller
 		//       $data['getemployeesdetail']=$this->dashM->getemployeesdetail($id);
 		// $this->template->make('supplier_dashboard/manage_users',$data,'supplier_portal');
 	}
+	public function search_notifications()
+	{
+		$user_type = $this->session->userdata('user_type');
+		$uid = $this->session->userdata('uid');
+		$keyword = $this->input->post('keyword');
+		$data['displaynotifications'] = $this->dashM->search_notifications($keyword,$user_type,$uid);
+		$this->template->make('supplier_dashboard/supplier_notifications', $data, 'supplier_portal', true);
+
+	}
 	public function insert_access_permission()
 	{
 

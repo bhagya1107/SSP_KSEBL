@@ -44,16 +44,24 @@
                   <div class="row">
                           <div class="form-group">
                             <div class="row" style="<?php if($notificationsview=="" or $notificationsview->preference_display_status=='false') echo "display: none;" ?>">
-                              <div class="col-md-4" style="float:left">
-                                <input type="text" placeholder="Key Word" name="" style="margin-left: 10px;">
+                              <!-- <div class="col-md-4" style="float:left"> -->
+                              
                               <!--   <select class="form-control">
                                 <option value="">
                                   Select Subject 
                                 </option>
                               </select> -->
-                            </div>
-                            <div class="col-md-4">
-                            <a class="tg-btn" href="#">Search</a>
+                            <!-- </div> -->
+                            <div class="col-md-4"> 
+
+                            <form method="post" action="<?php echo base_url('supplier/dashboard/search_notifications')?>">
+                            <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
+                            
+                            <input type="text" placeholder="Keyword" name="keyword" style="margin-left: 10px;">
+                            <button type="submit" name="seach_notifications" value="search" class="tg-btn pull-center one_line"  data-nlok-ref-guid="727bd987-58f0-47cd-f295-b92298e95987" ><span>Search</span></button>
+                     
+                              <!-- <input type="button" value="Search" name="submit" class="tg-btn" > -->
+                              <form>
                             </div>
                              
             
@@ -102,7 +110,7 @@
 
               </div>
             </div>
-
+ 
         <!-- </div>
        
       </div>
