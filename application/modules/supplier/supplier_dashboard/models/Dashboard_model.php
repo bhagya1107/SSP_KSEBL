@@ -406,4 +406,11 @@ public function check_products($supplierId)
     $this->db->where('status','1');
     return $this->db->get('notifications')->num_rows(); 
 }
+public function search_notifications($keyword,$user_type,$uid)
+	{
+		$select_query="select * from notifications  where user_type = '$user_type' and user_id= '$uid' and  LOWER(message) LIKE LOWER('%$keyword%') ";
+		$query=$this->db->query($select_query);
+		return $query->result();
+		
+	}
 }
