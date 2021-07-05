@@ -43,7 +43,7 @@
               <div class="col-sm-12 col-xs-12" >
                   <div class="row">
                           <div class="form-group">
-                            <div class="row" style="<?php if($notificationsview->preference_display_status=='false') echo "display: none;" ?>">
+                            <div class="row" style="<?php if($notificationsview=="" or $notificationsview->preference_display_status=='false') echo "display: none;" ?>">
                               <div class="col-md-4" style="float:left">
                                 <input type="text" placeholder="Key Word" name="" style="margin-left: 10px;">
                               <!--   <select class="form-control">
@@ -63,9 +63,11 @@
                   </div>
                  
                   <div class="table-responsive">
-                    <table class="table table-bordered table-hover" style="<?php if($notificationsview->preference_display_status=='false') echo "display: none;" ?>" >
+                    <table class="table table-bordered table-hover" style="<?php if($notificationsview=="" or  $notificationsview->preference_display_status=='false') echo "display: none;" ?>" >
                       <thead>
-                      <a href="<?php echo base_url('supplier/dashboard/preference_profile');?>" style="<?php if($notificationsview->preference_display_status=='true') echo "display: none;" ?>"><b>Turn On Your Notification</b></a>
+                      <a style="<?php if($notificationsview!='') echo "display: none;" ?>" >No notifications </a>
+      
+                      <a href="<?php echo base_url('supplier/dashboard/preference_profile');?>" style="<?php if( $notificationsview=="" or $notificationsview->preference_display_status=='true') echo "display: none;" ?>"><b>Turn On Your Notification</b></a>
                         <tr style="background-color:#26265f ;color:#FFF ">
                           <th>Sl No</th>
                           <th>Subject</th>
