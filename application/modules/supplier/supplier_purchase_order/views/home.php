@@ -255,7 +255,8 @@
                         <td><?php echo  $dates = date_formate('01-01-2021'); ?></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox">&nbsp;&nbsp;<a href="#">Agree to the terms & conditions</a></td>
+                        <td><input type="checkbox">&nbsp;&nbsp;
+                        <a href="<?php echo base_url(); ?>assets\supplier\terms_and_conditions.pdf" target="_blank"> Agree to the terms & conditions</td></a>
                     </tr>
 
 
@@ -486,7 +487,7 @@
                     </div>
                     <div id="banks" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>" style="color: black;background-color: white;">
                         <form action="upload.php" method="post" enctype="multipart/form-data">
-                            Copy of Bank Gurantee:
+                            Copy of Bank Guarantee:
                             <br> <br>
                             <input type="file" name="fileToUpload" id="fileToUpload"><br>
                             <input type="submit" value="Upload" name="submit">
@@ -1503,7 +1504,7 @@ toggle between hiding and showing the dropdown content */
         if (count > 0) {
             span1 = "<span><b>Total Accepted Purchase Orders:" + count + "</b></span>";
         } else {
-            span1 = "<span><b>No Accepted PurchaseOrders To Display </b></span>";
+            span1 = "<span><b>No Accepted Purchase Orders To Display </b></span>";
         }
         $('#acceptedpurchasecount').html(span1);
         html = "";
@@ -1859,7 +1860,7 @@ toggle between hiding and showing the dropdown content */
 
                 <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
             }, function(data) {
-                // alert(data);
+                 alert("Request Successfully sent");
                 $('#savemicro').removeAttr("disabled");
                 window.location.reload();
 

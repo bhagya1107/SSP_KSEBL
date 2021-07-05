@@ -215,26 +215,27 @@ div.scrollmenu {
 
                         <div id="menu1" class="tab-pane fade scrollmenu <?php echo $tab == 2 ? "in active" : "" ?>">
                             <div class="row" style="margin-top: 15px;">
+                            <input type="hidden" id="favdatadetails" value="<?php echo htmlentities(json_encode($getAllfavtender), ENT_QUOTES, 'UTF-8'); ?>" >
                                 <div class="tg-tits commonfilter" id="favid">
                                     <?php foreach ($getAllfavtender as $favten) { ?>
                                         <div class="tg-ticket" >
 
                                             <time class="tg-matchdate"><small>Last date</small><br><?php
-                                                                                                    $time = strtotime($favten['tenderdate']);
+                                                                                                    $time = strtotime($favten['tender_date']);
                                                                                                     echo date('j  ', $time); ?>
-                                                <span><?php $time = strtotime($favten['tenderdate']);
+                                                <span><?php $time = strtotime($favten['tender_date']);
 
                                                         echo date('M ', $time); ?></span></time>
 
                                             <div class="tg-matchdetail" >
-                                                <div class='hiddendate' hidden><?php echo $favten['tenderdate'] ?></div>
-                                                <span class="tg-theme-tag"><?php echo $favten['tenderno'] ?></span>
-                                                <!-- <?php $message = str_replace ("\r\n", "<br>", $favten['tendername']  );?> -->
-                                                <h4 > <?php echo $favten['tendername'] ?></h4>
+                                                <div class='hiddendate' datetime="<?php echo $favten['tender_date'] ?>" hidden><?php echo $favten['tender_date'] ?></div>
+                                                <span class="tg-theme-tag"><?php echo $favten['tender_num'] ?></span>
+                                                <!-- <?php $message = str_replace ("\r\n", "<br>", $favten['tender_title']  );?> -->
+                                                <h4 > <?php echo $favten['tender_title'] ?></h4>
                                                 </h4>
                                                 <ul class="tg-matchmetadata">
                                                     <li>
-                                                        <address>Tender Description:<?php echo $favten['tenderauthority'] ?></address>
+                                                        <address>Tender Description:<?php echo $favten['tender_description'] ?></address>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -269,6 +270,7 @@ div.scrollmenu {
                    
                     <div id="menu2" class="tab-pane fade scrollmenu <?php echo $tab == 3 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
+                        <input type="hidden" id="applydatadetails" value="<?php echo htmlentities(json_encode($appliedtenderdetails), ENT_QUOTES, 'UTF-8'); ?>">
                             <div class="tg-tickets commonfilter" id="appliedtickets">
                                 <?php foreach ($appliedtenderdetails as $appliedtenders) {
                                     
@@ -655,7 +657,7 @@ div.scrollmenu {
 
 
     function save_tenders(tenders) {
-        //console.log(tenders);
+     
         $.post("<?php echo site_url('supplier/tenders/insert_favtenders') ?>", {
 
             title: tenders.id,
@@ -852,7 +854,6 @@ div.scrollmenu {
         })
         html += "</div>";
 
-        //console.log(html);
         $('#tenderdetails').html(html);
     }
 </script>
@@ -880,7 +881,7 @@ div.scrollmenu {
                 // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
                 // processData: false, // NEEDED, DON'T OMIT THIS
                 success: function(result) {
-                   // console.log(result);
+                   
                     data = JSON.parse(result);
                     $('#dataAppend').html(data);
                     $('#preview_modal').modal();
@@ -956,7 +957,6 @@ div.scrollmenu {
         $(".nav-tabs a").click(function() {
             var activetab = $(this).parent().attr('id');
 
-            //console.log(activetab);
             if (activetab == 'favtender') {
                 $('#favtendercount').removeClass('hide');
                 $('#alltendercount').addClass('hide');
@@ -970,7 +970,11 @@ div.scrollmenu {
                 $('#applytedercount').addClass('hide');
                 $('#favtendercount').addClass('hide');
             }
+            setTimeout(function() {
+                datefilters();
+            }, 1000);
 
+            
 
         });
     }
@@ -979,6 +983,7 @@ div.scrollmenu {
 
         $("#keywordtender").on("keyup", function() {
             var activetab = $("#tendertabs li.active").attr('id');
+           
             var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
             //var tabcontentid = $("#alltenders");
             var value = $(this).val().toLowerCase();
@@ -988,25 +993,19 @@ div.scrollmenu {
         });
 
     }
-
+//--------------------------searchbox filter(text)-----------------------//
     function filtertenderdata(tabcontentid, value) {
+      
 
         var activetab = $("#tendertabs li.active").attr('id');
         $(".commonfilter div[class!=tg-btnsbox]").filter(function() {
-
-            var datetime1 = $(this).attr('datetime');
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
 
         $('.hiddendate').addClass('hide');
         var spanid = (activetab == 'favtender') ? 'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
-        var activetab1 = $("#tendertabs li.active").length;
         var tenderlength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
-        favtender
-        applytender
-        console.log(tenderlength);
         var tendercountdiv = (activetab == 'favtender') ? 'favtendercount' : (activetab == 'applytender') ? 'applytedercount' : 'alltendercount'
-
         if (tenderlength == 0) {
             $('.' + spanid).removeClass('hide');
             span1 = "<span><b>No Tenders Available </b></span>";
@@ -1139,7 +1138,7 @@ div.scrollmenu {
             beforeSend: function() {
                 // setting a timeout
                 if (overlay) {
-                    console.log(overlay);
+                    //console.log(overlay);
                     $("#overlay").fadeIn();
                 }
             },
@@ -1167,15 +1166,20 @@ div.scrollmenu {
         var results = [];
         var fromDate = $("#datepickerfrom").val();
         var toDate = $("#datepickerto").val();
+        var activetab = $("#tendertabs li.active").attr('id');
+        var favdetails = JSON.parse($('#favdatadetails').val());
+        var appliedtabdetails = JSON.parse($('#applydatadetails').val());
+        var alldatatabs = (activetab == 'favtender') ? Object.values(favdetails) : (activetab == 'applytender') ? Object.values(appliedtabdetails) : datas;
+    //    console.log(alldatatabs);
         if (fromDate || toDate) {
-            console.log(fromDate);
-            console.log(toDate);
-            results = datas.filter(function(value, key) {
+            results =  alldatatabs.filter(function(value, key) {
                 if (toDate != '') {
                     if (value['tender_date'] >= fromDate && value['tender_date'] <= toDate) {
                         return value;
                     }
                 } else {
+                    console.log(value);  
+                    console.log(fromDate); 
                     if (value['tender_date'] == fromDate)
                         return value;
 
@@ -1185,12 +1189,12 @@ div.scrollmenu {
             buildmytenders(results);
 
         } else {
-            buildmytenders(datas);
+            buildmytenders(alldatatabs);
         }
+        console.log(results);
         var activetab = $("#tendertabs li.active").attr('id');
         var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
         var value = $('#keywordtender').val().toLowerCase();
-
         filtertenderdata(tabcontentid, value);
     }
 
@@ -1216,7 +1220,21 @@ div.scrollmenu {
 
             html += "</div></div>";
         });
-        $('#alltenderdetails').empty().append(html);
+        var activetab = $("#tendertabs li.active").attr('id');
+        var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
+        if(activetab == 'favtender'){
+            $('#favid').empty().html(html);
+        }
+        else if(activetab == 'applytender'){
+            $('#appliedtickets').empty().html(html);
+        }
+        else{
+            console.log('mmnb');
+            console.log(datas.length)
+            $('#alltenderdetails').empty().append(html);
+        }
+
+       
     }
 
 
@@ -1238,8 +1256,7 @@ div.scrollmenu {
 
                 datas = JSON.parse(result);
                 var count = datas.length;
-                console.log(datas);
-                console.log(count);
+        
                 if (count > 0) {
                     span1 = "<span><b>Total Tenders:" + count + "</b></span>";
 
@@ -1251,7 +1268,6 @@ div.scrollmenu {
                 html = "";
 
                 // var mytenderservices = JSON.parse($('#mytenderservices').val());
-                console.log(mytenderservices);
                 $.each(datas, function(i, data) {
                     console.log(data);
                     html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
@@ -1284,14 +1300,13 @@ div.scrollmenu {
 
     setInterval(() => {
         var type = $('#tenderType').val();
-        console.log('rintrval');
-        console.log(type);
+      
         if (type == 'all') {
             LoadAllTenders();
-            console.log('reload api');
+         
         } else if (type == 'products') {
             getMytenders(false);
-            console.log('reload api');
+           
         } else if (type == 'services') {
             getMyservices(false);
         }

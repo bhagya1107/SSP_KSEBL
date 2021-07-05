@@ -103,7 +103,8 @@ class Supplier_purchase_order extends SP_Controller
 	}
 	private function callpostapi($data)
 	{
-		$this->api->curl_postdata($data);
+		$url="http://hris.kseb.in/erpws/api/prc/getPOListingDeliveryscheduled?vender_id=10003526";
+		$this->api->curl_postdata($url,$data);
 	}
 
 	public function getpredispatchData()
