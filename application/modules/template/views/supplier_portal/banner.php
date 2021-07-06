@@ -150,7 +150,7 @@
 							<span><b>Purchase Orders:</b></span>
  							<select class="select2 form-control" id="purchaseordernum" name="group_flat__id"
  												data-placeholder="Select a Purchase Orders" >
-												 <option  >Select  Orders</option>
+												 <option  >Select Purchase Orders</option>
 												 <!-- <option>Select Work Order</option> -->
 													<?php foreach ($purchaseorder as $purchaseorders) { ?>
 													<?php $purchaseorderdetails=(array)$purchaseorders?>

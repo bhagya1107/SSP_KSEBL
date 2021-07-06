@@ -260,7 +260,7 @@ div.scrollmenu {
 
                                 </div>
 
-                                <span class="no-tender-fav hide">No tender available</span>
+                                <!-- <span class="no-tender-fav hide">No tender available</span> -->
                             </div>
                             <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
@@ -313,7 +313,7 @@ div.scrollmenu {
 
 
                             </div>
-                            <span class="no-tender-apply hide">No tender available</span>
+                            <!-- <span class="no-tender-apply hide">No tender available</span> -->
                         </div>
 
                     </div>

@@ -1364,7 +1364,7 @@ toggle between hiding and showing the dropdown content */
 
         var activetab = $("#purchasetabs li.active").attr('id');
         var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
-        var value = $(this).val();
+        var value = $(this).val().toLowerCase();
         datefilters();
         filterpurchasedata(tabcontentid, value);
 
