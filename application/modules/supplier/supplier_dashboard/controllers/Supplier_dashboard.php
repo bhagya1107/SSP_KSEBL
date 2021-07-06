@@ -1065,10 +1065,16 @@ class Supplier_dashboard extends SP_Controller
 		$data['name'] = $this->input->post('name');
 		$data['mobilenum'] = $this->input->post('mobilenumber');
 		$data['email'] = $this->input->post('email');
+		$email= $data['email'] ;
+		$mobile=$data['mobilenum'];
 		$data['password'] = $this->input->post('password');
 		$data['usertype'] = $this->input->post('usertype');
 		$data['supplierid'] = $this->session->userdata('uid');
-
+		// echo $email; exit;
+		$getdetailsemp = $this->dashM->getdetailsemp($email);
+		$getdetailsempmob = $this->dashM->getdetailsempmob($mobile);
+		// echo   $getdetailsempmob->mobilenum; 
+		// echo   $getdetailsemp->email; 	  exit;
 		$id = $this->input->post('id');
 		$data['isdeleted'] = false;
 
@@ -1084,7 +1090,13 @@ class Supplier_dashboard extends SP_Controller
 				echo "Error while adding";
 			}
 		} else {
+			if($getdetailsemp->email=="" and  $getdetailsempmob->mobilenum=="")
+			{
 			$res =  $this->dashM->insert('employees', $data);
+			}
+			if($getdetailsemp->email!="" or  $getdetailsempmob->mobilenum!=""){
+				$this->session->set_flashdata('rmsg', 'Employee Already exist');
+				redirect(base_url('supplier/dashboard/manage_user'));	}
 
 			if ($res >= 0) {
 				// echo "Employees added successfully"; 

@@ -290,6 +290,18 @@ class Dashboard_model extends CI_Model
     $this->db->where('pannumber', $pannumber);
     return $this->db->get('suppliers')->row();
   }
+  public function getdetailsemp($email)
+  {
+    $this->db->select('*');
+    $this->db->where('email', $email);
+    return $this->db->get('employees')->row();
+  }
+  public function getdetailsempmob($mobile)
+  {
+    $this->db->select('*');
+    $this->db->where('mobilenum', $mobile);
+    return $this->db->get('employees')->row();
+  }
 
   public function getpersonalprofile($table, $uid)
   {

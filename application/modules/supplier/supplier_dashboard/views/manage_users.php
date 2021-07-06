@@ -94,6 +94,25 @@ div.scrollmenu {
               }
               ?>
 
+          <?php 
+              $msg=$this->session->flashdata('rmsg'); 
+              if($msg)
+              {
+                ?>
+                
+                <div class="alert alert-danger" id="mydivss">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                  <?php
+                echo $msg;
+                  ?>
+                </div>
+              
+              <?php 
+              }
+              ?>
+
             <div class="row1">
               <form method="post" action="<?php echo base_url('supplier/dashboard/insert_companyprofile')?>">
                  <input type="hidden" name="<?=$this->security->get_csrf_token_name();;?>" value="<?=$this->security->get_csrf_hash();?>" />
@@ -123,7 +142,7 @@ div.scrollmenu {
 
                    
 
-                   <div class="form-group">
+                   <div class="form-group"> 
                      <label>Email</label>
                      <input type="email" id="email" name="email" class="form-control" required="" />
                    </div>
