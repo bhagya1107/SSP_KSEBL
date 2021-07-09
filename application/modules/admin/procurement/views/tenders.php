@@ -107,8 +107,8 @@
                                               <td><?php echo $tenderdatas->status; ?></td> 
                                            
                                             <td> 
-                                            <!-- changed the codtn temprry  N -->
-                                            <?php if(!in_array($tenderdatas->formenginerequired=="Y" and $tenderdatas->tender_id,$savedformengines )) { ?>
+                                      
+                                            <?php if(!in_array($tenderdatas->formenginerequired=="N" and $tenderdatas->tender_id,$savedformengines )) { ?>
                                               <?php $tender_num = urlencode($tenderdatas->tender_num) ?>
                                             <a href="<?php echo admin_url("procurement/form_engine/".$tenderdatas->tender_id."?tender_num=".$tender_num) ?>">
                                           
