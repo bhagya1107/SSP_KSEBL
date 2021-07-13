@@ -102,962 +102,7 @@
     /* #tg-main{
         margin-top: 12%;
      }  */
-</style>
 
-<main id="tg-main" class="tg-main tg-haslayout">
-    <section class="tg-main-section tg-haslayout">
-        <?php if ($purchaseorder == "") { ?>
-            <div class="alert alert-danger" role="alert">
-                <?php echo api_error_message(); ?>
-                <!-- Connection to kseb.his.in is Interupted -->
-            </div>
-            <div id="allpurchasecount" style="text-align:center;">
-            </div>
-            <div id="acceptedpurchasecount" class="hide" style="text-align:center;">
-            </div>
-
-            <div id="workpurchasecount" class="hide" style="text-align:center;">
-            </div>
-            <div class="container">
-                <div class="tg-section-name">
-                    <h2>Purchase Orders</h2>
-                </div>
-
-                <?php $user_type = $this->session->userdata('user_type'); ?>
-                <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; " id="innerscroll">
-
-
-                    <ul class="nav nav-tabs" id="purchasetabs">
-                        <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
-                        <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
-                        <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
-                    </ul> <?php } else { ?>
-
-                    <div id="allpurchasecount" style="text-align:center;">
-                    </div>
-                    <div id="acceptedpurchasecount" class="hide" style="text-align:center;">
-                    </div>
-
-                    <div id="workpurchasecount" class="hide" style="text-align:center;">
-                    </div>
-                    <div class="container">
-                        <div class="tg-section-name">
-                            <h2>Purchase Orders</h2>
-                        </div>
-
-                        <?php $user_type = $this->session->userdata('user_type'); ?>
-                        <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; height:50vh;" id="innerscroll">
-
-                            <div id="overlay">
-                                <div class="cv-spinner">
-                                    <span class="spinner"></span>
-                                </div>
-                            </div>
-
-                            <ul class="nav nav-tabs" id="purchasetabs">
-                                <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
-                                <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
-                                <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
-                            </ul>
-
-
-                            <div class="tab-content">
-                                <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
-                                    <div class="row">
-                                        <div class="tg-tickets">
-                                            <div class="commonfilter" id="allpurchasedetails"></div>
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div id="workhome" class="tab-pane fade  <?php echo $user_type == 2 ? "in active" : "" ?>">
-                                    <div class="row">
-                                        <div class="tg-tickets">
-                                            <div class="tg-tickets commonfilter" id="worktickets">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="menu1" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>">
-                                    <div class="row">
-                                        <div class="tg-tickets">
-                                            <div class="tg-tickets commonfilter" id="acceptedtickets">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-    </section>
-</main>
-
-<div id="myModalpurchase" class="modal fade" role="dialog">
-    <div class="modal-dialog widthAdjust">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Purchase order details</h4>
-            </div>
-            <div class="modal-body" id="modalpurchase" style="margin-left:15px;">
-
-            </div>
-
-
-            <div class="modal-footer" style="text-align: center;">
-                <div>
-                    <button type="button" class="btn btn-warning changereq-view">Change Request</button>
-
-                    <button type="button" class="btn btn-primary">View & Download Pdf</button>
-
-                    <button type="button" class="btn btn-success loa-view">Letter of Acceptance</button>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="myModal_Loa" class="modal fade" role="dialog">
-    <div class="modal-dialog widthAdjust">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Letter of Acceptance</h4>
-            </div>
-            <div class="modal-body">
-                <table style="width:100%" class="maintable">
-
-                    <tr>
-                        <td>Tender Name:</td>
-                        <td>TNDR#0001</td>
-                    </tr>
-                    <tr>
-                        <td> Tender Date:</td>
-                        <td><?php echo  $dates = date_formate('18-03-2020'); ?></td>
-                    </tr>
-                    <tr>
-                        <td>Last Date of acceptance:</td>
-                        <td><?php echo  $dates = date_formate('01-01-2021'); ?></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox">&nbsp;&nbsp;
-                        <a href="<?php echo base_url(); ?>assets\supplier\terms_and_conditions.pdf" target="_blank"> Agree to the terms & conditions</td></a>
-                    </tr>
-
-
-                </table>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="acceptloa()" data-dismiss="modal">Accept</button>
-
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-<div id="myModal_changereq" class="modal fade" role="dialog">
-    <div class="modal-dialog widthAdjust">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Change request </h4>
-            </div>
-            <div class="modal-body">
-                <label>Comment</label>
-                <textarea class="form-control" name="commentrequest" id="commentrequest"></textarea>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="changerequest()" data-dismiss="modal">Save</button>
-
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-<!------------------------Purchase Details------------------------------------------------------->
-
-<div class="modal fade" id="purchasdetails" style="padding-left: 0px !important;">
-    <div class="modal-dialog">
-        <div class="modal-content" style="width:750px;">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Purchase Details</h4>
-
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <h4 class="modal-title"><span id="inspect"></span></h4>
-                <div class="table-responsive">
-
-                    <table id="siteins" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th scope="col">sl no</th>
-                                <th scope="col">Purchase Order No</th>
-                                <th scope="col">Tender Name</th>
-                                <th scope="col">Purchase Date</th>
-                                <th scope="col">Action</th>
-
-                            </tr>
-                        </thead>
-                        <tr>
-                            <!-- <td>1</td>
-                            <td>PC088944556</td>
-                            <td>Tender name1</td>
-                            <td><?php echo  $dates = date_formate('27-11-2020'); ?></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button onclick="myFunction()" class="pull-center dropbtn">Action</button>
-                                    <div id="myDropdown" style="width:179px;margin-top:-50px;" class=" pull-right dropdown-content">
-                                        <a data-toggle="modal" data-target="#myModal_vmi">VMI</a>
-                                        <a data-toggle="modal" data-target="#dispatch">PreDispatch Inspection</a>
-                                        <a data-toggle="modal" data-target="#mdcc">MDCC</a>
-                                        <a data-toggle="modal" data-target="#shipment">Delivery Schedule</a>
-
-
-                                    </div>
-                                </div>
-                            </td> -->
-
-                        </tr>
-
-
-                        </tbody>
-
-
-                    </table>
-
-                </div>
-            </div>
-
-            <!-- Modal footer -->
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-------------------------Purchase DetailsEnd---------------------------------------------------->
-
-
-<!------------------------Terms and Condition------------------------------------------------------->
-
-<div class="modal fade" id="termsconditions" style="padding-left: 0px !important;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Terms and Conditions</h4>
-
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <h4 class="modal-title"><span id="inspect"></span></h4>
-                THIS Terms and Condition is entered into on this date by and between a registered company
-                WHEREAS, the Client desires to hire the services of the Company to render services to ;<br>
-
-                NOW, THEREFORE, for and in consideration of the mutual covenants made by the parties hereto, the Parties to this agreement agree as follows:<br><br>
-
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-<!-------------------------terms andconditionEnd---------------------------------------------------->
-
-
-<!------------------------Terms and Condition------------------------------------------------------->
-<div class="modal fade" id="delivery_schedule" style="padding-left: 0px !important;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Delivery Schedule</h4>
-
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="tg-ticket">
-
-                    <h4 class="modal-title"><span id="inspect"></span></h4>
-                    <p><b>Purchase Date</b>:<?php echo  $dates = date_formate('11-02-2020'); ?><br>
-                        <b>Order No</b>:#1145677<br>
-                        <b>Destination</b>:TVM<br>
-                        <b>Status</b>:Estimated time delivery on time<br>
-                        <b>Delivery Date</b>:29 November 2020<br>
-                        <b>Performance</b>:<span class="score">
-                            <div class="score-wrap">
-                                <span class="stars-active" style="width:88%">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </span>
-                            </div>
-                            <div class="tg-btnsbox"><a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/delivery") ?>" style="margin-top:-207px;">View Calender</a></div>
-                </div>
-                </p>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top:8px;">Close</button>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-------------------------terms andconditionEnd---------------------------------------------------->
-
-
-<!------------------------Documents------------------------------------------------------->
-
-
-
-<div class="modal fade" id="documents" style="padding-left: 0px !important;">
-
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <ul class="nav nav-tabs">
-                    <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a href="#agreements" data-toggle="tab">Agreements</a></li>
-                    <li class="<?php echo $tab == 5 ? "active" : "" ?>"><a href="#banks" data-toggle="tab">Bank Guarantee</a></li>
-
-                </ul>
-
-
-                <div class="tab-content">
-                    <div id="agreements" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>" style="color: black;background-color: white;">
-                        THIS AGREEMENT is entered into on this date by and between a registered company
-                        WHEREAS, the Client desires to hire the services of the Company to render services to ;<br>
-
-                        NOW, THEREFORE, for and in consideration of the mutual covenants made by the parties hereto, the Parties to this agreement agree as follows:<br>
-
-                        The Services
-
-                        The Consultant agrees that it shall render services to the Client on matters pertaining to (the “Services”).
-
-                        Compensation and Payment
-
-                        The Client shall provide payment to the Consultant at the amount of paid on every , beginning the next month of the commencement of this Agreement.
-                        <br><br>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">submit</button>
-                    </div>
-                    <div id="banks" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>" style="color: black;background-color: white;">
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
-                            Copy of Bank Guarantee:
-                            <br> <br>
-                            <input type="file" name="fileToUpload" id="fileToUpload"><br>
-                            <input type="submit" value="Upload" name="submit">
-                        </form>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-------------------------DocumentsEnd---------------------------------------------------->
-<!------------------------------shipment--------------------------------------------------------->
-<div class="modal fade" id="shipment" style="padding-left: 0px !important;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Delivery</h4>
-
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <table id="siteins" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th scope="col">sl no</th>
-                            <th scope="col">OrderNo</th>
-                            <th scope="col">Material</th>
-                            <th scope="col">Quantity </th>
-                            <th scope="col">Action</th>
-                            <th scope="col">#</th>
-
-
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>1</td>
-                        <td>PCO88944556</td>
-                        <td>LED</td>
-                        <td>1000</td>
-                        <td><input type="button" value="shipment" data-toggle="modal" data-target="#shipment" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;"></td>
-                        <td><a href="<?php echo base_url("supplier/delivery") ?>" class="button">View More</a></td>
-                    </tr>
-
-                    <tbody>
-                        <tr class="gradeX">
-                            <!--<td colspan="6" class="dataTables_empty">No data found</td>-->
-                        </tr>
-                    </tbody>
-
-
-                </table>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-<!-------------------------shipment End---------------------------------------------------->
-
-
-<!------------------------Split Shipment------------------------------------------------------->
-
-<div class="modal fade" id="splitshipment" style="padding-left: 0px !important;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Split</h4>
-
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class=<h4 class="modal-title"><span id="inspect"></span></h4>
-                    <div class="split left">
-                        <div class="centered">
-                            <div class="container">
-                                <div class="panel panel-default">
-                                    <!-- <div class="panel-heading"></div>-->
-                                    <div class="panel-body">
-                                        <div class="form-group">
-                                            <label for="title">Select Product:</label>
-                                            <select name="state" class="form-control">
-                                                <option value="0">LED</option>
-                                                <option value="0">Bulb</option>
-
-                                            </select>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="title">Quantity:</label>
-                                            <input type="text" class="form-control" id="quantity" name="quantity">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button type="button" id="splitbutton " class="btn btn-primary" data-dismiss="modal">Request</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="split horizontal">
-                        <div class="centered">
-                            <div class="container">
-                                <div class="panel panel-default">
-                                    <!-- <div class="panel-heading"></div>-->
-                                    <div class="panel-body">
-                                        <table id="siteins" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">sl no</th>
-                                                    <th scope="col">Product</th>
-                                                    <th scope="col">Quantity</th>
-
-
-
-                                                </tr>
-                                            </thead>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>LED</td>
-                                                <td>500</td>
-
-
-
-                                            </tr>
-                                            </tbody>
-                                            <tbody>
-                                                <tr class="gradeX">
-                                                    <!--<td colspan="6" class="dataTables_empty">No data found</td>-->
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
-
-                                            </tfoot>
-
-                                        </table>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div id="myModal_vmi" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Vendor managed Inventory</h4>
-            </div>
-            <div class="modal-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Order No</th>
-                            <th>Product Name</th>
-                            <th>Max Capacity</th>
-                            <th>Min Capacity</th>
-                            <th>On Hand</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>PCO88944556</td>
-                            <td>Bulb</td>
-                            <td>3000</td>
-                            <td>200</td>
-                            <td>400</td>
-
-                        </tr>
-
-
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div id="myModal_VMI" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Vendor managed Inventory</h4>
-            </div>
-            <div class="modal-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Order No</th>
-                            <th>Product Name</th>
-                            <th>Max Capacity</th>
-                            <th>Min Capacity</th>
-                            <th>On Hand</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>PCO8895544</td>
-                            <td>LED</td>
-                            <td>1000</td>
-                            <td>150</td>
-                            <td>600</td>
-
-                        </tr>
-
-
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="modal fade" id="dispatch" style="padding-left: 0px !important;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">List Of Inspections</h4>
-                <a href="#" class="gx-fab-btn gx-btn-primary position-absolute addButtonCustom" data-toggle="modal" id="modal" data-target="#modal_rew">
-                    <i class="zmdi zmdi-plus-circle zmdi-hc-2x" style="margin-left:480px; border-color: #ffcc33;"></i>
-                </a>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <h4 class="modal-title"></h4>
-                <div class="table-responsive">
-
-                    <table id="predispatchlist" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th scope="col">sl no</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">status</th>
-                                <th scope="col">#</th>
-
-
-                            </tr>
-                        </thead>
-
-
-
-                    </table>
-
-                </div>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div id="modal_rew" class="modal fade" role="dialog">
-    <div class="modal-dialog widthAdjust">
-
-        <!-- Modal content-->
-        <div class="modal-content" style="margin-left: 200px;width: 606px;">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Serial N.o Uploader </h4>
-            </div><br>
-            <div class="form-group row">
-                <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o From:</label>
-                <div class="col-md-6 col-sm-6" id="ques_group">
-                    <input type="text" name="serialfrom" class="form-control" id="serialfrom" placeholder="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o To:</label>
-                <div class="col-md-6 col-sm-6" id="ques_group">
-                    <input type="text" name="serialto" class="form-control" id="serialto" placeholder="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="subject" class="col-md-3 col-sm-3 control-label">Quantity:</label>
-                <div class="col-md-6 col-sm-6" id="ques_group">
-                    <input type="text" name="quantitypdi" class="form-control" id="quantitypdi" placeholder="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="subject" class="col-md-3 col-sm-3 control-label">Visit Request Date:</label>
-                <div class="col-md-6 col-sm-6" id="ques_group">
-                    <input type="date" name="visitdate" class="form-control" id="visitdate" placeholder="">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="subject" class="col-md-3 col-sm-3 control-label">Serial Upload file:</label>
-                <div class="col-md-6 col-sm-6" id="ques_group">
-                    <input type="file" name="fileToUpload" name="fileToUpload" id="fileToUpload"><br>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="requestdata()" data-dismiss="modal">Request</button>
-
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
- 
-<div class="modal fade" id="PaymentPDI">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title" id="adding">Add Payment</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div> 
-
-            <!-- Modal body -->
-             <div class="modal-body">
-                <form id="questions_form">
-                    <div class="form-group row">
-                        <label for="subject" class="col-md-2 col-sm-3 control-label">Pay Amount</label>
-                        <div class="col-md-10 col-sm-9" id="ques_group">
-                            <input type="text" class="form-control" id="subject" placeholder="Add fee amount">
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="pay" id="pay">
-
-                </form>
-            </div> 
-
-            <!-- Modal footer -->
-           <div class="modal-footer">
-
-                <button type="button" style="margin-right: 252px;" class="btn btn-primary" onclick="">Submit</button>
-            </div>
-
-        </div>
-    </div>
-</div> 
-
-<div id="mdcc" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">MDCC list</h4>
-            </div>
-            <div class="modal-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>SL No</th>
-                            <th>Consignee</th>
-
-                            <th>Quantity(Nos)</th>
-                            <th>Serial Number of Units</th>
-                            <!--<th>Scheduled</th>-->
-                            <th>Scheduled date of delivery</th>
-                            <th>#</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Executive Engineer Thirumala,TMR Divison,Thirumala</td>
-                            <td>1000</td>
-                            <td>4456788-4588880</td>
-                            <td>20-01-2021</td>
-
-                            <!--<td><input type="button"  data-toggle="modal" data-target="#schedule" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" value="Schedule"></td>-->
-                            <td><a href="#" id="" value="">View Pdf</a></td>
-
-                        </tr>
-
-
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="modal fade" id="shipment1" style="padding-left: 0px !important;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Delivery Schedule</h4>
-
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <table id="siteins" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th scope="col">sl no</th>
-                            <th scope="col">OrderNo</th>
-                            <th scope="col">Material</th>
-                            <th scope="col">Quantity </th>
-                            <th scope="col">Action Request</th>
-
-
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>1</td>
-                        <td>PCO88944556</td>
-                        <td>Bulb</td>
-                        <td>1000</td>
-                        <td><input type="button" class="btn" data-toggle="modal" data-target="#schedule" style="width:70%;color: #fff;background-color: #1e315d; border-color: #ffcc33;" value="Schedule"></td>
-                        <!--<td ><a href="<?php echo base_url("supplier/delivery") ?>" class="button">View More</a></td>-->
-                    </tr>
-                    </tbody>
-                    <tbody>
-                        <tr class="gradeX">
-                            <!--<td colspan="6" class="dataTables_empty">No data found</td>-->
-                        </tr>
-                    </tbody>
-                    <tfoot>
-
-                    </tfoot>
-
-                </table>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-<div class="modal fade" id="schedule">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title" id="adding">Add Schedule</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form id="questions_form">
-                    <div class="form-group row">
-                        <label for="subject" class="col-md-2 col-sm-3 control-label">Product</label>
-                        <div class="col-md-10 col-sm-9" id="ques_group">
-                            <input type="text" class="form-control" name="productdelivery" id="productdelivery" placeholder="Add Product">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="subject" class="col-md-2 col-sm-3 control-label">Quantity</label>
-                        <div class="col-md-10 col-sm-9" id="ques_group">
-                            <input type="text" class="form-control" name="quantitydelivery" id="quantitydelivery" placeholder="Add Quantity">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="subject" class="col-md-2 col-sm-3 control-label">Schedule date</label>
-                        <div class="col-md-5 col-sm-5" id="ques_group">
-                            <input type="date" class="form-control" id="deliverydate" name="deliverydate" placeholder="Schedule date">
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="pay" id="pay">
-
-                </form>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-
-                <button type="button" class="btn btn-primary" onclick="addscheduleddelivery()">Save</button>
-                <button type="button" style="margin-right: 252px;" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<?php } ?>
-
-<!-------------------------Split shipment End---------------------------------------------------->
-
-
-<script>
-    $(document).ready(function() {
-        $('.modal-view').click(function(e) {
-            e.preventDefault();
-
-            $('#myModal').modal();
-        });
-        $('.loa-view').click(function(e) {
-            e.preventDefault();
-
-            $('#myModal_Loa').modal();
-        });
-
-        $('.changereq-view').click(function(e) {
-            e.preventDefault();
-
-            $('#myModal_changereq').modal();
-        });
-
-    });
-</script>
-
-<style>
     .maintable>tbody>tr>td {
         border: none !important;
         text-align: left;
@@ -1067,9 +112,7 @@
         max-width: 1000px;
         width: 100%;
     }
-</style>
 
-<style>
     .splitbutton {
         background-color: #1f4056;
     }
@@ -1159,7 +202,966 @@
         color: #9089e2 !important;
     }
 </style>
+
+<main id="tg-main" class="tg-main tg-haslayout">
+    <section class="tg-main-section tg-haslayout">
+        <?php if ($purchaseorder == "") { ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo api_error_message(); ?>
+                <!-- Connection to kseb.his.in is Interupted -->
+            </div>
+            <div id="allpurchasecount" style="text-align:center;">
+            </div>
+            <div id="acceptedpurchasecount" class="hide" style="text-align:center;">
+            </div>
+
+            <div id="workpurchasecount" class="hide" style="text-align:center;">
+            </div>
+            <div class="container">
+                <div class="tg-section-name">
+                    <h2>Purchase Orders</h2>
+                </div>
+
+                <?php $user_type = $this->session->userdata('user_type'); ?>
+                <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; " id="innerscroll">
+
+
+                    <ul class="nav nav-tabs" id="purchasetabs">
+                        <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
+                        <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
+                        <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
+                    </ul>
+                   
+                    </div>
+                    </div>
+    </section>
+</main>
+<?php } else { ?>
+
+    <div id="allpurchasecount" style="text-align:center;">
+    </div>
+    <div id="acceptedpurchasecount" class="hide" style="text-align:center;">
+    </div>
+
+    <div id="workpurchasecount" class="hide" style="text-align:center;">
+    </div>
+    <div class="container">
+        <div class="tg-section-name">
+            <h2>Purchase Orders</h2>
+        </div>
+
+        <?php $user_type = $this->session->userdata('user_type'); ?>
+        <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; height:50vh;" id="innerscroll">
+
+            <div id="overlay">
+                <div class="cv-spinner">
+                    <span class="spinner"></span>
+                </div>
+            </div>
+
+            <ul class="nav nav-tabs" id="purchasetabs">
+                <li id="allpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 1 ? "active" : "" ?>"><a data-toggle="tab" href="#home">Purchase Orders</a></li>
+                <li id="acceptedpurchaseorder" style="<?php if ($user_type == '2') echo "display: none;" ?>" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Accepted Purchase Orders</a></li>
+                <li id="workorders" style="<?php if ($user_type == '3') echo "display: none;" ?>" class="<?php echo $user_type == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#workhome">Work Orders</a></li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>">
+                    <div class="row">
+                        <div class="tg-tickets">
+                            <div class="commonfilter" id="allpurchasedetails"></div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div id="workhome" class="tab-pane fade  <?php echo $user_type == 2 ? "in active" : "" ?>">
+                    <div class="row">
+                        <div class="tg-tickets">
+                            <div class="tg-tickets commonfilter" id="worktickets">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="menu1" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>">
+                    <div class="row">
+                        <div class="tg-tickets">
+                            <div class="tg-tickets commonfilter" id="acceptedtickets">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    </section>
+    </main>
+
+    <div id="myModalpurchase" class="modal fade" role="dialog">
+        <div class="modal-dialog widthAdjust">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Purchase order details</h4>
+                </div>
+                <div class="modal-body" id="modalpurchase" style="margin-left:15px;">
+
+                </div>
+
+
+                <div class="modal-footer" style="text-align: center;">
+                    <div>
+                        <button type="button" class="btn btn-warning changereq-view">Change Request</button>
+
+                        <button type="button" class="btn btn-primary">View & Download Pdf</button>
+
+                        <button type="button" class="btn btn-success loa-view">Letter of Acceptance</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal_Loa" class="modal fade" role="dialog">
+        <div class="modal-dialog widthAdjust">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Letter of Acceptance</h4>
+                </div>
+                <div class="modal-body">
+                    <table style="width:100%" class="maintable">
+
+                        <tr>
+                            <td>Tender Name:</td>
+                            <td>TNDR#0001</td>
+                        </tr>
+                        <tr>
+                            <td> Tender Date:</td>
+                            <td><?php echo  $dates = date_formate('18-03-2020'); ?></td>
+                        </tr>
+                        <tr>
+                            <td>Last Date of acceptance:</td>
+                            <td><?php echo  $dates = date_formate('01-01-2021'); ?></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox">&nbsp;&nbsp;
+                                <a href="<?php echo base_url(); ?>assets\supplier\terms_and_conditions.pdf" target="_blank"> Agree to the terms & conditions
+                            </td></a>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="acceptloa()" data-dismiss="modal">Accept</button>
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="myModal_changereq" class="modal fade" role="dialog">
+        <div class="modal-dialog widthAdjust">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Change request </h4>
+                </div>
+                <div class="modal-body">
+                    <label>Comment</label>
+                    <textarea class="form-control" name="commentrequest" id="commentrequest"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="changerequest()" data-dismiss="modal">Save</button>
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!------------------------Purchase Details------------------------------------------------------->
+
+    <div class="modal fade" id="purchasdetails" style="padding-left: 0px !important;">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:750px;">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Purchase Details</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h4 class="modal-title"><span id="inspect"></span></h4>
+                    <div class="table-responsive">
+
+                        <table id="siteins" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th scope="col">sl no</th>
+                                    <th scope="col">Purchase Order No</th>
+                                    <th scope="col">Tender Name</th>
+                                    <th scope="col">Purchase Date</th>
+                                    <th scope="col">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tr>
+                                <!-- <td>1</td>
+                            <td>PC088944556</td>
+                            <td>Tender name1</td>
+                            <td><?php echo  $dates = date_formate('27-11-2020'); ?></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button onclick="myFunction()" class="pull-center dropbtn">Action</button>
+                                    <div id="myDropdown" style="width:179px;margin-top:-50px;" class=" pull-right dropdown-content">
+                                        <a data-toggle="modal" data-target="#myModal_vmi">VMI</a>
+                                        <a data-toggle="modal" data-target="#dispatch">PreDispatch Inspection</a>
+                                        <a data-toggle="modal" data-target="#mdcc">MDCC</a>
+                                        <a data-toggle="modal" data-target="#shipment">Delivery Schedule</a>
+
+
+                                    </div>
+                                </div>
+                            </td> -->
+
+                            </tr>
+
+
+                            </tbody>
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-------------------------Purchase DetailsEnd---------------------------------------------------->
+
+
+    <!------------------------Terms and Condition------------------------------------------------------->
+
+    <div class="modal fade" id="termsconditions" style="padding-left: 0px !important;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Terms and Conditions</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h4 class="modal-title"><span id="inspect"></span></h4>
+                    THIS Terms and Condition is entered into on this date by and between a registered company
+                    WHEREAS, the Client desires to hire the services of the Company to render services to ;<br>
+
+                    NOW, THEREFORE, for and in consideration of the mutual covenants made by the parties hereto, the Parties to this agreement agree as follows:<br><br>
+
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-------------------------terms andconditionEnd---------------------------------------------------->
+
+
+    <!------------------------Terms and Condition------------------------------------------------------->
+    <div class="modal fade" id="delivery_schedule" style="padding-left: 0px !important;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Delivery Schedule</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="tg-ticket">
+
+                        <h4 class="modal-title"><span id="inspect"></span></h4>
+                        <p><b>Purchase Date</b>:<?php echo  $dates = date_formate('11-02-2020'); ?><br>
+                            <b>Order No</b>:#1145677<br>
+                            <b>Destination</b>:TVM<br>
+                            <b>Status</b>:Estimated time delivery on time<br>
+                            <b>Delivery Date</b>:29 November 2020<br>
+                            <b>Performance</b>:<span class="score">
+                                <div class="score-wrap">
+                                    <span class="stars-active" style="width:88%">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="tg-btnsbox"><a class="btn btn-primary btn-sm" href="<?php echo base_url("supplier/delivery") ?>" style="margin-top:-207px;">View Calender</a></div>
+                    </div>
+                    </p>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-top:8px;">Close</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------terms andconditionEnd---------------------------------------------------->
+
+
+    <!------------------------Documents------------------------------------------------------->
+
+
+
+    <div class="modal fade" id="documents" style="padding-left: 0px !important;">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <ul class="nav nav-tabs">
+                        <li class="<?php echo $tab == 4 ? "active" : "" ?>"><a href="#agreements" data-toggle="tab">Agreements</a></li>
+                        <li class="<?php echo $tab == 5 ? "active" : "" ?>"><a href="#banks" data-toggle="tab">Bank Guarantee</a></li>
+
+                    </ul>
+
+
+                    <div class="tab-content">
+                        <div id="agreements" class="tab-pane fade  <?php echo $tab == 1 ? "in active" : "" ?>" style="color: black;background-color: white;">
+                            THIS AGREEMENT is entered into on this date by and between a registered company
+                            WHEREAS, the Client desires to hire the services of the Company to render services to ;<br>
+
+                            NOW, THEREFORE, for and in consideration of the mutual covenants made by the parties hereto, the Parties to this agreement agree as follows:<br>
+
+                            The Services
+
+                            The Consultant agrees that it shall render services to the Client on matters pertaining to (the “Services”).
+
+                            Compensation and Payment
+
+                            The Client shall provide payment to the Consultant at the amount of paid on every , beginning the next month of the commencement of this Agreement.
+                            <br><br>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">submit</button>
+                        </div>
+                        <div id="banks" class="tab-pane fade  <?php echo $tab == 2 ? "in active" : "" ?>" style="color: black;background-color: white;">
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                Copy of Bank Guarantee:
+                                <br> <br>
+                                <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                                <input type="submit" value="Upload" name="submit">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------DocumentsEnd---------------------------------------------------->
+    <!------------------------------shipment--------------------------------------------------------->
+    <div class="modal fade" id="shipment" style="padding-left: 0px !important;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Delivery</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <table id="siteins" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th scope="col">sl no</th>
+                                <th scope="col">OrderNo</th>
+                                <th scope="col">Material</th>
+                                <th scope="col">Quantity </th>
+                                <th scope="col">Action</th>
+                                <th scope="col">#</th>
+
+
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>1</td>
+                            <td>PCO88944556</td>
+                            <td>LED</td>
+                            <td>1000</td>
+                            <td><input type="button" value="shipment" data-toggle="modal" data-target="#shipment" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;"></td>
+                            <td><a href="<?php echo base_url("supplier/delivery") ?>" class="button">View More</a></td>
+                        </tr>
+
+                        <tbody>
+                            <tr class="gradeX">
+                                <!--<td colspan="6" class="dataTables_empty">No data found</td>-->
+                            </tr>
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-------------------------shipment End---------------------------------------------------->
+
+
+    <!------------------------Split Shipment------------------------------------------------------->
+
+    <div class="modal fade" id="splitshipment" style="padding-left: 0px !important;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Split</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class=<h4 class="modal-title"><span id="inspect"></span></h4>
+                        <div class="split left">
+                            <div class="centered">
+                                <div class="container">
+                                    <div class="panel panel-default">
+                                        <!-- <div class="panel-heading"></div>-->
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label for="title">Select Product:</label>
+                                                <select name="state" class="form-control">
+                                                    <option value="0">LED</option>
+                                                    <option value="0">Bulb</option>
+
+                                                </select>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="title">Quantity:</label>
+                                                <input type="text" class="form-control" id="quantity" name="quantity">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button type="button" id="splitbutton " class="btn btn-primary" data-dismiss="modal">Request</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="split horizontal">
+                            <div class="centered">
+                                <div class="container">
+                                    <div class="panel panel-default">
+                                        <!-- <div class="panel-heading"></div>-->
+                                        <div class="panel-body">
+                                            <table id="siteins" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">sl no</th>
+                                                        <th scope="col">Product</th>
+                                                        <th scope="col">Quantity</th>
+
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>LED</td>
+                                                    <td>500</td>
+
+
+
+                                                </tr>
+                                                </tbody>
+                                                <tbody>
+                                                    <tr class="gradeX">
+                                                        <!--<td colspan="6" class="dataTables_empty">No data found</td>-->
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+
+                                                </tfoot>
+
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal_vmi" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Vendor managed Inventory</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Order No</th>
+                                <th>Product Name</th>
+                                <th>Max Capacity</th>
+                                <th>Min Capacity</th>
+                                <th>On Hand</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PCO88944556</td>
+                                <td>Bulb</td>
+                                <td>3000</td>
+                                <td>200</td>
+                                <td>400</td>
+
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="myModal_VMI" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Vendor managed Inventory</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Order No</th>
+                                <th>Product Name</th>
+                                <th>Max Capacity</th>
+                                <th>Min Capacity</th>
+                                <th>On Hand</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PCO8895544</td>
+                                <td>LED</td>
+                                <td>1000</td>
+                                <td>150</td>
+                                <td>600</td>
+
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="dispatch" style="padding-left: 0px !important;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">List Of Inspections</h4>
+                    <a href="#" class="gx-fab-btn gx-btn-primary position-absolute addButtonCustom" data-toggle="modal" id="modal" data-target="#modal_rew">
+                        <i class="zmdi zmdi-plus-circle zmdi-hc-2x" style="margin-left:480px; border-color: #ffcc33;"></i>
+                    </a>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h4 class="modal-title"></h4>
+                    <div class="table-responsive">
+
+                        <table id="predispatchlist" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th scope="col">sl no</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">status</th>
+                                    <th scope="col">#</th>
+
+
+                                </tr>
+                            </thead>
+
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_rew" class="modal fade" role="dialog">
+        <div class="modal-dialog widthAdjust">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="margin-left: 200px;width: 606px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Serial N.o Uploader </h4>
+                </div><br>
+                <div class="form-group row">
+                    <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o From:</label>
+                    <div class="col-md-6 col-sm-6" id="ques_group">
+                        <input type="text" name="serialfrom" class="form-control" id="serialfrom" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="subject" class="col-md-3 col-sm-3 control-label">Serial N.o To:</label>
+                    <div class="col-md-6 col-sm-6" id="ques_group">
+                        <input type="text" name="serialto" class="form-control" id="serialto" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="subject" class="col-md-3 col-sm-3 control-label">Quantity:</label>
+                    <div class="col-md-6 col-sm-6" id="ques_group">
+                        <input type="text" name="quantitypdi" class="form-control" id="quantitypdi" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="subject" class="col-md-3 col-sm-3 control-label">Visit Request Date:</label>
+                    <div class="col-md-6 col-sm-6" id="ques_group">
+                        <input type="date" name="visitdate" class="form-control" id="visitdate" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="subject" class="col-md-3 col-sm-3 control-label">Serial Upload file:</label>
+                    <div class="col-md-6 col-sm-6" id="ques_group">
+                        <input type="file" name="fileToUpload" name="fileToUpload" id="fileToUpload"><br>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="requestdata()" data-dismiss="modal">Request</button>
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="PaymentPDI">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="adding">Add Payment</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="questions_form">
+                        <div class="form-group row">
+                            <label for="subject" class="col-md-2 col-sm-3 control-label">Pay Amount</label>
+                            <div class="col-md-10 col-sm-9" id="ques_group">
+                                <input type="text" class="form-control" id="subject" placeholder="Add fee amount">
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="pay" id="pay">
+
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button type="button" style="margin-right: 252px;" class="btn btn-primary" onclick="">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="mdcc" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">MDCC list</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>SL No</th>
+                                <th>Consignee</th>
+
+                                <th>Quantity(Nos)</th>
+                                <th>Serial Number of Units</th>
+                                <!--<th>Scheduled</th>-->
+                                <th>Scheduled date of delivery</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Executive Engineer Thirumala,TMR Divison,Thirumala</td>
+                                <td>1000</td>
+                                <td>4456788-4588880</td>
+                                <td>20-01-2021</td>
+
+                                <!--<td><input type="button"  data-toggle="modal" data-target="#schedule" style="width:66px;color: #fff;background-color: #1e315d; border-color: #ffcc33;" value="Schedule"></td>-->
+                                <td><a href="#" id="" value="">View Pdf</a></td>
+
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="shipment1" style="padding-left: 0px !important;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Delivery Schedule</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <table id="siteins" class="table table-striped table-bordered table-hover" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th scope="col">sl no</th>
+                                <th scope="col">OrderNo</th>
+                                <th scope="col">Material</th>
+                                <th scope="col">Quantity </th>
+                                <th scope="col">Action Request</th>
+
+
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>1</td>
+                            <td>PCO88944556</td>
+                            <td>Bulb</td>
+                            <td>1000</td>
+                            <td><input type="button" class="btn" data-toggle="modal" data-target="#schedule" style="width:70%;color: #fff;background-color: #1e315d; border-color: #ffcc33;" value="Schedule"></td>
+                            <!--<td ><a href="<?php echo base_url("supplier/delivery") ?>" class="button">View More</a></td>-->
+                        </tr>
+                        </tbody>
+                        <tbody>
+                            <tr class="gradeX">
+                                <!--<td colspan="6" class="dataTables_empty">No data found</td>-->
+                            </tr>
+                        </tbody>
+                        <tfoot>
+
+                        </tfoot>
+
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="schedule">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="adding">Add Schedule</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="questions_form">
+                        <div class="form-group row">
+                            <label for="subject" class="col-md-2 col-sm-3 control-label">Product</label>
+                            <div class="col-md-10 col-sm-9" id="ques_group">
+                                <input type="text" class="form-control" name="productdelivery" id="productdelivery" placeholder="Add Product">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="subject" class="col-md-2 col-sm-3 control-label">Quantity</label>
+                            <div class="col-md-10 col-sm-9" id="ques_group">
+                                <input type="text" class="form-control" name="quantitydelivery" id="quantitydelivery" placeholder="Add Quantity">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="subject" class="col-md-2 col-sm-3 control-label">Schedule date</label>
+                            <div class="col-md-5 col-sm-5" id="ques_group">
+                                <input type="date" class="form-control" id="deliverydate" name="deliverydate" placeholder="Schedule date">
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="pay" id="pay">
+
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary" onclick="addscheduleddelivery()">Save</button>
+                    <button type="button" style="margin-right: 252px;" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<?php } ?>
+
+<!-------------------------Split shipment End---------------------------------------------------->
+
+
 <script>
+    $(document).ready(function() {
+        $('.modal-view').click(function(e) {
+            e.preventDefault();
+
+            $('#myModal').modal();
+        });
+        $('.loa-view').click(function(e) {
+            e.preventDefault();
+
+            $('#myModal_Loa').modal();
+        });
+
+        $('.changereq-view').click(function(e) {
+            e.preventDefault();
+
+            $('#myModal_changereq').modal();
+        });
+
+    });
+
     function initcollapsible() {
         var coll = document.getElementsByClassName("collapsible");
         var i;
@@ -1196,9 +1198,7 @@ toggle between hiding and showing the dropdown content */
             }
         }
     }
-</script>
 
-<script>
     console.log(jQuery.fn.jquery);
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -1214,9 +1214,7 @@ toggle between hiding and showing the dropdown content */
             }
         });
     }
-</script>
 
-<script>
     function mypurchasedetails(purchasedetail) {
 
         var purchaseopendetails = purchasedetail['purchase basic details'];
@@ -1314,12 +1312,12 @@ toggle between hiding and showing the dropdown content */
 
 
     function universalpurchasesearch() {
-        
+
 
         $("#keywordpurchaseorder").on("keyup", function() {
-           
+
             var activetab = $("#purchasetabs li.active").attr('id');
-            
+
             var tabcontentid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchasedetails'
             var value = $(this).val().toLowerCase();
             filterpurchasedata(tabcontentid, value);
@@ -1329,19 +1327,19 @@ toggle between hiding and showing the dropdown content */
     }
 
     function filterpurchasedata(tabcontentid, value) {
-       
+
         var activetab = $("#purchasetabs li.active").attr('id');
-      
+
         // $(".commonfilter div[class!=tg-btnsbox]").filter(function() {
-            $(".commonfilter").filter(function() {
-                if ($(this).is('.tg-btnsbox *')) {
-                    return;
-                }
-           var text= $(this).text().toLowerCase();
-           $(this).toggle(text.indexOf(value) > -1)
-          
+        $(".commonfilter").filter(function() {
+            if ($(this).is('.tg-btnsbox *')) {
+                return;
+            }
+            var text = $(this).text().toLowerCase();
+            $(this).toggle(text.indexOf(value) > -1)
+
         });
-        
+
         $('.hiddendate').addClass('hide');
         var spanid = (activetab == 'acceptedpurchaseorder') ? 'acceptedtickets' : (activetab == 'workorders') ? 'worktickets' : 'allpurchaseorder'
         var purchaselength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
@@ -1477,10 +1475,11 @@ toggle between hiding and showing the dropdown content */
     function buildpurchaseorders(datas) {
 
         var allpurchaseordersData = datas.filter(function(val) {
-            if (val['letter of acceptance status'] !== 'accepted') {
+            if (val['letter of acceptance status'] !== 'pending') {
                 return val;
             }
         });
+         //console.log(allpurchaseordersData);
         html = "";
         $.each(allpurchaseordersData, function(i, data) {
 
@@ -1504,12 +1503,13 @@ toggle between hiding and showing the dropdown content */
     }
 
     function buildAcceptedpurchaseorders(datas) {
+      
         var acceptedData = datas.filter(function(val) {
-            if (val['letter of acceptance status'] == 'pending') {//bl changes(25-06-2021)
+            if (val['letter of acceptance status'] == 'accepeted') { //bl changes(25-06-2021)
                 return val;
             }
         });
-        console.log(acceptedData);
+       
         count = acceptedData.length;
         if (count > 0) {
             span1 = "<span><b>Total Accepted Purchase Orders:" + count + "</b></span>";
@@ -1870,7 +1870,7 @@ toggle between hiding and showing the dropdown content */
 
                 <?php echo $this->security->get_csrf_token_name(); ?>: "<?php echo $this->security->get_csrf_hash() ?>"
             }, function(data) {
-                 alert("Request Successfully sent");
+                alert("Request Successfully sent");
                 $('#savemicro').removeAttr("disabled");
                 window.location.reload();
 

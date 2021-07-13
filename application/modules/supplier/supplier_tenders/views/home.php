@@ -73,34 +73,6 @@
         margin-left: 0% !important;
     }
 
-    
-/* horizondal scroll bar */
-@media screen and (max-width: 767px){
-div.scrollmenu {
- 
- overflow: auto;
- white-space: nowrap;
-}
-
-.tg-tickets {
-    width: 250%;
-    float: left;
-}
-
-.tg-ticket {
-    width: 250%;
-    float: left;
-    padding: 20px;
-    background: #f7f7f7;
-    /* km */
-    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
-    border-color: rgba(223, 225, 229, 0);
-}
-}
-
-
-/* horizondal scroll bar end */
-
     /* #tendertabs{
         position:fixed;
         top: 0;
@@ -124,7 +96,7 @@ div.scrollmenu {
 </head>
 
 <main id="tg-main" class="tg-main tg-haslayout">
-    <section class="tg-main-section tg-haslayout" >
+    <section class="tg-main-section tg-haslayout">
 
         <div id="alltendercount" class="<?php echo $tab == 1 ? "" : "hide" ?>" style="text-align:center;">
         </div>
@@ -157,7 +129,7 @@ div.scrollmenu {
                 <h2>Tenders</h2>
             </div>
 
-            <div class="col-sm-11 col-xs-11 pull-right scrollmenu" style="overflow-y:scroll; overflow-x:hidden;height:100vh;" id="innerscroll">
+            <div class="col-sm-11 col-xs-11 pull-right" style="overflow-y:scroll; overflow-x:hidden;height:100vh" id="innerscroll">
                 <div id="overlay">
                     <div class="cv-spinner">
                         <span class="spinner"></span>
@@ -167,7 +139,7 @@ div.scrollmenu {
                     <div class="alert alert-danger" role="alert">
                         <?php echo api_error_message(); ?>
                     </div>
-                    <ul class="nav nav-tabs  " id="tendertabs">
+                    <ul class="nav nav-tabs" id="tendertabs">
 
                         <li id="alltender" class="<?php echo $tab == 1 ? "active" : "" ?>"><a id="tender_tab" data-toggle="tab" href="#home">Tenders</a></li>
 
@@ -182,7 +154,7 @@ div.scrollmenu {
                         <li id="favtender" class="<?php echo $tab == 2 ? "active" : "" ?>"><a data-toggle="tab" href="#menu1">Favourite Tenders</a></li>
                         <li id="applytender" class="<?php echo $tab == 3 ? "active" : "" ?>"><a data-toggle="tab" href="#menu2">Applied Tenders</a></li>
                     </ul>
-                    <div class="tab-content scrollmenu">
+                    <div class="tab-content">
                         <input type="hidden" id="usertypeid" value="<?php echo $user_type; ?>">
 
                         <input type="hidden" id="mytenderproducts" value="<?php echo htmlentities(json_encode($mytenderproducts), ENT_QUOTES, 'UTF-8') ?>" />
@@ -200,20 +172,7 @@ div.scrollmenu {
                             </div>
                         </div>
 
-
-                        <!-- <div id="menu3" class="tab-pane fade  <?php echo $tab == 4 ? "in active" : "" ?>">
-						<div class="row" style="margin-top: 15px;">
-							<div class="tg-tickets">
-							
-							
-
-							</div>
-						</div>
-					</div> -->
-
-
-
-                        <div id="menu1" class="tab-pane fade scrollmenu <?php echo $tab == 2 ? "in active" : "" ?>">
+     <div id="menu1" class="tab-pane fade scrollmenu <?php echo $tab == 2 ? "in active" : "" ?>">
                             <div class="row" style="margin-top: 15px;">
                             <input type="hidden" id="favdatadetails" value="<?php echo htmlentities(json_encode($getAllfavtender), ENT_QUOTES, 'UTF-8'); ?>" >
                                 <div class="tg-tits commonfilter" id="favid">
@@ -260,7 +219,7 @@ div.scrollmenu {
 
                                 </div>
 
-                                <!-- <span class="no-tender-fav hide">No tender available</span> -->
+                                <span class="no-tender-fav hide">No tender available</span>
                             </div>
                             <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
@@ -268,9 +227,8 @@ div.scrollmenu {
                         <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
                    
-                    <div id="menu2" class="tab-pane fade scrollmenu <?php echo $tab == 3 ? "in active" : "" ?>">
+                    <div id="menu2" class="tab-pane fade <?php echo $tab == 3 ? "in active" : "" ?>">
                         <div class="row" style="margin-top: 15px;">
-                        <input type="hidden" id="applydatadetails" value="<?php echo htmlentities(json_encode($appliedtenderdetails), ENT_QUOTES, 'UTF-8'); ?>">
                             <div class="tg-tickets commonfilter" id="appliedtickets">
                                 <?php foreach ($appliedtenderdetails as $appliedtenders) {
                                     
@@ -298,22 +256,22 @@ div.scrollmenu {
                                         </div>
                                         <div class="tg-btnsbox appliedbuttons">
                                             <a class="btn btn-primary btn-sm tenderdetails" style="#1e315d" onclick="myfavtenderdetails(<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8') ?>,<?php echo $appliedtenders->id ?>);" data-tender="<?php echo htmlentities(json_encode($tender), ENT_QUOTES, 'UTF-8'); ?>" data-toggle="modal" data-target="#tendermore">Read More</a>
-                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus" onclick="tenderstatus()" id="tender">Tender Status </a>
+                                            <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tenderstatus" onclick="tenderstatus(<?php echo htmlentities(json_encode($tenderstatusdetails), ENT_QUOTES, 'UTF-8') ?>,<?php echo $appliedtenders->id ?>);" data-tender="<?php echo htmlentities(json_encode($tenderstatusdetails), ENT_QUOTES, 'UTF-8'); ?>">Tender Status </a>
                                             <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentstatus">Payment Status </a>
                                             <a class="btn btn-primary btn-sm" id="application_form" ids="<?= $appliedtenders->id; ?>">Application Form </a>
                                             <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#siteinspect">Factory Visit </a>
 
                                         </div>
-
+                                        </div>
+                                </div>
                                     <?php } ?>
                                     <div class="tg-btnsbox">
 
-                                    </div>
-                                </div>
+                                    
 
 
                             </div>
-                            <!-- <span class="no-tender-apply hide">No tender available</span> -->
+                            <span class="no-tender-apply hide">No tender available</span>
                         </div>
 
                     </div>
@@ -494,16 +452,11 @@ div.scrollmenu {
         <div class="modal-content">
 
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title" id="adding">Tender Status</h4>
-                <h4 class="modal-title" id="adding"></h4>
+            <div class="modal-body" id="tenderstatuss">
 
             </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                Your Tender Status is active on 17-11-2020
-            </div>
+           
 
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -634,7 +587,7 @@ div.scrollmenu {
 <!-------------------------------------------------------------------------------------------------------------->
 <script>
     function myfavtenderdetails(tender, favtenderid) {
-
+        
         var getfavdetails = tender.filter(function(obj) {
             if (obj.id == favtenderid) {
                 return obj;
@@ -643,21 +596,25 @@ div.scrollmenu {
         mytenderdetails(getfavdetails[0]);
     }
 
-    function tenderstatus(tender, favtenderid) {
+    function tenderstatus(tenderstatusdetails, favtenderid) {
 
-        var getfavdetails = tender.filter(function(obj) {
-            if (obj.id == favtenderid) {
+        var getstatus = tenderstatusdetails.filter(function(obj) {
+            
+            if (obj.tender_id == favtenderid) {
                 return obj;
             }
+          
         });
-        mytenderdetails(getfavdetails[0]);
+       
+        var statusdetails = (getstatus.length>0) ? getstatus[0] :{};
+        getstatusdetail(statusdetails);
 
     }
 
 
 
     function save_tenders(tenders) {
-     
+      
         $.post("<?php echo site_url('supplier/tenders/insert_favtenders') ?>", {
 
             title: tenders.id,
@@ -671,6 +628,22 @@ div.scrollmenu {
             window.location.reload();
         });
     }
+
+    function getstatusdetail(getstatus) {
+      
+        var html = "<div id='status'>";
+
+        html += "<b><h5 style='color:orange;'>TENDER STATUS</h5><b>";
+        if($.isEmptyObject(getstatus)){
+            html +="<label> No tender status</label>" ;
+        }else{
+            html += "<label>" +  getstatus.status + "</label>" ;
+        }
+         
+        html += "</div>";
+        $('#tenderstatuss').html(html);
+    }
+
 
     function mytenderdetails(tenderdetail) {
 
@@ -854,6 +827,7 @@ div.scrollmenu {
         })
         html += "</div>";
 
+        //console.log(html);
         $('#tenderdetails').html(html);
     }
 </script>
@@ -881,7 +855,7 @@ div.scrollmenu {
                 // contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
                 // processData: false, // NEEDED, DON'T OMIT THIS
                 success: function(result) {
-                   
+                   // console.log(result);
                     data = JSON.parse(result);
                     $('#dataAppend').html(data);
                     $('#preview_modal').modal();
@@ -957,6 +931,7 @@ div.scrollmenu {
         $(".nav-tabs a").click(function() {
             var activetab = $(this).parent().attr('id');
 
+            //console.log(activetab);
             if (activetab == 'favtender') {
                 $('#favtendercount').removeClass('hide');
                 $('#alltendercount').addClass('hide');
@@ -970,11 +945,7 @@ div.scrollmenu {
                 $('#applytedercount').addClass('hide');
                 $('#favtendercount').addClass('hide');
             }
-            setTimeout(function() {
-                datefilters();
-            }, 1000);
 
-            
 
         });
     }
@@ -983,7 +954,6 @@ div.scrollmenu {
 
         $("#keywordtender").on("keyup", function() {
             var activetab = $("#tendertabs li.active").attr('id');
-           
             var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
             //var tabcontentid = $("#alltenders");
             var value = $(this).val().toLowerCase();
@@ -993,19 +963,25 @@ div.scrollmenu {
         });
 
     }
-//--------------------------searchbox filter(text)-----------------------//
+
     function filtertenderdata(tabcontentid, value) {
-      
 
         var activetab = $("#tendertabs li.active").attr('id');
         $(".commonfilter div[class!=tg-btnsbox]").filter(function() {
+
+            var datetime1 = $(this).attr('datetime');
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
 
         $('.hiddendate').addClass('hide');
         var spanid = (activetab == 'favtender') ? 'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
+        var activetab1 = $("#tendertabs li.active").length;
         var tenderlength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
+        favtender
+        applytender
+        console.log(tenderlength);
         var tendercountdiv = (activetab == 'favtender') ? 'favtendercount' : (activetab == 'applytender') ? 'applytedercount' : 'alltendercount'
+
         if (tenderlength == 0) {
             $('.' + spanid).removeClass('hide');
             span1 = "<span><b>No Tenders Available </b></span>";
@@ -1138,7 +1114,7 @@ div.scrollmenu {
             beforeSend: function() {
                 // setting a timeout
                 if (overlay) {
-                    //console.log(overlay);
+                    console.log(overlay);
                     $("#overlay").fadeIn();
                 }
             },
@@ -1166,20 +1142,15 @@ div.scrollmenu {
         var results = [];
         var fromDate = $("#datepickerfrom").val();
         var toDate = $("#datepickerto").val();
-        var activetab = $("#tendertabs li.active").attr('id');
-        var favdetails = JSON.parse($('#favdatadetails').val());
-        var appliedtabdetails = JSON.parse($('#applydatadetails').val());
-        var alldatatabs = (activetab == 'favtender') ? Object.values(favdetails) : (activetab == 'applytender') ? Object.values(appliedtabdetails) : datas;
-    //    console.log(alldatatabs);
         if (fromDate || toDate) {
-            results =  alldatatabs.filter(function(value, key) {
+            console.log(fromDate);
+            console.log(toDate);
+            results = datas.filter(function(value, key) {
                 if (toDate != '') {
                     if (value['tender_date'] >= fromDate && value['tender_date'] <= toDate) {
                         return value;
                     }
                 } else {
-                    console.log(value);  
-                    console.log(fromDate); 
                     if (value['tender_date'] == fromDate)
                         return value;
 
@@ -1189,12 +1160,12 @@ div.scrollmenu {
             buildmytenders(results);
 
         } else {
-            buildmytenders(alldatatabs);
+            buildmytenders(datas);
         }
-        console.log(results);
         var activetab = $("#tendertabs li.active").attr('id');
         var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
         var value = $('#keywordtender').val().toLowerCase();
+
         filtertenderdata(tabcontentid, value);
     }
 
@@ -1220,21 +1191,7 @@ div.scrollmenu {
 
             html += "</div></div>";
         });
-        var activetab = $("#tendertabs li.active").attr('id');
-        var tabcontentid = (activetab == 'favtender') ? 'favid' : (activetab == 'applytender') ? 'appliedtickets' : 'alltenderdetails'
-        if(activetab == 'favtender'){
-            $('#favid').empty().html(html);
-        }
-        else if(activetab == 'applytender'){
-            $('#appliedtickets').empty().html(html);
-        }
-        else{
-            console.log('mmnb');
-            console.log(datas.length)
-            $('#alltenderdetails').empty().append(html);
-        }
-
-       
+        $('#alltenderdetails').empty().append(html);
     }
 
 
@@ -1256,7 +1213,8 @@ div.scrollmenu {
 
                 datas = JSON.parse(result);
                 var count = datas.length;
-        
+                console.log(datas);
+                console.log(count);
                 if (count > 0) {
                     span1 = "<span><b>Total Tenders:" + count + "</b></span>";
 
@@ -1268,6 +1226,7 @@ div.scrollmenu {
                 html = "";
 
                 // var mytenderservices = JSON.parse($('#mytenderservices').val());
+                console.log(mytenderservices);
                 $.each(datas, function(i, data) {
                     console.log(data);
                     html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
@@ -1300,13 +1259,14 @@ div.scrollmenu {
 
     setInterval(() => {
         var type = $('#tenderType').val();
-      
+        console.log('rintrval');
+        console.log(type);
         if (type == 'all') {
             LoadAllTenders();
-         
+            console.log('reload api');
         } else if (type == 'products') {
             getMytenders(false);
-           
+            console.log('reload api');
         } else if (type == 'services') {
             getMyservices(false);
         }

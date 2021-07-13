@@ -17,13 +17,15 @@ class Supplier_tenders extends SP_Controller
 		$user_type = $this->session->userdata('user_type');
 		$uid = $this->session->userdata('supplierid');
 		$getcompanypermissiondetails = $this->GETM->getCompanyPermission2($uid, $user_type);
-
+		$id="22";
 		if ($getcompanypermissiondetails->tenders == '1' and $this->session->userdata('active_status') == '1') { //neethu end
 			$data['showdashbaord'] = true;
 			$data['page'] = 'tenders';
 			$data['title'] = 'Tenders';
 			$data['indexurl'] = base_url() . "supplier/dashboard";
 			$data['tab'] = $tab;
+			$tenderstatus = json_decode($this->api->getTenderStatus($uid,$id));
+			$data['tenderstatusdetails'] = $tenderstatus->result_data->list;//print_r($data['tenderstatusdetails']);exit;
 			$tender = json_decode($this->api->getTenderData());
 			$data['tender'] = $tender->result_data->list;
 			$data['getsuppliertender'] = $this->procM->getSupplierMaterials($uid);
@@ -694,6 +696,7 @@ class Supplier_tenders extends SP_Controller
 					if (in_array($tender1->id, $data['favid'])) {
 						$data['tender'][$key]->sorting = 1;
 						$data['getAllfavtender'][$tender1->id] = ['tenderid' => $tender1->id, 'tendername' => $tender1->id, 'tenderdate' => $tender1->tender_date, 'tenderno' => $tender1->tender_num, 'tenderauthority' => $tender1->tendering_authority, 'is_applied' => $favappliedtenders[$tender1->id]->is_applied];
+				//	print_r($data['getAllfavtender']);exit;
 					} else {
 						$data['tender'][$key]->sorting  = 0;
 					}

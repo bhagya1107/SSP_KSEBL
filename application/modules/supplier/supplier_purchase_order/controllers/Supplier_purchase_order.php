@@ -147,6 +147,57 @@ class Supplier_purchase_order extends SP_Controller
 		echo json_encode($output);
 	}
 
+	public function getvmiData()
+	{
+		$erp_id = $this->session->userdata('supplier_erp_id');
+		$poid=9;
+		$draw = intval($this->input->get("draw"));
+		$start = intval($this->input->get("start"));
+		$length = intval($this->input->get("length"));
+		$supplierid = $this->session->userdata('uid');
+
+		//$pdidata = $this->procM->getListOfPreDispatch($supplierid);
+		$purchaseOrdervmiList = json_decode($this->api->getPOData($erp_id));
+		$purchaseOrdervmilistdetail = $purchaseOrdervmiList->result_data->list;
+		//echo"<pre>";print_r($purchaseOrdervmilistdetail);exit;
+		
+		$data = array();
+
+		$i = 1;
+		
+		foreach ($purchaseOrdervmilistdetail as $r) {
+		//	$pay='';
+			
+					//	$pay = '<button class="btn btn-primary dropdown-toggle"  data-toggle="modal" data-target="#PaymentPDI" type="button">Pay</button>';
+				//	echo"<pre>";print_r($r->purchaseschemedetails);exit;
+					$podetails= (array)$r;
+					$vmidetails=$podetails['vendor managed details'][0];
+					$arrayvmi=(array)	$vmidetails;
+					//echo"<pre>";print_r($arrayvmi);exit;
+					$data[] = array(
+						'slno' => $i,
+						'poorder' => $arrayvmi['po order'],
+						'name' => $arrayvmi['material name'],
+						'maxcapacity' => $arrayvmi['material name'],
+						'minimumcapacity' => $arrayvmi['minimum capacity'],
+						'onhand' => $arrayvmi['on hand'],
+						//'button' => $pay,
+
+					);
+			
+			$i++;
+		}
+
+		$output = array(
+			"draw" => $draw,
+
+			"data" => $data
+		);
+
+		echo json_encode($output);
+	}
+
+
 	public function insert_deliveryschedule()
 	{
 
