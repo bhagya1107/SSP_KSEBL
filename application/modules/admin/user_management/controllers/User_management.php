@@ -203,9 +203,12 @@ $errorCount=0;
           $pannumber =(string) $worksheet->getCellByColumnAndRow(2, $row)->getValue();
           //$getpannum='';
           $getpannum=$this->userM->getpan($pannumber);
+          $getvarification_type=$this->userM->getvarification_type();
+          // var_dump($getvarification_type->value); die;
           $uTypeTemp=(string) $worksheet->getCellByColumnAndRow(3, $row)->getValue();
           $mobile =(string) $worksheet->getCellByColumnAndRow(4, $row)->getValue();
           $email =(string) $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+          // echo $mobile; echo $email; exit;
           $user_type=$uTypeTemp=="2,3"||$uTypeTemp =="3,2"?1:$uTypeTemp;
           $active_status=0;
           $isdeleted=0;
@@ -223,6 +226,8 @@ $errorCount=0;
           $date=date('Y-m-d H:i:s');
           
           
+
+         
         //intialise $errorCount=0; outside for loop
           // $errorCount=0;
 if($getpannum) 
@@ -245,6 +250,16 @@ if($getpannum)
             'erp_supplier_id'     =>  $erp_supplier_id
           ); 
         }
+        if($getvarification_type->value == '0')
+        {
+          //email varification
+          // echo $email; echo "hi" ; exit;
+          $this->send_mail($email);
+        }
+        if($getvarification_type->value == '1')
+        {
+          // mobile varification
+        }
         }
 
       }
@@ -253,9 +268,12 @@ if($getpannum)
         $msg=$isError?"Some data inserted successfully but ".$errorCount." are already exists" :"Data inserted sucessfully";
         $status='sucess';
         foreach ($data as $key => $sData) {
-           $this->userM->insert('suppliers',$sData);
+        $this->userM->insert('suppliers',$sData);
         $supplierid=$this->db->insert_id();
-         $this->insertAccessPermission($supplierid);
+        $this->insertAccessPermission($supplierid);
+
+       
+
         }
      
 
@@ -266,6 +284,105 @@ if($getpannum)
       echo json_encode(['status'=>$status,'msg'=>$msg]);
     } 
   }
+
+public function send_mail($email)
+{
+  
+		$subject = 'User validation ' ;
+		
+		
+		
+			$message = '
+			<h3 align="center">User validation</h3>
+      <a href="">Click Here</a>
+			';
+
+	$this->load->library('email');
+	$config['protocol']='smtp';
+	$config['smtp_host']='ssl://smtp.googlemail.com';
+	$config['smtp_port']='465';
+	$config['smtp_timeout']='30';
+	$config['smtp_user']='neethumanesh555@gmail.com';
+	$config['smtp_pass']='8137853228';
+	$config['charset']='utf-8';
+	$config['newline']="\r\n";
+	$config['wordwrap'] = TRUE;
+	$config['mailtype'] = 'html';
+	$this->email->initialize($config);
+	$this->email->from('neethumanesh555@gmail.com',"KK");
+	$this->email->to($email);
+	$this->email->subject($subject);
+	$this->email->message($message);
+
+  $this->email->set_newline("\r\n"); 
+
+			// $config = Array(
+		  //     	'protocol' 	=> 'smtp',
+		  //     	'smtp_host' => 'ssl://smtp.gmail.com',
+		  //     	'smtp_port' => 587,
+		  //     	'smtp_user' => 'neethumanesh555@gmail.com', 
+		  //     	'smtp_pass' => '8137853228', 
+		  //     	'mailtype' 	=> 'html',
+		  //     	'charset' 	=> 'iso-8859-1',
+		  //     	'wordwrap' 	=> TRUE
+		  //   );
+			//$file_path = 'uploads/' . $file_name;
+		    // $this->load->library('email', $config);
+		    // $this->email->set_newline("\r\n");
+		    // $this->email->from($this->input->post("email"));
+		    // $this->email->to('neethumanesh555@gmail.com');
+		    // $this->email->subject($subject);
+	      //   $this->email->message($message);
+	       // $this->email->attach($file_data['full_path']);
+	        if($this->email->send())
+	        {
+	        	
+	        		
+	        		//redirect('');
+	        	
+	        }
+	        else
+	        {
+	        	
+
+	        		echo $this->email->print_debugger();
+				
+	        	
+	        }
+}
+  public function send_maill($email)
+	{
+    // echo $email; exit;
+		$subject = 'User Verification ';
+		
+		
+		
+			$message = '
+			<h3 align="center">User Verification</h3>
+				
+						<a href="">Click here</a>
+			
+			';
+			$config = Array(
+		      	'protocol' 	=> 'smtp',
+		      	'smtp_host' => 'ssl://smtp.gmail.com',
+		      	'smtp_port' => 465,
+		      	'smtp_user' => 'neethumanesh555@gmail.com', 
+		      	'smtp_pass' => '8137853228', 
+		      	'mailtype' 	=> 'html',
+		      	'charset' 	=> 'iso-8859-1',
+		      	'wordwrap' 	=> TRUE
+		    );
+			//$file_path = 'uploads/' . $file_name;
+		    $this->load->library('email', $config);
+		    $this->email->set_newline("\r\n");
+		    $this->email->from('neethumanesh555@gmail.com');
+		    $this->email->to('neethumanesh555@gmail.com');
+		    $this->email->subject($subject);
+	      $this->email->message($message);
+	      
+	   
+	}
 
   public function import_02_02_2022() 
   {

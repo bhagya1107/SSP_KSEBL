@@ -117,6 +117,11 @@ function getpan($pannumber) {
   $this->db->where('pannumber',$pannumber);
   return $this->db->get('suppliers')->row();
 }
+function getvarification_type() {
+  $this->db->select('*');
+  $this->db->where('name','varification');
+  return $this->db->get('admin_globals')->row();
+}
  public function supplier_profile($id) 
   {
    $this->db->select('*');
