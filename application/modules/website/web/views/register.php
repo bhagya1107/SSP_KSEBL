@@ -161,7 +161,7 @@ fieldset {
   </div>
       
             <h4 class="section-heading">PAN CARD NO</h4>
-            <p><input type="text" class="form-control" required placeholder="Enter your PAN No" pattern="[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}" name="pannumber" id="panNumber"  ></p>
+            <p><input type="text" class="form-control" required placeholder="Enter your PAN No(User Name)" pattern="[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}" name="pannumber" id="panNumber"  ></p>
             <span class="error"></span>
             <div class="companyStatus hidedata">
             <h4 class="section-heading ">Registration Type </h4>
@@ -195,10 +195,10 @@ fieldset {
                 <label for="emailAddress" class="sr-only">Email Address</label>
                 <input type="email" name="emailaddress" autocomplete="off" required id="emailAddress" class="form-control" placeholder="Email Address">
               </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                 <label for="emailAddress" class="sr-only">User Name</label>
                 <input type="text" name="username" autocomplete="off" required id="emailAddress" class="form-control" placeholder="User Name">
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="Password" class="sr-only">Password</label>
                 <input type="password" name="password" autocomplete="off" required id="Password" class="form-control" placeholder="Password" >  

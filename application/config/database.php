@@ -89,7 +89,9 @@ $db['default'] = array(
 	'database' => 'ssp',
  */
 
- 	'hostname' => 'pgsql:host=203.129.252.12;dbname=ksebl_ssp',
+ 	// 'hostname' => 'pgsql:host=203.129.252.12;dbname=ksebl_ssp',
+ 	'hostname' => 'pgsql:host=103.156.208.174;dbname=ksebl_ssp',
+
  	'username' => 'postgres',
    'password' => 'p@ss123',
  	'database' => 'ksebl_ssp',

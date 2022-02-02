@@ -71,6 +71,12 @@ class Supplier_dashboard extends SP_Controller
 
 	public function supplier_administration($tab = 'tab_1')
 	{
+		if($tab == 'tab_9')
+		{
+			$user_type = $this->session->userdata('user_type');
+			$uid = $this->session->userdata('uid');
+			$this->dashM->update_notification_status($uid, $user_type);
+		}
 		$loged_user = $_SESSION['userid'];
 		$usertype = $_SESSION['user_type'];
 		$data['page'] = 'Administration';
@@ -1431,7 +1437,8 @@ class Supplier_dashboard extends SP_Controller
 		$s = $this->session->userdata('supplier');
 		$companyname = $this->input->post('companyname');
 		$individualname = $this->input->post('individualname');
-		$username = $this->input->post('username');
+		// $username = $this->input->post('username');
+		$username = $this->input->post('pannumber');
 		$pannumber = $this->input->post('pannumber');
 		$registrationtype = $this->input->post('registrationtype') ? $this->input->post('registrationtype') : '2';
 		$firstname = $this->input->post('firstname');
