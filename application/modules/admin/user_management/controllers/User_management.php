@@ -302,37 +302,21 @@ public function send_mail($email)
 	$config['smtp_host']='ssl://smtp.googlemail.com';
 	$config['smtp_port']='465';
 	$config['smtp_timeout']='30';
-	$config['smtp_user']='neethumanesh555@gmail.com';
-	$config['smtp_pass']='8137853228';
+	$config['smtp_user']='ur_mail';
+	$config['smtp_pass']='ur_pass';
 	$config['charset']='utf-8';
 	$config['newline']="\r\n";
 	$config['wordwrap'] = TRUE;
 	$config['mailtype'] = 'html';
 	$this->email->initialize($config);
-	$this->email->from('neethumanesh555@gmail.com',"KK");
+	$this->email->from('ur_mail',"KK");
 	$this->email->to($email);
 	$this->email->subject($subject);
 	$this->email->message($message);
 
   $this->email->set_newline("\r\n"); 
 
-			// $config = Array(
-		  //     	'protocol' 	=> 'smtp',
-		  //     	'smtp_host' => 'ssl://smtp.gmail.com',
-		  //     	'smtp_port' => 587,
-		  //     	'smtp_user' => 'neethumanesh555@gmail.com', 
-		  //     	'smtp_pass' => '8137853228', 
-		  //     	'mailtype' 	=> 'html',
-		  //     	'charset' 	=> 'iso-8859-1',
-		  //     	'wordwrap' 	=> TRUE
-		  //   );
-			//$file_path = 'uploads/' . $file_name;
-		    // $this->load->library('email', $config);
-		    // $this->email->set_newline("\r\n");
-		    // $this->email->from($this->input->post("email"));
-		    // $this->email->to('neethumanesh555@gmail.com');
-		    // $this->email->subject($subject);
-	      //   $this->email->message($message);
+	
 	       // $this->email->attach($file_data['full_path']);
 	        if($this->email->send())
 	        {
