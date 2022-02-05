@@ -513,6 +513,42 @@ class Supplier_dashboard extends SP_Controller
 		}
 	}
 
+
+
+	//set  password from email
+	public function set_password()
+	{
+		$data['page'] = 'SetPassword';
+		$data['mainpage'] = '';
+		$data['page_title'] = 'SetPassword';
+		$data['title'] = 'Set Password';
+		$this->session->set_userdata('supplier', 'abc');
+		$this->template->make('supplier_dashboard/set_password', $data, 'supplier_portal');
+	}
+
+	public function update_set_password()
+	{
+
+
+		$confirm_pass = $this->input->post('confirm_pass');
+		$pass = $this->input->post('pass');
+		// $supplier_mobile = $this->session->userdata('supplier_mobile');
+		$supplier_pan=$this->input->post('pan');
+		if ($confirm_pass == $pass) {
+			$where = array('username' => $supplier_pan);
+			$data = array('password' => $pass);
+			$result = $this->dashM->update('suppliers', $data, $where);
+			$this->session->unset_userdata('Supplier');
+			$this->session->set_flashdata('rmsg', 'Password changed successfully');
+			redirect(base_url('home'));
+		} else {
+
+			$this->session->set_flashdata('omsg', 'Password mismatch');
+			redirect(base_url('set_password'));
+		}
+	}
+
+
 	//employee change password
 	public function forgotpasswordemployees()
 	{

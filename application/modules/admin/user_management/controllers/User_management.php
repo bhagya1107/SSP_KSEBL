@@ -254,7 +254,7 @@ if($getpannum)
         {
           //email varification
           // echo $email; echo "hi" ; exit;
-          $this->send_mail($email);
+          $this->send_mail($email,$pannumber);
         }
         if($getvarification_type->value == '1')
         {
@@ -285,32 +285,33 @@ if($getpannum)
     } 
   }
 
-public function send_mail($email)
+public function send_mail($email,$pannumber)
 {
   
 		$subject = 'User validation ' ;
+		// <a href="http://localhost:8080/SSP_KSEBL/set_password?pan=$pannumber">Click Here</a>
+			// ';
 		
-		
-		
+    
 			$message = '
 			<h3 align="center">User validation</h3>
-      <a href="">Click Here</a>
-			';
+      <a href="http://localhost:8080/SSP_KSEBL/set_password?pan=' . $pannumber . ' ">Click Here</a>';
+     
 
 	$this->load->library('email');
 	$config['protocol']='smtp';
 	$config['smtp_host']='ssl://smtp.googlemail.com';
 	$config['smtp_port']='465';
 	$config['smtp_timeout']='30';
-	$config['smtp_user']='ur_mail';
-	$config['smtp_pass']='ur_pass';
+	$config['smtp_user']='neethumanesh555@gmail.com';
+	$config['smtp_pass']='pass';
 	$config['charset']='utf-8';
 	$config['newline']="\r\n";
 	$config['wordwrap'] = TRUE;
 	$config['mailtype'] = 'html';
 	$this->email->initialize($config);
-	$this->email->from('ur_mail',"KK");
-	$this->email->to($email);
+	$this->email->from('neethumanesh555@gmail.com',"KK");
+	$this->email->to('neethumanesh555@gmail.com');
 	$this->email->subject($subject);
 	$this->email->message($message);
 
