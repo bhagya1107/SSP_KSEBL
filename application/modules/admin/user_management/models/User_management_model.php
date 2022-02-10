@@ -74,6 +74,7 @@ public function getUserProfile_Pending_approvals1()
   $sei=50566+$insert_id;
    $this->db->where('uid',$id); 
    $this->db->set('active_status',1);
+   $this->db->set('isdeleted',0);
    $this->db->set('erp_supplier_id',$sei);
    $this->db->update('suppliers');
  }
@@ -167,24 +168,28 @@ function getvarification_type() {
   {
    $this->db->select('*');
    $this->db->where('supplierid',$id);
+   $this->db->where('is_deleted','false');
    return $this->db->get($table)->result();
  }
   public function bank_details1($table,$id) 
   {
    $this->db->select('*');
    $this->db->where('supplierid',$id);
+   $this->db->where('is_deleted','false');
    return $this->db->get($table)->row();
  }
   public function supplierinfo($table,$id) 
   {
    $this->db->select('*'); 
    $this->db->where('supplierId',$id);
+   $this->db->where('isdeleted','false');
    return $this->db->get($table)->result();
  }
  public function supplierinfo1($table,$id) 
   {
    $this->db->select('*');
    $this->db->where('supplierId',$id);
+   $this->db->where('isdeleted','false');
    return $this->db->get($table)->row();
  }
  public function supplierserviceinfo($table,$id) 

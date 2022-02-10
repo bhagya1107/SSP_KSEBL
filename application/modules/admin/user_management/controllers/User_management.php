@@ -303,15 +303,15 @@ public function send_mail($email,$pannumber)
 	$config['smtp_host']='ssl://smtp.googlemail.com';
 	$config['smtp_port']='465';
 	$config['smtp_timeout']='30';
-	$config['smtp_user']='neethumanesh555@gmail.com';
+	$config['smtp_user']='ne@gmail.com';
 	$config['smtp_pass']='pass';
 	$config['charset']='utf-8';
 	$config['newline']="\r\n";
 	$config['wordwrap'] = TRUE;
 	$config['mailtype'] = 'html';
 	$this->email->initialize($config);
-	$this->email->from('neethumanesh555@gmail.com',"KK");
-	$this->email->to('neethumanesh555@gmail.com');
+	$this->email->from('nee555@gmail.com',"KK");
+	$this->email->to('nee55@gmail.com');
 	$this->email->subject($subject);
 	$this->email->message($message);
 

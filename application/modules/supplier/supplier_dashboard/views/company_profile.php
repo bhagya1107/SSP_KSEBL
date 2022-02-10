@@ -189,7 +189,9 @@
 								</tr>
 								<tr>
 									<td style="text-align:right">Company Email	</td>
-									<td><input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td>
+									<!-- <td><input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td> -->
+									<td><input type="email" name="email"  id="email" class="form-control showprofile" readonly value="<?php echo $getcompanydetails->email;?>"/>	</td>
+
 									<td></td>
 								</tr>
 								
