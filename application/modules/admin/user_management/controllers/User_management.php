@@ -206,10 +206,11 @@ $errorCount=0;
           $getvarification_type=$this->userM->getvarification_type();
           // var_dump($getvarification_type->value); die;
           $uTypeTemp=(string) $worksheet->getCellByColumnAndRow(3, $row)->getValue();
-          $mobile =(string) $worksheet->getCellByColumnAndRow(4, $row)->getValue();
-          $email =(string) $worksheet->getCellByColumnAndRow(5, $row)->getValue();
           // echo $mobile; echo $email; exit;
           $user_type=$uTypeTemp=="2,3"||$uTypeTemp =="3,2"?1:$uTypeTemp;
+          $mobile =(string) $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+          $email =(string) $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+         
           $active_status=0;
           $isdeleted=0;
           $created_user=1;
@@ -303,15 +304,15 @@ public function send_mail($email,$pannumber)
 	$config['smtp_host']='ssl://smtp.googlemail.com';
 	$config['smtp_port']='465';
 	$config['smtp_timeout']='30';
-	$config['smtp_user']='ne@gmail.com';
-	$config['smtp_pass']='pass';
+	$config['smtp_user']='neethu@in.netroxe.com';
+	$config['smtp_pass']='Neethuntx@xy1';
 	$config['charset']='utf-8';
 	$config['newline']="\r\n";
 	$config['wordwrap'] = TRUE;
 	$config['mailtype'] = 'html';
 	$this->email->initialize($config);
-	$this->email->from('nee555@gmail.com',"KK");
-	$this->email->to('nee55@gmail.com');
+	$this->email->from('neethu@in.netroxe.com',"KSEB SSP");
+	$this->email->to($email);
 	$this->email->subject($subject);
 	$this->email->message($message);
 
@@ -352,8 +353,8 @@ public function send_mail($email,$pannumber)
 		      	'protocol' 	=> 'smtp',
 		      	'smtp_host' => 'ssl://smtp.gmail.com',
 		      	'smtp_port' => 465,
-		      	'smtp_user' => 'neethumanesh555@gmail.com', 
-		      	'smtp_pass' => '8137853228', 
+		      	'smtp_user' => 'neethuh555@gmail.com', 
+		      	'smtp_pass' => '', 
 		      	'mailtype' 	=> 'html',
 		      	'charset' 	=> 'iso-8859-1',
 		      	'wordwrap' 	=> TRUE
@@ -361,8 +362,8 @@ public function send_mail($email,$pannumber)
 			//$file_path = 'uploads/' . $file_name;
 		    $this->load->library('email', $config);
 		    $this->email->set_newline("\r\n");
-		    $this->email->from('neethumanesh555@gmail.com');
-		    $this->email->to('neethumanesh555@gmail.com');
+		    $this->email->from('neethh555@gmail.com');
+		    $this->email->to('neethu555@gmail.com');
 		    $this->email->subject($subject);
 	      $this->email->message($message);
 	      

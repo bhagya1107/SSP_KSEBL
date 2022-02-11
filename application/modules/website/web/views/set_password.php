@@ -70,13 +70,13 @@ setTimeout(function() {
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa- color-blue"></i></span>
-                          <input id="txtPassword"  name="pass" placeholder="Password" class="form-control"  type="tel" required="" >
+                          <input id="txtPassword"  name="pass" placeholder="Password" class="form-control"  type="password" required="" >
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa- color-blue"></i></span>
-                          <input id="txtConfirmPassword"  name="confirm_pass" placeholder="Confirm Password" class="form-control"  type="tel" required="" >
+                          <input id="txtConfirmPassword"  name="confirm_pass" placeholder="Confirm Password" class="form-control"  type="password" required="" >
                         </div>
                       </div>
                       <div class="form-group">
