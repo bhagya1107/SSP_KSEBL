@@ -788,11 +788,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>PCO88944556</td>
-                                <td>Bulb</td>
-                                <td>3000</td>
-                                <td>200</td>
-                                <td>400</td>
+                                <td>PO/AEE-E-SCM-1/2021-22/00071</td>
+                                <td>CONDUCTOR ACSR  WEASEL</td>
+                                <td>5000.000</td>
+                                <td>0</td>
+                                <td>0</td>
 
                             </tr>
 
@@ -1539,7 +1539,7 @@ toggle between hiding and showing the dropdown content */
                     "<div class='tg-matchdetail'>"
 
                     +
-                    " <h4>OrderNo:PCO88944556</h4>" +
+                    " <h4>OrderNo:PO/AEE-E-SCM-1/2021-22/00071</h4>" +
                     "<ul class='tg-matchmetadata'>"
 
                     +
@@ -1573,8 +1573,8 @@ toggle between hiding and showing the dropdown content */
                     "  <tbody>" +
                     " <tr>" +
                     " <td>1</td>" +
-                    "<td>PCO009877655</td>" +
-                    "<td>BULB</td>" +
+                    "<td>PO/AEE-E-SCM-1/2021-22/00071</td>" +
+                    "<td>CONDUCTOR ACSR WEASEL</td>" +
                     "<td><?php echo  $dates = date_formate('27-05-2020'); ?></td>"
 
 
@@ -1592,8 +1592,8 @@ toggle between hiding and showing the dropdown content */
                     +
                     " <tr>" +
                     "<td>2</td>" +
-                    "  <td>PCO009877655</td>" +
-                    " <td>LED</td>" +
+                    "  <td>PO/AEE-E-SCM-1/2021-22/00071</td>" +
+                    " <td>CONDUCTOR ACSR WEASEL</td>" +
                     " <td><?php echo  $dates = date_formate('27-05-2020'); ?></td>"
 
                     +
