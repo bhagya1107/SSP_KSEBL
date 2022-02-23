@@ -122,7 +122,7 @@ class Supplier_home extends MX_Controller
 
 	public function user_login()
 	{
-
+// echo "hiii"; exit;
 		// decrypt();
 
 
@@ -152,7 +152,7 @@ class Supplier_home extends MX_Controller
 				$supplierid = $chk['supplierid'];
 				$supplier_active_status = $chk['active_status'];
 				$supplier_erp_id = $chk['erp_supplier_id'];
-
+				// echo $supplier_erp_id; exit;
 				if ($lock_user != 1 and $supplier_active_status == 1) {
 					$ip = $this->input->ip_address();
 					$lgtime = date('Y-m-d H:i:s');
@@ -176,7 +176,7 @@ class Supplier_home extends MX_Controller
 					$this->session->set_userdata('uid', $uid);
 					$this->session->set_userdata('user_type', $user_type);
 					$this->session->set_userdata('supplier_erp_id', $supplier_erp_id);
-
+                   
 					$_SESSION['theme'] = 'supplier';
 					$_SESSION['key'] = '';
 					// $_SESSION['showpop'] = 'false';

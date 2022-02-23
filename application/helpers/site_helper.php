@@ -249,7 +249,10 @@ function insertInNotifications($data)
 function api_error_message()
 {
   $url=getApi_url();
-  return "Connection to $url has been Interrupted.Please try again !";    
+  if($url==" " && $url!="http://erptest.kseb.in/" )
+  {
+  return "Connection to $url has been Interrupted.Please try again !";
+  }
 }
 
 
