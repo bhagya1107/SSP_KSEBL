@@ -16,7 +16,9 @@ class Supplier_dashboard extends SP_Controller
 		$data['indexurl'] = base_url() . "supplier/dashboard";
 		$uid = $this->session->userdata('supplierid');
 		$erp_id = $this->session->userdata('supplier_erp_id');
+		
 		$data['getcompanydetails'] = $this->dashM->getappliedtender($uid);
+		
 		$data['getcounttenders'] = count($data['getcompanydetails']);
 		$purchaseOrder = json_decode($this->api->getPOData($erp_id));
 		$data['purchaseorder'] = $purchaseOrder->result_data->list;
@@ -60,6 +62,7 @@ class Supplier_dashboard extends SP_Controller
 			$user_type = $this->session->userdata('user_type');
 			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
 			$data['getcompanydetails'] = $this->dashM->getCompanyProfile($uid);
+			// var_dump($data['getcompanydetails']);die;
 			$this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal', true);
 
 			// $this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal');

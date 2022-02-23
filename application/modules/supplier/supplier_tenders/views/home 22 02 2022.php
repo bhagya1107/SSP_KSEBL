@@ -106,7 +106,24 @@
         </div>
 
         <div class="container">
-           
+            <?php
+            $msg = $this->session->flashdata('msg');
+            if ($msg) {
+            ?>
+
+
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <?php
+                    echo $msg;
+                    ?>
+                </div>
+
+            <?php
+            }
+            ?>
 
             <div class="tg-section-name">
                 <h2>Tenders</h2>
@@ -202,7 +219,7 @@
 
                                 </div>
 
-                                <!-- <span class="no-tender-fav hide">No tender available</span> -->
+                                <span class="no-tender-fav hide">No tender available</span>
                             </div>
                             <!-- <span style="text-align:center;"> Total No of Favourite Tender count:<?php echo count($getfavtender); ?></span> -->
 
@@ -254,7 +271,7 @@
 
 
                             </div>
-                            <!-- <span class="no-tender-apply hide">No tender available</span> -->
+                            <span class="no-tender-apply hide">No tender available</span>
                         </div>
 
                     </div>
@@ -960,7 +977,6 @@
         var spanid = (activetab == 'favtender') ? 'no-tender-fav' : (activetab == 'applytender') ? 'no-tender-apply' : 'no-tender-alltender'
         var activetab1 = $("#tendertabs li.active").length;
         var tenderlength = $("#" + tabcontentid + " .tg-ticket[style!='display: none;']").length;
-        
         favtender
         applytender
         console.log(tenderlength);
@@ -1167,11 +1183,10 @@
 
             html += "<div class='tg-btnsbox' style='margin-top:11px;'><a class='btn btn-primary btn-sm tenderdetails' style='#1e315d' onclick='mytenderdetails(" + JSON.stringify(data) + ")' data-tender='" + JSON.stringify(data) + "' data-toggle='modal' data-target='#tendermore'>Read More</a>";
 
-            if (data.sorting == 1) {
-                html += "<a class='btn btn-success btn-sm' >Added to Favourites </a>";
-                    } else {
-                        
+            if (data.sorting == 0) {
                         html += "<a class='btn btn-primary btn-sm' id='save_tenders' onclick='save_tenders(" + JSON.stringify(data) + ")'>Add to Favourites</a>";
+                    } else {
+                        html += "<a class='btn btn-success btn-sm' >Added to Favourites </a>";
                     }
 
             html += "</div></div>";
@@ -1198,8 +1213,8 @@
 
                 datas = JSON.parse(result);
                 var count = datas.length;
-               // console.log(datas);
-               // console.log(count);
+                console.log(datas);
+                console.log(count);
                 if (count > 0) {
                     span1 = "<span><b>Total Tenders:" + count + "</b></span>";
 
@@ -1211,7 +1226,7 @@
                 html = "";
 
                 // var mytenderservices = JSON.parse($('#mytenderservices').val());
-               // console.log(mytenderservices);
+                console.log(mytenderservices);
                 $.each(datas, function(i, data) {
                     console.log(data);
                     html += "<div class='tg-ticket'><time class='tg-matchdate' ><small>Last date</small><br>";
