@@ -86,6 +86,3 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 define('DS', DIRECTORY_SEPARATOR);
 define('ADMIN', 'webuser');
 define('USER', 'supplier');
-define('API', 'api');
-define('ERP_EMAIL', '1036226@kseberp.in');
-define('ERP_PASSWORD', 'password');

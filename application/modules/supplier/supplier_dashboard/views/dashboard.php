@@ -176,10 +176,20 @@
       ?>
 
 <?php if($countpurchaseorder =="") { ?>
+  <?php 
+  $er = api_error_message();
+      if ($er) {
+      ?>
+
   <div class="alert alert-danger" role="alert">
-  <?php echo api_error_message(); ?>
+    
+  <?php
+  
+   echo api_error_message();
+    ?>
   <!-- Connection to kseb.his.in has been interrupted.Please try again ! -->
 </div>
+<?php } ?>
 
 <a href="<?= base_url() ?>supplier/tenders/appliedindex"> <div class=" col-md-6 ">
       <div class="card dash-content">
@@ -221,7 +231,8 @@
                   <h3 style="text-transform:unset">Accepted Purchase Orders</h3>
                 </div>
                 <div class="col-md-1">
-                  <span class="count green"></span>
+                  <span class="count green">  <?php
+  echo $countpurchaseorder; ?></span>
                 </div>
               </div>
             </div>

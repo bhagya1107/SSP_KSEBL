@@ -125,7 +125,9 @@ class Dashboard_model extends CI_Model
   {
     $this->db->select('*');
     $this->db->where('supplierid', $uid);
+    
     return $this->db->get('companyprofile')->row();
+    // print_r($query);
   }
 
   public function getemployeesusertype()

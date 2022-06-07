@@ -54,32 +54,9 @@
                                                                             <td>Api Base URL</td>
                                                                             <td><input type="password" id="password"  name="api_baseurl" class="form-control" onclick="viewdata()" value="<?= $api_baseurl;?>"></td>
                                                                         </tr>
-                                                                        <tr>
-                                                                            <td>Varification By</td>
-                                                                            <td><select  class="form-control" name="varification" id="varification" onChange=showHide()>
-                                                                                <option value="1">Mobile</option>
-                                                                                <option value="0" >Email</option>
-                                                                                 </select>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                        <td></td>
-                                                                        <td>
-                                                                        <div name="hidden-panel" id="hidden-panel" >
-                                                                            
-                                                                            <input type="text" class="form-control" name="username" placeholder="Enter User Name" id="username"/>
-                                                                             <input type="text" class="form-control" name="password" placeholder="Enter Password" id="password"/>
-                                                                             <input type="text" class="form-control" name="port" placeholder="Enter Port" id="port"/>
-                                                                        </div>
-                                                                        </td>
-                                                                        </tr>
+                                                                       
                                                                     </table>
-                                                                      
-
-                                                                     
-
-    
-                                                                  <div class="form-group">
+                                                                    <div class="form-group">
                                                                         <button class="btn  btn-sm btn-out-dashed btn-info btn-square" type="submit">Save</button>
                                                                     </div>
                                                                 </fieldset>
@@ -154,9 +131,7 @@
                }
                table td {white-space: pre-wrap;;}
              
-               #hidden-panel {
-	display: none;
-}
+                
             </style>
 
 <script>
@@ -169,14 +144,7 @@ function viewdata() {
   }
 }
  
+</script>
 
-     function showHide() {
-    let travelhistory = document.getElementById('varification')
-    if (travelhistory.value == 0) {
-        document.getElementById('hidden-panel').style.display = 'block'
-    } else {
-        document.getElementById('hidden-panel').style.display = 'none'
-    }
-}
- </script> 
+
              

@@ -1,0 +1,11 @@
+node_modules
+application/logs
+uploads
+uploads/captcha/
+assets/admin/images/projects
+uploads/company_profile/
+
+application/logs/readable
+application/logs
+
+

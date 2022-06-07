@@ -83,9 +83,9 @@
 	<select class="select2 form-control" id="tenderType" name="group_flat__id" data-placeholder="Select Tender Type" style="padding-right: 5px;" >
 
 								 <option>Select Tender Type</option>
-<?php if($user_type != '2') { ?>
+<!-- <?php if($user_type != '2') { ?>
  								<option selected value="products">Products</option> 
-<?php }?> 
+<?php }?>  -->
 <?php if($user_type == '2') { ?>
  								<option selected value="services">My Services</option> 
 <?php }?> 
@@ -99,7 +99,13 @@
 <?php if($user_type == '1' && '3') { ?>
  								<option  value="all">All</option> 
 <?php }?>
- 
+<?php if($user_type == '3') { ?>
+								<option selected value="products"> Products</option> 
+								<option  value="services"> Services</option> 
+								<option  value="all">All Products</option> 
+								<option  value="allservices">All Services</option> 
+ 							
+<?php }?>
 							</select>
  									
 
@@ -154,8 +160,8 @@
 												 <!-- <option>Select Work Order</option> -->
 													<?php foreach ($purchaseorder as $purchaseorders) { ?>
 													<?php $purchaseorderdetails=(array)$purchaseorders?>
-                      <option value="<?php echo $purchaseorderdetails['purchase no']; ?>">
-                        <?php echo $purchaseorderdetails['purchase no']; ?></option>
+                      <option value="<?php echo $purchaseorderdetails['puchase_no']; ?>">
+                        <?php echo $purchaseorderdetails['puchase_no']; ?></option>
               <?php } ?>
 							</select>
  									

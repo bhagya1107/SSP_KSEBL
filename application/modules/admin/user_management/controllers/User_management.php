@@ -203,7 +203,204 @@ $errorCount=0;
           $pannumber =(string) $worksheet->getCellByColumnAndRow(2, $row)->getValue();
           //$getpannum='';
           $getpannum=$this->userM->getpan($pannumber);
+          $getvarification_type=$this->userM->getvarification_type();
+          // var_dump($getvarification_type->value); die;
           $uTypeTemp=(string) $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+          // echo $mobile; echo $email; exit;
+          $user_type=$uTypeTemp=="2,3"||$uTypeTemp =="3,2"?1:$uTypeTemp;
+          $mobile =(string) $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+          $email =(string) $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+         
+          $active_status=0;
+          $isdeleted=0;
+          $created_user=1;
+          $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+          $password = array(); 
+          $alpha_length = strlen($alphabet) - 1; 
+          for ($i = 0; $i < 8; $i++) 
+          {
+            $n = rand(0, $alpha_length);
+            $password[] = $alphabet[$n];
+          }
+          $pass=implode($password); 
+          date_default_timezone_set("Asia/Kolkata");
+          $date=date('Y-m-d H:i:s');
+          
+          
+
+         
+        //intialise $errorCount=0; outside for loop
+          // $errorCount=0;
+if($getpannum) 
+           {
+            $isError=true;
+            $errorCount++;
+           }else{
+          $data[] = array(
+            'name'        =>  $name,
+            'username'     =>  $pannumber,
+            'password'      => $pass,
+            'mobile'  =>$mobile,
+            'email' =>$email,
+            'active_status' => $active_status,
+            'created_date'  =>$date,
+            'user_type'   => $user_type,
+            'isdeleted'   => $isdeleted,
+            'created_user' =>$created_user,
+            'pannumber'    =>  $pannumber,
+            'erp_supplier_id'     =>  $erp_supplier_id
+          ); 
+        }
+        if($getvarification_type->value == '0')
+        {
+          //email varification
+          // echo $email; echo "hi" ; exit;
+          $this->send_mail($email,$pannumber);
+        }
+        if($getvarification_type->value == '1')
+        {
+          // mobile varification
+        }
+        }
+
+      }
+      if($data){    
+
+        $msg=$isError?"Some data inserted successfully but ".$errorCount." are already exists" :"Data inserted sucessfully";
+        $status='sucess';
+        foreach ($data as $key => $sData) {
+        $this->userM->insert('suppliers',$sData);
+        $supplierid=$this->db->insert_id();
+        $this->insertAccessPermission($supplierid);
+
+       
+
+        }
+     
+
+        }
+        else{
+          $msg="No data inserted ".$errorCount. " are already exists";
+        }
+      echo json_encode(['status'=>$status,'msg'=>$msg]);
+    } 
+  }
+
+public function send_mail($email,$pannumber)
+{
+  
+		$subject = 'User validation ' ;
+		// <a href="http://localhost:8080/SSP_KSEBL/set_password?pan=$pannumber">Click Here</a>
+			// ';
+		
+    
+			$message = '
+			<h3 align="center">User validation</h3>
+      <a href="http://localhost:8080/SSP_KSEBL/set_password?pan=' . $pannumber . ' ">Click Here</a>';
+     
+
+	$this->load->library('email');
+	$config['protocol']='smtp';
+	$config['smtp_host']='ssl://smtp.googlemail.com';
+	$config['smtp_port']='465';
+	$config['smtp_timeout']='30';
+	$config['smtp_user']='neethu@in.netroxe.com';
+	$config['smtp_pass']='Neethuntx@xy1';
+	$config['charset']='utf-8';
+	$config['newline']="\r\n";
+	$config['wordwrap'] = TRUE;
+	$config['mailtype'] = 'html';
+	$this->email->initialize($config);
+	$this->email->from('neethu@in.netroxe.com',"KSEB SSP");
+	$this->email->to($email);
+	$this->email->subject($subject);
+	$this->email->message($message);
+
+  $this->email->set_newline("\r\n"); 
+
+	
+	       // $this->email->attach($file_data['full_path']);
+	        if($this->email->send())
+	        {
+	        	
+	        		
+	        		//redirect('');
+	        	
+	        }
+	        else
+	        {
+	        	
+
+	        		echo $this->email->print_debugger();
+				
+	        	
+	        }
+}
+  public function send_maill($email)
+	{
+    // echo $email; exit;
+		$subject = 'User Verification ';
+		
+		
+		
+			$message = '
+			<h3 align="center">User Verification</h3>
+				
+						<a href="">Click here</a>
+			
+			';
+			$config = Array(
+		      	'protocol' 	=> 'smtp',
+		      	'smtp_host' => 'ssl://smtp.gmail.com',
+		      	'smtp_port' => 465,
+		      	'smtp_user' => 'neethuh555@gmail.com', 
+		      	'smtp_pass' => '', 
+		      	'mailtype' 	=> 'html',
+		      	'charset' 	=> 'iso-8859-1',
+		      	'wordwrap' 	=> TRUE
+		    );
+			//$file_path = 'uploads/' . $file_name;
+		    $this->load->library('email', $config);
+		    $this->email->set_newline("\r\n");
+		    $this->email->from('neethh555@gmail.com');
+		    $this->email->to('neethu555@gmail.com');
+		    $this->email->subject($subject);
+	      $this->email->message($message);
+	      
+	   
+	}
+
+  public function import_02_02_2022() 
+  {
+    $this->load->library('excel');
+    $config['allowed_types']        = 'xls|xlsx';
+    $status='error';
+
+   // $msg='Some user already exist for ';
+$data=[];
+$isError=false;
+$errorCount=0;
+    if(isset($_FILES["file"]["name"]))
+    {
+      
+      $path = $_FILES["file"]["tmp_name"];
+      // $config['allowed_types'] = 'xlsx|xls';
+      // $this->upload->initialize($config); 
+      $object = PHPExcel_IOFactory::load($path);
+      foreach($object->getWorksheetIterator() as $worksheet)
+      {
+        $highestRow = $worksheet->getHighestRow();
+        $highestColumn = $worksheet->getHighestColumn();
+        for($row=2; $row<=$highestRow; $row++)
+        {
+          $erp_supplier_id = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
+          $name = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+          $pannumber =(string) $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+          //$getpannum='';
+          $getpannum=$this->userM->getpan($pannumber);
+          $uTypeTemp=(string) $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+          $mobile =(string) $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+         
           $user_type=$uTypeTemp=="2,3"||$uTypeTemp =="3,2"?1:$uTypeTemp;
           $active_status=0;
           $isdeleted=0;
@@ -232,6 +429,7 @@ if($getpannum)
             'name'        =>  $name,
             'username'     =>  $pannumber,
             'password'      => $pass,
+            'mobile'  =>$mobile,
             'active_status' => $active_status,
             'created_date'  =>$date,
             'user_type'   => $user_type,
@@ -239,7 +437,7 @@ if($getpannum)
             'created_user' =>$created_user,
             'pannumber'    =>  $pannumber,
             'erp_supplier_id'     =>  $erp_supplier_id
-          );
+          ); 
         }
         }
 

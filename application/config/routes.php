@@ -57,7 +57,6 @@ $route[ADMIN.'/(.*)'] = '$1';
 
 $route[USER.'/logout'] = 'logout/index';
 $route[USER] = USER.'_home';
-$route[USER.'/api'] = 'sspApi/index';
 $route[USER.'/(.*)'] =  USER.'_$1';
 
 $route['(.*)'] = 'web/views/$1';

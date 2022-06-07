@@ -235,7 +235,7 @@
 											
 											 
 										</nav>	 
-										<nav class="tg-addnav pull-right" >
+										<nav class="tg-addnav pull-right" > 
 										 
 											<ul >
 												<li title="fontsize"  ><a href="#">

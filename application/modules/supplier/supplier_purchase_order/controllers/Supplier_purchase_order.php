@@ -171,16 +171,16 @@ class Supplier_purchase_order extends SP_Controller
 					//	$pay = '<button class="btn btn-primary dropdown-toggle"  data-toggle="modal" data-target="#PaymentPDI" type="button">Pay</button>';
 				//	echo"<pre>";print_r($r->purchaseschemedetails);exit;
 					$podetails= (array)$r;
-					$vmidetails=$podetails['vendor managed details'][0];
+					$vmidetails=$podetails['vendor_managed_details'][0];
 					$arrayvmi=(array)	$vmidetails;
 					//echo"<pre>";print_r($arrayvmi);exit;
 					$data[] = array(
 						'slno' => $i,
-						'poorder' => $arrayvmi['po order'],
-						'name' => $arrayvmi['material name'],
-						'maxcapacity' => $arrayvmi['material name'],
-						'minimumcapacity' => $arrayvmi['minimum capacity'],
-						'onhand' => $arrayvmi['on hand'],
+						'poorder' => $arrayvmi['po_order'],
+						'name' => $arrayvmi['material_name'],
+						'maxcapacity' => $arrayvmi['max_capacity'],
+						'minimumcapacity' => $arrayvmi['minimum_capacity'],
+						'onhand' => $arrayvmi['on_hand'],
 						//'button' => $pay,
 
 					);

@@ -102,6 +102,7 @@ class Api extends MX_Controller
 
    public function getTenderStatus($erp_id,$id)
    {
+
       if ($erp_id != "") {
          $appendurl = "prc/getTenderStatus?id=$id&vendor_id=$erp_id";
          return $this->curl_getdata($appendurl);
@@ -111,10 +112,11 @@ class Api extends MX_Controller
       }
    }
 
-   public function getPOData($erp_id)
+   public function getPOData($erp_supplier_id)
    {
-      if ($erp_id != "") {
-         $appendurl = "prc/getPOData?vender_id=$erp_id";
+      $erp_supplier_id=$this->session->userdata('erp_supplier_id');
+      if ($erp_supplier_id != "") {
+         $appendurl = "prc/getPOData?vender_id=$erp_supplier_id";
          return $this->curl_getdata($appendurl);
       } else {
          $appendurl = "prc/getPOData?vender_id=10003888";
