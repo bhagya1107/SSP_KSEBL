@@ -12,7 +12,13 @@ class Supplier_dashboard extends SP_Controller
 	{
 		$data['showdashbaord'] = true;
 		$data['page'] = 'supplier_dashboard';
-		$data['title'] = 'Supplier Dashboard';
+		if($this->session->userdata('user_type')=='2' ){
+			$data['title'] = 'Contractor Dashboard';
+		}
+		else{
+			$data['title'] = 'Supplier Dashboard';
+		}
+		
 		$data['indexurl'] = base_url() . "supplier/dashboard";
 		$uid = $this->session->userdata('supplierid');
 		$erp_id = $this->session->userdata('supplier_erp_id');
@@ -31,7 +37,13 @@ class Supplier_dashboard extends SP_Controller
 	{
 		$data['showdashbaord'] = true;
 		$data['page'] = 'supplier_dashboard';
-		$data['title'] = 'Supplier Dashboard';
+		if($this->session->userdata('user_type')=='2' ){
+			$data['title'] = 'Contractor Dashboard';
+		}
+		else{
+			$data['title'] = 'Supplier Dashboard';
+		}
+		
 		$data['indexurl'] = base_url() . "supplier/dashboard";
 		// $this->template->make('supplier_dashboard/home',$data,'supplier_portal');
 		//$this->template->make('supplier_dashboard/dashboard_2',$data,'supplier_portal');
@@ -41,7 +53,12 @@ class Supplier_dashboard extends SP_Controller
 	{
 		$data['showdashbaord'] = true;
 		$data['page'] = 'supplier_dashboard';
-		$data['title'] = 'Supplier Dashboard';
+		if($this->session->userdata('user_type')=='2' ){
+			$data['title'] = 'Contractor Dashboard';
+		}
+		else{
+			$data['title'] = 'Supplier Dashboard';
+		}
 		$data['indexurl'] = base_url() . "supplier/dashboard";
 		$this->load->view('supplier_dashboard/dashboard_3');
 	}
@@ -62,7 +79,7 @@ class Supplier_dashboard extends SP_Controller
 			$user_type = $this->session->userdata('user_type');
 			$data['getpreferencedate'] = $this->dashM->getpreferencedate($uid, $user_type);
 			$data['getcompanydetails'] = $this->dashM->getCompanyProfile($uid);
-			// var_dump($data['getcompanydetails']);die;
+			 //var_dump($data['getcompanydetails']);die;
 			$this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal', true);
 
 			// $this->template->make('supplier_dashboard/company_profile', $data, 'supplier_portal');
@@ -172,7 +189,7 @@ class Supplier_dashboard extends SP_Controller
 	/***************************bhagya End********************************/
 	public function manage_user()
 	{
-		if ($this->session->userdata('user_type') == '1' or $this->session->userdata('user_type') == '3') {
+		if ($this->session->userdata('user_type') == '1' or $this->session->userdata('user_type') == '3' OR $this->session->userdata('user_type')=='2') {
 			$data['page'] = 'users';
 			$data['mainpage'] = '';
 			$data['page_title'] = 'create users';
@@ -182,8 +199,8 @@ class Supplier_dashboard extends SP_Controller
 			$this->template->make('supplier_dashboard/manage_users', $data, 'supplier_portal', true);
 		} else {
 
-			$this->session->set_flashdata('msg', 'You are not allowed to access Employees');
-			redirect(base_url('supplier/dashboard'));
+			//$this->session->set_flashdata('msg', 'You are not allowed to access Employees');
+			//redirect(base_url('supplier/dashboard'));
 		}
 	}
 	public function products()
@@ -591,6 +608,7 @@ class Supplier_dashboard extends SP_Controller
 		$user_type = $this->session->userdata('user_type');
 
 		if ($confirm_pass == $new_pass) {
+			
 			$where = array('id' => $supplierid);
 			$data = array('password' => $confirm_pass);
 			$result = $this->dashM->update('employees', $data, $where);
@@ -603,6 +621,7 @@ class Supplier_dashboard extends SP_Controller
 			// echo ' <script>window.location.href="personal_profile";</script>';
 			echo ' <script>window.location.href="supplier_administration";</script>';
 		} else {
+			
 			echo '<script type="text/javascript" >alert("Password mismatch" );
 				</script>';
 			echo ' <script>window.location.href="changepassword";</script>';
@@ -709,9 +728,11 @@ class Supplier_dashboard extends SP_Controller
 			echo '<script type="text/javascript" >alert("Password changed successfully" );
 				</script>';
 			echo ' <script>window.location.href="supplier_administration";</script>';
-		} else {
-			echo '<script type="text/javascript" >alert("Password mismatch" ); 
-				</script>';
+		} 
+		else {
+		//alert("Password mismatch" ); 
+		echo '<script type="text/javascript" >alert("Password mismatch" );
+		</script>';
 			echo ' <script>window.location.href="changepassword";</script>';
 		}
 	}

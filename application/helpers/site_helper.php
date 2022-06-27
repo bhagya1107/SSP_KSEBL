@@ -31,10 +31,10 @@ function insertInDb($table,$data)
     return $insert_id;
   }
 }
-function simpleUpdate($table,$data,$coloumn="id",$val)
+function simpleUpdate($table,$data,$coloumn="id")
 {
     $ci =& get_instance();
-    $ci->db->where($coloumn, $val);
+    $ci->db->where($coloumn);
     if($ci->db->update($table, $data))
     {
       return 1;

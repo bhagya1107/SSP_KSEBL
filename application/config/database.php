@@ -81,7 +81,7 @@ $db['default'] = array(
 	// 'hostname' => 'pgsql:host=127.0.0.1;port=5433;dbname=kseb',
 	// 'username' => 'postgres',
  //  'password' => 'akhil@123',
-	'hostname' => 'pgsql:host=103.156.208.174;dbname=ksebl_ssp',
+	'hostname' => 'pgsql:host=103.156.208.39;dbname=ksebl_ssp',
 	'username' => 'postgres',
   'password' => 'p@ss123',
 	'database' => 'kseb',

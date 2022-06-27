@@ -13,8 +13,8 @@ public function Login_POST()
 			"email" => "1036226@kseberp.in",
 			"password" => "password"
 		);
-
-		$apiurl     = 'http://hris.kseb.in/erpws/api/login';
+	
+		$apiurl     = 'http://erptest.kseb.in/api/login';
 		$data_array = json_encode($data);
 		$curl       = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $apiurl);
@@ -30,7 +30,7 @@ public function getAdminTenderData()
 	$token = $this->Login_POST();
 	$token1 = json_decode($token);
 
-	$apiurl     = 'http://hris.kseb.in/erpws/api/prc/getadmintenders';
+	$apiurl     = 'http://erptest.kseb.in/api/prc/getadmintenders';
 	$curl       = curl_init();
 	curl_setopt($curl, CURLOPT_URL, $apiurl);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);

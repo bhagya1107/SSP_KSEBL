@@ -76,7 +76,7 @@
 
                 <li <?php if($tab_selected == 'tab_4'){ echo "class='active'";} ?> style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"><a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>"   class='<?php if($this->uri->segment(3) == 'banking') echo "liActive";?>' data-toggle="tab" href="#tab_4"><em>Banking Details</em></a></li>
 
-                <li <?php if($tab_selected == 'tab_5'){ echo "class='active'";} ?> style="<?php if($user_type=='2' OR $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><a class='<?php if($this->uri->segment(3) == 'manage_user') echo "liActive";?>' style="<?php if($user_type=='2') echo "display: none;" ?>" data-toggle="tab" href="#tab_5" ><em>Employees</em><i></i></a></li>
+                <li <?php if($tab_selected == 'tab_5'){ echo "class='active'";} ?> style="<?php if( $user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" ><a style="<?php if($user_type=='4' OR $user_type=='5' OR $user_type=='6') echo "display: none;" ?>" class='<?php if($this->uri->segment(3) == 'manage_user') echo "liActive";?>'  data-toggle="tab" href="#tab_5" ><em>Employees</em></a></li>
 
 
               
